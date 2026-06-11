@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Script from "next/script";
+import { buildCalendlyUrl, CALENDLY_CONSULTATION_URL } from "@/lib/calendly";
 import "./types";
 
 interface CalendlyBadgeProps {
@@ -13,14 +14,15 @@ interface CalendlyBadgeProps {
 }
 
 export default function CalendlyBadge({
-  url = "https://calendly.com/drjanduffy/showing",
-  text = "Schedule time with me",
-  color = "#0069ff",
+  url = buildCalendlyUrl(CALENDLY_CONSULTATION_URL, {
+    utmSource: "floating-badge",
+  }),
+  text = "Schedule with Dr. Jan",
+  color = "#2563eb",
   textColor = "#ffffff",
   branding = true,
 }: CalendlyBadgeProps) {
   useEffect(() => {
-    // Initialize badge widget when Calendly script is loaded
     const initBadge = () => {
       if (window.Calendly) {
         window.Calendly.initBadgeWidget({
@@ -33,17 +35,9 @@ export default function CalendlyBadge({
       }
     };
 
-    // Check if Calendly is already loaded
     if (window.Calendly) {
       initBadge();
-    } else {
-      // Wait for script to load
-      window.addEventListener("calendly-loaded", initBadge);
     }
-
-    return () => {
-      window.removeEventListener("calendly-loaded", initBadge);
-    };
   }, [url, text, color, textColor, branding]);
 
   return (
@@ -53,8 +47,9 @@ export default function CalendlyBadge({
         rel="stylesheet"
       />
       <Script
+        id="calendly-widget-js"
         src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         onLoad={() => {
           if (window.Calendly) {
             window.Calendly.initBadgeWidget({

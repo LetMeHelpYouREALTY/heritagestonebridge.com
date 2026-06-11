@@ -7,17 +7,16 @@ import { Phone, CheckCircle, Home, TrendingUp, MapPin, Calculator, Clock, Dollar
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Home Valuation Las Vegas | What's Your Home Worth? | Berkshire Hathaway HomeServices",
+  title:
+    "Heritage at Stonebridge Home Valuation | What's Your Home Worth? | Dr. Jan Duffy",
   description:
-    "Get a free, accurate home valuation in Las Vegas from Dr. Jan Duffy at Berkshire Hathaway HomeServices. Expert CMA analysis for Summerlin, Henderson, Green Valley & all Las Vegas neighborhoods. Call (702) 500-1942.",
+    "Free CMA and home valuation for Heritage at Stonebridge and Summerlin 55+ resales. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 500-1942.",
   keywords: [
-    "home valuation Las Vegas",
-    "what is my home worth Las Vegas",
-    "free home value estimate",
-    "CMA Las Vegas",
-    "Berkshire Hathaway home valuation",
-    "Summerlin home value",
-    "Henderson home value",
+    "Heritage Stonebridge home value",
+    "Heritage at Stonebridge CMA",
+    "Summerlin 55+ home valuation",
+    "89138 home value",
+    "Dr Jan Duffy home valuation",
   ],
 };
 

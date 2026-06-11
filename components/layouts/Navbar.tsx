@@ -4,6 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SITE_CONTACT } from "@/lib/site-contact";
+import {
+  HERITAGE_COMMUNITY_NAV,
+  HERITAGE_BUYER_NAV,
+  HERITAGE_PRIMARY_NAV,
+} from "@/lib/heritage-stonebridge/routes";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,21 +25,13 @@ export default function Navbar() {
   }, []);
 
   const mainNavLinks = [
-    { href: "/", label: "Home", external: false },
-    { href: "http://drjanduffy.realscout.com/", label: "Properties", external: true },
-    { href: "/neighborhoods", label: "Neighborhoods", external: false },
-    { href: "/about", label: "About", external: false },
-    { href: "/contact", label: "Contact", external: false },
+    ...HERITAGE_PRIMARY_NAV.filter((link) => link.href !== "/"),
+    { href: "/about", label: "About" },
   ];
 
   const serviceLinks = [
-    { href: "/buyers", label: "Home Buying" },
-    { href: "/sellers", label: "Home Selling" },
-    { href: "/luxury-homes", label: "Luxury Homes" },
-    { href: "/55-plus-communities", label: "55+ Communities" },
-    { href: "/new-construction", label: "New Construction" },
-    { href: "/market-report", label: "Market Report" },
-    { href: "/market-insights", label: "Market Insights" },
+    ...HERITAGE_COMMUNITY_NAV.filter((l) => l.href !== "/community"),
+    ...HERITAGE_BUYER_NAV.slice(0, 4),
   ];
 
   return (
@@ -46,36 +44,25 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Brand Logo */}
           <Link href="/" className="flex flex-col">
-            <span className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors leading-tight">
-              Berkshire Hathaway
-              <span className="text-blue-600"> HomeServices</span>
+            <span className="text-lg md:text-xl font-bold text-slate-900 hover:text-purple-600 transition-colors leading-tight">
+              Heritage Stonebridge
             </span>
-            <span className="text-xs text-slate-500 hidden sm:block">Nevada Properties</span>
+            <span className="text-xs text-slate-500 hidden sm:block">
+              Homes By Dr. Jan Duffy
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-5">
-            {mainNavLinks.map((link) =>
-              link.external ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm"
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
+            {mainNavLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm"
+              >
+                {link.label}
+              </Link>
+            ))}
 
             {/* Services Dropdown */}
             <div className="relative">
@@ -93,9 +80,9 @@ export default function Navbar() {
                 }}
                 aria-expanded={isServicesOpen}
                 aria-haspopup="true"
-                aria-label="Services menu"
+                aria-label="Community and guides menu"
               >
-                Services
+                Community & Guides
                 <ChevronDown className="h-4 w-4 ml-1" aria-hidden="true" />
               </button>
 
@@ -122,9 +109,9 @@ export default function Navbar() {
             </div>
 
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001942" className="flex items-center gap-2">
+              <Link href={SITE_CONTACT.phone.tel} className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span className="hidden xl:inline">(702) 500-1942</span>
+                <span className="hidden xl:inline">{SITE_CONTACT.phone.display}</span>
                 <span className="xl:hidden">Call</span>
               </Link>
             </Button>
@@ -133,7 +120,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
             <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001942">
+              <Link href={SITE_CONTACT.phone.tel}>
                 <Phone className="h-4 w-4" />
               </Link>
             </Button>
@@ -152,34 +139,21 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-slate-200">
             <div className="flex flex-col space-y-1 pt-4">
-              {mainNavLinks.map((link) =>
-                link.external ? (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              )}
+              {mainNavLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
 
               {/* Services Section */}
               <div className="border-t border-slate-200 pt-2 mt-2">
                 <span className="text-xs font-semibold text-slate-500 px-3 uppercase">
-                  Services
+                  Community & Guides
                 </span>
                 {serviceLinks.map((link) => (
                   <Link
@@ -196,11 +170,11 @@ export default function Navbar() {
               <div className="pt-4">
                 <Button asChild className="bg-blue-600 hover:bg-blue-700 w-full">
                   <Link
-                    href="tel:+17025001942"
+                    href={SITE_CONTACT.phone.tel}
                     className="flex items-center justify-center gap-2"
                   >
                     <Phone className="h-4 w-4" />
-                    Call Dr. Jan: (702) 500-1942
+                    Call Dr. Jan: {SITE_CONTACT.phone.display}
                   </Link>
                 </Button>
               </div>

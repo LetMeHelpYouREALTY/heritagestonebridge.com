@@ -25,11 +25,14 @@ import {
   generateLocalBusinessSchema,
   generateFAQSchema,
 } from "@/lib/gbp-schema";
+import GBPMapCard from "@/components/gbp/GBPMapCard";
+import { getSiteUrl } from "@/lib/site-url";
+import { buildWriteReviewUrl } from "@/lib/reviews";
 
 export const metadata: Metadata = {
-  title: "Dr. Jan Duffy, REALTOR® Las Vegas | Berkshire Hathaway HomeServices",
+  title: `${businessInfo.name} | Google Business Profile`,
   description:
-    "Dr. Jan Duffy is a trusted Las Vegas REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Specializing in Summerlin, Henderson, 55+ communities, California relocation, and luxury homes. Call (702) 500-1942.",
+    `${businessInfo.name} — Crossbridge Dr, Las Vegas, NV 89138. Guard-gated Heritage Stonebridge 55+ real estate with Dr. Jan Duffy. Call (702) 500-1942.`,
   keywords: [
     "Dr. Jan Duffy realtor",
     "Las Vegas real estate agent",
@@ -42,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
     description: "Trusted Las Vegas REALTOR® serving since 2008. Summerlin, Henderson, luxury homes, 55+ communities.",
-    url: "https://heyberkshire.com/google-business",
+    url: `${getSiteUrl()}/google-business`,
     type: "profile",
   },
 };
@@ -141,6 +144,13 @@ export default function GoogleBusinessPage() {
                 <div><span className="font-medium">Sunday:</span> By Appointment</div>
               </div>
             </div>
+          </section>
+
+          <section className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+              Office Location &amp; Google Business Profile
+            </h2>
+            <GBPMapCard />
           </section>
 
           {/* About - 750 Word Description Structure */}
@@ -269,7 +279,7 @@ export default function GoogleBusinessPage() {
                 Mention your neighborhood, type of transaction, and what made the experience valuable.
               </p>
               <a
-                href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review"
+                href={buildWriteReviewUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"

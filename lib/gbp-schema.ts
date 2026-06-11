@@ -1,43 +1,33 @@
-// Google Business Profile Schema Data
+import { SITE_CONTACT } from "@/lib/site-contact";
+import { getSiteUrl } from "@/lib/site-url";
+
+// Google Business Profile Schema Data — heritagestonebridge.com
 // Supports GBP ranking factors: Relevance, Distance, Prominence
+
+const siteUrl = getSiteUrl();
 
 export const businessInfo = {
   // NAP - Must match GBP exactly
-  name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+  name: SITE_CONTACT.businessName,
   address: {
-    streetAddress: "9406 W Lake Mead Blvd, Suite 100",
-    addressLocality: "Las Vegas",
-    addressRegion: "NV",
-    postalCode: "89134",
-    addressCountry: "US",
+    ...SITE_CONTACT.address,
   },
   phone: {
-    display: "(702) 500-1942",
-    tel: "+17025001942",
+    display: SITE_CONTACT.phone.display,
+    tel: SITE_CONTACT.phone.tel,
   },
-  email: "homes@heyberkshire.com",
-  url: "https://heyberkshire.com",
+  email: SITE_CONTACT.email,
+  url: siteUrl,
 
   // Business Details
-  license: "S.0197614.LLC",
+  license: SITE_CONTACT.license,
   priceRange: "$$",
 
   // Hours - Match GBP exactly
-  hours: {
-    monday: "09:00-18:00",
-    tuesday: "09:00-18:00",
-    wednesday: "09:00-18:00",
-    thursday: "09:00-18:00",
-    friday: "09:00-18:00",
-    saturday: "10:00-16:00",
-    sunday: "By Appointment",
-  },
+  hours: SITE_CONTACT.hours,
 
   // Geo coordinates for distance ranking
-  geo: {
-    latitude: 36.1941,
-    longitude: -115.2678,
-  },
+  geo: SITE_CONTACT.geo,
 
   // Service areas - Start focused, expand with prominence
   serviceAreas: [
@@ -161,7 +151,7 @@ Dr. Jan's approach is simple: treat every client like family, know the market in
 
 55+ active adult community specialization covers Sun City Summerlin (Nevada's largest 55+ community), Sun City Anthem in Henderson, Del Webb Lake Las Vegas, and Solera at Anthem. Investment property expertise spans single-family rentals, multi-family opportunities, and short-term rental analysis across the Las Vegas metro area.
 
-Office located at 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134. Available Monday through Friday 9am-6pm, Saturday 10am-4pm, and Sunday by appointment. Call (702) 500-1942 for a free consultation or visit heyberkshire.com to start your Las Vegas real estate journey today.`,
+Office located at ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Available Monday through Friday 9am-6pm, Saturday 10am-4pm, and Sunday by appointment. Call ${SITE_CONTACT.phone.display} for a free consultation or visit ${siteUrl} to explore Heritage at Stonebridge and Summerlin 55+ living.`,
 };
 
 // FAQ Schema for GBP Q&A section
@@ -200,7 +190,7 @@ export const gbpFAQs = [
   },
   {
     question: "How do I schedule a consultation with Dr. Jan Duffy?",
-    answer: "Call or text (702) 500-1942 for immediate assistance, or email homes@heyberkshire.com. Office visits available at 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134. Monday-Friday 9am-6pm, Saturday 10am-4pm, Sunday by appointment.",
+    answer: `Call or text ${SITE_CONTACT.phone.display} for immediate assistance, or email ${SITE_CONTACT.email}. Office visits available at ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Monday-Friday 9am-6pm, Saturday 10am-4pm, Sunday by appointment.`,
   },
   {
     question: "Does Dr. Jan help with investment properties in Las Vegas?",
@@ -213,9 +203,9 @@ export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "@id": "https://heyberkshire.com/#organization",
+    "@id": `${siteUrl}/#organization`,
     name: businessInfo.name,
-    image: "https://heyberkshire.com/images/dr-jan-duffy.jpg",
+    image: `${siteUrl}/images/dr-jan-duffy.jpg`,
     url: businessInfo.url,
     telephone: businessInfo.phone.tel,
     email: businessInfo.email,

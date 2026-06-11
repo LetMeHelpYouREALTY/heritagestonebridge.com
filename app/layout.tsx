@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
+import { SITE_CONTACT } from "@/lib/site-contact";
 import { getSiteUrl } from "@/lib/site-url";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import CalendlyBadge from "@/components/calendly/CalendlyBadge";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getPageDomainConfig();
@@ -12,8 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(siteUrl),
-    title: `${config.neighborhood} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
-    description: config.description,
+    title: `${SITE_CONTACT.businessName} | Summerlin 55+`,
+    description: `${SITE_CONTACT.businessName} — guard-gated Lennar 55+ homes on Crossbridge Dr, Las Vegas, NV 89138. Dr. Jan Duffy, ${SITE_CONTACT.brokerage}.`,
     keywords: config.keywords,
     alternates: {
       canonical: "/",
@@ -49,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
+        <CalendlyBadge />
         <Analytics />
       </body>
     </html>

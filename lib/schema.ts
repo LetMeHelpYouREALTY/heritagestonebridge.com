@@ -1,11 +1,12 @@
 /**
- * Schema.org Structured Data Generators for heyberkshire.com
+ * Schema.org Structured Data Generators for heritagestonebridge.com
  * Following Google's 2025 Structured Data Guidelines
  *
  * @see https://schema.org
  * @see https://developers.google.com/search/docs/appearance/structured-data
  */
 
+import { SITE_CONTACT } from "@/lib/site-contact";
 import { siteConfig, agentInfo, officeInfo, agentStats } from "./site-config";
 
 // ============================================================================
@@ -65,11 +66,11 @@ const BASE_URL = siteConfig.url;
 
 // Social media profiles (to be updated with actual URLs)
 export const socialProfiles = {
-  facebook: "https://www.facebook.com/heyberkshire",
-  instagram: "https://www.instagram.com/heyberkshire",
+  facebook: "https://www.facebook.com/drjanduffy",
+  instagram: "https://www.instagram.com/drjanduffy",
   linkedin: "https://www.linkedin.com/in/drjanduffy",
-  tiktok: "https://www.tiktok.com/@heyberkshire",
-  youtube: "https://www.youtube.com/@heyberkshire",
+  tiktok: "https://www.tiktok.com/@drjanduffy",
+  youtube: "https://www.youtube.com/@drjanduffy",
 };
 
 // ============================================================================
@@ -85,10 +86,11 @@ export function generateRealEstateAgentSchema() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "@id": `${BASE_URL}#organization`,
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+    name: SITE_CONTACT.businessName,
     alternateName: [
-      "HeyBerkshire",
-      "BHHS Nevada Properties",
+      "Heritage Stonebridge",
+      "Heritage at Stonebridge",
+      SITE_CONTACT.brokerage,
       "Berkshire Hathaway HomeServices",
     ],
     url: BASE_URL,

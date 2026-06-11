@@ -3,13 +3,15 @@ import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import { Phone, Mail, MapPin, Clock, Calendar, CheckCircle, Star, Users, Shield } from "lucide-react";
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
+import GBPMapCard from "@/components/gbp/GBPMapCard";
+import { SITE_CONTACT } from "@/lib/site-contact";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Dr. Jan Duffy | Berkshire Hathaway HomeServices Las Vegas",
+  title: `Contact ${SITE_CONTACT.businessName}`,
   description:
-    "Contact Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Schedule an appointment, get directions, or call (702) 500-1942. Las Vegas, Henderson, Summerlin real estate expert.",
+    `Contact Dr. Jan Duffy at ${SITE_CONTACT.businessName}. Crossbridge Dr, Las Vegas, NV 89138. Schedule a tour or call (702) 500-1942.`,
   keywords: [
     "contact real estate agent Las Vegas",
     "Berkshire Hathaway contact",
@@ -24,16 +26,12 @@ const contactSchema = {
   "@type": "ContactPage",
   mainEntity: {
     "@type": "RealEstateAgent",
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
-    email: "homes@heyberkshire.com",
+    name: SITE_CONTACT.businessName,
+    telephone: SITE_CONTACT.phone.tel,
+    email: SITE_CONTACT.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "9406 W Lake Mead Blvd, Suite 100",
-      addressLocality: "Las Vegas",
-      addressRegion: "NV",
-      postalCode: "89134",
-      addressCountry: "US",
+      ...SITE_CONTACT.address,
     },
   },
 };
@@ -81,10 +79,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">Phone (Call or Text)</h3>
                     <a
-                      href="tel:+17025001942"
+                      href={SITE_CONTACT.phone.tel}
                       className="text-2xl font-bold text-blue-600 hover:text-blue-700"
                     >
-                      (702) 500-1942
+                      {SITE_CONTACT.phone.display}
                     </a>
                     <p className="text-sm text-slate-500 mt-1">
                       Available 7 days a week, 9am-6pm
@@ -97,10 +95,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">Email</h3>
                     <a
-                      href="mailto:homes@heyberkshire.com"
+                      href={`mailto:${SITE_CONTACT.email}`}
                       className="text-blue-600 hover:text-blue-700 font-medium"
                     >
-                      Homes@HeyBerkshire.com
+                      {SITE_CONTACT.email}
                     </a>
                     <p className="text-sm text-slate-500 mt-1">
                       Typically respond within 2 hours
@@ -113,10 +111,14 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">Office Address</h3>
                     <address className="not-italic text-slate-700">
-                      Berkshire Hathaway HomeServices<br />
-                      Nevada Properties<br />
-                      9406 W Lake Mead Blvd, Suite 100<br />
-                      Las Vegas, NV 89134
+                      {SITE_CONTACT.businessName}
+                      <br />
+                      {SITE_CONTACT.brokerage}
+                      <br />
+                      {SITE_CONTACT.address.streetAddress}
+                      <br />
+                      {SITE_CONTACT.address.addressLocality}, {SITE_CONTACT.address.addressRegion}{" "}
+                      {SITE_CONTACT.address.postalCode}
                     </address>
                   </div>
                 </div>
@@ -136,41 +138,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Google Map Embed */}
-              <div className="rounded-xl overflow-hidden shadow-md mb-4">
-                <iframe
-                  src="https://maps.google.com/maps?q=9406+W+Lake+Mead+Blvd+Suite+100,+Las+Vegas,+NV+89134&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="300"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Berkshire Hathaway HomeServices Nevada Properties - Office Location"
-                  className="w-full"
-                />
-              </div>
-              
-              {/* Map Action Buttons */}
-              <div className="flex gap-3 mb-8">
-                <a
-                  href="https://www.google.com/maps/dir//9406+W+Lake+Mead+Blvd+Suite+100,+Las+Vegas,+NV+89134"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
-                >
-                  <MapPin className="h-4 w-4 mr-2" />
-                  Get Directions
-                </a>
-                <a
-                  href="https://maps.google.com/?q=Berkshire+Hathaway+HomeServices+Nevada+Properties+9406+W+Lake+Mead+Blvd+Las+Vegas+NV"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-3 rounded-lg font-medium transition-colors"
-                >
-                  View on Google Maps
-                </a>
-              </div>
+              <GBPMapCard className="mb-8" />
 
               {/* Credentials */}
               <div className="p-4 bg-blue-50 rounded-lg">
@@ -272,13 +240,13 @@ export default function ContactPage() {
                 </div>
               </a>
               <a
-                href="mailto:homes@heyberkshire.com"
+                href={`mailto:${SITE_CONTACT.email}`}
                 className="flex items-center justify-center bg-slate-700 hover:bg-slate-800 text-white p-6 rounded-xl transition-colors"
               >
                 <Mail className="h-8 w-8 mr-4" />
                 <div className="text-left">
                   <div className="font-bold text-lg">Send Email</div>
-                  <div className="text-slate-300">Homes@HeyBerkshire.com</div>
+                  <div className="text-slate-300">{SITE_CONTACT.email}</div>
                 </div>
               </a>
             </div>
