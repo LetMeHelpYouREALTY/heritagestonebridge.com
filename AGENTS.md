@@ -5,9 +5,14 @@
 This repo is a single **Next.js 14 (App Router) real‑estate marketing/lead‑gen site** (package name `heritagestonebridge`, brand "Dr. Jan Duffy / Berkshire Hathaway HomeServices"). Standard commands live in `package.json` `scripts`; the notes below only cover non‑obvious caveats for working in the Cloud VM.
 
 ### Dependencies / install
-- Install **must** use `npm install --legacy-peer-deps`. A plain `npm install`/`npm ci` fails with `ERESOLVE`: the repo pins `@types/node@20.11.24`, but `vite@7` (pulled transitively by `vitest@4` / `@vitejs/plugin-react@5`) requires a newer `@types/node`. The update script already runs this on startup.
+- A root `.npmrc` sets `legacy-peer-deps=true`, so `npm install` / `npm ci` work directly. This is required: the repo pins `@types/node@20.11.24`, but `vite@7` (pulled transitively by `vitest@4` / `@vitejs/plugin-react@5`) requires a newer `@types/node`, which otherwise triggers an `ERESOLVE` failure. The startup update script also passes `--legacy-peer-deps` so installs succeed even if `.npmrc` is not present.
 - Both `package-lock.json` and `pnpm-lock.yaml` are committed; this setup uses **npm** (matches the `package.json` scripts and README).
 - `.nvmrc` pins Node 20, but only Node 22 is available in the VM and everything (type‑check, lint, dev server) works on Node 22 — installing Node 20 is not required.
+
+### Deployment (Vercel)
+- The production domain `heritagestonebridge.com` / `www.heritagestonebridge.com` is served by the Vercel project `hertage_stone_bridge_homes.com`, which is connected to this GitHub repo via **Vercel's native Git integration**. Pushes to `main` deploy to production and PR branches get preview deployments automatically — no GitHub Actions deploy step is needed (adding one would double‑deploy).
+- `vercel.json` sets `"framework": "nextjs"`, which overrides the project's (incorrectly detected) framework preset, so builds run `next build` correctly.
+- Some GitHub Actions workflows (`vercel-preview.yml`, `cloudflare-deploy.yml`) are CLI/token based and require `VERCEL_*` / `CLOUDFLARE_*` repo secrets; they are redundant with the native Vercel Git integration.
 
 ### Running the app
 - Dev server: `npm run dev` → http://localhost:3000 (Next.js, port 3000). This is the product; it renders fully with **no environment variables** configured. The committed `.env` only contains stale template vars plus a malformed/invalid `OPENROUTER_API_KEY`.
