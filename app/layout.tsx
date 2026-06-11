@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-import { headers } from "next/headers";
-import { getDomainConfig } from "@/lib/domain-config";
+import { getPageDomainConfig } from "@/lib/get-domain-config";
+import { getSiteUrl } from "@/lib/site-url";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const domain = headers().get("x-domain") || "";
-  const config = getDomainConfig(domain);
+  const config = await getPageDomainConfig();
+  const siteUrl = getSiteUrl();
+
   return {
+    metadataBase: new URL(siteUrl),
     title: `${config.neighborhood} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
     description: config.description,
     keywords: config.keywords,
+    alternates: {
+      canonical: "/",
+    },
     openGraph: {
       title: config.heroHeadline,
       description: config.description,
       type: "website",
+      url: siteUrl,
     },
   };
 }
@@ -25,6 +31,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={GeistSans.className}>
       <head>
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          strategy="afterInteractive"
+        />
         {/* WidgetTracker */}
         <Script id="widget-tracker" strategy="afterInteractive">{`
           (function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function()

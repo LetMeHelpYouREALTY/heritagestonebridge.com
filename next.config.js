@@ -20,7 +20,7 @@ const nextConfig = {
   // Performance optimizations
   swcMinify: true,
 
-  // Redirect non-www to www
+  // Redirect apex to www (canonical host for Search Console + GBP)
   async redirects() {
     return [
       {
@@ -28,10 +28,10 @@ const nextConfig = {
         has: [
           {
             type: 'host',
-            value: 'heyberkshire.com',
+            value: 'heritagestonebridge.com',
           },
         ],
-        destination: 'https://www.heyberkshire.com/:path*',
+        destination: 'https://www.heritagestonebridge.com/:path*',
         permanent: true,
       },
     ]
