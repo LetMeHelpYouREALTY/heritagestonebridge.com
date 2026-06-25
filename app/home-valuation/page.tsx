@@ -2,23 +2,18 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
+import { buildCalendlyUrl } from "@/lib/calendly";
+import { buildPageMetadata } from "@/lib/metadata";
+import { SITE_CONTACT } from "@/lib/site-contact";
 import Link from "next/link";
 import { Phone, CheckCircle, Home, TrendingUp, MapPin, Calculator, Clock, DollarSign } from "lucide-react";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title:
-    "Heritage at Stonebridge Home Valuation | What's Your Home Worth? | Dr. Jan Duffy",
-  description:
-    "Free CMA and home valuation for Heritage at Stonebridge and Summerlin 55+ resales. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 500-1942.",
-  keywords: [
-    "Heritage Stonebridge home value",
-    "Heritage at Stonebridge CMA",
-    "Summerlin 55+ home valuation",
-    "89138 home value",
-    "Dr Jan Duffy home valuation",
-  ],
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "Heritage at Stonebridge Home Valuation | What's Your Home Worth? | Dr. Jan Duffy",
+  description: `Free CMA and home valuation for Heritage at Stonebridge and Summerlin 55+ resales. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call ${SITE_CONTACT.phone.display}.`,
+  path: "/home-valuation",
+});
 
 // FAQ Schema for SEO
 const faqSchema = {
@@ -105,7 +100,7 @@ export default function HomeValuationPage() {
                   Book a consultation with Dr. Jan Duffy
                 </p>
               </div>
-              <CalendlyWidget url="showing" height="650px" />
+              <CalendlyWidget url={buildCalendlyUrl()} height="650px" />
               <p className="text-xs text-slate-500 text-center p-4 border-t border-slate-200">
                 No obligation. No pressure. Just accurate information from Berkshire Hathaway
                 HomeServices.

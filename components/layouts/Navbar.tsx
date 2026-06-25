@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE_CONTACT } from "@/lib/site-contact";
+import { telHref } from "@/lib/phone";
 import {
   HERITAGE_COMMUNITY_NAV,
   HERITAGE_BUYER_NAV,
@@ -109,7 +110,7 @@ export default function Navbar() {
             </div>
 
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <Link href={SITE_CONTACT.phone.tel} className="flex items-center gap-2">
+              <Link href={telHref(SITE_CONTACT.phone.tel)} className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
                 <span className="hidden xl:inline">{SITE_CONTACT.phone.display}</span>
                 <span className="xl:hidden">Call</span>
@@ -120,7 +121,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
             <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <Link href={SITE_CONTACT.phone.tel}>
+              <Link href={telHref(SITE_CONTACT.phone.tel)}>
                 <Phone className="h-4 w-4" />
               </Link>
             </Button>

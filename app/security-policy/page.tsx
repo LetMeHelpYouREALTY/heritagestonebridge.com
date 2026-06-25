@@ -1,13 +1,13 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
+import { SITE_CONTACT } from "@/lib/site-contact";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: 'Security Policy',
-  description: 'Security policy and responsible disclosure information for heritagestonebridge.com',
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
+export const metadata: Metadata = buildPageMetadata({
+  title: "Security Policy",
+  description:
+    "Security policy and responsible disclosure information for heritagestonebridge.com",
+  path: "/security-policy",
+});
 
 export default function SecurityPolicyPage() {
   return (
@@ -246,8 +246,8 @@ export default function SecurityPolicyPage() {
               </p>
               <p className="mb-2">
                 Email:{' '}
-                <a href="mailto:info@heritagestonebridge.com" className="text-blue-600 underline">
-                  info@heritagestonebridge.com
+                <a href={`mailto:${SITE_CONTACT.email}`} className="text-blue-600 underline">
+                  {SITE_CONTACT.email}
                 </a>
               </p>
               <p>

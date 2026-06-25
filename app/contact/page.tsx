@@ -5,28 +5,28 @@ import { Phone, Mail, MapPin, Clock, Calendar, CheckCircle, Star, Users, Shield 
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
 import GBPMapCard from "@/components/gbp/GBPMapCard";
 import { SITE_CONTACT } from "@/lib/site-contact";
+import { buildPageMetadata } from "@/lib/metadata";
+import { organizationId } from "@/lib/entity-ids";
+import { formatBusinessHoursLines, formatBusinessHoursShort } from "@/lib/hours";
+import { telHref } from "@/lib/phone";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: `Contact ${SITE_CONTACT.businessName}`,
-  description:
-    `Contact Dr. Jan Duffy at ${SITE_CONTACT.businessName}. Crossbridge Dr, Las Vegas, NV 89138. Schedule a tour or call (702) 500-1942.`,
-  keywords: [
-    "contact real estate agent Las Vegas",
-    "Berkshire Hathaway contact",
-    "Dr. Jan Duffy phone",
-    "Las Vegas realtor contact",
-    "schedule real estate appointment",
-  ],
-};
+  description: `Contact Dr. Jan Duffy at ${SITE_CONTACT.businessName}. Crossbridge Dr, Las Vegas, NV 89138. Schedule a tour or call ${SITE_CONTACT.phone.display}.`,
+  path: "/contact",
+  openGraphTitle: `Contact ${SITE_CONTACT.businessName}`,
+});
 
 const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   mainEntity: {
     "@type": "RealEstateAgent",
+    "@id": organizationId(),
     name: SITE_CONTACT.businessName,
+    url: SITE_CONTACT.url,
     telephone: SITE_CONTACT.phone.tel,
     email: SITE_CONTACT.email,
     address: {
@@ -79,13 +79,13 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">Phone (Call or Text)</h3>
                     <a
-                      href={SITE_CONTACT.phone.tel}
+                      href={telHref(SITE_CONTACT.phone.tel)}
                       className="text-2xl font-bold text-blue-600 hover:text-blue-700"
                     >
                       {SITE_CONTACT.phone.display}
                     </a>
                     <p className="text-sm text-slate-500 mt-1">
-                      Available 7 days a week, 9am-6pm
+                      {formatBusinessHoursShort()}
                     </p>
                   </div>
                 </div>
@@ -128,8 +128,12 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">Office Hours</h3>
                     <p className="text-slate-700">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday - Sunday: 10:00 AM - 4:00 PM
+                      {formatBusinessHoursLines().map((line) => (
+                        <span key={line}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
                     </p>
                     <p className="text-sm text-slate-500 mt-1">
                       Available by appointment outside these hours

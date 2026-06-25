@@ -11,20 +11,22 @@ import CalendlyBadge from "@/components/calendly/CalendlyBadge";
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getPageDomainConfig();
   const siteUrl = getSiteUrl();
+  const defaultTitle = `${SITE_CONTACT.businessName} | Summerlin 55+`;
+  const defaultDescription = `${SITE_CONTACT.businessName} — guard-gated Lennar 55+ homes on Crossbridge Dr, Las Vegas, NV 89138. Dr. Jan Duffy, ${SITE_CONTACT.brokerage}.`;
 
   return {
     metadataBase: new URL(siteUrl),
-    title: `${SITE_CONTACT.businessName} | Summerlin 55+`,
-    description: `${SITE_CONTACT.businessName} — guard-gated Lennar 55+ homes on Crossbridge Dr, Las Vegas, NV 89138. Dr. Jan Duffy, ${SITE_CONTACT.brokerage}.`,
-    keywords: config.keywords,
-    alternates: {
-      canonical: "/",
+    title: {
+      default: defaultTitle,
+      template: "%s",
     },
+    description: defaultDescription,
+    keywords: config.keywords,
     openGraph: {
       title: config.heroHeadline,
       description: config.description,
       type: "website",
-      url: siteUrl,
+      siteName: SITE_CONTACT.businessName,
     },
   };
 }

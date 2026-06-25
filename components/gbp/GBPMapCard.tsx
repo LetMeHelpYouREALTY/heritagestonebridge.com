@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Phone, MapPin, Navigation, Star, PenLine } from "lucide-react";
 import { SITE_CONTACT } from "@/lib/site-contact";
+import { telHref } from "@/lib/phone";
+import { telHref } from "@/lib/phone";
 import {
   buildDirectionsUrl,
   buildMapsEmbedUrl,
@@ -53,7 +55,7 @@ export default function GBPMapCard({
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Link
-          href={SITE_CONTACT.phone.tel}
+          href={telHref(SITE_CONTACT.phone.tel)}
           className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-3 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
         >
           <Phone className="mr-2 h-4 w-4 shrink-0" aria-hidden />

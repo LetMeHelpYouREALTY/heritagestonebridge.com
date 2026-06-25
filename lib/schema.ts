@@ -7,7 +7,9 @@
  */
 
 import { SITE_CONTACT } from "@/lib/site-contact";
-import { siteConfig, agentInfo, officeInfo, agentStats } from "./site-config";
+import { siteConfig, agentInfo, officeInfo } from "./site-config";
+import { openingHoursSpecification } from "./hours";
+import { getGbpAggregateRating } from "./gbp-ratings";
 
 // ============================================================================
 // Types
@@ -62,6 +64,8 @@ export interface SeniorCommunityData {
 // Constants
 // ============================================================================
 
+import { organizationId } from "./entity-ids";
+
 const BASE_URL = siteConfig.url;
 
 // Social media profiles (to be updated with actual URLs)
@@ -85,7 +89,7 @@ export function generateRealEstateAgentSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "@id": `${BASE_URL}#organization`,
+    "@id": organizationId(),
     name: SITE_CONTACT.businessName,
     alternateName: [
       "Heritage Stonebridge",
@@ -97,7 +101,7 @@ export function generateRealEstateAgentSchema() {
     logo: `${BASE_URL}/images/dr-jan-duffy.jpg`,
     image: `${BASE_URL}/images/dr-jan-duffy.jpg`,
     description: siteConfig.description,
-    telephone: "+1-702-500-1942",
+    telephone: agentInfo.phoneTel,
     email: agentInfo.email,
     priceRange: "$385K - $10M+",
     address: {
@@ -137,14 +141,7 @@ export function generateRealEstateAgentSchema() {
         name: "Green Valley",
       },
     ],
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "08:00",
-        closes: "20:00",
-      },
-    ],
+    openingHoursSpecification: openingHoursSpecification(),
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "Real Estate License",
@@ -171,13 +168,17 @@ export function generateRealEstateAgentSchema() {
         sameAs: "https://en.wikipedia.org/wiki/Berkshire_Hathaway_HomeServices",
       },
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: agentStats.averageRating.toString(),
-      reviewCount: agentStats.reviewCount.toString(),
-      bestRating: "5",
-      worstRating: "1",
-    },
+    ...(getGbpAggregateRating()
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: getGbpAggregateRating()!.ratingValue,
+            reviewCount: getGbpAggregateRating()!.reviewCount,
+            bestRating: "5",
+            worstRating: "1",
+          },
+        }
+      : {}),
     knowsAbout: [
       "Las Vegas real estate",
       "Henderson homes",
@@ -248,7 +249,7 @@ export function generateWebSiteSchema() {
     url: BASE_URL,
     description: siteConfig.description,
     publisher: {
-      "@id": `${BASE_URL}#organization`,
+      "@id": organizationId(),
     },
     potentialAction: {
       "@type": "SearchAction",
@@ -305,17 +306,28 @@ export function generateAggregateRatingSchema(
  * Generate Review schema for individual testimonials
  */
 export function generateReviewSchema(reviews: ReviewItem[]) {
+  const aggregate = getGbpAggregateRating();
+
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "@id": `${BASE_URL}#organization`,
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    aggregateRating: generateAggregateRatingSchema(
-      agentStats.averageRating,
-      agentStats.reviewCount
-    ),
+    "@id": organizationId(),
+    name: SITE_CONTACT.businessName,
+    ...(aggregate
+      ? {
+          aggregateRating: generateAggregateRatingSchema(
+            Number.parseFloat(aggregate.ratingValue),
+            Number.parseInt(aggregate.reviewCount, 10),
+          ),
+        }
+      : {}),
     review: reviews.map((review) => ({
       "@type": "Review",
+      itemReviewed: {
+        "@type": "RealEstateAgent",
+        "@id": organizationId(),
+        name: SITE_CONTACT.businessName,
+      },
       author: {
         "@type": "Person",
         name: review.author,
@@ -518,7 +530,7 @@ export function generateServiceSchema(service: {
     description: service.description,
     url: service.url.startsWith("http") ? service.url : `${BASE_URL}${service.url}`,
     provider: {
-      "@id": `${BASE_URL}#organization`,
+      "@id": organizationId(),
     },
     areaServed: service.areaServed || ["Las Vegas", "Henderson", "Summerlin", "North Las Vegas"],
     serviceType: "Real Estate Services",
@@ -546,7 +558,7 @@ export function generateWebPageSchema(page: {
       "@id": `${BASE_URL}#website`,
     },
     about: {
-      "@id": `${BASE_URL}#organization`,
+      "@id": organizationId(),
     },
     ...(page.datePublished && { datePublished: page.datePublished }),
     ...(page.dateModified && { dateModified: page.dateModified }),

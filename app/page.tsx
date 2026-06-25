@@ -10,24 +10,18 @@ import {
   generateFAQSchema,
   generateRealEstateAgentSchema,
 } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/data";
 import { HERITAGE_COMMUNITY_NAV, HERITAGE_BUYER_NAV } from "@/lib/heritage-stonebridge/routes";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title:
     "Heritage at Stonebridge Homes for Sale | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
-  description:
-    "Lennar-built guard-gated 55+ community in Summerlin West (89138). 421 homes, resort amenities, near Downtown Summerlin. Dr. Jan Duffy, BHHS. Call (702) 500-1942.",
-  keywords: [
-    "Heritage at Stonebridge",
-    "Heritage Stonebridge homes for sale",
-    "Summerlin 55+ communities",
-    "guard-gated 55+ Las Vegas",
-    "Lennar Heritage Stonebridge",
-  ],
-};
+  description: `Lennar-built guard-gated 55+ community in Summerlin West (89138). 421 homes, resort amenities, near Downtown Summerlin. Dr. Jan Duffy, BHHS. Call ${SITE_CONTACT.phone.display}.`,
+  path: "/",
+});
 
 const homepageFaqs = HERITAGE_FAQS.map((f) => ({
   question: f.question,

@@ -1,5 +1,9 @@
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { getSiteUrl } from "@/lib/site-url";
+import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/data";
+import { openingHoursSpecification } from "@/lib/hours";
+import { getGbpAggregateRating } from "@/lib/gbp-ratings";
+import { organizationId } from "@/lib/entity-ids";
 
 // Google Business Profile Schema Data — heritagestonebridge.com
 // Supports GBP ranking factors: Relevance, Distance, Prominence
@@ -29,45 +33,62 @@ export const businessInfo = {
   // Geo coordinates for distance ranking
   geo: SITE_CONTACT.geo,
 
-  // Service areas - Start focused, expand with prominence
+  // Service areas — Heritage at Stonebridge / Summerlin West first
   serviceAreas: [
-    // Primary (immediate city)
-    "Las Vegas, NV",
     "Summerlin, NV",
-    // Secondary (close ZIPs)
+    "Las Vegas, NV",
     "Henderson, NV",
-    "North Las Vegas, NV",
-    // Tertiary (county expansion)
     "Clark County, NV",
   ],
 
   // Categories - Primary + Secondary for GBP
   categories: {
     primary: "Real Estate Agent",
-    secondary: [
-      "Real Estate Agency",
-      "Real Estate Consultant",
-    ],
+    secondary: ["Real Estate Agency", "Real Estate Consultant"],
   },
 
-  // Services - Each creates searchable fields in GBP
+  // Services — hyperlocal to Heritage Stonebridge / Summerlin 55+
   services: [
-    // Core Services
-    { name: "Buyer Representation", description: "Full-service home buying assistance" },
-    { name: "Seller Representation", description: "List and sell your home for top dollar" },
-    { name: "Luxury Home Sales", description: "High-end properties $1M+" },
-    // Niche Services (trigger intent phrases)
-    { name: "California Relocation Services", description: "Helping CA buyers transition to Las Vegas" },
-    { name: "55+ Community Specialist", description: "Sun City, Anthem, Del Webb communities" },
-    { name: "First-Time Home Buyer Guidance", description: "FHA, VA, down payment assistance" },
-    { name: "Probate Real Estate Sales", description: "Estate and probate property transactions" },
-    { name: "Divorce Real Estate Sales", description: "Neutral representation for marital asset division" },
-    { name: "Relocation Services", description: "Corporate and individual relocation assistance" },
-    { name: "Investment Property Consulting", description: "Rental properties and investment analysis" },
-    { name: "New Construction Representation", description: "Builder negotiations and buyer protection" },
-    { name: "Military/VA Home Buying", description: "Specialized service for veterans" },
-    { name: "Downsizing Consultation", description: "Transition to smaller, maintenance-free living" },
-    { name: "Luxury Condo Sales", description: "High-rise and resort-style condominiums" },
+    {
+      name: "Heritage at Stonebridge Buyer Representation",
+      description:
+        "Tours, offers, and negotiation for resale and new-build homes in this guard-gated 55+ community.",
+    },
+    {
+      name: "Heritage at Stonebridge Seller Representation",
+      description: "Pricing, marketing, and negotiation for listings in Summerlin West 89138.",
+    },
+    {
+      name: "Summerlin 55+ Community Specialist",
+      description:
+        "Compare Heritage at Stonebridge with Sun City Summerlin, Trilogy, and other active-adult options.",
+    },
+    {
+      name: "Guard-Gated Community Specialist",
+      description: "Staffed gate access, visitor policies, and lifestyle fit for Heritage buyers.",
+    },
+    {
+      name: "Downsizing Consultation",
+      description:
+        "Transition from a larger Las Vegas home to maintenance-friendly 55+ living in Summerlin West.",
+    },
+    {
+      name: "Home Valuation / CMA",
+      description:
+        "Current market snapshot for Heritage at Stonebridge and nearby Summerlin 55+ resales.",
+    },
+    {
+      name: "California Relocation to Las Vegas",
+      description: "Help out-of-state buyers evaluate Nevada moves and Summerlin West neighborhoods.",
+    },
+    {
+      name: "New Construction Buyer Representation",
+      description: "Lennar and resale inventory guidance with buyer advocacy through closing.",
+    },
+    {
+      name: "First-Time Buyer Guidance",
+      description: "Financing overview, inspections, and contract education for 55+ purchasers.",
+    },
   ],
 
   // Attributes for GBP - Fill out ALL available
@@ -129,81 +150,59 @@ export const businessInfo = {
   paymentAccepted: ["Credit Card", "Check", "Wire Transfer"],
 
   // Year established
-  foundingDate: "2010",
+  foundingDate: "2008",
 };
 
-// 750-word GBP Description (3 sections)
+/** GBP dashboard description (≤750 characters) + long-form sections for /google-business */
+export const gbpShortDescription =
+  "Your local guide to Heritage at Stonebridge — Lennar's guard-gated 55+ community in Summerlin West (89138). Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties (NV License S.0197614.LLC), helps buyers and sellers with resale and new-build homes, HOA questions, and fair comparisons to Sun City Summerlin and other Summerlin active-adult neighborhoods. Downsizing, relocating to Las Vegas, or selling inside Heritage? Get MLS-backed pricing, private tours, and straightforward advice. (702) 500-1942 • DrDuffySells@HeritageStonebridge.com • heritagestonebridge.com. Mon–Fri 9–6, Sat 10–4, Sun by appointment.";
+
 export const gbpDescription = {
-  // Section 1: Who you are/mission (~250 words)
-  whoWeAre: `Dr. Jan Duffy is a trusted REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, serving the Las Vegas real estate market since 2008. Backed by Warren Buffett's Berkshire Hathaway—the most recognized name in real estate—Dr. Jan combines local expertise with world-class resources to deliver exceptional results for buyers and sellers alike.
+  whoWeAre: `Heritage Stonebridge | Homes By Dr. Jan Duffy is the local real estate office supporting buyers and sellers at Heritage at Stonebridge — Lennar's guard-gated 55+ community in Summerlin West, Las Vegas (${HERITAGE_COMMUNITY.postalCode}).
 
-With $127 million in closed transactions and hundreds of satisfied clients, Dr. Jan has earned a reputation for integrity, market knowledge, and personalized service. Whether you're a first-time buyer navigating the process, a luxury home seeker exploring The Ridges or MacDonald Highlands, or a California family relocating for Nevada's tax advantages, Dr. Jan provides the guidance you need to make confident real estate decisions.`,
+Dr. Jan Duffy, REALTOR® (License ${SITE_CONTACT.license}) with ${SITE_CONTACT.brokerage}, focuses on active-adult moves: downsizing, Nevada relocation, resale listings, and new-build opportunities inside Heritage's ${HERITAGE_COMMUNITY.homeCount} homes across ${HERITAGE_COMMUNITY.floorPlanCount} floor plans.
 
-  // Section 2: What/why - Value proposition (~250 words)
-  whatWeDo: `What sets Dr. Jan apart is a commitment to education and advocacy. Clients receive comprehensive market analysis, expert negotiation, and honest advice—not sales pressure. As a Berkshire Hathaway HomeServices agent, Dr. Jan offers access to a global network of 50,000+ agents, world-class marketing for sellers, and off-market opportunities for buyers.
+Community highlights include ${HERITAGE_COMMUNITY.security.toLowerCase()}, an ${HERITAGE_COMMUNITY.clubhouseSqFt.toLocaleString()} sq. ft. clubhouse, resort-style pool, pickleball, and quick access to Downtown Summerlin and Red Rock Canyon.`,
 
-Specialized services include: buyer and seller representation, luxury home sales, 55+ active adult community expertise (Sun City Summerlin, Sun City Anthem, Del Webb Lake Las Vegas), California relocation assistance, probate and divorce real estate, investment property consulting, new construction representation, and first-time buyer programs including FHA, VA, and down payment assistance guidance.
+  whatWeDo: `Dr. Jan provides buyer and seller representation, comparative guidance versus larger 55+ options like Sun City Summerlin, HOA and lifestyle education, and pricing based on current MLS data — not pressure.
 
-Dr. Jan's approach is simple: treat every client like family, know the market inside and out, and never stop working until the deal closes successfully.`,
+Search live inventory at ${siteUrl}/homes-for-sale, request a home valuation at ${siteUrl}/home-valuation, or schedule a consultation at ${siteUrl}/contact. Property-search leads flow through RealScout; appointments through Calendly — both connect to Dr. Jan's client follow-up workflow.
 
-  // Section 3: Where - Areas served (~250 words)
-  whereWeServe: `Dr. Jan serves the entire Las Vegas Valley with specialized knowledge of Las Vegas, Summerlin, Henderson, North Las Vegas, and all of Clark County. Neighborhood expertise includes Summerlin's master-planned communities, Henderson's Green Valley and Inspirada, the luxury enclaves of The Ridges and Southern Highlands, family-friendly Centennial Hills and Skye Canyon, and affordable options in Mountains Edge and North Las Vegas.
+Every consultation is education-first: understand guard-gated access, age-restricted rules, monthly HOA context, and which Heritage collection fits your budget before you write an offer.`,
 
-55+ active adult community specialization covers Sun City Summerlin (Nevada's largest 55+ community), Sun City Anthem in Henderson, Del Webb Lake Las Vegas, and Solera at Anthem. Investment property expertise spans single-family rentals, multi-family opportunities, and short-term rental analysis across the Las Vegas metro area.
+  whereWeServe: `Primary focus: Heritage at Stonebridge and Summerlin West (${HERITAGE_COMMUNITY.postalCode}). Secondary: Summerlin, Las Vegas, Henderson, and Clark County for buyers comparing multiple 55+ communities.
 
-Office located at ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Available Monday through Friday 9am-6pm, Saturday 10am-4pm, and Sunday by appointment. Call ${SITE_CONTACT.phone.display} for a free consultation or visit ${siteUrl} to explore Heritage at Stonebridge and Summerlin 55+ living.`,
+Office: ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Hours: Monday–Friday 9am–6pm, Saturday 10am–4pm, Sunday by appointment.
+
+Call ${SITE_CONTACT.phone.display}, email ${SITE_CONTACT.email}, or visit ${siteUrl} for community guides, floor plans, HOA overview, and side-by-side comparisons with other Summerlin active-adult neighborhoods.`,
 };
 
-// FAQ Schema for GBP Q&A section
+// FAQ content aligned with site + GBP Q&A tab
 export const gbpFAQs = [
+  ...HERITAGE_FAQS,
   {
-    question: "What areas does Dr. Jan Duffy serve in Las Vegas?",
-    answer: "Dr. Jan serves all of Las Vegas, Summerlin, Henderson, North Las Vegas, and Clark County. Specialized neighborhood expertise includes Summerlin, Green Valley, The Ridges, Southern Highlands, Centennial Hills, Skye Canyon, Inspirada, and Mountains Edge.",
-  },
-  {
-    question: "Does Dr. Jan help buyers relocating from California?",
-    answer: "Yes! California relocation is a specialty. Dr. Jan helps CA buyers understand Nevada's 0% state income tax advantage, compare home values (40-60% lower than comparable CA properties), and find the perfect Las Vegas neighborhood. Call (702) 500-1942 for California relocation assistance.",
-  },
-  {
-    question: "What 55+ communities does Dr. Jan specialize in?",
-    answer: "Dr. Jan specializes in Sun City Summerlin (Nevada's largest 55+ community with 7,700+ homes), Sun City Anthem in Henderson, Del Webb Lake Las Vegas, and Solera at Anthem. Each community offers different amenities and price points for active adult living.",
-  },
-  {
-    question: "Does Berkshire Hathaway HomeServices help with new construction?",
-    answer: "Yes! Dr. Jan provides free buyer representation for new construction purchases from builders like Toll Brothers, Lennar, and Century Communities. The builder pays the commission, but Dr. Jan works exclusively for you—protecting your interests during the build process.",
-  },
-  {
-    question: "How does Dr. Jan help with probate or divorce real estate sales?",
-    answer: "Dr. Jan handles sensitive transactions with discretion and professionalism. For probate sales, she coordinates with estate attorneys and ensures court compliance. For divorce sales, she provides neutral representation and works with both parties' attorneys. Call (702) 500-1942 for a confidential consultation.",
-  },
-  {
-    question: "What is the average home price in Las Vegas in 2026?",
-    answer: "As of January 2026, the Las Vegas median home price is $450,000, up 4.2% year-over-year. Henderson's median is slightly higher at $485,000. Luxury communities like Summerlin average $625,000, while The Ridges averages $2.5 million. Contact Dr. Jan for current market data.",
-  },
-  {
-    question: "Does Dr. Jan work with first-time home buyers?",
-    answer: "Absolutely! Dr. Jan guides first-time buyers through every step, including pre-approval, loan programs (FHA 3.5% down, VA 0% down, conventional options), Nevada down payment assistance programs, and new construction incentives. Free buyer consultations available.",
-  },
-  {
-    question: "Why choose Berkshire Hathaway HomeServices over other agencies?",
-    answer: "Berkshire Hathaway HomeServices is backed by Warren Buffett's Berkshire Hathaway Inc.—the only real estate brand with this level of financial stability and trust. You get a global network of 50,000+ agents, world-class marketing, and a name synonymous with integrity.",
+    question: "How does Heritage at Stonebridge compare to Sun City Summerlin?",
+    answer:
+      "Heritage is smaller (421 homes), Lennar-built, and staff guard-gated. Sun City Summerlin is larger with extensive golf and clubs. Dr. Jan helps you compare lifestyle, HOA, and resale fit — see heritagestonebridge.com/vs-sun-city-summerlin.",
   },
   {
     question: "How do I schedule a consultation with Dr. Jan Duffy?",
-    answer: `Call or text ${SITE_CONTACT.phone.display} for immediate assistance, or email ${SITE_CONTACT.email}. Office visits available at ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Monday-Friday 9am-6pm, Saturday 10am-4pm, Sunday by appointment.`,
+    answer: `Call or text ${SITE_CONTACT.phone.display}, email ${SITE_CONTACT.email}, or book online at ${siteUrl}/contact. Office visits at ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Monday–Friday 9am–6pm, Saturday 10am–4pm, Sunday by appointment.`,
   },
   {
-    question: "Does Dr. Jan help with investment properties in Las Vegas?",
-    answer: "Yes! Dr. Jan provides investment property consulting including rental property analysis, cap rate calculations, short-term rental regulations, and multi-family opportunities across the Las Vegas Valley. Contact (702) 500-1942 for investment property guidance.",
+    question: "Does Dr. Jan help sellers in Heritage at Stonebridge?",
+    answer: `Yes. Dr. Jan lists and markets homes in Heritage and other Summerlin 55+ communities with ${SITE_CONTACT.brokerage}. Visit ${siteUrl}/selling-guide to start.`,
   },
 ];
 
 // Generate LocalBusiness Schema
 export function generateLocalBusinessSchema() {
+  const aggregate = getGbpAggregateRating();
+
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "@id": `${siteUrl}/#organization`,
+    "@id": organizationId(),
     name: businessInfo.name,
     image: `${siteUrl}/images/dr-jan-duffy.jpg`,
     url: businessInfo.url,
@@ -219,18 +218,16 @@ export function generateLocalBusinessSchema() {
       latitude: businessInfo.geo.latitude,
       longitude: businessInfo.geo.longitude,
     },
-    openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "16:00" },
-    ],
-    areaServed: businessInfo.serviceAreas.map((area) => ({
-      "@type": "City",
-      name: area,
-    })),
+    openingHoursSpecification: openingHoursSpecification(),
+    areaServed: businessInfo.serviceAreas.map((area) => {
+      if (area.startsWith("Clark County")) {
+        return { "@type": "AdministrativeArea", name: area };
+      }
+      if (area.includes("Summerlin")) {
+        return { "@type": "Place", name: area };
+      }
+      return { "@type": "City", name: area };
+    }),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Real Estate Services",
@@ -243,17 +240,17 @@ export function generateLocalBusinessSchema() {
         },
       })),
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "200",
-      bestRating: "5",
-    },
-    sameAs: [
-      "https://www.facebook.com/drjanduffy",
-      "https://www.instagram.com/drjanduffy",
-      "https://www.linkedin.com/in/drjanduffy",
-    ],
+    ...(aggregate
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: aggregate.ratingValue,
+            reviewCount: aggregate.reviewCount,
+            bestRating: "5",
+          },
+        }
+      : {}),
+    sameAs: businessInfo.socialProfiles,
   };
 }
 

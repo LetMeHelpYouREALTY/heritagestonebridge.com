@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { SITE_CONTACT } from "@/lib/site-contact";
+import { telHref } from "@/lib/phone";
 import {
   HERITAGE_COMMUNITY_NAV,
   HERITAGE_BUYER_NAV,
@@ -133,7 +134,7 @@ export default function Footer() {
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                 <Link
-                  href={SITE_CONTACT.phone.tel}
+                  href={telHref(SITE_CONTACT.phone.tel)}
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
                   {SITE_CONTACT.phone.display}

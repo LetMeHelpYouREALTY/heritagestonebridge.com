@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   ],
 };
 
+import { SITE_CONTACT } from "@/lib/site-contact";
+import { getRealScoutAgentId } from "@/lib/realscout-config";
+
 const listingsSchema = {
   "@context": "https://schema.org",
   "@type": "RealEstateListing",
@@ -40,8 +43,8 @@ const listingsSchema = {
   description: "Live MLS property listings for Las Vegas, Henderson, and Summerlin homes for sale",
   provider: {
     "@type": "RealEstateAgent",
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
+    name: SITE_CONTACT.businessName,
+    telephone: SITE_CONTACT.phone.tel,
   },
   areaServed: [
     { "@type": "City", name: "Las Vegas, NV" },
@@ -107,6 +110,8 @@ const neighborhoods = [
 ];
 
 export default function ListingsPage() {
+  const agentId = getRealScoutAgentId();
+
   return (
     <>
       <script
@@ -142,7 +147,7 @@ export default function ListingsPage() {
               <div
                 dangerouslySetInnerHTML={{
                   __html: `<realscout-office-listings 
-                    agent-encoded-id="QWdlbnQtMjI1MDUw" 
+                    agent-encoded-id="${agentId}" 
                     sort-order="NEWEST" 
                     listing-status="For Sale" 
                     property-types=",SFR,MF,TC"

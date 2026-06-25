@@ -22,37 +22,28 @@ import {
   businessInfo,
   gbpDescription,
   gbpFAQs,
+  gbpShortDescription,
   generateLocalBusinessSchema,
   generateFAQSchema,
 } from "@/lib/gbp-schema";
 import GBPMapCard from "@/components/gbp/GBPMapCard";
-import { getSiteUrl } from "@/lib/site-url";
+import { buildPageMetadata } from "@/lib/metadata";
+import { getGbpAggregateRating } from "@/lib/gbp-ratings";
 import { buildWriteReviewUrl } from "@/lib/reviews";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: `${businessInfo.name} | Google Business Profile`,
-  description:
-    `${businessInfo.name} — Crossbridge Dr, Las Vegas, NV 89138. Guard-gated Heritage Stonebridge 55+ real estate with Dr. Jan Duffy. Call (702) 500-1942.`,
-  keywords: [
-    "Dr. Jan Duffy realtor",
-    "Las Vegas real estate agent",
-    "Berkshire Hathaway HomeServices Las Vegas",
-    "Summerlin realtor",
-    "Henderson real estate agent",
-    "55+ communities Las Vegas",
-    "California relocation Las Vegas",
-  ],
-  openGraph: {
-    title: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    description: "Trusted Las Vegas REALTOR® serving since 2008. Summerlin, Henderson, luxury homes, 55+ communities.",
-    url: `${getSiteUrl()}/google-business`,
-    type: "profile",
-  },
-};
+  description: `${businessInfo.name} — Crossbridge Dr, Las Vegas, NV 89138. Guard-gated Heritage Stonebridge 55+ real estate with Dr. Jan Duffy. Call ${businessInfo.phone.display}.`,
+  path: "/google-business",
+  openGraphTitle: businessInfo.name,
+  openGraphDescription:
+    "Trusted Las Vegas REALTOR® serving Heritage at Stonebridge and Summerlin 55+ buyers and sellers.",
+});
 
 export default function GoogleBusinessPage() {
   const localBusinessSchema = generateLocalBusinessSchema();
   const faqSchema = generateFAQSchema();
+  const gbpRating = getGbpAggregateRating();
 
   return (
     <>
@@ -113,8 +104,14 @@ export default function GoogleBusinessPage() {
                       <Star key={star} className="h-8 w-8 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-3xl font-bold mb-2">4.9 / 5.0</p>
-                  <p className="text-blue-200 mb-6">200+ Client Reviews</p>
+                {gbpRating ? (
+                  <>
+                    <p className="text-3xl font-bold mb-2">{gbpRating.ratingValue} / 5.0</p>
+                    <p className="text-blue-200 mb-6">{gbpRating.reviewCount} Client Reviews</p>
+                  </>
+                ) : (
+                  <p className="text-blue-200 mb-6">Client reviews on Google Business Profile</p>
+                )}
                   <a
                     href={`tel:${businessInfo.phone.tel}`}
                     className="inline-block w-full bg-blue-600 hover:bg-blue-500 text-white px-6 py-4 rounded-lg font-bold text-lg transition-colors"
@@ -153,7 +150,20 @@ export default function GoogleBusinessPage() {
             <GBPMapCard />
           </section>
 
-          {/* About - 750 Word Description Structure */}
+          {/* GBP description (dashboard paste) */}
+          <section className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
+              Google Business Profile Description
+            </h2>
+            <p className="text-center text-slate-600 mb-6 text-sm">
+              Copy this into your GBP dashboard (750-character limit).
+            </p>
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+              <p className="text-slate-700 leading-relaxed whitespace-pre-line">{gbpShortDescription}</p>
+            </div>
+          </section>
+
+          {/* About — long-form mirror of GBP */}
           <section className="max-w-4xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">About Dr. Jan Duffy</h2>
             
@@ -207,41 +217,41 @@ export default function GoogleBusinessPage() {
           <section className="max-w-5xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Service Areas</h2>
             <div className="bg-blue-50 rounded-xl p-8">
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="font-bold text-slate-900 mb-3">Primary Markets</h3>
+                  <h3 className="font-bold text-slate-900 mb-3">Primary</h3>
                   <ul className="space-y-2">
-                    <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-blue-600" /> Las Vegas, NV</li>
+                    <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-blue-600" /> Heritage at Stonebridge (89138)</li>
                     <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-blue-600" /> Summerlin, NV</li>
+                    <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-blue-600" /> Las Vegas, NV</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 mb-3">Secondary Markets</h3>
+                  <h3 className="font-bold text-slate-900 mb-3">Secondary</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-blue-600" /> Henderson, NV</li>
-                    <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-blue-600" /> North Las Vegas, NV</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-3">Full Coverage</h3>
-                  <ul className="space-y-2">
                     <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-blue-600" /> Clark County, NV</li>
-                    <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-blue-600" /> All Las Vegas Valley</li>
                   </ul>
                 </div>
               </div>
-              
-              {/* Neighborhood Specialties */}
+
               <div className="mt-8 pt-8 border-t border-blue-200">
-                <h3 className="font-bold text-slate-900 mb-4">Neighborhood Expertise</h3>
+                <h3 className="font-bold text-slate-900 mb-4">Heritage &amp; Summerlin 55+ Guides</h3>
                 <div className="flex flex-wrap gap-2">
-                  {["Summerlin", "Henderson", "Green Valley", "The Ridges", "Southern Highlands", "Centennial Hills", "Skye Canyon", "Inspirada", "Mountains Edge", "North Las Vegas"].map((area) => (
+                  {[
+                    { label: "Heritage at Stonebridge", href: "/55-plus-communities/heritage-stonebridge" },
+                    { label: "Homes for Sale", href: "/homes-for-sale" },
+                    { label: "Floor Plans", href: "/floor-plans" },
+                    { label: "HOA & Fees", href: "/hoa-fees" },
+                    { label: "vs Sun City Summerlin", href: "/vs-sun-city-summerlin" },
+                    { label: "Selling Guide", href: "/selling-guide" },
+                  ].map((link) => (
                     <Link
-                      key={area}
-                      href={`/neighborhoods/${area.toLowerCase().replace(/\s+/g, "-")}`}
+                      key={link.href}
+                      href={link.href}
                       className="bg-white px-3 py-1 rounded-full text-sm text-slate-700 hover:bg-blue-100 transition-colors"
                     >
-                      {area}
+                      {link.label}
                     </Link>
                   ))}
                 </div>
