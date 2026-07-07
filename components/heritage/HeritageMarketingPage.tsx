@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { HERITAGE_COMMUNITY } from "@/lib/heritage-stonebridge/data";
+import { canonicalUrl } from "@/lib/metadata";
 import type { HeritagePageContent, HeritageSection } from "@/lib/heritage-stonebridge/types";
 
 type HeritageMarketingPageProps = {
@@ -154,7 +155,7 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
         typeof content.metadata.description === "string"
           ? content.metadata.description
           : content.subtitle,
-      url: content.slug,
+      url: canonicalUrl(content.slug),
       dateModified: content.lastUpdated ?? "2026-06-11",
     }),
   ];

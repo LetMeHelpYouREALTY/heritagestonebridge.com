@@ -708,9 +708,9 @@ export const faqPage: HeritagePageContent = {
 export const homesForSalePage: HeritagePageContent = {
   slug: "/homes-for-sale",
   metadata: {
-    title: baseTitle("Homes for Sale"),
+    title: baseTitle("MLS Listings — Heritage Stonebridge Homes for Sale"),
     description:
-      "Search Heritage at Stonebridge homes for sale in Summerlin 89138. MLS listings, tours, and alerts with Dr. Jan Duffy, BHHS.",
+      "Live MLS search for Heritage at Stonebridge 55+ homes in Summerlin 89138. Guard-gated Lennar resales, tours, and listing alerts with Dr. Jan Duffy, BHHS.",
   },
   breadcrumbs: crumbs({ name: "Homes for Sale", url: "/homes-for-sale" }),
   h1: "Heritage at Stonebridge Homes for Sale",

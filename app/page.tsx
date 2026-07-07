@@ -9,8 +9,9 @@ import {
   combineSchemas,
   generateFAQSchema,
   generateRealEstateAgentSchema,
+  generateWebPageSchema,
 } from "@/lib/schema";
-import { buildPageMetadata } from "@/lib/metadata";
+import { buildPageMetadata, canonicalUrl } from "@/lib/metadata";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/data";
 import { HERITAGE_COMMUNITY_NAV, HERITAGE_BUYER_NAV } from "@/lib/heritage-stonebridge/routes";
@@ -18,7 +19,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
   title:
-    "Heritage at Stonebridge Homes for Sale | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
+    "Heritage at Stonebridge | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
   description: `Lennar-built guard-gated 55+ community in Summerlin West (89138). 421 homes, resort amenities, near Downtown Summerlin. Dr. Jan Duffy, BHHS. Call ${SITE_CONTACT.phone.display}.`,
   path: "/",
 });
@@ -31,7 +32,13 @@ const homepageFaqs = HERITAGE_FAQS.map((f) => ({
 export default function HomePage() {
   const pageSchema = combineSchemas(
     generateRealEstateAgentSchema(),
-    generateFAQSchema(homepageFaqs)
+    generateWebPageSchema({
+      name: "Heritage at Stonebridge | Guard-Gated 55+ Summerlin",
+      description: `Lennar guard-gated 55+ community in Summerlin West (89138). Dr. Jan Duffy, ${SITE_CONTACT.brokerage}.`,
+      url: canonicalUrl("/"),
+      dateModified: "July 2026",
+    }),
+    generateFAQSchema(homepageFaqs),
   );
 
   return (
@@ -50,12 +57,12 @@ export default function HomePage() {
               Guard-Gated 55+ in Summerlin West
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Heritage Stonebridge Homes for Sale
+              Heritage at Stonebridge — Guard-Gated 55+ Summerlin
             </h1>
             <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
               Lennar&apos;s boutique active adult community in zip 89138 — staff
               guard-gated security, modern floor plans, and minutes from Downtown
-              Summerlin.
+              Summerlin. Search live MLS listings on our homes-for-sale page.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <Link

@@ -40,7 +40,8 @@ export function buildPageMetadata({
     title,
     description,
     alternates: {
-      canonical: normalizedPath,
+      // Absolute URL avoids www/apex duplicate clusters in Search Console
+      canonical: url,
     },
     openGraph: {
       title: openGraphTitle ?? title,
@@ -48,7 +49,11 @@ export function buildPageMetadata({
       type: "website",
       url,
     },
-    ...(robots ? { robots } : {}),
+    robots: robots ?? {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true },
+    },
   };
 }
 

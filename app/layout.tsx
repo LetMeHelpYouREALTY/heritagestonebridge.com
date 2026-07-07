@@ -4,6 +4,8 @@ import "./globals.css";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { getSiteUrl } from "@/lib/site-url";
+import { generateWebSiteSchema } from "@/lib/schema";
+import SchemaScript from "@/components/SchemaScript";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import CalendlyBadge from "@/components/calendly/CalendlyBadge";
@@ -35,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={GeistSans.className}>
       <head>
+        <SchemaScript schema={generateWebSiteSchema()} id="website-schema" />
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"

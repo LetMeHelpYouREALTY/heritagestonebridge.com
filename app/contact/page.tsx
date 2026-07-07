@@ -5,44 +5,63 @@ import { Phone, Mail, MapPin, Clock, Calendar, CheckCircle, Star, Users, Shield 
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
 import GBPMapCard from "@/components/gbp/GBPMapCard";
 import { SITE_CONTACT } from "@/lib/site-contact";
-import { buildPageMetadata } from "@/lib/metadata";
+import { buildPageMetadata, canonicalUrl } from "@/lib/metadata";
 import { organizationId } from "@/lib/entity-ids";
 import { formatBusinessHoursLines, formatBusinessHoursShort } from "@/lib/hours";
 import { telHref } from "@/lib/phone";
 import Link from "next/link";
 import type { Metadata } from "next";
+import SchemaScript from "@/components/SchemaScript";
+import {
+  combineSchemas,
+  generateBreadcrumbSchema,
+  generateWebPageSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: `Contact ${SITE_CONTACT.businessName}`,
-  description: `Contact Dr. Jan Duffy at ${SITE_CONTACT.businessName}. Crossbridge Dr, Las Vegas, NV 89138. Schedule a tour or call ${SITE_CONTACT.phone.display}.`,
+  title: `Contact Heritage at Stonebridge | Summerlin 55+ Tours | Dr. Jan Duffy`,
+  description: `Contact Dr. Jan Duffy for Heritage at Stonebridge tours and Summerlin 55+ buyer representation. Crossbridge Dr, Las Vegas, NV 89138. Call ${SITE_CONTACT.phone.display}.`,
   path: "/contact",
-  openGraphTitle: `Contact ${SITE_CONTACT.businessName}`,
+  openGraphTitle: `Contact Heritage at Stonebridge | Dr. Jan Duffy`,
 });
 
-const contactSchema = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  mainEntity: {
-    "@type": "RealEstateAgent",
-    "@id": organizationId(),
-    name: SITE_CONTACT.businessName,
-    url: SITE_CONTACT.url,
-    telephone: SITE_CONTACT.phone.tel,
-    email: SITE_CONTACT.email,
-    address: {
-      "@type": "PostalAddress",
-      ...SITE_CONTACT.address,
+const contactBreadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Contact", url: "/contact" },
+];
+
+const contactSchema = combineSchemas(
+  generateBreadcrumbSchema(contactBreadcrumbs),
+  generateWebPageSchema({
+    name: `Contact Heritage at Stonebridge | Dr. Jan Duffy`,
+    description: `Schedule a Heritage at Stonebridge guard-gate tour or Summerlin 55+ consultation with Dr. Jan Duffy.`,
+    url: canonicalUrl("/contact"),
+    dateModified: "July 2026",
+  }),
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": `${canonicalUrl("/contact")}#contactpage`,
+    url: canonicalUrl("/contact"),
+    mainEntity: {
+      "@type": "RealEstateAgent",
+      "@id": organizationId(),
+      name: SITE_CONTACT.businessName,
+      url: SITE_CONTACT.url,
+      telephone: SITE_CONTACT.phone.tel,
+      email: SITE_CONTACT.email,
+      address: {
+        "@type": "PostalAddress",
+        ...SITE_CONTACT.address,
+      },
     },
   },
-};
+);
 
 export default function ContactPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
-      />
+      <SchemaScript schema={contactSchema} id="contact-schema" />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">

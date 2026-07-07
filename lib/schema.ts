@@ -255,7 +255,7 @@ export function generateWebSiteSchema() {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: `${BASE_URL}/listings?q={search_term_string}`,
+        urlTemplate: `${BASE_URL}/homes-for-sale?q={search_term_string}`,
       },
       "query-input": "required name=search_term_string",
     },
