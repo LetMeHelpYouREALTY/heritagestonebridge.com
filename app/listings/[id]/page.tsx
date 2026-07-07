@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import Image from "next/image";

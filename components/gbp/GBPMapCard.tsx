@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Phone, MapPin, Navigation, Star, PenLine } from "lucide-react";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { telHref } from "@/lib/phone";
-import { telHref } from "@/lib/phone";
 import {
   buildDirectionsUrl,
   buildMapsEmbedUrl,
