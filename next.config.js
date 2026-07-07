@@ -1,3 +1,5 @@
+const { HERITAGE_ALL_EXTRA_REDIRECTS } = require('./lib/heritage-stonebridge/redirects.mjs');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Standalone output for Docker/Vercel optimization
@@ -51,6 +53,7 @@ const nextConfig = {
       { source: '/relocation', destination: '/downsizing', permanent: true },
       { source: '/services', destination: '/contact', permanent: true },
       { source: '/investment-properties', destination: '/homes-for-sale', permanent: true },
+      ...HERITAGE_ALL_EXTRA_REDIRECTS,
     ]
   },
 

@@ -1,5 +1,5 @@
 /**
- * Canonical 22-page information architecture for heritagestonebridge.com
+ * Canonical information architecture for heritagestonebridge.com
  */
 export type HeritageNavItem = {
   href: string;
@@ -127,6 +127,78 @@ export const HERITAGE_SITE_ROUTES: HeritageNavItem[] = [
     priority: 0.9,
     changeFrequency: "monthly",
   },
+  {
+    href: "/market-analysis",
+    label: "Market Analysis",
+    priority: 0.85,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/market-reports",
+    label: "Market Reports",
+    priority: 0.85,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/55-plus-communities-las-vegas",
+    label: "55+ Communities Las Vegas",
+    priority: 0.88,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/active-adult-communities",
+    label: "Active Adult Communities",
+    priority: 0.88,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/best-55-plus-communities-las-vegas",
+    label: "Best 55+ Communities",
+    priority: 0.88,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/northwest-las-vegas",
+    label: "Northwest Las Vegas",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/las-vegas-real-estate",
+    label: "Las Vegas Real Estate",
+    priority: 0.9,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/red-rock-canyon-communities",
+    label: "Red Rock Canyon Area",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/summerlin-homes",
+    label: "Summerlin Homes",
+    priority: 0.92,
+    changeFrequency: "daily",
+  },
+  {
+    href: "/active-adult-lifestyle-communities",
+    label: "Lifestyle Communities",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/new-55-plus-communities-las-vegas",
+    label: "New 55+ Communities",
+    priority: 0.88,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/55-plus-condos-las-vegas",
+    label: "55+ Condos Las Vegas",
+    priority: 0.82,
+    changeFrequency: "monthly",
+  },
 ];
 
 export const HERITAGE_PRIMARY_NAV = HERITAGE_SITE_ROUTES.filter((r) =>
@@ -160,6 +232,9 @@ export const HERITAGE_BUYER_NAV = HERITAGE_SITE_ROUTES.filter((r) =>
     "/vs-trilogy-summerlin",
     "/summerlin-55-plus",
     "/market-update",
+    "/market-analysis",
+    "/market-reports",
+    "/summerlin-homes",
     "/home-valuation",
   ].includes(r.href)
 );
