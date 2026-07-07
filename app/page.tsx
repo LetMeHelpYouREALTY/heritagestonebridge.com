@@ -1,8 +1,9 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Phone, Shield, MapPin, Home as HomeIcon, Users } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
-import RealScoutListings from "@/components/realscout/RealScoutListings";
+import HeroBackground from "@/components/sections/HeroBackground";
 import FAQSection from "@/components/sections/FAQSection";
 import SchemaScript from "@/components/SchemaScript";
 import {
@@ -16,6 +17,18 @@ import { SITE_CONTACT } from "@/lib/site-contact";
 import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/data";
 import { HERITAGE_COMMUNITY_NAV, HERITAGE_BUYER_NAV } from "@/lib/heritage-stonebridge/routes";
 import type { Metadata } from "next";
+
+const RealScoutListings = dynamic(
+  () => import("@/components/realscout/RealScoutListings"),
+  {
+    ssr: false,
+    loading: () => (
+      <section className="py-16 bg-slate-50" aria-hidden="true">
+        <div className="container mx-auto px-4 h-48 rounded-xl bg-slate-200 animate-pulse" />
+      </section>
+    ),
+  },
+);
 
 export const metadata: Metadata = buildPageMetadata({
   title:
@@ -46,11 +59,10 @@ export default function HomePage() {
       <SchemaScript schema={pageSchema} id="homepage-schema" />
       <Navbar />
       <main>
-        <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{ backgroundImage: "url('/Image/hero_bg_1.jpg')" }}
-          />
+        <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden min-h-[480px]">
+          <div className="absolute inset-0" aria-hidden="true">
+            <HeroBackground />
+          </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
             <span className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
               <Shield className="h-4 w-4" />
@@ -227,7 +239,7 @@ export default function HomePage() {
                 {SITE_CONTACT.phone.display}
               </a>
             </div>
-            <p className="mt-6 text-purple-200 text-sm">
+            <p className="mt-6 text-white/90 text-sm">
               Dr. Jan Duffy | License {SITE_CONTACT.license} | {SITE_CONTACT.brokerage}
             </p>
           </div>

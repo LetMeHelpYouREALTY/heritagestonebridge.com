@@ -9,7 +9,12 @@ import SchemaScript from "@/components/SchemaScript";
 import { absoluteOgImage, DEFAULT_OG_IMAGE_PATH } from "@/lib/metadata";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
-import CalendlyBadge from "@/components/calendly/CalendlyBadge";
+import dynamic from "next/dynamic";
+
+const CalendlyBadge = dynamic(() => import("@/components/calendly/CalendlyBadge"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getPageDomainConfig();
@@ -72,13 +77,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           schema={combineSchemas(generateWebSiteSchema(), generateRealEstateAgentSchema())}
           id="site-schema"
         />
-        <Script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
-          strategy="afterInteractive"
-        />
-        {/* WidgetTracker */}
-        <Script id="widget-tracker" strategy="afterInteractive">{`
+        {/* WidgetTracker — deferred to avoid blocking LCP */}
+        <Script id="widget-tracker" strategy="lazyOnload">{`
           (function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function()
           {(w[g].q=w[g].q||[]).push(arguments);}),(w[g].ds=1*new Date());(e="script"),
           (t=d.createElement(e)),(e=d.getElementsByTagName(e)[0]);t.async=1;t.src=i;

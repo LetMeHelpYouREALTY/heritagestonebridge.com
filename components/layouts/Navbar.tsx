@@ -121,8 +121,11 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
             <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <Link href={telHref(SITE_CONTACT.phone.tel)}>
-                <Phone className="h-4 w-4" />
+              <Link
+                href={telHref(SITE_CONTACT.phone.tel)}
+                aria-label={`Call Dr. Jan Duffy at ${SITE_CONTACT.phone.display}`}
+              >
+                <Phone className="h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
             <button

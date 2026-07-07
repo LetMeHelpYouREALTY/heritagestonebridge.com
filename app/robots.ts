@@ -6,7 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/_next/"],
+      // Block API + font blobs only — do NOT block /_next/static (Google needs JS/CSS)
+      disallow: ["/api/", "/_next/static/media/"],
     },
     sitemap: `${getSiteUrl()}/sitemap.xml`,
   };

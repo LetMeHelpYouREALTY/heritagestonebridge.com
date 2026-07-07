@@ -13,6 +13,14 @@ interface CalendlyBadgeProps {
   branding?: boolean;
 }
 
+function titleCalendlyIframes() {
+  document.querySelectorAll('iframe[name="widgetCta"]').forEach((frame) => {
+    if (!frame.getAttribute("title")) {
+      frame.setAttribute("title", "Schedule a consultation with Dr. Jan Duffy");
+    }
+  });
+}
+
 export default function CalendlyBadge({
   url = buildCalendlyUrl(CALENDLY_CONSULTATION_URL, {
     utmSource: "floating-badge",
@@ -32,12 +40,18 @@ export default function CalendlyBadge({
           textColor,
           branding,
         });
+        titleCalendlyIframes();
       }
     };
 
     if (window.Calendly) {
       initBadge();
     }
+
+    const observer = new MutationObserver(() => titleCalendlyIframes());
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
   }, [url, text, color, textColor, branding]);
 
   return (
@@ -49,7 +63,7 @@ export default function CalendlyBadge({
       <Script
         id="calendly-widget-js"
         src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         onLoad={() => {
           if (window.Calendly) {
             window.Calendly.initBadgeWidget({
@@ -59,6 +73,7 @@ export default function CalendlyBadge({
               textColor,
               branding,
             });
+            titleCalendlyIframes();
           }
         }}
       />

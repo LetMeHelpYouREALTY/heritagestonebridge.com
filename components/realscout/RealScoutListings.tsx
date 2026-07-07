@@ -6,6 +6,7 @@ import {
   getRealScoutAgentId,
   getRealScoutSharedSearchUrl,
 } from "@/lib/realscout-config";
+import RealScoutScript from "@/components/realscout/RealScoutScript";
 
 export default function RealScoutListings() {
   const agentId = getRealScoutAgentId();
@@ -13,6 +14,7 @@ export default function RealScoutListings() {
 
   return (
     <section className="py-16 md:py-24 bg-slate-50">
+      <RealScoutScript />
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div>
@@ -23,7 +25,7 @@ export default function RealScoutListings() {
               Discover exceptional homes in Las Vegas and Henderson
             </p>
           </div>
-          <Button asChild variant="outline" className="mt-4 md:mt-0">
+          <Button asChild variant="outline" className="mt-4 md:mt-0 border-slate-300 text-slate-900 hover:bg-slate-100">
             <a href={sharedSearchUrl} target="_blank" rel="noopener noreferrer">
               View All Properties
             </a>
