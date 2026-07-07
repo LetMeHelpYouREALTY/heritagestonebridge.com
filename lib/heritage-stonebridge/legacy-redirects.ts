@@ -47,8 +47,6 @@ export const LEGACY_PATH_REDIRECTS: Record<string, string> = {
   "/affordable-55-plus-communities-las-vegas": "/55-plus-communities-las-vegas",
 
   // Prior GSC 404 fixes & site consolidation
-  "/55-plus-communities/heritage-stonebridge": "/community",
-  "/55-plus-communities": "/summerlin-55-plus",
   "/listings": "/homes-for-sale",
   "/market-report": "/market-update",
   "/market-insights": "/market-update",
@@ -62,21 +60,6 @@ export const LEGACY_PATH_REDIRECTS: Record<string, string> = {
   ...Object.fromEntries(SCHEMA_PAGES.map((page) => [`/${page}-schema`, `/${page}`])),
 };
 
-export const PREFIX_PATH_REDIRECTS = [
-  { prefix: "/neighborhoods", destination: "/location" },
-  { prefix: "/buyers", destination: "/buying-guide" },
-  { prefix: "/sellers", destination: "/selling-guide" },
-] as const;
-
 export function resolveLegacyRedirect(pathname: string): string | null {
-  const exact = LEGACY_PATH_REDIRECTS[pathname];
-  if (exact) return exact;
-
-  for (const { prefix, destination } of PREFIX_PATH_REDIRECTS) {
-    if (pathname === prefix || pathname.startsWith(`${prefix}/`)) {
-      return destination;
-    }
-  }
-
-  return null;
+  return LEGACY_PATH_REDIRECTS[pathname] ?? null;
 }

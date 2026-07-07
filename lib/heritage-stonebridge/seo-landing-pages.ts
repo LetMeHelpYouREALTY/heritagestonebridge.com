@@ -642,7 +642,88 @@ export const fiftyFivePlusCondosLasVegasPage: HeritagePageContent = {
   ],
 };
 
-/** All GSC 404 landing pages — used for sitemap and route registry */
+export const fiftyFiveAndOverSummerlinPage: HeritagePageContent = {
+  slug: "/55-and-over-communities-summerlin-las-vegas",
+  metadata: {
+    title: baseTitle("55 and Over Communities Summerlin Las Vegas"),
+    description:
+      "55 and over communities in Summerlin and Las Vegas — Heritage at Stonebridge guard-gated Lennar living, Sun City, Trilogy, and Summerlin West 55+ tours with Dr. Jan Duffy.",
+  },
+  breadcrumbs: crumbs({
+    name: "55+ Summerlin Las Vegas",
+    url: "/55-and-over-communities-summerlin-las-vegas",
+  }),
+  badge: "Summerlin 55+ Specialist",
+  h1: "55 and Over Communities in Summerlin & Las Vegas",
+  subtitle:
+    "Age-qualified neighborhoods from Heritage at Stonebridge in 89138 to Sun City and Trilogy — compared for buyers relocating to Las Vegas.",
+  lastUpdated: "July 2026",
+  sections: [
+    {
+      type: "grid",
+      heading: "Summerlin 55+ Communities",
+      cards: [
+        {
+          title: "Heritage at Stonebridge",
+          items: [
+            "Lennar guard-gated — 421 homes in Summerlin West",
+            "Zip 89138 near Downtown Summerlin & Red Rock",
+            "Pickleball, fitness, lap pool — no mandatory golf HOA",
+          ],
+        },
+        {
+          title: "Sun City Summerlin",
+          items: [
+            "7,000+ homes — valley's largest 55+ community",
+            "Three golf courses and deep social calendar",
+            "Established resale inventory across decades",
+          ],
+        },
+        {
+          title: "Trilogy Summerlin",
+          items: [
+            "Shea Homes resort-scale amenities",
+            "Spa, culinary studio, extensive programming",
+            "Upper Summerlin West price positioning",
+          ],
+        },
+      ],
+    },
+    {
+      type: "prose",
+      heading: "Choosing Your Summerlin 55+ Home",
+      paragraphs: [
+        `Buyers searching "55 and over communities Summerlin Las Vegas" usually want three things: lock-and-leave maintenance, neighborly amenities, and a Summerlin address. ${HERITAGE_COMMUNITY.name} delivers Lennar smart-home finishes and staff guard-gating in a boutique ${HERITAGE_COMMUNITY.homeCount}-home footprint — minutes from Downtown Summerlin.`,
+        "Dr. Jan Duffy schedules same-day tours across Heritage, Sun City, and Trilogy so you compare guard-gate flow, clubhouse energy, and HOA carrying costs before you write an offer.",
+      ],
+    },
+    {
+      type: "links",
+      heading: "Summerlin 55+ Resources",
+      links: [
+        { href: "/community", label: "Heritage at Stonebridge" },
+        { href: "/55-plus-communities", label: "All Las Vegas 55+ Communities" },
+        { href: "/summerlin-55-plus", label: "Summerlin 55+ Guide" },
+        { href: "/homes-for-sale", label: "Heritage Homes for Sale" },
+        { href: "/contact", label: "Schedule Tours" },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "What is the best 55 and over community in Summerlin?",
+      answer:
+        "It depends on priorities. Heritage at Stonebridge fits buyers wanting newer Lennar construction and staff guard-gating. Sun City Summerlin fits buyers wanting on-site golf and the deepest club calendar. Trilogy fits buyers wanting resort-scale Shea amenities.",
+    },
+    {
+      question: "Where is Heritage at Stonebridge in Summerlin?",
+      answer:
+        "Heritage at Stonebridge is in Summerlin West, zip code 89138 — near Downtown Summerlin shopping, medical services, and Red Rock Canyon access.",
+    },
+  ],
+};
+
+/** All GSC landing pages — used for sitemap and route registry */
 export const HERITAGE_SEO_LANDING_PAGES: HeritagePageContent[] = [
   marketAnalysisPage,
   marketReportsPage,
@@ -656,4 +737,5 @@ export const HERITAGE_SEO_LANDING_PAGES: HeritagePageContent[] = [
   activeAdultLifestyleCommunitiesPage,
   newFiftyFivePlusCommunitiesPage,
   fiftyFivePlusCondosLasVegasPage,
+  fiftyFiveAndOverSummerlinPage,
 ];

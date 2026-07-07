@@ -4,19 +4,14 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Waves, TreePine, GraduationCap, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Inspirada | Henderson Resort Living",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Inspirada Henderson Real Estate | Dr. Jan Duffy, BHHS",
   description:
-    "Find Inspirada homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's resort-style community. Median price $525K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Inspirada",
-    "Inspirada homes for sale",
-    "Inspirada Henderson",
-    "Henderson master planned",
-    "resort style community",
-  ],
-};
+    "Inspirada homes in Henderson with Dr. Jan Duffy, BHHS — resort-style living compared to Summerlin 55+ options like Heritage at Stonebridge.",
+  path: "/neighborhoods/inspirada",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",

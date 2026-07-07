@@ -11,19 +11,18 @@ import {
   generateNeighborhoodSchema,
   combineSchemas,
 } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Summerlin | Las Vegas Luxury Real Estate",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "Summerlin Real Estate | Heritage at Stonebridge 55+ | Dr. Jan Duffy",
   description:
-    "Find Summerlin homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy offers expert guidance in Las Vegas's premier master-planned community. Median price $625K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Summerlin",
-    "Summerlin homes for sale",
-    "Summerlin real estate agent",
-    "Summerlin Las Vegas",
-    "luxury homes Summerlin",
-  ],
-};
+    "Summerlin homes and 55+ communities near Heritage at Stonebridge in 89138. Dr. Jan Duffy, BHHS Nevada Properties — Downtown Summerlin, Red Rock Canyon, and guard-gated active adult living.",
+  path: "/neighborhoods/summerlin",
+  openGraphTitle: "Summerlin Real Estate & Heritage Stonebridge 55+",
+  openGraphDescription:
+    "Hyperlocal Summerlin West guide for buyers comparing Heritage at Stonebridge and master-planned villages.",
+});
 
 // Breadcrumb items for this page
 const breadcrumbs = [

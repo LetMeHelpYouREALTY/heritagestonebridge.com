@@ -4,19 +4,15 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { MapPin, Phone, Home, Users, GraduationCap } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Las Vegas Neighborhoods | Berkshire Hathaway HomeServices",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "Las Vegas Neighborhoods | Summerlin & Heritage Stonebridge Area | Dr. Jan Duffy",
   description:
-    "Explore Las Vegas and Henderson neighborhoods with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Summerlin, Henderson, The Ridges, Southern Highlands & more.",
-  keywords: [
-    "Las Vegas neighborhoods",
-    "Henderson communities",
-    "Summerlin real estate",
-    "best neighborhoods Las Vegas",
-    "where to live Las Vegas",
-  ],
-};
+    "Explore Las Vegas and Summerlin neighborhoods near Heritage at Stonebridge — Summerlin West, Centennial Hills, Mountains Edge, and more with Dr. Jan Duffy, BHHS.",
+  path: "/neighborhoods",
+});
 
 const neighborhoods = [
   {

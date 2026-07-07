@@ -4,19 +4,14 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Mountain, Users, Home as HomeIcon, GraduationCap } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Skye Canyon | Northwest Las Vegas",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Skye Canyon Real Estate | Northwest Las Vegas | Dr. Jan Duffy",
   description:
-    "Find Skye Canyon homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this premier northwest community. Median price $550K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Skye Canyon",
-    "Skye Canyon homes for sale",
-    "Skye Canyon Las Vegas",
-    "northwest Las Vegas homes",
-    "new construction Skye Canyon",
-  ],
-};
+    "Skye Canyon homes in northwest Las Vegas. Dr. Jan Duffy covers Skye Canyon and nearby Summerlin West 55+ at Heritage at Stonebridge.",
+  path: "/neighborhoods/skye-canyon",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",

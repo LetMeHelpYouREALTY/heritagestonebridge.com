@@ -18,21 +18,18 @@ import {
   Award,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Sell Your Las Vegas Home | Berkshire Hathaway HomeServices",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "Sell Heritage at Stonebridge | Summerlin 55+ Listing Agent | Dr. Jan Duffy",
   description:
-    "Sell your Las Vegas or Henderson home for top dollar with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Free home valuation. World-class marketing. Call (702) 500-1942.",
-  keywords: [
-    "sell home Las Vegas",
-    "Las Vegas listing agent",
-    "Berkshire Hathaway sell house",
-    "Henderson home selling",
-    "what is my home worth Las Vegas",
-    "Las Vegas real estate agent",
-    "Summerlin home selling",
-  ],
-};
+    "Sell your Heritage at Stonebridge or Summerlin 55+ home with Dr. Jan Duffy, BHHS Nevada Properties. Lennar resale pricing, guard-gated marketing, and Berkshire Hathaway exposure. Call (702) 500-1942.",
+  path: "/sellers",
+  openGraphTitle: "Sell Your Heritage Stonebridge Home | Dr. Jan Duffy",
+  openGraphDescription:
+    "Hyperlocal listing strategy for Heritage at Stonebridge and Summerlin West 55+ sellers.",
+});
 
 const sellerSchema = {
   "@context": "https://schema.org",

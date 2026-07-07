@@ -199,6 +199,30 @@ export const HERITAGE_SITE_ROUTES: HeritageNavItem[] = [
     priority: 0.82,
     changeFrequency: "monthly",
   },
+  {
+    href: "/55-and-over-communities-summerlin-las-vegas",
+    label: "55+ Summerlin Las Vegas",
+    priority: 0.9,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/55-plus-communities",
+    label: "55+ Communities Hub",
+    priority: 0.92,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/sellers",
+    label: "Sell at Heritage Stonebridge",
+    priority: 0.9,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/neighborhoods",
+    label: "Summerlin Area Neighborhoods",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
 ];
 
 export const HERITAGE_PRIMARY_NAV = HERITAGE_SITE_ROUTES.filter((r) =>

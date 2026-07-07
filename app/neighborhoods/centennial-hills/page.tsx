@@ -4,19 +4,14 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Mountain, Users, ShoppingBag, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Centennial Hills | Las Vegas Homes",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Centennial Hills Real Estate | Near Summerlin & Heritage Stonebridge",
   description:
-    "Find Centennial Hills homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this established northwest community. Median price $495K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Centennial Hills",
-    "Centennial Hills homes for sale",
-    "Centennial Hills Las Vegas",
-    "northwest Las Vegas real estate",
-    "family homes Las Vegas",
-  ],
-};
+    "Centennial Hills Las Vegas homes near Summerlin West. Dr. Jan Duffy helps buyers comparing northwest valley neighborhoods and Heritage at Stonebridge 55+ in 89138.",
+  path: "/neighborhoods/centennial-hills",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",

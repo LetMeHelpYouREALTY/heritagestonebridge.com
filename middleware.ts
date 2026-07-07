@@ -38,10 +38,17 @@ export function middleware(request: NextRequest) {
   const legacyTarget = resolveLegacyRedirect(normalized);
   const finalPath = legacyTarget ?? normalized;
 
+  const proto = request.headers.get("x-forwarded-proto");
+  const needsHttps =
+    process.env.NODE_ENV === "production" &&
+    proto === "http" &&
+    host === CANONICAL_HOST;
+
   const needsRedirect =
     host === "heritagestonebridge.com" ||
     rawPath !== finalPath ||
-    legacyTarget !== null;
+    legacyTarget !== null ||
+    needsHttps;
 
   if (needsRedirect) {
     return canonicalRedirect(request, finalPath);
