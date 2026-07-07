@@ -4,12 +4,20 @@ import {
   CANONICAL_HOST,
   resolveLegacyRedirect,
 } from "./lib/heritage-stonebridge/legacy-redirects";
+import { canonicalUrl } from "./lib/metadata";
+
+const PERMANENT_REDIRECT = 301;
 
 function stripTrailingSlash(pathname: string): string {
   if (pathname.length > 1 && pathname.endsWith("/")) {
     return pathname.slice(0, -1);
   }
   return pathname;
+}
+
+function attachCanonicalLink(response: NextResponse, pathname: string): NextResponse {
+  response.headers.append("Link", `<${canonicalUrl(pathname)}>; rel="canonical"`);
+  return response;
 }
 
 function canonicalRedirect(request: NextRequest, pathname: string): NextResponse {
@@ -22,7 +30,10 @@ function canonicalRedirect(request: NextRequest, pathname: string): NextResponse
       ? `:${request.nextUrl.port}`
       : "";
   const url = new URL(`${protocol}//${CANONICAL_HOST}${port}${pathname}`);
-  return NextResponse.redirect(url, 308);
+  return attachCanonicalLink(
+    NextResponse.redirect(url, PERMANENT_REDIRECT),
+    pathname,
+  );
 }
 
 export function middleware(request: NextRequest) {
@@ -54,7 +65,7 @@ export function middleware(request: NextRequest) {
     return canonicalRedirect(request, finalPath);
   }
 
-  const response = NextResponse.next();
+  const response = attachCanonicalLink(NextResponse.next(), finalPath);
   response.headers.set("x-domain", host);
   return response;
 }
