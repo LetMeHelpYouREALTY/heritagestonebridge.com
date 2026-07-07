@@ -4,8 +4,9 @@ import "./globals.css";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { getSiteUrl } from "@/lib/site-url";
-import { generateWebSiteSchema } from "@/lib/schema";
+import { generateWebSiteSchema, generateRealEstateAgentSchema, combineSchemas } from "@/lib/schema";
 import SchemaScript from "@/components/SchemaScript";
+import { absoluteOgImage, DEFAULT_OG_IMAGE_PATH } from "@/lib/metadata";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import CalendlyBadge from "@/components/calendly/CalendlyBadge";
@@ -24,11 +25,41 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: defaultDescription,
     keywords: config.keywords,
+    alternates: {
+      canonical: siteUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
     openGraph: {
       title: config.heroHeadline,
       description: config.description,
       type: "website",
       siteName: SITE_CONTACT.businessName,
+      locale: "en_US",
+      url: siteUrl,
+      images: [
+        {
+          url: absoluteOgImage(DEFAULT_OG_IMAGE_PATH),
+          width: 1200,
+          height: 630,
+          alt: SITE_CONTACT.businessName,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: config.heroHeadline,
+      description: config.description,
+      images: [absoluteOgImage(DEFAULT_OG_IMAGE_PATH)],
     },
   };
 }
@@ -37,7 +68,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={GeistSans.className}>
       <head>
-        <SchemaScript schema={generateWebSiteSchema()} id="website-schema" />
+        <SchemaScript
+          schema={combineSchemas(generateWebSiteSchema(), generateRealEstateAgentSchema())}
+          id="site-schema"
+        />
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"

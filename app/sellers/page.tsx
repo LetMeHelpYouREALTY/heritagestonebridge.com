@@ -17,10 +17,10 @@ import {
   ArrowRight,
   Award,
 } from "lucide-react";
-import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import StandardPageSchema from "@/components/seo/StandardPageSchema";
 
-export const metadata: Metadata = buildPageMetadata({
+export const metadata = buildPageMetadata({
   title:
     "Sell Heritage at Stonebridge | Summerlin 55+ Listing Agent | Dr. Jan Duffy",
   description:
@@ -122,9 +122,15 @@ const includedServices = [
 export default function SellersPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(sellerSchema) }}
+      <StandardPageSchema
+        path="/sellers"
+        name="Sell Heritage at Stonebridge"
+        description="Sell your Heritage at Stonebridge or Summerlin 55+ home with Dr. Jan Duffy, BHHS Nevada Properties."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Sellers", url: "/sellers" },
+        ]}
+        extraSchemas={[sellerSchema]}
       />
       <Navbar />
       <main className="pt-24 pb-16">

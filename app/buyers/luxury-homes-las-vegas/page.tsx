@@ -15,21 +15,9 @@ import {
   CheckCircle,
   DollarSign,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { luxuryHomesBuyerMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Luxury Homes Las Vegas | Berkshire Hathaway HomeServices",
-  description:
-    "Las Vegas luxury real estate from $1.2M to $10M+. Guard-gated estates, Strip penthouses, and custom homes. Dr. Jan Duffy provides discrete, expert representation. Call (702) 500-1942.",
-  keywords: [
-    "luxury homes Las Vegas",
-    "The Ridges Las Vegas",
-    "MacDonald Highlands",
-    "luxury real estate Henderson",
-    "guard gated communities Las Vegas",
-    "Berkshire Hathaway luxury homes",
-  ],
-};
+export const metadata = luxuryHomesBuyerMetadata;
 
 const faqSchema = {
   "@context": "https://schema.org",

@@ -6,6 +6,15 @@ import {
   HERITAGE_COMMUNITY_NAV,
   HERITAGE_BUYER_NAV,
 } from "@/lib/heritage-stonebridge/routes";
+import { socialProfiles } from "@/lib/schema";
+
+const FOOTER_HUB_LINKS = [
+  { href: "/neighborhoods", label: "Las Vegas Neighborhoods" },
+  { href: "/55-plus-communities", label: "55+ Communities" },
+  { href: "/sellers", label: "Sell Your Home" },
+  { href: "/home-valuation", label: "Home Valuation" },
+  { href: "/contact", label: "Contact" },
+] as const;
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,29 +32,29 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="http://drjanduffy.realscout.com/"
+                href={socialProfiles.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
+                aria-label="Dr. Jan Duffy on Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="http://drjanduffy.realscout.com/"
+                href={socialProfiles.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
+                aria-label="Dr. Jan Duffy on Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="http://drjanduffy.realscout.com/"
+                href={socialProfiles.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
+                aria-label="Dr. Jan Duffy on LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -115,6 +124,16 @@ export default function Footer() {
                   Google Business
                 </Link>
               </li>
+              {FOOTER_HUB_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-slate-300 hover:text-white transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

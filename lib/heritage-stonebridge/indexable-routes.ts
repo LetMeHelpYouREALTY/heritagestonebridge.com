@@ -116,4 +116,34 @@ export const HERITAGE_INDEXABLE_ROUTES: HeritageNavItem[] = [
     priority: 0.8,
     changeFrequency: "monthly",
   },
+  {
+    href: "/buyers",
+    label: "Home Buyers Hub",
+    priority: 0.88,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/buyers/california-relocator",
+    label: "California Relocation",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/buyers/luxury-homes-las-vegas",
+    label: "Luxury Home Buyers",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/google-business",
+    label: "Google Business & Reviews",
+    priority: 0.8,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/home-valuation",
+    label: "Home Valuation",
+    priority: 0.88,
+    changeFrequency: "monthly",
+  },
 ];

@@ -18,22 +18,10 @@ import {
   Clock,
   ArrowRight,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { buyersHubMetadata } from "@/lib/seo/static-page-metadata";
+import StandardPageSchema from "@/components/seo/StandardPageSchema";
 
-export const metadata: Metadata = {
-  title: "Home Buying Guide Las Vegas | Berkshire Hathaway HomeServices",
-  description:
-    "Looking to buy a home in Las Vegas? Dr. Jan Duffy with Berkshire Hathaway HomeServices Nevada Properties guides you through every step. Free buyer consultation. Call (702) 500-1942.",
-  keywords: [
-    "buy home Las Vegas",
-    "Las Vegas home buyer",
-    "Berkshire Hathaway buyer agent",
-    "Henderson homes for sale",
-    "first time home buyer Las Vegas",
-    "California relocation Las Vegas",
-    "55+ communities Las Vegas",
-  ],
-};
+export const metadata = buyersHubMetadata;
 
 const buyerSchema = {
   "@context": "https://schema.org",
@@ -93,9 +81,15 @@ const neighborhoods = [
 export default function BuyersPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buyerSchema) }}
+      <StandardPageSchema
+        path="/buyers"
+        name="Home Buying Guide Las Vegas"
+        description="Looking to buy a home in Las Vegas? Dr. Jan Duffy with Berkshire Hathaway HomeServices guides you through every step."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Buyers", url: "/buyers" },
+        ]}
+        extraSchemas={[buyerSchema]}
       />
       <Navbar />
       <main className="pt-24 pb-16">

@@ -13,20 +13,9 @@ import {
   Briefcase,
   Calendar,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { sellerRelocationMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Relocation Home Sales Las Vegas | Berkshire Hathaway HomeServices",
-  description:
-    "Leaving Las Vegas for a new opportunity? Dr. Jan Duffy helps relocating homeowners sell fast and coordinates with BHHS offices nationwide. Call (702) 500-1942.",
-  keywords: [
-    "relocation sale Las Vegas",
-    "job relocation Las Vegas",
-    "sell home fast Las Vegas",
-    "Berkshire Hathaway relocation services",
-    "corporate relocation Nevada",
-  ],
-};
+export const metadata = sellerRelocationMetadata;
 
 export default function RelocationPage() {
   return (

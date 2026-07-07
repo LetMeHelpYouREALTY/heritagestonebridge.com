@@ -3,10 +3,10 @@ import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { MapPin, Phone, Home, Users, GraduationCap } from "lucide-react";
-import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import StandardPageSchema from "@/components/seo/StandardPageSchema";
 
-export const metadata: Metadata = buildPageMetadata({
+export const metadata = buildPageMetadata({
   title:
     "Las Vegas Neighborhoods | Summerlin & Heritage Stonebridge Area | Dr. Jan Duffy",
   description:
@@ -110,6 +110,15 @@ const neighborhoods = [
 export default function NeighborhoodsPage() {
   return (
     <>
+      <StandardPageSchema
+        path="/neighborhoods"
+        name="Las Vegas Neighborhoods"
+        description="Explore Las Vegas and Summerlin neighborhoods near Heritage at Stonebridge with Dr. Jan Duffy, BHHS."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Neighborhoods", url: "/neighborhoods" },
+        ]}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">

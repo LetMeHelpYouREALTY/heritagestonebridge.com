@@ -13,20 +13,9 @@ import {
   Lock,
   Users,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { sellerDivorceProbateMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Divorce & Probate Home Sales Las Vegas | Berkshire Hathaway HomeServices",
-  description:
-    "Sensitive real estate situations handled with discretion. Dr. Jan Duffy helps with divorce sales, probate, estate liquidation, and court-ordered sales. Call (702) 500-1942.",
-  keywords: [
-    "divorce home sale Las Vegas",
-    "probate real estate Las Vegas",
-    "estate sale Las Vegas",
-    "court ordered sale Nevada",
-    "Berkshire Hathaway HomeServices divorce",
-  ],
-};
+export const metadata = sellerDivorceProbateMetadata;
 
 export default function DivorceProbatePage() {
   return (

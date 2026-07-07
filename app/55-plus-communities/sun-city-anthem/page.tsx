@@ -12,7 +12,7 @@ import {
   Users,
   CheckCircle,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { sunCityAnthemMetadata } from "@/lib/seo/static-page-metadata";
 import SchemaScript from "@/components/SchemaScript";
 import {
   generateBreadcrumbSchema,
@@ -21,18 +21,7 @@ import {
   combineSchemas,
 } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Sun City Anthem Homes for Sale | Berkshire Hathaway HomeServices",
-  description:
-    "Henderson's premier 55+ community. Sun City Anthem homes from $350K-$1.2M. 2 championship golf courses, stunning mountain views. Dr. Jan Duffy. Call (702) 500-1942.",
-  keywords: [
-    "Sun City Anthem homes for sale",
-    "Sun City Anthem Henderson",
-    "55 plus communities Henderson",
-    "active adult Henderson",
-    "Berkshire Hathaway Sun City Anthem",
-  ],
-};
+export const metadata = sunCityAnthemMetadata;
 
 // Breadcrumb items
 const breadcrumbs = [

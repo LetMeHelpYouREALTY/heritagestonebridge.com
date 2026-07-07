@@ -48,6 +48,7 @@ export const LEGACY_PATH_REDIRECTS: Record<string, string> = {
 
   // GSC "Crawled - not indexed" — consolidate legacy paths
   "/home-selling-guide": "/selling-guide",
+  "/buyers/first-time-buyers": "/first-time-buyers",
   "/sitemap-images.xml": "/sitemap.xml",
   "/sitemap-properties.xml": "/sitemap.xml",
   "/sitemap-pages.xml": "/sitemap.xml",
