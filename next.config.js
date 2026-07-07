@@ -1,6 +1,3 @@
-const { HERITAGE_ALL_EXTRA_REDIRECTS } = require('./lib/heritage-stonebridge/redirects.mjs');
-
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   // Standalone output for Docker/Vercel optimization
   output: 'standalone',
@@ -22,39 +19,12 @@ const nextConfig = {
   // Performance optimizations
   swcMinify: true,
 
-  // Redirect apex to www (canonical host for Search Console + GBP)
+  // Middleware handles trailing-slash + apex→www + legacy paths in one hop
+  skipTrailingSlashRedirect: true,
+
   async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'heritagestonebridge.com',
-          },
-        ],
-        destination: 'https://www.heritagestonebridge.com/:path*',
-        permanent: true,
-      },
-      { source: '/55-plus-communities/heritage-stonebridge', destination: '/community', permanent: true },
-      { source: '/55-plus-communities', destination: '/summerlin-55-plus', permanent: true },
-      { source: '/neighborhoods/:path*', destination: '/location', permanent: true },
-      { source: '/neighborhoods', destination: '/location', permanent: true },
-      { source: '/buyers/:path*', destination: '/buying-guide', permanent: true },
-      { source: '/buyers', destination: '/buying-guide', permanent: true },
-      { source: '/sellers/:path*', destination: '/selling-guide', permanent: true },
-      { source: '/sellers', destination: '/selling-guide', permanent: true },
-      { source: '/listings', destination: '/homes-for-sale', permanent: true },
-      { source: '/market-report', destination: '/market-update', permanent: true },
-      { source: '/market-insights', destination: '/market-update', permanent: true },
-      { source: '/luxury-homes', destination: '/homes-for-sale', permanent: true },
-      { source: '/new-construction', destination: '/floor-plans', permanent: true },
-      { source: '/why-berkshire-hathaway', destination: '/about', permanent: true },
-      { source: '/relocation', destination: '/downsizing', permanent: true },
-      { source: '/services', destination: '/contact', permanent: true },
-      { source: '/investment-properties', destination: '/homes-for-sale', permanent: true },
-      ...HERITAGE_ALL_EXTRA_REDIRECTS,
-    ]
+    // All legacy / canonical redirects handled in middleware.ts (single hop).
+    return [];
   },
 
   // Python API rewrites
