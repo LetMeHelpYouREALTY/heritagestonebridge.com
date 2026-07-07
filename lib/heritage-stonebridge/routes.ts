@@ -206,6 +206,48 @@ export const HERITAGE_SITE_ROUTES: HeritageNavItem[] = [
     changeFrequency: "monthly",
   },
   {
+    href: "/henderson-real-estate",
+    label: "Henderson Real Estate",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/community-guides",
+    label: "Community Guides",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/gated-communities",
+    label: "Gated Communities",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/community-comparison",
+    label: "Community Comparison",
+    priority: 0.88,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/luxury-living-guide",
+    label: "Luxury Living Guide",
+    priority: 0.82,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/neighborhood-insights",
+    label: "Neighborhood Insights",
+    priority: 0.85,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/first-time-buyers",
+    label: "First-Time Buyers",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
+  {
     href: "/55-plus-communities",
     label: "55+ Communities Hub",
     priority: 0.92,

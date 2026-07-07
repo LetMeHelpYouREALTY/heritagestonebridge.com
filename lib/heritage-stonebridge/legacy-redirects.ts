@@ -46,6 +46,12 @@ export const LEGACY_PATH_REDIRECTS: Record<string, string> = {
   "/55-plus-communities-red-rock-canyon": "/red-rock-canyon-communities",
   "/affordable-55-plus-communities-las-vegas": "/55-plus-communities-las-vegas",
 
+  // GSC "Crawled - not indexed" — consolidate legacy paths
+  "/home-selling-guide": "/selling-guide",
+  "/sitemap-images.xml": "/sitemap.xml",
+  "/sitemap-properties.xml": "/sitemap.xml",
+  "/sitemap-pages.xml": "/sitemap.xml",
+
   // Prior GSC 404 fixes & site consolidation
   "/listings": "/homes-for-sale",
   "/market-report": "/market-update",

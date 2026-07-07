@@ -723,6 +723,457 @@ export const fiftyFiveAndOverSummerlinPage: HeritagePageContent = {
   ],
 };
 
+export const hendersonRealEstatePage: HeritagePageContent = {
+  slug: "/henderson-real-estate",
+  metadata: {
+    title: baseTitle("Henderson Real Estate & Summerlin 55+ Comparison"),
+    description:
+      "Henderson NV real estate guide for buyers comparing Green Valley, Anthem, and MacDonald Highlands to Heritage at Stonebridge in Summerlin West 89138.",
+  },
+  breadcrumbs: crumbs({ name: "Henderson Real Estate", url: "/henderson-real-estate" }),
+  badge: "Henderson vs Summerlin",
+  h1: "Henderson Real Estate Guide",
+  subtitle:
+    "Many 55+ buyers start in Henderson — then tour Heritage at Stonebridge for guard-gated Lennar living minutes from Downtown Summerlin.",
+  lastUpdated: "July 2026",
+  sections: [
+    {
+      type: "prose",
+      heading: "Why Henderson Buyers Tour Summerlin 55+",
+      paragraphs: [
+        "Henderson offers master-planned communities like Green Valley, Inspirada, and Anthem with strong resale depth. Buyers relocating from California often search Henderson first for lower property tax and healthcare access.",
+        `${HERITAGE_COMMUNITY.name} in Summerlin West (${HERITAGE_COMMUNITY.postalCode}) appeals when Henderson shoppers want a newer Lennar build, staff guard-gating, and pickleball-forward amenities without a mandatory golf HOA — about 25 minutes from central Henderson.`,
+      ],
+    },
+    {
+      type: "grid",
+      heading: "Henderson Areas Buyers Compare",
+      cards: [
+        {
+          title: "Green Valley & Green Valley Ranch",
+          items: [
+            "Established resale inventory across decades",
+            "Close to Henderson Hospital and dining corridors",
+            "Mix of age-qualified and all-ages neighborhoods",
+          ],
+        },
+        {
+          title: "Anthem & Inspirada",
+          items: [
+            "Newer construction and builder incentives",
+            "Henderson zip codes with strong schools by name",
+            "Commute to Strip and airport from southeast valley",
+          ],
+        },
+        {
+          title: "Heritage at Stonebridge (Summerlin)",
+          items: [
+            "421-home Lennar 55+ guard-gated community",
+            "89138 — Downtown Summerlin & Red Rock access",
+            "Single-family plans from 1,232–2,873 sq ft",
+          ],
+        },
+      ],
+    },
+    {
+      type: "links",
+      heading: "Compare Henderson & Summerlin",
+      links: [
+        { href: "/neighborhoods/henderson", label: "Henderson Neighborhood Guide" },
+        { href: "/summerlin-homes", label: "Summerlin Homes" },
+        { href: "/55-plus-communities-las-vegas", label: "Las Vegas 55+ Communities" },
+        { href: "/homes-for-sale", label: "Heritage Listings" },
+        { href: "/contact", label: "Schedule Tours" },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "Is Heritage at Stonebridge in Henderson?",
+      answer:
+        "No. Heritage at Stonebridge is in Summerlin West, Las Vegas zip code 89138. Many Henderson buyers tour it when comparing 55+ options across the valley.",
+    },
+    {
+      question: "How far is Heritage from Henderson?",
+      answer:
+        "Drive time from central Henderson to Heritage at Stonebridge is typically 20–30 minutes depending on traffic — similar to commuting between Henderson and the Strip.",
+    },
+  ],
+};
+
+export const communityGuidesPage: HeritagePageContent = {
+  slug: "/community-guides",
+  metadata: {
+    title: baseTitle("Las Vegas 55+ Community Guides"),
+    description:
+      "Community guides for Heritage at Stonebridge, Sun City Summerlin, Trilogy, and Las Vegas 55+ neighborhoods — floor plans, HOA, amenities, and tours.",
+  },
+  breadcrumbs: crumbs({ name: "Community Guides", url: "/community-guides" }),
+  h1: "Las Vegas 55+ Community Guides",
+  subtitle:
+    "Deep-dive guides for active adult buyers — starting with Heritage at Stonebridge and expanding across Summerlin West.",
+  lastUpdated: "July 2026",
+  sections: [
+    {
+      type: "checklist",
+      heading: "What's in Each Community Guide",
+      items: [
+        {
+          title: "Age qualification & guard-gate rules",
+          description:
+            "HUD 55+ requirements, visitor policies, and rental restrictions before you write an offer.",
+        },
+        {
+          title: "Floor plans & price bands",
+          description:
+            "Plan sizes, garage options, and recent MLS price context — not marketing brochures alone.",
+        },
+        {
+          title: "HOA & monthly carrying costs",
+          description:
+            "Assessments, what's included, and how they compare to golf-course communities.",
+        },
+        {
+          title: "Amenity walk-through",
+          description:
+            "Clubhouse, fitness, pools, pickleball, and social programming you'll use weekly.",
+        },
+      ],
+    },
+    {
+      type: "links",
+      heading: "Heritage & Summerlin 55+ Guides",
+      links: [
+        { href: "/community", label: "Heritage at Stonebridge Overview" },
+        { href: "/floor-plans", label: "Heritage Floor Plans" },
+        { href: "/summerlin-55-plus", label: "Summerlin 55+ Guide" },
+        { href: "/55-plus-communities", label: "All 55+ Communities" },
+        { href: "/vs-sun-city-summerlin", label: "Heritage vs Sun City" },
+        { href: "/vs-trilogy-summerlin", label: "Heritage vs Trilogy" },
+      ],
+    },
+    {
+      type: "prose",
+      heading: "Start With Heritage at Stonebridge",
+      paragraphs: [
+        `With only ${HERITAGE_COMMUNITY.homeCount} homes, ${HERITAGE_COMMUNITY.name} is the newest guard-gated Lennar 55+ address in Summerlin West. Our community guide covers ${HERITAGE_COMMUNITY.floorPlanCount} floor plans, ${HERITAGE_COMMUNITY.clubhouseSqFt.toLocaleString()} sq ft clubhouse amenities, and resale dynamics in zip ${HERITAGE_COMMUNITY.postalCode}.`,
+        "Dr. Jan Duffy publishes updated guides as MLS inventory shifts — request the latest Heritage buyer packet before touring.",
+      ],
+    },
+  ],
+};
+
+export const gatedCommunitiesPage: HeritagePageContent = {
+  slug: "/gated-communities",
+  metadata: {
+    title: baseTitle("Guard-Gated 55+ Communities Las Vegas"),
+    description:
+      "Guard-gated 55+ communities in Las Vegas and Summerlin — Heritage at Stonebridge staff guard-gate, amenities, and how gated living compares to keypad entry.",
+  },
+  breadcrumbs: crumbs({ name: "Gated Communities", url: "/gated-communities" }),
+  badge: "Staff Guard-Gated",
+  h1: "Guard-Gated 55+ Communities in Las Vegas",
+  subtitle:
+    "Staff guard-gating changes how you receive guests, deliveries, and peace of mind — Heritage at Stonebridge is Summerlin West's newest Lennar example.",
+  lastUpdated: "July 2026",
+  sections: [
+    {
+      type: "comparison",
+      heading: "Guard-Gated vs. Keypad Entry",
+      otherLabel: "Typical Keypad / Automated Gate",
+      rows: [
+        {
+          label: "Visitor verification",
+          heritage: "Staff verifies guests at guard house",
+          other: "Call box or resident app approval",
+        },
+        {
+          label: "Delivery access",
+          heritage: "Documented vendor and delivery protocols",
+          other: "Varies — often shared gate codes",
+        },
+        {
+          label: "After-hours security",
+          heritage: "24/7 staffed gate with camera coverage",
+          other: "Often unmanned overnight",
+        },
+        {
+          label: "Resale perception",
+          heritage: "Premium for verified entry in 55+ segment",
+          other: "Depends on neighborhood age and HOA",
+        },
+      ],
+    },
+    {
+      type: "prose",
+      heading: "Heritage at Stonebridge Guard-Gate Experience",
+      paragraphs: [
+        `${HERITAGE_COMMUNITY.name} uses ${HERITAGE_COMMUNITY.security.toLowerCase()}. Residents get predictable visitor flow — important for out-of-state owners who rely on lock-and-leave travel.`,
+        "Pair a guard-gate tour with our dedicated guard-gated living guide for HOA rules, amenity access, and how Heritage compares to larger Summerlin 55+ neighborhoods.",
+      ],
+    },
+    {
+      type: "links",
+      heading: "Explore Gated 55+ Living",
+      links: [
+        { href: "/guard-gated-living", label: "Guard-Gated Living Guide" },
+        { href: "/community", label: "Heritage Community" },
+        { href: "/amenities", label: "Heritage Amenities" },
+        { href: "/homes-for-sale", label: "Current Listings" },
+      ],
+    },
+  ],
+};
+
+export const communityComparisonPage: HeritagePageContent = {
+  slug: "/community-comparison",
+  metadata: {
+    title: baseTitle("55+ Community Comparison Las Vegas"),
+    description:
+      "Side-by-side comparison of Las Vegas 55+ communities — Heritage at Stonebridge vs Sun City Summerlin, Trilogy, Solera, and Del Webb options.",
+  },
+  breadcrumbs: crumbs({ name: "Community Comparison", url: "/community-comparison" }),
+  h1: "Las Vegas 55+ Community Comparison",
+  subtitle:
+    "Compare guard-gating, golf HOA, build year, and inventory depth before you narrow to two neighborhoods for in-person tours.",
+  lastUpdated: "July 2026",
+  sections: [
+    {
+      type: "comparison",
+      heading: "Heritage vs. Large-Scale 55+ Communities",
+      otherLabel: "Sun City Summerlin (Example)",
+      rows: [
+        {
+          label: "Home count",
+          heritage: "421 homes — limited supply",
+          other: "7,000+ homes — deep resale pool",
+        },
+        {
+          label: "Builder / era",
+          heritage: "Lennar 2021–2025 smart-home builds",
+          other: "Multiple builders across decades",
+        },
+        {
+          label: "Golf HOA",
+          heritage: "No mandatory golf membership",
+          other: "Three on-site golf courses",
+        },
+        {
+          label: "Security",
+          heritage: "Staff guard-gated entry",
+          other: "Guard-gated with established gate culture",
+        },
+        {
+          label: "Pickleball focus",
+          heritage: "Six lighted pickleball courts",
+          other: "Extensive courts across villages",
+        },
+      ],
+    },
+    {
+      type: "links",
+      heading: "Detailed Comparison Pages",
+      links: [
+        { href: "/vs-sun-city-summerlin", label: "Heritage vs Sun City Summerlin" },
+        { href: "/vs-trilogy-summerlin", label: "Heritage vs Trilogy Summerlin" },
+        { href: "/55-plus-communities/heritage-stonebridge", label: "Heritage Profile" },
+        { href: "/55-plus-communities/sun-city-summerlin", label: "Sun City Profile" },
+        { href: "/55-plus-communities/trilogy-summerlin", label: "Trilogy Profile" },
+        { href: "/best-55-plus-communities-las-vegas", label: "Best 55+ Rankings" },
+      ],
+    },
+    {
+      type: "prose",
+      heading: "Tour Two Communities Same Day",
+      paragraphs: [
+        "Spreadsheet comparisons only go so far. Dr. Jan Duffy schedules Heritage at Stonebridge plus one competing Summerlin 55+ community in a single appointment block — so you feel gate flow, clubhouse energy, and floor-plan fit back-to-back.",
+      ],
+    },
+  ],
+  faqs: HERITAGE_FAQS.slice(0, 2),
+};
+
+export const luxuryLivingGuidePage: HeritagePageContent = {
+  slug: "/luxury-living-guide",
+  metadata: {
+    title: baseTitle("Luxury 55+ Living Guide Summerlin"),
+    description:
+      "Luxury 55+ living in Summerlin West — Heritage at Stonebridge Lennar collections, guard-gated amenities, and how upscale active adult compares across Las Vegas.",
+  },
+  breadcrumbs: crumbs({ name: "Luxury Living Guide", url: "/luxury-living-guide" }),
+  badge: "Upscale Active Adult",
+  h1: "Luxury 55+ Living in Summerlin",
+  subtitle:
+    "Upscale active adult living is about plan size, finish level, and amenity access — not just a price tag above valley median.",
+  lastUpdated: "July 2026",
+  sections: [
+    {
+      type: "stats",
+      heading: "Heritage Luxury Positioning",
+      stats: [
+        { value: HERITAGE_COMMUNITY.sqFtRange.split("–")[1]?.trim() ?? "2,873", label: "Max Sq Ft Plans" },
+        { value: "4-Car", label: "Garage Options" },
+        { value: "RV", label: "Garage Plans Available" },
+        { value: HERITAGE_COMMUNITY.priceRange.split("to")[1]?.trim() ?? "$850K+", label: "Upper Price Band" },
+      ],
+    },
+    {
+      type: "prose",
+      heading: "What Luxury 55+ Buyers Expect",
+      paragraphs: [
+        "Luxury active adult buyers want single-story or main-floor-primary layouts, quartz and stainless Lennar finishes, smart-home automation, and club amenities they will use weekly — not unused golf memberships.",
+        `${HERITAGE_COMMUNITY.name} delivers guard-gated privacy, ${HERITAGE_COMMUNITY.clubhouseSqFt.toLocaleString()} sq ft clubhouse programming, and Summerlin West address at ${HERITAGE_COMMUNITY.priceRange} — verify live MLS for your target plan.`,
+      ],
+    },
+    {
+      type: "links",
+      heading: "Luxury Buyer Resources",
+      links: [
+        { href: "/floor-plans", label: "Heritage Floor Plans" },
+        { href: "/amenities", label: "Clubhouse & Amenities" },
+        { href: "/hoa-fees", label: "HOA & Carrying Costs" },
+        { href: "/buyers/luxury-homes-las-vegas", label: "Luxury Homes Las Vegas" },
+        { href: "/home-valuation", label: "Home Valuation" },
+      ],
+    },
+  ],
+};
+
+export const neighborhoodInsightsPage: HeritagePageContent = {
+  slug: "/neighborhood-insights",
+  metadata: {
+    title: baseTitle("Summerlin Neighborhood Insights 89138"),
+    description:
+      "Neighborhood insights for Heritage at Stonebridge and Summerlin West 89138 — commute times, amenities, resale trends, and 55+ buyer demand.",
+  },
+  breadcrumbs: crumbs({ name: "Neighborhood Insights", url: "/neighborhood-insights" }),
+  h1: "Summerlin West Neighborhood Insights",
+  subtitle:
+    "Hyperlocal data for zip 89138 — where Heritage at Stonebridge sits in the Summerlin West resale and 55+ demand picture.",
+  lastUpdated: "July 2026",
+  sections: [
+    {
+      type: "prose",
+      heading: "89138 at a Glance",
+      paragraphs: [
+        "Summerlin West zip 89138 combines Red Rock Canyon access, Downtown Summerlin retail, and the valley's newest guard-gated 55+ addresses. Limited new supply supports pricing resilience compared to sprawling all-ages subdivisions.",
+        `${HERITAGE_COMMUNITY.name} anchors 55+ demand in this pocket — ${HERITAGE_COMMUNITY.homeCount} homes total means every resale and new-build closing matters for neighborhood comps.`,
+      ],
+    },
+    {
+      type: "checklist",
+      heading: "Insights We Track for Buyers",
+      items: [
+        {
+          title: "Median days on market by plan",
+          description:
+            "How fast Heritage floor plans sell vs. nearby Summerlin 55+ inventory.",
+        },
+        {
+          title: "New vs. resale premium",
+          description:
+            "Lennar remaining inventory vs. owner-resale pricing spreads.",
+        },
+        {
+          title: "Relocation seasonality",
+          description:
+            "California and Pacific Northwest buyer surges by quarter.",
+        },
+        {
+          title: "Amenity utilization trends",
+          description:
+            "Pickleball court demand and clubhouse programming shifts post-2024.",
+        },
+      ],
+    },
+    {
+      type: "links",
+      heading: "Deeper Local Data",
+      links: [
+        { href: "/market-analysis", label: "Custom Market Analysis" },
+        { href: "/market-reports", label: "Market Reports" },
+        { href: "/location", label: "Heritage Location" },
+        { href: "/neighborhoods/summerlin", label: "Summerlin Neighborhood" },
+        { href: "/red-rock-canyon-communities", label: "Red Rock Canyon Area" },
+      ],
+    },
+  ],
+};
+
+export const firstTimeBuyersPage: HeritagePageContent = {
+  slug: "/first-time-buyers",
+  metadata: {
+    title: baseTitle("First-Time 55+ Home Buyers Las Vegas"),
+    description:
+      "First-time home buyer guide for Las Vegas 55+ and active adult communities — financing, downsizing, and touring Heritage at Stonebridge in Summerlin 89138.",
+  },
+  breadcrumbs: crumbs({ name: "First-Time Buyers", url: "/first-time-buyers" }),
+  badge: "55+ First Purchase",
+  h1: "First-Time Home Buyers in Las Vegas",
+  subtitle:
+    "Buying your first home at 55+ is different — equity, timing, and community fit matter more than starter-home checklists.",
+  lastUpdated: "July 2026",
+  sections: [
+    {
+      type: "prose",
+      heading: "First-Time Buying After 55",
+      paragraphs: [
+        "Many Heritage at Stonebridge buyers are first-time Las Vegas owners — relocating from out of state with sale proceeds from a longtime primary residence. The process emphasizes community selection, HOA literacy, and lock-and-leave readiness rather than maximum leverage.",
+        "Dr. Jan Duffy walks buyers through age-qualified rules, guard-gate policies, and Lennar plan differences before financing — so you tour the right neighborhoods first.",
+      ],
+    },
+    {
+      type: "checklist",
+      heading: "First-Time Buyer Steps",
+      items: [
+        {
+          title: "Get pre-approved with 55+ timeline",
+          description:
+            "Align loan approval with your out-of-state home sale or retirement date.",
+        },
+        {
+          title: "Tour two 55+ communities minimum",
+          description:
+            "Compare Heritage, Sun City, or Trilogy in one day to feel amenity differences.",
+        },
+        {
+          title: "Review HOA & age rules in writing",
+          description:
+            "Understand guest policies, rental restrictions, and assessment history.",
+        },
+        {
+          title: "Plan a post-close lock-and-leave test",
+          description:
+            "Confirm travel and seasonal absence workflows with guard-gate staff.",
+        },
+      ],
+    },
+    {
+      type: "links",
+      heading: "Buyer Resources",
+      links: [
+        { href: "/buying-guide", label: "Heritage Buying Guide" },
+        { href: "/downsizing", label: "Downsizing Guide" },
+        { href: "/buyers/first-time-buyers", label: "Full First-Time Buyer Guide" },
+        { href: "/homes-for-sale", label: "Search Listings" },
+        { href: "/contact", label: "Talk to Dr. Duffy" },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "Can I use FHA or VA financing at Heritage at Stonebridge?",
+      answer:
+        "Financing depends on lender, plan, and current guidelines — many 55+ resale purchases use conventional loans. Get pre-approved and share your timeline before touring so we match you to eligible inventory.",
+    },
+    {
+      question: "Do I have to sell my current home before buying in Las Vegas?",
+      answer:
+        "Not always. Bridge financing and contingent offers are common for relocators. Dr. Jan Duffy coordinates timing with your out-of-state agent when needed.",
+    },
+  ],
+};
+
 /** All GSC landing pages — used for sitemap and route registry */
 export const HERITAGE_SEO_LANDING_PAGES: HeritagePageContent[] = [
   marketAnalysisPage,
@@ -738,4 +1189,11 @@ export const HERITAGE_SEO_LANDING_PAGES: HeritagePageContent[] = [
   newFiftyFivePlusCommunitiesPage,
   fiftyFivePlusCondosLasVegasPage,
   fiftyFiveAndOverSummerlinPage,
+  hendersonRealEstatePage,
+  communityGuidesPage,
+  gatedCommunitiesPage,
+  communityComparisonPage,
+  luxuryLivingGuidePage,
+  neighborhoodInsightsPage,
+  firstTimeBuyersPage,
 ];
