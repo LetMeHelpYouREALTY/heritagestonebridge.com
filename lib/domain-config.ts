@@ -16,6 +16,8 @@ export interface DomainConfig {
   ctaBadge: string;
   ctaHeadline: string;
   ctaSubheadline: string;
+  /** Optional per-domain hero background; falls back to a pageType-based image. */
+  heroImage?: string;
 }
 
 const REALSCOUT_AGENT_ID = "QWdlbnQtMjI1MDUw";
@@ -73,4 +75,26 @@ export const DEFAULT_CONFIG: DomainConfig = {
 export function getDomainConfig(hostname: string): DomainConfig {
   const clean = hostname.replace(/^www\./, "").toLowerCase();
   return DOMAIN_CONFIGS[clean] ?? DEFAULT_CONFIG;
+}
+
+/**
+ * Hyperlocal hero background per community type. Keeps every domain on-brand
+ * (Las Vegas / Summerlin desert imagery) while matching the page's focus.
+ */
+const HERO_IMAGE_BY_PAGE_TYPE: Record<DomainConfig["pageType"], string> = {
+  "55plus": "/images/hero/hero-55plus.webp",
+  luxury: "/images/hero/hero-luxury.webp",
+  community: "/images/hero/hero-community.webp",
+  search: "/images/hero/hero-search.webp",
+  lifestyle: "/images/hero/hero-lifestyle.webp",
+  investment: "/images/hero/hero-investment.webp",
+};
+
+/** Resolve the hyperlocal hero image for a domain config. */
+export function getHeroImage(config: DomainConfig): string {
+  return (
+    config.heroImage ??
+    HERO_IMAGE_BY_PAGE_TYPE[config.pageType] ??
+    "/images/hero/hero-search.webp"
+  );
 }
