@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { buyersHubMetadata } from "@/lib/seo/static-page-metadata";
 import StandardPageSchema from "@/components/seo/StandardPageSchema";
+import PageHero from "@/components/sections/PageHero";
 
 export const metadata = buyersHubMetadata;
 
@@ -94,25 +95,18 @@ export default function BuyersPage() {
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
-          {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+          <PageHero
+            badge="Berkshire Hathaway HomeServices Nevada Properties"
+            title="Buy Your Las Vegas Home with Confidence"
+            subtitle="Work with a Berkshire Hathaway HomeServices buyer's agent and you're backed by the most trusted name in real estate — and it costs you nothing, because the seller pays the commission."
+            priority
+          >
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-white/80">
+              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Free Buyer Representation</span>
+              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Full MLS Access</span>
+              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Expert Negotiation</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Buy Your Las Vegas Home with Confidence
-            </h1>
-            <p className="text-xl text-slate-600 mb-8">
-              When you work with a <strong>Berkshire Hathaway HomeServices</strong> buyer's agent,
-              you're backed by the most trusted name in real estate—and it costs you nothing.
-              The seller pays the commission, but the representation is yours.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Free Buyer Representation</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Full MLS Access</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Expert Negotiation</span>
-            </div>
-          </div>
+          </PageHero>
 
           {/* Value Prop */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

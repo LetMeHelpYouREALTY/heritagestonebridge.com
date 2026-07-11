@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -339,19 +340,12 @@ export default function FiftyFiveCommunitiesPage() {
           </div>
 
           {/* Hero Section */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Sun className="h-4 w-4 mr-2" />
-              Active Adult Living Specialist
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Find Your Perfect 55+ Community in Las Vegas
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-600 mb-8">
-              Sun City, Del Webb, Heritage at Stonebridge & more—
-              <br className="hidden md:block" />
-              <strong>Dr. Duffy specializes in active adult living</strong>
-            </p>
+          <PageHero
+            badge="Active Adult Living Specialist"
+            title="Find Your Perfect 55+ Community in Las Vegas"
+            subtitle="Sun City, Del Webb, Heritage at Stonebridge and more — Dr. Jan Duffy specializes in active adult living across the Las Vegas Valley and Summerlin."
+            priority
+          >
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+17025001942"
@@ -370,7 +364,7 @@ export default function FiftyFiveCommunitiesPage() {
                 <ArrowRight className="h-5 w-5 ml-2" />
               </a>
             </div>
-          </div>
+          </PageHero>
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
