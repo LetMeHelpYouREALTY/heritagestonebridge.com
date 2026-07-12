@@ -1,10 +1,10 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import {
   Phone,
-  TrendingUp,
   Home as HomeIcon,
   ArrowRight,
   DollarSign,
@@ -34,17 +34,12 @@ export default function MoveUpSellerPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <TrendingUp className="h-4 w-4 mr-2" />
-              Your Equity Unlocks Your Dream Home
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Ready for Your Next Chapter?
-            </h1>
-            <p className="text-xl text-slate-600 mb-8">
-              Your home's equity unlocks your dream home. Let's make the upgrade seamless.
-            </p>
+          <PageHero
+            badge="Your Equity Unlocks Your Dream Home"
+            title="Ready for Your Next Chapter?"
+            subtitle="Move-up sellers in Summerlin and Henderson who bought in 2015–2021 often hold $100K–$250K+ in equity — Dr. Jan Duffy coordinates your sale and next purchase so you never carry two mortgages or end up homeless."
+            priority
+          >
             <a
               href="tel:+17025001942"
               className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition-colors"
@@ -52,7 +47,7 @@ export default function MoveUpSellerPage() {
               <Phone className="h-5 w-5 mr-2" />
               Start Your Upgrade → (702) 500-1942
             </a>
-          </div>
+          </PageHero>
 
           {/* Equity Section */}
           <section className="mb-16 bg-green-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
