@@ -1,6 +1,4 @@
-"use client";
-
-import { getRealScoutAgentId } from "@/lib/realscout-config";
+import { getRealScoutSimpleSearchMarkup } from "@/lib/realscout-config";
 
 type RealScoutSimpleSearchProps = {
   className?: string;
@@ -9,13 +7,11 @@ type RealScoutSimpleSearchProps = {
 export default function RealScoutSimpleSearch({
   className = "realscout-wrapper",
 }: RealScoutSimpleSearchProps) {
-  const agentId = getRealScoutAgentId();
-
   return (
     <div
       className={className}
       dangerouslySetInnerHTML={{
-        __html: `<realscout-simple-search agent-encoded-id="${agentId}"></realscout-simple-search>`,
+        __html: getRealScoutSimpleSearchMarkup(),
       }}
     />
   );

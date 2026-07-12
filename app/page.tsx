@@ -1,11 +1,11 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { Phone, Shield, MapPin, Home as HomeIcon, Users } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import HeroBackground from "@/components/sections/HeroBackground";
 import FAQSection from "@/components/sections/FAQSection";
 import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
+import RealScoutListings from "@/components/realscout/RealScoutListings";
 import SchemaScript from "@/components/SchemaScript";
 import {
   combineSchemas,
@@ -18,18 +18,6 @@ import { SITE_CONTACT } from "@/lib/site-contact";
 import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/data";
 import { HERITAGE_COMMUNITY_NAV, HERITAGE_BUYER_NAV } from "@/lib/heritage-stonebridge/routes";
 import type { Metadata } from "next";
-
-const RealScoutListings = dynamic(
-  () => import("@/components/realscout/RealScoutListings"),
-  {
-    ssr: false,
-    loading: () => (
-      <section className="py-16 bg-slate-50" aria-hidden="true">
-        <div className="container mx-auto px-4 h-48 rounded-xl bg-slate-200 animate-pulse" />
-      </section>
-    ),
-  },
-);
 
 export const metadata: Metadata = buildPageMetadata({
   title:

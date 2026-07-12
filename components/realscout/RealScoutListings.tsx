@@ -1,9 +1,7 @@
-"use client";
-
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import RealScoutAdvancedSearch from "@/components/realscout/RealScoutAdvancedSearch";
 import {
-  getRealScoutAgentId,
   getRealScoutOfficeListingsMarkup,
   getRealScoutSharedSearchUrl,
 } from "@/lib/realscout-config";
@@ -55,7 +53,7 @@ export default function RealScoutListings({
         {showListings && (
           <div
             dangerouslySetInnerHTML={{
-              __html: getRealScoutOfficeListingsMarkup(getRealScoutAgentId()),
+              __html: getRealScoutOfficeListingsMarkup(),
             }}
           />
         )}
