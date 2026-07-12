@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import RealScoutAdvancedSearch from "@/components/realscout/RealScoutAdvancedSearch";
 import {
   getRealScoutAgentId,
+  getRealScoutOfficeListingsMarkup,
   getRealScoutSharedSearchUrl,
 } from "@/lib/realscout-config";
 
@@ -16,11 +17,10 @@ type RealScoutListingsProps = {
 };
 
 export default function RealScoutListings({
-  variant = "both",
+  variant = "listings",
   title = "Featured Properties",
-  subtitle = "Search live MLS inventory or browse Dr. Jan's active listings",
+  subtitle = "Browse active office listings in the $600k–$900k range",
 }: RealScoutListingsProps) {
-  const agentId = getRealScoutAgentId();
   const sharedSearchUrl = getRealScoutSharedSearchUrl();
   const showSearch = variant === "search" || variant === "both";
   const showListings = variant === "listings" || variant === "both";
@@ -55,13 +55,7 @@ export default function RealScoutListings({
         {showListings && (
           <div
             dangerouslySetInnerHTML={{
-              __html: `<realscout-your-listings 
-              agent-encoded-id="${agentId}" 
-              sort-order="NEWEST" 
-              listing-status="For Sale" 
-              include-seller-listings
-              include-co-listings
-            ></realscout-your-listings>`,
+              __html: getRealScoutOfficeListingsMarkup(getRealScoutAgentId()),
             }}
           />
         )}

@@ -270,7 +270,7 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
       <RealScoutListings
         variant="both"
         title="Search Heritage Listings"
-        subtitle="Filter live MLS inventory in Summerlin West (89138) or browse Dr. Jan's active listings"
+        subtitle="Filter live MLS inventory in Summerlin West (89138), then browse office listings $600k–$900k"
       />
       <Footer />
     </>

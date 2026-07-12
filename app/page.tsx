@@ -194,7 +194,7 @@ export default function HomePage() {
         <RealScoutListings
           variant="both"
           title="Search Heritage Listings"
-          subtitle="Filter live MLS inventory in Summerlin West (89138) or browse Dr. Jan's active listings"
+          subtitle="Filter live MLS inventory in Summerlin West (89138), then browse office listings $600k–$900k"
         />
 
         <section className="py-16 bg-slate-900 text-white">
