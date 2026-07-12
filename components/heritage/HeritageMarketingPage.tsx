@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Phone, CheckCircle, Shield } from "lucide-react";
+import { Phone, CheckCircle } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import SchemaScript from "@/components/SchemaScript";
@@ -209,18 +210,12 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
             ))}
           </nav>
 
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            {content.badge && (
-              <div className="inline-flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                <Shield className="h-4 w-4 mr-2" />
-                {content.badge}
-              </div>
-            )}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              {content.h1}
-            </h1>
-            <p className="text-xl text-slate-600">{content.subtitle}</p>
-          </div>
+          <PageHero
+            badge={content.badge}
+            title={content.h1}
+            subtitle={content.subtitle}
+            priority
+          />
 
           {content.sections.map(renderSection)}
 
