@@ -5,6 +5,7 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import HeroBackground from "@/components/sections/HeroBackground";
 import FAQSection from "@/components/sections/FAQSection";
+import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
 import SchemaScript from "@/components/SchemaScript";
 import {
   combineSchemas,
@@ -76,7 +77,7 @@ export default function HomePage() {
               guard-gated security, modern floor plans, and minutes from Downtown
               Summerlin. Search live MLS listings on our homes-for-sale page.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
                 href="/homes-for-sale"
                 className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-4 rounded-md font-bold text-lg hover:bg-slate-100 transition-colors"
@@ -91,6 +92,7 @@ export default function HomePage() {
                 {SITE_CONTACT.phone.display}
               </a>
             </div>
+            <RealScoutSimpleSearch />
             <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
               <div>
                 <span className="font-semibold text-white">
@@ -189,7 +191,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        <RealScoutListings />
+        <RealScoutListings
+          variant="both"
+          title="Search Heritage Listings"
+          subtitle="Filter live MLS inventory in Summerlin West (89138) or browse Dr. Jan's active listings"
+        />
 
         <section className="py-16 bg-slate-900 text-white">
           <div className="container mx-auto px-4 max-w-4xl text-center">

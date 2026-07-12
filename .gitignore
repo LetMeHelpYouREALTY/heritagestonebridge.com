@@ -134,3 +134,4 @@ credentials.json
 # *.mp4
 # *.mov
 # *.avi
+package-lock.json

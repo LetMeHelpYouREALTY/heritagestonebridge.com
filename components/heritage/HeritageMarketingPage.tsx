@@ -267,7 +267,11 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
           )}
         </div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        variant="both"
+        title="Search Heritage Listings"
+        subtitle="Filter live MLS inventory in Summerlin West (89138) or browse Dr. Jan's active listings"
+      />
       <Footer />
     </>
   );
