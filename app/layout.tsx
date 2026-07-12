@@ -10,6 +10,7 @@ import { absoluteOgImage, DEFAULT_OG_IMAGE_PATH } from "@/lib/metadata";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import dynamic from "next/dynamic";
+import RealScoutScript from "@/components/realscout/RealScoutScript";
 
 const CalendlyBadge = dynamic(() => import("@/components/calendly/CalendlyBadge"), {
   ssr: false,
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           schema={combineSchemas(generateWebSiteSchema(), generateRealEstateAgentSchema())}
           id="site-schema"
         />
+        <RealScoutScript />
         {/* WidgetTracker — deferred to avoid blocking LCP */}
         <Script id="widget-tracker" strategy="lazyOnload">{`
           (function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function()
