@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -14,27 +15,9 @@ import {
   Home as HomeIcon,
   Heart,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { trilogySummerlinMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Trilogy at Summerlin Homes for Sale | Luxury Resort 55+ Living | Dr. Jan Duffy",
-  description:
-    "Trilogy at Summerlin - luxury resort-style 55+ community. Homes from $500K-$1.1M. On-site farm-to-table restaurant, spa, contemporary designs. Dr. Jan Duffy, BHHS. Call (702) 500-1942.",
-  keywords: [
-    "Trilogy at Summerlin homes for sale",
-    "Trilogy Summerlin Las Vegas",
-    "luxury 55+ community Las Vegas",
-    "resort style 55+ Las Vegas",
-    "Shea Homes Trilogy",
-    "Berkshire Hathaway Trilogy Summerlin",
-  ],
-  openGraph: {
-    title: "Trilogy at Summerlin - Luxury Resort 55+ Living",
-    description:
-      "Where resort living meets 55+ community. Farm-to-table dining, spa, contemporary homes. From $500K. Dr. Jan Duffy, BHHS.",
-    type: "website",
-  },
-};
+export const metadata = trilogySummerlinMetadata;
 
 const communitySchema = {
   "@context": "https://schema.org",
@@ -81,19 +64,12 @@ export default function TrilogySummerlinPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Sparkles className="h-4 w-4 mr-2" />
-              Luxury Resort-Style 55+ Living
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Trilogy at Summerlin
-            </h1>
-            <p className="text-xl text-slate-600">
-              Where five-star resort living meets 55+ community. Farm-to-table
-              dining, world-class spa, and contemporary homes.
-            </p>
-          </div>
+          <PageHero
+            badge="Luxury Resort-Style 55+ Living"
+            title="Trilogy at Summerlin"
+            subtitle="Trilogy at Summerlin is a luxury, resort-style 55+ active-adult community in Summerlin, Las Vegas, with 800+ contemporary homes priced from $500K to $1.1M, farm-to-table dining, and a full-service spa."
+            priority
+          />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

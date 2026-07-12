@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -16,21 +17,9 @@ import {
   CheckCircle,
   TrendingUp,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { californiaRelocatorMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Relocating from California to Las Vegas | Berkshire Hathaway HomeServices",
-  description:
-    "Moving from California to Las Vegas? Zero state income tax, 40-60% lower home prices, same sunshine. Dr. Jan Duffy helps CA relocators find their perfect Las Vegas home. Call (702) 500-1942.",
-  keywords: [
-    "California to Las Vegas relocation",
-    "moving from California to Nevada",
-    "California relocator Las Vegas",
-    "no state income tax Nevada",
-    "Las Vegas homes California buyers",
-    "Berkshire Hathaway HomeServices relocation",
-  ],
-};
+export const metadata = californiaRelocatorMetadata;
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -84,7 +73,7 @@ const realEstateAgentSchema = {
   "@type": "RealEstateAgent",
   name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
   telephone: "+17025001942",
-  url: "https://heyberkshire.com/buyers/california-relocator",
+  url: "https://www.heritagestonebridge.com/buyers/california-relocator",
   address: {
     "@type": "PostalAddress",
     streetAddress: "9406 W Lake Mead Blvd, Suite 100",
@@ -122,18 +111,12 @@ export default function CaliforniaRelocatorPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Sun className="h-4 w-4 mr-2" />
-              37% of Las Vegas Buyers Are From California
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Relocating from California?<br />
-              <span className="text-blue-600">Welcome Home to Las Vegas</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-600 mb-8">
-              Zero state income tax. 40-60% lower home prices. Same sunshine.
-            </p>
+          <PageHero
+            badge="37% of Las Vegas Buyers Are From California"
+            title="Relocating from California? Welcome Home to Las Vegas"
+            subtitle="California relocators moving to Las Vegas pay zero state income tax and find comparable homes priced 40–60% below California — same year-round sunshine, more space, and a far lower cost of living."
+            priority
+          >
             <a
               href="tel:+17025001942"
               className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition-colors"
@@ -141,7 +124,7 @@ export default function CaliforniaRelocatorPage() {
               <Phone className="h-5 w-5 mr-2" />
               Start Your Tax-Free Life → (702) 500-1942
             </a>
-          </div>
+          </PageHero>
 
           {/* Tax Savings Comparison */}
           <section className="mb-16 bg-gradient-to-br from-green-600 to-green-700 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

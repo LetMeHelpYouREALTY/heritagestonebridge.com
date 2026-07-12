@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -13,27 +14,9 @@ import {
   Car,
   TrendingUp,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { sunCityAlianteMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Sun City Aliante Homes for Sale | Most Affordable Sun City | Dr. Jan Duffy",
-  description:
-    "Sun City Aliante - the most affordable Sun City in Las Vegas. Homes from $280K-$550K with full amenities. 18-hole golf course, pools, fitness center. Dr. Jan Duffy, BHHS. Call (702) 500-1942.",
-  keywords: [
-    "Sun City Aliante homes for sale",
-    "Sun City Aliante Las Vegas",
-    "55 plus communities North Las Vegas",
-    "affordable 55+ community Las Vegas",
-    "Sun City Aliante HOA fees",
-    "Berkshire Hathaway Sun City Aliante",
-  ],
-  openGraph: {
-    title: "Sun City Aliante - Most Affordable Sun City in Las Vegas",
-    description:
-      "Full amenities at the lowest price point. Golf, pools, fitness, 100+ clubs. From $280K. Dr. Jan Duffy, BHHS Nevada Properties.",
-    type: "website",
-  },
-};
+export const metadata = sunCityAlianteMetadata;
 
 const communitySchema = {
   "@context": "https://schema.org",
@@ -80,19 +63,12 @@ export default function SunCityAliantePage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <DollarSign className="h-4 w-4 mr-2" />
-              Most Affordable Sun City in Las Vegas
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Sun City Aliante
-            </h1>
-            <p className="text-xl text-slate-600">
-              Full Sun City amenities at the best value. Golf, pools, fitness, and
-              100+ clubs—from $280K.
-            </p>
-          </div>
+          <PageHero
+            badge="Most Affordable Sun City in Las Vegas"
+            title="Sun City Aliante"
+            subtitle="Sun City Aliante is the most affordable Sun City 55+ active-adult community in North Las Vegas, with 2,800+ homes priced from $280K to $550K plus full golf, pool, and fitness amenities."
+            priority
+          />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

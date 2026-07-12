@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -11,20 +12,9 @@ import {
   Dumbbell,
   CheckCircle,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { delWebbLakeLasVegasMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Del Webb at Lake Las Vegas Homes | Berkshire Hathaway HomeServices",
-  description:
-    "Lakefront 55+ living at Del Webb Lake Las Vegas. Homes from $400K-$900K. Resort amenities, stunning lake and mountain views. Dr. Jan Duffy. Call (702) 500-1942.",
-  keywords: [
-    "Del Webb Lake Las Vegas",
-    "Lake Las Vegas 55 plus",
-    "Del Webb homes Henderson",
-    "lakefront retirement community",
-    "Berkshire Hathaway Del Webb",
-  ],
-};
+export const metadata = delWebbLakeLasVegasMetadata;
 
 export default function DelWebbLakeLasVegasPage() {
   return (
@@ -44,18 +34,12 @@ export default function DelWebbLakeLasVegasPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Waves className="h-4 w-4 mr-2" />
-              Lakefront 55+ Living
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Del Webb at Lake Las Vegas
-            </h1>
-            <p className="text-xl text-slate-600">
-              Modern homes. Lake views. Resort living. The newest Del Webb in Las Vegas.
-            </p>
-          </div>
+          <PageHero
+            badge="Lakefront 55+ Living"
+            title="Del Webb at Lake Las Vegas"
+            subtitle="Del Webb at Lake Las Vegas is the newest Del Webb 55+ active-adult community in Las Vegas, with 1,800+ homes built from 2016 and priced from $400K to $900K on the shores of Lake Las Vegas."
+            priority
+          />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

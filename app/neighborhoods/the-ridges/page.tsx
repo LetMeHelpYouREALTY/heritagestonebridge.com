@@ -1,22 +1,18 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Shield, Star, Mountain, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices The Ridges | Las Vegas Luxury Real Estate",
+export const metadata: Metadata = buildPageMetadata({
+  title: "The Ridges Summerlin Luxury Homes | Dr. Jan Duffy, BHHS",
   description:
-    "Find luxury homes in The Ridges with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Summerlin's most exclusive guard-gated community. Median price $2.5M. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices The Ridges",
-    "The Ridges homes for sale",
-    "The Ridges Summerlin",
-    "luxury homes Las Vegas",
-    "guard gated Summerlin",
-  ],
-};
+    "The Ridges guard-gated luxury homes in Summerlin with Dr. Jan Duffy — near Heritage at Stonebridge and Summerlin West 55+ inventory.",
+  path: "/neighborhoods/the-ridges",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -79,18 +75,12 @@ export default function TheRidgesPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices The Ridges
-            </h1>
-            <p className="text-xl text-slate-600">
-              Las Vegas's most prestigious address. Experience The Ridges luxury with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
-            </p>
-          </div>
+          <PageHero
+            badge="Berkshire Hathaway HomeServices Nevada Properties"
+            title="Berkshire Hathaway HomeServices The Ridges"
+            subtitle="The Ridges is Summerlin's most exclusive guard-gated community in Las Vegas — 900 estate home sites along Red Rock Canyon with Strip views and Bear's Best golf, at a median home price around $2.5 million."
+            priority
+          />
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

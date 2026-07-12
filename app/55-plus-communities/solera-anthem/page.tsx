@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -14,27 +15,9 @@ import {
   Mountain,
   DollarSign,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { soleraAnthemMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Solera at Anthem Homes for Sale | Intimate Guard-Gated 55+ Henderson | Dr. Jan Duffy",
-  description:
-    "Solera at Anthem - intimate guard-gated 55+ community in Henderson. Homes from $380K-$650K. Lower HOA fees, close-knit atmosphere. Dr. Jan Duffy, BHHS. Call (702) 500-1942.",
-  keywords: [
-    "Solera at Anthem homes for sale",
-    "Solera Anthem Henderson",
-    "guard-gated 55+ community Henderson",
-    "Henderson 55+ communities",
-    "intimate 55+ community Las Vegas",
-    "Berkshire Hathaway Solera Anthem",
-  ],
-  openGraph: {
-    title: "Solera at Anthem - Intimate Guard-Gated 55+ in Henderson",
-    description:
-      "Close-knit community with guard-gated security. Lower HOA fees, Henderson safety. From $380K. Dr. Jan Duffy, BHHS.",
-    type: "website",
-  },
-};
+export const metadata = soleraAnthemMetadata;
 
 const communitySchema = {
   "@context": "https://schema.org",
@@ -81,19 +64,12 @@ export default function SoleraAnthemPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Heart className="h-4 w-4 mr-2" />
-              Intimate Guard-Gated 55+ Community
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Solera at Anthem
-            </h1>
-            <p className="text-xl text-slate-600">
-              The close-knit alternative to mega-communities. Guard-gated security
-              in Henderson's safest neighborhood.
-            </p>
-          </div>
+          <PageHero
+            badge="Intimate Guard-Gated 55+ Community"
+            title="Solera at Anthem"
+            subtitle="Solera at Anthem is an intimate, guard-gated 55+ active-adult community in Henderson, Nevada, with about 1,200 homes priced from $380K to $650K where all residents are 55 or older."
+            priority
+          />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

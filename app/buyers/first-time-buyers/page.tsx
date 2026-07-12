@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -17,20 +18,14 @@ import {
   HelpCircle,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "First-Time Home Buyers Las Vegas | Berkshire Hathaway HomeServices",
   description:
     "First-time buyer in Las Vegas? Down payment assistance, builder incentives, and expert guidance from Dr. Jan Duffy at Berkshire Hathaway HomeServices. Call (702) 500-1942.",
-  keywords: [
-    "first time home buyer Las Vegas",
-    "first time buyer Nevada",
-    "down payment assistance Las Vegas",
-    "FHA loans Las Vegas",
-    "VA loans Las Vegas",
-    "Berkshire Hathaway HomeServices first time buyer",
-  ],
-};
+  path: "/buyers/first-time-buyers",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -93,18 +88,12 @@ export default function FirstTimeBuyersPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Key className="h-4 w-4 mr-2" />
-              Down Payment Assistance Available
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Your First Home in Las Vegas<br />
-              <span className="text-blue-600">Starts Here</span>
-            </h1>
-            <p className="text-xl text-slate-600 mb-8">
-              Down payment assistance. Builder incentives. Expert guidance every step of the way.
-            </p>
+          <PageHero
+            badge="Down Payment Assistance Available"
+            title="Your First Home in Las Vegas Starts Here"
+            subtitle="First-time buyers in Las Vegas can purchase with as little as 0–3.5% down, tap up to $15,000 in Nevada down payment assistance, and stack builder incentives — with Dr. Jan Duffy guiding every step."
+            priority
+          >
             <a
               href="tel:+17025001942"
               className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition-colors"
@@ -112,7 +101,7 @@ export default function FirstTimeBuyersPage() {
               <Phone className="h-5 w-5 mr-2" />
               Let's Make Homeownership Happen → (702) 500-1942
             </a>
-          </div>
+          </PageHero>
 
           {/* Financing Options */}
           <section className="mb-16 max-w-5xl mx-auto">

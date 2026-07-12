@@ -1,22 +1,18 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Mountain, Users, ShoppingBag, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Centennial Hills | Las Vegas Homes",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Centennial Hills Real Estate | Near Summerlin & Heritage Stonebridge",
   description:
-    "Find Centennial Hills homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this established northwest community. Median price $495K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Centennial Hills",
-    "Centennial Hills homes for sale",
-    "Centennial Hills Las Vegas",
-    "northwest Las Vegas real estate",
-    "family homes Las Vegas",
-  ],
-};
+    "Centennial Hills Las Vegas homes near Summerlin West. Dr. Jan Duffy helps buyers comparing northwest valley neighborhoods and Heritage at Stonebridge 55+ in 89138.",
+  path: "/neighborhoods/centennial-hills",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -79,18 +75,12 @@ export default function CentennialHillsPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices Centennial Hills
-            </h1>
-            <p className="text-xl text-slate-600">
-              Family-friendly northwest Las Vegas living. Find your Centennial Hills home with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
-            </p>
-          </div>
+          <PageHero
+            badge="Berkshire Hathaway HomeServices Nevada Properties"
+            title="Berkshire Hathaway HomeServices Centennial Hills"
+            subtitle="Centennial Hills is an established family community in northwest Las Vegas — highly-rated schools, the 120-acre Centennial Hills Park, and easy US-95 access, with a median home price around $495,000."
+            priority
+          />
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

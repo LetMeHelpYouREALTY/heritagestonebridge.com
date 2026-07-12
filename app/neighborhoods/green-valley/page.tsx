@@ -1,22 +1,18 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, TreePine, ShoppingBag, GraduationCap, MapPin } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Green Valley | Henderson Real Estate",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Green Valley Henderson Real Estate | Dr. Jan Duffy, BHHS",
   description:
-    "Find Green Valley homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's most established community. Median price $520K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Green Valley",
-    "Green Valley homes for sale",
-    "Green Valley Henderson",
-    "Green Valley real estate",
-    "Green Valley Ranch",
-  ],
-};
+    "Green Valley Henderson homes and market insight from Dr. Jan Duffy, BHHS Nevada Properties — plus Summerlin and Heritage at Stonebridge 55+ for relocating sellers.",
+  path: "/neighborhoods/green-valley",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -79,18 +75,12 @@ export default function GreenValleyPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices Green Valley
-            </h1>
-            <p className="text-xl text-slate-600">
-              Henderson's original master-planned community. Find your Green Valley home with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
-            </p>
-          </div>
+          <PageHero
+            badge="Berkshire Hathaway HomeServices Nevada Properties"
+            title="Berkshire Hathaway HomeServices Green Valley"
+            subtitle="Green Valley is Henderson's original master-planned community, established in 1988 — mature tree-lined streets, proven schools, and The District shopping, with a median home price around $520,000."
+            priority
+          />
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

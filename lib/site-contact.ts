@@ -5,7 +5,7 @@ import { getSiteUrl } from "@/lib/site-url";
  * Mirror any GBP dashboard changes here and in visible page copy.
  */
 export const SITE_CONTACT = {
-  businessName: "Heritage at Stonebridge | Homes by Dr. Jan Duffy",
+  businessName: "Heritage Stonebridge | Homes By Dr. Jan Duffy",
   agentName: "Dr. Jan Duffy",
   license: "S.0197614.LLC",
   brokerage: "Berkshire Hathaway HomeServices Nevada Properties",
@@ -13,19 +13,19 @@ export const SITE_CONTACT = {
     display: "(702) 500-1942",
     tel: "+17025001942",
   },
-  email: "homes@heritagestonebridge.com",
+  email: "DrDuffySells@HeritageStonebridge.com",
   address: {
-    streetAddress: "9406 W Lake Mead Blvd, Suite 100",
+    streetAddress: "Crossbridge Dr",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
-    postalCode: "89134",
+    postalCode: "89138",
     addressCountry: "US",
   },
   community: {
     name: "Heritage at Stonebridge",
     locality: "Summerlin",
     region: "NV",
-    postalCode: "89134",
+    postalCode: "89138",
   },
   hours: {
     monday: "09:00-18:00",
@@ -37,8 +37,8 @@ export const SITE_CONTACT = {
     sunday: "By Appointment",
   },
   geo: {
-    latitude: 36.1941,
-    longitude: -115.2678,
+    latitude: 36.1912,
+    longitude: -115.3124,
   },
   url: getSiteUrl(),
 } as const;

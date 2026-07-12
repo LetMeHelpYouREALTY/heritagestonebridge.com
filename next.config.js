@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   // Standalone output for Docker/Vercel optimization
   output: 'standalone',
@@ -20,21 +19,12 @@ const nextConfig = {
   // Performance optimizations
   swcMinify: true,
 
-  // Redirect apex to www (canonical host for Search Console + GBP)
+  // Middleware handles trailing-slash + apex→www + legacy paths in one hop
+  skipTrailingSlashRedirect: true,
+
   async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'heritagestonebridge.com',
-          },
-        ],
-        destination: 'https://www.heritagestonebridge.com/:path*',
-        permanent: true,
-      },
-    ]
+    // All legacy / canonical redirects handled in middleware.ts (single hop).
+    return [];
   },
 
   // Python API rewrites
@@ -61,11 +51,11 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://assets.calendly.com https://www.googletagmanager.com https://www.google-analytics.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://assets.calendly.com https://widgetbe.com https://www.googletagmanager.com https://www.google-analytics.com",
               "style-src 'self' 'unsafe-inline' https://em.realscout.com https://www.realscout.com https://assets.calendly.com",
               "img-src 'self' data: blob: https: http:",
-              "font-src 'self' data: https://assets.calendly.com",
-              "connect-src 'self' https://em.realscout.com https://www.realscout.com https://openrouter.ai https://api.openai.com https://calendly.com https://www.google-analytics.com https://analytics.google.com https://*.ingest.sentry.io",
+              "font-src 'self' data: https://assets.calendly.com https://widgetbe.com",
+              "connect-src 'self' https://em.realscout.com https://www.realscout.com https://openrouter.ai https://api.openai.com https://calendly.com https://widgetbe.com https://www.google-analytics.com https://analytics.google.com https://*.ingest.sentry.io",
               "frame-src 'self' https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com https://www.google.com https://maps.google.com https://*.google.com",
               "worker-src 'self' blob:",
             ].join('; '),
@@ -139,7 +129,7 @@ module.exports = withSentryConfig(
     widenClientFileUpload: true,
 
     // Transpiles SDK to be compatible with IE11 (increases bundle size)
-    transpileClientSDK: true,
+    transpileClientSDK: false,
 
     // Routes browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers (increases server load)
     tunnelRoute: "/monitoring",

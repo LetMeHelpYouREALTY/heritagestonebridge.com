@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -14,27 +15,9 @@ import {
   Mountain,
   Star,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { heritageStonebridgeCommunityMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Heritage at Stonebridge Homes for Sale | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
-  description:
-    "Heritage at Stonebridge - boutique guard-gated 55+ community in Summerlin. Homes from $400K-$750K. Near Downtown Summerlin, Red Rock Canyon. Dr. Jan Duffy, BHHS. Call (702) 500-1942.",
-  keywords: [
-    "Heritage at Stonebridge homes for sale",
-    "Heritage Stonebridge Summerlin",
-    "guard-gated 55+ community Las Vegas",
-    "Summerlin 55+ communities",
-    "boutique 55+ community Las Vegas",
-    "Berkshire Hathaway Heritage Stonebridge",
-  ],
-  openGraph: {
-    title: "Heritage at Stonebridge - Guard-Gated 55+ Living in Summerlin",
-    description:
-      "Boutique community with premium Summerlin location. Guard-gated security, near Downtown Summerlin. From $400K. Dr. Jan Duffy, BHHS.",
-    type: "website",
-  },
-};
+export const metadata = heritageStonebridgeCommunityMetadata;
 
 const communitySchema = {
   "@context": "https://schema.org",
@@ -81,19 +64,12 @@ export default function HeritageAtStonebridgePage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Shield className="h-4 w-4 mr-2" />
-              Guard-Gated Summerlin 55+ Community
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Heritage at Stonebridge
-            </h1>
-            <p className="text-xl text-slate-600">
-              Boutique 55+ living with guard-gated privacy in the heart of
-              Summerlin.
-            </p>
-          </div>
+          <PageHero
+            badge="Guard-Gated Summerlin 55+ Community"
+            title="Heritage at Stonebridge"
+            subtitle="Heritage at Stonebridge is a guard-gated 55+ active-adult community in Summerlin, Las Vegas, with just over 1,100 homes priced from $400K to $750K—boutique living with 24/7 security."
+            priority
+          />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -66,19 +67,12 @@ export default function MarketInsightsPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <TrendingUp className="h-4 w-4 mr-2" />
-              2026 Economic & Real Estate Analysis
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Las Vegas Market Insights
-            </h1>
-            <p className="text-xl text-slate-600">
-              Technology trends, economic forces, and market dynamics shaping Las Vegas
-              real estate in 2026 and beyond.
-            </p>
-          </div>
+          <PageHero
+            badge="2026 Economic & Real Estate Analysis"
+            title="Las Vegas Market Insights"
+            subtitle="In 2026, technology growth, California migration, and economic diversification are reshaping Las Vegas real estate — driving stronger appreciation across Henderson, Summerlin, and the valley's emerging tech corridors."
+            priority
+          />
 
           {/* Key Drivers */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

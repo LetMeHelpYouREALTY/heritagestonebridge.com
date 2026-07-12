@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -11,19 +12,18 @@ import {
   generateNeighborhoodSchema,
   combineSchemas,
 } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Summerlin | Las Vegas Luxury Real Estate",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "Summerlin Real Estate | Heritage at Stonebridge 55+ | Dr. Jan Duffy",
   description:
-    "Find Summerlin homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy offers expert guidance in Las Vegas's premier master-planned community. Median price $625K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Summerlin",
-    "Summerlin homes for sale",
-    "Summerlin real estate agent",
-    "Summerlin Las Vegas",
-    "luxury homes Summerlin",
-  ],
-};
+    "Summerlin homes and 55+ communities near Heritage at Stonebridge in 89138. Dr. Jan Duffy, BHHS Nevada Properties — Downtown Summerlin, Red Rock Canyon, and guard-gated active adult living.",
+  path: "/neighborhoods/summerlin",
+  openGraphTitle: "Summerlin Real Estate & Heritage Stonebridge 55+",
+  openGraphDescription:
+    "Hyperlocal Summerlin West guide for buyers comparing Heritage at Stonebridge and master-planned villages.",
+});
 
 // Breadcrumb items for this page
 const breadcrumbs = [
@@ -91,18 +91,12 @@ export default function SummerlinPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices Summerlin
-            </h1>
-            <p className="text-xl text-slate-600">
-              Discover Las Vegas's premier master-planned community with Dr. Jan Duffy, your trusted{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> Summerlin expert.
-            </p>
-          </div>
+          <PageHero
+            badge="Berkshire Hathaway HomeServices Nevada Properties"
+            title="Berkshire Hathaway HomeServices Summerlin"
+            subtitle="Summerlin is Las Vegas's premier master-planned community — 150+ parks, 150+ miles of trails, top-rated schools, and Red Rock Canyon views, with a median home price around $625,000."
+            priority
+          />
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

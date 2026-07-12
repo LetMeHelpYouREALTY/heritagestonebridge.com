@@ -1,22 +1,18 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Mountain, Users, Home as HomeIcon, GraduationCap } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Skye Canyon | Northwest Las Vegas",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Skye Canyon Real Estate | Northwest Las Vegas | Dr. Jan Duffy",
   description:
-    "Find Skye Canyon homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this premier northwest community. Median price $550K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Skye Canyon",
-    "Skye Canyon homes for sale",
-    "Skye Canyon Las Vegas",
-    "northwest Las Vegas homes",
-    "new construction Skye Canyon",
-  ],
-};
+    "Skye Canyon homes in northwest Las Vegas. Dr. Jan Duffy covers Skye Canyon and nearby Summerlin West 55+ at Heritage at Stonebridge.",
+  path: "/neighborhoods/skye-canyon",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -79,18 +75,12 @@ export default function SkyeCanyonPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices Skye Canyon
-            </h1>
-            <p className="text-xl text-slate-600">
-              Northwest Las Vegas's fastest-growing community. Discover Skye Canyon with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
-            </p>
-          </div>
+          <PageHero
+            badge="Berkshire Hathaway HomeServices Nevada Properties"
+            title="Berkshire Hathaway HomeServices Skye Canyon"
+            subtitle="Skye Canyon is one of northwest Las Vegas's fastest-growing master-planned communities — the 15-acre Skye Center, resort-style pools, and mountain-view trails, with a median home price around $550,000."
+            priority
+          />
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

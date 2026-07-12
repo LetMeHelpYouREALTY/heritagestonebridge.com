@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -13,20 +14,9 @@ import {
   Lock,
   Users,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { sellerDivorceProbateMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Divorce & Probate Home Sales Las Vegas | Berkshire Hathaway HomeServices",
-  description:
-    "Sensitive real estate situations handled with discretion. Dr. Jan Duffy helps with divorce sales, probate, estate liquidation, and court-ordered sales. Call (702) 500-1942.",
-  keywords: [
-    "divorce home sale Las Vegas",
-    "probate real estate Las Vegas",
-    "estate sale Las Vegas",
-    "court ordered sale Nevada",
-    "Berkshire Hathaway HomeServices divorce",
-  ],
-};
+export const metadata = sellerDivorceProbateMetadata;
 
 export default function DivorceProbatePage() {
   return (
@@ -46,18 +36,12 @@ export default function DivorceProbatePage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-slate-100 text-slate-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Shield className="h-4 w-4 mr-2" />
-              Handled with Discretion & Professionalism
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Difficult Situations,<br />Expert Guidance
-            </h1>
-            <p className="text-xl text-slate-600 mb-8">
-              When life gets complicated, you need an agent who handles sensitive transactions
-              with discretion, expertise, and compassion.
-            </p>
+          <PageHero
+            badge="Handled with Discretion & Professionalism"
+            title="Difficult Situations, Expert Guidance"
+            subtitle="Las Vegas homeowners facing divorce or probate get discreet, neutral representation — Dr. Jan Duffy coordinates with attorneys, provides court-ready valuations, and navigates Nevada community-property and probate rules with compassion."
+            priority
+          >
             <a
               href="tel:+17025001942"
               className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition-colors"
@@ -65,7 +49,7 @@ export default function DivorceProbatePage() {
               <Phone className="h-5 w-5 mr-2" />
               Confidential Consultation → (702) 500-1942
             </a>
-          </div>
+          </PageHero>
 
           {/* Situations We Help With */}
           <section className="mb-16 max-w-5xl mx-auto">

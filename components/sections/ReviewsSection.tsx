@@ -2,6 +2,21 @@
 
 import { Star, Quote } from "lucide-react";
 import Image from "next/image";
+import { buildReviewsUrl } from "@/lib/reviews";
+
+function getDisplayAggregateRating():
+  | { ratingValue: number; reviewCount: number }
+  | null {
+  const ratingValue = process.env.NEXT_PUBLIC_GBP_AGGREGATE_RATING_VALUE;
+  const reviewCount = process.env.NEXT_PUBLIC_GBP_AGGREGATE_RATING_COUNT;
+  if (!ratingValue || !reviewCount) return null;
+
+  const rating = Number.parseFloat(ratingValue);
+  const count = Number.parseInt(reviewCount, 10);
+  if (Number.isNaN(rating) || Number.isNaN(count) || count < 1) return null;
+
+  return { ratingValue: rating, reviewCount: count };
+}
 
 export interface Review {
   id: number;
@@ -44,13 +59,8 @@ export const defaultReviews: Review[] = [
   },
 ];
 
-// Aggregate rating stats
-export const aggregateRating = {
-  ratingValue: 4.9,
-  reviewCount: 500,
-  bestRating: 5,
-  worstRating: 1,
-};
+// Aggregate rating stats — only shown when GBP env vars are set
+export const aggregateRating = getDisplayAggregateRating();
 
 interface ReviewsSectionProps {
   /** Custom reviews to display */
@@ -69,7 +79,7 @@ export default function ReviewsSection({
   reviews = defaultReviews,
   title = "What Our Clients Say",
   subtitle = "Real testimonials from satisfied clients across Las Vegas and Henderson",
-  googleReviewsUrl = "https://g.page/r/heyberkshire/review",
+  googleReviewsUrl = buildReviewsUrl(),
   className = "",
 }: ReviewsSectionProps) {
   return (
@@ -80,27 +90,28 @@ export default function ReviewsSection({
             {title}
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
-          {/* Aggregate Rating Display */}
-          <div className="flex items-center justify-center gap-2 mt-4">
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className={`h-6 w-6 ${
-                    i < Math.floor(aggregateRating.ratingValue)
-                      ? "text-yellow-400 fill-yellow-400"
-                      : "text-slate-300"
-                  }`}
-                />
-              ))}
+          {aggregateRating ? (
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`h-6 w-6 ${
+                      i < Math.floor(aggregateRating.ratingValue)
+                        ? "text-yellow-400 fill-yellow-400"
+                        : "text-slate-300"
+                    }`}
+                  />
+                ))}
+              </div>
+              <span className="text-lg font-semibold text-slate-900">
+                {aggregateRating.ratingValue}
+              </span>
+              <span className="text-slate-600">
+                ({aggregateRating.reviewCount} reviews)
+              </span>
             </div>
-            <span className="text-lg font-semibold text-slate-900">
-              {aggregateRating.ratingValue}
-            </span>
-            <span className="text-slate-600">
-              ({aggregateRating.reviewCount}+ reviews)
-            </span>
-          </div>
+          ) : null}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

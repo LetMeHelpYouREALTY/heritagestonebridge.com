@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -23,31 +24,18 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title:
-    "55+ Active Adult Communities Las Vegas | Sun City, Del Webb, Heritage | Dr. Jan Duffy",
+    "55+ Communities Las Vegas | Heritage Stonebridge & Sun City | Dr. Jan Duffy",
   description:
-    "Find your perfect 55+ community in Las Vegas. Sun City Summerlin, Sun City Aliante, Del Webb Lake Las Vegas, Heritage at Stonebridge, Solera, Trilogy. Dr. Jan Duffy specializes in active adult living. Call (702) 500-1942.",
-  keywords: [
-    "55+ communities Las Vegas",
-    "active adult communities Las Vegas",
-    "Sun City Summerlin",
-    "Sun City Aliante",
-    "Del Webb Lake Las Vegas",
-    "Heritage at Stonebridge",
-    "Solera at Anthem",
-    "Trilogy Summerlin",
-    "retirement communities Nevada",
-    "55 plus homes Las Vegas",
-  ],
-  openGraph: {
-    title: "Find Your Perfect 55+ Community in Las Vegas | Dr. Jan Duffy",
-    description:
-      "Sun City, Del Webb, Heritage at Stonebridge & more—Dr. Duffy specializes in active adult living. Berkshire Hathaway HomeServices Nevada Properties.",
-    type: "website",
-  },
-};
+    "Compare Las Vegas 55+ communities — Heritage at Stonebridge guard-gated Lennar living, Sun City Summerlin, Trilogy, Del Webb, and more. Tours with Dr. Jan Duffy, BHHS Nevada Properties.",
+  path: "/55-plus-communities",
+  openGraphTitle: "Las Vegas 55+ Communities Guide | Heritage Stonebridge",
+  openGraphDescription:
+    "Active adult communities in Summerlin and the Las Vegas Valley — expert tours with Dr. Jan Duffy.",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -111,7 +99,7 @@ const localBusinessSchema = {
   description:
     "55+ community specialist helping active adults find their perfect Las Vegas retirement home",
   telephone: "(702) 500-1942",
-  url: "https://heyberkshire.com/55-plus-communities",
+  url: "https://www.heritagestonebridge.com/55-plus-communities",
   areaServed: {
     "@type": "City",
     name: "Las Vegas",
@@ -352,19 +340,12 @@ export default function FiftyFiveCommunitiesPage() {
           </div>
 
           {/* Hero Section */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Sun className="h-4 w-4 mr-2" />
-              Active Adult Living Specialist
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Find Your Perfect 55+ Community in Las Vegas
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-600 mb-8">
-              Sun City, Del Webb, Heritage at Stonebridge & more—
-              <br className="hidden md:block" />
-              <strong>Dr. Duffy specializes in active adult living</strong>
-            </p>
+          <PageHero
+            badge="Active Adult Living Specialist"
+            title="Find Your Perfect 55+ Community in Las Vegas"
+            subtitle="Sun City, Del Webb, Heritage at Stonebridge and more — Dr. Jan Duffy specializes in active adult living across the Las Vegas Valley and Summerlin."
+            priority
+          >
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+17025001942"
@@ -383,7 +364,7 @@ export default function FiftyFiveCommunitiesPage() {
                 <ArrowRight className="h-5 w-5 ml-2" />
               </a>
             </div>
-          </div>
+          </PageHero>
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

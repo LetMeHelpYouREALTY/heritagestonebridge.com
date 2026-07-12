@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -17,22 +18,19 @@ import {
   ArrowRight,
   Award,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
+import StandardPageSchema from "@/components/seo/StandardPageSchema";
 
-export const metadata: Metadata = {
-  title: "Sell Your Las Vegas Home | Berkshire Hathaway HomeServices",
+export const metadata = buildPageMetadata({
+  title:
+    "Sell Heritage at Stonebridge | Summerlin 55+ Listing Agent | Dr. Jan Duffy",
   description:
-    "Sell your Las Vegas or Henderson home for top dollar with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Free home valuation. World-class marketing. Call (702) 500-1942.",
-  keywords: [
-    "sell home Las Vegas",
-    "Las Vegas listing agent",
-    "Berkshire Hathaway sell house",
-    "Henderson home selling",
-    "what is my home worth Las Vegas",
-    "Las Vegas real estate agent",
-    "Summerlin home selling",
-  ],
-};
+    "Sell your Heritage at Stonebridge or Summerlin 55+ home with Dr. Jan Duffy, BHHS Nevada Properties. Lennar resale pricing, guard-gated marketing, and Berkshire Hathaway exposure. Call (702) 500-1942.",
+  path: "/sellers",
+  openGraphTitle: "Sell Your Heritage Stonebridge Home | Dr. Jan Duffy",
+  openGraphDescription:
+    "Hyperlocal listing strategy for Heritage at Stonebridge and Summerlin West 55+ sellers.",
+});
 
 const sellerSchema = {
   "@context": "https://schema.org",
@@ -125,33 +123,31 @@ const includedServices = [
 export default function SellersPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(sellerSchema) }}
+      <StandardPageSchema
+        path="/sellers"
+        name="Sell Heritage at Stonebridge"
+        description="Sell your Heritage at Stonebridge or Summerlin 55+ home with Dr. Jan Duffy, BHHS Nevada Properties."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Sellers", url: "/sellers" },
+        ]}
+        extraSchemas={[sellerSchema]}
       />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
-          {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+          <PageHero
+            badge="Berkshire Hathaway HomeServices Nevada Properties"
+            title="Sell Your Las Vegas Home for Top Dollar"
+            subtitle="List with Berkshire Hathaway HomeServices for world-class marketing, expert pricing, and a name buyers trust — Dr. Jan Duffy has helped Las Vegas sellers achieve top-dollar results since 2008."
+            priority
+          >
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-white/80">
+              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Free Home Valuation</span>
+              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> World-Class Marketing</span>
+              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Expert Negotiation</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Sell Your Las Vegas Home for Top Dollar
-            </h1>
-            <p className="text-xl text-slate-600 mb-8">
-              When you list with <strong>Berkshire Hathaway HomeServices</strong>, you get
-              world-class marketing, expert pricing, and a name that buyers trust. Dr. Jan Duffy 
-              has been serving Las Vegas since 2008—helping sellers achieve top-dollar results 
-              with proven marketing strategies and skilled negotiation.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Free Home Valuation</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> World-Class Marketing</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Expert Negotiation</span>
-            </div>
-          </div>
+          </PageHero>
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

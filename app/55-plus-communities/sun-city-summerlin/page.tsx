@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -14,20 +15,9 @@ import {
   Mountain,
   CheckCircle,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { sunCitySummerlinMetadata } from "@/lib/seo/static-page-metadata";
 
-export const metadata: Metadata = {
-  title: "Sun City Summerlin Homes for Sale | Berkshire Hathaway HomeServices",
-  description:
-    "Nevada's largest 55+ community. Sun City Summerlin homes from $320K-$850K. 3 golf courses, 4 rec centers, 100+ clubs. Dr. Jan Duffy, BHHS specialist. Call (702) 500-1942.",
-  keywords: [
-    "Sun City Summerlin homes for sale",
-    "Sun City Summerlin Las Vegas",
-    "55 plus communities Summerlin",
-    "retirement community Las Vegas",
-    "Berkshire Hathaway Sun City",
-  ],
-};
+export const metadata = sunCitySummerlinMetadata;
 
 const communitySchema = {
   "@context": "https://schema.org",
@@ -69,18 +59,12 @@ export default function SunCitySummerlinPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Trophy className="h-4 w-4 mr-2" />
-              Nevada's Largest 55+ Community
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Sun City Summerlin
-            </h1>
-            <p className="text-xl text-slate-600">
-              7,700+ homes. 3 golf courses. 4 recreation centers. The gold standard of active adult living.
-            </p>
-          </div>
+          <PageHero
+            badge="Nevada's Largest 55+ Community"
+            title="Sun City Summerlin"
+            subtitle="Sun City Summerlin is Nevada's largest 55+ active-adult community in Summerlin, Las Vegas, with 7,700+ homes priced from $320K to $850K, three golf courses, and four recreation centers."
+            priority
+          />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

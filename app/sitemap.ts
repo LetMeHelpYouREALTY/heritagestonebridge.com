@@ -1,81 +1,64 @@
 import { MetadataRoute } from "next";
+import { SITE_BUILD_DATE, parseContentLastUpdated } from "@/lib/metadata";
 import { getSiteUrl } from "@/lib/site-url";
+import { HERITAGE_SITE_ROUTES } from "@/lib/heritage-stonebridge/routes";
+import { HERITAGE_INDEXABLE_ROUTES } from "@/lib/heritage-stonebridge/indexable-routes";
+import { HERITAGE_SEO_LANDING_PAGES } from "@/lib/heritage-stonebridge/seo-landing-pages";
+
+const COMMUNITY_COMPARISON_ROUTES = [
+  "/55-plus-communities/sun-city-summerlin",
+  "/55-plus-communities/sun-city-anthem",
+  "/55-plus-communities/sun-city-aliante",
+  "/55-plus-communities/solera-anthem",
+  "/55-plus-communities/trilogy-summerlin",
+  "/55-plus-communities/del-webb-lake-las-vegas",
+] as const;
+
+type RouteEntry = {
+  href: string;
+  priority?: number;
+  changeFrequency?: string;
+  lastUpdated?: string;
+};
+
+function lastModForPath(path: string, explicit?: string): Date {
+  if (explicit) return parseContentLastUpdated(explicit);
+  const seoPage = HERITAGE_SEO_LANDING_PAGES.find((p) => p.slug === path);
+  if (seoPage?.lastUpdated) return parseContentLastUpdated(seoPage.lastUpdated);
+  return SITE_BUILD_DATE;
+}
+
+function toSitemapEntries(
+  routes: RouteEntry[],
+  baseUrl: string,
+) {
+  return routes.map((route) => ({
+    url: route.href === "/" ? baseUrl : `${baseUrl}${route.href}`,
+    lastModified: lastModForPath(route.href, route.lastUpdated),
+    changeFrequency: (route.changeFrequency ?? "monthly") as MetadataRoute.Sitemap[0]["changeFrequency"],
+    priority: route.priority ?? 0.8,
+  }));
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getSiteUrl();
-  const lastModified = new Date();
 
-  // Core pages
-  const corePages = [
-    { url: baseUrl, priority: 1.0, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/about`, priority: 0.9, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/contact`, priority: 0.9, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/listings`, priority: 0.9, changeFrequency: "daily" as const },
-    { url: `${baseUrl}/why-berkshire-hathaway`, priority: 0.9, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/market-report`, priority: 0.9, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/market-update`, priority: 0.9, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/market-insights`, priority: 0.9, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/google-business`, priority: 0.9, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/faq`, priority: 0.8, changeFrequency: "monthly" as const },
-  ];
+  const routeMap = new Map<string, RouteEntry>();
+  for (const route of [
+    ...HERITAGE_SITE_ROUTES,
+    ...HERITAGE_INDEXABLE_ROUTES,
+  ]) {
+    routeMap.set(route.href, route);
+  }
 
-  // Service pages
-  const servicePages = [
-    { url: `${baseUrl}/buyers`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/sellers`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/luxury-homes`, priority: 0.8, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/new-construction`, priority: 0.8, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/investment-properties`, priority: 0.8, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/relocation`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/home-valuation`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/55-plus-communities`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/services`, priority: 0.7, changeFrequency: "monthly" as const },
-  ];
+  const heritageEntries = toSitemapEntries(Array.from(routeMap.values()), baseUrl);
 
-  // Buyer persona pages
-  const buyerPersonaPages = [
-    { url: `${baseUrl}/buyers/california-relocator`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/buyers/first-time-buyers`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/buyers/luxury-homes-las-vegas`, priority: 0.8, changeFrequency: "monthly" as const },
-  ];
-
-  // Seller persona pages
-  const sellerPersonaPages = [
-    { url: `${baseUrl}/sellers/move-up`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/sellers/downsizing`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/sellers/divorce-probate`, priority: 0.7, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/sellers/relocation`, priority: 0.8, changeFrequency: "monthly" as const },
-  ];
-
-  // 55+ community sub-pages
-  const fiftyPlusCommunityPages = [
-    { url: `${baseUrl}/55-plus-communities/heritage-stonebridge`, priority: 0.95, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/55-plus-communities/sun-city-summerlin`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/55-plus-communities/sun-city-anthem`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${baseUrl}/55-plus-communities/del-webb-lake-las-vegas`, priority: 0.8, changeFrequency: "monthly" as const },
-  ];
-
-  // Neighborhood pages
-  const neighborhoodPages = [
-    { url: `${baseUrl}/neighborhoods`, priority: 0.8, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/neighborhoods/summerlin`, priority: 0.8, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/neighborhoods/henderson`, priority: 0.8, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/neighborhoods/green-valley`, priority: 0.7, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/neighborhoods/the-ridges`, priority: 0.8, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/neighborhoods/southern-highlands`, priority: 0.7, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/neighborhoods/north-las-vegas`, priority: 0.7, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/neighborhoods/skye-canyon`, priority: 0.7, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/neighborhoods/centennial-hills`, priority: 0.7, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/neighborhoods/inspirada`, priority: 0.7, changeFrequency: "weekly" as const },
-    { url: `${baseUrl}/neighborhoods/mountains-edge`, priority: 0.7, changeFrequency: "weekly" as const },
-  ];
-
-  const allPages = [...corePages, ...servicePages, ...buyerPersonaPages, ...sellerPersonaPages, ...fiftyPlusCommunityPages, ...neighborhoodPages];
-
-  return allPages.map((page) => ({
-    url: page.url,
-    lastModified,
-    changeFrequency: page.changeFrequency,
-    priority: page.priority,
+  const comparisonEntries = COMMUNITY_COMPARISON_ROUTES.map((path) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: SITE_BUILD_DATE,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
   }));
+
+  return [...heritageEntries, ...comparisonEntries];
 }

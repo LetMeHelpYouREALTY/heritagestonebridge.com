@@ -134,3 +134,6 @@ credentials.json
 # *.mp4
 # *.mov
 # *.avi
+
+# Stray npm lockfile — this repo uses pnpm (pnpm-lock.yaml)
+package-lock.json

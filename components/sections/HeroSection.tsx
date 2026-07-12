@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -64,13 +65,7 @@ export default function HeroSection() {
         </p>
 
         {/* RealScout Search Widget */}
-        <div className="realscout-wrapper mb-4">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `<realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>`,
-            }}
-          />
-        </div>
+        <RealScoutSimpleSearch className="realscout-wrapper mb-4" />
 
         {/* Trust Indicators */}
         <div className="mt-8 flex flex-wrap justify-center gap-6 text-white/90 text-sm">

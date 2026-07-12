@@ -1,25 +1,20 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
+import { buildCalendlyUrl } from "@/lib/calendly";
+import { buildPageMetadata } from "@/lib/metadata";
+import { SITE_CONTACT } from "@/lib/site-contact";
 import Link from "next/link";
 import { Phone, CheckCircle, Home, TrendingUp, MapPin, Calculator, Clock, DollarSign } from "lucide-react";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Free Home Valuation Las Vegas | What's Your Home Worth? | Berkshire Hathaway HomeServices",
-  description:
-    "Get a free, accurate home valuation in Las Vegas from Dr. Jan Duffy at Berkshire Hathaway HomeServices. Expert CMA analysis for Summerlin, Henderson, Green Valley & all Las Vegas neighborhoods. Call (702) 500-1942.",
-  keywords: [
-    "home valuation Las Vegas",
-    "what is my home worth Las Vegas",
-    "free home value estimate",
-    "CMA Las Vegas",
-    "Berkshire Hathaway home valuation",
-    "Summerlin home value",
-    "Henderson home value",
-  ],
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "Heritage at Stonebridge Home Valuation | What's Your Home Worth? | Dr. Jan Duffy",
+  description: `Free CMA and home valuation for Heritage at Stonebridge and Summerlin 55+ resales. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call ${SITE_CONTACT.phone.display}.`,
+  path: "/home-valuation",
+});
 
 // FAQ Schema for SEO
 const faqSchema = {
@@ -82,20 +77,12 @@ export default function HomeValuationPage() {
             </nav>
           </div>
 
-          {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              What's Your Las Vegas Home Worth?
-            </h1>
-            <p className="text-xl text-slate-600">
-              Get a free, no-obligation home valuation from Dr. Jan Duffy at{" "}
-              <strong>Berkshire Hathaway HomeServices</strong>. Accurate pricing backed by 17+ years
-              of Las Vegas market expertise and $127M+ in closed transactions.
-            </p>
-          </div>
+          <PageHero
+            badge="Berkshire Hathaway HomeServices Nevada Properties"
+            title="What's Your Las Vegas Home Worth?"
+            subtitle="Get a free, no-obligation home valuation from Dr. Jan Duffy at Berkshire Hathaway HomeServices — accurate pricing backed by 17+ years of Las Vegas market expertise and $127M+ in closed transactions."
+            priority
+          />
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
             {/* Calendly Widget */}
@@ -106,7 +93,7 @@ export default function HomeValuationPage() {
                   Book a consultation with Dr. Jan Duffy
                 </p>
               </div>
-              <CalendlyWidget url="showing" height="650px" />
+              <CalendlyWidget url={buildCalendlyUrl()} height="650px" />
               <p className="text-xs text-slate-500 text-center p-4 border-t border-slate-200">
                 No obligation. No pressure. Just accurate information from Berkshire Hathaway
                 HomeServices.

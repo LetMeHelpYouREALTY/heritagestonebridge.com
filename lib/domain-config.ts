@@ -16,6 +16,8 @@ export interface DomainConfig {
   ctaBadge: string;
   ctaHeadline: string;
   ctaSubheadline: string;
+  /** Optional per-domain hero background; falls back to a pageType-based image. */
+  heroImage?: string;
 }
 
 const REALSCOUT_AGENT_ID = "QWdlbnQtMjI1MDUw";
@@ -30,7 +32,7 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
   "eaglehillshomes.com": { domain: "eaglehillshomes.com", neighborhood: "Eagle Hills", tagline: "Eagle Hills Homes for Sale", description: "Search Eagle Hills homes for sale in Las Vegas. Expert real estate guidance from Dr. Jan Duffy.", heroHeadline: "Eagle Hills Homes for Sale", heroSubheadline: "Discover this beautiful Las Vegas neighborhood.", keywords: ["Eagle Hills homes", "Eagle Hills Las Vegas", "Las Vegas real estate"], pageType: "community", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Eagle Hills Specialist", ctaHeadline: "Find Your Eagle Hills Home", ctaSubheadline: "I know every listing in Eagle Hills. Let me help you find the right one." },
   "goodtoknowrealtor.com": { domain: "goodtoknowrealtor.com", neighborhood: "Las Vegas", tagline: "Las Vegas Real Estate — Good to Know", description: "Las Vegas real estate tips, market data, and insider knowledge from Dr. Jan Duffy.", heroHeadline: "Good to Know — Las Vegas Real Estate", heroSubheadline: "Market data, neighborhood guides, and insider tips from 30+ years in Las Vegas real estate.", keywords: ["Las Vegas real estate tips", "Las Vegas market data", "Las Vegas realtor advice"], pageType: "search", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Market Expert", ctaHeadline: "Get the Insider Knowledge", ctaSubheadline: "30 years of Las Vegas real estate data at your fingertips." },
   "heritageatstonebridgehomes.com": { domain: "heritageatstonebridgehomes.com", neighborhood: "Heritage at Stonebridge", tagline: "Heritage at Stonebridge Homes for Sale", description: "Heritage at Stonebridge 55+ active adult community homes. Expert guidance from Dr. Jan Duffy.", heroHeadline: "Heritage at Stonebridge Homes", heroSubheadline: "Award-winning 55+ active adult community with resort-style amenities in Summerlin.", keywords: ["Heritage Stonebridge homes", "55 plus Summerlin", "active adult Las Vegas"], pageType: "55plus", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "55+ Community Expert", ctaHeadline: "Heritage at Stonebridge Awaits", ctaSubheadline: "I specialize in 55+ communities. Let me show you everything Heritage has to offer." },
-  "heritagestonebridge.com": { domain: "heritagestonebridge.com", neighborhood: "Heritage at Stonebridge", tagline: "Heritage Stonebridge Las Vegas", description: "Heritage Stonebridge 55+ community in Summerlin Las Vegas. Find your perfect active adult home.", heroHeadline: "Heritage Stonebridge Homes for Sale", heroSubheadline: "Summerlin's premier 55+ active adult community with world-class amenities.", keywords: ["Heritage Stonebridge", "Summerlin 55 plus", "active adult Summerlin"], pageType: "55plus", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "55+ Specialist", ctaHeadline: "Your Heritage Stonebridge Home", ctaSubheadline: "Every floor plan, every amenity — I know Heritage Stonebridge inside and out." },
+  "heritagestonebridge.com": { domain: "heritagestonebridge.com", neighborhood: "Heritage Stonebridge", tagline: "Heritage Stonebridge | Homes By Dr. Jan Duffy", description: "Heritage Stonebridge guard-gated 55+ homes on Crossbridge Dr, Las Vegas, NV 89138. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.", heroHeadline: "Heritage Stonebridge Homes for Sale", heroSubheadline: "Guard-gated Lennar 55+ living in Summerlin West — Crossbridge Dr, 89138.", keywords: ["Heritage Stonebridge", "Crossbridge Dr Las Vegas", "Summerlin 55 plus", "89138 homes"], pageType: "55plus", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Heritage Stonebridge Specialist", ctaHeadline: "Tour Heritage Stonebridge", ctaSubheadline: "Crossbridge Dr, Summerlin West — I know every plan and resale in this guard-gated 55+ community." },
   "justcalldrjan.com": { domain: "justcalldrjan.com", neighborhood: "Las Vegas", tagline: "Just Call Dr. Jan — Las Vegas Real Estate", description: "Ready to buy or sell in Las Vegas? Just call Dr. Jan Duffy at 702-222-1964.", heroHeadline: "Just Call Dr. Jan", heroSubheadline: "30+ years. 500+ families. No runaround — just expert Las Vegas real estate guidance.", keywords: ["call Dr Jan Duffy", "Las Vegas realtor phone", "BHHS Nevada"], pageType: "search", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Direct Access", ctaHeadline: "I Answer My Own Phone", ctaSubheadline: "No assistant, no callback queue. Call or text 702-222-1964 and reach me directly." },
   "lasvegashomeexpert.com": { domain: "lasvegashomeexpert.com", neighborhood: "Las Vegas", tagline: "Las Vegas Home Expert — Dr. Jan Duffy", description: "Las Vegas home buying and selling expert. Dr. Jan Duffy, BHHS Nevada Properties.", heroHeadline: "Las Vegas Home Expert", heroSubheadline: "The most knowledgeable real estate professional in the Las Vegas Valley.", keywords: ["Las Vegas home expert", "Las Vegas real estate expert", "buy sell Las Vegas homes"], pageType: "search", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Las Vegas Expert", ctaHeadline: "Work With the Expert", ctaSubheadline: "30+ years of Las Vegas market knowledge working for you." },
   "lonemountainheights.com": { domain: "lonemountainheights.com", neighborhood: "Lone Mountain Heights", tagline: "Lone Mountain Heights Homes", description: "Lone Mountain Heights homes for sale in Northwest Las Vegas. Dr. Jan Duffy, expert realtor.", heroHeadline: "Lone Mountain Heights Homes for Sale", heroSubheadline: "Stunning views and spacious living in Northwest Las Vegas.", keywords: ["Lone Mountain Heights", "Northwest Las Vegas homes", "Lone Mountain real estate"], pageType: "community", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Lone Mountain Expert", ctaHeadline: "Find Your Lone Mountain Home", ctaSubheadline: "I know every property in Lone Mountain. Let's find the right one for you." },
@@ -73,4 +75,26 @@ export const DEFAULT_CONFIG: DomainConfig = {
 export function getDomainConfig(hostname: string): DomainConfig {
   const clean = hostname.replace(/^www\./, "").toLowerCase();
   return DOMAIN_CONFIGS[clean] ?? DEFAULT_CONFIG;
+}
+
+/**
+ * Hyperlocal hero background per community type. Keeps every domain on-brand
+ * (Las Vegas / Summerlin desert imagery) while matching the page's focus.
+ */
+const HERO_IMAGE_BY_PAGE_TYPE: Record<DomainConfig["pageType"], string> = {
+  "55plus": "/images/hero/hero-55plus.webp",
+  luxury: "/images/hero/hero-luxury.webp",
+  community: "/images/hero/hero-community.webp",
+  search: "/images/hero/hero-search.webp",
+  lifestyle: "/images/hero/hero-lifestyle.webp",
+  investment: "/images/hero/hero-investment.webp",
+};
+
+/** Resolve the hyperlocal hero image for a domain config. */
+export function getHeroImage(config: DomainConfig): string {
+  return (
+    config.heroImage ??
+    HERO_IMAGE_BY_PAGE_TYPE[config.pageType] ??
+    "/images/hero/hero-search.webp"
+  );
 }

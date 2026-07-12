@@ -1,22 +1,18 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, DollarSign, TrendingUp, Home as HomeIcon, Users } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices North Las Vegas | Affordable Homes",
+export const metadata: Metadata = buildPageMetadata({
+  title: "North Las Vegas Real Estate | Dr. Jan Duffy, BHHS",
   description:
-    "Find affordable North Las Vegas homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy helps first-time buyers and investors. Median price $385K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices North Las Vegas",
-    "North Las Vegas homes for sale",
-    "affordable homes Las Vegas",
-    "first time home buyer Las Vegas",
-    "new construction North Las Vegas",
-  ],
-};
+    "North Las Vegas homes with Dr. Jan Duffy — affordable valley options near Summerlin and 55+ communities.",
+  path: "/neighborhoods/north-las-vegas",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -79,18 +75,12 @@ export default function NorthLasVegasPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices North Las Vegas
-            </h1>
-            <p className="text-xl text-slate-600">
-              Affordable homeownership and investment opportunities. Find your North Las Vegas
-              home with <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
-            </p>
-          </div>
+          <PageHero
+            badge="Berkshire Hathaway HomeServices Nevada Properties"
+            title="Berkshire Hathaway HomeServices North Las Vegas"
+            subtitle="North Las Vegas is the Las Vegas Valley's most affordable city — new master-planned communities, major employers, and strong first-time-buyer and investor value, with a median home price around $385,000."
+            priority
+          />
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

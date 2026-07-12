@@ -1,22 +1,18 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Shield, Mountain, Star, MapPin } from "lucide-react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Southern Highlands | Las Vegas Golf Community",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Southern Highlands Las Vegas Real Estate | Dr. Jan Duffy",
   description:
-    "Find Southern Highlands homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this premier golf community. Median price $750K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Southern Highlands",
-    "Southern Highlands homes for sale",
-    "Southern Highlands golf",
-    "Las Vegas golf community",
-    "guard gated Las Vegas",
-  ],
-};
+    "Southern Highlands golf community homes with Dr. Jan Duffy, BHHS Nevada Properties.",
+  path: "/neighborhoods/southern-highlands",
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -79,18 +75,12 @@ export default function SouthernHighlandsPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices Southern Highlands
-            </h1>
-            <p className="text-xl text-slate-600">
-              Premier golf course living in southwest Las Vegas. Discover Southern Highlands with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
-            </p>
-          </div>
+          <PageHero
+            badge="Berkshire Hathaway HomeServices Nevada Properties"
+            title="Berkshire Hathaway HomeServices Southern Highlands"
+            subtitle="Southern Highlands is southwest Las Vegas's premier golf-course master-planned community — a championship Robert Trent Jones Jr. course, guard-gated luxury sections, and quick Strip access, with a median home price around $750,000."
+            priority
+          />
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

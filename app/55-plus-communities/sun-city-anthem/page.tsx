@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -12,7 +13,7 @@ import {
   Users,
   CheckCircle,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { sunCityAnthemMetadata } from "@/lib/seo/static-page-metadata";
 import SchemaScript from "@/components/SchemaScript";
 import {
   generateBreadcrumbSchema,
@@ -21,18 +22,7 @@ import {
   combineSchemas,
 } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Sun City Anthem Homes for Sale | Berkshire Hathaway HomeServices",
-  description:
-    "Henderson's premier 55+ community. Sun City Anthem homes from $350K-$1.2M. 2 championship golf courses, stunning mountain views. Dr. Jan Duffy. Call (702) 500-1942.",
-  keywords: [
-    "Sun City Anthem homes for sale",
-    "Sun City Anthem Henderson",
-    "55 plus communities Henderson",
-    "active adult Henderson",
-    "Berkshire Hathaway Sun City Anthem",
-  ],
-};
+export const metadata = sunCityAnthemMetadata;
 
 // Breadcrumb items
 const breadcrumbs = [
@@ -118,18 +108,12 @@ export default function SunCityAnthemPage() {
           </div>
 
           {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Mountain className="h-4 w-4 mr-2" />
-              Henderson's Premier 55+ Community
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Sun City Anthem
-            </h1>
-            <p className="text-xl text-slate-600">
-              7,100+ homes. Mountain views. Henderson safety. Championship golf.
-            </p>
-          </div>
+          <PageHero
+            badge="Henderson's Premier 55+ Community"
+            title="Sun City Anthem"
+            subtitle="Sun City Anthem is a Del Webb 55+ active-adult community in Henderson, Nevada, with 7,100+ homes priced from $350K to $1.2M, championship golf, and stunning mountain views."
+            priority
+          />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
