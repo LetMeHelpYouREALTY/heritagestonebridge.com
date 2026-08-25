@@ -7,7 +7,7 @@ import { getSiteUrl } from "@/lib/site-url";
 import { generateWebSiteSchema, generateRealEstateAgentSchema, combineSchemas } from "@/lib/schema";
 import SchemaScript from "@/components/SchemaScript";
 import { absoluteOgImage, DEFAULT_OG_IMAGE_PATH } from "@/lib/metadata";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 import RealScoutScript from "@/components/realscout/RealScoutScript";
