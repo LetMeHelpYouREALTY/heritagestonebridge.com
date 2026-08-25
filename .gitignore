@@ -15,9 +15,6 @@
 # Testing
 # ===================
 /coverage
-/api/test.py
-/api/temp.txt
-/api/.env
 *.test.js.snap
 
 # ===================
@@ -85,16 +82,6 @@ logs/
 *.tsbuildinfo
 next-env.d.ts
 tsconfig.tsbuildinfo
-
-# ===================
-# Python
-# ===================
-__pycache__
-*.py[cod]
-*$py.class
-.Python
-venv/
-ENV/
 
 # ===================
 # Vercel

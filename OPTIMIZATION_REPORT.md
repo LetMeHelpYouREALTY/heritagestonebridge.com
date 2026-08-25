@@ -387,18 +387,7 @@ const nextConfig = {
     ]
   },
 
-  // Existing rewrites (Python API)
-  rewrites: async () => {
-    return [
-      {
-        source: '/api/:path*',
-        destination:
-          process.env.NODE_ENV === 'development'
-            ? 'http://127.0.0.1:5328/api/:path*'
-            : '/api/',
-      },
-    ]
-  },
+  // APIs are Next.js App Router route handlers in app/api — no Python/Flask rewrite.
 
   // Enhanced security headers
   async headers() {
