@@ -28,4 +28,4 @@ This repo is a single **Next.js 14 (App Router) real‑estate marketing/lead‑g
 - AI chat (`/api/chat`, `/api/claude/chat`) needs a valid `OPENROUTER_API_KEY` / `ANTHROPIC_API_KEY`.
 - Lead capture (`/api/leads/capture`) and CRM webhooks need valid `FUB_API_KEY` (+ optional `FUB_SYSTEM_KEY`); without them the API returns `FUB API Error (401)`. The lead form UI still works client‑side.
 - Rate limiting (Upstash), CAPTCHA (Turnstile), and Sentry are all env‑guarded and no‑op when unset.
-- A legacy Python Flask app (`api/index.py`, `npm run flask-dev`, port 5328) is leftover from the original template and is **not** part of the real‑estate product flow.
+- APIs live in `app/api/**/route.ts` (App Router). There is no Python/Flask backend.

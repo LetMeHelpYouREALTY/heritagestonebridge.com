@@ -41,19 +41,6 @@ const nextConfig = {
     ]
   },
 
-  // Python API rewrites
-  rewrites: async () => {
-    return [
-      {
-        source: '/api/:path*',
-        destination:
-          process.env.NODE_ENV === 'development'
-            ? 'http://127.0.0.1:5328/api/:path*'
-            : '/api/',
-      },
-    ]
-  },
-
   // Headers are handled by Cloudflare Workers
   async headers() {
     return []
