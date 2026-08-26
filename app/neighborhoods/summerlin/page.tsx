@@ -286,7 +286,6 @@ export default function SummerlinPage() {
                 floor plan against that limited inventory rather than a valley-wide average. Nevada has
                 no state income tax.
               </p>
-              </p>
               <p>
                 Working with a <strong>Berkshire Hathaway HomeServices</strong> agent gives you access to listings
                 before they hit the market, expert negotiation skills, and the backing of a globally trusted brand.
