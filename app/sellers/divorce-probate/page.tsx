@@ -392,7 +392,7 @@ export default function DivorceProbatePage() {
           {/* FAQ Section */}
           <section className="mb-16 max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Frequently Asked Questions
+              Questions about divorce and probate home sales in Las Vegas
             </h2>
             <div className="space-y-4">
               {[

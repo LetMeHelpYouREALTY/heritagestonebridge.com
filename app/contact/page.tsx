@@ -272,7 +272,7 @@ export default function ContactPage() {
           {/* FAQ Section */}
           <section className="max-w-4xl mx-auto mt-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Frequently Asked Questions
+              Questions about contacting Dr. Jan Duffy
             </h2>
             <div className="space-y-4">
               {[
@@ -295,7 +295,7 @@ export default function ContactPage() {
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600">{faq.a}</p>
+                  <p className="aeo-answer text-slate-600">{faq.a}</p>
                 </div>
               ))}
             </div>

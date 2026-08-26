@@ -15,6 +15,7 @@ import { useState } from 'react';
 import { Turnstile } from '@marsidev/react-turnstile';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { SITE_CONTACT } from '@/lib/site-contact';
 
 export interface LeadCaptureFormProps {
   source?: string;
@@ -205,7 +206,7 @@ export function LeadCaptureForm({
           value={formData.phone}
           onChange={handleChange}
           disabled={loading}
-          placeholder="(702) 555-1234"
+          placeholder={SITE_CONTACT.phone.display}
         />
       </div>
 
@@ -228,7 +229,7 @@ export function LeadCaptureForm({
                 value={formData.priceMin}
                 onChange={handleChange}
                 disabled={loading}
-                placeholder="300000"
+                placeholder="500000"
               />
             </div>
 
@@ -243,7 +244,7 @@ export function LeadCaptureForm({
                 value={formData.priceMax}
                 onChange={handleChange}
                 disabled={loading}
-                placeholder="600000"
+                placeholder="850000"
               />
             </div>
           </div>

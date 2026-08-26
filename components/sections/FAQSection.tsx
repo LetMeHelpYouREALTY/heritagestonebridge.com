@@ -55,8 +55,8 @@ interface FAQSectionProps {
 
 export default function FAQSection({
   faqs = defaultFaqs,
-  title = "Frequently Asked Questions",
-  subtitle = "Get answers to common questions about our real estate services",
+  title = "Questions about Heritage at Stonebridge real estate",
+  subtitle = "Get answers about Summerlin West 55+ homes, HOA, and tours",
   className = "",
 }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -72,7 +72,7 @@ export default function FAQSection({
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             {title}
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
+          <p className="aeo-answer text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
         </div>
 
         <div className="max-w-3xl mx-auto">
@@ -85,7 +85,9 @@ export default function FAQSection({
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-slate-50 transition-colors"
               >
-                <span className="font-semibold text-slate-900 pr-4">{faq.question}</span>
+                <h3 className="font-semibold text-slate-900 pr-4 text-left text-base">
+                  {faq.question}
+                </h3>
                 {openIndex === index ? (
                   <ChevronUp className="h-5 w-5 text-blue-600 flex-shrink-0" />
                 ) : (
@@ -94,7 +96,7 @@ export default function FAQSection({
               </button>
               {openIndex === index && (
                 <div className="px-6 py-4 bg-slate-50 border-t border-slate-200">
-                  <p className="text-slate-700">{faq.answer}</p>
+                  <p className="aeo-answer text-slate-700">{faq.answer}</p>
                 </div>
               )}
             </div>

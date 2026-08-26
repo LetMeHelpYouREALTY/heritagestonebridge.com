@@ -62,6 +62,21 @@ export const apiLimiter = redis
   : null;
 
 /**
+ * Parallel Search Rate Limiter
+ *
+ * Limits: 20 requests per minute per IP
+ * Use case: Protect PARALLEL_API_KEY credits on /api/parallel/search
+ */
+export const parallelSearchLimiter = redis
+  ? new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(20, '1 m'),
+      analytics: true,
+      prefix: '@heritagestonebridge/parallel-search',
+    })
+  : null;
+
+/**
  * Get client identifier from request
  * 
  * Tries multiple sources in order:

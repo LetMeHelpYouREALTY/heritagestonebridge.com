@@ -260,7 +260,7 @@ export default function GoogleBusinessPage() {
           {/* FAQ Section - Extra ranking boost */}
           <section className="max-w-4xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Frequently Asked Questions
+              Questions about the Heritage Stonebridge Google Business Profile
             </h2>
             <div className="space-y-4">
               {gbpFAQs.map((faq, index) => (
@@ -269,7 +269,7 @@ export default function GoogleBusinessPage() {
                     <MessageSquare className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                     {faq.question}
                   </h3>
-                  <p className="text-slate-600 ml-7">{faq.answer}</p>
+                  <p className="aeo-answer text-slate-600 ml-7">{faq.answer}</p>
                 </div>
               ))}
             </div>

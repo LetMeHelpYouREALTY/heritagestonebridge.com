@@ -69,6 +69,8 @@ export type HeritagePageContent = {
   subtitle: string;
   sections: HeritageSection[];
   faqs?: FAQItem[];
+  /** Unique FAQ H2. Defaults to `Questions about ${h1}`. */
+  faqHeading?: string;
   ctaTitle?: string;
   ctaSubtitle?: string;
   includeCommunitySchema?: boolean;

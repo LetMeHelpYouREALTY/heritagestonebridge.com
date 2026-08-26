@@ -3,6 +3,7 @@ import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
+import { Suspense } from "react";
 import {
   Phone,
   TrendingUp,
@@ -16,6 +17,10 @@ import {
   CheckCircle,
 } from "lucide-react";
 import type { Metadata } from "next";
+import StandardPageSchema from "@/components/seo/StandardPageSchema";
+import AnswerEngineBlock from "@/components/seo/AnswerEngineBlock";
+import ParallelHeritageBrief from "@/components/seo/ParallelHeritageBrief";
+import { marketInsightsFaqs } from "@/lib/seo/aeo-faqs";
 
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market Insights 2026 | Berkshire Hathaway HomeServices",
@@ -50,9 +55,17 @@ const reportSchema = {
 export default function MarketInsightsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reportSchema) }}
+      <StandardPageSchema
+        path="/market-insights"
+        name="Las Vegas Real Estate Market Insights 2026"
+        description="Technology trends, migration, and market context for Heritage at Stonebridge and Summerlin West. Live prices come from MLS."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Market Insights", url: "/market-insights" },
+        ]}
+        faqs={marketInsightsFaqs}
+        dateModified="2026-08-25"
+        extraSchemas={[reportSchema as Record<string, unknown>]}
       />
       <Navbar />
       <main className="pt-24 pb-16">
@@ -291,7 +304,8 @@ export default function MarketInsightsPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 text-sm mb-3">
-                  Red Rock views, Downtown Summerlin, and top schools maintain premium positioning.
+                  Red Rock views, Downtown Summerlin, and the 89138 55+ inventory keep west Summerlin
+                  in a premium price band versus valley averages.
                   Limited new inventory keeps values strong.
                 </p>
                 <div className="text-sm text-slate-500">
@@ -415,6 +429,15 @@ export default function MarketInsightsPage() {
             </div>
           </section>
 
+          <Suspense fallback={null}>
+            <ParallelHeritageBrief topic="Las Vegas real estate market insights 2026" />
+          </Suspense>
+
+          <AnswerEngineBlock
+            heading="Questions about the 2026 Las Vegas market near Heritage at Stonebridge"
+            faqs={marketInsightsFaqs}
+          />
+
           {/* CTA */}
           <section className="text-center bg-purple-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -441,9 +464,13 @@ export default function MarketInsightsPage() {
             </div>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: August 2026</div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        variant="both"
+        title="MLS inventory behind this market snapshot"
+        subtitle="Confirm prices and DOM in RealScout — this page does not invent a valley median"
+      />
       <Footer />
     </>
   );
