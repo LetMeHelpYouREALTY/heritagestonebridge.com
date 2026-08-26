@@ -8,6 +8,7 @@ import { generateWebSiteSchema, generateRealEstateAgentSchema, combineSchemas } 
 import SchemaScript from "@/components/SchemaScript";
 import { absoluteOgImage, DEFAULT_OG_IMAGE_PATH } from "@/lib/metadata";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 import RealScoutScript from "@/components/realscout/RealScoutScript";
@@ -102,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <CalendlyBadge />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
