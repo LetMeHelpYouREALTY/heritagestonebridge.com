@@ -105,9 +105,10 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
               </h2>
               <p className="text-slate-700 mb-6">
                 {HERITAGE_COMMUNITY.name} is staff guard-gated. Dr. Jan Duffy coordinates visitor
-                verification with the listing office, confirms HOA documents, and walks {HERITAGE_COMMUNITY.floorPlanCount}{" "}
-                Lennar collections against your must-haves — pickleball access, RV garage, or single-level
-                living — without quoting a canned price.
+                verification with the listing office, confirms HOA documents, and walks{" "}
+                {HERITAGE_COMMUNITY.floorPlanCount} Lennar floor plans across{" "}
+                {HERITAGE_COMMUNITY.collections} collections against your must-haves — pickleball
+                access, RV garage, or single-level living — without quoting a canned price.
               </p>
               <div className="bg-slate-50 rounded-lg p-6 mb-6">
                 <h3 className="text-xl font-bold text-slate-900 mb-3">What to bring to a tour</h3>

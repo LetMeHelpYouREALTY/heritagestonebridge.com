@@ -279,12 +279,13 @@ export default function SummerlinPage() {
                 </div>
               </div>
 
-              <p className="mt-8">
-                The current Summerlin real estate market shows strong demand with <strong>342 active listings</strong> and
-                an average of just <strong>22 days on market</strong>. The median home price of <strong>$625,000</strong> represents
-                solid appreciation while still offering value compared to similar communities in California.
-                Buyers relocating from the West Coast find that Summerlin delivers a comparable lifestyle at
-                a fraction of the cost—with no state income tax.
+              <p className="aeo-answer mt-8">
+                Confirm active inventory, days on market, and medians on the live MLS widget — those
+                figures change by village and week. Heritage at Stonebridge (89138) is a 421-home 55+
+                village inside Summerlin West; California relocators often compare HOA, gate, and
+                floor plan against that limited inventory rather than a valley-wide average. Nevada has
+                no state income tax.
+              </p>
               </p>
               <p>
                 Working with a <strong>Berkshire Hathaway HomeServices</strong> agent gives you access to listings
@@ -300,10 +301,10 @@ export default function SummerlinPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Summerlin isn't just a neighborhood—it's a lifestyle. I've been serving this area since
-                2008, and I can tell you exactly which villages suit young families, which offer the
-                best investment potential, and where you'll find the hidden gems. That local knowledge is
-                what sets Berkshire Hathaway HomeServices apart."
+                "Summerlin is a Howard Hughes master plan with distinct villages, not one median price.
+                I&apos;ve worked this corridor since 2008 — trail miles, Downtown Summerlin retail, Red Rock
+                access, and Heritage at Stonebridge&apos;s guard gate in 89138. That village-level inventory
+                knowledge is what Berkshire Hathaway HomeServices is for."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
