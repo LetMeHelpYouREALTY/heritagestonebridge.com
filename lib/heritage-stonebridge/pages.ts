@@ -1,5 +1,6 @@
 import type { HeritagePageContent } from "./types";
 import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "./data";
+import { listingsPageFaqs, marketInsightsFaqs } from "@/lib/seo/aeo-faqs";
 
 const baseTitle = (page: string) =>
   `${page} | Heritage at Stonebridge Summerlin | Dr. Jan Duffy`;
@@ -612,7 +613,8 @@ export const marketUpdatePage: HeritagePageContent = {
   h1: "Heritage at Stonebridge Market Update",
   subtitle:
     "Hyperlocal snapshot for Summerlin West 55+ buyers and sellers — verify figures against live MLS before offers.",
-  lastUpdated: "June 2026",
+  lastUpdated: "August 2026",
+  faqs: marketInsightsFaqs,
   sections: [
     {
       type: "prose",
@@ -677,6 +679,7 @@ export const faqPage: HeritagePageContent = {
   breadcrumbs: crumbs({ name: "FAQ", url: "/faq" }),
   h1: "Heritage at Stonebridge FAQ",
   subtitle: "Answers to common buyer and seller questions about Summerlin's Lennar 55+ guard-gated community.",
+  faqHeading: "Questions buyers ask about Heritage at Stonebridge",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -715,7 +718,8 @@ export const homesForSalePage: HeritagePageContent = {
   breadcrumbs: crumbs({ name: "Homes for Sale", url: "/homes-for-sale" }),
   h1: "Heritage at Stonebridge Homes for Sale",
   subtitle: "Live MLS search for 55+ guard-gated homes in Summerlin West — updated as new listings hit market.",
-  lastUpdated: "June 2026",
+  lastUpdated: "August 2026",
+  faqs: listingsPageFaqs,
   sections: [
     {
       type: "prose",

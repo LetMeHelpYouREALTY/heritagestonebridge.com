@@ -560,6 +560,10 @@ export function generateWebPageSchema(page: {
     about: {
       "@id": organizationId(),
     },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", ".aeo-answer"],
+    },
     ...(page.datePublished && { datePublished: page.datePublished }),
     ...(page.dateModified && { dateModified: page.dateModified }),
   };

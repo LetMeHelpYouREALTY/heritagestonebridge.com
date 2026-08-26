@@ -101,14 +101,15 @@ export const propertySearchTemplate: PromptTemplate = {
 - Always include contact information for Dr. Jan Duffy: (702) 500-1942
 
 ## Neighborhoods to Know
-- **Summerlin**: Master-planned, family-friendly, excellent schools
-- **Henderson**: Safe, suburban, good schools, growing tech hub
-- **Green Valley**: Established, mature trees, golf courses
-- **Southern Highlands**: Luxury, golf, gated communities
-- **The Ridges**: Ultra-luxury, guard-gated, stunning views
-- **Downtown/Arts District**: Urban, walkable, entertainment
-- **North Las Vegas**: Affordable, newer developments
-- **Mountains Edge**: Southwest, newer homes, family-oriented`,
+- **Summerlin / Summerlin West (89138)**: Howard Hughes master plan — parks, trails, Downtown Summerlin, Red Rock access; Heritage at Stonebridge is the guard-gated 55+ village here
+- **Henderson**: Separate city southeast of the Strip — Green Valley, Anthem, Lake Las Vegas
+- **Green Valley**: Henderson village with mature landscaping, golf, The District retail
+- **Southern Highlands**: Guard-gated southwest master plan with championship golf
+- **The Ridges**: Custom estate village in Summerlin, guard-gated
+- **Downtown/Arts District**: Urban core, walkable entertainment
+- **North Las Vegas**: Newer tract product along the northern beltway
+- **Mountains Edge**: Southwest production homes and mountain-facing streets
+Never describe areas as "safe," "family-friendly," or by school ratings. Use sq ft, amenities, commute, and HOA instead.`,
   cacheable: true,
   estimatedTokens: 330,
 };
@@ -177,31 +178,21 @@ export const neighborhoodExpertTemplate: PromptTemplate = {
 ## Neighborhoods Database (Cached for Fast Access)
 
 ### Summerlin
-- **Overview**: Master-planned community, west Las Vegas
-- **Population**: ~100,000 residents
-- **Price Range**: $400K - $2M+
-- **Schools**: Highly rated (Clark County School District)
-- **Features**: Parks, trails, shopping (Downtown Summerlin), community events
-- **Demographics**: Families, professionals, retirees
-- **HOA**: Most communities have HOA ($50-$200/month)
+- **Overview**: Howard Hughes master plan, west Las Vegas / Summerlin West
+- **Price Range**: Verify on current MLS; Heritage at Stonebridge commonly lists from the $500s to $850,000+
+- **Features**: Parks, trails, Downtown Summerlin retail, Red Rock Canyon access
+- **HOA**: Most villages have HOA; Heritage assessments typically low-to-mid $100s–$200s (confirm with listing)
+- **Age-restricted option**: Heritage at Stonebridge (55+, guard-gated, 89138)
 
 ### Henderson
 - **Overview**: Separate city, southeast of Las Vegas
-- **Population**: ~330,000 residents
-- **Price Range**: $350K - $3M+
-- **Schools**: Top-rated in Nevada
-- **Features**: Green Valley area, Lake Las Vegas, growing tech sector
-- **Demographics**: Diverse, family-friendly, safe
-- **HOA**: Varies by community
+- **Features**: Green Valley, Lake Las Vegas, Anthem corridor, growing employment
+- **HOA**: Varies by community — always review CC&Rs
 
 ### Green Valley (Henderson)
-- **Overview**: Established master-planned community
-- **Population**: ~50,000 residents
-- **Price Range**: $400K - $1M
-- **Schools**: Excellent schools
-- **Features**: Golf courses, parks, shopping, mature landscaping
-- **Demographics**: Upper-middle class families
-- **HOA**: Yes, most communities
+- **Overview**: Henderson village with mature landscaping and golf
+- **Features**: Golf courses, parks, The District retail
+- **HOA**: Yes, most sub-communities
 
 ### Southern Highlands
 - **Overview**: Luxury master-planned community, southwest Las Vegas

@@ -3,9 +3,11 @@ import { Phone, Shield, MapPin, Home as HomeIcon, Users } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import HeroBackground from "@/components/sections/HeroBackground";
+import { Suspense } from "react";
 import FAQSection from "@/components/sections/FAQSection";
 import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import ParallelHeritageBrief from "@/components/seo/ParallelHeritageBrief";
 import SchemaScript from "@/components/SchemaScript";
 import {
   combineSchemas,
@@ -60,7 +62,7 @@ export default function HomePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Heritage at Stonebridge — Guard-Gated 55+ Summerlin
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
+            <p className="aeo-answer text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
               Lennar&apos;s boutique active adult community in zip 89138 — staff
               guard-gated security, modern floor plans, and minutes from Downtown
               Summerlin. Search live MLS listings on our homes-for-sale page.
@@ -202,10 +204,14 @@ export default function HomePage() {
           </div>
         </section>
 
+        <Suspense fallback={null}>
+          <ParallelHeritageBrief topic="Heritage at Stonebridge Summerlin 55+" />
+        </Suspense>
+
         <FAQSection
           faqs={homepageFaqs}
-          title="Heritage at Stonebridge FAQ"
-          subtitle="Common questions about Summerlin's Lennar 55+ guard-gated community"
+          title="Questions about Heritage at Stonebridge"
+          subtitle="Common answers about Summerlin West's Lennar 55+ guard-gated community in 89138"
         />
 
         <section className="py-16 bg-purple-600 text-white">

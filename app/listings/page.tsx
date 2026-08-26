@@ -2,111 +2,80 @@ import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
+import { Suspense } from "react";
 import {
   Phone,
-  Home,
   MapPin,
   DollarSign,
   TrendingUp,
   Search,
-  Filter,
-  Heart,
-  Building2,
-  Users,
-  Clock,
   CheckCircle,
-  Star,
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import StandardPageSchema from "@/components/seo/StandardPageSchema";
+import AnswerEngineBlock from "@/components/seo/AnswerEngineBlock";
+import ParallelHeritageBrief from "@/components/seo/ParallelHeritageBrief";
+import { listingsPageFaqs } from "@/lib/seo/aeo-faqs";
+import { SITE_CONTACT } from "@/lib/site-contact";
+import { HERITAGE_COMMUNITY } from "@/lib/heritage-stonebridge/data";
+import { getRealScoutAgentId } from "@/lib/realscout-config";
 
 export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | MLS Property Search | Berkshire Hathaway HomeServices",
   description:
-    "Browse all Las Vegas and Henderson homes for sale with live MLS listings. Search by neighborhood, price, and features. Dr. Jan Duffy, Berkshire Hathaway HomeServices. Call (702) 500-1942.",
+    "Browse Las Vegas, Henderson, and Summerlin homes for sale with live MLS listings. Search Heritage at Stonebridge and 89138 inventory. Dr. Jan Duffy. Call (702) 500-1942.",
   keywords: [
     "Las Vegas homes for sale",
     "Henderson real estate",
     "MLS listings Las Vegas",
     "Summerlin homes",
-    "houses for sale Las Vegas",
+    "Heritage at Stonebridge listings",
     "Berkshire Hathaway listings",
   ],
 };
 
-import { SITE_CONTACT } from "@/lib/site-contact";
-import { getRealScoutAgentId } from "@/lib/realscout-config";
-
-const listingsSchema = {
-  "@context": "https://schema.org",
-  "@type": "RealEstateListing",
-  name: "Las Vegas MLS Property Listings",
-  description: "Live MLS property listings for Las Vegas, Henderson, and Summerlin homes for sale",
-  provider: {
-    "@type": "RealEstateAgent",
-    name: SITE_CONTACT.businessName,
-    telephone: SITE_CONTACT.phone.tel,
-  },
-  areaServed: [
-    { "@type": "City", name: "Las Vegas, NV" },
-    { "@type": "City", name: "Henderson, NV" },
-    { "@type": "City", name: "Summerlin, NV" },
-  ],
-};
-
 const popularSearches = [
-  { name: "Summerlin Homes", href: "/neighborhoods/summerlin", count: "1,200+" },
-  { name: "Henderson Properties", href: "/neighborhoods/henderson", count: "980+" },
-  { name: "Green Valley", href: "/neighborhoods/green-valley", count: "450+" },
-  { name: "The Ridges Luxury", href: "/neighborhoods/the-ridges", count: "85+" },
-  { name: "55+ Communities", href: "/55-plus-communities", count: "320+" },
-  { name: "New Construction", href: "/new-construction", count: "600+" },
+  { name: "Summerlin Homes", href: "/neighborhoods/summerlin" },
+  { name: "Henderson Properties", href: "/neighborhoods/henderson" },
+  { name: "Green Valley", href: "/neighborhoods/green-valley" },
+  { name: "The Ridges Luxury", href: "/neighborhoods/the-ridges" },
+  { name: "55+ Communities", href: "/55-plus-communities" },
+  { name: "New Construction", href: "/new-construction" },
 ];
 
 const priceRanges = [
-  { range: "Under $400K", description: "Starter homes, condos, townhomes", count: "1,500+" },
-  { range: "$400K - $600K", description: "Family homes, established neighborhoods", count: "2,100+" },
-  { range: "$600K - $1M", description: "Premium locations, larger homes", count: "1,200+" },
-  { range: "$1M - $2M", description: "Luxury homes, guard-gated communities", count: "450+" },
-  { range: "$2M+", description: "Ultra-luxury estates, custom builds", count: "180+" },
+  { range: "Under $400K", description: "Condos, townhomes, and smaller lots — confirm on live MLS" },
+  { range: "$400K - $600K", description: "Common resale band across much of the valley" },
+  { range: "$600K - $1M", description: "Includes many Heritage at Stonebridge and Summerlin West plans" },
+  { range: "$1M - $2M", description: "Guard-gated and custom elevations — inventory varies by week" },
+  { range: "$2M+", description: "Custom estates; use MLS filters rather than a canned count" },
 ];
 
 const neighborhoods = [
   {
     name: "Summerlin",
-    description: "Master-planned community with Red Rock views, top schools, and 150+ parks",
-    medianPrice: "$625,000",
-    daysOnMarket: 22,
+    description: "Howard Hughes master plan west of the I-215 — parks, trails, Downtown Summerlin retail, Red Rock access",
   },
   {
     name: "Henderson",
-    description: "Nevada's second-largest city with family-friendly communities and low crime",
-    medianPrice: "$485,000",
-    daysOnMarket: 24,
+    description: "Separate city southeast of the Strip — Green Valley, Anthem, and Lake Las Vegas corridors",
   },
   {
     name: "Green Valley",
-    description: "Established Henderson community with mature landscaping and golf courses",
-    medianPrice: "$520,000",
-    daysOnMarket: 26,
+    description: "Henderson village with mature landscaping, golf, and The District retail",
   },
   {
     name: "Southern Highlands",
-    description: "Guard-gated luxury community with championship golf and mountain views",
-    medianPrice: "$750,000",
-    daysOnMarket: 32,
+    description: "Guard-gated southwest master plan with championship golf and mountain views",
   },
   {
     name: "North Las Vegas",
-    description: "Affordable new construction and growing infrastructure",
-    medianPrice: "$385,000",
-    daysOnMarket: 18,
+    description: "Newer tract product and growing employment nodes along the northern beltway",
   },
   {
     name: "Skye Canyon",
-    description: "Newer master-planned community with modern amenities and mountain access",
-    medianPrice: "$550,000",
-    daysOnMarket: 20,
+    description: "Northwest master plan with a town center and mountain-facing streets",
   },
 ];
 
@@ -115,9 +84,16 @@ export default function ListingsPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(listingsSchema) }}
+      <StandardPageSchema
+        path="/listings"
+        name="Las Vegas Homes for Sale | Live MLS Search"
+        description="Browse Las Vegas, Henderson, and Summerlin homes for sale with live MLS listings. Heritage at Stonebridge and 89138 search with Dr. Jan Duffy."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Listings", url: "/listings" },
+        ]}
+        faqs={listingsPageFaqs}
+        dateModified="2026-08-25"
       />
       <Navbar />
       <main className="pt-24 pb-16">
@@ -125,13 +101,13 @@ export default function ListingsPage() {
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
             title="Las Vegas Homes for Sale"
-            subtitle="Search thousands of Las Vegas, Henderson, and Summerlin properties with live MLS listings updated every 15 minutes — with expert guidance from Dr. Jan Duffy at Berkshire Hathaway HomeServices."
+            subtitle="Search live MLS inventory across Las Vegas, Henderson, and Summerlin — including Heritage at Stonebridge in 89138 — with Dr. Jan Duffy. Prices and photos come from the feed, not a canned gallery."
             priority
           >
             <div className="flex flex-wrap justify-center gap-4 text-sm text-white/80">
               <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Live MLS Data</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Updated Every 15 Min</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> 5,000+ Active Listings</span>
+              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> RealScout widget</span>
+              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> {HERITAGE_COMMUNITY.homeCount} Heritage homes</span>
             </div>
           </PageHero>
 
@@ -156,12 +132,10 @@ export default function ListingsPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Popular Property Searches in Las Vegas
             </h2>
-            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
-              or affordable new construction, our comprehensive search tools help you find exactly 
-              what you're looking for. Browse the most popular searches below or use the advanced 
-              filters to customize your home search experience.
+            <p className="aeo-answer text-slate-600 text-center max-w-3xl mx-auto mb-8">
+              Start with Heritage at Stonebridge and Summerlin West (89138), then widen to Henderson
+              guard-gated plans or northwest new construction. Counts change hourly — use the widget
+              above instead of a static inventory number.
             </p>
             <div className="grid md:grid-cols-3 gap-4">
               {popularSearches.map((search) => (
@@ -174,7 +148,7 @@ export default function ListingsPage() {
                     <h3 className="font-bold text-slate-900 group-hover:text-blue-600">
                       {search.name}
                     </h3>
-                    <span className="text-sm text-slate-500">{search.count} listings</span>
+                    <span className="text-sm text-slate-500">Open area guide</span>
                   </div>
                   <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600" />
                 </Link>
@@ -187,14 +161,14 @@ export default function ListingsPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Las Vegas Home Price Guide
             </h2>
-            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              The Las Vegas real estate market offers exceptional value compared to California and 
-              other western states. With no state income tax and housing prices 40-60% lower than 
-              coastal cities, your dollar stretches further in Southern Nevada. Here's what you can 
-              expect at different price points in the current January 2026 market.
+            <p className="aeo-answer text-slate-600 text-center max-w-3xl mx-auto mb-8">
+              Nevada has no state income tax. Heritage at Stonebridge resales commonly list from the
+              $500s to $850,000+ depending on plan and upgrades — verify on current MLS (August 2026).
+              Valley-wide averages mix condos and different HOAs; they do not price a pickleball 55+
+              plan at the gate.
             </p>
             <div className="space-y-4">
-              {priceRanges.map((price, index) => (
+              {priceRanges.map((price) => (
                 <div
                   key={price.range}
                   className="bg-white rounded-lg p-4 border border-slate-200 flex flex-col md:flex-row md:items-center justify-between"
@@ -206,7 +180,7 @@ export default function ListingsPage() {
                       <p className="text-sm text-slate-600">{price.description}</p>
                     </div>
                   </div>
-                  <span className="text-blue-600 font-semibold">{price.count} homes</span>
+                  <span className="text-blue-600 font-semibold text-sm">Confirm on MLS</span>
                 </div>
               ))}
             </div>
@@ -217,13 +191,10 @@ export default function ListingsPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Las Vegas Neighborhoods & Communities
             </h2>
-            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Each Las Vegas neighborhood offers a unique lifestyle, from the resort-style living 
-              of Summerlin to the family-friendly communities of Henderson. Understanding these 
-              differences is crucial to finding a home that fits your needs. As a Berkshire 
-              Hathaway HomeServices agent serving Las Vegas since 2008, Dr. Jan Duffy provides 
-              expert guidance on which neighborhoods match your priorities—whether that's schools, 
-              commute times, amenities, or investment potential.
+            <p className="aeo-answer text-slate-600 text-center max-w-3xl mx-auto mb-8">
+              Match commute, HOA, floor plan, and amenity list — not a city-wide average. Dr. Jan Duffy
+              has represented buyers and sellers in Summerlin and Henderson since 2008 through{" "}
+              {SITE_CONTACT.brokerage}.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {neighborhoods.map((neighborhood) => (
@@ -232,11 +203,7 @@ export default function ListingsPage() {
                   className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
                 >
                   <h3 className="font-bold text-lg text-slate-900 mb-2">{neighborhood.name}</h3>
-                  <p className="text-slate-600 text-sm mb-4">{neighborhood.description}</p>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-500">Median: <strong className="text-slate-900">{neighborhood.medianPrice}</strong></span>
-                    <span className="text-slate-500">DOM: <strong className="text-slate-900">{neighborhood.daysOnMarket} days</strong></span>
-                  </div>
+                  <p className="text-slate-600 text-sm">{neighborhood.description}</p>
                 </div>
               ))}
             </div>
@@ -286,7 +253,7 @@ export default function ListingsPage() {
                 </div>
                 <h3 className="font-bold mb-2">Local Expertise</h3>
                 <p className="text-slate-400 text-sm">
-                  Insider knowledge of neighborhoods, schools, and upcoming developments
+                  Floor plans, HOA documents, and commute times for Summerlin West and Henderson 55+
                 </p>
               </div>
               <div className="text-center">
@@ -301,33 +268,30 @@ export default function ListingsPage() {
             </div>
           </section>
 
-          {/* Market Stats */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Las Vegas Real Estate Market Statistics
+              Heritage at Stonebridge listing facts
             </h2>
-            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              The Las Vegas housing market remains strong heading into 2026, with steady appreciation 
-              and healthy inventory levels. Understanding current market conditions helps buyers 
-              make informed decisions about timing, pricing, and negotiation strategies. Here's a 
-              snapshot of the current market as of January 2026.
+            <p className="aeo-answer text-slate-600 text-center max-w-3xl mx-auto mb-8">
+              Community facts below are from Lennar materials dated 2026. Valley median, DOM, and
+              active-count headlines change daily — pull them from the MLS widget, not this page.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">$450K</div>
-                <div className="text-sm text-slate-600">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">{HERITAGE_COMMUNITY.homeCount}</div>
+                <div className="text-sm text-slate-600">Lennar homes</div>
               </div>
               <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">28</div>
-                <div className="text-sm text-slate-600">Avg Days on Market</div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">{HERITAGE_COMMUNITY.floorPlanCount}</div>
+                <div className="text-sm text-slate-600">Floor plans</div>
               </div>
               <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">4,850</div>
-                <div className="text-sm text-slate-600">Active Listings</div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">89138</div>
+                <div className="text-sm text-slate-600">Summerlin West zip</div>
               </div>
               <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">+4.2%</div>
-                <div className="text-sm text-slate-600">Year-Over-Year</div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">55+</div>
+                <div className="text-sm text-slate-600">Active adult</div>
               </div>
             </div>
           </section>
@@ -412,58 +376,14 @@ export default function ListingsPage() {
             </div>
           </section>
 
-          {/* FAQ Section */}
-          <section className="mb-16 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Frequently Asked Questions About Las Vegas Real Estate
-            </h2>
-            <div className="space-y-4">
-              <div className="bg-slate-50 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  How competitive is the Las Vegas housing market in 2026?
-                </h3>
-                <p className="text-slate-600">
-                  The Las Vegas market is moderately competitive with 2.1 months of inventory—a 
-                  slight seller's market. Well-priced homes in desirable areas like Summerlin and 
-                  Henderson often receive multiple offers within the first week. Having a 
-                  pre-approval and experienced agent gives you a significant advantage.
-                </p>
-              </div>
-              <div className="bg-slate-50 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  What's the best time of year to buy a home in Las Vegas?
-                </h3>
-                <p className="text-slate-600">
-                  Las Vegas has a year-round real estate market, but inventory typically peaks in 
-                  spring (March-May) while competition is lowest in winter (November-January). The 
-                  best time depends on your priorities: more selection in spring, potentially better 
-                  deals in winter.
-                </p>
-              </div>
-              <div className="bg-slate-50 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  How much do I need for a down payment in Las Vegas?
-                </h3>
-                <p className="text-slate-600">
-                  Down payment requirements vary by loan type: FHA loans require 3.5%, conventional 
-                  loans typically 3-20%, VA loans 0% for eligible veterans. Nevada also offers down 
-                  payment assistance programs for first-time buyers. Dr. Jan can connect you with 
-                  lenders who specialize in various loan programs.
-                </p>
-              </div>
-              <div className="bg-slate-50 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  Are Las Vegas HOA fees expensive?
-                </h3>
-                <p className="text-slate-600">
-                  HOA fees in Las Vegas range from $25/month for basic community maintenance to 
-                  $400+/month for guard-gated luxury communities with extensive amenities. Most 
-                  standard neighborhoods fall between $50-$150/month. Dr. Jan always reviews HOA 
-                  documents to ensure you understand what's included and any special assessments.
-                </p>
-              </div>
-            </div>
-          </section>
+          <Suspense fallback={null}>
+            <ParallelHeritageBrief topic="Las Vegas MLS homes for sale" />
+          </Suspense>
+
+          <AnswerEngineBlock
+            heading="Questions about searching Las Vegas MLS listings"
+            faqs={listingsPageFaqs}
+          />
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
@@ -497,7 +417,7 @@ export default function ListingsPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: August 2026</div>
       </main>
       <Footer />
     </>

@@ -16,8 +16,8 @@ type RealScoutListingsProps = {
 
 export default function RealScoutListings({
   variant = "listings",
-  title = "Featured Properties",
-  subtitle = "Browse active office listings in the $600k–$900k range",
+  title = "Search Heritage Listings",
+  subtitle = "Browse live MLS office listings in the $600k–$900k range",
 }: RealScoutListingsProps) {
   const sharedSearchUrl = getRealScoutSharedSearchUrl();
   const showSearch = variant === "search" || variant === "both";

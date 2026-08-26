@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { Phone, CheckCircle } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import SchemaScript from "@/components/SchemaScript";
+import ParallelHeritageBrief from "@/components/seo/ParallelHeritageBrief";
 import {
   combineSchemas,
   generateBreadcrumbSchema,
@@ -82,7 +84,7 @@ function renderSection(section: HeritageSection, index: number) {
               <div key={item.title} className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong className="text-slate-900">{item.title}</strong>
+                  <h3 className="font-bold text-slate-900">{item.title}</h3>
                   <p className="text-slate-600 text-sm">{item.description}</p>
                 </div>
               </div>
@@ -219,16 +221,20 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
 
           {content.sections.map(renderSection)}
 
+          <Suspense fallback={null}>
+            <ParallelHeritageBrief topic={content.h1} />
+          </Suspense>
+
           {content.faqs && content.faqs.length > 0 && (
             <section className="mb-16 max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-                Frequently Asked Questions
+                {content.faqHeading ?? `Questions about ${content.h1}`}
               </h2>
               <div className="space-y-4">
                 {content.faqs.map((faq) => (
                   <div key={faq.question} className="bg-slate-50 rounded-lg p-6">
                     <h3 className="font-bold text-slate-900 mb-2">{faq.question}</h3>
-                    <p className="text-slate-700 text-sm">{faq.answer}</p>
+                    <p className="aeo-answer text-slate-700 text-sm">{faq.answer}</p>
                   </div>
                 ))}
               </div>

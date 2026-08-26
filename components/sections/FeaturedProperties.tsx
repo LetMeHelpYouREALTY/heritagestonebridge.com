@@ -1,93 +1,36 @@
-"use client";
-
 import Link from "next/link";
-import Image from "next/image";
-import { Bed, Bath, Square, ArrowRight } from "lucide-react";
+import { Shield, MapPin, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HERITAGE_COMMUNITY } from "@/lib/heritage-stonebridge/data";
 
-interface Property {
-  id: number;
-  name: string;
-  location: string;
-  price: string;
-  image: string;
-  bedrooms: number;
-  bathrooms: number;
-  squareFeet: number;
-}
-
-const PropertyCard = ({ property }: { property: Property }) => (
-  <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-    <div className="relative h-48 md:h-64">
-      <Image
-        src={property.image}
-        alt={property.name}
-        fill
-        className="object-cover"
-      />
-      <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-semibold">
-        {property.price}
-      </div>
-    </div>
-    <div className="p-6">
-      <h3 className="text-xl font-bold text-slate-900 mb-2">{property.name}</h3>
-      <p className="text-slate-600 mb-4">{property.location}</p>
-      <div className="flex justify-between items-center text-slate-600 mb-4">
-        <div className="flex items-center gap-1">
-          <Bed className="h-4 w-4 text-blue-600" />
-          <span className="text-sm">{property.bedrooms} Beds</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <Bath className="h-4 w-4 text-blue-600" />
-          <span className="text-sm">{property.bathrooms} Baths</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <Square className="h-4 w-4 text-blue-600" />
-          <span className="text-sm">{property.squareFeet.toLocaleString()} sq ft</span>
-        </div>
-      </div>
-      <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
-        <Link href={`/listings/${property.id}`}>
-          View Details <ArrowRight className="h-4 w-4 ml-2" />
-        </Link>
-      </Button>
-    </div>
-  </div>
-);
-
-const properties: Property[] = [
+const highlights = [
   {
-    id: 1,
-    name: "Modern Luxury Home",
-    location: "Summerlin, Las Vegas, NV",
-    price: "$850,000",
-    image: "/Image/hero_bg_1.jpg",
-    bedrooms: 4,
-    bathrooms: 3,
-    squareFeet: 3200,
+    title: "Staff guard-gated entry",
+    location: `${HERITAGE_COMMUNITY.masterPlan}, ${HERITAGE_COMMUNITY.postalCode}`,
+    icon: Shield,
+    detail: HERITAGE_COMMUNITY.security,
+    href: "/guard-gated-living",
   },
   {
-    id: 2,
-    name: "Spacious Family Home",
-    location: "Henderson, NV",
-    price: "$625,000",
-    image: "/Image/hero_bg_2.jpg",
-    bedrooms: 3,
-    bathrooms: 2,
-    squareFeet: 2400,
+    title: "Lennar 55+ floor plans",
+    location: `${HERITAGE_COMMUNITY.homeCount} homes · ${HERITAGE_COMMUNITY.floorPlanCount} plans`,
+    icon: MapPin,
+    detail: `${HERITAGE_COMMUNITY.sqFtRange} sq ft, ${HERITAGE_COMMUNITY.bedroomRange} bedrooms. ${HERITAGE_COMMUNITY.priceRange}`,
+    href: "/floor-plans",
   },
   {
-    id: 3,
-    name: "Elegant Estate",
-    location: "Green Valley, Henderson, NV",
-    price: "$1,200,000",
-    image: "/Image/hero_bg_3.jpg",
-    bedrooms: 5,
-    bathrooms: 4,
-    squareFeet: 4500,
+    title: "Clubhouse and courts",
+    location: `${HERITAGE_COMMUNITY.clubhouseSqFt.toLocaleString()} sq ft clubhouse`,
+    icon: Users,
+    detail: "Pickleball, bocce, heated lap pool, fitness, and organized social calendars.",
+    href: "/amenities",
   },
-];
+] as const;
 
+/**
+ * Original Heritage at Stonebridge highlights — not canned MLS cards.
+ * Live prices and photos stay in the RealScout widget.
+ */
 export default function FeaturedProperties() {
   return (
     <section className="py-16 md:py-24 bg-slate-50">
@@ -95,21 +38,38 @@ export default function FeaturedProperties() {
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              Featured Properties
+              Heritage at Stonebridge highlights
             </h2>
-            <p className="text-slate-600 text-lg">
-              Discover exceptional homes in Las Vegas and Henderson
+            <p className="aeo-answer text-slate-600 text-lg max-w-2xl">
+              {HERITAGE_COMMUNITY.name} is Lennar&apos;s guard-gated 55+ neighborhood in Summerlin
+              West. Search live MLS on the listings page instead of a placeholder photo gallery.
             </p>
           </div>
           <Button asChild variant="outline" className="mt-4 md:mt-0">
-            <a href="http://drjanduffy.realscout.com/" target="_blank" rel="noopener noreferrer">View All Properties</a>
+            <Link href="/homes-for-sale">Search live listings</Link>
           </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {properties.map((property) => (
-            <PropertyCard key={property.id} property={property} />
-          ))}
+          {highlights.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 p-6"
+              >
+                <div className="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                  <Icon className="h-6 w-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 mb-3 text-sm">{item.location}</p>
+                <p className="text-slate-700 text-sm mb-4">{item.detail}</p>
+                <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
+                  <Link href={item.href}>Read this guide</Link>
+                </Button>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
