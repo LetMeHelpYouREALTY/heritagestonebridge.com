@@ -15,13 +15,20 @@ import {
 } from "@/lib/schema";
 import { buildPageMetadata, canonicalUrl } from "@/lib/metadata";
 import { SITE_CONTACT } from "@/lib/site-contact";
-import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/data";
-import { HERITAGE_COMMUNITY_NAV, HERITAGE_BUYER_NAV } from "@/lib/heritage-stonebridge/routes";
+import {
+  HERITAGE_COMMUNITY,
+  HERITAGE_FAQS,
+} from "@/lib/heritage-stonebridge/data";
+import {
+  HERITAGE_COMMUNITY_NAV,
+  HERITAGE_BUYER_NAV,
+} from "@/lib/heritage-stonebridge/routes";
 import type { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Heritage at Stonebridge | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
+  title: "Heritage at Stonebridge | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
   description: `Lennar-built guard-gated 55+ community in Summerlin West (89138). 421 homes, resort amenities, near Downtown Summerlin. Dr. Jan Duffy, BHHS. Call ${SITE_CONTACT.phone.display}.`,
   path: "/",
 });
@@ -62,8 +69,9 @@ export default function HomePage() {
             </h1>
             <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
               Lennar&apos;s boutique active adult community in zip 89138 — staff
-              guard-gated security, modern floor plans, and minutes from Downtown
-              Summerlin. Search live MLS listings on our homes-for-sale page.
+              guard-gated security, modern floor plans, and minutes from
+              Downtown Summerlin. Search live MLS listings on our homes-for-sale
+              page.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
@@ -89,11 +97,12 @@ export default function HomePage() {
                 homes
               </div>
               <div>
-                <span className="font-semibold text-white">55+</span> active adult
+                <span className="font-semibold text-white">55+</span> active
+                adult
               </div>
               <div>
-                <span className="font-semibold text-white">89138</span> Summerlin
-                West
+                <span className="font-semibold text-white">89138</span>{" "}
+                Summerlin West
               </div>
             </div>
           </div>
@@ -106,7 +115,10 @@ export default function HomePage() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { value: String(HERITAGE_COMMUNITY.homeCount), label: "Lennar Homes" },
+                {
+                  value: String(HERITAGE_COMMUNITY.homeCount),
+                  label: "Lennar Homes",
+                },
                 { value: HERITAGE_COMMUNITY.sqFtRange, label: "Sq. Ft. Range" },
                 { value: "Guard-Gated", label: "Staffed Entry" },
                 {
@@ -180,9 +192,9 @@ export default function HomePage() {
         </section>
 
         <RealScoutListings
-          variant="both"
+          variant="listings"
           title="Search Heritage Listings"
-          subtitle="Filter live MLS inventory in Summerlin West (89138), then browse office listings $600k–$900k"
+          subtitle="Browse live office listings $600k–$900k in Summerlin West (89138)"
         />
 
         <section className="py-16 bg-slate-900 text-white">
@@ -234,7 +246,8 @@ export default function HomePage() {
               </a>
             </div>
             <p className="mt-6 text-white/90 text-sm">
-              Dr. Jan Duffy | License {SITE_CONTACT.license} | {SITE_CONTACT.brokerage}
+              Dr. Jan Duffy | License {SITE_CONTACT.license} |{" "}
+              {SITE_CONTACT.brokerage}
             </p>
           </div>
         </section>

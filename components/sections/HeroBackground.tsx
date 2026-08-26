@@ -18,8 +18,8 @@ export default function HeroBackground({
       alt={alt}
       fill
       priority={priority}
-      sizes="100vw"
-      quality={75}
+      sizes="(max-width: 768px) 100vw, 1920px"
+      quality={60}
       className="object-cover object-center opacity-30"
     />
   );

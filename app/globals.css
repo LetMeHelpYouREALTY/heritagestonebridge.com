@@ -46,6 +46,8 @@ realscout-simple-search {
   --rs-ss-widget-width: 600px !important;
   --rs-ss-border-radius: 9999px;
   --rs-ss-background-color: rgba(255, 255, 255, 0.95);
+  display: block;
+  min-height: 56px;
 }
 
 /* Hero on dark backgrounds */
@@ -59,6 +61,8 @@ realscout-your-listings,
 realscout-office-listings {
   --rs-listing-divider-color: #7c3aed;
   width: 100%;
+  display: block;
+  min-height: 420px;
 }
 
 /* RealScout Advanced Search */
@@ -66,6 +70,8 @@ realscout-advanced-search {
   --rs-as-button-color: #7c3aed;
   --rs-as-button-text-color: #ffffff;
   width: 100%;
+  display: block;
+  min-height: 220px;
 }
 
 /* RealScout container wrapper */
