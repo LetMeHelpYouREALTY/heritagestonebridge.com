@@ -38,14 +38,6 @@ export default function CalendlyBadge({
       if (!cancelled) setLoadWidget(true);
     };
 
-    let idleId = 0;
-    let timeoutId = 0;
-    if (typeof window.requestIdleCallback === "function") {
-      idleId = window.requestIdleCallback(enable, { timeout: 4000 });
-    } else {
-      timeoutId = window.setTimeout(enable, 4000);
-    }
-
     const events: Array<keyof WindowEventMap> = [
       "pointerdown",
       "keydown",
@@ -57,10 +49,6 @@ export default function CalendlyBadge({
 
     return () => {
       cancelled = true;
-      if (idleId && typeof window.cancelIdleCallback === "function") {
-        window.cancelIdleCallback(idleId);
-      }
-      if (timeoutId) window.clearTimeout(timeoutId);
       events.forEach((event) => window.removeEventListener(event, enable));
     };
   }, []);

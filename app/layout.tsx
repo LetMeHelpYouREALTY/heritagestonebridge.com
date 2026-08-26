@@ -12,9 +12,9 @@ import {
 import SchemaScript from "@/components/SchemaScript";
 import { absoluteOgImage, DEFAULT_OG_IMAGE_PATH } from "@/lib/metadata";
 import { Analytics } from "@vercel/analytics/react";
-import Script from "next/script";
 import dynamic from "next/dynamic";
 import RealScoutScript from "@/components/realscout/RealScoutScript";
+import WidgetTracker from "@/components/analytics/WidgetTracker";
 
 const CalendlyBadge = dynamic(
   () => import("@/components/calendly/CalendlyBadge"),
@@ -113,16 +113,7 @@ export default function RootLayout({
         <CalendlyBadge />
         <Analytics />
         <RealScoutScript />
-        {/* WidgetTracker — idle so it never contends with LCP */}
-        <Script id="widget-tracker" strategy="lazyOnload">{`
-          (function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function()
-          {(w[g].q=w[g].q||[]).push(arguments);}),(w[g].ds=1*new Date());(e="script"),
-          (t=d.createElement(e)),(e=d.getElementsByTagName(e)[0]);t.async=1;t.src=i;
-          e.parentNode.insertBefore(t,e);})
-          (window,"https://widgetbe.com/agent",document,"widgetTracker");
-          window.widgetTracker("create","WT-XQHVYQWW");
-          window.widgetTracker("send","pageview");
-        `}</Script>
+        <WidgetTracker />
       </body>
     </html>
   );

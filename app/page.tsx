@@ -5,7 +5,6 @@ import Footer from "@/components/layouts/Footer";
 import HeroBackground from "@/components/sections/HeroBackground";
 import FAQSection from "@/components/sections/FAQSection";
 import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
-import RealScoutListings from "@/components/realscout/RealScoutListings";
 import SchemaScript from "@/components/SchemaScript";
 import {
   combineSchemas,
@@ -191,11 +190,23 @@ export default function HomePage() {
           </div>
         </section>
 
-        <RealScoutListings
-          variant="listings"
-          title="Search Heritage Listings"
-          subtitle="Browse live office listings $600k–$900k in Summerlin West (89138)"
-        />
+        <section className="py-16 md:py-24 bg-slate-50">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Search Heritage Listings
+            </h2>
+            <p className="text-slate-600 text-lg mb-8">
+              Browse live MLS inventory in Summerlin West (89138), including
+              office listings from $600k–$900k.
+            </p>
+            <Link
+              href="/homes-for-sale"
+              className="inline-flex items-center justify-center bg-purple-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-purple-500 transition-colors"
+            >
+              View Homes for Sale
+            </Link>
+          </div>
+        </section>
 
         <section className="py-16 bg-slate-900 text-white">
           <div className="container mx-auto px-4 max-w-4xl text-center">
