@@ -61,6 +61,7 @@ export default function HomePage() {
               src={HERITAGE_IMAGES.overview.src}
               alt={HERITAGE_IMAGES.overview.alt}
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/45 to-slate-900/30" />
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
             <span className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
@@ -187,15 +188,15 @@ export default function HomePage() {
                 },
               ].map(({ icon: Icon, title, desc, image }) => (
                 <div key={title} className="text-center p-6">
+                  <div className="bg-purple-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <Icon className="h-8 w-8 text-purple-600" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">{title}</h3>
                   <HeadingImage
                     image={image}
                     headingLevel="h3"
                     className="mb-4"
                   />
-                  <div className="bg-purple-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <Icon className="h-8 w-8 text-purple-600" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">{title}</h3>
                   <p className="text-slate-600 text-sm">{desc}</p>
                 </div>
               ))}

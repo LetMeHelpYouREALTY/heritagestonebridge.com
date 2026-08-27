@@ -131,6 +131,9 @@ function renderSection(
                   key={card.title}
                   className="bg-white border border-slate-200 rounded-xl p-6"
                 >
+                  <h3 className="font-bold text-slate-900 mb-2">
+                    {card.title}
+                  </h3>
                   {cardImage ? (
                     <HeadingImage
                       image={cardImage}
@@ -138,9 +141,6 @@ function renderSection(
                       className="mb-3"
                     />
                   ) : null}
-                  <h3 className="font-bold text-slate-900 mb-2">
-                    {card.title}
-                  </h3>
                   <ul className="text-slate-600 text-sm space-y-1">
                     {card.items.map((item) => (
                       <li key={item}>• {item}</li>
