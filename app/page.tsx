@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Phone, Shield, MapPin, Home as HomeIcon, Users } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
-import HeroBackground from "@/components/sections/HeroBackground";
 import FAQSection from "@/components/sections/FAQSection";
 import SchemaScript from "@/components/SchemaScript";
 import {
@@ -53,10 +52,15 @@ export default function HomePage() {
       <SchemaScript schema={pageSchema} id="homepage-schema" />
       <Navbar />
       <main>
-        <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden min-h-[480px]">
-          <div className="absolute inset-0" aria-hidden="true">
-            <HeroBackground />
-          </div>
+        <section className="relative overflow-hidden bg-slate-900 py-24 text-white md:py-32 min-h-[480px]">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-950 to-slate-800"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(168,85,247,0.28),transparent_58%)]"
+          />
           <div className="relative z-10 container mx-auto px-4 text-center">
             <span className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
               <Shield className="h-4 w-4" />
@@ -65,7 +69,7 @@ export default function HomePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Heritage at Stonebridge — Guard-Gated 55+ Summerlin
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto text-wrap">
+            <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto">
               Lennar&apos;s boutique active adult community in zip 89138 — staff
               guard-gated security, modern floor plans, and minutes from
               Downtown Summerlin. Search live MLS listings on our homes-for-sale
