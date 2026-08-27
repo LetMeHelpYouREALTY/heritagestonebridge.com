@@ -65,7 +65,7 @@ export default function HomePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Heritage at Stonebridge — Guard-Gated 55+ Summerlin
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto text-wrap">
               Lennar&apos;s boutique active adult community in zip 89138 — staff
               guard-gated security, modern floor plans, and minutes from
               Downtown Summerlin. Search live MLS listings on our homes-for-sale
