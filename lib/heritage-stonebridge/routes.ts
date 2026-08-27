@@ -72,7 +72,12 @@ export const HERITAGE_SITE_ROUTES: HeritageNavItem[] = [
     changeFrequency: "weekly",
   },
   { href: "/faq", label: "FAQ", priority: 0.8, changeFrequency: "monthly" },
-  { href: "/about", label: "About", priority: 0.85, changeFrequency: "monthly" },
+  {
+    href: "/about",
+    label: "About",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
   {
     href: "/contact",
     label: "Contact",
@@ -265,6 +270,42 @@ export const HERITAGE_SITE_ROUTES: HeritageNavItem[] = [
     priority: 0.85,
     changeFrequency: "monthly",
   },
+  {
+    href: "/pickleball",
+    label: "Pickleball Courts",
+    priority: 0.85,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/open-houses",
+    label: "Open Houses",
+    priority: 0.88,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/recent-sales",
+    label: "Recent Sales",
+    priority: 0.88,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/reviews",
+    label: "Client Reviews",
+    priority: 0.8,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/privacy-policy",
+    label: "Privacy Policy",
+    priority: 0.4,
+    changeFrequency: "yearly",
+  },
+  {
+    href: "/fair-housing",
+    label: "Fair Housing",
+    priority: 0.5,
+    changeFrequency: "yearly",
+  },
 ];
 
 export const HERITAGE_PRIMARY_NAV = HERITAGE_SITE_ROUTES.filter((r) =>
@@ -275,7 +316,7 @@ export const HERITAGE_PRIMARY_NAV = HERITAGE_SITE_ROUTES.filter((r) =>
     "/amenities",
     "/buying-guide",
     "/contact",
-  ].includes(r.href)
+  ].includes(r.href),
 );
 
 export const HERITAGE_COMMUNITY_NAV = HERITAGE_SITE_ROUTES.filter((r) =>
@@ -287,7 +328,8 @@ export const HERITAGE_COMMUNITY_NAV = HERITAGE_SITE_ROUTES.filter((r) =>
     "/guard-gated-living",
     "/downtown-summerlin",
     "/lifestyle",
-  ].includes(r.href)
+    "/pickleball",
+  ].includes(r.href),
 );
 
 export const HERITAGE_BUYER_NAV = HERITAGE_SITE_ROUTES.filter((r) =>
@@ -302,5 +344,7 @@ export const HERITAGE_BUYER_NAV = HERITAGE_SITE_ROUTES.filter((r) =>
     "/market-reports",
     "/summerlin-homes",
     "/home-valuation",
-  ].includes(r.href)
+    "/open-houses",
+    "/recent-sales",
+  ].includes(r.href),
 );

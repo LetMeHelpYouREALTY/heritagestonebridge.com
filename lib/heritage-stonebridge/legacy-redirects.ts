@@ -28,8 +28,9 @@ const SCHEMA_PAGES = [
 
 export const LEGACY_PATH_REDIRECTS: Record<string, string> = {
   // GSC "Redirect error" URLs (Jul 2026)
-  "/testimonials": "/google-business",
-  "/sun-city-del-webb-real-estate": "/55-plus-communities/del-webb-lake-las-vegas",
+  "/testimonials": "/reviews",
+  "/sun-city-del-webb-real-estate":
+    "/55-plus-communities/del-webb-lake-las-vegas",
   "/blog": "/market-update",
   "/sitemap": "/sitemap.xml",
   "/mountain-view-homes": "/red-rock-canyon-communities",
@@ -39,10 +40,12 @@ export const LEGACY_PATH_REDIRECTS: Record<string, string> = {
   "/luxury-homes": "/homes-for-sale",
   "/boulder-city-homes": "/las-vegas-real-estate",
   "/golf-course-homes": "/vs-sun-city-summerlin",
-  "/luxury-retirement-communities-las-vegas": "/best-55-plus-communities-las-vegas",
+  "/luxury-retirement-communities-las-vegas":
+    "/best-55-plus-communities-las-vegas",
   "/homes-for-sale-stonebridge-summerlin": "/homes-for-sale",
   "/real-estate": "/las-vegas-real-estate",
-  "/55-and-over-communities-las-vegas-for-rent": "/55-plus-communities-las-vegas",
+  "/55-and-over-communities-las-vegas-for-rent":
+    "/55-plus-communities-las-vegas",
   "/55-plus-communities-red-rock-canyon": "/red-rock-canyon-communities",
   "/affordable-55-plus-communities-las-vegas": "/55-plus-communities-las-vegas",
 
@@ -64,7 +67,9 @@ export const LEGACY_PATH_REDIRECTS: Record<string, string> = {
   "/investment-properties": "/homes-for-sale",
   "/showing": "/contact",
   "/home": "/",
-  ...Object.fromEntries(SCHEMA_PAGES.map((page) => [`/${page}-schema`, `/${page}`])),
+  ...Object.fromEntries(
+    SCHEMA_PAGES.map((page) => [`/${page}-schema`, `/${page}`]),
+  ),
 };
 
 export function resolveLegacyRedirect(pathname: string): string | null {

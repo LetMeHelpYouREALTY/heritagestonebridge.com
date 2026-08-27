@@ -35,12 +35,14 @@ export default async function PageHero({
   const config = await getPageDomainConfig();
   const src = imageSrc ?? getHeroImage(config);
   const alt =
-    imageAlt ?? `${config.neighborhood} real estate — Dr. Jan Duffy, BHHS Nevada Properties`;
+    imageAlt ??
+    `${config.neighborhood} real estate — Dr. Jan Duffy, BHHS Nevada Properties`;
 
   return (
     <section className="relative mb-16 flex min-h-[360px] items-center overflow-hidden rounded-2xl bg-slate-900 text-white">
       <div className="absolute inset-0" aria-hidden="true">
         <HeroBackground src={src} alt={alt} priority={priority} />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/45 to-slate-900/30" />
       </div>
       <div className="relative z-10 mx-auto w-full max-w-4xl px-6 py-20 text-center">
         {badge && (
