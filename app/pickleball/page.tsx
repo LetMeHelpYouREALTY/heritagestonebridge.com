@@ -1,0 +1,9 @@
+import { heritagePageMetadata } from "@/lib/metadata";
+import { HeritageMarketingPage } from "@/components/heritage/HeritageMarketingPage";
+import { pickleballPage } from "@/lib/heritage-stonebridge/realtor-pages";
+
+export const metadata = heritagePageMetadata(pickleballPage);
+
+export default function PickleballPage() {
+  return <HeritageMarketingPage content={pickleballPage} />;
+}

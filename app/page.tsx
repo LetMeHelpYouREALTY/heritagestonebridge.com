@@ -15,13 +15,20 @@ import {
 } from "@/lib/schema";
 import { buildPageMetadata, canonicalUrl } from "@/lib/metadata";
 import { SITE_CONTACT } from "@/lib/site-contact";
-import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/data";
-import { HERITAGE_COMMUNITY_NAV, HERITAGE_BUYER_NAV } from "@/lib/heritage-stonebridge/routes";
+import {
+  HERITAGE_COMMUNITY,
+  HERITAGE_FAQS,
+} from "@/lib/heritage-stonebridge/data";
+import {
+  HERITAGE_COMMUNITY_NAV,
+  HERITAGE_BUYER_NAV,
+} from "@/lib/heritage-stonebridge/routes";
+import HeadingImage from "@/components/heritage/HeadingImage";
+import { HERITAGE_IMAGES } from "@/lib/heritage-stonebridge/images";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Heritage at Stonebridge | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
+  title: "Heritage at Stonebridge | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
   description: `Lennar-built guard-gated 55+ community in Summerlin West (89138). 421 homes, resort amenities, near Downtown Summerlin. Dr. Jan Duffy, BHHS. Call ${SITE_CONTACT.phone.display}.`,
   path: "/",
 });
@@ -50,7 +57,10 @@ export default function HomePage() {
       <main>
         <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden min-h-[480px]">
           <div className="absolute inset-0" aria-hidden="true">
-            <HeroBackground />
+            <HeroBackground
+              src={HERITAGE_IMAGES.overview.src}
+              alt={HERITAGE_IMAGES.overview.alt}
+            />
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
             <span className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
@@ -62,8 +72,9 @@ export default function HomePage() {
             </h1>
             <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
               Lennar&apos;s boutique active adult community in zip 89138 — staff
-              guard-gated security, modern floor plans, and minutes from Downtown
-              Summerlin. Search live MLS listings on our homes-for-sale page.
+              guard-gated security, modern floor plans, and minutes from
+              Downtown Summerlin. Search live MLS listings on our homes-for-sale
+              page.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
@@ -89,11 +100,12 @@ export default function HomePage() {
                 homes
               </div>
               <div>
-                <span className="font-semibold text-white">55+</span> active adult
+                <span className="font-semibold text-white">55+</span> active
+                adult
               </div>
               <div>
-                <span className="font-semibold text-white">89138</span> Summerlin
-                West
+                <span className="font-semibold text-white">89138</span>{" "}
+                Summerlin West
               </div>
             </div>
           </div>
@@ -101,12 +113,16 @@ export default function HomePage() {
 
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-10">
+            <h2 className="text-3xl font-bold text-slate-900 text-center mb-6">
               Heritage at Stonebridge at a Glance
             </h2>
+            <HeadingImage image={HERITAGE_IMAGES.overview} headingLevel="h2" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { value: String(HERITAGE_COMMUNITY.homeCount), label: "Lennar Homes" },
+                {
+                  value: String(HERITAGE_COMMUNITY.homeCount),
+                  label: "Lennar Homes",
+                },
                 { value: HERITAGE_COMMUNITY.sqFtRange, label: "Sq. Ft. Range" },
                 { value: "Guard-Gated", label: "Staffed Entry" },
                 {
@@ -154,20 +170,28 @@ export default function HomePage() {
                 {
                   icon: Shield,
                   title: "Guard-Gated Privacy",
+                  image: HERITAGE_IMAGES.overview,
                   desc: "Staffed entry with visitor verification — not just a shared gate code.",
                 },
                 {
                   icon: MapPin,
                   title: "Summerlin West Location",
+                  image: HERITAGE_IMAGES.overview,
                   desc: "Downtown Summerlin, Red Rock Canyon, and pay-as-you-play golf nearby.",
                 },
                 {
                   icon: Users,
                   title: "Active Adult Lifestyle",
+                  image: HERITAGE_IMAGES.pickleball,
                   desc: "Pickleball, fitness, pools, and a social scale where you know your neighbors.",
                 },
-              ].map(({ icon: Icon, title, desc }) => (
+              ].map(({ icon: Icon, title, desc, image }) => (
                 <div key={title} className="text-center p-6">
+                  <HeadingImage
+                    image={image}
+                    headingLevel="h3"
+                    className="mb-4"
+                  />
                   <div className="bg-purple-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                     <Icon className="h-8 w-8 text-purple-600" />
                   </div>
@@ -234,7 +258,8 @@ export default function HomePage() {
               </a>
             </div>
             <p className="mt-6 text-white/90 text-sm">
-              Dr. Jan Duffy | License {SITE_CONTACT.license} | {SITE_CONTACT.brokerage}
+              Dr. Jan Duffy | License {SITE_CONTACT.license} |{" "}
+              {SITE_CONTACT.brokerage}
             </p>
           </div>
         </section>

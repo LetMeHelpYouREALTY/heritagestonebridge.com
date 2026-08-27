@@ -26,7 +26,7 @@ export const HERITAGE_COMMUNITY = {
   priceRange:
     "Resale and new-build homes commonly list from the $500s to $850,000+ depending on plan, elevation, and upgrades (verify on current MLS).",
   hoaRange:
-    "Monthly HOA typically falls in the low-to-mid $100s–$200s range; confirm current assessments with the HOA or listing agent.",
+    "Neighborhood directories retrieved Aug 27, 2026 cited Heritage HOA around $350/month plus Summerlin West around $60 ($410 combined). Confirm current assessments with the HOA or listing agent.",
   clubhouseSqFt: 8000,
   amenities: [
     "8,000 sq. ft. clubhouse with lounge, fireplace, and showcase kitchen",

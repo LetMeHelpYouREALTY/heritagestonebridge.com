@@ -1,5 +1,6 @@
 import type { HeritagePageContent } from "./types";
 import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "./data";
+import { HERITAGE_IMAGES } from "./images";
 
 const baseTitle = (page: string) =>
   `${page} | Heritage at Stonebridge Summerlin | Dr. Jan Duffy`;
@@ -17,17 +18,22 @@ export const communityPage: HeritagePageContent = {
   },
   breadcrumbs: crumbs({ name: "Community", url: "/community" }),
   badge: "Guard-Gated Summerlin 55+",
-  h1: "Heritage at Stonebridge Community",
+  h1: "Heritage at Stonebridge",
   subtitle:
-    "Lennar's boutique 55+ neighborhood in Summerlin West — staff guard-gated security, modern floor plans, and walkable Summerlin living.",
+    "Lennar's staff-gated 55+ community in Summerlin West — 421 single-family homes, nine floor plans, and an 8,000 sq. ft. clubhouse in zip 89138.",
+  heroImage: HERITAGE_IMAGES.overview,
   includeCommunitySchema: true,
-  lastUpdated: "June 2026",
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "stats",
       heading: "Heritage at Stonebridge at a Glance",
+      image: HERITAGE_IMAGES.overview,
       stats: [
-        { value: String(HERITAGE_COMMUNITY.homeCount), label: "Single-Family Homes" },
+        {
+          value: String(HERITAGE_COMMUNITY.homeCount),
+          label: "Single-Family Homes",
+        },
         { value: HERITAGE_COMMUNITY.postalCode, label: "Zip Code" },
         { value: "55+", label: "Age-Restricted" },
         { value: "Guard-Gated", label: "Staffed Entry" },
@@ -35,11 +41,49 @@ export const communityPage: HeritagePageContent = {
     },
     {
       type: "prose",
-      heading: "About the Neighborhood",
+      heading: "Heritage Overview",
+      image: HERITAGE_IMAGES.overview,
       paragraphs: [
-        `<strong>${HERITAGE_COMMUNITY.name}</strong> is a Lennar-built active adult community in ${HERITAGE_COMMUNITY.masterPlan}, completed in ${HERITAGE_COMMUNITY.yearCompleted} with ${HERITAGE_COMMUNITY.homeCount} single-family residences across ${HERITAGE_COMMUNITY.floorPlanCount} floor plans in ${HERITAGE_COMMUNITY.collections} collections.`,
+        `<strong>${HERITAGE_COMMUNITY.name}</strong> is a Lennar-built 55+ community in ${HERITAGE_COMMUNITY.masterPlan}, completed in ${HERITAGE_COMMUNITY.yearCompleted} with ${HERITAGE_COMMUNITY.homeCount} single-family residences across ${HERITAGE_COMMUNITY.floorPlanCount} floor plans in ${HERITAGE_COMMUNITY.collections} collections.`,
         `Homes range from ${HERITAGE_COMMUNITY.sqFtRange} sq. ft. with ${HERITAGE_COMMUNITY.bedroomRange} bedrooms and ${HERITAGE_COMMUNITY.garageRange} garages. Standard finishes include quartz counters, stainless appliances, raised-panel cabinetry, and smart-home automation.`,
-        `Unlike sprawling 7,000+ home 55+ developments, Heritage offers a tighter neighborhood scale with genuine guard-gated privacy — while still sitting minutes from Downtown Summerlin, Red Rock Canyon, and championship golf.`,
+        "The campus is compact next to 7,000-home 55+ developments: staffed gate, 421 addresses, and Downtown Summerlin, Red Rock Canyon, and pay-as-you-play golf a short drive away.",
+      ],
+    },
+    {
+      type: "grid",
+      heading: "Heritage Collections",
+      image: HERITAGE_IMAGES.floorPlans,
+      cards: [
+        {
+          title: "Cromwell",
+          image: HERITAGE_IMAGES.cromwell,
+          items: [
+            "Carson 1,232 sq. ft.",
+            "Claremont 1,237 sq. ft.",
+            "Connery 1,422 sq. ft.",
+            "2 bed / 2 bath / 2-car, private side yard",
+          ],
+        },
+        {
+          title: "Stirling",
+          image: HERITAGE_IMAGES.stirling,
+          items: [
+            "Sawyer 1,747 sq. ft.",
+            "Sidney 1,953 sq. ft.",
+            "Sloan 2,236 sq. ft.",
+            "Extra flex space and a larger garage than Cromwell",
+          ],
+        },
+        {
+          title: "Evander",
+          image: HERITAGE_IMAGES.evander,
+          items: [
+            "Ethan 2,515 sq. ft.",
+            "Elizabeth 2,516 sq. ft. (RV garage option)",
+            "Everly 2,873 sq. ft. with a Next Gen suite",
+            "3–4 car or RV garage on select plans",
+          ],
+        },
       ],
     },
     {
@@ -78,6 +122,8 @@ export const communityPage: HeritagePageContent = {
         { href: "/hoa-fees", label: "HOA & Fees" },
         { href: "/location", label: "Location & Map" },
         { href: "/guard-gated-living", label: "Guard-Gated Living" },
+        { href: "/pickleball", label: "Pickleball Courts" },
+        { href: "/open-houses", label: "Open Houses" },
       ],
     },
   ],
@@ -95,14 +141,17 @@ export const amenitiesPage: HeritagePageContent = {
   badge: "Resort-Style 55+ Amenities",
   h1: "Heritage at Stonebridge Amenities",
   subtitle: `An ${HERITAGE_COMMUNITY.clubhouseSqFt.toLocaleString()} sq. ft. clubhouse anchors fitness, aquatics, and social life in Summerlin West.`,
-  lastUpdated: "June 2026",
+  heroImage: HERITAGE_IMAGES.clubhouse,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "grid",
-      heading: "Clubhouse & Wellness",
+      heading: "Heritage at Stonebridge Amenities & Lifestyle",
+      image: HERITAGE_IMAGES.clubhouse,
       cards: [
         {
           title: "Clubhouse",
+          image: HERITAGE_IMAGES.clubhouse,
           items: [
             "Lounge with fireplace",
             "Multi-purpose meeting room",
@@ -111,16 +160,18 @@ export const amenitiesPage: HeritagePageContent = {
           ],
         },
         {
-          title: "Fitness & Aquatics",
+          title: "Fitness Center",
+          image: HERITAGE_IMAGES.fitness,
           items: [
-            "State-of-the-art fitness center",
+            "Cardio and strength equipment",
             "Men's and women's locker rooms",
-            "Resort-style pool and spa",
-            "Heated outdoor lap pool",
+            "Classes posted on the HOA calendar",
+            "Steps from the lap pool",
           ],
         },
         {
-          title: "Outdoor Recreation",
+          title: "Pickleball",
+          image: HERITAGE_IMAGES.pickleball,
           items: [
             "Six lighted pickleball courts",
             "Three bocce ball courts",
@@ -131,11 +182,54 @@ export const amenitiesPage: HeritagePageContent = {
       ],
     },
     {
+      type: "grid",
+      heading: "Pools, Bocce, and Courts",
+      cards: [
+        {
+          title: "Resort Pool",
+          image: HERITAGE_IMAGES.pool,
+          items: [
+            "Resort-style pool and spa",
+            "Heated outdoor lap pool",
+            "Clubhouse terrace",
+          ],
+        },
+        {
+          title: "Bocce",
+          image: HERITAGE_IMAGES.bocce,
+          items: [
+            "Three bocce ball courts",
+            "Recreation lawn beside the courts",
+            "Picnic area",
+          ],
+        },
+        {
+          title: "Pickleball Courts",
+          image: HERITAGE_IMAGES.pickleball,
+          items: [
+            "Six lighted outdoor courts",
+            "Night play in desert evenings",
+            "No golf-tier HOA",
+          ],
+        },
+      ],
+    },
+    {
       type: "prose",
       heading: "Low-Maintenance Living",
       paragraphs: [
         "Heritage at Stonebridge is designed for lock-and-leave convenience. Exterior maintenance, common-area landscaping, and amenity upkeep are handled through the HOA — so residents focus on travel, family, and clubhouse activities instead of yard work.",
         "Organized clubs, holiday events, and interest groups keep the community social without the scale of mega-developments where it's easy to get lost in the crowd.",
+      ],
+    },
+    {
+      type: "links",
+      heading: "Amenity Pages",
+      links: [
+        { href: "/pickleball", label: "Pickleball Courts" },
+        { href: "/lifestyle", label: "55+ Lifestyle" },
+        { href: "/hoa-fees", label: "HOA & Fees" },
+        { href: "/community", label: "Heritage Overview" },
       ],
     },
   ],
@@ -150,12 +244,14 @@ export const floorPlansPage: HeritagePageContent = {
   },
   breadcrumbs: crumbs({ name: "Floor Plans", url: "/floor-plans" }),
   h1: "Heritage at Stonebridge Floor Plans",
-  subtitle: `${HERITAGE_COMMUNITY.floorPlanCount} plans in ${HERITAGE_COMMUNITY.collections} Lennar collections — single-story and two-story options for 55+ buyers.`,
-  lastUpdated: "June 2026",
+  subtitle: `${HERITAGE_COMMUNITY.floorPlanCount} single-story plans in ${HERITAGE_COMMUNITY.collections} Lennar collections — Cromwell, Stirling, and Evander, from 1,232 to 2,873 sq. ft.`,
+  heroImage: HERITAGE_IMAGES.floorPlans,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "stats",
       heading: "Plan Overview",
+      image: HERITAGE_IMAGES.floorPlans,
       stats: [
         { value: HERITAGE_COMMUNITY.sqFtRange, label: "Sq. Ft. Range" },
         { value: HERITAGE_COMMUNITY.bedroomRange, label: "Bedrooms" },
@@ -164,11 +260,49 @@ export const floorPlansPage: HeritagePageContent = {
       ],
     },
     {
+      type: "grid",
+      heading: "Heritage Collections",
+      image: HERITAGE_IMAGES.floorPlans,
+      cards: [
+        {
+          title: "Cromwell",
+          image: HERITAGE_IMAGES.cromwell,
+          items: [
+            "Carson ≈ 1,232 sq. ft.",
+            "Claremont ≈ 1,237 sq. ft.",
+            "Connery ≈ 1,422 sq. ft.",
+            "2 bedrooms, 2 baths, 2-car garage, private side yard",
+          ],
+        },
+        {
+          title: "Stirling",
+          image: HERITAGE_IMAGES.stirling,
+          items: [
+            "Sawyer ≈ 1,747 sq. ft.",
+            "Sidney ≈ 1,953 sq. ft.",
+            "Sloan ≈ 2,236 sq. ft.",
+            "Owner's suite with walk-in closet on typical Stirling layouts",
+          ],
+        },
+        {
+          title: "Evander",
+          image: HERITAGE_IMAGES.evander,
+          items: [
+            "Ethan ≈ 2,515 sq. ft.",
+            "Elizabeth ≈ 2,516 sq. ft. with RV garage option",
+            "Everly ≈ 2,873 sq. ft. with Next Gen suite",
+            "3–4 car or RV garage on select plans",
+          ],
+        },
+      ],
+    },
+    {
       type: "prose",
-      heading: "Lennar Everything's Included",
+      heading: "Lennar Next Gen Suite",
+      image: HERITAGE_IMAGES.nextGen,
       paragraphs: [
-        "Every Heritage at Stonebridge home ships with Lennar's Everything's Included package: quartz countertops, stainless steel appliances, raised-panel cabinetry, and smart-home automation — not costly à la carte upgrades.",
-        "Collections span attached and detached single-family layouts. Select plans include RV garages for buyers who want golf carts, boats, or extra storage without leaving the community.",
+        "The Everly in the Evander collection includes a Next Gen suite — private entrance, kitchenette, and ensuite bath — so a relative or caregiver can live on the same lot without a second staircase.",
+        "Every Heritage at Stonebridge home ships with Lennar's Everything's Included package: quartz countertops, stainless steel appliances, raised-panel cabinetry, and smart-home automation.",
         "For current availability, elevations, and lot premiums, search live MLS inventory or request a curated list from Dr. Jan Duffy.",
       ],
     },
@@ -185,15 +319,18 @@ export const hoaFeesPage: HeritagePageContent = {
   breadcrumbs: crumbs({ name: "HOA & Fees", url: "/hoa-fees" }),
   h1: "HOA Fees at Heritage at Stonebridge",
   subtitle:
-    "Heritage carries a leaner amenity footprint than golf-course mega-communities — often translating to lower carrying costs.",
-  lastUpdated: "June 2026",
+    "Heritage carries a leaner amenity footprint than golf-course mega-communities — confirm current assessments in the resale package.",
+  heroImage: HERITAGE_IMAGES.clubhouse,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "prose",
       heading: "What HOA Typically Covers",
+      image: HERITAGE_IMAGES.clubhouse,
       paragraphs: [
-        `At Heritage at Stonebridge, HOA dues generally fund guard-gate staffing, clubhouse and pool operations, landscape maintenance for common areas, and reserve contributions. ${HERITAGE_COMMUNITY.hoaRange}`,
-        "Because Heritage does not subsidize a private 18-hole golf course inside the gates, monthly assessments are often lower than Sun City Summerlin or Trilogy — while still delivering pickleball, fitness, and aquatics.",
+        "At Heritage at Stonebridge, HOA dues generally fund guard-gate staffing, clubhouse and pool operations, landscape maintenance for common areas, and reserve contributions. FirstService Residential manages the association.",
+        "An August 27, 2026 Parallel Search pass of neighborhood directories cited Heritage HOA around $350 per month plus Summerlin West around $60 ($410 combined). Treat that as a published snapshot, not a live quote — confirm figures in the current resale package before you write an offer.",
+        "Heritage does not subsidize a private 18-hole golf course inside the gates, so carrying costs skip golf-tier dues while still covering pickleball, fitness, and aquatics.",
       ],
     },
     {
@@ -202,7 +339,8 @@ export const hoaFeesPage: HeritagePageContent = {
       items: [
         {
           title: "Request resale package",
-          description: "Review CC&Rs, budget, reserves, and any pending special assessments.",
+          description:
+            "Review CC&Rs, budget, reserves, and any pending special assessments.",
         },
         {
           title: "Compare total carrying cost",
@@ -210,11 +348,13 @@ export const hoaFeesPage: HeritagePageContent = {
         },
         {
           title: "Confirm age-restriction compliance",
-          description: "Verify household meets 55+ occupancy rules before closing.",
+          description:
+            "Verify household meets 55+ occupancy rules before closing.",
         },
         {
           title: "Ask about gate and amenity hours",
-          description: "Align expectations for visitors, rentals, and clubhouse access.",
+          description:
+            "Align expectations for visitors, rentals, and clubhouse access.",
         },
       ],
     },
@@ -230,8 +370,10 @@ export const locationPage: HeritagePageContent = {
   },
   breadcrumbs: crumbs({ name: "Location", url: "/location" }),
   h1: "Heritage at Stonebridge Location",
-  subtitle: "Northwest Las Vegas in Summerlin West — zip code 89138 with mountain views and city convenience.",
-  lastUpdated: "June 2026",
+  subtitle:
+    "Northwest Las Vegas in Summerlin West — zip code 89138 with mountain views and city convenience.",
+  heroImage: HERITAGE_IMAGES.overview,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "grid",
@@ -239,7 +381,9 @@ export const locationPage: HeritagePageContent = {
       cards: [
         {
           title: "Downtown Summerlin",
-          items: ["Shopping, dining, and entertainment minutes from the community gate."],
+          items: [
+            "Shopping, dining, and entertainment minutes from the community gate.",
+          ],
         },
         {
           title: "Red Rock Canyon",
@@ -247,7 +391,9 @@ export const locationPage: HeritagePageContent = {
         },
         {
           title: "Golf & Recreation",
-          items: ["TPC Las Vegas and pay-as-you-play courses without mandatory golf HOA."],
+          items: [
+            "TPC Las Vegas and pay-as-you-play courses without mandatory golf HOA.",
+          ],
         },
       ],
     },
@@ -271,8 +417,10 @@ export const buyingGuidePage: HeritagePageContent = {
   },
   breadcrumbs: crumbs({ name: "Buying Guide", url: "/buying-guide" }),
   h1: "Buying in Heritage at Stonebridge",
-  subtitle: "A focused playbook for 55+ buyers comparing guard-gated Summerlin communities.",
-  lastUpdated: "June 2026",
+  subtitle:
+    "A focused playbook for 55+ buyers comparing guard-gated Summerlin communities.",
+  heroImage: HERITAGE_IMAGES.openHouses,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "checklist",
@@ -295,7 +443,8 @@ export const buyingGuidePage: HeritagePageContent = {
         },
         {
           title: "4. Complete HOA due diligence",
-          description: "Read governing documents and confirm no surprises in reserves or litigation.",
+          description:
+            "Read governing documents and confirm no surprises in reserves or litigation.",
         },
         {
           title: "5. Make a competitive offer",
@@ -326,8 +475,10 @@ export const sellingGuidePage: HeritagePageContent = {
   },
   breadcrumbs: crumbs({ name: "Selling Guide", url: "/selling-guide" }),
   h1: "Selling in Heritage at Stonebridge",
-  subtitle: "Position your Lennar home against newer Summerlin 55+ inventory and established resale competitors.",
-  lastUpdated: "June 2026",
+  subtitle:
+    "Position your Lennar home against newer Summerlin 55+ inventory and established resale competitors.",
+  heroImage: HERITAGE_IMAGES.recentSales,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "prose",
@@ -358,7 +509,8 @@ export const downsizingPage: HeritagePageContent = {
   },
   breadcrumbs: crumbs({ name: "Downsizing", url: "/downsizing" }),
   h1: "Downsizing to Heritage at Stonebridge",
-  subtitle: "Trade maintenance-heavy homes for guard-gated 55+ living without leaving Summerlin's top amenities.",
+  subtitle:
+    "Trade maintenance-heavy homes for guard-gated 55+ living without leaving Summerlin's top amenities.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -375,15 +527,18 @@ export const downsizingPage: HeritagePageContent = {
       items: [
         {
           title: "Inventory what you will keep",
-          description: "Garage and RV options on select plans matter for hobbies and travel gear.",
+          description:
+            "Garage and RV options on select plans matter for hobbies and travel gear.",
         },
         {
           title: "Model monthly carrying costs",
-          description: "Compare HOA + utilities against your current property tax and upkeep.",
+          description:
+            "Compare HOA + utilities against your current property tax and upkeep.",
         },
         {
           title: "Plan a staggered move",
-          description: "Coordinate listing, temporary housing, and gate access for movers.",
+          description:
+            "Coordinate listing, temporary housing, and gate access for movers.",
         },
       ],
     },
@@ -397,9 +552,13 @@ export const vsSunCityPage: HeritagePageContent = {
     description:
       "Heritage at Stonebridge vs Sun City Summerlin — guard-gated Lennar new build vs established mega 55+ with golf. Compare HOA, scale, and lifestyle.",
   },
-  breadcrumbs: crumbs({ name: "vs Sun City Summerlin", url: "/vs-sun-city-summerlin" }),
+  breadcrumbs: crumbs({
+    name: "vs Sun City Summerlin",
+    url: "/vs-sun-city-summerlin",
+  }),
   h1: "Heritage at Stonebridge vs Sun City Summerlin",
-  subtitle: "Boutique guard-gated Lennar community vs. Las Vegas's largest 55+ neighborhood.",
+  subtitle:
+    "Boutique guard-gated Lennar community vs. Las Vegas's largest 55+ neighborhood.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -452,9 +611,13 @@ export const vsTrilogyPage: HeritagePageContent = {
     description:
       "Compare Heritage at Stonebridge and Trilogy Summerlin — two Summerlin West 55+ options with different builders, amenities, and price points.",
   },
-  breadcrumbs: crumbs({ name: "vs Trilogy Summerlin", url: "/vs-trilogy-summerlin" }),
+  breadcrumbs: crumbs({
+    name: "vs Trilogy Summerlin",
+    url: "/vs-trilogy-summerlin",
+  }),
   h1: "Heritage at Stonebridge vs Trilogy Summerlin",
-  subtitle: "Lennar guard-gated living compared to Shea Homes' resort-style Trilogy at the top of Summerlin.",
+  subtitle:
+    "Lennar guard-gated living compared to Shea Homes' resort-style Trilogy at the top of Summerlin.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -496,8 +659,10 @@ export const lifestylePage: HeritagePageContent = {
   },
   breadcrumbs: crumbs({ name: "55+ Lifestyle", url: "/lifestyle" }),
   h1: "Active Adult Lifestyle at Heritage",
-  subtitle: "Fitness, pickleball, and neighborly scale — without giving up Summerlin's retail and outdoor access.",
-  lastUpdated: "June 2026",
+  subtitle:
+    "Fitness, pickleball, and neighborly scale — without giving up Summerlin's retail and outdoor access.",
+  heroImage: HERITAGE_IMAGES.pickleball,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "prose",
@@ -517,11 +682,15 @@ export const guardGatedPage: HeritagePageContent = {
     description:
       "Staff guard-gated entry, visitor policies, and privacy benefits at Heritage at Stonebridge — Summerlin's Lennar 55+ community.",
   },
-  breadcrumbs: crumbs({ name: "Guard-Gated Living", url: "/guard-gated-living" }),
+  breadcrumbs: crumbs({
+    name: "Guard-Gated Living",
+    url: "/guard-gated-living",
+  }),
   badge: "24/7 Staffed Gate",
   h1: "Guard-Gated Living at Heritage",
   subtitle: HERITAGE_COMMUNITY.security,
-  lastUpdated: "June 2026",
+  heroImage: HERITAGE_IMAGES.overview,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "checklist",
@@ -529,15 +698,18 @@ export const guardGatedPage: HeritagePageContent = {
       items: [
         {
           title: "Manned entry",
-          description: "Staff verifies visitors instead of sharing a community-wide keypad.",
+          description:
+            "Staff verifies visitors instead of sharing a community-wide keypad.",
         },
         {
           title: "Controlled access",
-          description: "Delivery and guest flows follow HOA procedures — ask for current policy.",
+          description:
+            "Delivery and guest flows follow HOA procedures — ask for current policy.",
         },
         {
           title: "Neighborhood scale",
-          description: "421 homes means fewer through-traffic patterns than open Summerlin streets.",
+          description:
+            "421 homes means fewer through-traffic patterns than open Summerlin streets.",
         },
       ],
     },
@@ -551,9 +723,13 @@ export const downtownSummerlinPage: HeritagePageContent = {
     description:
       "Live minutes from Downtown Summerlin shopping, dining, and events while enjoying guard-gated 55+ privacy at Heritage at Stonebridge.",
   },
-  breadcrumbs: crumbs({ name: "Downtown Summerlin", url: "/downtown-summerlin" }),
+  breadcrumbs: crumbs({
+    name: "Downtown Summerlin",
+    url: "/downtown-summerlin",
+  }),
   h1: "Heritage & Downtown Summerlin",
-  subtitle: "125+ shops, restaurants, and entertainment minutes from your guard-gated front gate.",
+  subtitle:
+    "125+ shops, restaurants, and entertainment minutes from your guard-gated front gate.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -574,9 +750,13 @@ export const summerlin55Page: HeritagePageContent = {
     description:
       "Compare Heritage at Stonebridge, Sun City Summerlin, Trilogy, and Regency — hyperlocal guide to Summerlin active adult real estate.",
   },
-  breadcrumbs: crumbs({ name: "Summerlin 55+ Guide", url: "/summerlin-55-plus" }),
+  breadcrumbs: crumbs({
+    name: "Summerlin 55+ Guide",
+    url: "/summerlin-55-plus",
+  }),
   h1: "Summerlin 55+ Communities Guide",
-  subtitle: "How Heritage at Stonebridge fits among Summerlin's active adult neighborhoods.",
+  subtitle:
+    "How Heritage at Stonebridge fits among Summerlin's active adult neighborhoods.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -612,7 +792,8 @@ export const marketUpdatePage: HeritagePageContent = {
   h1: "Heritage at Stonebridge Market Update",
   subtitle:
     "Hyperlocal snapshot for Summerlin West 55+ buyers and sellers — verify figures against live MLS before offers.",
-  lastUpdated: "June 2026",
+  heroImage: HERITAGE_IMAGES.recentSales,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "prose",
@@ -645,7 +826,8 @@ export const aboutPage: HeritagePageContent = {
   h1: "Dr. Jan Duffy — Heritage at Stonebridge Specialist",
   subtitle:
     "Berkshire Hathaway HomeServices Nevada Properties | License S.0197614.LLC | Summerlin 55+ guard-gated communities",
-  lastUpdated: "June 2026",
+  heroImage: HERITAGE_IMAGES.reviews,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "prose",
@@ -676,7 +858,8 @@ export const faqPage: HeritagePageContent = {
   },
   breadcrumbs: crumbs({ name: "FAQ", url: "/faq" }),
   h1: "Heritage at Stonebridge FAQ",
-  subtitle: "Answers to common buyer and seller questions about Summerlin's Lennar 55+ guard-gated community.",
+  subtitle:
+    "Answers to common buyer and seller questions about Summerlin's Lennar 55+ guard-gated community.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -713,15 +896,30 @@ export const homesForSalePage: HeritagePageContent = {
       "Live MLS search for Heritage at Stonebridge 55+ homes in Summerlin 89138. Guard-gated Lennar resales, tours, and listing alerts with Dr. Jan Duffy, BHHS.",
   },
   breadcrumbs: crumbs({ name: "Homes for Sale", url: "/homes-for-sale" }),
-  h1: "Heritage at Stonebridge Homes for Sale",
-  subtitle: "Live MLS search for 55+ guard-gated homes in Summerlin West — updated as new listings hit market.",
-  lastUpdated: "June 2026",
+  h1: "Heritage at Stonebridge Homes For Sale",
+  subtitle:
+    "Live MLS search for 55+ guard-gated homes in Summerlin West — updated as new listings hit market.",
+  heroImage: HERITAGE_IMAGES.floorPlans,
+  lastUpdated: "August 2026",
   sections: [
     {
+      type: "stats",
+      heading: "July 28, 2026 Listing Snapshot",
+      image: HERITAGE_IMAGES.floorPlans,
+      stats: [
+        { value: "8", label: "Listed (snapshot)" },
+        { value: "82", label: "Avg. DOM" },
+        { value: "$450.95", label: "Avg. $/Sq.Ft." },
+        { value: "$534,950", label: "Med. List Price" },
+      ],
+    },
+    {
       type: "prose",
-      heading: "Search Heritage Listings",
+      heading: "Buying a Home at Heritage at Stonebridge Summerlin NV",
+      image: HERITAGE_IMAGES.overview,
       paragraphs: [
         `Inventory includes resale homes and any remaining new-build opportunities in ${HERITAGE_COMMUNITY.name}. ${HERITAGE_COMMUNITY.priceRange}`,
+        "A July 28, 2026 MLS listing page for Heritage at Stonebridge showed 8 homes, 82 average days on market, about $450.95 per sq. ft., and a $534,950 median list price. Verify every figure on live MLS before you write an offer.",
         "Use the property search below to filter by beds, baths, and price — then call Dr. Jan Duffy for private tours and offer strategy inside the guard gate.",
       ],
     },
