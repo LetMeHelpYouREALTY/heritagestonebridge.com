@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
+import localFont from "next/font/local";
 import "./globals.css";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { SITE_CONTACT } from "@/lib/site-contact";
@@ -92,13 +92,24 @@ export async function generateMetadata(): Promise<Metadata> {
 // ISR: layout used to call headers(), which forced every page dynamic.
 export const revalidate = 3600;
 
+// Same Geist variable file the package ships, with `optional` so a late
+// webfont swap cannot become the mobile LCP (swap was keeping LCP at 3s).
+const geistSans = localFont({
+  src: "../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+  display: "optional",
+  adjustFontFallback: true,
+  preload: true,
+});
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={GeistSans.className}>
+    <html lang="en" className={`${geistSans.variable} ${geistSans.className}`}>
       <head>
         <SchemaScript
           schema={combineSchemas(
