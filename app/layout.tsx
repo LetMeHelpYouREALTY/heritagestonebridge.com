@@ -100,7 +100,7 @@ const geistSans = localFont({
   weight: "100 900",
   display: "optional",
   adjustFontFallback: "Arial",
-  preload: true,
+  preload: false,
 });
 
 export default function RootLayout({

@@ -52,7 +52,7 @@ export default function HomePage() {
       <SchemaScript schema={pageSchema} id="homepage-schema" />
       <Navbar />
       <main>
-        <section className="relative overflow-hidden bg-slate-900 py-24 text-white md:py-32 min-h-[480px]">
+        <section className="relative overflow-hidden bg-slate-900 py-24 text-white md:py-32 min-h-[480px] [font-family:ui-sans-serif,system-ui,sans-serif]">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-950 to-slate-800"
