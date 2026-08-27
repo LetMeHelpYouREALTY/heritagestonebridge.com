@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Script from "next/script";
 import { buildCalendlyUrl, CALENDLY_CONSULTATION_URL } from "@/lib/calendly";
 import "./types";
@@ -30,29 +30,30 @@ export default function CalendlyBadge({
   textColor = "#ffffff",
   branding = true,
 }: CalendlyBadgeProps) {
+  const [loadWidget, setLoadWidget] = useState(false);
+
   useEffect(() => {
-    const initBadge = () => {
-      if (window.Calendly) {
-        window.Calendly.initBadgeWidget({
-          url,
-          text,
-          color,
-          textColor,
-          branding,
-        });
-        titleCalendlyIframes();
-      }
+    let cancelled = false;
+    const enable = () => {
+      if (!cancelled) setLoadWidget(true);
     };
 
-    if (window.Calendly) {
-      initBadge();
-    }
+    const events: Array<keyof WindowEventMap> = [
+      "pointerdown",
+      "keydown",
+      "scroll",
+    ];
+    events.forEach((event) =>
+      window.addEventListener(event, enable, { once: true, passive: true }),
+    );
 
-    const observer = new MutationObserver(() => titleCalendlyIframes());
-    observer.observe(document.body, { childList: true, subtree: true });
+    return () => {
+      cancelled = true;
+      events.forEach((event) => window.removeEventListener(event, enable));
+    };
+  }, []);
 
-    return () => observer.disconnect();
-  }, [url, text, color, textColor, branding]);
+  if (!loadWidget) return null;
 
   return (
     <>
@@ -74,6 +75,7 @@ export default function CalendlyBadge({
               branding,
             });
             titleCalendlyIframes();
+            window.setTimeout(titleCalendlyIframes, 1500);
           }
         }}
       />

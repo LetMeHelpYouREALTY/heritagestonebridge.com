@@ -1,21 +1,28 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
+import localFont from "next/font/local";
 import "./globals.css";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { getSiteUrl } from "@/lib/site-url";
-import { generateWebSiteSchema, generateRealEstateAgentSchema, combineSchemas } from "@/lib/schema";
+import {
+  generateWebSiteSchema,
+  generateRealEstateAgentSchema,
+  combineSchemas,
+} from "@/lib/schema";
 import SchemaScript from "@/components/SchemaScript";
 import { absoluteOgImage, DEFAULT_OG_IMAGE_PATH } from "@/lib/metadata";
 import { Analytics } from "@vercel/analytics/react";
-import Script from "next/script";
 import dynamic from "next/dynamic";
 import RealScoutScript from "@/components/realscout/RealScoutScript";
+import WidgetTracker from "@/components/analytics/WidgetTracker";
 
-const CalendlyBadge = dynamic(() => import("@/components/calendly/CalendlyBadge"), {
-  ssr: false,
-  loading: () => null,
-});
+const CalendlyBadge = dynamic(
+  () => import("@/components/calendly/CalendlyBadge"),
+  {
+    ssr: false,
+    loading: () => null,
+  },
+);
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getPageDomainConfig();
@@ -50,7 +57,11 @@ export async function generateMetadata(): Promise<Metadata> {
         ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
         : {}),
       ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
-        ? { other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
+        ? {
+            other: {
+              "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
+            },
+          }
         : {}),
     },
     openGraph: {
@@ -78,30 +89,42 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+// ISR: layout used to call headers(), which forced every page dynamic.
+export const revalidate = 3600;
+
+// Same Geist variable file the package ships, with `optional` so a late
+// webfont swap cannot become the mobile LCP (swap was keeping LCP at 3s).
+const geistSans = localFont({
+  src: "../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+  display: "optional",
+  adjustFontFallback: "Arial",
+  preload: false,
+});
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={GeistSans.className}>
+    <html lang="en" className={`${geistSans.variable} ${geistSans.className}`}>
       <head>
         <SchemaScript
-          schema={combineSchemas(generateWebSiteSchema(), generateRealEstateAgentSchema())}
+          schema={combineSchemas(
+            generateWebSiteSchema(),
+            generateRealEstateAgentSchema(),
+          )}
           id="site-schema"
         />
-        <RealScoutScript />
-        {/* WidgetTracker — deferred to avoid blocking LCP */}
-        <Script id="widget-tracker" strategy="lazyOnload">{`
-          (function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function()
-          {(w[g].q=w[g].q||[]).push(arguments);}),(w[g].ds=1*new Date());(e="script"),
-          (t=d.createElement(e)),(e=d.getElementsByTagName(e)[0]);t.async=1;t.src=i;
-          e.parentNode.insertBefore(t,e);})
-          (window,"https://widgetbe.com/agent",document,"widgetTracker");
-          window.widgetTracker("create","WT-XQHVYQWW");
-          window.widgetTracker("send","pageview");
-        `}</Script>
       </head>
       <body>
         {children}
         <CalendlyBadge />
         <Analytics />
+        <RealScoutScript />
+        <WidgetTracker />
       </body>
     </html>
   );

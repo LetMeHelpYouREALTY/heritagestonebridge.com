@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import RealScoutAdvancedSearch from "@/components/realscout/RealScoutAdvancedSearch";
 import {
@@ -51,11 +50,13 @@ export default function RealScoutListings({
         )}
 
         {showListings && (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: getRealScoutOfficeListingsMarkup(),
-            }}
-          />
+          <div className="min-h-[420px]">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: getRealScoutOfficeListingsMarkup(),
+              }}
+            />
+          </div>
         )}
       </div>
     </section>

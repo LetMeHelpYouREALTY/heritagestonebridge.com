@@ -2,10 +2,7 @@ import Link from "next/link";
 import { Phone, Shield, MapPin, Home as HomeIcon, Users } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
-import HeroBackground from "@/components/sections/HeroBackground";
 import FAQSection from "@/components/sections/FAQSection";
-import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
-import RealScoutListings from "@/components/realscout/RealScoutListings";
 import SchemaScript from "@/components/SchemaScript";
 import {
   combineSchemas,
@@ -15,13 +12,20 @@ import {
 } from "@/lib/schema";
 import { buildPageMetadata, canonicalUrl } from "@/lib/metadata";
 import { SITE_CONTACT } from "@/lib/site-contact";
-import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/data";
-import { HERITAGE_COMMUNITY_NAV, HERITAGE_BUYER_NAV } from "@/lib/heritage-stonebridge/routes";
+import {
+  HERITAGE_COMMUNITY,
+  HERITAGE_FAQS,
+} from "@/lib/heritage-stonebridge/data";
+import {
+  HERITAGE_COMMUNITY_NAV,
+  HERITAGE_BUYER_NAV,
+} from "@/lib/heritage-stonebridge/routes";
 import type { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Heritage at Stonebridge | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
+  title: "Heritage at Stonebridge | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
   description: `Lennar-built guard-gated 55+ community in Summerlin West (89138). 421 homes, resort amenities, near Downtown Summerlin. Dr. Jan Duffy, BHHS. Call ${SITE_CONTACT.phone.display}.`,
   path: "/",
 });
@@ -48,10 +52,15 @@ export default function HomePage() {
       <SchemaScript schema={pageSchema} id="homepage-schema" />
       <Navbar />
       <main>
-        <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden min-h-[480px]">
-          <div className="absolute inset-0" aria-hidden="true">
-            <HeroBackground />
-          </div>
+        <section className="relative overflow-hidden bg-slate-900 py-24 text-white md:py-32 min-h-[480px] [font-family:ui-sans-serif,system-ui,sans-serif]">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-950 to-slate-800"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(168,85,247,0.28),transparent_58%)]"
+          />
           <div className="relative z-10 container mx-auto px-4 text-center">
             <span className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
               <Shield className="h-4 w-4" />
@@ -60,10 +69,11 @@ export default function HomePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Heritage at Stonebridge — Guard-Gated 55+ Summerlin
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Lennar&apos;s boutique active adult community in zip 89138 — staff
-              guard-gated security, modern floor plans, and minutes from Downtown
-              Summerlin. Search live MLS listings on our homes-for-sale page.
+              guard-gated security, modern floor plans, and minutes from
+              Downtown Summerlin. Search live MLS listings on our homes-for-sale
+              page.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
@@ -80,7 +90,6 @@ export default function HomePage() {
                 {SITE_CONTACT.phone.display}
               </a>
             </div>
-            <RealScoutSimpleSearch />
             <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
               <div>
                 <span className="font-semibold text-white">
@@ -89,11 +98,12 @@ export default function HomePage() {
                 homes
               </div>
               <div>
-                <span className="font-semibold text-white">55+</span> active adult
+                <span className="font-semibold text-white">55+</span> active
+                adult
               </div>
               <div>
-                <span className="font-semibold text-white">89138</span> Summerlin
-                West
+                <span className="font-semibold text-white">89138</span>{" "}
+                Summerlin West
               </div>
             </div>
           </div>
@@ -106,7 +116,10 @@ export default function HomePage() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { value: String(HERITAGE_COMMUNITY.homeCount), label: "Lennar Homes" },
+                {
+                  value: String(HERITAGE_COMMUNITY.homeCount),
+                  label: "Lennar Homes",
+                },
                 { value: HERITAGE_COMMUNITY.sqFtRange, label: "Sq. Ft. Range" },
                 { value: "Guard-Gated", label: "Staffed Entry" },
                 {
@@ -179,11 +192,23 @@ export default function HomePage() {
           </div>
         </section>
 
-        <RealScoutListings
-          variant="both"
-          title="Search Heritage Listings"
-          subtitle="Filter live MLS inventory in Summerlin West (89138), then browse office listings $600k–$900k"
-        />
+        <section className="py-16 md:py-24 bg-slate-50">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Search Heritage Listings
+            </h2>
+            <p className="text-slate-600 text-lg mb-8">
+              Browse live MLS inventory in Summerlin West (89138), including
+              office listings from $600k–$900k.
+            </p>
+            <Link
+              href="/homes-for-sale"
+              className="inline-flex items-center justify-center bg-purple-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-purple-500 transition-colors"
+            >
+              View Homes for Sale
+            </Link>
+          </div>
+        </section>
 
         <section className="py-16 bg-slate-900 text-white">
           <div className="container mx-auto px-4 max-w-4xl text-center">
@@ -234,7 +259,8 @@ export default function HomePage() {
               </a>
             </div>
             <p className="mt-6 text-white/90 text-sm">
-              Dr. Jan Duffy | License {SITE_CONTACT.license} | {SITE_CONTACT.brokerage}
+              Dr. Jan Duffy | License {SITE_CONTACT.license} |{" "}
+              {SITE_CONTACT.brokerage}
             </p>
           </div>
         </section>
