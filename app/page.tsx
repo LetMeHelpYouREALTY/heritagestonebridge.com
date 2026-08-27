@@ -4,7 +4,6 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import HeroBackground from "@/components/sections/HeroBackground";
 import FAQSection from "@/components/sections/FAQSection";
-import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
 import SchemaScript from "@/components/SchemaScript";
 import {
   combineSchemas,
@@ -87,7 +86,6 @@ export default function HomePage() {
                 {SITE_CONTACT.phone.display}
               </a>
             </div>
-            <RealScoutSimpleSearch />
             <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
               <div>
                 <span className="font-semibold text-white">
