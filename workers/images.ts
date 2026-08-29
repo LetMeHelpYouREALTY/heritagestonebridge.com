@@ -20,6 +20,8 @@ import {
 export interface Env {
   IMAGES_BUCKET: R2Bucket;
   IMAGES: ImagesBinding;
+  /** Set to "false" in local wrangler when the Images binding is unavailable. */
+  IMAGES_TRANSFORM?: string;
 }
 
 const CACHE_CONTROL = "public, max-age=31536000, immutable";
@@ -74,6 +76,31 @@ function contentTypeForKey(key: string, fallback: string): string {
   if (lower.endsWith(".gif")) return "image/gif";
   if (lower.endsWith(".jpg") || lower.endsWith(".jpeg")) return "image/jpeg";
   return fallback;
+}
+
+function transformsEnabled(env: Env): boolean {
+  return env.IMAGES_TRANSFORM !== "false" && env.IMAGES_TRANSFORM !== "0";
+}
+
+function originalResponse(
+  object: R2ObjectBody,
+  key: string,
+  method: string,
+  extra?: Record<string, string>,
+): Response {
+  const body = method === "HEAD" ? null : object.body;
+  return withCommonHeaders(
+    new Response(body, {
+      status: 200,
+      headers: {
+        "Content-Type":
+          object.httpMetadata?.contentType ||
+          contentTypeForKey(key, "application/octet-stream"),
+        ETag: object.httpEtag,
+      },
+    }),
+    extra,
+  );
 }
 
 function cacheKeyFor(request: Request, formatHint: string): Request {
@@ -139,20 +166,11 @@ const worker = {
       return jsonError(404, "Image not found");
     }
 
-    if (!transform || isSvgKey(parsed.key)) {
-      const body = request.method === "HEAD" ? null : object.body;
-      const original = withCommonHeaders(
-        new Response(body, {
-          status: 200,
-          headers: {
-            "Content-Type":
-              object.httpMetadata?.contentType ||
-              contentTypeForKey(parsed.key, "application/octet-stream"),
-            ETag: object.httpEtag,
-          },
-        }),
-        { "CF-Cache-Status": "MISS" },
-      );
+    if (!transform || isSvgKey(parsed.key) || !transformsEnabled(env)) {
+      const original = originalResponse(object, parsed.key, request.method, {
+        "CF-Cache-Status": "MISS",
+        "X-Image-Transform": transform && !isSvgKey(parsed.key) ? "skipped" : "none",
+      });
       if (request.method !== "HEAD") {
         ctx.waitUntil(cache.put(cacheKey, original.clone()));
       }
@@ -180,6 +198,7 @@ const worker = {
       const response = withCommonHeaders(transformed, {
         "CF-Cache-Status": "MISS",
         Vary: "Accept",
+        "X-Image-Transform": "ok",
       });
 
       if (request.method === "HEAD") {
@@ -194,7 +213,14 @@ const worker = {
     } catch (error) {
       const message = error instanceof Error ? error.message : "Transform failed";
       console.error("Images transform error", parsed.key, message);
-      return jsonError(502, "Image transform failed");
+      const fallbackObject = await env.IMAGES_BUCKET.get(parsed.key);
+      if (!fallbackObject) {
+        return jsonError(502, "Image transform failed");
+      }
+      return originalResponse(fallbackObject, parsed.key, request.method, {
+        "CF-Cache-Status": "MISS",
+        "X-Image-Transform": "fallback",
+      });
     }
   },
 };

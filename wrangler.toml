@@ -12,6 +12,9 @@ workers_dev = true
 [images]
 binding = "IMAGES"
 
+[vars]
+IMAGES_TRANSFORM = "true"
+
 [[r2_buckets]]
 binding = "IMAGES_BUCKET"
 bucket_name = "heritagestonebridge-images"
