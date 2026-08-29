@@ -31,7 +31,10 @@
     "cloudflare:deploy": "wrangler deploy",
     "cloudflare:pages": "npx @cloudflare/next-on-pages",
     "cloudflare:build": "npm run cloudflare:pages",
-    "build:cloudflare": "npx @cloudflare/next-on-pages"
+    "build:cloudflare": "npx @cloudflare/next-on-pages",
+    "cloudflare:images:create-bucket": "wrangler r2 bucket create heritagestonebridge-images",
+    "cloudflare:images:upload": "bash scripts/upload-images-to-r2.sh",
+    "cloudflare:images:upload:local": "bash scripts/upload-images-to-r2.sh --local"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.0",
@@ -68,6 +71,7 @@
     "@types/react": "18.2.63",
     "@types/react-dom": "18.2.20",
     "@vitejs/plugin-react": "^5.1.4",
+    "@vitest/coverage-v8": "^4.0.18",
     "autoprefixer": "^10.4.18",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",

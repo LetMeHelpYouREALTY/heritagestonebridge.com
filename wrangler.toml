@@ -1,74 +1,32 @@
-# Cloudflare Workers Configuration
-# Learn more: https://developers.cloudflare.com/workers/wrangler/configuration/
+# Image CDN worker — R2 originals + Cloudflare Images transforms.
+# This worker does NOT sit in front of the Vercel origin (gray-cloud DNS).
+# Optional custom domain: images.heritagestonebridge.com (orange-cloud that
+# hostname only). Until then, use the workers.dev URL in
+# NEXT_PUBLIC_CLOUDFLARE_IMAGES_URL.
 
-name = "heyberkshire-com"
-main = "workers/_worker.ts"
-compatibility_date = "2026-02-13"
-compatibility_flags = ["nodejs_compat"]
-
-# Account details
-account_id = ""  # Add your Cloudflare account ID
+name = "heritagestonebridge-images"
+main = "workers/images.ts"
+compatibility_date = "2026-08-29"
 workers_dev = true
 
-# Build configuration
-[build]
-command = "npm run build"
+[images]
+binding = "IMAGES"
 
-# Environment variables
 [vars]
-DEBUG = "false"
+IMAGES_TRANSFORM = "true"
 
-# KV Namespaces for caching (optional)
-# [[kv_namespaces]]
-# binding = "CACHE"
-# id = "your-kv-namespace-id"
+[[r2_buckets]]
+binding = "IMAGES_BUCKET"
+bucket_name = "heritagestonebridge-images"
 
-# Analytics Engine (optional - requires Workers Paid plan)
-# [[analytics_engine_datasets]]
-# binding = "ANALYTICS_DATASET"
+[observability]
+enabled = true
 
-# Durable Objects (optional - for advanced caching)
-# [[durable_objects.bindings]]
-# name = "CACHE_OBJECT"
-# class_name = "CacheObject"
-# script_name = "heyberkshire-com"
-
-# Routes - apply workers to specific paths
-[[routes]]
-pattern = "heyberkshire.com/*"
-zone_name = "heyberkshire.com"
-
-[[routes]]
-pattern = "www.heyberkshire.com/*"
-zone_name = "heyberkshire.com"
-
-# Development settings
 [dev]
 port = 8787
 local_protocol = "http"
 
-# Production environment
-[env.production]
-name = "heyberkshire-com-production"
-vars = { DEBUG = "false" }
-routes = [
-  { pattern = "heyberkshire.com/*", zone_name = "heyberkshire.com" },
-  { pattern = "www.heyberkshire.com/*", zone_name = "heyberkshire.com" }
-]
-
-# Staging environment
-[env.staging]
-name = "heyberkshire-com-staging"
-vars = { DEBUG = "true" }
-routes = [
-  { pattern = "staging.heyberkshire.com/*", zone_name = "heyberkshire.com" }
-]
-
-# Observability
-[observability]
-enabled = true
-head_sampling_rate = 1
-
-# Limits
-[limits]
-cpu_ms = 50
+# Uncomment after the zone has an images subdomain pointed at this Worker:
+# [[routes]]
+# pattern = "images.heritagestonebridge.com/*"
+# zone_name = "heritagestonebridge.com"

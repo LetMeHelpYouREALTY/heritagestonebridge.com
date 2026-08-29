@@ -102,6 +102,11 @@ ENV/
 .vercel
 
 # ===================
+# Cloudflare Wrangler local state (R2/KV simulation)
+# ===================
+.wrangler/
+
+# ===================
 # Security
 # ===================
 *.pem

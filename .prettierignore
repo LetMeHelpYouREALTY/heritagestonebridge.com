@@ -1,0 +1,17 @@
+node_modules
+.next
+coverage
+.vercel
+.wrangler
+out
+dist
+build
+pnpm-lock.yaml
+package-lock.json
+
+# Duplicated skill trees (not product code)
+.agent
+.agents
+.claude
+.cursor
+.windsurf

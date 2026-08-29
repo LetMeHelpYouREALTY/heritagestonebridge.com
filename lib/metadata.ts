@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { getSiteUrl } from "@/lib/site-url";
 import type { HeritagePageContent } from "@/lib/heritage-stonebridge/types";
+import { readCloudflareImageDeliveryConfig } from "@/lib/cloudflare-image-loader";
+import {
+  buildCloudflareImageUrl,
+  isLocalImagePath,
+} from "@/lib/cloudflare-images";
 
 type BuildPageMetadataInput = {
   title: string;
@@ -30,7 +35,16 @@ export function canonicalUrl(path: string): string {
 }
 
 export function absoluteOgImage(path: string = DEFAULT_OG_IMAGE_PATH): string {
-  return `${getSiteUrl()}${path.startsWith("/") ? path : `/${path}`}`;
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  const config = readCloudflareImageDeliveryConfig();
+  if ((config.baseUrl || config.accountHash) && isLocalImagePath(normalized)) {
+    return buildCloudflareImageUrl(
+      normalized,
+      { width: 1200, quality: 80, format: "jpeg" },
+      config,
+    );
+  }
+  return `${getSiteUrl()}${normalized}`;
 }
 
 /** Parse heritage "July 2026" / ISO strings for sitemap lastmod. */
