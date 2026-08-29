@@ -81,7 +81,7 @@ export default function FAQSection({
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                sizes="(max-width: 1024px) 100vw, 1024px"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
                 className="object-cover"
               />
             </div>

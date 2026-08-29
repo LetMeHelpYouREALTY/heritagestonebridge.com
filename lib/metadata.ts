@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cloudflareDeliveryUrl } from "@/lib/cloudflare-images";
 import { getSiteUrl } from "@/lib/site-url";
 import type { HeritagePageContent } from "@/lib/heritage-stonebridge/types";
 
@@ -30,7 +31,11 @@ export function canonicalUrl(path: string): string {
 }
 
 export function absoluteOgImage(path: string = DEFAULT_OG_IMAGE_PATH): string {
-  return `${getSiteUrl()}${path.startsWith("/") ? path : `/${path}`}`;
+  const delivered = cloudflareDeliveryUrl(path, "og");
+  if (/^https?:\/\//i.test(delivered)) {
+    return delivered;
+  }
+  return `${getSiteUrl()}${delivered.startsWith("/") ? delivered : `/${delivered}`}`;
 }
 
 /** Parse heritage "July 2026" / ISO strings for sitemap lastmod. */

@@ -23,6 +23,7 @@ const PropertyCard = ({ property }: { property: Property }) => (
         src={property.image}
         alt={property.name}
         fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
         className="object-cover"
       />
       <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-semibold">

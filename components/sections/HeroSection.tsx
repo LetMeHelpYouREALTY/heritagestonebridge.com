@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import DevicePicture from "@/components/images/DevicePicture";
 import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
 
 export default function HeroSection() {
@@ -40,7 +40,7 @@ export default function HeroSection() {
               index === currentImage ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Image
+            <DevicePicture
               src={src}
               alt={
                 index === 0
@@ -49,9 +49,8 @@ export default function HeroSection() {
                     ? "Resort-style pool at a Summerlin active adult clubhouse"
                     : "Luxury modern desert estate in Summerlin with mountain views"
               }
-              fill
-              className="object-cover"
               priority={index === 0}
+              className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-black/40" />
           </div>

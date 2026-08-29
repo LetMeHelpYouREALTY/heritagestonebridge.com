@@ -1,4 +1,4 @@
-import Image from "next/image";
+import DevicePicture from "@/components/images/DevicePicture";
 
 type HeroBackgroundProps = {
   src?: string;
@@ -13,17 +13,14 @@ export default function HeroBackground({
 }: HeroBackgroundProps) {
   return (
     <>
-      <Image
+      <DevicePicture
         src={src}
         alt={alt}
-        fill
         priority={priority}
-        sizes="100vw"
-        quality={80}
-        className="object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-center"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/55 to-slate-900/30"
+        className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/45 to-slate-900/20"
         aria-hidden="true"
       />
     </>

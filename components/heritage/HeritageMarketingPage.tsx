@@ -50,7 +50,7 @@ function renderSection(section: HeritageSection, index: number) {
                 src={statsImage.src}
                 alt=""
                 fill
-                sizes="(max-width: 1024px) 100vw, 1024px"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
                 className="object-cover opacity-35"
               />
               <div className="absolute inset-0 bg-slate-950/55" />

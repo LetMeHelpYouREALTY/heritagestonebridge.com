@@ -47,8 +47,8 @@ export default function SectionImage({
         priority={priority}
         sizes={
           isCard
-            ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-            : "(max-width: 1024px) 100vw, 1024px"
+            ? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+            : "(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
         }
         className="object-cover object-center"
       />

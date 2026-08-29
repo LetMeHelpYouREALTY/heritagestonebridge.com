@@ -3,14 +3,19 @@ const nextConfig = {
   // Output configuration for Cloudflare Pages
   output: 'standalone',
 
-  // Image optimization for Cloudflare
+  // Cloudflare Images named variants for buyer/seller devices
   images: {
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // Use Cloudflare Images loader
+    deviceSizes: [640, 1024, 1920],
+    imageSizes: [400, 800],
     loader: 'custom',
     loaderFile: './lib/cloudflare-image-loader.ts',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'imagedelivery.net',
+      },
+    ],
   },
 
   // Compression (handled by Cloudflare)

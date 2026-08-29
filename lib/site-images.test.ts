@@ -25,6 +25,15 @@ describe("site-images heading matcher", () => {
     expect(getCardImageForHeading("Pickleball Courts").src).toBe(SITE_IMAGES.pickleball.src);
   });
 
+  it("maps 55+ hub headings to the lifestyle pool hero, not dusk pickleball", () => {
+    expect(getHeroImageForHeading("Find Your Perfect 55+ Community in Las Vegas").src).toBe(
+      SITE_IMAGES.heroLifestyle.src,
+    );
+    expect(getHeroImageForHeading("Sun City Summerlin Homes").src).toBe(
+      SITE_IMAGES.heroLifestyle.src,
+    );
+  });
+
   it("maps neighborhood names to local photography", () => {
     expect(getNeighborhoodImage("The Ridges").src).toBe(SITE_IMAGES.ridges.src);
     expect(getNeighborhoodImage("Henderson").src).toBe(SITE_IMAGES.henderson.src);

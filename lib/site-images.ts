@@ -2,6 +2,11 @@
  * Photorealistic site imagery keyed to page and section headings.
  * Match H1/H2/H3 copy so every route gets a content-appropriate photo
  * without duplicating assets per page.
+ *
+ * `src` is the git backup path under public/images (also the Cloudflare
+ * Images custom ID). Production delivery is imagedelivery.net named
+ * variants via `cloudflareDeliveryUrl` / the Next.js custom loader —
+ * do not treat these paths as the public CDN URL.
  */
 
 export type SiteImage = {
@@ -159,6 +164,7 @@ const HEADING_RULES: HeadingRule[] = [
   { pattern: /downtown summerlin|shopping, dining|retail/i, key: "downtown" },
   { pattern: /guard.?gat|security feature|manned entry|gated liv|gated communit/i, key: "guardGate" },
   { pattern: /pickleball/i, key: "pickleball" },
+  { pattern: /sun city|trilogy|solera|del webb|55\+|active adult|lifestyle/i, key: "heroLifestyle" },
   { pattern: /bocce|picnic|outdoor recreation/i, key: "bocce" },
   { pattern: /clubhouse/i, key: "clubhouse" },
   { pattern: /fitness|wellness|aquatics|locker/i, key: "fitness" },
@@ -168,7 +174,6 @@ const HEADING_RULES: HeadingRule[] = [
   { pattern: /hoa|fees|landscap|due diligence|carrying cost/i, key: "landscaping" },
   { pattern: /golf/i, key: "golf" },
   { pattern: /condo|high-rise|penthouse/i, key: "condo" },
-  { pattern: /sun city|trilogy|solera|del webb|55\+|active adult|lifestyle/i, key: "hero55plus" },
   { pattern: /luxury|estate|macdonald/i, key: "heroLuxury" },
   { pattern: /new construction|investment|investor/i, key: "heroInvestment" },
   { pattern: /summerlin/i, key: "heroCommunity" },
