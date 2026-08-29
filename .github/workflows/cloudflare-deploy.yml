@@ -1,9 +1,11 @@
+# Pages deploys are not used: Vercel Git integration is the app origin.
+# Running next-on-pages here would double-deploy and this workflow still
+# targets the heyberkshire-com Pages project. Image CDN worker deploys
+# from deploy-workers on main only.
 name: Cloudflare Pages Deployment
 
 on:
   push:
-    branches: [main]
-  pull_request:
     branches: [main]
 
 env:
@@ -19,6 +21,7 @@ concurrency:
 jobs:
   deploy:
     name: Deploy to Cloudflare Pages
+    if: ${{ false }}
     runs-on: ubuntu-latest
     permissions:
       contents: read

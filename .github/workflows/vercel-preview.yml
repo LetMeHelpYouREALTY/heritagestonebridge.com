@@ -1,8 +1,11 @@
+# Disabled on pull_request: Vercel’s native Git integration already deploys
+# PR previews for this repo. The CLI path also fails on leftover Flask
+# files under /api (Vercel asks for `uv`). Use workflow_dispatch only if
+# you need a manual CLI preview.
 name: Vercel Preview Deployment
 
 on:
-  pull_request:
-    branches: [main, develop]
+  workflow_dispatch:
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -42,6 +45,7 @@ jobs:
           echo "Deployed to: $url"
 
       - name: Comment PR with Preview URL
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
