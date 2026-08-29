@@ -4,9 +4,11 @@ import {
   clampQuality,
   isCloudflareImageLoaderEnabled,
   isSafeImageKey,
+  isSvgKey,
   mergeQueryTransform,
   negotiateOutputFormat,
   parseCloudflareImageRequest,
+  parseTransformOptions,
   serializeTransformOptions,
 } from "./cloudflare-images";
 import cloudflareImageLoader from "./cloudflare-image-loader";
@@ -114,6 +116,38 @@ describe("negotiateOutputFormat", () => {
     expect(negotiateOutputFormat("auto", "image/jpeg", "Image/story.png")).toBe(
       "image/png",
     );
+  });
+
+  it("maps explicit Cloudflare format options", () => {
+    expect(negotiateOutputFormat("avif", "", "images/a.jpg")).toBe(
+      "image/avif",
+    );
+    expect(negotiateOutputFormat("webp", "", "images/a.jpg")).toBe(
+      "image/webp",
+    );
+    expect(negotiateOutputFormat("jpeg", "", "images/a.jpg")).toBe(
+      "image/jpeg",
+    );
+    expect(negotiateOutputFormat("png", "", "images/a.jpg")).toBe("image/png");
+  });
+});
+
+describe("parseTransformOptions", () => {
+  it("parses height, fit, and short aliases", () => {
+    expect(parseTransformOptions("w=320,h=200,q=80,f=webp,fit=cover")).toEqual({
+      width: 320,
+      height: 200,
+      quality: 80,
+      format: "webp",
+      fit: "cover",
+    });
+  });
+});
+
+describe("isSvgKey", () => {
+  it("detects SVG object keys", () => {
+    expect(isSvgKey("images/logo.svg")).toBe(true);
+    expect(isSvgKey("Image/hero_bg_1.jpg")).toBe(false);
   });
 });
 
