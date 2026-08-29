@@ -1,8 +1,6 @@
 /**
- * Cloudflare Worker - Image Optimization
- * 
- * Automatically optimizes images at the edge using Cloudflare Images.
- * Supports WebP/AVIF conversion, resizing, and quality optimization.
+ * Legacy catch-all image worker stub.
+ * Production image CDN is workers/images.ts (R2 + Images binding).
  */
 
 export default {

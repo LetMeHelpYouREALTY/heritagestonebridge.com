@@ -83,10 +83,9 @@ jobs:
             });
 
   deploy-workers:
-    name: Deploy Cloudflare Workers
+    name: Deploy image CDN worker
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    needs: deploy
     permissions:
       contents: read
     
@@ -97,12 +96,12 @@ jobs:
       - name: Setup pnpm
         uses: ./.github/actions/setup-pnpm
 
-      - name: Deploy Workers
+      - name: Deploy image CDN worker
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy --env production
+          command: deploy
 
   performance-audit:
     name: Cloudflare Performance Audit

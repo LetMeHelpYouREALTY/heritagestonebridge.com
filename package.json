@@ -31,7 +31,10 @@
     "cloudflare:deploy": "wrangler deploy",
     "cloudflare:pages": "npx @cloudflare/next-on-pages",
     "cloudflare:build": "npm run cloudflare:pages",
-    "build:cloudflare": "npx @cloudflare/next-on-pages"
+    "build:cloudflare": "npx @cloudflare/next-on-pages",
+    "cloudflare:images:create-bucket": "wrangler r2 bucket create heritagestonebridge-images",
+    "cloudflare:images:upload": "bash scripts/upload-images-to-r2.sh",
+    "cloudflare:images:upload:local": "bash scripts/upload-images-to-r2.sh --local"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.0",

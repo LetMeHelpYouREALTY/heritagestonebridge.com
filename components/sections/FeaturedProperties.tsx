@@ -23,6 +23,8 @@ const PropertyCard = ({ property }: { property: Property }) => (
         src={property.image}
         alt={property.name}
         fill
+        sizes="(max-width: 768px) 100vw, 33vw"
+        quality={75}
         className="object-cover"
       />
       <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-semibold">
@@ -68,7 +70,7 @@ const properties: Property[] = [
   },
   {
     id: 2,
-    name: "Spacious Family Home",
+    name: "Spacious Henderson Home",
     location: "Henderson, NV",
     price: "$625,000",
     image: "/Image/hero_bg_2.jpg",

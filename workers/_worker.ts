@@ -1,8 +1,6 @@
 /**
- * Cloudflare Worker - Main Entry Point
- * 
- * Routes requests to appropriate workers based on path and content type.
- * Combines edge caching, security headers, image optimization, and analytics.
+ * Legacy catch-all Worker. Do not route the Vercel origin through this file.
+ * Image storage/optimization lives in workers/images.ts.
  */
 
 import edgeCache from './edge-cache';

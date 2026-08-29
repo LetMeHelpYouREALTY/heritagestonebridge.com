@@ -1,8 +1,32 @@
+const cloudflareImagesUrl = process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_URL
+const cloudflareHostedImages =
+  process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED === 'true' &&
+  Boolean(process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH)
+const useCloudflareImageLoader = Boolean(cloudflareImagesUrl) || cloudflareHostedImages
+
+function cloudflareImageHostnames() {
+  const hosts = [
+    { protocol: 'https', hostname: 'imagedelivery.net' },
+    { protocol: 'https', hostname: 'images.heritagestonebridge.com' },
+    { protocol: 'https', hostname: '*.workers.dev' },
+  ]
+  if (!cloudflareImagesUrl) return hosts
+  try {
+    const { hostname, protocol } = new URL(cloudflareImagesUrl)
+    if (hostname && !hosts.some((entry) => entry.hostname === hostname)) {
+      hosts.push({ protocol: protocol.replace(':', '') || 'https', hostname })
+    }
+  } catch {
+    // Ignore malformed NEXT_PUBLIC_CLOUDFLARE_IMAGES_URL at build time.
+  }
+  return hosts
+}
+
 const nextConfig = {
   // Standalone output for Docker/Vercel optimization
   output: 'standalone',
 
-  // Image optimization
+  // Image optimization — Cloudflare R2/Images when configured, else Vercel
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -11,6 +35,13 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: cloudflareImageHostnames(),
+    ...(useCloudflareImageLoader
+      ? {
+          loader: 'custom',
+          loaderFile: './lib/cloudflare-image-loader.ts',
+        }
+      : {}),
   },
 
   // Compression
