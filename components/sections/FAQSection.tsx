@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 export interface FAQ {
@@ -50,6 +51,9 @@ interface FAQSectionProps {
   /** Custom subtitle for the section */
   subtitle?: string;
   /** Whether to include JSON-LD schema (handled separately by FAQSchema component) */
+  /** Optional photograph matching the FAQ heading. */
+  imageSrc?: string;
+  imageAlt?: string;
   className?: string;
 }
 
@@ -57,6 +61,8 @@ export default function FAQSection({
   faqs = defaultFaqs,
   title = "Frequently Asked Questions",
   subtitle = "Get answers to common questions about our real estate services",
+  imageSrc = "/images/sections/section-clubhouse.webp",
+  imageAlt = "Heritage at Stonebridge clubhouse lounge in Summerlin West",
   className = "",
 }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -68,7 +74,18 @@ export default function FAQSection({
   return (
     <section className={`py-16 md:py-24 bg-white ${className}`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 max-w-4xl mx-auto">
+          {imageSrc && (
+            <div className="relative mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-slate-200">
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover"
+              />
+            </div>
+          )}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             {title}
           </h2>

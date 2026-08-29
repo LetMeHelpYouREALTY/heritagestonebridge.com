@@ -21,6 +21,8 @@ import {
 import { buyersHubMetadata } from "@/lib/seo/static-page-metadata";
 import StandardPageSchema from "@/components/seo/StandardPageSchema";
 import PageHero from "@/components/sections/PageHero";
+import SectionImage from "@/components/sections/SectionImage";
+import { getNeighborhoodImage } from "@/lib/site-images";
 
 export const metadata = buyersHubMetadata;
 
@@ -152,6 +154,7 @@ export default function BuyersPage() {
 
           {/* Buying Process */}
           <section className="mb-16 max-w-5xl mx-auto">
+            <SectionImage heading="The Home Buying Process in Las Vegas" />
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               The Home Buying Process in Las Vegas
             </h2>
@@ -201,18 +204,29 @@ export default function BuyersPage() {
               a quick guide to median prices and what each area offers.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {neighborhoods.map((neighborhood) => (
+              {neighborhoods.map((neighborhood) => {
+                const image = getNeighborhoodImage(neighborhood.name);
+                return (
                 <div
                   key={neighborhood.name}
-                  className="bg-white rounded-lg p-4 border border-slate-200"
+                  className="bg-white rounded-lg border border-slate-200 overflow-hidden"
                 >
+                  <SectionImage
+                    src={image.src}
+                    alt={`${neighborhood.name} homes in the Las Vegas Valley`}
+                    variant="card"
+                    className="rounded-none mb-0"
+                  />
+                  <div className="p-4">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="font-bold text-slate-900">{neighborhood.name}</h3>
                     <span className="text-blue-600 font-semibold">{neighborhood.price}</span>
                   </div>
                   <p className="text-slate-600 text-sm">{neighborhood.description}</p>
+                  </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
             <div className="text-center mt-6">
               <Link

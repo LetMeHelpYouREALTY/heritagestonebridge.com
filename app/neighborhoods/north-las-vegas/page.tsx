@@ -1,5 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
+import SectionImage from "@/components/sections/SectionImage";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -110,7 +111,8 @@ export default function NorthLasVegasPage() {
           {/* Main Content */}
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              <SectionImage heading="North Las Vegas: The Valley's Best Value for First-Time Buyers" />
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 North Las Vegas: The Valley's Best Value for First-Time Buyers
               </h2>
               <p>

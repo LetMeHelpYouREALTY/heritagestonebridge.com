@@ -1,4 +1,5 @@
 import { Shield, TrendingUp, Users, Award, Clock, Home } from "lucide-react";
+import SectionImage from "@/components/sections/SectionImage";
 
 const features = [
   {
@@ -38,6 +39,7 @@ export default function WhyChooseUs() {
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
+          <SectionImage heading="Why Choose Us" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             Why Choose Us
           </h2>

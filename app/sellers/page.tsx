@@ -1,5 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
+import SectionImage from "@/components/sections/SectionImage";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -304,7 +305,8 @@ export default function SellersPage() {
 
           {/* Expert Quote */}
           <section className="mb-16 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            <SectionImage heading="Expert Selling Advice" />
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Expert Selling Advice
             </h2>
             <div className="bg-slate-50 rounded-lg p-8">

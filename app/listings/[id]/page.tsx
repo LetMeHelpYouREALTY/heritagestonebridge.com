@@ -6,6 +6,7 @@ import { Bed, Bath, Square, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { buildPageMetadata } from "@/lib/metadata";
+import { SITE_IMAGES } from "@/lib/site-images";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Property Details | Heritage Stonebridge",
@@ -14,21 +15,51 @@ export const metadata: Metadata = buildPageMetadata({
   robots: { index: false, follow: false },
 });
 
-// This would typically fetch from RealScout API
-async function getProperty(id: string) {
-  // Placeholder - replace with RealScout API call
-  return {
-    id,
+const PROPERTY_PHOTOS = [
+  {
     name: "Modern Luxury Home",
     location: "Summerlin, Las Vegas, NV",
     price: "$850,000",
-    image: "/images/hero/hero-luxury.webp",
+    image: SITE_IMAGES.propertyLuxury.src,
     bedrooms: 4,
     bathrooms: 3,
     squareFeet: 3200,
     yearBuilt: 2018,
     description:
-      "Stunning modern home in desirable Summerlin community. Features open floor plan, updated kitchen, and beautiful backyard. Close to schools, shopping, and entertainment.",
+      "Stunning modern home in desirable Summerlin community. Features open floor plan, updated kitchen, and beautiful backyard. Close to shopping and Red Rock Canyon.",
+  },
+  {
+    name: "Spacious Single-Story Home",
+    location: "Henderson, NV",
+    price: "$625,000",
+    image: SITE_IMAGES.propertyFamily.src,
+    bedrooms: 3,
+    bathrooms: 2,
+    squareFeet: 2400,
+    yearBuilt: 2020,
+    description:
+      "Single-story Henderson home with desert landscaping, open living areas, and a covered patio. Convenient to Green Valley shopping and medical services.",
+  },
+  {
+    name: "Elegant Estate",
+    location: "Green Valley, Henderson, NV",
+    price: "$1,200,000",
+    image: SITE_IMAGES.propertyEstate.src,
+    bedrooms: 5,
+    bathrooms: 4,
+    squareFeet: 4500,
+    yearBuilt: 2015,
+    description:
+      "Grand Green Valley estate with mature trees, circular drive, and spacious interiors suited to entertaining.",
+  },
+] as const;
+
+async function getProperty(id: string) {
+  const index = Number.parseInt(id, 10);
+  const property = PROPERTY_PHOTOS[(Number.isFinite(index) ? index : 1) % PROPERTY_PHOTOS.length];
+  return {
+    id,
+    ...property,
   };
 }
 

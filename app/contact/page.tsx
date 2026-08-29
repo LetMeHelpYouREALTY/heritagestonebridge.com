@@ -1,5 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
+import SectionImage from "@/components/sections/SectionImage";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import { Phone, Mail, MapPin, Clock, Calendar, CheckCircle, Star, Users, Shield } from "lucide-react";
@@ -210,7 +211,8 @@ export default function ContactPage() {
 
           {/* Service Areas Section */}
           <section className="max-w-5xl mx-auto mt-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            <SectionImage heading="Areas We Serve" />
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Areas We Serve
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
@@ -242,7 +244,8 @@ export default function ContactPage() {
 
           {/* Quick Contact Options */}
           <section className="max-w-4xl mx-auto mt-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            <SectionImage heading="Prefer to Reach Out Directly?" />
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Prefer to Reach Out Directly?
             </h2>
             <div className="grid md:grid-cols-2 gap-6">

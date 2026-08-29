@@ -1,5 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
+import SectionImage from "@/components/sections/SectionImage";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -105,7 +106,8 @@ export default function TrilogySummerlinPage() {
           {/* About */}
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              <SectionImage heading="About Trilogy at Summerlin" />
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Trilogy at Summerlin
               </h2>
               <p>
@@ -232,7 +234,8 @@ export default function TrilogySummerlinPage() {
 
           {/* Home Features */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            <SectionImage heading="Contemporary Home Designs" />
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Contemporary Home Designs
             </h2>
             <p className="text-lg text-slate-600 text-center mb-8 max-w-3xl mx-auto">

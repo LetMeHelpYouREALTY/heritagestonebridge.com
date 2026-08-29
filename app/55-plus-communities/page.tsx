@@ -1,5 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
+import SectionImage from "@/components/sections/SectionImage";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -25,6 +26,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import { getCardImageForHeading } from "@/lib/site-images";
 
 export const metadata: Metadata = buildPageMetadata({
   title:
@@ -507,6 +509,7 @@ export default function FiftyFiveCommunitiesPage() {
 
           {/* Communities Grid */}
           <section id="communities" className="mb-16 max-w-6xl mx-auto">
+            <SectionImage heading="Las Vegas 55+ Communities" />
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Las Vegas 55+ Communities
             </h2>
@@ -514,11 +517,19 @@ export default function FiftyFiveCommunitiesPage() {
               Click "View Homes" to explore each community in detail
             </p>
             <div className="grid md:grid-cols-2 gap-8">
-              {communities.map((community) => (
+              {communities.map((community) => {
+                const cardImage = getCardImageForHeading(community.name);
+                return (
                 <div
                   key={community.name}
                   className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
                 >
+                  <SectionImage
+                    src={cardImage.src}
+                    alt={`${community.name} in ${community.location}`}
+                    variant="card"
+                    className="rounded-none"
+                  />
                   <div className="bg-slate-900 text-white p-6">
                     <h3 className="text-xl font-bold mb-1">{community.name}</h3>
                     <div className="flex items-center text-slate-300 text-sm">
@@ -610,17 +621,21 @@ export default function FiftyFiveCommunitiesPage() {
                     )}
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </section>
 
           {/* Amenities Overview */}
           <section className="mb-16 max-w-5xl mx-auto">
+            <SectionImage heading="What 55+ Community Amenities Include" />
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               What 55+ Community Amenities Include
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white border border-slate-200 rounded-xl p-6">
+              <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                <SectionImage heading="Fitness & Recreation" variant="card" className="rounded-none mb-0" />
+                <div className="p-6">
                 <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Dumbbell className="h-6 w-6 text-green-600" />
                 </div>
@@ -634,8 +649,11 @@ export default function FiftyFiveCommunitiesPage() {
                   <li>• Golf courses (many communities)</li>
                   <li>• Walking/biking trails</li>
                 </ul>
+                </div>
               </div>
-              <div className="bg-white border border-slate-200 rounded-xl p-6">
+              <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                <SectionImage heading="Social & Activities" variant="card" className="rounded-none mb-0" />
+                <div className="p-6">
                 <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Calendar className="h-6 w-6 text-blue-600" />
                 </div>
@@ -649,8 +667,11 @@ export default function FiftyFiveCommunitiesPage() {
                   <li>• Card rooms & game nights</li>
                   <li>• Community events & parties</li>
                 </ul>
+                </div>
               </div>
-              <div className="bg-white border border-slate-200 rounded-xl p-6">
+              <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                <SectionImage heading="Convenience & Security" variant="card" className="rounded-none mb-0" />
+                <div className="p-6">
                 <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6 text-purple-600" />
                 </div>
@@ -664,6 +685,7 @@ export default function FiftyFiveCommunitiesPage() {
                   <li>• Healthcare facilities nearby</li>
                   <li>• Concierge services (luxury)</li>
                 </ul>
+                </div>
               </div>
             </div>
           </section>
@@ -761,7 +783,8 @@ export default function FiftyFiveCommunitiesPage() {
 
           {/* Why BHHS */}
           <section className="mb-16 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            <SectionImage heading="Why Choose Dr. Jan Duffy for 55+ Communities?" />
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Why Choose Dr. Jan Duffy for 55+ Communities?
             </h2>
             <div className="grid md:grid-cols-2 gap-6">

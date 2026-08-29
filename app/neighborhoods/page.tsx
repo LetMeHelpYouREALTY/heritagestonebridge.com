@@ -6,6 +6,8 @@ import Link from "next/link";
 import { MapPin, Phone, Home, Users, GraduationCap } from "lucide-react";
 import { buildPageMetadata } from "@/lib/metadata";
 import StandardPageSchema from "@/components/seo/StandardPageSchema";
+import SectionImage from "@/components/sections/SectionImage";
+import { getNeighborhoodImage } from "@/lib/site-images";
 
 export const metadata = buildPageMetadata({
   title:
@@ -133,12 +135,21 @@ export default function NeighborhoodsPage() {
           {/* Neighborhood Grid */}
           <section className="mb-16 max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
-              {neighborhoods.map((neighborhood) => (
+              {neighborhoods.map((neighborhood) => {
+                const image = getNeighborhoodImage(neighborhood.name);
+                return (
                 <Link
                   key={neighborhood.slug}
                   href={`/neighborhoods/${neighborhood.slug}`}
-                  className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-all hover:border-blue-300 group"
+                  className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all hover:border-blue-300 group"
                 >
+                  <SectionImage
+                    src={image.src}
+                    alt={`${neighborhood.name} homes and community in the Las Vegas Valley`}
+                    variant="card"
+                    className="rounded-none"
+                  />
+                  <div className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <h2 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -162,8 +173,10 @@ export default function NeighborhoodsPage() {
                       </span>
                     ))}
                   </div>
+                  </div>
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </section>
 

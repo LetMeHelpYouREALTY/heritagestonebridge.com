@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, CheckCircle } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
+import SectionImage from "@/components/sections/SectionImage";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import SchemaScript from "@/components/SchemaScript";
@@ -14,6 +16,7 @@ import {
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { HERITAGE_COMMUNITY } from "@/lib/heritage-stonebridge/data";
 import { canonicalUrl } from "@/lib/metadata";
+import { getCardImageForHeading, getSectionImageForHeading } from "@/lib/site-images";
 import type { HeritagePageContent, HeritageSection } from "@/lib/heritage-stonebridge/types";
 
 type HeritageMarketingPageProps = {
@@ -25,6 +28,7 @@ function renderSection(section: HeritageSection, index: number) {
     case "prose":
       return (
         <section key={index} className="mb-16 max-w-4xl mx-auto">
+          <SectionImage heading={section.heading} />
           <h2 className="text-3xl font-bold text-slate-900 mb-6">{section.heading}</h2>
           <div className="prose prose-lg max-w-none text-slate-700 space-y-4">
             {section.paragraphs.map((paragraph) => (
@@ -33,49 +37,78 @@ function renderSection(section: HeritageSection, index: number) {
           </div>
         </section>
       );
-    case "stats":
+    case "stats": {
+      const statsImage = getSectionImageForHeading(section.heading);
       return (
         <section
           key={index}
-          className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto"
+          className="relative mb-16 overflow-hidden rounded-2xl bg-slate-900 text-white p-8 md:p-12 max-w-5xl mx-auto"
         >
-          <h2 className="text-2xl font-bold mb-8 text-center">{section.heading}</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {section.stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-purple-400 mb-1">
-                  {stat.value}
+          {statsImage && (
+            <div className="absolute inset-0" aria-hidden="true">
+              <Image
+                src={statsImage.src}
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover opacity-35"
+              />
+              <div className="absolute inset-0 bg-slate-950/55" />
+            </div>
+          )}
+          <div className="relative z-10">
+            <h2 className="text-2xl font-bold mb-8 text-center">{section.heading}</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {section.stats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-purple-400 mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-slate-300 text-sm">{stat.label}</div>
                 </div>
-                <div className="text-slate-300 text-sm">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
       );
+    }
     case "grid":
       return (
         <section key={index} className="mb-16 max-w-5xl mx-auto">
+          <SectionImage heading={section.heading} />
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">{section.heading}</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {section.cards.map((card) => (
-              <div
-                key={card.title}
-                className="bg-white border border-slate-200 rounded-xl p-6"
-              >
-                <h3 className="font-bold text-slate-900 mb-2">{card.title}</h3>
-                <ul className="text-slate-600 text-sm space-y-1">
-                  {card.items.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {section.cards.map((card) => {
+              const cardImage = getCardImageForHeading(card.title);
+              return (
+                <div
+                  key={card.title}
+                  className="bg-white border border-slate-200 rounded-xl overflow-hidden"
+                >
+                  <SectionImage
+                    src={cardImage.src}
+                    alt={cardImage.alt}
+                    variant="card"
+                    className="rounded-none"
+                  />
+                  <div className="p-6">
+                    <h3 className="font-bold text-slate-900 mb-2">{card.title}</h3>
+                    <ul className="text-slate-600 text-sm space-y-1">
+                      {card.items.map((item) => (
+                        <li key={item}>• {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
       );
     case "checklist":
       return (
         <section key={index} className="mb-16 max-w-4xl mx-auto">
+          <SectionImage heading={section.heading} />
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">{section.heading}</h2>
           <div className="space-y-4">
             {section.items.map((item) => (
@@ -93,6 +126,7 @@ function renderSection(section: HeritageSection, index: number) {
     case "comparison":
       return (
         <section key={index} className="mb-16 max-w-5xl mx-auto overflow-x-auto">
+          <SectionImage heading={section.heading} />
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">{section.heading}</h2>
           <table className="w-full min-w-[560px] border border-slate-200 rounded-xl overflow-hidden">
             <thead className="bg-slate-900 text-white">
@@ -221,6 +255,7 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
 
           {content.faqs && content.faqs.length > 0 && (
             <section className="mb-16 max-w-4xl mx-auto">
+              <SectionImage heading="Frequently Asked Questions" />
               <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
                 Frequently Asked Questions
               </h2>

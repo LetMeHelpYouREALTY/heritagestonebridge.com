@@ -1,5 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
+import SectionImage from "@/components/sections/SectionImage";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -105,7 +106,8 @@ export default function SoleraAnthemPage() {
           {/* About */}
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              <SectionImage heading="About Solera at Anthem" />
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Solera at Anthem
               </h2>
               <p>
@@ -225,7 +227,8 @@ export default function SoleraAnthemPage() {
 
           {/* Henderson Location */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            <SectionImage heading="Henderson: America's Safest Large City" />
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Henderson: America's Safest Large City
             </h2>
             <div className="grid md:grid-cols-2 gap-6">

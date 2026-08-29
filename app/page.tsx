@@ -3,6 +3,7 @@ import { Phone, Shield, MapPin, Home as HomeIcon, Users } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import HeroBackground from "@/components/sections/HeroBackground";
+import SectionImage from "@/components/sections/SectionImage";
 import FAQSection from "@/components/sections/FAQSection";
 import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
@@ -17,6 +18,7 @@ import { buildPageMetadata, canonicalUrl } from "@/lib/metadata";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/data";
 import { HERITAGE_COMMUNITY_NAV, HERITAGE_BUYER_NAV } from "@/lib/heritage-stonebridge/routes";
+import { BEST_HERO_IMAGE, getCardImageForHeading } from "@/lib/site-images";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -50,7 +52,11 @@ export default function HomePage() {
       <main>
         <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden min-h-[480px]">
           <div className="absolute inset-0" aria-hidden="true">
-            <HeroBackground />
+            <HeroBackground
+              src={BEST_HERO_IMAGE.src}
+              alt={BEST_HERO_IMAGE.alt}
+              priority
+            />
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
             <span className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
@@ -101,6 +107,7 @@ export default function HomePage() {
 
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-5xl">
+            <SectionImage heading="Heritage at Stonebridge at a Glance" />
             <h2 className="text-3xl font-bold text-slate-900 text-center mb-10">
               Heritage at Stonebridge at a Glance
             </h2>
@@ -130,19 +137,29 @@ export default function HomePage() {
 
         <section className="py-16 bg-slate-50">
           <div className="container mx-auto px-4 max-w-6xl">
+            <SectionImage heading="Explore the Community" />
             <h2 className="text-3xl font-bold text-slate-900 text-center mb-10">
               Explore the Community
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {HERITAGE_COMMUNITY_NAV.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-xl bg-white border border-slate-200 p-5 hover:border-purple-400 hover:shadow-sm transition-all"
-                >
-                  <h3 className="font-semibold text-slate-900">{item.label}</h3>
-                </Link>
-              ))}
+              {HERITAGE_COMMUNITY_NAV.map((item) => {
+                const cardImage = getCardImageForHeading(item.label);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-xl bg-white border border-slate-200 overflow-hidden hover:border-purple-400 hover:shadow-sm transition-all"
+                  >
+                    <SectionImage
+                      src={cardImage.src}
+                      alt={`${item.label} in Heritage at Stonebridge, Summerlin`}
+                      variant="card"
+                      className="rounded-none"
+                    />
+                    <h3 className="font-semibold text-slate-900 p-5">{item.label}</h3>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -166,15 +183,26 @@ export default function HomePage() {
                   title: "Active Adult Lifestyle",
                   desc: "Pickleball, fitness, pools, and a social scale where you know your neighbors.",
                 },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="text-center p-6">
-                  <div className="bg-purple-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <Icon className="h-8 w-8 text-purple-600" />
+              ].map(({ icon: Icon, title, desc }) => {
+                const cardImage = getCardImageForHeading(title);
+                return (
+                  <div key={title} className="text-center rounded-2xl overflow-hidden border border-slate-200">
+                    <SectionImage
+                      src={cardImage.src}
+                      alt={cardImage.alt}
+                      variant="card"
+                      className="rounded-none"
+                    />
+                    <div className="p-6">
+                      <div className="bg-purple-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <Icon className="h-8 w-8 text-purple-600" />
+                      </div>
+                      <h3 className="font-bold text-lg mb-2">{title}</h3>
+                      <p className="text-slate-600 text-sm">{desc}</p>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-lg mb-2">{title}</h3>
-                  <p className="text-slate-600 text-sm">{desc}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -206,6 +234,8 @@ export default function HomePage() {
           faqs={homepageFaqs}
           title="Heritage at Stonebridge FAQ"
           subtitle="Common questions about Summerlin's Lennar 55+ guard-gated community"
+          imageSrc="/images/hero/hero-heritage-stonebridge.webp"
+          imageAlt="Heritage at Stonebridge guard-gated 55+ community in Summerlin West"
         />
 
         <section className="py-16 bg-purple-600 text-white">

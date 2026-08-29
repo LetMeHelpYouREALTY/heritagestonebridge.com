@@ -1,6 +1,5 @@
 import HeroBackground from "@/components/sections/HeroBackground";
-import { getPageDomainConfig } from "@/lib/get-domain-config";
-import { getHeroImage } from "@/lib/domain-config";
+import { getHeroImageForHeading } from "@/lib/site-images";
 
 type PageHeroProps = {
   /** Page H1. */
@@ -19,11 +18,11 @@ type PageHeroProps = {
 };
 
 /**
- * Hyperlocal page hero: a domain-aware background image (resolved from the
- * active domain's config) behind a badge + H1 + answer-first intro. Renders as
- * a rounded card so it drops into the existing `container` page layout.
+ * Hyperlocal page hero: a content-matched photograph resolved from the H1,
+ * with optional imageSrc override. Renders as a rounded card so it drops into
+ * the existing `container` page layout.
  */
-export default async function PageHero({
+export default function PageHero({
   title,
   subtitle,
   badge,
@@ -32,10 +31,9 @@ export default async function PageHero({
   priority = true,
   children,
 }: PageHeroProps) {
-  const config = await getPageDomainConfig();
-  const src = imageSrc ?? getHeroImage(config);
-  const alt =
-    imageAlt ?? `${config.neighborhood} real estate — Dr. Jan Duffy, BHHS Nevada Properties`;
+  const matched = getHeroImageForHeading(title);
+  const src = imageSrc ?? matched.src;
+  const alt = imageAlt ?? matched.alt;
 
   return (
     <section className="relative mb-16 flex min-h-[360px] items-center overflow-hidden rounded-2xl bg-slate-900 text-white">

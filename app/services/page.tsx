@@ -1,5 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
+import SectionImage from "@/components/sections/SectionImage";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -198,6 +199,7 @@ export default function ServicesPage() {
 
           {/* Core Services Section */}
           <section className="mb-16 max-w-6xl mx-auto">
+            <SectionImage heading="Core Real Estate Services" />
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Core Real Estate Services
             </h2>

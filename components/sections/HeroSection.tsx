@@ -10,9 +10,9 @@ export default function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
   
   const images = [
-    "/Image/hero_bg_1.jpg",
-    "/Image/hero_bg_2.jpg",
-    "/Image/hero_bg_3.jpg",
+    "/images/hero/hero-heritage-stonebridge.webp",
+    "/images/hero/hero-lifestyle.webp",
+    "/images/hero/hero-luxury.webp",
   ];
 
   useEffect(() => {
@@ -42,7 +42,13 @@ export default function HeroSection() {
           >
             <Image
               src={src}
-              alt={`Hero image ${index + 1}`}
+              alt={
+                index === 0
+                  ? "Heritage at Stonebridge guard-gated 55+ community in Summerlin West"
+                  : index === 1
+                    ? "Resort-style pool at a Summerlin active adult clubhouse"
+                    : "Luxury modern desert estate in Summerlin with mountain views"
+              }
               fill
               className="object-cover"
               priority={index === 0}

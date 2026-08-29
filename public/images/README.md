@@ -4,13 +4,19 @@
 
 ```
 images/
-├── hero/           # Homepage hero backgrounds
-├── agent/          # Dr. Jan Duffy photos
-├── properties/     # Listing photos
+├── hero/           # Page heroes (16:9 WebP)
+├── sections/       # H2/H3 section photographs
+├── agent/          # Brand / OG crops
+├── properties/     # Listing-style exteriors
 ├── neighborhoods/  # Area/community photos
-├── testimonials/   # Client headshots
+├── testimonials/   # Client headshots (optional)
 └── logos/          # Brand assets
 ```
+
+Hero files are generated to match page H1 copy. Section files are resolved from H2/H3 headings via `lib/site-images.ts`. The strongest community photograph (`hero-heritage-stonebridge.webp`) is the homepage LCP hero.
+
+Do not use a generated likeness as Dr. Jan Duffy. Open Graph uses the Heritage community photograph until a licensed agent photo is added.
+
 
 ## Recommended Specifications
 
