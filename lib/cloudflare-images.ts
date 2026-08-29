@@ -227,10 +227,7 @@ export function mergeQueryTransform(
 }
 
 export type OutputImageMime =
-  | "image/avif"
-  | "image/webp"
-  | "image/jpeg"
-  | "image/png";
+  "image/avif" | "image/webp" | "image/jpeg" | "image/png";
 
 export function negotiateOutputFormat(
   format: ImageFormat | undefined,
@@ -275,7 +272,11 @@ export function buildCloudflareImageUrl(
   options: CloudflareImageTransform,
   config: CloudflareImageDeliveryConfig,
 ): string {
-  if (/^https?:\/\//i.test(src) || src.startsWith("data:") || src.startsWith("blob:")) {
+  if (
+    /^https?:\/\//i.test(src) ||
+    src.startsWith("data:") ||
+    src.startsWith("blob:")
+  ) {
     return src;
   }
 

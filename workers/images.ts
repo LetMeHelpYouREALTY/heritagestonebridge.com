@@ -148,7 +148,8 @@ const worker = {
       ? negotiateOutputFormat(transform.format, accept, parsed.key)
       : null;
     const cacheHint =
-      negotiatedFormat ?? contentTypeForKey(parsed.key, "application/octet-stream");
+      negotiatedFormat ??
+      contentTypeForKey(parsed.key, "application/octet-stream");
 
     const cache = caches.default;
     const cacheKey = cacheKeyFor(request, cacheHint);
@@ -169,7 +170,8 @@ const worker = {
     if (!transform || isSvgKey(parsed.key) || !transformsEnabled(env)) {
       const original = originalResponse(object, parsed.key, request.method, {
         "CF-Cache-Status": "MISS",
-        "X-Image-Transform": transform && !isSvgKey(parsed.key) ? "skipped" : "none",
+        "X-Image-Transform":
+          transform && !isSvgKey(parsed.key) ? "skipped" : "none",
       });
       if (request.method !== "HEAD") {
         ctx.waitUntil(cache.put(cacheKey, original.clone()));
@@ -211,7 +213,8 @@ const worker = {
       ctx.waitUntil(cache.put(cacheKey, response.clone()));
       return response;
     } catch (error) {
-      const message = error instanceof Error ? error.message : "Transform failed";
+      const message =
+        error instanceof Error ? error.message : "Transform failed";
       console.error("Images transform error", parsed.key, message);
       const fallbackObject = await env.IMAGES_BUCKET.get(parsed.key);
       if (!fallbackObject) {

@@ -37,10 +37,7 @@ export function canonicalUrl(path: string): string {
 export function absoluteOgImage(path: string = DEFAULT_OG_IMAGE_PATH): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
   const config = readCloudflareImageDeliveryConfig();
-  if (
-    (config.baseUrl || config.accountHash) &&
-    isLocalImagePath(normalized)
-  ) {
+  if ((config.baseUrl || config.accountHash) && isLocalImagePath(normalized)) {
     return buildCloudflareImageUrl(
       normalized,
       { width: 1200, quality: 80, format: "jpeg" },
