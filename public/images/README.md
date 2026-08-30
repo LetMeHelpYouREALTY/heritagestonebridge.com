@@ -13,9 +13,10 @@
 ```
 images/
 ├── hero/           # Homepage hero backgrounds
-├── agent/          # Dr. Jan Duffy photos
-├── properties/     # Listing photos
+├── community/      # Clubhouse, pickleball, kitchen
+├── floor-plans/    # Cromwell / Stirling / Evander photos
 ├── neighborhoods/  # Area/community photos
+├── properties/     # Listing photos
 ├── testimonials/   # Client headshots
 └── logos/          # Brand assets
 ```

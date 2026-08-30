@@ -1,5 +1,5 @@
 import type { HeritagePageContent } from "./types";
-import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "./data";
+import { HERITAGE_COMMUNITY, HERITAGE_COLLECTIONS, HERITAGE_FAQS } from "./data";
 
 const baseTitle = (page: string) =>
   `${page} | Heritage at Stonebridge Summerlin | Dr. Jan Duffy`;
@@ -21,7 +21,10 @@ export const communityPage: HeritagePageContent = {
   subtitle:
     "Lennar's boutique 55+ neighborhood in Summerlin West — staff guard-gated security, modern floor plans, and walkable Summerlin living.",
   includeCommunitySchema: true,
-  lastUpdated: "June 2026",
+  lastUpdated: "August 2026",
+  heroImage: "/images/hero/heritage-stonebridge.webp",
+  heroImageAlt:
+    "Aerial view of Heritage at Stonebridge 55+ community in Summerlin West Las Vegas 89138 with Red Rock Canyon",
   sections: [
     {
       type: "stats",
@@ -74,9 +77,17 @@ export const communityPage: HeritagePageContent = {
       links: [
         { href: "/homes-for-sale", label: "Homes for Sale" },
         { href: "/amenities", label: "Amenities" },
+        { href: "/clubhouse", label: "Clubhouse" },
+        { href: "/pickleball", label: "Pickleball" },
         { href: "/floor-plans", label: "Floor Plans" },
+        { href: "/floor-plans/cromwell", label: "Cromwell Collection" },
+        { href: "/floor-plans/stirling", label: "Stirling Collection" },
+        { href: "/floor-plans/evander", label: "Evander Collection" },
+        { href: "/everythings-included", label: "Everything’s Included" },
         { href: "/hoa-fees", label: "HOA & Fees" },
         { href: "/location", label: "Location & Map" },
+        { href: "/stonebridge-village", label: "Stonebridge Village" },
+        { href: "/crossbridge-drive", label: "Crossbridge Drive" },
         { href: "/guard-gated-living", label: "Guard-Gated Living" },
       ],
     },
@@ -95,7 +106,10 @@ export const amenitiesPage: HeritagePageContent = {
   badge: "Resort-Style 55+ Amenities",
   h1: "Heritage at Stonebridge Amenities",
   subtitle: `An ${HERITAGE_COMMUNITY.clubhouseSqFt.toLocaleString()} sq. ft. clubhouse anchors fitness, aquatics, and social life in Summerlin West.`,
-  lastUpdated: "June 2026",
+  lastUpdated: "August 2026",
+  heroImage: "/images/community/heritage-clubhouse.webp",
+  heroImageAlt:
+    "Heritage at Stonebridge clubhouse, fitness, and resort pool in Summerlin West Las Vegas 89138",
   sections: [
     {
       type: "grid",
@@ -134,8 +148,18 @@ export const amenitiesPage: HeritagePageContent = {
       type: "prose",
       heading: "Low-Maintenance Living",
       paragraphs: [
-        "Heritage at Stonebridge is designed for lock-and-leave convenience. Exterior maintenance, common-area landscaping, and amenity upkeep are handled through the HOA — so residents focus on travel, family, and clubhouse activities instead of yard work.",
+        "Heritage at Stonebridge is designed for lock-and-leave convenience. Exterior maintenance, common-area landscaping, and amenity upkeep are handled through the HOA — so residents focus on travel, pickleball, and clubhouse activities instead of yard work.",
         "Organized clubs, holiday events, and interest groups keep the community social without the scale of mega-developments where it's easy to get lost in the crowd.",
+      ],
+    },
+    {
+      type: "links",
+      heading: "Amenity Detail Pages",
+      links: [
+        { href: "/clubhouse", label: "Clubhouse, Fitness & Pools" },
+        { href: "/pickleball", label: "Pickleball & Bocce Courts" },
+        { href: "/lifestyle", label: "55+ Lifestyle" },
+        { href: "/hoa-fees", label: "HOA Coverage" },
       ],
     },
   ],
@@ -150,8 +174,11 @@ export const floorPlansPage: HeritagePageContent = {
   },
   breadcrumbs: crumbs({ name: "Floor Plans", url: "/floor-plans" }),
   h1: "Heritage at Stonebridge Floor Plans",
-  subtitle: `${HERITAGE_COMMUNITY.floorPlanCount} plans in ${HERITAGE_COMMUNITY.collections} Lennar collections — single-story and two-story options for 55+ buyers.`,
-  lastUpdated: "June 2026",
+  subtitle: `${HERITAGE_COMMUNITY.floorPlanCount} single-story plans in ${HERITAGE_COMMUNITY.collections} Lennar collections — Cromwell, Stirling, and Evander for 55+ buyers in Summerlin West.`,
+  lastUpdated: "August 2026",
+  heroImage: "/images/floor-plans/cromwell-collection.webp",
+  heroImageAlt:
+    "Single-story Heritage at Stonebridge floor-plan homes in Summerlin West Las Vegas 89138",
   sections: [
     {
       type: "stats",
@@ -165,11 +192,48 @@ export const floorPlansPage: HeritagePageContent = {
     },
     {
       type: "prose",
+      heading: "Cromwell vs. Stirling vs. Evander: Which Collection Fits?",
+      paragraphs: [
+        "Official Summerlin copy describes three collections of all single-story homes from 1,232 to 2,873 sq. ft. There are no two-story Heritage plans.",
+        "Cromwell is the 2-bed entry collection. Stirling adds owner-suite space. Evander adds three- to four-car garages and the Everly Next Gen suite.",
+      ],
+      subheadings: [
+        {
+          heading: "How many homes are in Heritage at Stonebridge?",
+          paragraphs: [
+            `Public community descriptions identify ${HERITAGE_COMMUNITY.homeCount} planned single-family homes. Treat that as the community total, then verify remaining inventory on live MLS.`,
+          ],
+        },
+      ],
+    },
+    {
+      type: "grid",
+      heading: "Nine Floor Plans in Three Collections",
+      cards: HERITAGE_COLLECTIONS.map((collection) => ({
+        title: `${collection.name} · ${collection.sqFtRange} sq. ft.`,
+        items: collection.plans.map(
+          (plan) => `${plan.name} — ${plan.sqFt} sq. ft.`,
+        ),
+      })),
+    },
+    {
+      type: "prose",
       heading: "Lennar Everything's Included",
       paragraphs: [
         "Every Heritage at Stonebridge home ships with Lennar's Everything's Included package: quartz countertops, stainless steel appliances, raised-panel cabinetry, and smart-home automation — not costly à la carte upgrades.",
-        "Collections span attached and detached single-family layouts. Select plans include RV garages for buyers who want golf carts, boats, or extra storage without leaving the community.",
+        "Select Evander plans include RV or tandem garages for boats, extra vehicles, or storage without leaving the community.",
         "For current availability, elevations, and lot premiums, search live MLS inventory or request a curated list from Dr. Jan Duffy.",
+      ],
+    },
+    {
+      type: "links",
+      heading: "Collection Detail Pages",
+      links: [
+        { href: "/floor-plans/cromwell", label: "Cromwell: Carson, Claremont, Connery" },
+        { href: "/floor-plans/stirling", label: "Stirling: Sawyer, Sidney, Sloan" },
+        { href: "/floor-plans/evander", label: "Evander: Ethan, Elizabeth, Everly" },
+        { href: "/everythings-included", label: "Everything’s Included Finishes" },
+        { href: "/homes-for-sale", label: "Homes for Sale" },
       ],
     },
   ],
@@ -186,7 +250,7 @@ export const hoaFeesPage: HeritagePageContent = {
   h1: "HOA Fees at Heritage at Stonebridge",
   subtitle:
     "Heritage carries a leaner amenity footprint than golf-course mega-communities — often translating to lower carrying costs.",
-  lastUpdated: "June 2026",
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "prose",
@@ -194,6 +258,15 @@ export const hoaFeesPage: HeritagePageContent = {
       paragraphs: [
         `At Heritage at Stonebridge, HOA dues generally fund guard-gate staffing, clubhouse and pool operations, landscape maintenance for common areas, and reserve contributions. ${HERITAGE_COMMUNITY.hoaRange}`,
         "Because Heritage does not subsidize a private 18-hole golf course inside the gates, monthly assessments are often lower than Sun City Summerlin or Trilogy — while still delivering pickleball, fitness, and aquatics.",
+      ],
+      subheadings: [
+        {
+          heading: "What did recent resales display for HOA?",
+          paragraphs: [
+            "August 2026 listing records showed about $410–$419 per month combined: a Heritage association amount near $350 plus a Summerlin master fee near $60–$69.",
+            "That is an observed range, not a published HOA schedule. Request the resale package before you budget.",
+          ],
+        },
       ],
     },
     {
@@ -281,7 +354,7 @@ export const buyingGuidePage: HeritagePageContent = {
         {
           title: "1. Clarify lifestyle priorities",
           description:
-            "Guard-gated privacy vs. mega-clubhouse scale; single-story vs. loft plans; budget inclusive of HOA.",
+            "Guard-gated privacy vs. mega-clubhouse scale; single-story plan size; budget inclusive of HOA.",
         },
         {
           title: "2. Review live MLS inventory",

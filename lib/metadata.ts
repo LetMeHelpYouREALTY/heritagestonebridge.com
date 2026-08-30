@@ -17,7 +17,7 @@ type BuildPageMetadataInput = {
 export const DEFAULT_OG_IMAGE_PATH = AGENT_OG_IMAGE_PATH;
 
 /** Sitemap baseline; heritage pages override via lastUpdated where available. */
-export const SITE_BUILD_DATE = new Date("2026-07-01T00:00:00.000Z");
+export const SITE_BUILD_DATE = new Date("2026-08-30T00:00:00.000Z");
 
 export function canonicalPath(path: string): string {
   if (!path || path === "/") return "/";

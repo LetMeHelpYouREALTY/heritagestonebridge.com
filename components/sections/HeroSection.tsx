@@ -39,7 +39,13 @@ export default function HeroSection() {
           >
             <Image
               src={src}
-              alt={`Hero image ${index + 1}`}
+              alt={
+                [
+                  "Heritage at Stonebridge 55+ homes and clubhouse in Summerlin West with Red Rock Canyon",
+                  "Summerlin West and Red Rock Canyon from a desert overlook",
+                  "Pickleball and resort pool at a Summerlin West 55+ clubhouse",
+                ][index] ?? "Summerlin West community"
+              }
               fill
               className="object-cover"
               priority={index === 0}

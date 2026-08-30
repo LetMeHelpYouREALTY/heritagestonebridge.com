@@ -57,7 +57,7 @@ export default async function PageHero({
           {title}
         </h1>
         {subtitle && (
-          <p className="mx-auto mb-8 max-w-3xl text-xl text-white/85 md:text-2xl">
+          <p className="answer-first mx-auto mb-8 max-w-3xl text-xl text-white/85 md:text-2xl">
             {subtitle}
           </p>
         )}

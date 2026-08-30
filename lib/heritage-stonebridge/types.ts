@@ -22,11 +22,24 @@ export type HeritageComparisonRow = {
   other: string;
 };
 
+export type HeritageProseSubheading = {
+  heading: string;
+  paragraphs: string[];
+};
+
 export type HeritageSection =
   | {
       type: "prose";
       heading: string;
       paragraphs: string[];
+      /** H3 blocks under this H2 — used for AEO/snippet extractability. */
+      subheadings?: HeritageProseSubheading[];
+    }
+  | {
+      type: "figure";
+      src: string;
+      alt: string;
+      caption?: string;
     }
   | {
       type: "stats";
@@ -73,4 +86,8 @@ export type HeritagePageContent = {
   ctaSubtitle?: string;
   includeCommunitySchema?: boolean;
   lastUpdated?: string;
+  /** Hero background; defaults to the 55+ community aerial. */
+  heroImage?: string;
+  heroImageAlt?: string;
+  extraSchemas?: Record<string, unknown>[];
 };

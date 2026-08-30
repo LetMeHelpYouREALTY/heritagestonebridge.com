@@ -11,6 +11,7 @@
  * @see https://developers.cloudflare.com/images/storage/upload-images/upload-custom-path/
  */
 
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -82,7 +83,44 @@ async function verifyAccount() {
   return hashFromVariants(json.result?.images?.[0]?.variants);
 }
 
+function sha256File(file) {
+  return crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
+}
+
+function storedGitHash(result) {
+  const meta = result?.meta ?? result?.metadata ?? {};
+  return typeof meta.gitSha256 === "string" ? meta.gitSha256 : null;
+}
+
+async function getImage(id) {
+  const { res, json } = await cfJson(`${API}/${encodeURIComponent(id)}`);
+  if (res.status === 404 || json.success === false) return null;
+  return json.result ?? null;
+}
+
+async function deleteImage(id) {
+  const { res, json } = await cfJson(`${API}/${encodeURIComponent(id)}`, {
+    method: "DELETE",
+  });
+  if (!res.ok || json.success === false) {
+    const body = JSON.stringify(json);
+    if (res.status === 404) return;
+    throw new Error(`Delete failed for ${id}: ${body}`);
+  }
+}
+
 async function upload({ file, id }) {
+  const gitSha256 = sha256File(file);
+  const existing = await getImage(id);
+  if (existing && storedGitHash(existing) === gitSha256) {
+    console.log(`unchanged ${id}`);
+    return { result: existing };
+  }
+  if (existing) {
+    await deleteImage(id);
+    console.log(`replacing ${id}`);
+  }
+
   const ext = path.extname(file).toLowerCase();
   const type = MIME[ext] || "application/octet-stream";
   const buffer = fs.readFileSync(file);
@@ -93,7 +131,11 @@ async function upload({ file, id }) {
   form.append("requireSignedURLs", "false");
   form.append(
     "metadata",
-    JSON.stringify({ source: "git-backup", path: `public/${id}` }),
+    JSON.stringify({
+      source: "git-backup",
+      path: `public/${id}`,
+      gitSha256,
+    }),
   );
 
   const { res, json } = await cfJson(API, { method: "POST", body: form });
