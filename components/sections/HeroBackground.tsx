@@ -19,7 +19,7 @@ export default function HeroBackground({
       fill
       priority={priority}
       sizes="100vw"
-      quality={75}
+      quality={85}
       className="object-cover object-center opacity-30"
     />
   );

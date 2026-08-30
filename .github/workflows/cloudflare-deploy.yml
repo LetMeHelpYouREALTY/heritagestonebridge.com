@@ -3,8 +3,9 @@ name: Cloudflare Pages Deployment
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+  # PRs are not deployed to Cloudflare Pages. Production origin is Vercel
+  # (gray-cloud DNS). Running Pages here double-deploys and the leftover
+  # Flask /api tree makes `vercel build` fail looking for `uv`.
 
 env:
   NODE_VERSION: '20'

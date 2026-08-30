@@ -65,6 +65,9 @@ interface Env {
   // Cloudflare bindings
   ANALYTICS_DATASET?: any;
   CF_IMAGES_URL?: string;
+  CF_IMAGES_ACCOUNT_HASH?: string;
+  NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH?: string;
+  NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED?: string;
   DEBUG?: string;
   
   // Environment variables
