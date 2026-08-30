@@ -27,12 +27,11 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "55+ Communities Las Vegas | Heritage Stonebridge & Sun City | Dr. Jan Duffy",
+  title: "55+ Communities in Las Vegas | Active Adult Homes",
   description:
-    "Compare Las Vegas 55+ communities — Heritage at Stonebridge guard-gated Lennar living, Sun City Summerlin, Trilogy, Del Webb, and more. Tours with Dr. Jan Duffy, BHHS Nevada Properties.",
+    "Compare Las Vegas 55+ communities — Heritage at Stonebridge, Sun City Summerlin, Trilogy, and Del Webb. Guard-gated tours with Dr. Jan Duffy. Call (702) 500-1942.",
   path: "/55-plus-communities",
-  openGraphTitle: "Las Vegas 55+ Communities Guide | Heritage Stonebridge",
+  openGraphTitle: "55+ Communities in Las Vegas | Active Adult Homes",
   openGraphDescription:
     "Active adult communities in Summerlin and the Las Vegas Valley — expert tours with Dr. Jan Duffy.",
 });
@@ -342,8 +341,8 @@ export default function FiftyFiveCommunitiesPage() {
           {/* Hero Section */}
           <PageHero
             badge="Active Adult Living Specialist"
-            title="Find Your Perfect 55+ Community in Las Vegas"
-            subtitle="Sun City, Del Webb, Heritage at Stonebridge and more — Dr. Jan Duffy specializes in active adult living across the Las Vegas Valley and Summerlin."
+            title="55+ Communities in Las Vegas"
+            subtitle="Heritage at Stonebridge, Sun City, Del Webb, and Trilogy — Dr. Jan Duffy specializes in active adult living across Summerlin and the Las Vegas Valley."
             priority
           >
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

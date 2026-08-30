@@ -20,9 +20,8 @@ import { HERITAGE_COMMUNITY_NAV, HERITAGE_BUYER_NAV } from "@/lib/heritage-stone
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Heritage at Stonebridge | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
-  description: `Lennar-built guard-gated 55+ community in Summerlin West (89138). 421 homes, resort amenities, near Downtown Summerlin. Dr. Jan Duffy, BHHS. Call ${SITE_CONTACT.phone.display}.`,
+  title: "Heritage at Stonebridge | Lennar 55+ Homes in Summerlin",
+  description: `Lennar 55+ homes in Summerlin West, Las Vegas (89138). Guard-gated, 421 homes, clubhouse and pickleball. Search listings with Dr. Jan Duffy. Call ${SITE_CONTACT.phone.display}.`,
   path: "/",
 });
 
@@ -35,8 +34,8 @@ export default function HomePage() {
   const pageSchema = combineSchemas(
     generateRealEstateAgentSchema(),
     generateWebPageSchema({
-      name: "Heritage at Stonebridge | Guard-Gated 55+ Summerlin",
-      description: `Lennar guard-gated 55+ community in Summerlin West (89138). Dr. Jan Duffy, ${SITE_CONTACT.brokerage}.`,
+      name: "Heritage at Stonebridge | Lennar 55+ Homes in Summerlin",
+      description: `Lennar 55+ homes in Summerlin West (89138). Dr. Jan Duffy, ${SITE_CONTACT.brokerage}.`,
       url: canonicalUrl("/"),
       dateModified: "July 2026",
     }),
@@ -58,7 +57,7 @@ export default function HomePage() {
               Guard-Gated 55+ in Summerlin West
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Heritage at Stonebridge — Guard-Gated 55+ Summerlin
+              Heritage at Stonebridge — Lennar 55+ Homes in Summerlin
             </h1>
             <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
               Lennar&apos;s boutique active adult community in zip 89138 — staff

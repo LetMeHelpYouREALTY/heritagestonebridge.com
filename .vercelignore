@@ -1,0 +1,4 @@
+# Leftover Flask template under /api — not part of the Next.js product.
+# Without this, `vercel build` detects Python and fails looking for `uv`.
+/api
+/requirements.txt
