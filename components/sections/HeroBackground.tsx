@@ -8,19 +8,22 @@ type HeroBackgroundProps = {
 };
 
 export default function HeroBackground({
-  src = "/images/hero/hero_bg_1.webp",
-  alt = "Summerlin West desert landscape near Heritage at Stonebridge",
+  src = "/images/hero/heritage-stonebridge.webp",
+  alt = "Heritage at Stonebridge 55+ community in Summerlin West with Red Rock Canyon beyond",
   priority = true,
 }: HeroBackgroundProps) {
   return (
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      priority={priority}
-      sizes="100vw"
-      quality={85}
-      className="object-cover object-center opacity-30"
-    />
+    <>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes="100vw"
+        quality={80}
+        className="object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/45 via-slate-900/55 to-slate-900/70" />
+    </>
   );
 }

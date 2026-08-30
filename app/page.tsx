@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, Shield, MapPin, Users } from "lucide-react";
+import Image from "next/image";
+import { Phone, Shield, MapPin, Users, type LucideIcon } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import HeroBackground from "@/components/sections/HeroBackground";
@@ -37,6 +38,39 @@ const homepageFaqs = HERITAGE_FAQS.map((f) => ({
   answer: f.answer,
 }));
 
+const HOMEPAGE_HIGHLIGHTS: {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  image: string;
+  imageAlt: string;
+}[] = [
+  {
+    icon: Shield,
+    title: "Guard-Gated Privacy",
+    desc: "Staffed entry with visitor verification — not just a shared gate code.",
+    image: "/images/neighborhoods/heritage-guard-gate.webp",
+    imageAlt:
+      "Staffed guard-gated entry at Heritage at Stonebridge in Summerlin West with Red Rock Canyon beyond",
+  },
+  {
+    icon: MapPin,
+    title: "Summerlin West Location",
+    desc: "Downtown Summerlin, Red Rock Canyon, and pay-as-you-play golf nearby.",
+    image: "/images/neighborhoods/heritage-summerlin-west.webp",
+    imageAlt:
+      "Summerlin West rooftops and desert trail with Red Rock Canyon sandstone cliffs",
+  },
+  {
+    icon: Users,
+    title: "Active Adult Lifestyle",
+    desc: "Pickleball, fitness, pools, and a social scale where you know your neighbors.",
+    image: "/images/neighborhoods/heritage-active-adult.webp",
+    imageAlt:
+      "Pickleball courts and resort pool at a Summerlin West 55+ clubhouse near Red Rock Canyon",
+  },
+];
+
 export default function HomePage() {
   const pageSchema = combineSchemas(
     generateRealEstateAgentSchema(),
@@ -56,7 +90,10 @@ export default function HomePage() {
       <main>
         <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden min-h-[480px]">
           <div className="absolute inset-0" aria-hidden="true">
-            <HeroBackground />
+            <HeroBackground
+              src="/images/hero/heritage-stonebridge.webp"
+              alt="Heritage at Stonebridge in Summerlin West — single-story 55+ homes, clubhouse amenities, and Red Rock Canyon at sunset"
+            />
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
             <div className="mb-6 flex justify-center">
@@ -164,31 +201,31 @@ export default function HomePage() {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Shield,
-                  title: "Guard-Gated Privacy",
-                  desc: "Staffed entry with visitor verification — not just a shared gate code.",
-                },
-                {
-                  icon: MapPin,
-                  title: "Summerlin West Location",
-                  desc: "Downtown Summerlin, Red Rock Canyon, and pay-as-you-play golf nearby.",
-                },
-                {
-                  icon: Users,
-                  title: "Active Adult Lifestyle",
-                  desc: "Pickleball, fitness, pools, and a social scale where you know your neighbors.",
-                },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="text-center p-6">
-                  <div className="bg-purple-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <Icon className="h-8 w-8 text-purple-600" />
+              {HOMEPAGE_HIGHLIGHTS.map(
+                ({ icon: Icon, title, desc, image, imageAlt }) => (
+                  <div
+                    key={title}
+                    className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+                  >
+                    <div className="relative h-48 md:h-56">
+                      <Image
+                        src={image}
+                        alt={imageAlt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute bottom-3 left-3 rounded-full bg-purple-600 p-2.5 text-white shadow-md">
+                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      </div>
+                    </div>
+                    <div className="p-6 text-center">
+                      <h3 className="font-bold text-lg mb-2">{title}</h3>
+                      <p className="text-slate-600 text-sm">{desc}</p>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-lg mb-2">{title}</h3>
-                  <p className="text-slate-600 text-sm">{desc}</p>
-                </div>
-              ))}
+                ),
+              )}
             </div>
           </div>
         </section>
