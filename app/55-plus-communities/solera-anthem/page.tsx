@@ -144,6 +144,7 @@ export default function SoleraAnthemPage() {
               <div className="flex items-start">
                 <Users className="h-8 w-8 text-teal-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
+                  <SectionImage heading="All Residents 55+" variant="inline" />
                   <h3 className="text-xl font-bold text-slate-900 mb-4">
                     All Residents 55+
                   </h3>

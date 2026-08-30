@@ -170,6 +170,7 @@ export default function GreenValleyPage() {
               </p>
 
               {/* Community Highlights */}
+              <SectionImage heading="Community Highlights" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Community Highlights
               </h3>
@@ -209,6 +210,10 @@ export default function GreenValleyPage() {
               </div>
 
               {/* School Districts */}
+              <SectionImage
+                heading="Green Valley School Districts"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Green Valley School Districts
               </h3>
@@ -257,6 +262,10 @@ export default function GreenValleyPage() {
               </div>
 
               {/* Commute Times */}
+              <SectionImage
+                heading="Commute Times from Green Valley"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Commute Times from Green Valley
               </h3>
@@ -314,6 +323,10 @@ export default function GreenValleyPage() {
               </div>
 
               {/* Local Amenities */}
+              <SectionImage
+                heading="Shopping, Dining & Recreation"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Shopping, Dining & Recreation
               </h3>

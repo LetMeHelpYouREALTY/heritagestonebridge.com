@@ -119,6 +119,10 @@ export default function DelWebbLakeLasVegasPage() {
               <div className="flex items-start">
                 <Waves className="h-8 w-8 text-blue-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
+                  <SectionImage
+                    heading="The Lake Las Vegas Experience"
+                    variant="inline"
+                  />
                   <h3 className="text-xl font-bold text-slate-900 mb-4">
                     The Lake Las Vegas Experience
                   </h3>

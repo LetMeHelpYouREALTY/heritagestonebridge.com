@@ -183,6 +183,7 @@ export default function SummerlinPage() {
               </p>
 
               {/* Community Highlights */}
+              <SectionImage heading="Community Highlights" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Community Highlights
               </h3>
@@ -222,6 +223,10 @@ export default function SummerlinPage() {
               </div>
 
               {/* School Districts */}
+              <SectionImage
+                heading="Summerlin School Districts"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Summerlin School Districts
               </h3>
@@ -272,6 +277,10 @@ export default function SummerlinPage() {
               </div>
 
               {/* Commute Times */}
+              <SectionImage
+                heading="Commute Times from Summerlin"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Commute Times from Summerlin
               </h3>
@@ -329,6 +338,10 @@ export default function SummerlinPage() {
               </div>
 
               {/* Local Amenities */}
+              <SectionImage
+                heading="Shopping, Dining & Healthcare"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Shopping, Dining & Healthcare
               </h3>

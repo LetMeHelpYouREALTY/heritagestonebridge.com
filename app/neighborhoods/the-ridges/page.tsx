@@ -163,6 +163,7 @@ export default function TheRidgesPage() {
               </p>
 
               {/* Community Highlights */}
+              <SectionImage heading="Community Highlights" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Community Highlights
               </h3>
@@ -204,6 +205,10 @@ export default function TheRidgesPage() {
               </div>
 
               {/* The Six Villages */}
+              <SectionImage
+                heading="The Six Villages of The Ridges"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 The Six Villages of The Ridges
               </h3>
@@ -257,6 +262,10 @@ export default function TheRidgesPage() {
               </div>
 
               {/* Commute & Location */}
+              <SectionImage
+                heading="Location & Accessibility"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Location & Accessibility
               </h3>
@@ -306,6 +315,10 @@ export default function TheRidgesPage() {
               </div>
 
               {/* Luxury Amenities */}
+              <SectionImage
+                heading="Nearby Luxury Amenities"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Nearby Luxury Amenities
               </h3>
@@ -360,6 +373,10 @@ export default function TheRidgesPage() {
               </div>
 
               {/* Schools */}
+              <SectionImage
+                heading="Schools Serving The Ridges"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Schools Serving The Ridges
               </h3>

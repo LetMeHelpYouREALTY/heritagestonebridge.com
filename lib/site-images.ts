@@ -123,6 +123,38 @@ export const SITE_IMAGES = {
     src: "/images/sections/section-first-time.webp",
     alt: "Single-story starter home in North Las Vegas with a desert mountain backdrop",
   },
+  schools: {
+    src: "/images/sections/section-schools.webp",
+    alt: "Clark County school campus in Summerlin with desert landscaping and mountain views",
+  },
+  healthcare: {
+    src: "/images/sections/section-healthcare.webp",
+    alt: "Modern medical campus in Henderson Nevada with desert mountain views",
+  },
+  commute: {
+    src: "/images/sections/section-commute.webp",
+    alt: "Summerlin Parkway looking toward the Las Vegas Valley and Strip skyline",
+  },
+  highlights: {
+    src: "/images/sections/section-highlights.webp",
+    alt: "Landscaped recreation green in a Summerlin master-planned neighborhood",
+  },
+  dining: {
+    src: "/images/sections/section-dining.webp",
+    alt: "Outdoor dining patio at dusk in Downtown Summerlin Las Vegas",
+  },
+  closing: {
+    src: "/images/sections/section-closing.webp",
+    alt: "House keys and closing documents on a Las Vegas real estate office desk",
+  },
+  parks: {
+    src: "/images/sections/section-parks.webp",
+    alt: "Henderson Nevada public park with ramada, walking path, and mountain views",
+  },
+  stripViews: {
+    src: "/images/sections/section-strip-views.webp",
+    alt: "Las Vegas Strip skyline at dusk from the Summerlin western foothills",
+  },
   bocce: {
     src: "/images/sections/section-bocce.webp",
     alt: "Bocce courts and picnic park at a Summerlin 55+ community",
@@ -183,12 +215,36 @@ type HeadingRule = {
   key: SiteImageKey;
 };
 
-/** More specific patterns first. */
+/** More specific patterns first. Topic H3s beat neighborhood-name catch-alls. */
 const HEADING_RULES: HeadingRule[] = [
   {
     pattern: /heritage at stonebridge|heritage stonebridge/i,
     key: "heroHeritage",
   },
+  { pattern: /school/i, key: "schools" },
+  {
+    pattern: /commute|drive time|location & accessibility/i,
+    key: "commute",
+  },
+  { pattern: /community highlights/i, key: "highlights" },
+  { pattern: /parks? & recreation|city park|public park/i, key: "parks" },
+  {
+    pattern: /shopping, dining|dining &|fine dining|restaurant/i,
+    key: "dining",
+  },
+  { pattern: /healthcare|hospital|medical/i, key: "healthcare" },
+  {
+    pattern: /strip view|skyline|unrivaled view/i,
+    key: "stripViews",
+  },
+  {
+    pattern: /off-market|negotiation|closing|property details/i,
+    key: "closing",
+  },
+  { pattern: /employer|employment/i, key: "downtown" },
+  { pattern: /area tours/i, key: "commute" },
+  { pattern: /home matching/i, key: "buying" },
+  { pattern: /local expertise/i, key: "consultation" },
   {
     pattern: /the ridges|ridges summerlin|ultimate address|discerning/i,
     key: "ridges",
@@ -205,7 +261,7 @@ const HEADING_RULES: HeadingRule[] = [
   { pattern: /henderson/i, key: "henderson" },
   { pattern: /southern highlands/i, key: "golf" },
   { pattern: /red rock/i, key: "redRock" },
-  { pattern: /downtown summerlin|shopping, dining|retail/i, key: "downtown" },
+  { pattern: /downtown summerlin|retail/i, key: "downtown" },
   {
     pattern:
       /guard.?gat|security feature|manned entry|gated liv|gated communit/i,
@@ -213,7 +269,8 @@ const HEADING_RULES: HeadingRule[] = [
   },
   { pattern: /pickleball/i, key: "pickleball" },
   {
-    pattern: /berkshire|bhhs|warren buffett|trusted name|by the numbers/i,
+    pattern:
+      /berkshire|bhhs|warren buffett|trusted name|by the numbers|unmatched trust|ethical|financial strength|proven results|global network|world-class marketing/i,
     key: "bhhsOffice",
   },
   {

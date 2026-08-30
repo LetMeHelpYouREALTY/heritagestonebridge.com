@@ -154,6 +154,7 @@ export default function HendersonPage() {
               </p>
 
               {/* Community Highlights */}
+              <SectionImage heading="Community Highlights" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Community Highlights
               </h3>
@@ -193,6 +194,10 @@ export default function HendersonPage() {
               </div>
 
               {/* School Districts */}
+              <SectionImage
+                heading="Henderson School Districts"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Henderson School Districts
               </h3>
@@ -243,6 +248,10 @@ export default function HendersonPage() {
               </div>
 
               {/* Commute Times */}
+              <SectionImage
+                heading="Commute Times from Henderson"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Commute Times from Henderson
               </h3>
@@ -305,6 +314,10 @@ export default function HendersonPage() {
               </p>
 
               {/* Major Employers */}
+              <SectionImage
+                heading="Major Henderson Employers"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Major Henderson Employers
               </h3>
@@ -342,6 +355,10 @@ export default function HendersonPage() {
               </div>
 
               {/* Local Amenities */}
+              <SectionImage
+                heading="Shopping, Dining & Healthcare"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Shopping, Dining & Healthcare
               </h3>

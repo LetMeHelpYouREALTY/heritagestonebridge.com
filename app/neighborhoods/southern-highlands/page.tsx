@@ -162,6 +162,7 @@ export default function SouthernHighlandsPage() {
               </p>
 
               {/* Community Highlights */}
+              <SectionImage heading="Community Highlights" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Community Highlights
               </h3>
@@ -201,6 +202,10 @@ export default function SouthernHighlandsPage() {
               </div>
 
               {/* Schools */}
+              <SectionImage
+                heading="Southern Highlands School Districts"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Southern Highlands School Districts
               </h3>
@@ -247,6 +252,10 @@ export default function SouthernHighlandsPage() {
               </div>
 
               {/* Commute Times */}
+              <SectionImage
+                heading="Commute Times from Southern Highlands"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Commute Times from Southern Highlands
               </h3>
@@ -309,6 +318,10 @@ export default function SouthernHighlandsPage() {
               </p>
 
               {/* Local Amenities */}
+              <SectionImage
+                heading="Shopping, Dining & Healthcare"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Shopping, Dining & Healthcare
               </h3>
@@ -362,6 +375,10 @@ export default function SouthernHighlandsPage() {
               </div>
 
               {/* Golf Club Details */}
+              <SectionImage
+                heading="Southern Highlands Golf Club"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Southern Highlands Golf Club
               </h3>

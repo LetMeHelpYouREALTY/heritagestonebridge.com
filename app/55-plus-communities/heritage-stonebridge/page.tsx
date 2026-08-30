@@ -145,6 +145,10 @@ export default function HeritageAtStonebridgePage() {
               <div className="flex items-start">
                 <Shield className="h-8 w-8 text-purple-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
+                  <SectionImage
+                    heading="Guard-Gated Security & Privacy"
+                    variant="inline"
+                  />
                   <h3 className="text-xl font-bold text-slate-900 mb-4">
                     Guard-Gated Security & Privacy
                   </h3>

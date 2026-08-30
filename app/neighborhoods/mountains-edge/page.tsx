@@ -169,6 +169,7 @@ export default function MountainsEdgePage() {
               </p>
 
               {/* Community Highlights */}
+              <SectionImage heading="Community Highlights" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Community Highlights
               </h3>
@@ -208,6 +209,10 @@ export default function MountainsEdgePage() {
               </div>
 
               {/* Schools */}
+              <SectionImage
+                heading="Mountains Edge School Districts"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Mountains Edge School Districts
               </h3>
@@ -254,6 +259,10 @@ export default function MountainsEdgePage() {
               </div>
 
               {/* Commute Times */}
+              <SectionImage
+                heading="Commute Times from Mountains Edge"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Commute Times from Mountains Edge
               </h3>
@@ -315,6 +324,10 @@ export default function MountainsEdgePage() {
               </p>
 
               {/* Shopping & Amenities */}
+              <SectionImage
+                heading="Shopping, Dining & Healthcare"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Shopping, Dining & Healthcare
               </h3>
@@ -368,6 +381,7 @@ export default function MountainsEdgePage() {
               </div>
 
               {/* Parks & Recreation */}
+              <SectionImage heading="Parks & Recreation" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Parks & Recreation
               </h3>

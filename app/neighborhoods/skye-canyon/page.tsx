@@ -167,6 +167,7 @@ export default function SkyeCanyonPage() {
               </p>
 
               {/* Community Highlights */}
+              <SectionImage heading="Community Highlights" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Community Highlights
               </h3>
@@ -206,6 +207,7 @@ export default function SkyeCanyonPage() {
               </div>
 
               {/* Schools */}
+              <SectionImage heading="Skye Canyon Schools" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Skye Canyon Schools
               </h3>
@@ -252,6 +254,10 @@ export default function SkyeCanyonPage() {
               </div>
 
               {/* Commute Times */}
+              <SectionImage
+                heading="Commute Times from Skye Canyon"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Commute Times from Skye Canyon
               </h3>
@@ -309,6 +315,10 @@ export default function SkyeCanyonPage() {
               </div>
 
               {/* Builders */}
+              <SectionImage
+                heading="Active Builders in Skye Canyon"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Active Builders in Skye Canyon
               </h3>
@@ -354,6 +364,7 @@ export default function SkyeCanyonPage() {
               </div>
 
               {/* Amenities */}
+              <SectionImage heading="Skye Canyon Amenities" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Skye Canyon Amenities
               </h3>

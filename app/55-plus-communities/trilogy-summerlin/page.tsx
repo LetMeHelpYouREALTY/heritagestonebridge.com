@@ -142,6 +142,10 @@ export default function TrilogySummerlinPage() {
               <div className="flex items-start">
                 <Star className="h-8 w-8 text-rose-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
+                  <SectionImage
+                    heading="The Trilogy Difference: Resort-Style Living"
+                    variant="inline"
+                  />
                   <h3 className="text-xl font-bold text-slate-900 mb-4">
                     The Trilogy Difference: Resort-Style Living
                   </h3>

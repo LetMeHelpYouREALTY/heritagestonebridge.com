@@ -262,29 +262,50 @@ export default function NeighborhoodsPage() {
               Neighborhood Services
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-blue-400 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">Area Tours</h3>
-                <p className="text-slate-400 text-sm">
-                  Personalized neighborhood tours to help you experience each
-                  community firsthand
-                </p>
+              <div className="text-center overflow-hidden rounded-xl bg-slate-800">
+                <SectionImage
+                  heading="Area Tours"
+                  variant="card"
+                  className="rounded-none mb-0"
+                />
+                <div className="p-4">
+                  <MapPin className="h-12 w-12 text-blue-400 mx-auto mb-3" />
+                  <h3 className="font-bold mb-2">Area Tours</h3>
+                  <p className="text-slate-400 text-sm">
+                    Personalized neighborhood tours to help you experience each
+                    community firsthand
+                  </p>
+                </div>
               </div>
-              <div className="text-center">
-                <GraduationCap className="h-12 w-12 text-blue-400 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">School Research</h3>
-                <p className="text-slate-400 text-sm">
-                  Detailed school district information, ratings, and enrollment
-                  guidance
-                </p>
+              <div className="text-center overflow-hidden rounded-xl bg-slate-800">
+                <SectionImage
+                  heading="School Research"
+                  variant="card"
+                  className="rounded-none mb-0"
+                />
+                <div className="p-4">
+                  <GraduationCap className="h-12 w-12 text-blue-400 mx-auto mb-3" />
+                  <h3 className="font-bold mb-2">School Research</h3>
+                  <p className="text-slate-400 text-sm">
+                    Detailed school district information, ratings, and
+                    enrollment guidance
+                  </p>
+                </div>
               </div>
-              <div className="text-center">
-                <Home className="h-12 w-12 text-blue-400 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">Home Matching</h3>
-                <p className="text-slate-400 text-sm">
-                  Find homes that match your criteria in the neighborhoods you
-                  love
-                </p>
+              <div className="text-center overflow-hidden rounded-xl bg-slate-800">
+                <SectionImage
+                  heading="Home Matching"
+                  variant="card"
+                  className="rounded-none mb-0"
+                />
+                <div className="p-4">
+                  <Home className="h-12 w-12 text-blue-400 mx-auto mb-3" />
+                  <h3 className="font-bold mb-2">Home Matching</h3>
+                  <p className="text-slate-400 text-sm">
+                    Find homes that match your criteria in the neighborhoods you
+                    love
+                  </p>
+                </div>
               </div>
             </div>
           </section>

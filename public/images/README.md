@@ -11,13 +11,13 @@ once `NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED=true`.
 https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/<VARIANT>
 ```
 
-| Variant | Width | Who it is for |
-| --- | --- | --- |
-| `phone` | 640 | Mobile buyers/sellers |
-| `tablet` | 1024 | Tablet |
-| `desktop` | 1920 | Laptop/desktop heroes |
-| `card` | 800 | Listing/neighborhood cards |
-| `og` | 1200×630 | Social/Open Graph |
+| Variant   | Width    | Who it is for              |
+| --------- | -------- | -------------------------- |
+| `phone`   | 640      | Mobile buyers/sellers      |
+| `tablet`  | 1024     | Tablet                     |
+| `desktop` | 1920     | Laptop/desktop heroes      |
+| `card`    | 800      | Listing/neighborhood cards |
+| `og`      | 1200×630 | Social/Open Graph          |
 
 Custom IDs match the git path without extension:
 
@@ -31,6 +31,14 @@ New heading-matched section/neighborhood photos (git originals):
 - `sections/section-relocation.webp`
 - `sections/section-office-hours.webp`
 - `sections/section-first-time.webp`
+- `sections/section-schools.webp`
+- `sections/section-healthcare.webp`
+- `sections/section-commute.webp`
+- `sections/section-highlights.webp`
+- `sections/section-dining.webp`
+- `sections/section-closing.webp`
+- `sections/section-parks.webp`
+- `sections/section-strip-views.webp`
 - `neighborhoods/neighborhood-inspirada.webp`
 - `neighborhoods/neighborhood-green-valley.webp`
 

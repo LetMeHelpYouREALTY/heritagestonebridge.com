@@ -170,6 +170,7 @@ export default function NorthLasVegasPage() {
               </p>
 
               {/* Community Highlights */}
+              <SectionImage heading="Community Highlights" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Community Highlights
               </h3>
@@ -209,6 +210,10 @@ export default function NorthLasVegasPage() {
               </div>
 
               {/* Major Employers */}
+              <SectionImage
+                heading="Major North Las Vegas Employers"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Major North Las Vegas Employers
               </h3>
@@ -256,6 +261,10 @@ export default function NorthLasVegasPage() {
               </div>
 
               {/* School Districts */}
+              <SectionImage
+                heading="North Las Vegas Schools"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 North Las Vegas Schools
               </h3>
@@ -303,6 +312,10 @@ export default function NorthLasVegasPage() {
               </div>
 
               {/* Commute Times */}
+              <SectionImage
+                heading="Commute Times from North Las Vegas"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Commute Times from North Las Vegas
               </h3>
@@ -365,6 +378,10 @@ export default function NorthLasVegasPage() {
               </p>
 
               {/* New Construction Communities */}
+              <SectionImage
+                heading="New Construction Communities"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 New Construction Communities
               </h3>

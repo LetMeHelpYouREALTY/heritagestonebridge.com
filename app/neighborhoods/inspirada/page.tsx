@@ -169,6 +169,7 @@ export default function InspiradaPage() {
               </p>
 
               {/* Community Highlights */}
+              <SectionImage heading="Community Highlights" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Community Highlights
               </h3>
@@ -208,6 +209,10 @@ export default function InspiradaPage() {
               </div>
 
               {/* Schools */}
+              <SectionImage
+                heading="Inspirada School Districts"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Inspirada School Districts
               </h3>
@@ -254,6 +259,10 @@ export default function InspiradaPage() {
               </div>
 
               {/* Commute Times */}
+              <SectionImage
+                heading="Commute Times from Inspirada"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Commute Times from Inspirada
               </h3>
@@ -311,6 +320,10 @@ export default function InspiradaPage() {
               </div>
 
               {/* Amenities Detail */}
+              <SectionImage
+                heading="Inspirada Amenity Centers"
+                variant="inline"
+              />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Inspirada Amenity Centers
               </h3>
@@ -344,6 +357,7 @@ export default function InspiradaPage() {
               </div>
 
               {/* Builders */}
+              <SectionImage heading="Builders in Inspirada" variant="inline" />
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">
                 Builders in Inspirada
               </h3>

@@ -61,6 +61,39 @@ describe("site-images heading matcher", () => {
     );
   });
 
+  it("maps H3 topics to distinct photographs instead of neighborhood catch-alls", () => {
+    expect(getSectionImageForHeading("Schools Serving The Ridges")?.src).toBe(
+      SITE_IMAGES.schools.src,
+    );
+    expect(getSectionImageForHeading("Henderson School Districts")?.src).toBe(
+      SITE_IMAGES.schools.src,
+    );
+    expect(getSectionImageForHeading("Commute Times from Summerlin")?.src).toBe(
+      SITE_IMAGES.commute.src,
+    );
+    expect(getSectionImageForHeading("Community Highlights")?.src).toBe(
+      SITE_IMAGES.highlights.src,
+    );
+    expect(getSectionImageForHeading("Parks & Recreation")?.src).toBe(
+      SITE_IMAGES.parks.src,
+    );
+    expect(
+      getSectionImageForHeading("Shopping, Dining & Healthcare")?.src,
+    ).toBe(SITE_IMAGES.dining.src);
+    expect(getSectionImageForHeading("Location & Accessibility")?.src).toBe(
+      SITE_IMAGES.commute.src,
+    );
+    expect(getSectionImageForHeading("Off-Market Access")?.src).toBe(
+      SITE_IMAGES.closing.src,
+    );
+  });
+
+  it("builds SEO alts from the H3 heading plus the scene description", () => {
+    const image = getSectionImageForHeading("Summerlin School Districts");
+    expect(image?.alt).toMatch(/Summerlin School Districts/i);
+    expect(image?.alt).toMatch(/Clark County school campus/i);
+  });
+
   it("maps neighborhood names to local photography", () => {
     expect(getNeighborhoodImage("The Ridges").src).toBe(SITE_IMAGES.ridges.src);
     expect(getNeighborhoodImage("Henderson").src).toBe(

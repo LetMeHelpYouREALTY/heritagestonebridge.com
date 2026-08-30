@@ -2,6 +2,7 @@ import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import SectionImage from "@/components/sections/SectionImage";
+import { getCardImageForHeading } from "@/lib/site-images";
 import Link from "next/link";
 import {
   Phone,
@@ -291,33 +292,44 @@ export default function ListingsPage() {
               investment potential.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {neighborhoods.map((neighborhood) => (
-                <div
-                  key={neighborhood.name}
-                  className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
-                >
-                  <h3 className="font-bold text-lg text-slate-900 mb-2">
-                    {neighborhood.name}
-                  </h3>
-                  <p className="text-slate-600 text-sm mb-4">
-                    {neighborhood.description}
-                  </p>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-500">
-                      Median:{" "}
-                      <strong className="text-slate-900">
-                        {neighborhood.medianPrice}
-                      </strong>
-                    </span>
-                    <span className="text-slate-500">
-                      DOM:{" "}
-                      <strong className="text-slate-900">
-                        {neighborhood.daysOnMarket} days
-                      </strong>
-                    </span>
+              {neighborhoods.map((neighborhood) => {
+                const cardImage = getCardImageForHeading(neighborhood.name);
+                return (
+                  <div
+                    key={neighborhood.name}
+                    className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                  >
+                    <SectionImage
+                      src={cardImage.src}
+                      alt={cardImage.alt}
+                      variant="card"
+                      className="rounded-none"
+                    />
+                    <div className="p-6">
+                      <h3 className="font-bold text-lg text-slate-900 mb-2">
+                        {neighborhood.name}
+                      </h3>
+                      <p className="text-slate-600 text-sm mb-4">
+                        {neighborhood.description}
+                      </p>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-slate-500">
+                          Median:{" "}
+                          <strong className="text-slate-900">
+                            {neighborhood.medianPrice}
+                          </strong>
+                        </span>
+                        <span className="text-slate-500">
+                          DOM:{" "}
+                          <strong className="text-slate-900">
+                            {neighborhood.daysOnMarket} days
+                          </strong>
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
             <div className="text-center mt-8">
               <Link
@@ -345,45 +357,73 @@ export default function ListingsPage() {
               Vegas since 2008.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Search className="h-6 w-6" />
+              <div className="text-center overflow-hidden rounded-xl bg-slate-800">
+                <SectionImage
+                  heading="Off-Market Access"
+                  variant="card"
+                  className="rounded-none mb-0"
+                />
+                <div className="p-4">
+                  <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Search className="h-6 w-6" />
+                  </div>
+                  <h3 className="font-bold mb-2">Off-Market Access</h3>
+                  <p className="text-slate-400 text-sm">
+                    See listings before they hit the MLS through our network of
+                    50,000+ agents
+                  </p>
                 </div>
-                <h3 className="font-bold mb-2">Off-Market Access</h3>
-                <p className="text-slate-400 text-sm">
-                  See listings before they hit the MLS through our network of
-                  50,000+ agents
-                </p>
               </div>
-              <div className="text-center">
-                <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <TrendingUp className="h-6 w-6" />
+              <div className="text-center overflow-hidden rounded-xl bg-slate-800">
+                <SectionImage
+                  heading="Expert Negotiation"
+                  variant="card"
+                  className="rounded-none mb-0"
+                />
+                <div className="p-4">
+                  <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <TrendingUp className="h-6 w-6" />
+                  </div>
+                  <h3 className="font-bold mb-2">Expert Negotiation</h3>
+                  <p className="text-slate-400 text-sm">
+                    $127M+ in closed transactions means proven negotiation
+                    skills on your behalf
+                  </p>
                 </div>
-                <h3 className="font-bold mb-2">Expert Negotiation</h3>
-                <p className="text-slate-400 text-sm">
-                  $127M+ in closed transactions means proven negotiation skills
-                  on your behalf
-                </p>
               </div>
-              <div className="text-center">
-                <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <MapPin className="h-6 w-6" />
+              <div className="text-center overflow-hidden rounded-xl bg-slate-800">
+                <SectionImage
+                  heading="Local Expertise"
+                  variant="card"
+                  className="rounded-none mb-0"
+                />
+                <div className="p-4">
+                  <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <MapPin className="h-6 w-6" />
+                  </div>
+                  <h3 className="font-bold mb-2">Local Expertise</h3>
+                  <p className="text-slate-400 text-sm">
+                    Insider knowledge of neighborhoods, schools, and upcoming
+                    developments
+                  </p>
                 </div>
-                <h3 className="font-bold mb-2">Local Expertise</h3>
-                <p className="text-slate-400 text-sm">
-                  Insider knowledge of neighborhoods, schools, and upcoming
-                  developments
-                </p>
               </div>
-              <div className="text-center">
-                <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <CheckCircle className="h-6 w-6" />
+              <div className="text-center overflow-hidden rounded-xl bg-slate-800">
+                <SectionImage
+                  heading="Free for Buyers"
+                  variant="card"
+                  className="rounded-none mb-0"
+                />
+                <div className="p-4">
+                  <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <CheckCircle className="h-6 w-6" />
+                  </div>
+                  <h3 className="font-bold mb-2">Free for Buyers</h3>
+                  <p className="text-slate-400 text-sm">
+                    The seller pays the commission—you get full representation
+                    at no cost
+                  </p>
                 </div>
-                <h3 className="font-bold mb-2">Free for Buyers</h3>
-                <p className="text-slate-400 text-sm">
-                  The seller pays the commission—you get full representation at
-                  no cost
-                </p>
               </div>
             </div>
           </section>

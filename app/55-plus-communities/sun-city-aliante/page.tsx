@@ -144,6 +144,10 @@ export default function SunCityAliantePage() {
               <div className="flex items-start">
                 <TrendingUp className="h-8 w-8 text-green-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
+                  <SectionImage
+                    heading="Why Sun City Aliante Is the Best Value"
+                    variant="inline"
+                  />
                   <h3 className="text-xl font-bold text-slate-900 mb-4">
                     Why Sun City Aliante Is the Best Value
                   </h3>

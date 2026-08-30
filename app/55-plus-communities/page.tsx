@@ -410,6 +410,10 @@ export default function FiftyFiveCommunitiesPage() {
               <div className="flex items-start">
                 <Palmtree className="h-10 w-10 text-amber-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
+                  <SectionImage
+                    heading="Relocating from California?"
+                    variant="inline"
+                  />
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">
                     Relocating from California?
                   </h3>
@@ -491,6 +495,10 @@ export default function FiftyFiveCommunitiesPage() {
               <div className="flex items-start">
                 <Users className="h-8 w-8 text-blue-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
+                  <SectionImage
+                    heading="Understanding 55+ Age Requirements"
+                    variant="inline"
+                  />
                   <h3 className="text-xl font-bold text-slate-900 mb-4">
                     Understanding 55+ Age Requirements
                   </h3>
