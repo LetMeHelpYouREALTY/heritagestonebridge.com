@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, CheckCircle } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
@@ -10,10 +11,11 @@ import {
   combineSchemas,
   generateBreadcrumbSchema,
   generateFAQSchema,
+  generateHeritageCommunitySchema,
   generateWebPageSchema,
 } from "@/lib/schema";
 import { SITE_CONTACT } from "@/lib/site-contact";
-import { HERITAGE_COMMUNITY } from "@/lib/heritage-stonebridge/data";
+import { heritageCommunityId } from "@/lib/entity-ids";
 import { canonicalUrl } from "@/lib/metadata";
 import type {
   HeritagePageContent,
@@ -40,7 +42,41 @@ function renderSection(section: HeritageSection, index: number) {
               />
             ))}
           </div>
+          {section.subheadings?.map((sub) => (
+            <div key={sub.heading} className="mt-8">
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                {sub.heading}
+              </h3>
+              <div className="prose prose-lg max-w-none text-slate-700 space-y-4">
+                {sub.paragraphs.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 40)}
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
         </section>
+      );
+    case "figure":
+      return (
+        <figure key={index} className="mb-16 mx-auto max-w-5xl">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-slate-200">
+            <Image
+              src={section.src}
+              alt={section.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 1024px"
+            />
+          </div>
+          {section.caption ? (
+            <figcaption className="mt-3 text-center text-sm text-slate-600">
+              {section.caption}
+            </figcaption>
+          ) : null}
+        </figure>
       );
     case "stats":
       return (
@@ -176,6 +212,7 @@ function renderSection(section: HeritageSection, index: number) {
 }
 
 export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
+  const heroCaption = content.heroImageAlt ?? content.h1;
   const schemas: Record<string, unknown>[] = [
     generateBreadcrumbSchema(content.breadcrumbs),
     generateWebPageSchema({
@@ -188,7 +225,11 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
           ? content.metadata.description
           : content.subtitle,
       url: canonicalUrl(content.slug),
-      dateModified: content.lastUpdated ?? "2026-06-11",
+      dateModified: "2026-08-30",
+      aboutId: heritageCommunityId(),
+      primaryImage: content.heroImage
+        ? { url: content.heroImage, caption: heroCaption }
+        : undefined,
     }),
   ];
 
@@ -197,25 +238,11 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
   }
 
   if (content.includeCommunitySchema) {
-    schemas.push({
-      "@context": "https://schema.org",
-      "@type": "Residence",
-      name: HERITAGE_COMMUNITY.name,
-      description: `${HERITAGE_COMMUNITY.name} — Lennar 55+ guard-gated community in Summerlin West`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: HERITAGE_COMMUNITY.city,
-        addressRegion: HERITAGE_COMMUNITY.region,
-        postalCode: HERITAGE_COMMUNITY.postalCode,
-        addressCountry: "US",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: HERITAGE_COMMUNITY.geo.latitude,
-        longitude: HERITAGE_COMMUNITY.geo.longitude,
-      },
-      numberOfRooms: HERITAGE_COMMUNITY.homeCount,
-    });
+    schemas.push(generateHeritageCommunitySchema());
+  }
+
+  if (content.extraSchemas?.length) {
+    schemas.push(...content.extraSchemas);
   }
 
   const pageSchema = combineSchemas(...schemas);
@@ -245,6 +272,8 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
             badge={content.badge}
             title={content.h1}
             subtitle={content.subtitle}
+            imageSrc={content.heroImage}
+            imageAlt={content.heroImageAlt}
             priority
           />
 

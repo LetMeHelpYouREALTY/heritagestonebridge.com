@@ -1,9 +1,11 @@
 /**
  * Schema.org Structured Data Generators for heritagestonebridge.com
- * Following Google's 2025 Structured Data Guidelines
+ * Following Google Search Central structured data guidelines (2026).
+ * JSON-LD, visible-content parity, most specific type, crawlable images.
  *
  * @see https://schema.org
  * @see https://developers.google.com/search/docs/appearance/structured-data
+ * @see https://developers.google.com/search/docs/appearance/structured-data/sd-policies
  */
 
 import { SITE_CONTACT } from "@/lib/site-contact";
@@ -11,6 +13,8 @@ import { siteConfig, agentInfo, officeInfo } from "./site-config";
 import { openingHoursSpecification } from "./hours";
 import { getGbpAggregateRating } from "./gbp-ratings";
 import { absoluteAgentPhotoUrl } from "@/lib/agent-assets";
+import { organizationId, heritageCommunityId } from "./entity-ids";
+import { HERITAGE_COMMUNITY } from "@/lib/heritage-stonebridge/data";
 
 // ============================================================================
 // Types
@@ -64,8 +68,6 @@ export interface SeniorCommunityData {
 // ============================================================================
 // Constants
 // ============================================================================
-
-import { organizationId } from "./entity-ids";
 
 const BASE_URL = siteConfig.url;
 
@@ -268,7 +270,67 @@ export function generateWebSiteSchema() {
 // ============================================================================
 
 /**
- * Generate FAQPage schema from FAQ items
+ * ImageObject for crawlable, page-relevant photos (Google image guidelines).
+ * URLs must be indexable; alt/caption must match visible content.
+ * @see https://developers.google.com/search/docs/appearance/structured-data/sd-policies#images
+ */
+export function generateImageObjectSchema(image: {
+  url: string;
+  caption: string;
+  width?: number;
+  height?: number;
+}) {
+  const absolute = image.url.startsWith("http")
+    ? image.url
+    : `${BASE_URL}${image.url}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${absolute}#image`,
+    url: absolute,
+    contentUrl: absolute,
+    caption: image.caption,
+    name: image.caption,
+    ...(image.width ? { width: image.width } : {}),
+    ...(image.height ? { height: image.height } : {}),
+    representativeOfPage: true,
+  };
+}
+
+export function generateItemListSchema(list: {
+  name: string;
+  description?: string;
+  items: { name: string; description: string; url?: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: list.name,
+    ...(list.description ? { description: list.description } : {}),
+    numberOfItems: list.items.length,
+    itemListElement: list.items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      description: item.description,
+      ...(item.url
+        ? {
+            url: item.url.startsWith("http")
+              ? item.url
+              : `${BASE_URL}${item.url}`,
+          }
+        : {}),
+    })),
+  };
+}
+
+/**
+ * FAQPage markup for visible Q&A. Google Search Central: as of May 7, 2026
+ * FAQ rich results no longer appear in Google Search. Markup remains valid
+ * schema.org and is kept only when the same questions are visible on the page
+ * (parity rule) so answer engines can parse the Q&A.
+ * @see https://developers.google.com/search/docs/appearance/structured-data/faqpage
+ * @see https://developers.google.com/search/docs/appearance/structured-data/sd-policies
  */
 export function generateFAQSchema(faqs: FAQItem[]) {
   return {
@@ -399,12 +461,11 @@ export function generateSeniorCommunitySchema(community: SeniorCommunityData) {
     description: community.description,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Henderson",
+      addressLocality: "Las Vegas",
       addressRegion: "NV",
       addressCountry: "US",
     },
     numberOfAccommodationUnits: community.numberOfHomes,
-    petsAllowed: true,
   };
 
   if (community.latitude && community.longitude) {
@@ -550,6 +611,7 @@ export function generateServiceSchema(service: {
 
 /**
  * Generate WebPage schema
+ * @see https://developers.google.com/search/docs/appearance/structured-data
  */
 export function generateWebPageSchema(page: {
   name: string;
@@ -557,22 +619,111 @@ export function generateWebPageSchema(page: {
   url: string;
   datePublished?: string;
   dateModified?: string;
+  primaryImage?: { url: string; caption: string };
+  /** Entity this page is primarily about (community Place, agent, etc.). */
+  aboutId?: string;
 }) {
+  const url = page.url.startsWith("http") ? page.url : `${BASE_URL}${page.url}`;
+  const image = page.primaryImage
+    ? generateImageObjectSchema(page.primaryImage)
+    : undefined;
+  const { "@context": _ctx, ...imageNode } = image ?? {};
+
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${page.url.startsWith("http") ? page.url : `${BASE_URL}${page.url}`}#webpage`,
+    "@id": `${url}#webpage`,
     name: page.name,
     description: page.description,
-    url: page.url.startsWith("http") ? page.url : `${BASE_URL}${page.url}`,
+    url,
     isPartOf: {
       "@id": `${BASE_URL}#website`,
     },
     about: {
-      "@id": organizationId(),
+      "@id": page.aboutId ?? organizationId(),
     },
+    ...(image
+      ? {
+          primaryImageOfPage: { "@id": image["@id"] },
+          image: imageNode,
+        }
+      : {}),
     ...(page.datePublished && { datePublished: page.datePublished }),
     ...(page.dateModified && { dateModified: page.dateModified }),
+    inLanguage: "en-US",
+  };
+}
+
+/**
+ * Place + ResidentialComplex for Heritage at Stonebridge.
+ * Google Search Central (2026): JSON-LD, visible content only, consistent NAP.
+ * There is no dedicated 55+ community rich result — this entity markup supports
+ * local understanding and AI citation without inventing unsupported types.
+ * @see https://developers.google.com/search/docs/appearance/structured-data
+ */
+export function generateHeritageCommunitySchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["Place", "ResidentialComplex"],
+    "@id": heritageCommunityId(),
+    name: HERITAGE_COMMUNITY.name,
+    alternateName: HERITAGE_COMMUNITY.shortName,
+    description: `${HERITAGE_COMMUNITY.name} is a Lennar-built, staff guard-gated 55+ community of ${HERITAGE_COMMUNITY.homeCount} single-story homes in ${HERITAGE_COMMUNITY.masterPlan}, Las Vegas, NV ${HERITAGE_COMMUNITY.postalCode}.`,
+    url: `${BASE_URL}/community`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: SITE_CONTACT.address.streetAddress,
+      addressLocality: HERITAGE_COMMUNITY.city,
+      addressRegion: HERITAGE_COMMUNITY.region,
+      postalCode: HERITAGE_COMMUNITY.postalCode,
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: HERITAGE_COMMUNITY.geo.latitude,
+      longitude: HERITAGE_COMMUNITY.geo.longitude,
+    },
+    containedInPlace: {
+      "@type": "Place",
+      name: HERITAGE_COMMUNITY.masterPlan,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: HERITAGE_COMMUNITY.city,
+        addressRegion: HERITAGE_COMMUNITY.region,
+        postalCode: HERITAGE_COMMUNITY.postalCode,
+        addressCountry: "US",
+      },
+    },
+    numberOfAccommodationUnits: HERITAGE_COMMUNITY.homeCount,
+    yearBuilt: String(HERITAGE_COMMUNITY.yearStarted),
+    amenityFeature: HERITAGE_COMMUNITY.amenities.map((name) => ({
+      "@type": "LocationFeatureSpecification",
+      name,
+      value: true,
+    })),
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Builder",
+        value: HERITAGE_COMMUNITY.builder,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Age restriction",
+        value: "55+",
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Access",
+        value: HERITAGE_COMMUNITY.security,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Home size range",
+        value: `${HERITAGE_COMMUNITY.sqFtRange} sq. ft.`,
+      },
+    ],
+    image: `${BASE_URL}/images/hero/heritage-stonebridge.webp`,
   };
 }
 

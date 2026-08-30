@@ -26,7 +26,7 @@ export const HERITAGE_COMMUNITY = {
   priceRange:
     "Resale and new-build homes commonly list from the $500s to $850,000+ depending on plan, elevation, and upgrades (verify on current MLS).",
   hoaRange:
-    "Monthly HOA typically falls in the low-to-mid $100s–$200s range; confirm current assessments with the HOA or listing agent.",
+    "Recent Summerlin West resales display about $410–$419 per month combined (Heritage association plus Summerlin master). Confirm the current schedule in the resale package — amounts vary by listing date.",
   clubhouseSqFt: 8000,
   amenities: [
     "8,000 sq. ft. clubhouse with lounge, fireplace, and showcase kitchen",
@@ -47,6 +47,102 @@ export const HERITAGE_COMMUNITY = {
     longitude: -115.3124,
   },
 } as const;
+
+export const HERITAGE_COLLECTIONS = [
+  {
+    slug: "cromwell",
+    name: "Cromwell",
+    href: "/floor-plans/cromwell",
+    sqFtRange: "1,232 – 1,422",
+    summary:
+      "Entry single-story 2-bed / 2-bath plans with two-car garages and private side yards.",
+    plans: [
+      {
+        name: "Carson",
+        sqFt: "about 1,232–1,237 (sources differ — verify on the plan sheet)",
+        beds: "2",
+        baths: "2",
+        garage: "2-car",
+      },
+      {
+        name: "Claremont",
+        sqFt: "1,237",
+        beds: "2",
+        baths: "2",
+        garage: "2-car",
+      },
+      {
+        name: "Connery",
+        sqFt: "1,422",
+        beds: "2",
+        baths: "2",
+        garage: "2-car",
+      },
+    ],
+  },
+  {
+    slug: "stirling",
+    name: "Stirling",
+    href: "/floor-plans/stirling",
+    sqFtRange: "1,747 – 2,236",
+    summary:
+      "Mid-size single-story plans with owner suites, walk-in closets, and two-car garages.",
+    plans: [
+      {
+        name: "Sawyer",
+        sqFt: "1,747",
+        beds: "2",
+        baths: "2",
+        garage: "2-car",
+      },
+      {
+        name: "Sidney",
+        sqFt: "1,953",
+        beds: "2–3",
+        baths: "2",
+        garage: "2-car",
+      },
+      {
+        name: "Sloan",
+        sqFt: "2,236",
+        beds: "2–3",
+        baths: "2",
+        garage: "2-car",
+      },
+    ],
+  },
+  {
+    slug: "evander",
+    name: "Evander",
+    href: "/floor-plans/evander",
+    sqFtRange: "2,515 – 2,873",
+    summary:
+      "Largest single-story plans with three- to four-car garages; Everly adds a Next Gen suite.",
+    plans: [
+      {
+        name: "Ethan",
+        sqFt: "2,515",
+        beds: "2–3",
+        baths: "2.5–3",
+        garage: "4-bay tandem",
+      },
+      {
+        name: "Elizabeth",
+        sqFt: "2,516",
+        beds: "2–3",
+        baths: "2.5–3",
+        garage: "4-bay RV",
+      },
+      {
+        name: "Everly",
+        sqFt: "2,873",
+        beds: "3",
+        baths: "3",
+        garage: "3-car + Next Gen suite",
+      },
+    ],
+  },
+] as const;
 
 export const HERITAGE_FAQS = [
   {
