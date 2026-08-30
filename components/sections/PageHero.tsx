@@ -36,7 +36,8 @@ export default async function PageHero({
   const config = await getPageDomainConfig();
   const src = imageSrc ?? getHeroImage(config);
   const alt =
-    imageAlt ?? `${config.neighborhood} real estate — Dr. Jan Duffy, BHHS Nevada Properties`;
+    imageAlt ??
+    `${config.neighborhood} real estate — Dr. Jan Duffy, BHHS Nevada Properties`;
 
   return (
     <section className="relative mb-16 flex min-h-[360px] items-center overflow-hidden rounded-2xl bg-slate-900 text-white">

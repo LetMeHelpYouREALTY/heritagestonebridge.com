@@ -1,11 +1,10 @@
+# Production origin is Vercel (gray-cloud DNS). Cloudflare Pages is not this
+# site’s runtime (next-on-pages requires `runtime = 'edge'` on every route).
+# Use workflow_dispatch only if you need a manual Pages experiment.
 name: Cloudflare Pages Deployment
 
 on:
-  push:
-    branches: [main]
-  # PRs are not deployed to Cloudflare Pages. Production origin is Vercel
-  # (gray-cloud DNS). Running Pages here double-deploys and the leftover
-  # Flask /api tree makes `vercel build` fail looking for `uv`.
+  workflow_dispatch:
 
 env:
   NODE_VERSION: '20'

@@ -76,10 +76,10 @@ export default function Navbar() {
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
+                  if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
                     setIsServicesOpen(!isServicesOpen);
-                  } else if (e.key === 'Escape') {
+                  } else if (e.key === "Escape") {
                     setIsServicesOpen(false);
                   }
                 }}
@@ -114,9 +114,14 @@ export default function Navbar() {
             </div>
 
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <Link href={telHref(SITE_CONTACT.phone.tel)} className="flex items-center gap-2">
+              <Link
+                href={telHref(SITE_CONTACT.phone.tel)}
+                className="flex items-center gap-2"
+              >
                 <Phone className="h-4 w-4" />
-                <span className="hidden xl:inline">{SITE_CONTACT.phone.display}</span>
+                <span className="hidden xl:inline">
+                  {SITE_CONTACT.phone.display}
+                </span>
                 <span className="xl:hidden">Call</span>
               </Link>
             </Button>
@@ -138,7 +143,11 @@ export default function Navbar() {
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+              {isMobileMenuOpen ? (
+                <X size={24} aria-hidden="true" />
+              ) : (
+                <Menu size={24} aria-hidden="true" />
+              )}
             </button>
           </div>
         </div>
@@ -176,7 +185,10 @@ export default function Navbar() {
               </div>
 
               <div className="pt-4">
-                <Button asChild className="bg-blue-600 hover:bg-blue-700 w-full">
+                <Button
+                  asChild
+                  className="bg-blue-600 hover:bg-blue-700 w-full"
+                >
                   <Link
                     href={SITE_CONTACT.phone.tel}
                     className="flex items-center justify-center gap-2"

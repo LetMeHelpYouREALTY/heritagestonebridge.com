@@ -1,6 +1,9 @@
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { getSiteUrl } from "@/lib/site-url";
-import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/data";
+import {
+  HERITAGE_COMMUNITY,
+  HERITAGE_FAQS,
+} from "@/lib/heritage-stonebridge/data";
 import { openingHoursSpecification } from "@/lib/hours";
 import { getGbpAggregateRating } from "@/lib/gbp-ratings";
 import { organizationId } from "@/lib/entity-ids";
@@ -57,7 +60,8 @@ export const businessInfo = {
     },
     {
       name: "Heritage at Stonebridge Seller Representation",
-      description: "Pricing, marketing, and negotiation for listings in Summerlin West 89138.",
+      description:
+        "Pricing, marketing, and negotiation for listings in Summerlin West 89138.",
     },
     {
       name: "Summerlin 55+ Community Specialist",
@@ -66,7 +70,8 @@ export const businessInfo = {
     },
     {
       name: "Guard-Gated Community Specialist",
-      description: "Staffed gate access, visitor policies, and lifestyle fit for Heritage buyers.",
+      description:
+        "Staffed gate access, visitor policies, and lifestyle fit for Heritage buyers.",
     },
     {
       name: "Downsizing Consultation",
@@ -80,15 +85,18 @@ export const businessInfo = {
     },
     {
       name: "California Relocation to Las Vegas",
-      description: "Help out-of-state buyers evaluate Nevada moves and Summerlin West neighborhoods.",
+      description:
+        "Help out-of-state buyers evaluate Nevada moves and Summerlin West neighborhoods.",
     },
     {
       name: "New Construction Buyer Representation",
-      description: "Lennar and resale inventory guidance with buyer advocacy through closing.",
+      description:
+        "Lennar and resale inventory guidance with buyer advocacy through closing.",
     },
     {
       name: "First-Time Buyer Guidance",
-      description: "Financing overview, inspections, and contract education for 55+ purchasers.",
+      description:
+        "Financing overview, inspections, and contract education for 55+ purchasers.",
     },
   ],
 
@@ -107,32 +115,15 @@ export const businessInfo = {
       "Same-day appointments",
     ],
     // Highlights
-    highlights: [
-      "Identifies as women-owned",
-      "LGBTQ+ friendly",
-      "Veteran-led",
-    ],
+    highlights: ["Identifies as women-owned", "LGBTQ+ friendly", "Veteran-led"],
     // Offerings
-    offerings: [
-      "Free consultation",
-      "Free estimates",
-    ],
+    offerings: ["Free consultation", "Free estimates"],
     // Amenities
-    amenities: [
-      "Free Wi-Fi",
-      "Free parking",
-    ],
+    amenities: ["Free Wi-Fi", "Free parking"],
     // Planning
-    planning: [
-      "Appointment required",
-      "Accepts new clients",
-    ],
+    planning: ["Appointment required", "Accepts new clients"],
     // Payments (if applicable)
-    payments: [
-      "Credit cards",
-      "Checks",
-      "Wire transfer",
-    ],
+    payments: ["Credit cards", "Checks", "Wire transfer"],
   },
 
   // Social profiles for sameAs schema
