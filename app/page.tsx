@@ -12,9 +12,10 @@ import SchemaScript from "@/components/SchemaScript";
 import {
   combineSchemas,
   generateFAQSchema,
-  generateRealEstateAgentSchema,
+  generateHeritageCommunitySchema,
   generateWebPageSchema,
 } from "@/lib/schema";
+import { heritageCommunityId } from "@/lib/entity-ids";
 import { buildPageMetadata, canonicalUrl } from "@/lib/metadata";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import {
@@ -73,12 +74,18 @@ const HOMEPAGE_HIGHLIGHTS: {
 
 export default function HomePage() {
   const pageSchema = combineSchemas(
-    generateRealEstateAgentSchema(),
+    generateHeritageCommunitySchema(),
     generateWebPageSchema({
       name: "Heritage at Stonebridge | Guard-Gated 55+ Summerlin",
       description: `Lennar guard-gated 55+ community in Summerlin West (89138). Dr. Jan Duffy, ${SITE_CONTACT.brokerage}.`,
       url: canonicalUrl("/"),
-      dateModified: "July 2026",
+      dateModified: "2026-08-30",
+      aboutId: heritageCommunityId(),
+      primaryImage: {
+        url: "/images/hero/heritage-stonebridge.webp",
+        caption:
+          "Heritage at Stonebridge guard-gated 55+ community in Summerlin West, Las Vegas NV 89138",
+      },
     }),
     generateFAQSchema(homepageFaqs),
   );

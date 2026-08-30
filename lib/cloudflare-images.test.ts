@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it } from "vitest";
 import {
   accountHashFromDeliveryUrl,
+  absolutePublicImageUrl,
   buildCloudflareImageUrl,
   buildCloudflareTransform,
   gitPathToImageId,
@@ -63,6 +64,23 @@ describe("cloudflare-images", () => {
     process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH = "testhash";
     expect(buildCloudflareImageUrl("https://example.com/photo.jpg", 400)).toBe(
       "https://example.com/photo.jpg",
+    );
+  });
+
+  it("builds origin URLs for git backups when Cloudflare is off", () => {
+    delete process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED;
+    expect(absolutePublicImageUrl("/images/hero/heritage-stonebridge.webp")).toMatch(
+      /\/images\/hero\/heritage-stonebridge\.webp$/,
+    );
+  });
+
+  it("builds imagedelivery.net URLs when Cloudflare is on", () => {
+    process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED = "true";
+    process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH = "testhash";
+    expect(
+      absolutePublicImageUrl("/images/hero/heritage-stonebridge.webp", 1200),
+    ).toBe(
+      "https://imagedelivery.net/testhash/images/hero/heritage-stonebridge.webp/w=1200,q=85,f=auto",
     );
   });
 

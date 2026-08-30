@@ -13,6 +13,7 @@ import { siteConfig, agentInfo, officeInfo } from "./site-config";
 import { openingHoursSpecification } from "./hours";
 import { getGbpAggregateRating } from "./gbp-ratings";
 import { absoluteAgentPhotoUrl } from "@/lib/agent-assets";
+import { absolutePublicImageUrl } from "@/lib/cloudflare-images";
 import { organizationId, heritageCommunityId } from "./entity-ids";
 import { HERITAGE_COMMUNITY } from "@/lib/heritage-stonebridge/data";
 
@@ -159,6 +160,16 @@ export function generateRealEstateAgentSchema() {
       identifier: agentInfo.license,
     },
     sameAs: Object.values(socialProfiles),
+    knowsAbout: [
+      { "@id": heritageCommunityId() },
+      "Heritage at Stonebridge",
+      "Summerlin West",
+      "55+ active adult communities",
+      "Las Vegas real estate",
+      "Henderson homes",
+      "Luxury homes",
+      "New construction",
+    ],
     parentOrganization: {
       "@type": "Organization",
       "@id": `${BASE_URL}#parent-organization`,
@@ -182,17 +193,6 @@ export function generateRealEstateAgentSchema() {
           },
         }
       : {}),
-    knowsAbout: [
-      "Las Vegas real estate",
-      "Henderson homes",
-      "Summerlin properties",
-      "Luxury homes",
-      "New construction",
-      "Investment properties",
-      "Relocation services",
-      "55+ communities",
-      "First-time homebuyers",
-    ],
     slogan: "Your Berkshire Hathaway HomeServices expert in Las Vegas",
   };
 }
@@ -280,9 +280,7 @@ export function generateImageObjectSchema(image: {
   width?: number;
   height?: number;
 }) {
-  const absolute = image.url.startsWith("http")
-    ? image.url
-    : `${BASE_URL}${image.url}`;
+  const absolute = absolutePublicImageUrl(image.url, image.width ?? 1200);
   return {
     "@context": "https://schema.org",
     "@type": "ImageObject",
@@ -723,7 +721,7 @@ export function generateHeritageCommunitySchema() {
         value: `${HERITAGE_COMMUNITY.sqFtRange} sq. ft.`,
       },
     ],
-    image: `${BASE_URL}/images/hero/heritage-stonebridge.webp`,
+    image: absolutePublicImageUrl("/images/hero/heritage-stonebridge.webp", 1920),
   };
 }
 

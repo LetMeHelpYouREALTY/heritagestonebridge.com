@@ -7,6 +7,8 @@
  * @see https://developers.cloudflare.com/images/optimization/features/
  */
 
+import { getSiteUrl } from "@/lib/site-url";
+
 export function isCloudflareImagesEnabled(): boolean {
   return (
     process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED === "true" &&
@@ -62,6 +64,20 @@ export function buildCloudflareImageUrl(
     format: "auto",
   });
   return `https://imagedelivery.net/${hash}/${id}/${transform}`;
+}
+
+/**
+ * Absolute URL for JSON-LD / Open Graph.
+ * Uses Cloudflare Images when enabled so crawlers skip `/_next/image`;
+ * otherwise the git backup on this origin.
+ */
+export function absolutePublicImageUrl(src: string, width = 1200): string {
+  if (src.startsWith("http://") || src.startsWith("https://")) return src;
+  if (isCloudflareImagesEnabled()) {
+    return buildCloudflareImageUrl(src, width, 85);
+  }
+  const path = src.startsWith("/") ? src : `/${src}`;
+  return `${getSiteUrl()}${path}`;
 }
 
 /** Pull the public account hash out of an imagedelivery.net variant URL. */
