@@ -35,15 +35,18 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Require Cloudflare secrets
+      - name: Check Cloudflare secrets
+        id: creds
         run: |
           if [ -z "$CLOUDFLARE_ACCOUNT_ID" ] || [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "::error::CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN must be set in repo secrets."
-            echo "Create a token with Account → Cloudflare Images → Edit at https://dash.cloudflare.com/profile/api-tokens"
-            exit 1
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::warning::CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN are not set. Skipping upload until they exist in repo secrets. Token needs Account → Cloudflare Images → Edit."
+            exit 0
           fi
+          echo "skip=false" >> "$GITHUB_OUTPUT"
 
       - name: Sync images
+        if: steps.creds.outputs.skip != 'true'
         id: sync
         run: node scripts/upload-cloudflare-images.mjs
 
