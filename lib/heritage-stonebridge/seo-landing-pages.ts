@@ -1,8 +1,6 @@
 import type { HeritagePageContent } from "./types";
 import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "./data";
-
-const baseTitle = (page: string) =>
-  `${page} | Heritage at Stonebridge Summerlin | Dr. Jan Duffy`;
+import { serpTitle } from "./serp-title";
 
 function crumbs(...items: { name: string; url: string }[]) {
   return [{ name: "Home", url: "/" }, ...items];
@@ -20,7 +18,7 @@ const lasVegas55Links = [
 export const marketAnalysisPage: HeritagePageContent = {
   slug: "/market-analysis",
   metadata: {
-    title: baseTitle("Heritage Stonebridge Market Analysis"),
+    title: serpTitle("Heritage Stonebridge Market Analysis | 89138"),
     description:
       "Custom market analysis for Heritage at Stonebridge buyers and sellers in Summerlin 89138. Comparable sales, pricing trends, and CMA from Dr. Jan Duffy, BHHS.",
   },
@@ -93,7 +91,7 @@ export const marketAnalysisPage: HeritagePageContent = {
 export const marketReportsPage: HeritagePageContent = {
   slug: "/market-reports",
   metadata: {
-    title: baseTitle("Summerlin 55+ Market Reports"),
+    title: serpTitle("Summerlin 55+ Market Reports | Heritage Stonebridge"),
     description:
       "Quarterly market reports for Heritage at Stonebridge and Summerlin West 55+ communities. Median prices, inventory, and buyer demand in 89138.",
   },
@@ -115,7 +113,10 @@ export const marketReportsPage: HeritagePageContent = {
       type: "stats",
       heading: "Heritage Market Context",
       stats: [
-        { value: String(HERITAGE_COMMUNITY.homeCount), label: "Total Homes (Fixed Supply)" },
+        {
+          value: String(HERITAGE_COMMUNITY.homeCount),
+          label: "Total Homes (Fixed Supply)",
+        },
         { value: HERITAGE_COMMUNITY.postalCode, label: "Zip Code" },
         { value: "55+", label: "Age-Restricted" },
         { value: "2021–2025", label: "Lennar Build Years" },
@@ -137,7 +138,7 @@ export const marketReportsPage: HeritagePageContent = {
 export const fiftyFivePlusCommunitiesLasVegasPage: HeritagePageContent = {
   slug: "/55-plus-communities-las-vegas",
   metadata: {
-    title: baseTitle("55+ Communities Las Vegas Guide"),
+    title: serpTitle("55+ Communities in Las Vegas | Heritage Stonebridge"),
     description:
       "Las Vegas 55+ communities compared — Heritage at Stonebridge, Sun City, Trilogy, Solera, and more. Guard-gated Lennar living in Summerlin 89138.",
   },
@@ -199,7 +200,7 @@ export const fiftyFivePlusCommunitiesLasVegasPage: HeritagePageContent = {
 export const activeAdultCommunitiesPage: HeritagePageContent = {
   slug: "/active-adult-communities",
   metadata: {
-    title: baseTitle("Active Adult Communities Summerlin"),
+    title: serpTitle("Active Adult Communities in Summerlin | 55+"),
     description:
       "Active adult communities near Heritage at Stonebridge — pickleball, fitness, guard-gated security, and lock-and-leave living in Summerlin 89138.",
   },
@@ -242,7 +243,10 @@ export const activeAdultCommunitiesPage: HeritagePageContent = {
       links: [
         { href: "/lifestyle", label: "55+ Lifestyle at Heritage" },
         { href: "/amenities", label: "Amenities & Clubhouse" },
-        { href: "/active-adult-lifestyle-communities", label: "Lifestyle Communities Guide" },
+        {
+          href: "/active-adult-lifestyle-communities",
+          label: "Lifestyle Communities Guide",
+        },
         { href: "/buying-guide", label: "Buying Guide" },
       ],
     },
@@ -252,7 +256,7 @@ export const activeAdultCommunitiesPage: HeritagePageContent = {
 export const bestFiftyFivePlusCommunitiesPage: HeritagePageContent = {
   slug: "/best-55-plus-communities-las-vegas",
   metadata: {
-    title: baseTitle("Best 55+ Communities Las Vegas"),
+    title: serpTitle("Best 55+ Communities in Las Vegas | Compared"),
     description:
       "Best 55+ communities in Las Vegas for guard-gated security, new construction, and Summerlin location — featuring Heritage at Stonebridge.",
   },
@@ -311,11 +315,14 @@ export const bestFiftyFivePlusCommunitiesPage: HeritagePageContent = {
 export const northwestLasVegasPage: HeritagePageContent = {
   slug: "/northwest-las-vegas",
   metadata: {
-    title: baseTitle("Northwest Las Vegas Real Estate"),
+    title: serpTitle("Northwest Las Vegas Real Estate | Summerlin 55+"),
     description:
       "Northwest Las Vegas homes and 55+ communities in Summerlin West. Heritage at Stonebridge guard-gated living in zip 89138 near Red Rock Canyon.",
   },
-  breadcrumbs: crumbs({ name: "Northwest Las Vegas", url: "/northwest-las-vegas" }),
+  breadcrumbs: crumbs({
+    name: "Northwest Las Vegas",
+    url: "/northwest-las-vegas",
+  }),
   badge: "Summerlin West 89138",
   h1: "Northwest Las Vegas Real Estate",
   subtitle:
@@ -368,11 +375,14 @@ export const northwestLasVegasPage: HeritagePageContent = {
 export const lasVegasRealEstatePage: HeritagePageContent = {
   slug: "/las-vegas-real-estate",
   metadata: {
-    title: baseTitle("Las Vegas Real Estate — Summerlin 55+"),
+    title: serpTitle("Las Vegas Real Estate | Summerlin 55+ Homes"),
     description:
       "Las Vegas real estate specialist for Heritage at Stonebridge and Summerlin 55+ moves. Buy, sell, and relocate with Dr. Jan Duffy, BHHS Nevada Properties.",
   },
-  breadcrumbs: crumbs({ name: "Las Vegas Real Estate", url: "/las-vegas-real-estate" }),
+  breadcrumbs: crumbs({
+    name: "Las Vegas Real Estate",
+    url: "/las-vegas-real-estate",
+  }),
   h1: "Las Vegas Real Estate — Heritage Stonebridge Focus",
   subtitle:
     "Hyperlocal representation for guard-gated 55+ buyers and sellers — not generic valley billboards.",
@@ -392,19 +402,23 @@ export const lasVegasRealEstatePage: HeritagePageContent = {
       items: [
         {
           title: "Private guard-gate tours",
-          description: "Walk clubhouse, pools, and model comparable resales in one visit.",
+          description:
+            "Walk clubhouse, pools, and model comparable resales in one visit.",
         },
         {
           title: "MLS search & listing alerts",
-          description: "RealScout-powered alerts when Heritage inventory hits market.",
+          description:
+            "RealScout-powered alerts when Heritage inventory hits market.",
         },
         {
           title: "Relocation coordination",
-          description: "Virtual tours, temporary housing timing, and California equity moves.",
+          description:
+            "Virtual tours, temporary housing timing, and California equity moves.",
         },
         {
           title: "Seller CMA & staging guidance",
-          description: "Price against 89138 closings — not outdated public estimates.",
+          description:
+            "Price against 89138 closings — not outdated public estimates.",
         },
       ],
     },
@@ -424,16 +438,16 @@ export const lasVegasRealEstatePage: HeritagePageContent = {
 export const redRockCanyonCommunitiesPage: HeritagePageContent = {
   slug: "/red-rock-canyon-communities",
   metadata: {
-    title: baseTitle("Red Rock Canyon Area 55+ Communities"),
+    title: serpTitle("Red Rock Canyon 55+ Communities | Heritage"),
     description:
-      "55+ communities near Red Rock Canyon and Summerlin West. Heritage at Stonebridge guard-gated homes with mountain views in 89138.",
+      "55+ communities near Red Rock Canyon in Summerlin West. Heritage at Stonebridge is Lennar's guard-gated 89138 neighborhood — not Stonebridge Park. Call (702) 500-1942.",
   },
   breadcrumbs: crumbs({
     name: "Red Rock Canyon Communities",
     url: "/red-rock-canyon-communities",
   }),
   badge: "Red Rock Views",
-  h1: "Red Rock Canyon Area Communities",
+  h1: "Red Rock Canyon 55+ Communities in Summerlin West",
   subtitle:
     "Live west of the Strip with Red Rock Canyon at your doorstep — Heritage at Stonebridge in Summerlin West 89138.",
   lastUpdated: "July 2026",
@@ -462,7 +476,7 @@ export const redRockCanyonCommunitiesPage: HeritagePageContent = {
 export const summerlinHomesPage: HeritagePageContent = {
   slug: "/summerlin-homes",
   metadata: {
-    title: baseTitle("Summerlin Homes for Sale"),
+    title: serpTitle("Summerlin Homes for Sale | Heritage Stonebridge 55+"),
     description:
       "Summerlin homes for sale with focus on Heritage at Stonebridge 55+ guard-gated listings in 89138. Search MLS with Dr. Jan Duffy.",
   },
@@ -496,7 +510,7 @@ export const summerlinHomesPage: HeritagePageContent = {
 export const activeAdultLifestyleCommunitiesPage: HeritagePageContent = {
   slug: "/active-adult-lifestyle-communities",
   metadata: {
-    title: baseTitle("Active Adult Lifestyle Communities"),
+    title: serpTitle("Active Adult Lifestyle Communities | Summerlin"),
     description:
       "Lifestyle-focused 55+ communities in Summerlin — pickleball, travel-friendly lock-and-leave living at Heritage at Stonebridge.",
   },
@@ -523,7 +537,10 @@ export const activeAdultLifestyleCommunitiesPage: HeritagePageContent = {
       links: [
         { href: "/lifestyle", label: "Heritage 55+ Lifestyle" },
         { href: "/amenities", label: "Amenities Tour" },
-        { href: "/active-adult-communities", label: "Active Adult Communities" },
+        {
+          href: "/active-adult-communities",
+          label: "Active Adult Communities",
+        },
         { href: "/guard-gated-living", label: "Guard-Gated Security" },
       ],
     },
@@ -533,7 +550,7 @@ export const activeAdultLifestyleCommunitiesPage: HeritagePageContent = {
 export const newFiftyFivePlusCommunitiesPage: HeritagePageContent = {
   slug: "/new-55-plus-communities-las-vegas",
   metadata: {
-    title: baseTitle("New 55+ Communities Las Vegas"),
+    title: serpTitle("New 55+ Communities in Las Vegas | Heritage"),
     description:
       "New and newer 55+ communities in Las Vegas — Heritage at Stonebridge Lennar builds 2021–2025 in guard-gated Summerlin West.",
   },
@@ -551,9 +568,15 @@ export const newFiftyFivePlusCommunitiesPage: HeritagePageContent = {
       type: "stats",
       heading: "Heritage at Stonebridge — New Build Profile",
       stats: [
-        { value: `${HERITAGE_COMMUNITY.yearStarted}–${HERITAGE_COMMUNITY.yearCompleted}`, label: "Build Years" },
+        {
+          value: `${HERITAGE_COMMUNITY.yearStarted}–${HERITAGE_COMMUNITY.yearCompleted}`,
+          label: "Build Years",
+        },
         { value: HERITAGE_COMMUNITY.builder, label: "Builder" },
-        { value: String(HERITAGE_COMMUNITY.floorPlanCount), label: "Floor Plans" },
+        {
+          value: String(HERITAGE_COMMUNITY.floorPlanCount),
+          label: "Floor Plans",
+        },
         { value: "Guard-Gated", label: "Security" },
       ],
     },
@@ -571,7 +594,10 @@ export const newFiftyFivePlusCommunitiesPage: HeritagePageContent = {
       links: [
         { href: "/floor-plans", label: "Heritage Floor Plans" },
         { href: "/homes-for-sale", label: "Current Listings" },
-        { href: "/best-55-plus-communities-las-vegas", label: "Best 55+ Communities" },
+        {
+          href: "/best-55-plus-communities-las-vegas",
+          label: "Best 55+ Communities",
+        },
         { href: "/contact", label: "Schedule Tour" },
       ],
     },
@@ -581,7 +607,7 @@ export const newFiftyFivePlusCommunitiesPage: HeritagePageContent = {
 export const fiftyFivePlusCondosLasVegasPage: HeritagePageContent = {
   slug: "/55-plus-condos-las-vegas",
   metadata: {
-    title: baseTitle("55+ Condos Las Vegas vs Heritage Townhomes"),
+    title: serpTitle("55+ Condos vs Heritage Stonebridge Homes"),
     description:
       "Las Vegas 55+ condos and attached homes compared to Heritage at Stonebridge single-family guard-gated living in Summerlin 89138.",
   },
@@ -645,9 +671,9 @@ export const fiftyFivePlusCondosLasVegasPage: HeritagePageContent = {
 export const fiftyFiveAndOverSummerlinPage: HeritagePageContent = {
   slug: "/55-and-over-communities-summerlin-las-vegas",
   metadata: {
-    title: baseTitle("55 and Over Communities Summerlin Las Vegas"),
+    title: serpTitle("55 and Over Communities in Summerlin Las Vegas"),
     description:
-      "55 and over communities in Summerlin and Las Vegas — Heritage at Stonebridge guard-gated Lennar living, Sun City, Trilogy, and Summerlin West 55+ tours with Dr. Jan Duffy.",
+      "55 and over communities in Summerlin and Las Vegas: Heritage at Stonebridge (Lennar, guard-gated, 89138), Sun City, and Trilogy. Same-day tours with Dr. Jan Duffy. Call (702) 500-1942.",
   },
   breadcrumbs: crumbs({
     name: "55+ Summerlin Las Vegas",
@@ -657,7 +683,7 @@ export const fiftyFiveAndOverSummerlinPage: HeritagePageContent = {
   h1: "55 and Over Communities in Summerlin & Las Vegas",
   subtitle:
     "Age-qualified neighborhoods from Heritage at Stonebridge in 89138 to Sun City and Trilogy — compared for buyers relocating to Las Vegas.",
-  lastUpdated: "July 2026",
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "grid",
@@ -702,7 +728,10 @@ export const fiftyFiveAndOverSummerlinPage: HeritagePageContent = {
       heading: "Summerlin 55+ Resources",
       links: [
         { href: "/community", label: "Heritage at Stonebridge" },
-        { href: "/55-plus-communities", label: "All Las Vegas 55+ Communities" },
+        {
+          href: "/55-plus-communities",
+          label: "All Las Vegas 55+ Communities",
+        },
         { href: "/summerlin-55-plus", label: "Summerlin 55+ Guide" },
         { href: "/homes-for-sale", label: "Heritage Homes for Sale" },
         { href: "/contact", label: "Schedule Tours" },
@@ -720,17 +749,26 @@ export const fiftyFiveAndOverSummerlinPage: HeritagePageContent = {
       answer:
         "Heritage at Stonebridge is in Summerlin West, zip code 89138 — near Downtown Summerlin shopping, medical services, and Red Rock Canyon access.",
     },
+    {
+      question:
+        "Are 55 and over communities the same as 55+ communities in Las Vegas?",
+      answer:
+        "Yes. Searchers use both phrases for age-qualified active adult housing. Heritage at Stonebridge, Sun City Summerlin, and Trilogy all require at least one resident 55 or better.",
+    },
   ],
 };
 
 export const hendersonRealEstatePage: HeritagePageContent = {
   slug: "/henderson-real-estate",
   metadata: {
-    title: baseTitle("Henderson Real Estate & Summerlin 55+ Comparison"),
+    title: serpTitle("Henderson Real Estate vs Summerlin 55+"),
     description:
       "Henderson NV real estate guide for buyers comparing Green Valley, Anthem, and MacDonald Highlands to Heritage at Stonebridge in Summerlin West 89138.",
   },
-  breadcrumbs: crumbs({ name: "Henderson Real Estate", url: "/henderson-real-estate" }),
+  breadcrumbs: crumbs({
+    name: "Henderson Real Estate",
+    url: "/henderson-real-estate",
+  }),
   badge: "Henderson vs Summerlin",
   h1: "Henderson Real Estate Guide",
   subtitle:
@@ -761,7 +799,7 @@ export const hendersonRealEstatePage: HeritagePageContent = {
           title: "Anthem & Inspirada",
           items: [
             "Newer construction and builder incentives",
-            "Henderson zip codes with strong schools by name",
+            "Henderson zip codes near medical and retail corridors",
             "Commute to Strip and airport from southeast valley",
           ],
         },
@@ -779,9 +817,15 @@ export const hendersonRealEstatePage: HeritagePageContent = {
       type: "links",
       heading: "Compare Henderson & Summerlin",
       links: [
-        { href: "/neighborhoods/henderson", label: "Henderson Neighborhood Guide" },
+        {
+          href: "/neighborhoods/henderson",
+          label: "Henderson Neighborhood Guide",
+        },
         { href: "/summerlin-homes", label: "Summerlin Homes" },
-        { href: "/55-plus-communities-las-vegas", label: "Las Vegas 55+ Communities" },
+        {
+          href: "/55-plus-communities-las-vegas",
+          label: "Las Vegas 55+ Communities",
+        },
         { href: "/homes-for-sale", label: "Heritage Listings" },
         { href: "/contact", label: "Schedule Tours" },
       ],
@@ -804,7 +848,7 @@ export const hendersonRealEstatePage: HeritagePageContent = {
 export const communityGuidesPage: HeritagePageContent = {
   slug: "/community-guides",
   metadata: {
-    title: baseTitle("Las Vegas 55+ Community Guides"),
+    title: serpTitle("Las Vegas 55+ Community Guides | Heritage"),
     description:
       "Community guides for Heritage at Stonebridge, Sun City Summerlin, Trilogy, and Las Vegas 55+ neighborhoods — floor plans, HOA, amenities, and tours.",
   },
@@ -866,9 +910,9 @@ export const communityGuidesPage: HeritagePageContent = {
 export const gatedCommunitiesPage: HeritagePageContent = {
   slug: "/gated-communities",
   metadata: {
-    title: baseTitle("Guard-Gated 55+ Communities Las Vegas"),
+    title: serpTitle("Guard-Gated 55+ Communities in Las Vegas"),
     description:
-      "Guard-gated 55+ communities in Las Vegas and Summerlin — Heritage at Stonebridge staff guard-gate, amenities, and how gated living compares to keypad entry.",
+      "Guard-gated 55+ communities in Las Vegas and Summerlin — Heritage at Stonebridge uses staffed visitor verification, not a shared keypad. Compare gated living: (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "Gated Communities", url: "/gated-communities" }),
   badge: "Staff Guard-Gated",
@@ -928,11 +972,14 @@ export const gatedCommunitiesPage: HeritagePageContent = {
 export const communityComparisonPage: HeritagePageContent = {
   slug: "/community-comparison",
   metadata: {
-    title: baseTitle("55+ Community Comparison Las Vegas"),
+    title: serpTitle("Compare Las Vegas 55+ Communities | Heritage"),
     description:
-      "Side-by-side comparison of Las Vegas 55+ communities — Heritage at Stonebridge vs Sun City Summerlin, Trilogy, Solera, and Del Webb options.",
+      "Side-by-side Las Vegas 55+ comparison: Heritage at Stonebridge vs Sun City Summerlin, Trilogy, Solera, and Del Webb. Guard-gating, golf HOA, and inventory. Call (702) 500-1942.",
   },
-  breadcrumbs: crumbs({ name: "Community Comparison", url: "/community-comparison" }),
+  breadcrumbs: crumbs({
+    name: "Community Comparison",
+    url: "/community-comparison",
+  }),
   h1: "Las Vegas 55+ Community Comparison",
   subtitle:
     "Compare guard-gating, golf HOA, build year, and inventory depth before you narrow to two neighborhoods for in-person tours.",
@@ -974,12 +1021,30 @@ export const communityComparisonPage: HeritagePageContent = {
       type: "links",
       heading: "Detailed Comparison Pages",
       links: [
-        { href: "/vs-sun-city-summerlin", label: "Heritage vs Sun City Summerlin" },
-        { href: "/vs-trilogy-summerlin", label: "Heritage vs Trilogy Summerlin" },
-        { href: "/55-plus-communities/heritage-stonebridge", label: "Heritage Profile" },
-        { href: "/55-plus-communities/sun-city-summerlin", label: "Sun City Profile" },
-        { href: "/55-plus-communities/trilogy-summerlin", label: "Trilogy Profile" },
-        { href: "/best-55-plus-communities-las-vegas", label: "Best 55+ Rankings" },
+        {
+          href: "/vs-sun-city-summerlin",
+          label: "Heritage vs Sun City Summerlin",
+        },
+        {
+          href: "/vs-trilogy-summerlin",
+          label: "Heritage vs Trilogy Summerlin",
+        },
+        {
+          href: "/55-plus-communities/heritage-stonebridge",
+          label: "Heritage Profile",
+        },
+        {
+          href: "/55-plus-communities/sun-city-summerlin",
+          label: "Sun City Profile",
+        },
+        {
+          href: "/55-plus-communities/trilogy-summerlin",
+          label: "Trilogy Profile",
+        },
+        {
+          href: "/best-55-plus-communities-las-vegas",
+          label: "Best 55+ Rankings",
+        },
       ],
     },
     {
@@ -996,11 +1061,14 @@ export const communityComparisonPage: HeritagePageContent = {
 export const luxuryLivingGuidePage: HeritagePageContent = {
   slug: "/luxury-living-guide",
   metadata: {
-    title: baseTitle("Luxury 55+ Living Guide Summerlin"),
+    title: serpTitle("Luxury 55+ Living in Summerlin | Heritage"),
     description:
       "Luxury 55+ living in Summerlin West — Heritage at Stonebridge Lennar collections, guard-gated amenities, and how upscale active adult compares across Las Vegas.",
   },
-  breadcrumbs: crumbs({ name: "Luxury Living Guide", url: "/luxury-living-guide" }),
+  breadcrumbs: crumbs({
+    name: "Luxury Living Guide",
+    url: "/luxury-living-guide",
+  }),
   badge: "Upscale Active Adult",
   h1: "Luxury 55+ Living in Summerlin",
   subtitle:
@@ -1011,10 +1079,17 @@ export const luxuryLivingGuidePage: HeritagePageContent = {
       type: "stats",
       heading: "Heritage Luxury Positioning",
       stats: [
-        { value: HERITAGE_COMMUNITY.sqFtRange.split("–")[1]?.trim() ?? "2,873", label: "Max Sq Ft Plans" },
+        {
+          value: HERITAGE_COMMUNITY.sqFtRange.split("–")[1]?.trim() ?? "2,873",
+          label: "Max Sq Ft Plans",
+        },
         { value: "4-Car", label: "Garage Options" },
         { value: "RV", label: "Garage Plans Available" },
-        { value: HERITAGE_COMMUNITY.priceRange.split("to")[1]?.trim() ?? "$850K+", label: "Upper Price Band" },
+        {
+          value:
+            HERITAGE_COMMUNITY.priceRange.split("to")[1]?.trim() ?? "$850K+",
+          label: "Upper Price Band",
+        },
       ],
     },
     {
@@ -1032,7 +1107,10 @@ export const luxuryLivingGuidePage: HeritagePageContent = {
         { href: "/floor-plans", label: "Heritage Floor Plans" },
         { href: "/amenities", label: "Clubhouse & Amenities" },
         { href: "/hoa-fees", label: "HOA & Carrying Costs" },
-        { href: "/buyers/luxury-homes-las-vegas", label: "Luxury Homes Las Vegas" },
+        {
+          href: "/buyers/luxury-homes-las-vegas",
+          label: "Luxury Homes Las Vegas",
+        },
         { href: "/home-valuation", label: "Home Valuation" },
       ],
     },
@@ -1042,11 +1120,14 @@ export const luxuryLivingGuidePage: HeritagePageContent = {
 export const neighborhoodInsightsPage: HeritagePageContent = {
   slug: "/neighborhood-insights",
   metadata: {
-    title: baseTitle("Summerlin Neighborhood Insights 89138"),
+    title: serpTitle("Summerlin 89138 Neighborhood Insights"),
     description:
       "Neighborhood insights for Heritage at Stonebridge and Summerlin West 89138 — commute times, amenities, resale trends, and 55+ buyer demand.",
   },
-  breadcrumbs: crumbs({ name: "Neighborhood Insights", url: "/neighborhood-insights" }),
+  breadcrumbs: crumbs({
+    name: "Neighborhood Insights",
+    url: "/neighborhood-insights",
+  }),
   h1: "Summerlin West Neighborhood Insights",
   subtitle:
     "Hyperlocal data for zip 89138 — where Heritage at Stonebridge sits in the Summerlin West resale and 55+ demand picture.",
@@ -1103,7 +1184,7 @@ export const neighborhoodInsightsPage: HeritagePageContent = {
 export const firstTimeBuyersPage: HeritagePageContent = {
   slug: "/first-time-buyers",
   metadata: {
-    title: baseTitle("First-Time 55+ Home Buyers Las Vegas"),
+    title: serpTitle("First-Time 55+ Home Buyers in Las Vegas"),
     description:
       "First-time home buyer guide for Las Vegas 55+ and active adult communities — financing, downsizing, and touring Heritage at Stonebridge in Summerlin 89138.",
   },
@@ -1154,7 +1235,10 @@ export const firstTimeBuyersPage: HeritagePageContent = {
       links: [
         { href: "/buying-guide", label: "Heritage Buying Guide" },
         { href: "/downsizing", label: "Downsizing Guide" },
-        { href: "/buyers/first-time-buyers", label: "Full First-Time Buyer Guide" },
+        {
+          href: "/buyers/first-time-buyers",
+          label: "Full First-Time Buyer Guide",
+        },
         { href: "/homes-for-sale", label: "Search Listings" },
         { href: "/contact", label: "Talk to Dr. Duffy" },
       ],

@@ -1,8 +1,6 @@
 import type { HeritagePageContent } from "./types";
 import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "./data";
-
-const baseTitle = (page: string) =>
-  `${page} | Heritage at Stonebridge Summerlin | Dr. Jan Duffy`;
+import { serpTitle } from "./serp-title";
 
 function crumbs(...items: { name: string; url: string }[]) {
   return [{ name: "Home", url: "/" }, ...items];
@@ -11,23 +9,26 @@ function crumbs(...items: { name: string; url: string }[]) {
 export const communityPage: HeritagePageContent = {
   slug: "/community",
   metadata: {
-    title: baseTitle("Heritage at Stonebridge Community Guide"),
+    title: serpTitle("Heritage at Stonebridge | Guard-Gated 55+ Summerlin"),
     description:
-      "Lennar-built guard-gated 55+ community in Summerlin West. 421 homes, nine floor plans, resort amenities. Dr. Jan Duffy, BHHS Nevada Properties.",
+      "Lennar-built guard-gated 55+ community in Summerlin West (89138). 421 homes, 9 floor plans, clubhouse and pickleball. Tours with Dr. Jan Duffy. Call (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "Community", url: "/community" }),
   badge: "Guard-Gated Summerlin 55+",
-  h1: "Heritage at Stonebridge Community",
+  h1: "Heritage at Stonebridge in Summerlin West",
   subtitle:
-    "Lennar's boutique 55+ neighborhood in Summerlin West — staff guard-gated security, modern floor plans, and walkable Summerlin living.",
+    "Lennar's boutique 55+ neighborhood in zip 89138 — staff guard-gated security, nine single-story floor plans, and minutes from Downtown Summerlin.",
   includeCommunitySchema: true,
-  lastUpdated: "June 2026",
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "stats",
       heading: "Heritage at Stonebridge at a Glance",
       stats: [
-        { value: String(HERITAGE_COMMUNITY.homeCount), label: "Single-Family Homes" },
+        {
+          value: String(HERITAGE_COMMUNITY.homeCount),
+          label: "Single-Family Homes",
+        },
         { value: HERITAGE_COMMUNITY.postalCode, label: "Zip Code" },
         { value: "55+", label: "Age-Restricted" },
         { value: "Guard-Gated", label: "Staffed Entry" },
@@ -87,13 +88,13 @@ export const communityPage: HeritagePageContent = {
 export const amenitiesPage: HeritagePageContent = {
   slug: "/amenities",
   metadata: {
-    title: baseTitle("Amenities & Clubhouse"),
+    title: serpTitle("Heritage Stonebridge Clubhouse & Amenities"),
     description:
-      "8,000 sq. ft. clubhouse, fitness center, pools, pickleball, bocce, and trails at Heritage at Stonebridge — Summerlin's Lennar 55+ community.",
+      "8,000 sq. ft. clubhouse, fitness, pools, six pickleball courts, and bocce at Heritage at Stonebridge — Lennar 55+ in Summerlin West. Call (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "Amenities", url: "/amenities" }),
   badge: "Resort-Style 55+ Amenities",
-  h1: "Heritage at Stonebridge Amenities",
+  h1: "Heritage at Stonebridge Clubhouse & Amenities",
   subtitle: `An ${HERITAGE_COMMUNITY.clubhouseSqFt.toLocaleString()} sq. ft. clubhouse anchors fitness, aquatics, and social life in Summerlin West.`,
   lastUpdated: "June 2026",
   sections: [
@@ -144,14 +145,14 @@ export const amenitiesPage: HeritagePageContent = {
 export const floorPlansPage: HeritagePageContent = {
   slug: "/floor-plans",
   metadata: {
-    title: baseTitle("Floor Plans & Home Collections"),
+    title: serpTitle("Lennar Floor Plans at Heritage Stonebridge"),
     description:
-      "Nine Lennar floor plans from 1,232–2,873 sq. ft. at Heritage at Stonebridge. 2–4 beds, smart-home features, optional RV garage.",
+      "Nine single-story Lennar plans (1,232–2,873 sq. ft.): Cromwell, Stirling, and Evander. RV garage on select Evander homes. Not Sandpiper or Mockingbird.",
   },
   breadcrumbs: crumbs({ name: "Floor Plans", url: "/floor-plans" }),
   h1: "Heritage at Stonebridge Floor Plans",
-  subtitle: `${HERITAGE_COMMUNITY.floorPlanCount} plans in ${HERITAGE_COMMUNITY.collections} Lennar collections — single-story and two-story options for 55+ buyers.`,
-  lastUpdated: "June 2026",
+  subtitle: `${HERITAGE_COMMUNITY.floorPlanCount} single-story plans in the ${HERITAGE_COMMUNITY.collectionNames.join(", ")} collections — not Lennar Sandpiper or Mockingbird.`,
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "stats",
@@ -164,23 +165,56 @@ export const floorPlansPage: HeritagePageContent = {
       ],
     },
     {
+      type: "grid",
+      heading: "Cromwell, Stirling & Evander Collections",
+      cards: [
+        {
+          title: "Cromwell",
+          items: [
+            ...HERITAGE_COMMUNITY.plansByCollection.Cromwell,
+            "Most compact plans",
+          ],
+        },
+        {
+          title: "Stirling",
+          items: [
+            ...HERITAGE_COMMUNITY.plansByCollection.Stirling,
+            "Mid-size single-story",
+          ],
+        },
+        {
+          title: "Evander",
+          items: [
+            ...HERITAGE_COMMUNITY.plansByCollection.Evander,
+            "Largest plans; RV garage on select homes",
+          ],
+        },
+      ],
+    },
+    {
       type: "prose",
       heading: "Lennar Everything's Included",
       paragraphs: [
         "Every Heritage at Stonebridge home ships with Lennar's Everything's Included package: quartz countertops, stainless steel appliances, raised-panel cabinetry, and smart-home automation — not costly à la carte upgrades.",
-        "Collections span attached and detached single-family layouts. Select plans include RV garages for buyers who want golf carts, boats, or extra storage without leaving the community.",
-        "For current availability, elevations, and lot premiums, search live MLS inventory or request a curated list from Dr. Jan Duffy.",
+        "All nine Heritage plans are single-story. Select Evander homes include an RV garage for extra storage without leaving the community.",
+        "Sandpiper and Mockingbird are other Lennar collections in Summerlin West — they are not Heritage at Stonebridge floor plans. For current availability, elevations, and lot premiums, search live MLS inventory or request a curated list from Dr. Jan Duffy.",
       ],
     },
   ],
+  faqs: HERITAGE_FAQS.filter(
+    (faq) =>
+      faq.question.includes("Sandpiper") ||
+      faq.question.includes("Stonebridge Park") ||
+      faq.question.includes("What is Heritage"),
+  ),
 };
 
 export const hoaFeesPage: HeritagePageContent = {
   slug: "/hoa-fees",
   metadata: {
-    title: baseTitle("HOA Fees & Assessments"),
+    title: serpTitle("Heritage at Stonebridge HOA Fees | Summerlin 55+"),
     description:
-      "Understand HOA costs at Heritage at Stonebridge — what's covered, how fees compare to larger 55+ communities, and questions to ask before you buy.",
+      "HOA at Heritage at Stonebridge typically falls in the low-to-mid $100s–$200s — confirm current dues. Compare carrying costs vs Sun City and Trilogy. Call (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "HOA & Fees", url: "/hoa-fees" }),
   h1: "HOA Fees at Heritage at Stonebridge",
@@ -202,7 +236,8 @@ export const hoaFeesPage: HeritagePageContent = {
       items: [
         {
           title: "Request resale package",
-          description: "Review CC&Rs, budget, reserves, and any pending special assessments.",
+          description:
+            "Review CC&Rs, budget, reserves, and any pending special assessments.",
         },
         {
           title: "Compare total carrying cost",
@@ -210,11 +245,13 @@ export const hoaFeesPage: HeritagePageContent = {
         },
         {
           title: "Confirm age-restriction compliance",
-          description: "Verify household meets 55+ occupancy rules before closing.",
+          description:
+            "Verify household meets 55+ occupancy rules before closing.",
         },
         {
           title: "Ask about gate and amenity hours",
-          description: "Align expectations for visitors, rentals, and clubhouse access.",
+          description:
+            "Align expectations for visitors, rentals, and clubhouse access.",
         },
       ],
     },
@@ -224,13 +261,14 @@ export const hoaFeesPage: HeritagePageContent = {
 export const locationPage: HeritagePageContent = {
   slug: "/location",
   metadata: {
-    title: baseTitle("Location & Summerlin Map"),
+    title: serpTitle("Heritage at Stonebridge Location | Summerlin 89138"),
     description:
-      "Heritage at Stonebridge in Summerlin West (89138) — near Downtown Summerlin, Red Rock Canyon, TPC Las Vegas, and medical services.",
+      "Heritage at Stonebridge sits in Summerlin West, Las Vegas 89138 — minutes from Downtown Summerlin and Red Rock Canyon. Map, nearby services, and tours: (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "Location", url: "/location" }),
   h1: "Heritage at Stonebridge Location",
-  subtitle: "Northwest Las Vegas in Summerlin West — zip code 89138 with mountain views and city convenience.",
+  subtitle:
+    "Northwest Las Vegas in Summerlin West — zip code 89138 with mountain views and city convenience.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -239,7 +277,9 @@ export const locationPage: HeritagePageContent = {
       cards: [
         {
           title: "Downtown Summerlin",
-          items: ["Shopping, dining, and entertainment minutes from the community gate."],
+          items: [
+            "Shopping, dining, and entertainment minutes from the community gate.",
+          ],
         },
         {
           title: "Red Rock Canyon",
@@ -247,7 +287,9 @@ export const locationPage: HeritagePageContent = {
         },
         {
           title: "Golf & Recreation",
-          items: ["TPC Las Vegas and pay-as-you-play courses without mandatory golf HOA."],
+          items: [
+            "TPC Las Vegas and pay-as-you-play courses without mandatory golf HOA.",
+          ],
         },
       ],
     },
@@ -265,13 +307,14 @@ export const locationPage: HeritagePageContent = {
 export const buyingGuidePage: HeritagePageContent = {
   slug: "/buying-guide",
   metadata: {
-    title: baseTitle("Buying Guide"),
+    title: serpTitle("Buy a Heritage at Stonebridge Home | Summerlin 55+"),
     description:
-      "Step-by-step guide to buying in Heritage at Stonebridge — financing, HOA review, tours, and Summerlin 55+ market timing.",
+      "How to buy in Heritage at Stonebridge: MLS search, guard-gate tours, HOA due diligence, and offer timing in Summerlin West. Call Dr. Jan Duffy at (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "Buying Guide", url: "/buying-guide" }),
   h1: "Buying in Heritage at Stonebridge",
-  subtitle: "A focused playbook for 55+ buyers comparing guard-gated Summerlin communities.",
+  subtitle:
+    "A focused playbook for 55+ buyers comparing guard-gated Summerlin communities.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -295,7 +338,8 @@ export const buyingGuidePage: HeritagePageContent = {
         },
         {
           title: "4. Complete HOA due diligence",
-          description: "Read governing documents and confirm no surprises in reserves or litigation.",
+          description:
+            "Read governing documents and confirm no surprises in reserves or litigation.",
         },
         {
           title: "5. Make a competitive offer",
@@ -320,13 +364,14 @@ export const buyingGuidePage: HeritagePageContent = {
 export const sellingGuidePage: HeritagePageContent = {
   slug: "/selling-guide",
   metadata: {
-    title: baseTitle("Selling Guide"),
+    title: serpTitle("Sell Your Heritage at Stonebridge Home"),
     description:
-      "Sell your Heritage at Stonebridge home with hyperlocal pricing, staging for 55+ buyers, and Berkshire Hathaway marketing reach.",
+      "Sell a Heritage at Stonebridge Lennar home in 89138 with hyperlocal comps, 55+ buyer staging, and BHHS marketing. Call Dr. Jan Duffy at (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "Selling Guide", url: "/selling-guide" }),
   h1: "Selling in Heritage at Stonebridge",
-  subtitle: "Position your Lennar home against newer Summerlin 55+ inventory and established resale competitors.",
+  subtitle:
+    "Position your Lennar home against newer Summerlin 55+ inventory and established resale competitors.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -352,13 +397,14 @@ export const sellingGuidePage: HeritagePageContent = {
 export const downsizingPage: HeritagePageContent = {
   slug: "/downsizing",
   metadata: {
-    title: baseTitle("Downsizing to 55+ Living"),
+    title: serpTitle("Downsizing to Heritage Stonebridge | Summerlin 55+"),
     description:
-      "Downsize into Heritage at Stonebridge — rightsizing floor plans, HOA vs. maintenance trade-offs, and timing your Summerlin move.",
+      "Downsize into single-story Lennar homes at Heritage at Stonebridge (89138). Compare HOA vs. yard work and plan your Summerlin 55+ move. Call (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "Downsizing", url: "/downsizing" }),
   h1: "Downsizing to Heritage at Stonebridge",
-  subtitle: "Trade maintenance-heavy homes for guard-gated 55+ living without leaving Summerlin's top amenities.",
+  subtitle:
+    "Trade maintenance-heavy homes for guard-gated 55+ living without leaving Summerlin's top amenities.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -375,15 +421,18 @@ export const downsizingPage: HeritagePageContent = {
       items: [
         {
           title: "Inventory what you will keep",
-          description: "Garage and RV options on select plans matter for hobbies and travel gear.",
+          description:
+            "Garage and RV options on select plans matter for hobbies and travel gear.",
         },
         {
           title: "Model monthly carrying costs",
-          description: "Compare HOA + utilities against your current property tax and upkeep.",
+          description:
+            "Compare HOA + utilities against your current property tax and upkeep.",
         },
         {
           title: "Plan a staggered move",
-          description: "Coordinate listing, temporary housing, and gate access for movers.",
+          description:
+            "Coordinate listing, temporary housing, and gate access for movers.",
         },
       ],
     },
@@ -393,13 +442,17 @@ export const downsizingPage: HeritagePageContent = {
 export const vsSunCityPage: HeritagePageContent = {
   slug: "/vs-sun-city-summerlin",
   metadata: {
-    title: baseTitle("vs Sun City Summerlin"),
+    title: serpTitle("Heritage at Stonebridge vs Sun City Summerlin"),
     description:
-      "Heritage at Stonebridge vs Sun City Summerlin — guard-gated Lennar new build vs established mega 55+ with golf. Compare HOA, scale, and lifestyle.",
+      "421-home Lennar guard-gated community vs 7,000+ home Sun City Summerlin. Compare golf HOA, scale, and clubhouse lifestyle. Tours: (702) 500-1942.",
   },
-  breadcrumbs: crumbs({ name: "vs Sun City Summerlin", url: "/vs-sun-city-summerlin" }),
+  breadcrumbs: crumbs({
+    name: "vs Sun City Summerlin",
+    url: "/vs-sun-city-summerlin",
+  }),
   h1: "Heritage at Stonebridge vs Sun City Summerlin",
-  subtitle: "Boutique guard-gated Lennar community vs. Las Vegas's largest 55+ neighborhood.",
+  subtitle:
+    "Boutique guard-gated Lennar community vs. Las Vegas's largest 55+ neighborhood.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -448,13 +501,17 @@ export const vsSunCityPage: HeritagePageContent = {
 export const vsTrilogyPage: HeritagePageContent = {
   slug: "/vs-trilogy-summerlin",
   metadata: {
-    title: baseTitle("vs Trilogy Summerlin"),
+    title: serpTitle("Heritage at Stonebridge vs Trilogy in Summerlin"),
     description:
-      "Compare Heritage at Stonebridge and Trilogy Summerlin — two Summerlin West 55+ options with different builders, amenities, and price points.",
+      "Lennar guard-gated Heritage vs Shea Homes Trilogy in Summerlin. Compare clubhouse scale, HOA, and 55+ lifestyle before you tour. Call (702) 500-1942.",
   },
-  breadcrumbs: crumbs({ name: "vs Trilogy Summerlin", url: "/vs-trilogy-summerlin" }),
+  breadcrumbs: crumbs({
+    name: "vs Trilogy Summerlin",
+    url: "/vs-trilogy-summerlin",
+  }),
   h1: "Heritage at Stonebridge vs Trilogy Summerlin",
-  subtitle: "Lennar guard-gated living compared to Shea Homes' resort-style Trilogy at the top of Summerlin.",
+  subtitle:
+    "Lennar guard-gated living compared to Shea Homes' resort-style Trilogy at the top of Summerlin.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -490,14 +547,15 @@ export const vsTrilogyPage: HeritagePageContent = {
 export const lifestylePage: HeritagePageContent = {
   slug: "/lifestyle",
   metadata: {
-    title: baseTitle("55+ Active Adult Lifestyle"),
+    title: serpTitle("Heritage Stonebridge Lifestyle | Clubhouse & Pickleball"),
     description:
-      "Pickleball, fitness, social clubs, and lock-and-leave travel lifestyle at Heritage at Stonebridge in Summerlin.",
+      "Clubhouse, pickleball, fitness, and lock-and-leave 55+ living at Heritage at Stonebridge in Summerlin West. See the daily rhythm. Call (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "55+ Lifestyle", url: "/lifestyle" }),
-  h1: "Active Adult Lifestyle at Heritage",
-  subtitle: "Fitness, pickleball, and neighborly scale — without giving up Summerlin's retail and outdoor access.",
-  lastUpdated: "June 2026",
+  h1: "Clubhouse Lifestyle at Heritage at Stonebridge",
+  subtitle:
+    "Fitness, pickleball, and a 421-home scale — without giving up Downtown Summerlin retail and Red Rock access.",
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "prose",
@@ -513,11 +571,14 @@ export const lifestylePage: HeritagePageContent = {
 export const guardGatedPage: HeritagePageContent = {
   slug: "/guard-gated-living",
   metadata: {
-    title: baseTitle("Guard-Gated 55+ Security"),
+    title: serpTitle("Guard-Gated Living at Heritage Stonebridge"),
     description:
-      "Staff guard-gated entry, visitor policies, and privacy benefits at Heritage at Stonebridge — Summerlin's Lennar 55+ community.",
+      "Staff guard-gated entry at Heritage at Stonebridge in Summerlin West — visitor verification, not a shared keypad. Tour with Dr. Jan Duffy: (702) 500-1942.",
   },
-  breadcrumbs: crumbs({ name: "Guard-Gated Living", url: "/guard-gated-living" }),
+  breadcrumbs: crumbs({
+    name: "Guard-Gated Living",
+    url: "/guard-gated-living",
+  }),
   badge: "24/7 Staffed Gate",
   h1: "Guard-Gated Living at Heritage",
   subtitle: HERITAGE_COMMUNITY.security,
@@ -529,15 +590,18 @@ export const guardGatedPage: HeritagePageContent = {
       items: [
         {
           title: "Manned entry",
-          description: "Staff verifies visitors instead of sharing a community-wide keypad.",
+          description:
+            "Staff verifies visitors instead of sharing a community-wide keypad.",
         },
         {
           title: "Controlled access",
-          description: "Delivery and guest flows follow HOA procedures — ask for current policy.",
+          description:
+            "Delivery and guest flows follow HOA procedures — ask for current policy.",
         },
         {
           title: "Neighborhood scale",
-          description: "421 homes means fewer through-traffic patterns than open Summerlin streets.",
+          description:
+            "421 homes means fewer through-traffic patterns than open Summerlin streets.",
         },
       ],
     },
@@ -547,13 +611,17 @@ export const guardGatedPage: HeritagePageContent = {
 export const downtownSummerlinPage: HeritagePageContent = {
   slug: "/downtown-summerlin",
   metadata: {
-    title: baseTitle("Near Downtown Summerlin"),
+    title: serpTitle("Homes Near Downtown Summerlin | Heritage Stonebridge"),
     description:
-      "Live minutes from Downtown Summerlin shopping, dining, and events while enjoying guard-gated 55+ privacy at Heritage at Stonebridge.",
+      "Heritage at Stonebridge 55+ homes sit minutes from Downtown Summerlin shops and dining — with staff guard-gated living in 89138. Call (702) 500-1942.",
   },
-  breadcrumbs: crumbs({ name: "Downtown Summerlin", url: "/downtown-summerlin" }),
+  breadcrumbs: crumbs({
+    name: "Downtown Summerlin",
+    url: "/downtown-summerlin",
+  }),
   h1: "Heritage & Downtown Summerlin",
-  subtitle: "125+ shops, restaurants, and entertainment minutes from your guard-gated front gate.",
+  subtitle:
+    "125+ shops, restaurants, and entertainment minutes from your guard-gated front gate.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -570,14 +638,18 @@ export const downtownSummerlinPage: HeritagePageContent = {
 export const summerlin55Page: HeritagePageContent = {
   slug: "/summerlin-55-plus",
   metadata: {
-    title: baseTitle("Summerlin 55+ Communities Guide"),
+    title: serpTitle("Summerlin 55+ Communities | Heritage, Sun City, Trilogy"),
     description:
-      "Compare Heritage at Stonebridge, Sun City Summerlin, Trilogy, and Regency — hyperlocal guide to Summerlin active adult real estate.",
+      "Compare Summerlin 55+ communities: Heritage at Stonebridge (Lennar, guard-gated, 89138), Sun City Summerlin, and Trilogy. Same-day tours: (702) 500-1942.",
   },
-  breadcrumbs: crumbs({ name: "Summerlin 55+ Guide", url: "/summerlin-55-plus" }),
-  h1: "Summerlin 55+ Communities Guide",
-  subtitle: "How Heritage at Stonebridge fits among Summerlin's active adult neighborhoods.",
-  lastUpdated: "June 2026",
+  breadcrumbs: crumbs({
+    name: "Summerlin 55+ Guide",
+    url: "/summerlin-55-plus",
+  }),
+  h1: "Summerlin 55+ Communities — Heritage, Sun City & Trilogy",
+  subtitle:
+    "How Heritage at Stonebridge (Lennar, 89138) fits among Summerlin's active adult neighborhoods.",
+  lastUpdated: "August 2026",
   sections: [
     {
       type: "links",
@@ -599,14 +671,23 @@ export const summerlin55Page: HeritagePageContent = {
       ],
     },
   ],
+  faqs: [
+    {
+      question:
+        "What is the difference between 55+ and 55 and over communities in Summerlin?",
+      answer:
+        "They refer to the same age-qualified active adult housing. Heritage at Stonebridge, Sun City Summerlin, and Trilogy Summerlin all require at least one resident 55 or better under HOPA rules. Heritage is Lennar's boutique guard-gated option in zip 89138.",
+    },
+    ...HERITAGE_FAQS.filter((faq) => faq.question.includes("Sandpiper")),
+  ],
 };
 
 export const marketUpdatePage: HeritagePageContent = {
   slug: "/market-update",
   metadata: {
-    title: baseTitle("Market Update"),
+    title: serpTitle("Heritage Stonebridge Market Update | Summerlin 55+"),
     description:
-      "Heritage at Stonebridge and Summerlin 55+ market trends — pricing, days on market, and buyer demand in 89138.",
+      "Heritage at Stonebridge and Summerlin West 55+ market snapshot — inventory pace and demand in 89138. Verify figures on live MLS. Call (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "Market Update", url: "/market-update" }),
   h1: "Heritage at Stonebridge Market Update",
@@ -670,13 +751,14 @@ export const aboutPage: HeritagePageContent = {
 export const faqPage: HeritagePageContent = {
   slug: "/faq",
   metadata: {
-    title: baseTitle("FAQ"),
+    title: serpTitle("Heritage at Stonebridge FAQ | Age, HOA & Guard Gate"),
     description:
-      "Frequently asked questions about Heritage at Stonebridge — age rules, HOA, amenities, pricing, and tours with Dr. Jan Duffy.",
+      "FAQ for Heritage at Stonebridge: 55+ age rules, HOA, clubhouse, Sandpiper vs Heritage plans, and tours with Dr. Jan Duffy. Call (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "FAQ", url: "/faq" }),
   h1: "Heritage at Stonebridge FAQ",
-  subtitle: "Answers to common buyer and seller questions about Summerlin's Lennar 55+ guard-gated community.",
+  subtitle:
+    "Answers to common buyer and seller questions about Summerlin's Lennar 55+ guard-gated community.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -708,13 +790,14 @@ export const faqPage: HeritagePageContent = {
 export const homesForSalePage: HeritagePageContent = {
   slug: "/homes-for-sale",
   metadata: {
-    title: baseTitle("MLS Listings — Heritage Stonebridge Homes for Sale"),
+    title: serpTitle("Heritage at Stonebridge Homes for Sale | Summerlin"),
     description:
-      "Live MLS search for Heritage at Stonebridge 55+ homes in Summerlin 89138. Guard-gated Lennar resales, tours, and listing alerts with Dr. Jan Duffy, BHHS.",
+      "Live MLS listings for Heritage at Stonebridge 55+ homes in Summerlin 89138. Guard-gated Lennar resales and listing alerts with Dr. Jan Duffy. Call (702) 500-1942.",
   },
   breadcrumbs: crumbs({ name: "Homes for Sale", url: "/homes-for-sale" }),
   h1: "Heritage at Stonebridge Homes for Sale",
-  subtitle: "Live MLS search for 55+ guard-gated homes in Summerlin West — updated as new listings hit market.",
+  subtitle:
+    "Live MLS search for 55+ guard-gated homes in Summerlin West — updated as new listings hit market.",
   lastUpdated: "June 2026",
   sections: [
     {
@@ -727,3 +810,25 @@ export const homesForSalePage: HeritagePageContent = {
     },
   ],
 };
+
+/** Marketing pages with unique SERP titles — used by title-length tests */
+export const HERITAGE_MARKETING_PAGES: HeritagePageContent[] = [
+  communityPage,
+  amenitiesPage,
+  floorPlansPage,
+  hoaFeesPage,
+  locationPage,
+  buyingGuidePage,
+  sellingGuidePage,
+  downsizingPage,
+  vsSunCityPage,
+  vsTrilogyPage,
+  lifestylePage,
+  guardGatedPage,
+  downtownSummerlinPage,
+  summerlin55Page,
+  marketUpdatePage,
+  aboutPage,
+  faqPage,
+  homesForSalePage,
+];

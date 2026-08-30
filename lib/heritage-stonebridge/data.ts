@@ -18,6 +18,12 @@ export const HERITAGE_COMMUNITY = {
   yearCompleted: 2025,
   homeCount: 421,
   collections: 3,
+  collectionNames: ["Cromwell", "Stirling", "Evander"] as const,
+  plansByCollection: {
+    Cromwell: ["Carson", "Claremont", "Connery"],
+    Stirling: ["Sawyer", "Sloan", "Sidney"],
+    Evander: ["Ethan", "Elizabeth", "Everly"],
+  } as const,
   floorPlanCount: 9,
   sqFtRange: "1,232 – 2,873",
   bedroomRange: "2 – 4",
@@ -78,5 +84,17 @@ export const HERITAGE_FAQS = [
     question: "Who helps buyers and sellers in Heritage at Stonebridge?",
     answer:
       "Dr. Jan Duffy, REALTOR® (License S.0197614.LLC) with Berkshire Hathaway HomeServices Nevada Properties, specializes in Heritage at Stonebridge and Summerlin 55+ moves. Call (702) 500-1942 or schedule a consultation online.",
+  },
+  {
+    question:
+      "Is Heritage at Stonebridge the same as Lennar Sandpiper or Mockingbird?",
+    answer:
+      "No. Sandpiper and Mockingbird are other Lennar collections in Summerlin West — not this 55+ community. Heritage at Stonebridge plans are Cromwell (Carson, Claremont, Connery), Stirling (Sawyer, Sloan, Sidney), and Evander (Ethan, Elizabeth, Everly). Select Evander plans include an RV garage. Heritage is zip 89138.",
+  },
+  {
+    question:
+      "Is Heritage at Stonebridge the same as Stonebridge Park or Heritage at Black Mountain Ranch?",
+    answer:
+      "No. Stonebridge is a Summerlin village; Heritage at Stonebridge is Lennar's 55+ guard-gated neighborhood inside it (89138). Heritage at Black Mountain Ranch is a different community. Addresses in zip 89135, including Stardust Drive, are not Heritage at Stonebridge.",
   },
 ] as const;

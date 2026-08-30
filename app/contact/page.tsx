@@ -20,7 +20,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: `Contact Heritage at Stonebridge | Summerlin 55+ Tours | Dr. Jan Duffy`,
+  title: `Contact Dr. Jan Duffy | Heritage Stonebridge Tours`,
   description: `Contact Dr. Jan Duffy for Heritage at Stonebridge tours and Summerlin 55+ buyer representation. Crossbridge Dr, Las Vegas, NV 89138. Call ${SITE_CONTACT.phone.display}.`,
   path: "/contact",
   openGraphTitle: `Contact Heritage at Stonebridge | Dr. Jan Duffy`,

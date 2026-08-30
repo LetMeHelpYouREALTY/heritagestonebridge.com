@@ -33,12 +33,12 @@ import { getGbpAggregateRating } from "@/lib/gbp-ratings";
 import { buildWriteReviewUrl } from "@/lib/reviews";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: `${businessInfo.name} | Google Business Profile`,
-  description: `${businessInfo.name} — Crossbridge Dr, Las Vegas, NV 89138. Guard-gated Heritage Stonebridge 55+ real estate with Dr. Jan Duffy. Call ${businessInfo.phone.display}.`,
+  title: "Google Reviews | Dr. Jan Duffy Heritage Stonebridge",
+  description: `Google reviews, map, and hours for Dr. Jan Duffy at Heritage at Stonebridge. Crossbridge Dr, Las Vegas, NV 89138. Call ${businessInfo.phone.display}.`,
   path: "/google-business",
-  openGraphTitle: businessInfo.name,
+  openGraphTitle: "Google Reviews | Dr. Jan Duffy Heritage Stonebridge",
   openGraphDescription:
-    "Trusted Las Vegas REALTOR® serving Heritage at Stonebridge and Summerlin 55+ buyers and sellers.",
+    "Read reviews and find the map for Dr. Jan Duffy at Heritage at Stonebridge, Summerlin 89138.",
 });
 
 export default function GoogleBusinessPage() {
@@ -62,8 +62,8 @@ export default function GoogleBusinessPage() {
           {/* Hero - NAP Prominent */}
           <PageHero
             badge="Berkshire Hathaway HomeServices"
-            title="Dr. Jan Duffy"
-            subtitle={`Dr. Jan Duffy is a REALTOR® (License ${businessInfo.license}) with Berkshire Hathaway HomeServices Nevada Properties, serving Heritage at Stonebridge and Summerlin 55+ buyers and sellers in Las Vegas, NV 89138.`}
+            title="Google Reviews & Business Profile"
+            subtitle={`Leave a Google review or find hours and the map for Dr. Jan Duffy (License ${businessInfo.license}) at Heritage at Stonebridge, Crossbridge Dr, Las Vegas, NV 89138.`}
             priority
           />
 
