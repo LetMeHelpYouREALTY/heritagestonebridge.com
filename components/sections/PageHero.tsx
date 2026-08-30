@@ -1,5 +1,7 @@
 import HeroBackground from "@/components/sections/HeroBackground";
+import { cloudflareDeliveryUrl } from "@/lib/cloudflare-images";
 import { getHeroImageForHeading } from "@/lib/site-images";
+import { getSiteUrl } from "@/lib/site-url";
 
 type PageHeroProps = {
   /** Page H1. */
@@ -34,9 +36,28 @@ export default function PageHero({
   const matched = getHeroImageForHeading(title);
   const src = imageSrc ?? matched.src;
   const alt = imageAlt ?? matched.alt;
+  const delivered = cloudflareDeliveryUrl(src, "desktop");
+  const contentUrl = /^https?:\/\//i.test(delivered)
+    ? delivered
+    : `${getSiteUrl()}${delivered.startsWith("/") ? delivered : `/${delivered}`}`;
+  const imageObject = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    contentUrl,
+    url: contentUrl,
+    name: title,
+    description: alt,
+    width: 1920,
+    height: 1080,
+    encodingFormat: "image/webp",
+  };
 
   return (
     <section className="relative mb-16 flex min-h-[360px] items-center overflow-hidden rounded-2xl bg-slate-900 text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObject) }}
+      />
       <div className="absolute inset-0" aria-hidden="true">
         <HeroBackground src={src} alt={alt} priority={priority} />
       </div>

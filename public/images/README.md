@@ -23,6 +23,19 @@ Custom IDs match the git path without extension:
 
 `/images/hero/hero-heritage-stonebridge.webp` → `images/hero/hero-heritage-stonebridge`
 
+New heading-matched section/neighborhood photos (git originals):
+
+- `sections/section-bhhs-office.webp`
+- `sections/section-valuation.webp`
+- `sections/section-new-construction.webp`
+- `sections/section-relocation.webp`
+- `sections/section-office-hours.webp`
+- `sections/section-first-time.webp`
+- `neighborhoods/neighborhood-inspirada.webp`
+- `neighborhoods/neighborhood-green-valley.webp`
+
+Every H1/H2 photograph uses an SEO `alt` of `{heading} — {scene and location}` and heroes emit ImageObject JSON-LD.
+
 Upload (needs `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`):
 
 ```bash

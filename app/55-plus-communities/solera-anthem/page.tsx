@@ -74,6 +74,7 @@ export default function SoleraAnthemPage() {
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
+            <SectionImage heading="Solera at Anthem at a Glance" />
             <h2 className="text-2xl font-bold mb-8 text-center">
               Solera at Anthem at a Glance
             </h2>
@@ -107,16 +108,16 @@ export default function SoleraAnthemPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
               <SectionImage heading="About Solera at Anthem" />
-                <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Solera at Anthem
               </h2>
               <p>
                 <strong>Solera at Anthem</strong> offers something increasingly
-                rare in Las Vegas 55+ living—a genuinely intimate community where
-                neighbors become friends. With approximately 1,200 homes, Solera
-                is significantly smaller than Sun City's 7,000+ home developments,
-                creating a close-knit atmosphere that larger communities simply
-                can't replicate.
+                rare in Las Vegas 55+ living—a genuinely intimate community
+                where neighbors become friends. With approximately 1,200 homes,
+                Solera is significantly smaller than Sun City's 7,000+ home
+                developments, creating a close-knit atmosphere that larger
+                communities simply can't replicate.
               </p>
               <p>
                 Built by Del Webb from 2002-2006, Solera features guard-gated
@@ -127,7 +128,9 @@ export default function SoleraAnthemPage() {
                 community demographic.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
+                <strong>
+                  Berkshire Hathaway HomeServices Nevada Properties
+                </strong>{" "}
                 helps buyers who value community over amenity overload. Dr. Jan
                 Duffy understands why some buyers prefer Solera's intimate scale
                 and all-55+ requirement to larger developments.
@@ -176,6 +179,7 @@ export default function SoleraAnthemPage() {
 
           {/* Amenities */}
           <section className="mb-16 max-w-5xl mx-auto">
+            <SectionImage heading="Community Amenities" />
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Community Amenities
             </h2>
@@ -228,7 +232,7 @@ export default function SoleraAnthemPage() {
           {/* Henderson Location */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <SectionImage heading="Henderson: America's Safest Large City" />
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Henderson: America's Safest Large City
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -241,8 +245,8 @@ export default function SoleraAnthemPage() {
                     </h3>
                     <p className="text-slate-600 text-sm">
                       Henderson consistently ranks as one of the safest large
-                      cities in America. Double security: Henderson's safety plus
-                      Solera's guard gate.
+                      cities in America. Double security: Henderson's safety
+                      plus Solera's guard gate.
                     </p>
                   </div>
                 </div>
@@ -294,6 +298,7 @@ export default function SoleraAnthemPage() {
 
           {/* Why Choose Solera */}
           <section className="mb-16 max-w-4xl mx-auto">
+            <SectionImage heading="Why Buyers Choose Solera at Anthem" />
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Why Buyers Choose Solera at Anthem
             </h2>
@@ -316,7 +321,8 @@ export default function SoleraAnthemPage() {
                     All residents 55+—no exceptions
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    Consistent community demographic with shared life experiences
+                    Consistent community demographic with shared life
+                    experiences
                   </p>
                 </div>
               </div>
@@ -327,8 +333,8 @@ export default function SoleraAnthemPage() {
                     Guard-gated in America's safest city
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    Double layer of security: Henderson's safety record plus 24/7
-                    guard gate
+                    Double layer of security: Henderson's safety record plus
+                    24/7 guard gate
                   </p>
                 </div>
               </div>
@@ -339,8 +345,8 @@ export default function SoleraAnthemPage() {
                     Lower HOA than mega-communities
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    Pay for what you use, not massive golf courses and rec centers
-                    you may not need
+                    Pay for what you use, not massive golf courses and rec
+                    centers you may not need
                   </p>
                 </div>
               </div>
@@ -360,19 +366,22 @@ export default function SoleraAnthemPage() {
                 over endless amenities."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada
+                Properties
               </cite>
             </div>
           </section>
 
           {/* CTA */}
           <section className="text-center bg-teal-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
+            <SectionImage heading="Experience Intimate 55+ Living" />
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Experience Intimate 55+ Living
             </h2>
             <p className="text-xl text-teal-100 mb-8">
               Discover why Solera at Anthem offers the close-knit community
-              experience larger developments can't match. Tour with Dr. Jan Duffy.
+              experience larger developments can't match. Tour with Dr. Jan
+              Duffy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a

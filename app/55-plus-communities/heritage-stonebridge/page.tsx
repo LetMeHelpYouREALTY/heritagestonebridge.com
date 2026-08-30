@@ -74,6 +74,7 @@ export default function HeritageAtStonebridgePage() {
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
+            <SectionImage heading="Heritage at Stonebridge at a Glance" />
             <h2 className="text-2xl font-bold mb-8 text-center">
               Heritage at Stonebridge at a Glance
             </h2>
@@ -107,26 +108,29 @@ export default function HeritageAtStonebridgePage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
               <SectionImage heading="About Heritage at Stonebridge" />
-                <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Heritage at Stonebridge
               </h2>
               <p>
                 <strong>Heritage at Stonebridge</strong> offers what larger 55+
                 communities can't—a boutique, guard-gated experience in one of
-                Las Vegas's most desirable locations. With just over 1,100 homes,
-                this intimate community provides the security and exclusivity of
-                a private enclave while still offering resort-style amenities.
+                Las Vegas's most desirable locations. With just over 1,100
+                homes, this intimate community provides the security and
+                exclusivity of a private enclave while still offering
+                resort-style amenities.
               </p>
               <p>
                 The community's prime Summerlin location puts residents minutes
                 from Downtown Summerlin's world-class shopping, dining, and
                 entertainment, while Red Rock Canyon's hiking trails are a short
-                drive away. The TPC Las Vegas and several other championship golf
-                courses are nearby for residents who prefer to pay-as-you-play
-                rather than committing to a community course.
+                drive away. The TPC Las Vegas and several other championship
+                golf courses are nearby for residents who prefer to
+                pay-as-you-play rather than committing to a community course.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
+                <strong>
+                  Berkshire Hathaway HomeServices Nevada Properties
+                </strong>{" "}
                 helps buyers who value privacy and location over massive amenity
                 complexes. Dr. Jan Duffy understands why Heritage at Stonebridge
                 appeals to buyers seeking a more exclusive, intimate 55+
@@ -152,7 +156,9 @@ export default function HeritageAtStonebridgePage() {
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-white rounded-lg p-4 text-center">
-                      <div className="text-xl font-bold text-purple-600">24/7</div>
+                      <div className="text-xl font-bold text-purple-600">
+                        24/7
+                      </div>
                       <div className="text-sm text-slate-600">
                         Manned Guard Gate
                       </div>
@@ -181,6 +187,7 @@ export default function HeritageAtStonebridgePage() {
 
           {/* Amenities */}
           <section className="mb-16 max-w-5xl mx-auto">
+            <SectionImage heading="Community Amenities" />
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Community Amenities
             </h2>
@@ -201,7 +208,9 @@ export default function HeritageAtStonebridgePage() {
                 <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Dumbbell className="h-6 w-6 text-blue-600" />
                 </div>
-                <h3 className="font-bold text-slate-900 mb-2">Pool, Spa & Fitness</h3>
+                <h3 className="font-bold text-slate-900 mb-2">
+                  Pool, Spa & Fitness
+                </h3>
                 <ul className="text-slate-600 text-sm space-y-1">
                   <li>• Resort-style pool</li>
                   <li>• Relaxing spa</li>
@@ -213,7 +222,9 @@ export default function HeritageAtStonebridgePage() {
                 <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-green-600" />
                 </div>
-                <h3 className="font-bold text-slate-900 mb-2">Social Activities</h3>
+                <h3 className="font-bold text-slate-900 mb-2">
+                  Social Activities
+                </h3>
                 <ul className="text-slate-600 text-sm space-y-1">
                   <li>• Organized clubs</li>
                   <li>• Community events</li>
@@ -227,7 +238,7 @@ export default function HeritageAtStonebridgePage() {
           {/* Location Benefits */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <SectionImage heading="Premium Summerlin Location" />
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Premium Summerlin Location
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -281,8 +292,8 @@ export default function HeritageAtStonebridgePage() {
                       Central to Everything
                     </h3>
                     <p className="text-slate-600 text-sm">
-                      Easy access to the Strip, airport, hospitals, and all major
-                      Las Vegas attractions and services.
+                      Easy access to the Strip, airport, hospitals, and all
+                      major Las Vegas attractions and services.
                     </p>
                   </div>
                 </div>
@@ -292,6 +303,7 @@ export default function HeritageAtStonebridgePage() {
 
           {/* Why Choose Heritage */}
           <section className="mb-16 max-w-4xl mx-auto">
+            <SectionImage heading="Why Buyers Choose Heritage at Stonebridge" />
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Why Buyers Choose Heritage at Stonebridge
             </h2>
@@ -303,8 +315,8 @@ export default function HeritageAtStonebridgePage() {
                     True guard-gated security
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    24/7 manned gate with visitor verification—genuine privacy, not
-                    just a keypad
+                    24/7 manned gate with visitor verification—genuine privacy,
+                    not just a keypad
                   </p>
                 </div>
               </div>
@@ -315,8 +327,8 @@ export default function HeritageAtStonebridgePage() {
                     Boutique community feel
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    1,100+ homes means you know your neighbors—intimate atmosphere
-                    vs. massive 7,000+ home developments
+                    1,100+ homes means you know your neighbors—intimate
+                    atmosphere vs. massive 7,000+ home developments
                   </p>
                 </div>
               </div>
@@ -327,8 +339,8 @@ export default function HeritageAtStonebridgePage() {
                     Unbeatable Summerlin location
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    Downtown Summerlin, Red Rock Canyon, and top golf courses all
-                    minutes away
+                    Downtown Summerlin, Red Rock Canyon, and top golf courses
+                    all minutes away
                   </p>
                 </div>
               </div>
@@ -351,8 +363,8 @@ export default function HeritageAtStonebridgePage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Heritage at Stonebridge attracts buyers who want exclusivity and
-                privacy without the sprawl of larger 55+ communities. The
+                "Heritage at Stonebridge attracts buyers who want exclusivity
+                and privacy without the sprawl of larger 55+ communities. The
                 guard-gated security is genuine—not just a code anyone can get.
                 And the location in Summerlin is simply unbeatable. As a{" "}
                 <strong>Berkshire Hathaway HomeServices</strong> agent, I help
@@ -360,19 +372,21 @@ export default function HeritageAtStonebridgePage() {
                 fit here."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada
+                Properties
               </cite>
             </div>
           </section>
 
           {/* CTA */}
           <section className="text-center bg-purple-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
+            <SectionImage heading="Experience Guard-Gated 55+ Living" />
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Experience Guard-Gated 55+ Living
             </h2>
             <p className="text-xl text-purple-100 mb-8">
-              Discover why Heritage at Stonebridge offers the privacy and location
-              discerning buyers seek. Tour with Dr. Jan Duffy.
+              Discover why Heritage at Stonebridge offers the privacy and
+              location discerning buyers seek. Tour with Dr. Jan Duffy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a

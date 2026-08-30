@@ -99,6 +99,30 @@ export const SITE_IMAGES = {
     src: "/images/sections/section-consultation.webp",
     alt: "Real estate consultation with Las Vegas neighborhood maps and listings",
   },
+  bhhsOffice: {
+    src: "/images/sections/section-bhhs-office.webp",
+    alt: "Berkshire Hathaway HomeServices Nevada Properties office in the Las Vegas Valley",
+  },
+  valuation: {
+    src: "/images/sections/section-valuation.webp",
+    alt: "Comparative market analysis documents and MLS comps for a Summerlin home valuation",
+  },
+  newConstruction: {
+    src: "/images/sections/section-new-construction.webp",
+    alt: "New-construction single-story home finishing in Summerlin West with mountain views",
+  },
+  relocation: {
+    src: "/images/sections/section-relocation.webp",
+    alt: "Moving boxes in a bright Summerlin great room during a Las Vegas relocation",
+  },
+  officeHours: {
+    src: "/images/sections/section-office-hours.webp",
+    alt: "Real estate office lobby in Las Vegas used for buyer and seller appointments",
+  },
+  firstTime: {
+    src: "/images/sections/section-first-time.webp",
+    alt: "Single-story starter home in North Las Vegas with a desert mountain backdrop",
+  },
   bocce: {
     src: "/images/sections/section-bocce.webp",
     alt: "Bocce courts and picnic park at a Summerlin 55+ community",
@@ -110,6 +134,14 @@ export const SITE_IMAGES = {
   ridges: {
     src: "/images/neighborhoods/neighborhood-ridges.webp",
     alt: "Luxury custom estates in The Ridges Summerlin",
+  },
+  inspirada: {
+    src: "/images/neighborhoods/neighborhood-inspirada.webp",
+    alt: "Inspirada Henderson master-planned homes with McCullough Range views",
+  },
+  greenValley: {
+    src: "/images/neighborhoods/neighborhood-green-valley.webp",
+    alt: "Green Valley Henderson residential street with mature trees and tile-roof homes",
   },
   henderson: {
     src: "/images/neighborhoods/neighborhood-henderson.webp",
@@ -153,52 +185,148 @@ type HeadingRule = {
 
 /** More specific patterns first. */
 const HEADING_RULES: HeadingRule[] = [
-  { pattern: /heritage at stonebridge|heritage stonebridge/i, key: "heroHeritage" },
-  { pattern: /the ridges|ridges summerlin|ultimate address|discerning/i, key: "ridges" },
+  {
+    pattern: /heritage at stonebridge|heritage stonebridge/i,
+    key: "heroHeritage",
+  },
+  {
+    pattern: /the ridges|ridges summerlin|ultimate address|discerning/i,
+    key: "ridges",
+  },
   { pattern: /lake las vegas|del webb at lake|waterfront/i, key: "lake" },
   { pattern: /mountains.?edge|exploration peak/i, key: "mountainsEdge" },
-  { pattern: /skye canyon|centennial hills|northwest las vegas|north las vegas|aliante/i, key: "northwest" },
-  { pattern: /green valley|inspirada|henderson/i, key: "henderson" },
+  { pattern: /inspirada/i, key: "inspirada" },
+  { pattern: /green valley/i, key: "greenValley" },
+  {
+    pattern:
+      /skye canyon|centennial hills|northwest las vegas|north las vegas|aliante/i,
+    key: "northwest",
+  },
+  { pattern: /henderson/i, key: "henderson" },
   { pattern: /southern highlands/i, key: "golf" },
   { pattern: /red rock/i, key: "redRock" },
   { pattern: /downtown summerlin|shopping, dining|retail/i, key: "downtown" },
-  { pattern: /guard.?gat|security feature|manned entry|gated liv|gated communit/i, key: "guardGate" },
+  {
+    pattern:
+      /guard.?gat|security feature|manned entry|gated liv|gated communit/i,
+    key: "guardGate",
+  },
   { pattern: /pickleball/i, key: "pickleball" },
-  { pattern: /sun city|trilogy|solera|del webb|55\+|active adult|lifestyle/i, key: "heroLifestyle" },
+  {
+    pattern: /berkshire|bhhs|warren buffett|trusted name|by the numbers/i,
+    key: "bhhsOffice",
+  },
+  {
+    pattern: /valuation|zestimate|cma|home.?s worth|what.?s your|home value/i,
+    key: "valuation",
+  },
+  {
+    pattern: /new construction|builder incentive|new home builder/i,
+    key: "newConstruction",
+  },
+  {
+    pattern: /first.?time|stop renting|starter home|rent vs\.? buy/i,
+    key: "firstTime",
+  },
+  {
+    pattern:
+      /relocat|moving to|california vs|california equity|move-up|moving boxes/i,
+    key: "relocation",
+  },
+  {
+    pattern: /business hours|office location|google business|appointment/i,
+    key: "officeHours",
+  },
+  {
+    pattern: /sun city|trilogy|solera|del webb|55\+|active adult|lifestyle/i,
+    key: "heroLifestyle",
+  },
   { pattern: /bocce|picnic|outdoor recreation/i, key: "bocce" },
   { pattern: /clubhouse/i, key: "clubhouse" },
   { pattern: /fitness|wellness|aquatics|locker/i, key: "fitness" },
   { pattern: /pool|spa|amenit/i, key: "clubhouse" },
-  { pattern: /floor plan|kitchen|everything.?s included|interior|quartz|great room/i, key: "kitchen" },
+  {
+    pattern:
+      /floor plan|kitchen|everything.?s included|interior|quartz|great room/i,
+    key: "kitchen",
+  },
   { pattern: /plan overview|bedroom|garage option/i, key: "living" },
-  { pattern: /hoa|fees|landscap|due diligence|carrying cost/i, key: "landscaping" },
+  {
+    pattern: /hoa|fees|landscap|due diligence|carrying cost/i,
+    key: "landscaping",
+  },
   { pattern: /golf/i, key: "golf" },
   { pattern: /condo|high-rise|penthouse/i, key: "condo" },
   { pattern: /luxury|estate|macdonald/i, key: "heroLuxury" },
-  { pattern: /new construction|investment|investor/i, key: "heroInvestment" },
+  {
+    pattern: /investment|investor|1031|cap rate|rental yield/i,
+    key: "heroInvestment",
+  },
   { pattern: /summerlin/i, key: "heroCommunity" },
-  { pattern: /sell|valuation|worth|listing consultation|seller/i, key: "selling" },
-  { pattern: /buy|roadmap|first.?time|pre-approv|tour properties|buyer/i, key: "buying" },
-  { pattern: /market|pricing|cma|comparables|demand|insights|report/i, key: "heroSearch" },
-  { pattern: /relocat|california|move-up|divorce|probate/i, key: "consultation" },
-  { pattern: /contact|get in touch|office hours|schedule an appointment/i, key: "consultation" },
-  { pattern: /about dr|hyperlocal representation|why choose/i, key: "consultation" },
+  {
+    pattern: /sell|valuation|worth|listing consultation|seller/i,
+    key: "selling",
+  },
+  {
+    pattern: /buy|roadmap|first.?time|pre-approv|tour properties|buyer/i,
+    key: "buying",
+  },
+  {
+    pattern: /market|pricing|cma|comparables|demand|insights|report/i,
+    key: "heroSearch",
+  },
+  { pattern: /divorce|probate|sensitive transaction/i, key: "consultation" },
+  { pattern: /contact|get in touch/i, key: "consultation" },
+  {
+    pattern: /about dr|hyperlocal representation|why choose/i,
+    key: "consultation",
+  },
   { pattern: /location|nearby landmark|summerlin west|map/i, key: "downtown" },
   { pattern: /downsiz|rightsiz|simplify/i, key: "living" },
-  { pattern: /community|neighborhood|at a glance|why buyers|why heritage/i, key: "heroCommunity" },
+  {
+    pattern: /community|neighborhood|at a glance|why buyers|why heritage/i,
+    key: "heroCommunity",
+  },
   { pattern: /homes for sale|listings|search|mls/i, key: "heroSearch" },
   { pattern: /faq|question/i, key: "clubhouse" },
   { pattern: /las vegas/i, key: "heroSearch" },
-]
+];
 
-const SKIP_SECTION_IMAGE = /helpful resources|related tools|deep-dive guides|seller tools|work with dr|explore heritage|compare summerlin 55|related market/i;
+const SKIP_SECTION_IMAGE =
+  /helpful resources|related tools|deep-dive guides|seller tools|work with dr|explore heritage|compare summerlin 55|related market/i;
+
+function stripHeadingDecorators(heading: string): string {
+  return heading
+    .replace(/\s+/g, " ")
+    .replace(/\s*\|[^|]*$/u, "")
+    .trim();
+}
+
+/**
+ * Google-facing alt: heading keywords plus the photorealistic scene
+ * and location, so every H1/H2/H3 image is unique in search.
+ */
+export function seoImageAlt(heading: string, sceneAlt: string): string {
+  const headingPart = stripHeadingDecorators(heading);
+  if (!headingPart) return sceneAlt;
+  const head = headingPart.toLowerCase();
+  const scene = sceneAlt.toLowerCase();
+  if (scene.includes(head.slice(0, Math.min(24, head.length)))) {
+    return sceneAlt;
+  }
+  return `${headingPart} — ${sceneAlt}`;
+}
+
+function withHeadingAlt(heading: string, image: SiteImage): SiteImage {
+  return { src: image.src, alt: seoImageAlt(heading, image.alt) };
+}
 
 function matchHeading(heading: string): SiteImage | null {
   const text = heading.trim();
   if (!text) return null;
   for (const rule of HEADING_RULES) {
     if (rule.pattern.test(text)) {
-      return SITE_IMAGES[rule.key];
+      return withHeadingAlt(text, SITE_IMAGES[rule.key]);
     }
   }
   return null;
@@ -206,19 +334,23 @@ function matchHeading(heading: string): SiteImage | null {
 
 /** Hero photograph for a page H1. Falls back to the Heritage Stonebridge hero. */
 export function getHeroImageForHeading(heading: string): SiteImage {
-  return matchHeading(heading) ?? BEST_HERO_IMAGE;
+  return matchHeading(heading) ?? withHeadingAlt(heading, BEST_HERO_IMAGE);
 }
 
 /** Section photograph for an H2/H3. Returns null for navigation-only headings. */
 export function getSectionImageForHeading(heading: string): SiteImage | null {
   if (SKIP_SECTION_IMAGE.test(heading)) return null;
-  return matchHeading(heading) ?? SITE_IMAGES.heroCommunity;
+  return (
+    matchHeading(heading) ?? withHeadingAlt(heading, SITE_IMAGES.heroCommunity)
+  );
 }
 
 export function getCardImageForHeading(heading: string): SiteImage {
-  return matchHeading(heading) ?? SITE_IMAGES.heroCommunity;
+  return (
+    matchHeading(heading) ?? withHeadingAlt(heading, SITE_IMAGES.heroCommunity)
+  );
 }
 
 export function getNeighborhoodImage(name: string): SiteImage {
-  return matchHeading(name) ?? SITE_IMAGES.heroCommunity;
+  return matchHeading(name) ?? withHeadingAlt(name, SITE_IMAGES.heroCommunity);
 }

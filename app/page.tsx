@@ -215,6 +215,7 @@ export default function HomePage() {
 
         <section className="py-16 bg-slate-900 text-white">
           <div className="container mx-auto px-4 max-w-4xl text-center">
+            <SectionImage heading="Buyer & Seller Guides" />
             <h2 className="text-3xl font-bold mb-6">Buyer & Seller Guides</h2>
             <div className="grid sm:grid-cols-2 gap-3 text-left">
               {HERITAGE_BUYER_NAV.map((item) => (
@@ -241,6 +242,7 @@ export default function HomePage() {
         <section className="py-16 bg-purple-600 text-white">
           <div className="container mx-auto px-4 text-center">
             <HomeIcon className="h-10 w-10 mx-auto mb-4 opacity-90" />
+            <SectionImage heading="Tour Heritage at Stonebridge" />
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Tour Heritage at Stonebridge
             </h2>

@@ -321,7 +321,9 @@ export default function FiftyFiveCommunitiesPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <Navbar />
       <main className="pt-24 pb-16">
@@ -370,6 +372,7 @@ export default function FiftyFiveCommunitiesPage() {
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
+            <SectionImage heading="Las Vegas 55+ Market Overview | January 2026" />
             <h2 className="text-2xl font-bold mb-8 text-center">
               Las Vegas 55+ Market Overview | January 2026
             </h2>
@@ -378,7 +381,9 @@ export default function FiftyFiveCommunitiesPage() {
                 <div className="text-3xl font-bold text-amber-400 mb-1">
                   25,000+
                 </div>
-                <div className="text-slate-300 text-sm">55+ Homes Available</div>
+                <div className="text-slate-300 text-sm">
+                  55+ Homes Available
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-400 mb-1">
@@ -409,14 +414,17 @@ export default function FiftyFiveCommunitiesPage() {
                     Relocating from California?
                   </h3>
                   <p className="text-lg text-slate-700 mb-4">
-                    Many of our 55+ buyers are relocating from California—and for
-                    good reason. <strong>Enjoy more home for your money</strong>{" "}
-                    with no state income tax, lower property taxes, and a cost of
-                    living that stretches your retirement dollars further.
+                    Many of our 55+ buyers are relocating from California—and
+                    for good reason.{" "}
+                    <strong>Enjoy more home for your money</strong> with no
+                    state income tax, lower property taxes, and a cost of living
+                    that stretches your retirement dollars further.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4 mb-4">
                     <div className="bg-white rounded-lg p-4 text-center">
-                      <div className="text-2xl font-bold text-green-600">0%</div>
+                      <div className="text-2xl font-bold text-green-600">
+                        0%
+                      </div>
                       <div className="text-sm text-slate-600">
                         State Income Tax
                       </div>
@@ -449,12 +457,13 @@ export default function FiftyFiveCommunitiesPage() {
 
           {/* Lifestyle Benefits */}
           <section className="mb-16 max-w-6xl mx-auto">
+            <SectionImage heading="Why Active Adults Choose Las Vegas" />
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Why Active Adults Choose Las Vegas
             </h2>
             <p className="text-lg text-slate-600 text-center mb-8 max-w-3xl mx-auto">
-              Beyond the world-class amenities, Las Vegas 55+ communities offer a
-              lifestyle that's hard to match anywhere else.
+              Beyond the world-class amenities, Las Vegas 55+ communities offer
+              a lifestyle that's hard to match anywhere else.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {lifestyleBenefits.map((benefit) => (
@@ -468,7 +477,9 @@ export default function FiftyFiveCommunitiesPage() {
                   <h3 className="font-bold text-slate-900 mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-slate-600 text-sm">{benefit.description}</p>
+                  <p className="text-slate-600 text-sm">
+                    {benefit.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -520,107 +531,111 @@ export default function FiftyFiveCommunitiesPage() {
               {communities.map((community) => {
                 const cardImage = getCardImageForHeading(community.name);
                 return (
-                <div
-                  key={community.name}
-                  className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
-                >
-                  <SectionImage
-                    src={cardImage.src}
-                    alt={`${community.name} in ${community.location}`}
-                    variant="card"
-                    className="rounded-none"
-                  />
-                  <div className="bg-slate-900 text-white p-6">
-                    <h3 className="text-xl font-bold mb-1">{community.name}</h3>
-                    <div className="flex items-center text-slate-300 text-sm">
-                      <MapPin className="h-4 w-4 mr-1" />
-                      {community.location}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-slate-600 mb-4">{community.description}</p>
-
-                    {/* Key Amenities */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {community.amenities.map((amenity) => (
-                        <span
-                          key={amenity}
-                          className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium"
-                        >
-                          {amenity}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4 mb-4">
-                      <div>
-                        <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
-                          Starting Price
-                        </div>
-                        <div className="font-bold text-slate-900">
-                          {community.priceRange.split(" - ")[0]}+
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
-                          HOA Fees
-                        </div>
-                        <div className="font-bold text-slate-900">
-                          {community.hoaFees}
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
-                          Age Requirement
-                        </div>
-                        <div className="font-bold text-slate-900 text-sm">
-                          {community.ageRequirement}
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
-                          Community Size
-                        </div>
-                        <div className="font-bold text-slate-900">
-                          {community.homes}
-                        </div>
+                  <div
+                    key={community.name}
+                    className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
+                  >
+                    <SectionImage
+                      src={cardImage.src}
+                      alt={`${community.name} in ${community.location}`}
+                      variant="card"
+                      className="rounded-none"
+                    />
+                    <div className="bg-slate-900 text-white p-6">
+                      <h3 className="text-xl font-bold mb-1">
+                        {community.name}
+                      </h3>
+                      <div className="flex items-center text-slate-300 text-sm">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        {community.location}
                       </div>
                     </div>
+                    <div className="p-6">
+                      <p className="text-slate-600 mb-4">
+                        {community.description}
+                      </p>
 
-                    <div className="border-t border-slate-100 pt-4">
-                      <div className="text-xs text-slate-500 uppercase tracking-wide mb-2">
-                        Highlights
-                      </div>
-                      <ul className="space-y-1 mb-4">
-                        {community.highlights.slice(0, 3).map((highlight) => (
-                          <li
-                            key={highlight}
-                            className="flex items-start text-sm text-slate-600"
+                      {/* Key Amenities */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {community.amenities.map((amenity) => (
+                          <span
+                            key={amenity}
+                            className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium"
                           >
-                            <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                            {highlight}
-                          </li>
+                            {amenity}
+                          </span>
                         ))}
-                      </ul>
-                    </div>
+                      </div>
 
-                    {community.slug ? (
-                      <Link
-                        href={`/55-plus-communities/${community.slug}`}
-                        className="block text-center bg-blue-600 text-white py-3 px-4 rounded-md font-semibold hover:bg-blue-700 transition-colors"
-                      >
-                        View Homes in {community.name.split(" at ")[0]} →
-                      </Link>
-                    ) : (
-                      <a
-                        href="tel:+17025001942"
-                        className="block text-center bg-slate-600 text-white py-3 px-4 rounded-md font-semibold hover:bg-slate-700 transition-colors"
-                      >
-                        Call for {community.name} Info
-                      </a>
-                    )}
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
+                            Starting Price
+                          </div>
+                          <div className="font-bold text-slate-900">
+                            {community.priceRange.split(" - ")[0]}+
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
+                            HOA Fees
+                          </div>
+                          <div className="font-bold text-slate-900">
+                            {community.hoaFees}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
+                            Age Requirement
+                          </div>
+                          <div className="font-bold text-slate-900 text-sm">
+                            {community.ageRequirement}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
+                            Community Size
+                          </div>
+                          <div className="font-bold text-slate-900">
+                            {community.homes}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t border-slate-100 pt-4">
+                        <div className="text-xs text-slate-500 uppercase tracking-wide mb-2">
+                          Highlights
+                        </div>
+                        <ul className="space-y-1 mb-4">
+                          {community.highlights.slice(0, 3).map((highlight) => (
+                            <li
+                              key={highlight}
+                              className="flex items-start text-sm text-slate-600"
+                            >
+                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {community.slug ? (
+                        <Link
+                          href={`/55-plus-communities/${community.slug}`}
+                          className="block text-center bg-blue-600 text-white py-3 px-4 rounded-md font-semibold hover:bg-blue-700 transition-colors"
+                        >
+                          View Homes in {community.name.split(" at ")[0]} →
+                        </Link>
+                      ) : (
+                        <a
+                          href="tel:+17025001942"
+                          className="block text-center bg-slate-600 text-white py-3 px-4 rounded-md font-semibold hover:bg-slate-700 transition-colors"
+                        >
+                          Call for {community.name} Info
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
                 );
               })}
             </div>
@@ -634,57 +649,69 @@ export default function FiftyFiveCommunitiesPage() {
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
-                <SectionImage heading="Fitness & Recreation" variant="card" className="rounded-none mb-0" />
+                <SectionImage
+                  heading="Fitness & Recreation"
+                  variant="card"
+                  className="rounded-none mb-0"
+                />
                 <div className="p-6">
-                <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <Dumbbell className="h-6 w-6 text-green-600" />
-                </div>
-                <h3 className="font-bold text-slate-900 mb-2">
-                  Fitness & Recreation
-                </h3>
-                <ul className="text-slate-600 text-sm space-y-1">
-                  <li>• State-of-the-art fitness centers</li>
-                  <li>• Indoor & outdoor pools</li>
-                  <li>• Tennis & pickleball courts</li>
-                  <li>• Golf courses (many communities)</li>
-                  <li>• Walking/biking trails</li>
-                </ul>
+                  <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <Dumbbell className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="font-bold text-slate-900 mb-2">
+                    Fitness & Recreation
+                  </h3>
+                  <ul className="text-slate-600 text-sm space-y-1">
+                    <li>• State-of-the-art fitness centers</li>
+                    <li>• Indoor & outdoor pools</li>
+                    <li>• Tennis & pickleball courts</li>
+                    <li>• Golf courses (many communities)</li>
+                    <li>• Walking/biking trails</li>
+                  </ul>
                 </div>
               </div>
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
-                <SectionImage heading="Social & Activities" variant="card" className="rounded-none mb-0" />
+                <SectionImage
+                  heading="Social & Activities"
+                  variant="card"
+                  className="rounded-none mb-0"
+                />
                 <div className="p-6">
-                <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <Calendar className="h-6 w-6 text-blue-600" />
-                </div>
-                <h3 className="font-bold text-slate-900 mb-2">
-                  Social & Activities
-                </h3>
-                <ul className="text-slate-600 text-sm space-y-1">
-                  <li>• 100+ clubs in larger communities</li>
-                  <li>• Organized travel groups</li>
-                  <li>• Classes (art, dance, computers)</li>
-                  <li>• Card rooms & game nights</li>
-                  <li>• Community events & parties</li>
-                </ul>
+                  <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <Calendar className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-slate-900 mb-2">
+                    Social & Activities
+                  </h3>
+                  <ul className="text-slate-600 text-sm space-y-1">
+                    <li>• 100+ clubs in larger communities</li>
+                    <li>• Organized travel groups</li>
+                    <li>• Classes (art, dance, computers)</li>
+                    <li>• Card rooms & game nights</li>
+                    <li>• Community events & parties</li>
+                  </ul>
                 </div>
               </div>
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
-                <SectionImage heading="Convenience & Security" variant="card" className="rounded-none mb-0" />
+                <SectionImage
+                  heading="Convenience & Security"
+                  variant="card"
+                  className="rounded-none mb-0"
+                />
                 <div className="p-6">
-                <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-purple-600" />
-                </div>
-                <h3 className="font-bold text-slate-900 mb-2">
-                  Convenience & Security
-                </h3>
-                <ul className="text-slate-600 text-sm space-y-1">
-                  <li>• Guard-gated entries (many)</li>
-                  <li>• Exterior maintenance included</li>
-                  <li>• On-site restaurants (select)</li>
-                  <li>• Healthcare facilities nearby</li>
-                  <li>• Concierge services (luxury)</li>
-                </ul>
+                  <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <Shield className="h-6 w-6 text-purple-600" />
+                  </div>
+                  <h3 className="font-bold text-slate-900 mb-2">
+                    Convenience & Security
+                  </h3>
+                  <ul className="text-slate-600 text-sm space-y-1">
+                    <li>• Guard-gated entries (many)</li>
+                    <li>• Exterior maintenance included</li>
+                    <li>• On-site restaurants (select)</li>
+                    <li>• Healthcare facilities nearby</li>
+                    <li>• Concierge services (luxury)</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -697,21 +724,22 @@ export default function FiftyFiveCommunitiesPage() {
                 "Buying in a 55+ community involves considerations beyond a
                 typical purchase. You need to understand HOA rules, age
                 verification processes, and how the community fits your
-                lifestyle. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent
-                specializing in active adult communities, I guide clients through
-                every step—from touring amenities to reviewing HOA documents. Many
-                clients are relocating from California, and they rely on my local
-                knowledge to make confident decisions."
+                lifestyle. As a <strong>Berkshire Hathaway HomeServices</strong>{" "}
+                agent specializing in active adult communities, I guide clients
+                through every step—from touring amenities to reviewing HOA
+                documents. Many clients are relocating from California, and they
+                rely on my local knowledge to make confident decisions."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada
+                Properties
               </cite>
             </div>
           </section>
 
           {/* FAQ Section */}
           <section className="mb-16 max-w-4xl mx-auto">
+            <SectionImage heading="55+ Community Buying FAQs" />
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               55+ Community Buying FAQs
             </h2>
@@ -719,13 +747,15 @@ export default function FiftyFiveCommunitiesPage() {
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2 flex items-center">
                   <HelpCircle className="h-5 w-5 text-blue-600 mr-2" />
-                  What are the age requirements for 55+ communities in Las Vegas?
+                  What are the age requirements for 55+ communities in Las
+                  Vegas?
                 </h3>
                 <p className="text-slate-600">
                   Per the Housing for Older Persons Act (HOPA), at least 80% of
-                  occupied units must have one resident 55 or older. The remaining
-                  20% can be younger, but some communities require all residents
-                  to be 55+. Spouses can be younger in most communities.
+                  occupied units must have one resident 55 or older. The
+                  remaining 20% can be younger, but some communities require all
+                  residents to be 55+. Spouses can be younger in most
+                  communities.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -735,8 +765,8 @@ export default function FiftyFiveCommunitiesPage() {
                 </h3>
                 <p className="text-slate-600">
                   Generally no, but there are exceptions. You may purchase if
-                  you'll be 55 by close of escrow, or as an investor who will rent
-                  to 55+ tenants. Some communities allow residents 45-54 in
+                  you'll be 55 by close of escrow, or as an investor who will
+                  rent to 55+ tenants. Some communities allow residents 45-54 in
                   limited circumstances. Dr. Jan can explain each community's
                   specific rules.
                 </p>
@@ -749,8 +779,9 @@ export default function FiftyFiveCommunitiesPage() {
                 <p className="text-slate-600">
                   HOA fees typically cover access to clubhouses, pools, fitness
                   centers, golf courses, organized activities, landscaping, and
-                  exterior maintenance. Fees range from $140-$350/month depending
-                  on amenities. Some communities have separate golf memberships.
+                  exterior maintenance. Fees range from $140-$350/month
+                  depending on amenities. Some communities have separate golf
+                  memberships.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -760,10 +791,10 @@ export default function FiftyFiveCommunitiesPage() {
                 </h3>
                 <p className="text-slate-600">
                   California retirees love Las Vegas for no state income tax,
-                  lower property prices (50-60% less), lower cost of living, warm
-                  weather, world-class healthcare, and the ability to get more
-                  home and amenities for their money. Many sell their California
-                  home and buy in Las Vegas with cash to spare.
+                  lower property prices (50-60% less), lower cost of living,
+                  warm weather, world-class healthcare, and the ability to get
+                  more home and amenities for their money. Many sell their
+                  California home and buy in Las Vegas with cash to spare.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -772,10 +803,10 @@ export default function FiftyFiveCommunitiesPage() {
                   Can grandchildren visit or stay in 55+ communities?
                 </h3>
                 <p className="text-slate-600">
-                  Yes, most communities allow guests of any age to visit and stay
-                  temporarily (typically 30-90 days per year). However, children
-                  cannot be permanent residents. Each community has specific guest
-                  policies that Dr. Jan Duffy can explain.
+                  Yes, most communities allow guests of any age to visit and
+                  stay temporarily (typically 30-90 days per year). However,
+                  children cannot be permanent residents. Each community has
+                  specific guest policies that Dr. Jan Duffy can explain.
                 </p>
               </div>
             </div>
@@ -784,7 +815,7 @@ export default function FiftyFiveCommunitiesPage() {
           {/* Why BHHS */}
           <section className="mb-16 max-w-4xl mx-auto">
             <SectionImage heading="Why Choose Dr. Jan Duffy for 55+ Communities?" />
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Why Choose Dr. Jan Duffy for 55+ Communities?
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -812,9 +843,9 @@ export default function FiftyFiveCommunitiesPage() {
                     Relocation Support
                   </h3>
                   <p className="text-slate-600 text-sm">
-                    Many 55+ buyers relocate from out of state. Our national BHHS
-                    network provides referrals, and Dr. Jan offers virtual tours
-                    and detailed community information.
+                    Many 55+ buyers relocate from out of state. Our national
+                    BHHS network provides referrals, and Dr. Jan offers virtual
+                    tours and detailed community information.
                   </p>
                 </div>
               </div>
@@ -823,11 +854,13 @@ export default function FiftyFiveCommunitiesPage() {
                   <Shield className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 mb-1">Trusted Brand</h3>
+                  <h3 className="font-bold text-slate-900 mb-1">
+                    Trusted Brand
+                  </h3>
                   <p className="text-slate-600 text-sm">
                     The Berkshire Hathaway name represents trust and
-                    integrity—values that matter when making one of life's biggest
-                    decisions.
+                    integrity—values that matter when making one of life's
+                    biggest decisions.
                   </p>
                 </div>
               </div>
@@ -841,8 +874,8 @@ export default function FiftyFiveCommunitiesPage() {
                   </h3>
                   <p className="text-slate-600 text-sm">
                     55+ buyers often take time to decide. Dr. Jan provides
-                    information and guidance without pressure, letting you move at
-                    your own pace.
+                    information and guidance without pressure, letting you move
+                    at your own pace.
                   </p>
                 </div>
               </div>
@@ -851,6 +884,7 @@ export default function FiftyFiveCommunitiesPage() {
 
           {/* Final CTA */}
           <section className="text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
+            <SectionImage heading="Let's Find Your Ideal Lifestyle Match" />
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Let's Find Your Ideal Lifestyle Match
             </h2>
