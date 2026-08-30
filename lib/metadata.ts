@@ -31,6 +31,9 @@ export function canonicalUrl(path: string): string {
 }
 
 export function absoluteOgImage(path: string = DEFAULT_OG_IMAGE_PATH): string {
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    return path;
+  }
   return `${getSiteUrl()}${path.startsWith("/") ? path : `/${path}`}`;
 }
 

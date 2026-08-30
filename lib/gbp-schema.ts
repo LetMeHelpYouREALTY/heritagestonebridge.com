@@ -4,6 +4,7 @@ import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "@/lib/heritage-stonebridge/da
 import { openingHoursSpecification } from "@/lib/hours";
 import { getGbpAggregateRating } from "@/lib/gbp-ratings";
 import { organizationId } from "@/lib/entity-ids";
+import { absoluteAgentPhotoUrl } from "@/lib/agent-assets";
 
 // Google Business Profile Schema Data — heritagestonebridge.com
 // Supports GBP ranking factors: Relevance, Distance, Prominence
@@ -204,7 +205,7 @@ export function generateLocalBusinessSchema() {
     "@type": "RealEstateAgent",
     "@id": organizationId(),
     name: businessInfo.name,
-    image: `${siteUrl}/images/dr-jan-duffy.jpg`,
+    image: absoluteAgentPhotoUrl(800),
     url: businessInfo.url,
     telephone: businessInfo.phone.tel,
     email: businessInfo.email,

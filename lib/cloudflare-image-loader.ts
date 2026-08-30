@@ -1,10 +1,10 @@
 /**
- * Cloudflare Image Loader for Next.js
- * 
- * Custom image loader that optimizes images using Cloudflare Images
- * or falls back to standard optimization.
+ * Cloudflare Images loader for Next.js (2026 URL format).
+ *
+ * Delivery URL: https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/<VARIANT-OR-OPTIONS>
+ * Options use path segments (`w=800,q=85,f=auto`), not query strings.
+ * @see https://developers.cloudflare.com/images/optimization/features/
  */
-
 export default function cloudflareImageLoader({
   src,
   width,
@@ -14,30 +14,24 @@ export default function cloudflareImageLoader({
   width: number;
   quality?: number;
 }): string {
-  // If using Cloudflare Images (requires configuration)
-  const useCloudflareImages = process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED === 'true';
-  
-  if (useCloudflareImages && process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH) {
-    const accountHash = process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH;
-    // Remove leading slash if present
-    const imagePath = src.startsWith('/') ? src.slice(1) : src;
-    
-    // Build Cloudflare Images URL
-    const params = new URLSearchParams({
-      width: width.toString(),
-      quality: (quality || 85).toString(),
-      format: 'auto', // Automatically serves WebP/AVIF when supported
-    });
-    
-    return `https://imagedelivery.net/${accountHash}/${imagePath}?${params.toString()}`;
+  const useCloudflareImages =
+    process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED === "true";
+  const accountHash = process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH;
+
+  if (useCloudflareImages && accountHash) {
+    if (src.startsWith("https://imagedelivery.net/")) {
+      return src;
+    }
+    const imageId = src.startsWith("/") ? src.slice(1) : src;
+    const q = quality ?? 85;
+    return `https://imagedelivery.net/${accountHash}/${imageId}/w=${width},q=${q},f=auto`;
   }
-  
-  // Fallback: Use query parameters for Worker-based optimization
+
   const params = new URLSearchParams({
     w: width.toString(),
-    q: (quality || 85).toString(),
-    f: 'auto',
+    q: String(quality || 85),
+    f: "auto",
   });
-  
+
   return `${src}?${params.toString()}`;
 }

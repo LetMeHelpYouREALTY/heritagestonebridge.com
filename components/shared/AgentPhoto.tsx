@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { AGENT_PHOTO } from "@/lib/agent-assets";
+import {
+  AGENT_PHOTO_ALT,
+  agentPhotoUrl,
+  isCloudflareImagesEnabled,
+} from "@/lib/agent-assets";
 import { cn } from "@/lib/utils";
 
 type AgentPhotoSize = "xs" | "sm" | "md" | "lg" | "xl";
@@ -24,15 +28,17 @@ export default function AgentPhoto({
   priority = false,
 }: AgentPhotoProps) {
   const px = SIZES[size];
+  const fromCloudflare = isCloudflareImagesEnabled();
 
   return (
     <Image
-      src={AGENT_PHOTO.src}
-      alt={AGENT_PHOTO.alt}
+      src={agentPhotoUrl(px)}
+      alt={AGENT_PHOTO_ALT}
       width={px}
       height={px}
       sizes={`${px}px`}
       priority={priority}
+      unoptimized={fromCloudflare}
       className={cn("rounded-full object-cover", className)}
     />
   );

@@ -10,6 +10,7 @@ import { SITE_CONTACT } from "@/lib/site-contact";
 import { siteConfig, agentInfo, officeInfo } from "./site-config";
 import { openingHoursSpecification } from "./hours";
 import { getGbpAggregateRating } from "./gbp-ratings";
+import { absoluteAgentPhotoUrl } from "@/lib/agent-assets";
 
 // ============================================================================
 // Types
@@ -98,8 +99,8 @@ export function generateRealEstateAgentSchema() {
       "Berkshire Hathaway HomeServices",
     ],
     url: BASE_URL,
-    logo: `${BASE_URL}/images/dr-jan-duffy.jpg`,
-    image: `${BASE_URL}/images/dr-jan-duffy.jpg`,
+    logo: absoluteAgentPhotoUrl(800),
+    image: absoluteAgentPhotoUrl(800),
     description: siteConfig.description,
     telephone: agentInfo.phoneTel,
     email: agentInfo.email,
