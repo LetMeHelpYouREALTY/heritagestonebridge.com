@@ -1,5 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
+import SectionImage from "@/components/sections/SectionImage";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -73,6 +74,7 @@ export default function TrilogySummerlinPage() {
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
+            <SectionImage heading="Trilogy at Summerlin at a Glance" />
             <h2 className="text-2xl font-bold mb-8 text-center">
               Trilogy at Summerlin at a Glance
             </h2>
@@ -105,6 +107,7 @@ export default function TrilogySummerlinPage() {
           {/* About */}
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
+              <SectionImage heading="About Trilogy at Summerlin" />
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Trilogy at Summerlin
               </h2>
@@ -123,7 +126,9 @@ export default function TrilogySummerlinPage() {
                 plans, designer finishes, and modern smart home technology.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
+                <strong>
+                  Berkshire Hathaway HomeServices Nevada Properties
+                </strong>{" "}
                 serves discerning buyers seeking luxury 55+ options. Dr. Jan
                 Duffy understands why buyers choose Trilogy's resort experience
                 over traditional active adult communities.
@@ -137,13 +142,17 @@ export default function TrilogySummerlinPage() {
               <div className="flex items-start">
                 <Star className="h-8 w-8 text-rose-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
+                  <SectionImage
+                    heading="The Trilogy Difference: Resort-Style Living"
+                    variant="inline"
+                  />
                   <h3 className="text-xl font-bold text-slate-900 mb-4">
                     The Trilogy Difference: Resort-Style Living
                   </h3>
                   <p className="text-slate-700 mb-4">
-                    Trilogy isn't just a 55+ community with a nice clubhouse—it's
-                    a resort experience you happen to live in. The difference is
-                    in the details.
+                    Trilogy isn't just a 55+ community with a nice
+                    clubhouse—it's a resort experience you happen to live in.
+                    The difference is in the details.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-white rounded-lg p-4 text-center">
@@ -181,6 +190,7 @@ export default function TrilogySummerlinPage() {
 
           {/* Amenities */}
           <section className="mb-16 max-w-5xl mx-auto">
+            <SectionImage heading="Luxury Amenities" />
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Luxury Amenities
             </h2>
@@ -232,6 +242,7 @@ export default function TrilogySummerlinPage() {
 
           {/* Home Features */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
+            <SectionImage heading="Contemporary Home Designs" />
             <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Contemporary Home Designs
             </h2>
@@ -291,6 +302,7 @@ export default function TrilogySummerlinPage() {
 
           {/* Why Choose Trilogy */}
           <section className="mb-16 max-w-4xl mx-auto">
+            <SectionImage heading="Why Buyers Choose Trilogy at Summerlin" />
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Why Buyers Choose Trilogy at Summerlin
             </h2>
@@ -302,8 +314,8 @@ export default function TrilogySummerlinPage() {
                     True resort lifestyle, not just amenities
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    On-site restaurant, full-service spa, and hospitality-trained
-                    staff create a resort experience
+                    On-site restaurant, full-service spa, and
+                    hospitality-trained staff create a resort experience
                   </p>
                 </div>
               </div>
@@ -326,8 +338,8 @@ export default function TrilogySummerlinPage() {
                     Boutique community size
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    800+ homes—large enough for vibrant programming, small enough
-                    for genuine community
+                    800+ homes—large enough for vibrant programming, small
+                    enough for genuine community
                   </p>
                 </div>
               </div>
@@ -351,27 +363,30 @@ export default function TrilogySummerlinPage() {
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Trilogy at Summerlin is for buyers who want more than a 55+
-                community—they want a lifestyle. The on-site restaurant, spa, and
-                contemporary homes create an experience you simply can't find
-                elsewhere. As a{" "}
+                community—they want a lifestyle. The on-site restaurant, spa,
+                and contemporary homes create an experience you simply can't
+                find elsewhere. As a{" "}
                 <strong>Berkshire Hathaway HomeServices</strong> agent serving
                 luxury 55+ buyers, I recommend Trilogy to those who appreciate
                 quality and won't settle for ordinary."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada
+                Properties
               </cite>
             </div>
           </section>
 
           {/* CTA */}
           <section className="text-center bg-gradient-to-r from-rose-600 to-pink-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
+            <SectionImage heading="Experience Luxury 55+ Living" />
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Experience Luxury 55+ Living
             </h2>
             <p className="text-xl text-rose-100 mb-8">
-              Discover why Trilogy at Summerlin sets the standard for resort-style
-              55+ living. Private tours available with Dr. Jan Duffy.
+              Discover why Trilogy at Summerlin sets the standard for
+              resort-style 55+ living. Private tours available with Dr. Jan
+              Duffy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a

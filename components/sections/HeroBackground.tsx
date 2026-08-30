@@ -1,26 +1,28 @@
-import Image from "next/image";
+import DevicePicture from "@/components/images/DevicePicture";
 
 type HeroBackgroundProps = {
-  /** Prefer optimized WebP; JPG fallback for older browsers via picture element handled by next/image */
   src?: string;
   alt?: string;
   priority?: boolean;
 };
 
 export default function HeroBackground({
-  src = "/images/hero/hero_bg_1.webp",
-  alt = "Summerlin West desert landscape near Heritage at Stonebridge",
+  src = "/images/hero/hero-heritage-stonebridge.webp",
+  alt = "Heritage at Stonebridge guard-gated 55+ community in Summerlin West with Red Rock Canyon views",
   priority = true,
 }: HeroBackgroundProps) {
   return (
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      priority={priority}
-      sizes="100vw"
-      quality={75}
-      className="object-cover object-center opacity-30"
-    />
+    <>
+      <DevicePicture
+        src={src}
+        alt={alt}
+        priority={priority}
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/45 to-slate-900/20"
+        aria-hidden="true"
+      />
+    </>
   );
 }

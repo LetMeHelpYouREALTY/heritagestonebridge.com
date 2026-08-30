@@ -1,58 +1,89 @@
 # Image Assets Guide
 
+Git `public/images/` is the **backup of originals**. Production delivery is
+**Cloudflare Images** named variants for the devices a homebuyer or homeseller
+uses (phone, tablet, desktop). Do not treat `/images/...` as the public CDN URL
+once `NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED=true`.
+
+## Delivery
+
+```
+https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/<VARIANT>
+```
+
+| Variant   | Width    | Who it is for              |
+| --------- | -------- | -------------------------- |
+| `phone`   | 640      | Mobile buyers/sellers      |
+| `tablet`  | 1024     | Tablet                     |
+| `desktop` | 1920     | Laptop/desktop heroes      |
+| `card`    | 800      | Listing/neighborhood cards |
+| `og`      | 1200×630 | Social/Open Graph          |
+
+Custom IDs match the git path without extension:
+
+`/images/hero/hero-heritage-stonebridge.webp` → `images/hero/hero-heritage-stonebridge`
+
+New heading-matched section/neighborhood photos (git originals):
+
+- `sections/section-bhhs-office.webp`
+- `sections/section-valuation.webp`
+- `sections/section-new-construction.webp`
+- `sections/section-relocation.webp`
+- `sections/section-office-hours.webp`
+- `sections/section-first-time.webp`
+- `sections/section-schools.webp`
+- `sections/section-healthcare.webp`
+- `sections/section-commute.webp`
+- `sections/section-highlights.webp`
+- `sections/section-dining.webp`
+- `sections/section-closing.webp`
+- `sections/section-parks.webp`
+- `sections/section-strip-views.webp`
+- `neighborhoods/neighborhood-inspirada.webp`
+- `neighborhoods/neighborhood-green-valley.webp`
+
+Every H1/H2 photograph uses an SEO `alt` of `{heading} — {scene and location}` and heroes emit ImageObject JSON-LD.
+
+Upload (needs `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`):
+
+```bash
+npm run images:upload
+```
+
+Then set on Vercel:
+
+```
+NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED=true
+NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH=<hash printed by the upload script>
+```
+
+Heroes use `<DevicePicture>` (`phone` / `tablet` / `desktop` `<picture>` sources).
+`next/image` uses `lib/cloudflare-image-loader.ts` so section cards hit the same named variants.
+
 ## Folder Structure
 
 ```
 images/
-├── hero/           # Homepage hero backgrounds
-├── agent/          # Dr. Jan Duffy photos
-├── properties/     # Listing photos
+├── hero/           # Page heroes (git originals)
+├── sections/       # H2/H3 section photographs
+├── agent/          # Brand / OG crops
+├── properties/     # Listing-style exteriors
 ├── neighborhoods/  # Area/community photos
-├── testimonials/   # Client headshots
+├── testimonials/   # Client headshots (optional)
 └── logos/          # Brand assets
 ```
 
-## Recommended Specifications
+Hero files are matched to page H1 copy. Section files are resolved from H2/H3 headings via `lib/site-images.ts`. The strongest community photograph (`hero-heritage-stonebridge.webp`) is the homepage LCP hero.
 
-| Folder | Size | Format | Notes |
-|--------|------|--------|-------|
-| hero/ | 1920x1080+ | WebP, JPG | 16:9 ratio, compress <200KB |
-| agent/ | 400x400+ | WebP, JPG | Square, professional headshot |
-| properties/ | 1200x800+ | WebP, JPG | Landscape, MLS-quality |
-| neighborhoods/ | 1200x800+ | WebP, JPG | Scenic community shots |
-| testimonials/ | 200x200 | WebP, JPG | Square, optional |
-| logos/ | Various | PNG, SVG | Transparent background |
+Do not use a generated likeness as Dr. Jan Duffy. Open Graph uses the Heritage community photograph until a licensed agent photo is added.
 
 ## Naming Conventions
 
 - Use lowercase with hyphens: `summerlin-aerial.webp`
 - Be descriptive: `dr-jan-duffy-headshot.jpg`
-- Include size if multiple: `hero-desktop.webp`, `hero-mobile.webp`
-
-## Image Optimization
-
-Before uploading, optimize images:
-
-1. **Online tools**: [Squoosh](https://squoosh.app), [TinyPNG](https://tinypng.com)
-2. **CLI**: `npx @squoosh/cli --webp '{"quality":80}' image.jpg`
-3. **Target**: <200KB for hero, <100KB for thumbnails
-
-## Usage in Code
-
-```tsx
-import Image from 'next/image'
-
-<Image 
-  src="/images/hero/las-vegas-skyline.webp"
-  alt="Las Vegas skyline at sunset"
-  width={1920}
-  height={1080}
-  priority // for above-fold images
-/>
-```
 
 ## Notes
 
-- Next.js auto-optimizes images via `next/image`
-- WebP preferred for web (30% smaller than JPEG)
-- Always include descriptive alt text for SEO/accessibility
+- Keep originals in git. Cloudflare Images stores the device variants.
+- Always include descriptive alt text for SEO/accessibility.
+- Do not orange-cloud the Vercel production hostname.

@@ -27,6 +27,7 @@
     "vercel:build": "vercel build",
     "vercel:deploy": "vercel deploy --prebuilt",
     "vercel:prod": "vercel deploy --prod --prebuilt",
+    "images:upload": "node scripts/upload-cloudflare-images.mjs",
     "cloudflare:dev": "wrangler dev",
     "cloudflare:deploy": "wrangler deploy",
     "cloudflare:pages": "npx @cloudflare/next-on-pages",

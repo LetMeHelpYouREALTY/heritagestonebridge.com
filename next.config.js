@@ -2,15 +2,25 @@ const nextConfig = {
   // Standalone output for Docker/Vercel optimization
   output: 'standalone',
 
-  // Image optimization
+  // Cloudflare Images named variants (phone / tablet / desktop / card).
+  // Git public/images is the backup; the custom loader serves imagedelivery.net
+  // when NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED=true. Do not orange-cloud Vercel.
   images: {
+    loader: 'custom',
+    loaderFile: './lib/cloudflare-image-loader.ts',
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    deviceSizes: [640, 1024, 1920],
+    imageSizes: [400, 800],
     minimumCacheTTL: 31536000, // 1 year
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'imagedelivery.net',
+      },
+    ],
   },
 
   // Compression

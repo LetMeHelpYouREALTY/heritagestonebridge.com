@@ -23,6 +23,7 @@ const PropertyCard = ({ property }: { property: Property }) => (
         src={property.image}
         alt={property.name}
         fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
         className="object-cover"
       />
       <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-semibold">
@@ -61,7 +62,7 @@ const properties: Property[] = [
     name: "Modern Luxury Home",
     location: "Summerlin, Las Vegas, NV",
     price: "$850,000",
-    image: "/Image/hero_bg_1.jpg",
+    image: "/images/properties/property-luxury.webp",
     bedrooms: 4,
     bathrooms: 3,
     squareFeet: 3200,
@@ -71,7 +72,7 @@ const properties: Property[] = [
     name: "Spacious Family Home",
     location: "Henderson, NV",
     price: "$625,000",
-    image: "/Image/hero_bg_2.jpg",
+    image: "/images/properties/property-family.webp",
     bedrooms: 3,
     bathrooms: 2,
     squareFeet: 2400,
@@ -81,7 +82,7 @@ const properties: Property[] = [
     name: "Elegant Estate",
     location: "Green Valley, Henderson, NV",
     price: "$1,200,000",
-    image: "/Image/hero_bg_3.jpg",
+    image: "/images/properties/property-estate.webp",
     bedrooms: 5,
     bathrooms: 4,
     squareFeet: 4500,

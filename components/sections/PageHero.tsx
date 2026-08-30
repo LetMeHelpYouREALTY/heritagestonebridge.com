@@ -1,6 +1,7 @@
 import HeroBackground from "@/components/sections/HeroBackground";
-import { getPageDomainConfig } from "@/lib/get-domain-config";
-import { getHeroImage } from "@/lib/domain-config";
+import { cloudflareDeliveryUrl } from "@/lib/cloudflare-images";
+import { getHeroImageForHeading } from "@/lib/site-images";
+import { getSiteUrl } from "@/lib/site-url";
 
 type PageHeroProps = {
   /** Page H1. */
@@ -19,11 +20,11 @@ type PageHeroProps = {
 };
 
 /**
- * Hyperlocal page hero: a domain-aware background image (resolved from the
- * active domain's config) behind a badge + H1 + answer-first intro. Renders as
- * a rounded card so it drops into the existing `container` page layout.
+ * Hyperlocal page hero: a content-matched photograph resolved from the H1,
+ * with optional imageSrc override. Renders as a rounded card so it drops into
+ * the existing `container` page layout.
  */
-export default async function PageHero({
+export default function PageHero({
   title,
   subtitle,
   badge,
@@ -32,13 +33,31 @@ export default async function PageHero({
   priority = true,
   children,
 }: PageHeroProps) {
-  const config = await getPageDomainConfig();
-  const src = imageSrc ?? getHeroImage(config);
-  const alt =
-    imageAlt ?? `${config.neighborhood} real estate — Dr. Jan Duffy, BHHS Nevada Properties`;
+  const matched = getHeroImageForHeading(title);
+  const src = imageSrc ?? matched.src;
+  const alt = imageAlt ?? matched.alt;
+  const delivered = cloudflareDeliveryUrl(src, "desktop");
+  const contentUrl = /^https?:\/\//i.test(delivered)
+    ? delivered
+    : `${getSiteUrl()}${delivered.startsWith("/") ? delivered : `/${delivered}`}`;
+  const imageObject = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    contentUrl,
+    url: contentUrl,
+    name: title,
+    description: alt,
+    width: 1920,
+    height: 1080,
+    encodingFormat: "image/webp",
+  };
 
   return (
     <section className="relative mb-16 flex min-h-[360px] items-center overflow-hidden rounded-2xl bg-slate-900 text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObject) }}
+      />
       <div className="absolute inset-0" aria-hidden="true">
         <HeroBackground src={src} alt={alt} priority={priority} />
       </div>

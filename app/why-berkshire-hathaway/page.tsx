@@ -3,8 +3,17 @@ import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
-import { Shield, Users, Globe, Award, TrendingUp, CheckCircle, Phone } from "lucide-react";
+import {
+  Shield,
+  Users,
+  Globe,
+  Award,
+  TrendingUp,
+  CheckCircle,
+  Phone,
+} from "lucide-react";
 import type { Metadata } from "next";
+import SectionImage from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   title: "Why Choose Berkshire Hathaway HomeServices | Las Vegas Real Estate",
@@ -56,25 +65,29 @@ export default function WhyBerkshireHathawayPage() {
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
+                <SectionImage heading="Backed by Warren Buffett's Legacy" />
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   Backed by Warren Buffett's Legacy
                 </h2>
                 <p className="text-slate-300 mb-6">
-                  <strong>Berkshire Hathaway HomeServices</strong> is the only real estate brand
-                  backed by Berkshire Hathaway Inc., Warren Buffett's legendary holding company.
-                  This means unmatched financial stability and a commitment to ethical business
+                  <strong>Berkshire Hathaway HomeServices</strong> is the only
+                  real estate brand backed by Berkshire Hathaway Inc., Warren
+                  Buffett's legendary holding company. This means unmatched
+                  financial stability and a commitment to ethical business
                   practices that spans decades.
                 </p>
                 <p className="text-slate-300">
-                  When you see the Berkshire Hathaway name, you know you're working with
-                  professionals who uphold the highest standards in the industry.
+                  When you see the Berkshire Hathaway name, you know you're
+                  working with professionals who uphold the highest standards in
+                  the industry.
                 </p>
               </div>
               <div className="bg-slate-800 rounded-lg p-8 text-center">
                 <div className="text-6xl mb-4">🏛️</div>
                 <p className="text-2xl font-bold mb-2">Fortune #1</p>
                 <p className="text-slate-400">
-                  Berkshire Hathaway Inc. consistently ranks among the top companies in the world
+                  Berkshire Hathaway Inc. consistently ranks among the top
+                  companies in the world
                 </p>
               </div>
             </div>
@@ -82,80 +95,140 @@ export default function WhyBerkshireHathawayPage() {
 
           {/* Key Benefits */}
           <section className="mb-16 max-w-6xl mx-auto">
+            <SectionImage heading="The BHHS Advantage" />
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
               The BHHS Advantage
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <Shield className="h-8 w-8 text-blue-600" />
+              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                <SectionImage
+                  heading="Unmatched Trust"
+                  variant="card"
+                  className="rounded-none"
+                />
+                <div className="p-8">
+                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                    <Shield className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    Unmatched Trust
+                  </h3>
+                  <p className="text-slate-600">
+                    The Berkshire Hathaway name represents integrity and
+                    reliability. Our agents uphold these values in every
+                    transaction.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Unmatched Trust</h3>
-                <p className="text-slate-600">
-                  The Berkshire Hathaway name represents integrity and reliability. Our agents
-                  uphold these values in every transaction.
-                </p>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <Users className="h-8 w-8 text-blue-600" />
+              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                <SectionImage
+                  heading="Global Network"
+                  variant="card"
+                  className="rounded-none"
+                />
+                <div className="p-8">
+                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                    <Users className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    Global Network
+                  </h3>
+                  <p className="text-slate-600">
+                    50,000+ agents worldwide means seamless referrals for
+                    relocations and connections to buyers from across the globe.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Global Network</h3>
-                <p className="text-slate-600">
-                  50,000+ agents worldwide means seamless referrals for relocations and connections
-                  to buyers from across the globe.
-                </p>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <Globe className="h-8 w-8 text-blue-600" />
+              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                <SectionImage
+                  heading="World-Class Marketing"
+                  variant="card"
+                  className="rounded-none"
+                />
+                <div className="p-8">
+                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                    <Globe className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    World-Class Marketing
+                  </h3>
+                  <p className="text-slate-600">
+                    Your property gets exposure through the most recognized real
+                    estate brand in the world, reaching qualified buyers
+                    everywhere.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">World-Class Marketing</h3>
-                <p className="text-slate-600">
-                  Your property gets exposure through the most recognized real estate brand in the
-                  world, reaching qualified buyers everywhere.
-                </p>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <Award className="h-8 w-8 text-blue-600" />
+              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                <SectionImage
+                  heading="Ethical Standards"
+                  variant="card"
+                  className="rounded-none"
+                />
+                <div className="p-8">
+                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                    <Award className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    Ethical Standards
+                  </h3>
+                  <p className="text-slate-600">
+                    BHHS agents adhere to strict ethical guidelines that go
+                    beyond industry requirements. Your interests always come
+                    first.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Ethical Standards</h3>
-                <p className="text-slate-600">
-                  BHHS agents adhere to strict ethical guidelines that go beyond industry
-                  requirements. Your interests always come first.
-                </p>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <TrendingUp className="h-8 w-8 text-blue-600" />
+              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                <SectionImage
+                  heading="Financial Strength"
+                  variant="card"
+                  className="rounded-none"
+                />
+                <div className="p-8">
+                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                    <TrendingUp className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    Financial Strength
+                  </h3>
+                  <p className="text-slate-600">
+                    Backed by one of the most financially secure companies in
+                    the world. Our stability means we'll be here for you
+                    long-term.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Financial Strength</h3>
-                <p className="text-slate-600">
-                  Backed by one of the most financially secure companies in the world. Our stability
-                  means we'll be here for you long-term.
-                </p>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <CheckCircle className="h-8 w-8 text-blue-600" />
+              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                <SectionImage
+                  heading="Proven Results"
+                  variant="card"
+                  className="rounded-none"
+                />
+                <div className="p-8">
+                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                    <CheckCircle className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    Proven Results
+                  </h3>
+                  <p className="text-slate-600">
+                    BHHS Nevada Properties has helped thousands of families
+                    achieve their real estate goals in Southern Nevada.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Proven Results</h3>
-                <p className="text-slate-600">
-                  BHHS Nevada Properties has helped thousands of families achieve their real estate
-                  goals in Southern Nevada.
-                </p>
               </div>
             </div>
           </section>
 
           {/* Stats Section */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
+            <SectionImage heading="Berkshire Hathaway HomeServices By The Numbers" />
             <h2 className="text-3xl font-bold mb-8 text-center">
               Berkshire Hathaway HomeServices By The Numbers
             </h2>
@@ -165,11 +238,15 @@ export default function WhyBerkshireHathawayPage() {
                 <div className="text-blue-200">Agents Worldwide</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2">1,500+</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">
+                  1,500+
+                </div>
                 <div className="text-blue-200">Offices Globally</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2">$138B+</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">
+                  $138B+
+                </div>
                 <div className="text-blue-200">Sales Volume (2024)</div>
               </div>
               <div className="text-center">
@@ -183,14 +260,16 @@ export default function WhyBerkshireHathawayPage() {
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
+                <SectionImage heading="Your Local BHHS Expert in Las Vegas" />
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                   Your Local BHHS Expert in Las Vegas
                 </h2>
                 <p className="text-lg text-slate-700 mb-6">
-                  Dr. Jan Duffy brings the power of <strong>Berkshire Hathaway HomeServices</strong>{" "}
-                  to Las Vegas, Henderson, Summerlin, and all of Southern Nevada. Serving the area 
-                  since 2008 with $127M+ in closed transactions, you get global brand strength
-                  with hometown expertise.
+                  Dr. Jan Duffy brings the power of{" "}
+                  <strong>Berkshire Hathaway HomeServices</strong> to Las Vegas,
+                  Henderson, Summerlin, and all of Southern Nevada. Serving the
+                  area since 2008 with $127M+ in closed transactions, you get
+                  global brand strength with hometown expertise.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
@@ -215,9 +294,11 @@ export default function WhyBerkshireHathawayPage() {
               </div>
               <div className="bg-slate-100 rounded-lg p-8">
                 <blockquote className="text-lg text-slate-700 italic mb-4">
-                  "When clients ask why they should choose a Berkshire Hathaway HomeServices agent,
-                  I tell them: you're not just getting me—you're getting a global network of 50,000
-                  agents, world-class marketing, and a brand that's synonymous with trust."
+                  "When clients ask why they should choose a Berkshire Hathaway
+                  HomeServices agent, I tell them: you're not just getting
+                  me—you're getting a global network of 50,000 agents,
+                  world-class marketing, and a brand that's synonymous with
+                  trust."
                 </blockquote>
                 <cite className="text-slate-900 font-semibold">
                   — Dr. Jan Duffy, BHHS Nevada Properties
@@ -228,6 +309,7 @@ export default function WhyBerkshireHathawayPage() {
 
           {/* FAQ Section */}
           <section className="mb-16 max-w-4xl mx-auto">
+            <SectionImage heading="Frequently Asked Questions About BHHS" />
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Frequently Asked Questions About BHHS
             </h2>
@@ -260,11 +342,13 @@ export default function WhyBerkshireHathawayPage() {
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
+            <SectionImage heading="Experience the Berkshire Hathaway Difference" />
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Experience the Berkshire Hathaway Difference
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              Ready to work with the most trusted name in real estate? Contact Dr. Jan Duffy today.
+              Ready to work with the most trusted name in real estate? Contact
+              Dr. Jan Duffy today.
             </p>
             <a
               href="tel:+17025001942"
@@ -280,7 +364,9 @@ export default function WhyBerkshireHathawayPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">
+          Last Updated: January 2026
+        </div>
       </main>
       <RealScoutListings />
       <Footer />
