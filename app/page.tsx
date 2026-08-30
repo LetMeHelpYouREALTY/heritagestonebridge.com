@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Phone, Shield, MapPin, Home as HomeIcon, Users } from "lucide-react";
+import { Phone, Shield, MapPin, Users } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import HeroBackground from "@/components/sections/HeroBackground";
+import AgentPhoto from "@/components/shared/AgentPhoto";
 import FAQSection from "@/components/sections/FAQSection";
 import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
@@ -53,6 +54,9 @@ export default function HomePage() {
             <HeroBackground />
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
+            <div className="mb-6 flex justify-center">
+              <AgentPhoto size="lg" priority />
+            </div>
             <span className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
               <Shield className="h-4 w-4" />
               Guard-Gated 55+ in Summerlin West
@@ -210,7 +214,9 @@ export default function HomePage() {
 
         <section className="py-16 bg-purple-600 text-white">
           <div className="container mx-auto px-4 text-center">
-            <HomeIcon className="h-10 w-10 mx-auto mb-4 opacity-90" />
+            <div className="mb-6 flex justify-center">
+              <AgentPhoto size="lg" />
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Tour Heritage at Stonebridge
             </h2>

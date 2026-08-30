@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AGENT_OG_IMAGE_PATH } from "@/lib/agent-assets";
 import { getSiteUrl } from "@/lib/site-url";
 import type { HeritagePageContent } from "@/lib/heritage-stonebridge/types";
 
@@ -12,8 +13,8 @@ type BuildPageMetadataInput = {
   ogImagePath?: string;
 };
 
-/** Default OG/Twitter image — agent photo on canonical www host. */
-export const DEFAULT_OG_IMAGE_PATH = "/images/dr-jan-duffy.jpg";
+/** Default OG/Twitter image — agent portrait on a 1200×630 social card. */
+export const DEFAULT_OG_IMAGE_PATH = AGENT_OG_IMAGE_PATH;
 
 /** Sitemap baseline; heritage pages override via lastUpdated where available. */
 export const SITE_BUILD_DATE = new Date("2026-07-01T00:00:00.000Z");

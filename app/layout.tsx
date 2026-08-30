@@ -65,7 +65,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: absoluteOgImage(DEFAULT_OG_IMAGE_PATH),
           width: 1200,
           height: 630,
-          alt: SITE_CONTACT.businessName,
+          alt: "Dr. Jan Duffy — Heritage at Stonebridge Summerlin 55+ REALTOR",
         },
       ],
     },
@@ -74,6 +74,15 @@ export async function generateMetadata(): Promise<Metadata> {
       title: config.heroHeadline,
       description: config.description,
       images: [absoluteOgImage(DEFAULT_OG_IMAGE_PATH)],
+    },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "48x48" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+      shortcut: "/favicon.ico",
     },
   };
 }

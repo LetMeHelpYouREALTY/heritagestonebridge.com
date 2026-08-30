@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AgentPhoto from "@/components/shared/AgentPhoto";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { telHref } from "@/lib/phone";
 import {
@@ -44,12 +45,15 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Brand Logo */}
-          <Link href="/" className="flex flex-col">
-            <span className="text-lg md:text-xl font-bold text-slate-900 hover:text-purple-600 transition-colors leading-tight">
-              Heritage Stonebridge
-            </span>
-            <span className="text-xs text-slate-500 hidden sm:block">
-              Homes By Dr. Jan Duffy
+          <Link href="/" className="flex items-center gap-2.5 min-w-0">
+            <AgentPhoto size="xs" priority className="flex-shrink-0" />
+            <span className="flex flex-col min-w-0">
+              <span className="text-lg md:text-xl font-bold text-slate-900 hover:text-purple-600 transition-colors leading-tight">
+                Heritage Stonebridge
+              </span>
+              <span className="text-xs text-slate-500 hidden sm:block">
+                Homes By Dr. Jan Duffy
+              </span>
             </span>
           </Link>
 

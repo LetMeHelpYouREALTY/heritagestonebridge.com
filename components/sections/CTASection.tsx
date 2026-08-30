@@ -1,12 +1,16 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Home } from "lucide-react";
+import AgentPhoto from "@/components/shared/AgentPhoto";
 
 export default function CTASection() {
   return (
     <section className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-6 flex justify-center">
+            <AgentPhoto size="lg" />
+          </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Ready to Find Your Dream Home?
           </h2>

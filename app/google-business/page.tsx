@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
+import AgentPhoto from "@/components/shared/AgentPhoto";
 import Link from "next/link";
 import {
   Phone,
@@ -71,6 +72,9 @@ export default function GoogleBusinessPage() {
             <div className="bg-gradient-to-br from-slate-900 to-blue-900 text-white rounded-2xl p-8 md:p-12">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
+                  <div className="mb-6 flex justify-center md:justify-start">
+                    <AgentPhoto size="lg" />
+                  </div>
                   {/* NAP - Exact match to GBP */}
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">

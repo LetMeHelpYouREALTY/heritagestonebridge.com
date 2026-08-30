@@ -3,6 +3,7 @@ import { Phone, CheckCircle } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
+import AgentPhoto from "@/components/shared/AgentPhoto";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import SchemaScript from "@/components/SchemaScript";
 import {
@@ -236,6 +237,9 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
           )}
 
           <section className="text-center bg-purple-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
+            <div className="mb-6 flex justify-center">
+              <AgentPhoto size="lg" />
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               {content.ctaTitle ?? "Talk With Dr. Jan About Heritage at Stonebridge"}
             </h2>

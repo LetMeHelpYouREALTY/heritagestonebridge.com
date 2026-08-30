@@ -5,6 +5,7 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import { Phone, Mail, MapPin, Clock, Calendar, CheckCircle, Star, Users, Shield } from "lucide-react";
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
 import GBPMapCard from "@/components/gbp/GBPMapCard";
+import AgentPhoto from "@/components/shared/AgentPhoto";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { buildPageMetadata, canonicalUrl } from "@/lib/metadata";
 import { organizationId } from "@/lib/entity-ids";
@@ -77,6 +78,9 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Info & Map */}
             <div>
+              <div className="mb-6 flex justify-center lg:justify-start">
+                <AgentPhoto size="xl" />
+              </div>
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Get In Touch</h2>
               <p className="text-slate-700 mb-8">
                 Whether you're buying your first home, selling a luxury property, or exploring

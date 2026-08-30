@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import AgentPhoto from "@/components/shared/AgentPhoto";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { telHref } from "@/lib/phone";
 import {
@@ -25,6 +26,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div>
+            <AgentPhoto size="md" className="mb-4" />
             <h3 className="font-bold text-xl mb-4">{SITE_CONTACT.businessName}</h3>
             <p className="text-slate-300 mb-4 text-sm">
               Guard-gated 55+ real estate in Summerlin West (89138). {SITE_CONTACT.brokerage} —

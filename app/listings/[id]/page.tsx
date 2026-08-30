@@ -4,7 +4,7 @@ import Footer from "@/components/layouts/Footer";
 import Image from "next/image";
 import { Bed, Bath, Square, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SITE_CONTACT } from "@/lib/site-contact";
+import AgentPhoto from "@/components/shared/AgentPhoto";
 import { buildPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -133,8 +133,11 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
             {/* Sidebar */}
             <div className="md:col-span-1">
               <div className="bg-white border border-slate-200 rounded-lg p-6 sticky top-24">
-                <h3 className="text-xl font-bold text-slate-900 mb-4">Contact Agent</h3>
-                <p className="text-slate-600 mb-4">Dr. Jan Duffy</p>
+                <div className="mb-4 flex justify-center">
+                  <AgentPhoto size="md" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 text-center">Contact Agent</h3>
+                <p className="text-slate-600 mb-4 text-center">Dr. Jan Duffy</p>
                 <p className="text-sm text-slate-600 mb-6">
                   Berkshire Hathaway HomeServices Nevada Properties
                 </p>

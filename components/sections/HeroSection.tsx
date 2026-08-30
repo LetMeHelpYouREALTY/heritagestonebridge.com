@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
+import AgentPhoto from "@/components/shared/AgentPhoto";
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -54,6 +55,9 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full px-4 text-center">
+        <div className="mb-6">
+          <AgentPhoto size="lg" priority />
+        </div>
         <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
           Find Your Dream Home in
           <br />
