@@ -15,6 +15,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 import RealScoutScript from "@/components/realscout/RealScoutScript";
+import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
 
 const CalendlyBadge = dynamic(
   () => import("@/components/calendly/CalendlyBadge"),
@@ -126,6 +127,7 @@ export default function RootLayout({
         `}</Script>
       </head>
       <body>
+        <GlobalHeroBanner />
         {children}
         <CalendlyBadge />
         <Analytics />
