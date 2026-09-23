@@ -59,6 +59,10 @@ export default function CalendlyBadge({
       <link
         href="https://assets.calendly.com/assets/external/widget.css"
         rel="stylesheet"
+        media="print"
+        onLoad={(event) => {
+          event.currentTarget.media = "all";
+        }}
       />
       <Script
         id="calendly-widget-js"

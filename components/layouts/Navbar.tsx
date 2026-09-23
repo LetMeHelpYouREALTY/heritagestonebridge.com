@@ -46,7 +46,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 min-w-0">
-            <AgentPhoto size="xs" priority className="flex-shrink-0" />
+            <AgentPhoto size="xs" className="flex-shrink-0" />
             <span className="flex flex-col min-w-0">
               <span className="text-lg md:text-xl font-bold text-slate-900 hover:text-purple-600 transition-colors leading-tight">
                 Heritage Stonebridge

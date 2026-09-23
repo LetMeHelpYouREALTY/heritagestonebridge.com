@@ -25,7 +25,7 @@ export const metadata = buildPageMetadata({
   title:
     "Sell Heritage at Stonebridge | Summerlin 55+ Listing Agent | Dr. Jan Duffy",
   description:
-    "Sell your Heritage at Stonebridge or Summerlin 55+ home with Dr. Jan Duffy, BHHS Nevada Properties. Lennar resale pricing, guard-gated marketing, and Berkshire Hathaway exposure. Call (702) 500-1942.",
+    "Sell your Heritage at Stonebridge or Summerlin 55+ home with Dr. Jan Duffy, BHHS Nevada Properties. Lennar resale pricing, guard-gated marketing, and Berkshire Hathaway exposure. Call (702) 789-6561.",
   path: "/sellers",
   openGraphTitle: "Sell Your Heritage Stonebridge Home | Dr. Jan Duffy",
   openGraphDescription:
@@ -39,7 +39,7 @@ const sellerSchema = {
   provider: {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
+    telephone: "+17027896561",
   },
   areaServed: "Las Vegas, Henderson, Summerlin, Clark County NV",
   serviceType: "Seller Representation",
@@ -422,11 +422,11 @@ export default function SellersPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17027896561"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 789-6561
               </a>
               <Link
                 href="/contact"

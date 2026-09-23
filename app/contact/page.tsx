@@ -84,7 +84,7 @@ export default function ContactPage() {
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
             title="Contact Dr. Jan Duffy"
-            subtitle="Reach Dr. Jan Duffy for Las Vegas real estate help — call or text (702) 500-1942, email, or schedule a free consultation online for buying, selling, and 55+ tours in Summerlin, Henderson, and Las Vegas."
+            subtitle="Reach Dr. Jan Duffy for Las Vegas real estate help — call or text (702) 789-6561, email, or schedule a free consultation online for buying, selling, and 55+ tours in Summerlin, Henderson, and Las Vegas."
             priority
           />
 
@@ -136,7 +136,7 @@ export default function ContactPage() {
                       {SITE_CONTACT.email}
                     </a>
                     <p className="text-sm text-slate-500 mt-1">
-                      Typically respond within 2 hours
+                      Expect a reply within the hour
                     </p>
                   </div>
                 </div>
@@ -174,9 +174,6 @@ export default function ContactPage() {
                           <br />
                         </span>
                       ))}
-                    </p>
-                    <p className="text-sm text-slate-500 mt-1">
-                      Available by appointment outside these hours
                     </p>
                   </div>
                 </div>
@@ -292,13 +289,13 @@ export default function ContactPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <a
-                href="tel:+17025001942"
+                href="tel:+17027896561"
                 className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white p-6 rounded-xl transition-colors"
               >
                 <Phone className="h-8 w-8 mr-4" />
                 <div className="text-left">
                   <div className="font-bold text-lg">Call Now</div>
-                  <div className="text-blue-100">(702) 500-1942</div>
+                  <div className="text-blue-100">(702) 789-6561</div>
                 </div>
               </a>
               <a
@@ -331,7 +328,7 @@ export default function ContactPage() {
                 },
                 {
                   q: "How quickly can you respond to inquiries?",
-                  a: "I typically respond to calls, texts, and emails within 2 hours during business hours (9am-6pm daily). For urgent matters, calling or texting (702) 500-1942 is the fastest way to reach me.",
+                  a: "I typically respond to calls, texts, and emails within 2 hours during business hours (9am-6pm daily). For urgent matters, calling or texting (702) 789-6561 is the fastest way to reach me.",
                 },
                 {
                   q: "Do you charge for consultations?",

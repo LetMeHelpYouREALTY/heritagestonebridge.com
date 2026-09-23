@@ -7,7 +7,7 @@ export default function RealScoutScript() {
       id="realscout-web-components"
       src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
       type="module"
-      strategy="afterInteractive"
+      strategy="lazyOnload"
     />
   );
 }

@@ -134,6 +134,24 @@ export const HERITAGE_SITE_ROUTES: HeritageNavItem[] = [
     changeFrequency: "monthly",
   },
   {
+    href: "/reviews",
+    label: "Heritage Stonebridge Reviews",
+    priority: 0.84,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/homes-for-rent",
+    label: "Heritage Stonebridge Homes for Rent",
+    priority: 0.84,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/stonebridge-las-vegas",
+    label: "Stonebridge Las Vegas",
+    priority: 0.86,
+    changeFrequency: "monthly",
+  },
+  {
     href: "/vs-sun-city-summerlin",
     label: "vs Sun City Summerlin",
     priority: 0.8,

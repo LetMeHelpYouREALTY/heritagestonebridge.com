@@ -22,6 +22,7 @@ import {
   HERITAGE_COMMUNITY,
   HERITAGE_FAQS,
 } from "@/lib/heritage-stonebridge/data";
+import { SEARCH_INTENT_FAQS } from "@/lib/search-intent";
 import {
   HERITAGE_COMMUNITY_NAV,
   HERITAGE_BUYER_NAV,
@@ -34,7 +35,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/",
 });
 
-const homepageFaqs = HERITAGE_FAQS.map((f) => ({
+const homepageFaqs = [...HERITAGE_FAQS, ...SEARCH_INTENT_FAQS].map((f) => ({
   question: f.question,
   answer: f.answer,
 }));
@@ -104,7 +105,7 @@ export default function HomePage() {
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
             <div className="mb-6 flex justify-center">
-              <AgentPhoto size="lg" priority />
+              <AgentPhoto size="lg" />
             </div>
             <span className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
               <Shield className="h-4 w-4" />

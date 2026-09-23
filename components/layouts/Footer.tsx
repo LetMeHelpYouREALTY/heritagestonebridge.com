@@ -8,8 +8,10 @@ import {
   Linkedin,
 } from "lucide-react";
 import AgentPhoto from "@/components/shared/AgentPhoto";
-import { SITE_CONTACT } from "@/lib/site-contact";
+import { GBP_DESCRIPTION, SITE_CONTACT } from "@/lib/site-contact";
+import { formatBusinessHoursLines } from "@/lib/hours";
 import { telHref } from "@/lib/phone";
+import PeopleAlsoSearch from "@/components/seo/PeopleAlsoSearch";
 import {
   HERITAGE_COMMUNITY_NAV,
   HERITAGE_BUYER_NAV,
@@ -165,12 +167,31 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
-                <Link
-                  href={telHref(SITE_CONTACT.phone.tel)}
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  {SITE_CONTACT.phone.display}
-                </Link>
+                <span className="text-sm">
+                  <Link
+                    href={telHref(SITE_CONTACT.phone.tel)}
+                    className="text-slate-300 hover:text-white transition-colors"
+                  >
+                    Call {SITE_CONTACT.phone.display}
+                  </Link>
+                  <span className="text-slate-500"> · </span>
+                  <a
+                    href={SITE_CONTACT.phone.sms}
+                    className="text-slate-300 hover:text-white transition-colors"
+                  >
+                    Text
+                  </a>
+                </span>
+              </li>
+              <li className="text-slate-300 text-sm">
+                {formatBusinessHoursLines().map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </li>
+              <li className="text-slate-400 text-xs">
+                {SITE_CONTACT.accessibility.join(". ")}.
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
@@ -186,6 +207,12 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
+        <PeopleAlsoSearch />
+
+        <p className="text-slate-400 text-sm mt-8 max-w-4xl">
+          {GBP_DESCRIPTION}
+        </p>
+
         <div className="border-t border-slate-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm text-center md:text-left">

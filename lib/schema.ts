@@ -8,7 +8,7 @@
  * @see https://developers.google.com/search/docs/appearance/structured-data/sd-policies
  */
 
-import { SITE_CONTACT } from "@/lib/site-contact";
+import { GBP_DESCRIPTION, SITE_CONTACT } from "@/lib/site-contact";
 import { siteConfig, agentInfo, officeInfo } from "./site-config";
 import { openingHoursSpecification } from "./hours";
 import { getGbpAggregateRating } from "./gbp-ratings";
@@ -104,7 +104,7 @@ export function generateRealEstateAgentSchema() {
     url: BASE_URL,
     logo: absoluteAgentPhotoUrl(800),
     image: absoluteAgentPhotoUrl(800),
-    description: siteConfig.description,
+    description: GBP_DESCRIPTION,
     telephone: agentInfo.phoneTel,
     email: agentInfo.email,
     priceRange: "$385K - $10M+",
@@ -121,31 +121,16 @@ export function generateRealEstateAgentSchema() {
       latitude: officeInfo.coordinates.lat,
       longitude: officeInfo.coordinates.lng,
     },
-    areaServed: [
-      {
-        "@type": "City",
-        name: "Las Vegas",
-        sameAs: "https://en.wikipedia.org/wiki/Las_Vegas",
-      },
-      {
-        "@type": "City",
-        name: "Henderson",
-        sameAs: "https://en.wikipedia.org/wiki/Henderson,_Nevada",
-      },
-      {
-        "@type": "Place",
-        name: "Summerlin",
-      },
-      {
-        "@type": "City",
-        name: "North Las Vegas",
-      },
-      {
-        "@type": "Place",
-        name: "Green Valley",
-      },
-    ],
+    areaServed: SITE_CONTACT.serviceAreas.map((name) => ({
+      "@type": "Place" as const,
+      name,
+    })),
     openingHoursSpecification: openingHoursSpecification(),
+    amenityFeature: SITE_CONTACT.accessibility.map((name) => ({
+      "@type": "LocationFeatureSpecification" as const,
+      name,
+      value: true,
+    })),
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "Real Estate License",
