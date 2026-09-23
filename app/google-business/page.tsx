@@ -116,14 +116,20 @@ export default function GoogleBusinessPage() {
 
                 {/* Rating & CTA */}
                 <div className="text-center bg-white/10 rounded-xl p-8">
-                  <div className="flex justify-center mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star
-                        key={star}
-                        className="h-8 w-8 text-yellow-400 fill-yellow-400"
-                      />
-                    ))}
-                  </div>
+                  {gbpRating ? (
+                    <div className="flex justify-center mb-4">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star
+                          key={star}
+                          className={`h-8 w-8 ${
+                            star <= Math.round(Number.parseFloat(gbpRating.ratingValue))
+                              ? "text-yellow-400 fill-yellow-400"
+                              : "text-yellow-200"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  ) : null}
                   {gbpRating ? (
                     <>
                       <p className="text-3xl font-bold mb-2">

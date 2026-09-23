@@ -3,37 +3,38 @@ import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
-import { Phone, Shield, Users, GraduationCap, TreePine } from "lucide-react";
+import { Phone, Shield, Users } from "lucide-react";
 import { buildPageMetadata } from "@/lib/metadata";
 import NeighborhoodPageSchema from "@/components/seo/NeighborhoodPageSchema";
+import { CanonicalRole } from "@/components/seo/CanonicalRole";
 
 export const metadata = buildPageMetadata({
-  title: "Henderson NV Real Estate | Dr. Jan Duffy, BHHS",
+  title: "Henderson Villages vs Heritage at Stonebridge | Dr. Jan Duffy",
   description:
-    "Henderson homes for sale with Dr. Jan Duffy. Compare Henderson villages to Summerlin and Heritage at Stonebridge 55+ guard-gated living.",
+    "/neighborhoods/henderson compares Green Valley, Inspirada, Anthem, MacDonald Highlands, and Lake Las Vegas with Heritage at Stonebridge in Summerlin West 89138. The Henderson guide is /henderson-real-estate.",
   path: "/neighborhoods/henderson",
 });
 
 const hendersonFaqs = [
   {
-    question: "What is the current median home price in Henderson?",
+    question: "What does /neighborhoods/henderson cover?",
     answer:
-      "As of January 2026, Henderson's median home price is $485,000, up 5.1% from last year. Prices range from $350,000 for condos to over $2 million in luxury communities like MacDonald Highlands.",
+      "This URL compares Henderson villages — Green Valley, Inspirada, MacDonald Highlands, Anthem, and Lake Las Vegas — with Heritage at Stonebridge in Summerlin West. The broader Henderson guide is /henderson-real-estate. Green Valley's own page is /neighborhoods/green-valley.",
   },
   {
-    question: "How safe is Henderson compared to Las Vegas?",
+    question: "How far is Henderson from Heritage at Stonebridge?",
     answer:
-      "Henderson consistently ranks as one of America's safest cities. It has been named the safest city in Nevada and frequently appears in national 'Best Places to Live' rankings for its low crime rates and family-friendly environment.",
+      "Heritage at Stonebridge is on Crossbridge Dr in Las Vegas, NV 89138. The drive from central Henderson to Summerlin West is about 22 miles, often 28 minutes off-peak and 40–55 minutes in rush hour.",
   },
   {
-    question: "What are the best neighborhoods in Henderson?",
+    question: "Which Henderson villages are on this page?",
     answer:
-      "Henderson's top neighborhoods include Green Valley (established, mature landscaping), Inspirada (resort-style amenities), MacDonald Highlands (luxury), Anthem (family-oriented), and Lake Las Vegas (waterfront living). Each offers distinct lifestyle options.",
+      "Green Valley (master plan from 1988, The District), Inspirada (resort-style amenities), MacDonald Highlands (guard-gated hillside homes), Anthem, and Lake Las Vegas (waterfront). Each has a different lot size, HOA, and commute to Harry Reid International Airport.",
   },
   {
-    question: "Why choose Berkshire Hathaway HomeServices for Henderson real estate?",
+    question: "How do I get a current Henderson price snapshot?",
     answer:
-      "BHHS Nevada Properties has served Henderson for decades. Our agents like Dr. Jan Duffy know every community, school district, and HOA. The Berkshire Hathaway name provides trust and resources that benefit both buyers and sellers.",
+      "This page does not publish a Henderson median or days-on-market figure. Call Dr. Jan Duffy at (702) 789-6561 for a snapshot tied to recent closed sales in the village you are comparing.",
   },
 ];
 
@@ -43,7 +44,7 @@ export default function HendersonPage() {
       <NeighborhoodPageSchema
         slug="henderson"
         name="Henderson"
-        description="Nevada's second-largest city known for safety, schools, and family-friendly communities"
+        description="Henderson village comparison against Heritage at Stonebridge on Crossbridge Dr, Las Vegas, NV 89138"
         latitude={36.0395}
         longitude={-114.9817}
         containedIn="Henderson"
@@ -66,55 +67,77 @@ export default function HendersonPage() {
           {/* Hero */}
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
-            title="Berkshire Hathaway HomeServices Henderson"
-            subtitle="Henderson is Nevada's second-largest city and one of America's safest — family-friendly communities, top-rated schools, and no state income tax, with a median home price around $485,000."
+            title="Henderson Villages Compared With Heritage at Stonebridge"
+            subtitle="This page lines up Green Valley, Inspirada, Anthem, MacDonald Highlands, and Lake Las Vegas against Heritage at Stonebridge on Crossbridge Dr in 89138."
             priority
           />
 
-          {/* Market Stats */}
+          <CanonicalRole
+            path="/neighborhoods/henderson"
+            answer="Village-by-village comparison for buyers who already know Heritage at Stonebridge and want the Henderson alternatives in one place. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties."
+            related={[
+              {
+                href: "/henderson-real-estate",
+                label: "Henderson real estate guide",
+                note: "Citywide Henderson overview at /henderson-real-estate.",
+              },
+              {
+                href: "/neighborhoods/green-valley",
+                label: "Green Valley Henderson",
+                note: "The 1988 master plan and The District at /neighborhoods/green-valley.",
+              },
+              {
+                href: "/community",
+                label: "Heritage at Stonebridge Summerlin",
+                note: "421 Lennar homes in Summerlin West at /community.",
+              },
+            ]}
+          />
+
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              Henderson Real Estate Market | January 2026
+              Henderson facts used on this comparison
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">$485,000</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">22 mi</div>
+                <div className="text-slate-300 text-sm">Henderson to Summerlin West</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">24 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">1988</div>
+                <div className="text-slate-300 text-sm">Green Valley master plan</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">1,280</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
+                <div className="text-3xl font-bold mb-1">6 mi</div>
+                <div className="text-slate-300 text-sm">To Harry Reid Airport</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+5.1%</div>
-                <div className="text-slate-300 text-sm">YoY Appreciation</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">89138</div>
+                <div className="text-slate-300 text-sm">Heritage ZIP, not Henderson</div>
               </div>
             </div>
+            <p className="mt-6 text-center text-sm text-slate-300">
+              A current Henderson median is not published here. Call (702) 789-6561 for closed-sale comps in the village you are touring.
+            </p>
           </section>
 
           {/* Main Content */}
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Why Henderson Is Nevada's Best-Kept Secret
+                Henderson villages versus a Summerlin West 55+ address
               </h2>
               <p>
-                <strong>Henderson</strong> has quietly become one of the most desirable cities in the American
-                Southwest. As Nevada's second-largest city with over 320,000 residents, Henderson offers the
-                perfect balance of suburban tranquility and urban convenience. <strong>Berkshire Hathaway
-                HomeServices</strong> has been helping families find their Henderson dream homes for decades,
-                and Dr. Jan Duffy brings unmatched expertise to every transaction.
+                <strong>/neighborhoods/henderson</strong> is the comparison. Heritage at Stonebridge is not in
+                Henderson. It is on Crossbridge Dr, Las Vegas, NV 89138 — about 22 miles and 28 minutes
+                off-peak from central Henderson. Use this page when a buyer is weighing that drive against
+                Green Valley, Inspirada, Anthem, MacDonald Highlands, or Lake Las Vegas.
               </p>
               <p>
-                What sets Henderson apart? Start with safety. Henderson consistently ranks as one of America's
-                safest large cities, making it the top choice for families with children. The city's excellent
-                schools, low crime rates, and community-oriented atmosphere create an environment where
-                families thrive. Add in the fact that Nevada has no state income tax, and you understand why
-                so many Californians are making Henderson their new home.
+                Henderson is Nevada&apos;s second-largest city, with more than 320,000 residents and no state
+                income tax. The District at Green Valley Ranch, Galleria at Sunset, and Henderson Hospital
+                sit on the east and south sides of the valley. Harry Reid International Airport is about
+                6 miles from central Henderson.
               </p>
               <p>
                 The Henderson real estate market offers remarkable diversity. From the established tree-lined
@@ -131,25 +154,23 @@ export default function HendersonPage() {
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <Shield className="h-8 w-8 text-blue-600 mr-3" />
-                    <h4 className="font-bold text-slate-900 text-lg">America's Safest City</h4>
+                    <h4 className="font-bold text-slate-900 text-lg">City services and commute</h4>
                   </div>
                   <p className="text-slate-600">
-                    Henderson has been named the safest city in Nevada and consistently ranks among America's
-                    safest large cities. The Henderson Police Department's community policing approach and
-                    active neighborhood watch programs contribute to exceptionally low crime rates that give
-                    families peace of mind.
+                    Henderson runs its own police and fire departments and more than 60 parks. The 215
+                    Beltway and I-515 connect Green Valley and Anthem to the airport in about 12 minutes
+                    off-peak. That airport commute is the practical difference versus Summerlin West.
                   </p>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <Users className="h-8 w-8 text-blue-600 mr-3" />
-                    <h4 className="font-bold text-slate-900 text-lg">Family-First Community</h4>
+                    <h4 className="font-bold text-slate-900 text-lg">Parks, library, and events</h4>
                   </div>
                   <p className="text-slate-600">
-                    Henderson is designed for families. The city operates over 60 parks, multiple recreation
-                    centers, and hundreds of youth programs. The Henderson Libraries system is award-winning,
-                    and community events throughout the year—from the Henderson Farmers Market to the annual
-                    Heritage Parade—bring neighbors together.
+                    The city operates more than 60 parks, recreation centers, and the Henderson Libraries
+                    system. Recurring events include the Henderson Farmers Market and the Heritage Parade.
+                    Amenity lists differ by HOA — Inspirada and Anthem are not the same product as Green Valley.
                   </p>
                 </div>
               </div>
@@ -158,14 +179,14 @@ export default function HendersonPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Henderson School Districts</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Henderson offers some of Nevada's best public schools through Clark County School District,
-                  plus excellent charter and private options:
+                  Henderson addresses are served by the Clark County School District. Confirm the assigned
+                  campus for a specific lot. Names below are a starting list:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Elementary Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• John C. Vanderburg (9/10)</li>
+                      <li>• John C. Vanderburg Elementary</li>
                       <li>• Elise L. Wolff Elementary</li>
                       <li>• C.T. Sewell Elementary</li>
                       <li>• Pinecrest Academy (Charter)</li>
@@ -175,7 +196,7 @@ export default function HendersonPage() {
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Middle & High Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Coronado High School (8/10)</li>
+                      <li>• Coronado High School</li>
                       <li>• Green Valley High School</li>
                       <li>• Foothill High School</li>
                       <li>• Bob Miller Middle School</li>
@@ -262,19 +283,15 @@ export default function HendersonPage() {
               </div>
 
               <p className="mt-8">
-                With <strong>1,280 active listings</strong> and homes averaging just <strong>24 days on market</strong>,
-                Henderson's real estate market moves quickly. The median price of <strong>$485,000</strong> offers
-                excellent value compared to similar communities in California, Arizona, or Colorado. First-time
-                buyers find attainable options starting in the $350,000s, while luxury buyers can explore
-                properties exceeding $2 million in guard-gated communities.
+                This page does not publish a Henderson median, listing count, or days-on-market figure.
+                Call <strong>(702) 789-6561</strong> for comps in the village you are comparing with
+                Heritage at Stonebridge.
               </p>
               <p>
-                Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Henderson home search means
-                working with agents who understand the subtle differences between Henderson's many communities.
-                Dr. Jan Duffy can explain which neighborhoods have the best schools for your children's ages,
-                which HOAs are well-managed, and which areas offer the strongest investment potential. That
-                local knowledge, backed by the resources and reputation of Berkshire Hathaway, makes all the
-                difference.
+                Dr. Jan Duffy can walk the HOA differences between Green Valley, Inspirada, and MacDonald
+                Highlands, then put those next to the Heritage guard gate and clubhouse in 89138. The
+                citywide write-up stays on{" "}
+                <Link href="/henderson-real-estate" className="text-blue-700 underline">/henderson-real-estate</Link>.
               </p>
             </div>
           </section>
@@ -283,10 +300,9 @@ export default function HendersonPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Henderson offers something for everyone—young professionals, growing families, active retirees.
-                As a Berkshire Hathaway HomeServices agent, I help clients cut through the options and find
-                the community that fits their lifestyle. There's a reason Henderson keeps winning 'Best Places
-                to Live' awards."
+                "If you are deciding between a Henderson village and Heritage at Stonebridge, I put the
+                drive time, HOA, and floor plan on one sheet. The airport is closer in Henderson. The
+                guard-gated 55+ clubhouse is in Summerlin West."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
@@ -300,46 +316,12 @@ export default function HendersonPage() {
               Frequently Asked Questions About Henderson Real Estate
             </h2>
             <div className="space-y-6">
-              <div className="bg-white border border-slate-200 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  What is the current median home price in Henderson?
-                </h3>
-                <p className="text-slate-600">
-                  As of January 2026, Henderson's median home price is $485,000, up 5.1% from last year.
-                  Prices range from $350,000 for condos to over $2 million in luxury communities like
-                  MacDonald Highlands.
-                </p>
-              </div>
-              <div className="bg-white border border-slate-200 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  How safe is Henderson compared to Las Vegas?
-                </h3>
-                <p className="text-slate-600">
-                  Henderson consistently ranks as one of America's safest cities. It has been named the
-                  safest city in Nevada and frequently appears in national "Best Places to Live" rankings
-                  for its low crime rates and family-friendly environment.
-                </p>
-              </div>
-              <div className="bg-white border border-slate-200 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  What are the best neighborhoods in Henderson?
-                </h3>
-                <p className="text-slate-600">
-                  Henderson's top neighborhoods include Green Valley (established, mature landscaping),
-                  Inspirada (resort-style amenities), MacDonald Highlands (luxury), Anthem (family-oriented),
-                  and Lake Las Vegas (waterfront living). Each offers distinct lifestyle options.
-                </p>
-              </div>
-              <div className="bg-white border border-slate-200 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  Why choose Berkshire Hathaway HomeServices for Henderson real estate?
-                </h3>
-                <p className="text-slate-600">
-                  BHHS Nevada Properties has served Henderson for decades. Our agents like Dr. Jan Duffy
-                  know every community, school district, and HOA. The Berkshire Hathaway name provides
-                  trust and resources that benefit both buyers and sellers.
-                </p>
-              </div>
+              {hendersonFaqs.map((faq) => (
+                <div key={faq.question} className="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 className="font-bold text-slate-900 mb-2">{faq.question}</h3>
+                  <p className="text-slate-600">{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -364,9 +346,12 @@ export default function HendersonPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        title="Henderson listings"
+        subtitle="Search Henderson inventory. The village comparison with Heritage at Stonebridge stays on /neighborhoods/henderson."
+      />
       <Footer />
     </>
   );

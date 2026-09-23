@@ -3,9 +3,10 @@ import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
-import { Phone, MapPin, TreePine, Mountain, GraduationCap, ShoppingBag } from "lucide-react";
+import { Phone, TreePine, Mountain, GraduationCap, ShoppingBag } from "lucide-react";
 import type { Metadata } from "next";
 import SchemaScript from "@/components/SchemaScript";
+import { CanonicalRole } from "@/components/seo/CanonicalRole";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -16,13 +17,13 @@ import { buildPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildPageMetadata({
   title:
-    "Summerlin Real Estate | Heritage at Stonebridge 55+ | Dr. Jan Duffy",
+    "Summerlin West Villages | Heritage at Stonebridge 89138 | Dr. Jan Duffy",
   description:
-    "Summerlin homes and 55+ communities near Heritage at Stonebridge in 89138. Dr. Jan Duffy, BHHS Nevada Properties — Downtown Summerlin, Red Rock Canyon, and guard-gated active adult living.",
+    "Village map for Summerlin West at /neighborhoods/summerlin. Heritage at Stonebridge is Lennar's guard-gated 55+ community on Crossbridge Dr, Las Vegas, NV 89138. Listings are on /summerlin-homes.",
   path: "/neighborhoods/summerlin",
-  openGraphTitle: "Summerlin Real Estate & Heritage Stonebridge 55+",
+  openGraphTitle: "Summerlin West Villages and Heritage at Stonebridge",
   openGraphDescription:
-    "Hyperlocal Summerlin West guide for buyers comparing Heritage at Stonebridge and master-planned villages.",
+    "How Summerlin villages sit around Heritage at Stonebridge in 89138, with links to the listings page and the 55+ guide.",
 });
 
 // Breadcrumb items for this page
@@ -35,24 +36,24 @@ const breadcrumbs = [
 // FAQ data for schema
 const summerlinFaqs = [
   {
-    question: "What is the current median home price in Summerlin?",
+    question: "What does /neighborhoods/summerlin cover?",
     answer:
-      "As of January 2026, the median home price in Summerlin is $625,000, representing a 6.8% increase year-over-year. Luxury homes in The Ridges and other guard-gated communities can exceed $2 million.",
+      "This URL maps Summerlin villages around Heritage at Stonebridge, Lennar's guard-gated 55+ community on Crossbridge Dr in Las Vegas, NV 89138. Active Summerlin listings are on /summerlin-homes. The 55+ filter is on /summerlin-55-plus.",
   },
   {
-    question: "How long do homes stay on the market in Summerlin?",
+    question: "Where is Heritage at Stonebridge inside Summerlin?",
     answer:
-      "Summerlin homes currently average 22 days on market, faster than the Las Vegas Valley average of 28 days. Well-priced homes in desirable villages often receive multiple offers within the first week.",
+      "Heritage at Stonebridge sits in Summerlin West, ZIP 89138, with 421 homes and nine Lennar floor plans from 1,232 to 2,873 square feet. Dr. Jan Duffy works the community every week.",
   },
   {
     question: "What makes Summerlin different from other Las Vegas communities?",
     answer:
-      "Summerlin offers 150+ parks, 150+ miles of trails, top-rated schools, and stunning Red Rock Canyon views. The Howard Hughes Corporation has developed Summerlin with careful planning since 1990, creating distinct villages each with unique character.",
+      "Summerlin is a Howard Hughes master plan along the west rim, with Red Rock Canyon nearby, Downtown Summerlin retail, and separate villages such as The Ridges, The Paseos, and Red Rock Country Club. School names that serve parts of Summerlin include Palo Verde High School and The Meadows School.",
   },
   {
-    question: "Why should I use a Berkshire Hathaway HomeServices agent in Summerlin?",
+    question: "How do I get a current Summerlin price snapshot?",
     answer:
-      "Berkshire Hathaway HomeServices agents like Dr. Jan Duffy bring deep Summerlin expertise combined with the global resources and trusted reputation of the BHHS brand. This combination helps buyers compete in Summerlin's competitive market and helps sellers maximize their home's value.",
+      "This page does not publish a median price or days-on-market figure. Call Dr. Jan Duffy at (702) 789-6561 for a snapshot tied to recent Heritage at Stonebridge and Summerlin closed sales.",
   },
 ];
 
@@ -63,7 +64,7 @@ const pageSchemas = combineSchemas(
     name: "Summerlin",
     slug: "summerlin",
     description:
-      "Premier master-planned community in Las Vegas featuring Red Rock Canyon views, 150+ parks, top-rated schools, and luxury homes from $400K to $10M+.",
+      "Summerlin West village map centered on Heritage at Stonebridge, a guard-gated Lennar 55+ community of 421 homes on Crossbridge Dr, Las Vegas, NV 89138.",
     latitude: 36.1672,
     longitude: -115.331,
     containedIn: "Las Vegas",
@@ -93,47 +94,71 @@ export default function SummerlinPage() {
           {/* Hero */}
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
-            title="Berkshire Hathaway HomeServices Summerlin"
-            subtitle="Summerlin is Las Vegas's premier master-planned community — 150+ parks, 150+ miles of trails, top-rated schools, and Red Rock Canyon views, with a median home price around $625,000."
+            title="Summerlin West Villages and Heritage at Stonebridge"
+            subtitle="This page maps Summerlin villages around Heritage at Stonebridge, Lennar's guard-gated 55+ community on Crossbridge Dr in Las Vegas, NV 89138."
             priority
           />
 
-          {/* Market Stats */}
+          <CanonicalRole
+            path="/neighborhoods/summerlin"
+            answer="Village map for buyers who start at Heritage at Stonebridge in Summerlin West. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, works the community every week."
+            related={[
+              {
+                href: "/summerlin-homes",
+                label: "Summerlin homes for sale",
+                note: "Listing search for Summerlin at /summerlin-homes.",
+              },
+              {
+                href: "/summerlin-55-plus",
+                label: "Summerlin 55+ communities",
+                note: "Age-restricted communities across Summerlin at /summerlin-55-plus.",
+              },
+              {
+                href: "/community",
+                label: "Heritage at Stonebridge Summerlin",
+                note: "421 homes, nine floor plans, and the clubhouse at /community.",
+              },
+            ]}
+          />
+
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              Summerlin Real Estate Market | January 2026
+              Summerlin West facts on this page
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">$625,000</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">89138</div>
+                <div className="text-slate-300 text-sm">Heritage ZIP on Crossbridge Dr</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">22 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">421</div>
+                <div className="text-slate-300 text-sm">Heritage homes</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">342</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
+                <div className="text-3xl font-bold mb-1">9</div>
+                <div className="text-slate-300 text-sm">Lennar floor plans</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+6.8%</div>
-                <div className="text-slate-300 text-sm">YoY Appreciation</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">1990</div>
+                <div className="text-slate-300 text-sm">Howard Hughes master plan</div>
               </div>
             </div>
+            <p className="mt-6 text-center text-sm text-slate-300">
+              A current Summerlin median and days-on-market figure are not published here. Call (702) 789-6561 for a snapshot from recent closed sales.
+            </p>
           </section>
 
           {/* Main Content */}
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Why Summerlin Is Las Vegas's Most Sought-After Community
+                Summerlin villages around Heritage at Stonebridge
               </h2>
               <p>
-                When homebuyers search for the best neighborhoods in Las Vegas, <strong>Summerlin</strong> consistently
-                ranks at the top. As a <strong>Berkshire Hathaway HomeServices</strong> agent specializing in Summerlin
-                real estate, Dr. Jan Duffy has helped hundreds of families find their perfect home in this
-                award-winning master-planned community.
+                <strong>/neighborhoods/summerlin</strong> is the village map. Heritage at Stonebridge sits in
+                Summerlin West: 421 Lennar homes, a staffed guard gate, and nine floor plans from 1,232 to
+                2,873 square feet on Crossbridge Dr, Las Vegas, NV 89138. Dr. Jan Duffy, Berkshire Hathaway
+                HomeServices Nevada Properties, works that community every week.
               </p>
               <p>
                 Developed by The Howard Hughes Corporation since 1990, Summerlin spans 22,500 acres along the
@@ -144,10 +169,8 @@ export default function SummerlinPage() {
               </p>
               <p>
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has deep roots in Summerlin,
-                and our agents understand the nuances of each village—from the family-friendly atmosphere of
-                The Paseos to the luxury estates of The Ridges. Whether you're a first-time buyer looking at
-                condos in Affinity or a move-up buyer seeking a custom home in Red Rock Country Club, BHHS
-                has the expertise to guide you through the process.
+                and our agents walk the villages—from The Paseos to the estates of The Ridges, and from
+                condos in Affinity to custom homes in Red Rock Country Club.
               </p>
 
               {/* Community Highlights */}
@@ -168,13 +191,13 @@ export default function SummerlinPage() {
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <GraduationCap className="h-8 w-8 text-blue-600 mr-3" />
-                    <h4 className="font-bold text-slate-900 text-lg">Top-Rated Schools</h4>
+                    <h4 className="font-bold text-slate-900 text-lg">Schools that serve Summerlin</h4>
                   </div>
                   <p className="text-slate-600">
-                    Summerlin is home to some of Nevada's highest-performing schools. The community includes
-                    multiple Blue Ribbon schools, advanced STEM programs, and excellent private school options
-                    like The Meadows School and Bishop Gorman High School. Families consistently choose
-                    Summerlin for its exceptional educational opportunities.
+                    Clark County School District campuses in and near Summerlin include Palo Verde High School,
+                    West Career and Technical Academy, and Sig Rogich Middle School. Private options nearby
+                    include The Meadows School and Bishop Gorman High School. Ask which campus a specific
+                    lot is assigned to before you write an offer.
                   </p>
                 </div>
               </div>
@@ -183,14 +206,13 @@ export default function SummerlinPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Summerlin School Districts</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Summerlin is served by the Clark County School District with some of Nevada's
-                  highest-rated public schools, plus excellent private options:
+                  Summerlin is served by the Clark County School District. Campus names below are a
+                  starting list — confirm the assigned school for a specific address:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Elementary Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Sig Rogich Middle School (9/10)</li>
                       <li>• William R. Lummis Elementary</li>
                       <li>• Marion Earl Elementary</li>
                       <li>• Helen Smith Elementary</li>
@@ -200,7 +222,7 @@ export default function SummerlinPage() {
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Middle & High Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Palo Verde High School (8/10)</li>
+                      <li>• Palo Verde High School</li>
                       <li>• West Career & Technical Academy</li>
                       <li>• Del E. Webb Middle School</li>
                       <li>• Sig Rogich Middle School</li>
@@ -272,18 +294,14 @@ export default function SummerlinPage() {
               </div>
 
               <p className="mt-8">
-                The current Summerlin real estate market shows strong demand with <strong>342 active listings</strong> and
-                an average of just <strong>22 days on market</strong>. The median home price of <strong>$625,000</strong> represents
-                solid appreciation while still offering value compared to similar communities in California.
-                Buyers relocating from the West Coast find that Summerlin delivers a comparable lifestyle at
-                a fraction of the cost—with no state income tax.
+                Nevada has no state income tax. A published Summerlin median, active-listing count, and
+                days-on-market number are not on this page. Call <strong>(702) 789-6561</strong> for a
+                snapshot from recent closed sales in the village you are comparing.
               </p>
               <p>
-                Working with a <strong>Berkshire Hathaway HomeServices</strong> agent gives you access to listings
-                before they hit the market, expert negotiation skills, and the backing of a globally trusted brand.
-                Dr. Jan Duffy has been serving Summerlin since 2008, which means you'll have insights that online 
-                searches simply can't provide—from which streets have the best mountain views to which builders 
-                offer the best construction quality.
+                Dr. Jan Duffy has worked Summerlin since 2008. She can tell you which streets face the
+                mountains and which Heritage elevations resell. Active listings stay on{" "}
+                <Link href="/summerlin-homes" className="text-blue-700 underline">/summerlin-homes</Link>.
               </p>
             </div>
           </section>
@@ -292,10 +310,9 @@ export default function SummerlinPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Summerlin isn't just a neighborhood—it's a lifestyle. I've been serving this area since
-                2008, and I can tell you exactly which villages suit young families, which offer the
-                best investment potential, and where you'll find the hidden gems. That local knowledge is
-                what sets Berkshire Hathaway HomeServices apart."
+                "I have worked Summerlin since 2008. I can tell you which village fits a lock-and-leave
+                week, which streets face Red Rock, and how Heritage at Stonebridge resales compare with
+                the rest of Summerlin West."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
@@ -309,47 +326,12 @@ export default function SummerlinPage() {
               Frequently Asked Questions About Summerlin Real Estate
             </h2>
             <div className="space-y-6">
-              <div className="bg-white border border-slate-200 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  What is the current median home price in Summerlin?
-                </h3>
-                <p className="text-slate-600">
-                  As of January 2026, the median home price in Summerlin is $625,000, representing a 6.8%
-                  increase year-over-year. Luxury homes in The Ridges and other guard-gated communities
-                  can exceed $2 million.
-                </p>
-              </div>
-              <div className="bg-white border border-slate-200 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  How long do homes stay on the market in Summerlin?
-                </h3>
-                <p className="text-slate-600">
-                  Summerlin homes currently average 22 days on market, faster than the Las Vegas Valley
-                  average of 28 days. Well-priced homes in desirable villages often receive multiple
-                  offers within the first week.
-                </p>
-              </div>
-              <div className="bg-white border border-slate-200 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  What makes Summerlin different from other Las Vegas communities?
-                </h3>
-                <p className="text-slate-600">
-                  Summerlin offers 150+ parks, 150+ miles of trails, top-rated schools, and stunning
-                  Red Rock Canyon views. The Howard Hughes Corporation has developed Summerlin with
-                  careful planning since 1990, creating distinct villages each with unique character.
-                </p>
-              </div>
-              <div className="bg-white border border-slate-200 rounded-lg p-6">
-                <h3 className="font-bold text-slate-900 mb-2">
-                  Why should I use a Berkshire Hathaway HomeServices agent in Summerlin?
-                </h3>
-                <p className="text-slate-600">
-                  Berkshire Hathaway HomeServices agents like Dr. Jan Duffy bring deep Summerlin expertise
-                  combined with the global resources and trusted reputation of the BHHS brand. This
-                  combination helps buyers compete in Summerlin's competitive market and helps sellers
-                  maximize their home's value.
-                </p>
-              </div>
+              {summerlinFaqs.map((faq) => (
+                <div key={faq.question} className="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 className="font-bold text-slate-900 mb-2">{faq.question}</h3>
+                  <p className="text-slate-600">{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -374,9 +356,12 @@ export default function SummerlinPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        title="Summerlin listings"
+        subtitle="Search Summerlin inventory. The village map for Heritage at Stonebridge stays on /neighborhoods/summerlin."
+      />
       <Footer />
     </>
   );
