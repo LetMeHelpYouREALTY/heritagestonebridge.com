@@ -37,7 +37,7 @@ export default function MoveUpSellerPage() {
           <PageHero
             badge="Your Equity Unlocks Your Dream Home"
             title="Ready for Your Next Chapter?"
-            subtitle="Move-up sellers in Summerlin and Henderson who bought in 2015–2021 often hold $100K–$250K+ in equity — Dr. Jan Duffy coordinates your sale and next purchase so you never carry two mortgages or end up homeless."
+            subtitle="Dr. Jan Duffy coordinates the sale and the next purchase so the two closings line up. Equity is calculated from your payoff and a current comp. Call (702) 789-6561."
             priority
           >
             <a
@@ -51,29 +51,13 @@ export default function MoveUpSellerPage() {
 
           {/* Equity Section */}
           <section className="mb-16 bg-green-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Your Equity Position is Stronger Than You Think
+            <h2 className="text-3xl font-bold mb-4 text-center">
+              Equity is an address, not a valley average
             </h2>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">$100K-$250K+</div>
-                <div className="text-green-100">Typical Equity Gain</div>
-                <div className="text-sm text-green-200 mt-2">For 2015-2021 purchases</div>
-              </div>
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">4 Months</div>
-                <div className="text-green-100">Current Inventory</div>
-                <div className="text-sm text-green-200 mt-2">Your purchase is easier</div>
-              </div>
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">28 Days</div>
-                <div className="text-green-100">Avg. Days to Sell</div>
-                <div className="text-sm text-green-200 mt-2">Priced-right homes</div>
-              </div>
-            </div>
-            <p className="text-center text-green-100 text-lg">
-              If you bought between 2015-2021, you likely have significant equity to leverage.
-              <strong> We help you access it strategically.</strong>
+            <p className="text-center text-green-100 text-lg max-w-3xl mx-auto">
+              This page does not publish a typical equity gain, months of inventory, or days to sell.
+              Dr. Jan subtracts the loan payoff from a current comp on your home.
+              Call (702) 789-6561.
             </p>
           </section>
 
@@ -331,7 +315,7 @@ export default function MoveUpSellerPage() {
               {[
                 {
                   q: "How much equity do I need to move up?",
-                  a: "Most move-up buyers have 20-40% equity in their current home. If you purchased between 2015-2021, Las Vegas appreciation means you likely have $100,000-$250,000+ in equity. Dr. Jan provides free equity analysis to show exactly what you have to work with.",
+                  a: "It depends on the payoff and a current comp for your address. This page does not publish a typical equity range. Call (702) 789-6561 for that worksheet.",
                 },
                 {
                   q: "What if I can't find a new home before selling?",
@@ -343,7 +327,7 @@ export default function MoveUpSellerPage() {
                 },
                 {
                   q: "How do schools factor into a move-up decision?",
-                  a: "Schools significantly impact both your quality of life and resale value. Moving to better school zones (like Summerlin's Palo Verde High School district or Henderson's Coronado) often justifies higher prices through appreciation and demand.",
+                  a: "Clark County School District assigns the zoned campus by address. Dr. Jan looks up the campus name and the drive time for the home you are leaving and the home you are buying. This page does not rank school zones.",
                 },
                 {
                   q: "What are the tax implications of selling and buying?",
