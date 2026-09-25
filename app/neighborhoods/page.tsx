@@ -3,7 +3,7 @@ import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
-import { MapPin, Phone, Home, Users, GraduationCap } from "lucide-react";
+import { MapPin, Phone, Home, GraduationCap } from "lucide-react";
 import { buildPageMetadata } from "@/lib/metadata";
 import StandardPageSchema from "@/components/seo/StandardPageSchema";
 
@@ -19,92 +19,82 @@ const neighborhoods = [
   {
     name: "Summerlin",
     slug: "summerlin",
-    medianPrice: "$625,000",
-    priceChange: "+6.8%",
-    description: "Premier master-planned community with parks, trails, and top-rated schools",
-    highlights: ["150+ Parks", "Top Schools", "Red Rock Views", "Downtown Summerlin"],
-    bestFor: "Families, professionals, outdoor enthusiasts",
+    fact: "89138 village map",
+    description:
+      "Summerlin West villages around Heritage at Stonebridge on Crossbridge Dr.",
+    highlights: ["421 Heritage homes", "Red Rock access", "Downtown Summerlin", "Guard-gated 55+"],
   },
   {
     name: "Henderson",
     slug: "henderson",
-    medianPrice: "$485,000",
-    priceChange: "+5.1%",
-    description: "Nevada's second-largest city known for safety, schools, and family-friendly living",
-    highlights: ["Low Crime Rate", "Excellent Schools", "Lake Las Vegas", "Green Valley"],
-    bestFor: "Families, retirees, commuters",
+    fact: "Village comparison",
+    description:
+      "Green Valley, Inspirada, Anthem, and Lake Las Vegas set next to Heritage in Summerlin West.",
+    highlights: ["22 miles to 89138", "The District", "Airport drive", "Own city"],
   },
   {
     name: "Green Valley",
     slug: "green-valley",
-    medianPrice: "$520,000",
-    priceChange: "+4.8%",
-    description: "Established Henderson community with mature landscaping and excellent amenities",
-    highlights: ["Golf Courses", "Walking Trails", "The District", "Mature Trees"],
-    bestFor: "Established families, golfers, professionals",
+    fact: "1988 master plan",
+    description:
+      "The original Henderson streets, The District, and the split with Green Valley Ranch and Green Valley South.",
+    highlights: ["Mature trees", "The District", "Legacy Golf", "Three pockets"],
   },
   {
     name: "The Ridges",
     slug: "the-ridges",
-    medianPrice: "$2,500,000",
-    priceChange: "+8.5%",
-    description: "Ultra-luxury guard-gated community with custom estates and celebrity residents",
-    highlights: ["Guard-Gated", "Custom Estates", "Bear's Best Golf", "Strip Views"],
-    bestFor: "Luxury buyers, celebrities, executives",
+    fact: "Guard-gated Summerlin",
+    description:
+      "Six villages along Red Rock, including Bear's Best, separate from the 421-home Heritage community.",
+    highlights: ["Guard gate", "Bear's Best", "Six villages", "Strip views"],
   },
   {
     name: "Southern Highlands",
     slug: "southern-highlands",
-    medianPrice: "$750,000",
-    priceChange: "+7.2%",
-    description: "Master-planned luxury community with championship golf and mountain views",
-    highlights: ["Golf Community", "Guard-Gated", "Mountain Views", "Luxury Amenities"],
-    bestFor: "Golfers, luxury buyers, families",
+    fact: "Southwest golf",
+    description:
+      "Robert Trent Jones Jr. golf and both gated and non-gated sections off the south I-15 corridor.",
+    highlights: ["Golf club", "Guard-gated sections", "I-15", "Southwest valley"],
   },
   {
     name: "North Las Vegas",
     slug: "north-las-vegas",
-    medianPrice: "$385,000",
-    priceChange: "+3.2%",
-    description: "Rapidly growing area with affordable new construction and family-friendly communities",
-    highlights: ["New Construction", "Affordable", "Growing Area", "Family-Friendly"],
-    bestFor: "First-time buyers, young families, investors",
+    fact: "Separate city",
+    description:
+      "Aliante, Tule Springs, and other North Las Vegas communities, not Skye Canyon or Centennial Hills.",
+    highlights: ["Aliante", "Tule Springs", "New construction", "Own city limits"],
   },
   {
     name: "Skye Canyon",
     slug: "skye-canyon",
-    medianPrice: "$550,000",
-    priceChange: "+5.5%",
-    description: "Newer master-planned community in northwest Las Vegas with mountain views",
-    highlights: ["New Homes", "Mountain Views", "Skye Center", "Great Schools"],
-    bestFor: "Young families, outdoor enthusiasts, commuters",
+    fact: "Northwest Las Vegas",
+    description:
+      "The 15-acre Skye Center and trails next to Floyd Lamb Park, northwest of Summerlin.",
+    highlights: ["Skye Center", "Floyd Lamb Park", "Trails", "New homes"],
   },
   {
     name: "Centennial Hills",
     slug: "centennial-hills",
-    medianPrice: "$495,000",
-    priceChange: "+4.8%",
-    description: "Northwest Las Vegas community with mountain proximity and family amenities",
-    highlights: ["Mountain Access", "Parks", "Shopping", "Family-Friendly"],
-    bestFor: "Families, outdoor lovers, professionals",
+    fact: "US-95 corridor",
+    description:
+      "Centennial Hills Park and Centennial Center along US-95, a different drive than Skye Canyon.",
+    highlights: ["US-95", "Centennial Center", "Centennial Hills Park", "Northwest Las Vegas"],
   },
   {
     name: "Inspirada",
     slug: "inspirada",
-    medianPrice: "$525,000",
-    priceChange: "+5.0%",
-    description: "Henderson master-planned community with resort-style living and modern homes",
-    highlights: ["Resort Pools", "Walking Trails", "New Construction", "Great Schools"],
-    bestFor: "Families, active adults, new home buyers",
+    fact: "Henderson resort plan",
+    description:
+      "Resort pools and trails in west Henderson, a later product than the 1988 Green Valley streets.",
+    highlights: ["Resort pools", "Trails", "West Henderson", "Newer streets"],
   },
   {
     name: "Mountains Edge",
     slug: "mountains-edge",
-    medianPrice: "$475,000",
-    priceChange: "+4.5%",
-    description: "Southwest Las Vegas master-planned community with mountain views and parks",
-    highlights: ["Mountain Views", "Parks", "Growing Area", "Affordable Luxury"],
-    bestFor: "Families, commuters, value-seekers",
+    fact: "Exploration Peak",
+    description:
+      "The 120-acre Exploration Peak Park and I-215 in southwest Las Vegas.",
+    highlights: ["120-acre park", "I-215", "Marketplace", "Southwest Las Vegas"],
   },
 ];
 
@@ -126,7 +116,7 @@ export default function NeighborhoodsPage() {
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
             title="Las Vegas & Henderson Neighborhoods"
-            subtitle="Explore the best communities in Southern Nevada with Dr. Jan Duffy, your Berkshire Hathaway HomeServices neighborhood expert — from Summerlin and The Ridges to Henderson and Green Valley."
+            subtitle="Pick a neighborhood page by place: Heritage at Stonebridge in 89138, then the Summerlin, Henderson, northwest, and southwest pages that sit around it."
             priority
           />
 
@@ -144,11 +134,10 @@ export default function NeighborhoodsPage() {
                       <h2 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                         {neighborhood.name}
                       </h2>
-                      <p className="text-sm text-slate-500">{neighborhood.bestFor}</p>
+                      <p className="text-sm text-slate-500">/neighborhoods/{neighborhood.slug}</p>
                     </div>
                     <div className="text-right">
-                      <div className="font-bold text-slate-900">{neighborhood.medianPrice}</div>
-                      <div className="text-sm text-green-600">{neighborhood.priceChange} YoY</div>
+                      <div className="text-sm font-semibold text-slate-700">{neighborhood.fact}</div>
                     </div>
                   </div>
                   <p className="text-slate-600 text-sm mb-4">{neighborhood.description}</p>
@@ -171,11 +160,9 @@ export default function NeighborhoodsPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Every Las Vegas neighborhood has its own personality. Whether you want the
-                family-friendly parks of Summerlin, the established charm of Green Valley, or the
-                luxury of The Ridges, I'll help you find the community that matches your lifestyle.
-                That's the Berkshire Hathaway HomeServices difference—personalized guidance backed
-                by local expertise."
+                "Start with the address. Heritage at Stonebridge is Crossbridge Dr in 89138.
+                The Ridges, Skye Canyon, Inspirada, and Southern Highlands are different gates
+                and different drives. I keep each one on its own page so the comps stay with the right streets."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, BHHS Nevada Properties
@@ -198,7 +185,7 @@ export default function NeighborhoodsPage() {
                 <GraduationCap className="h-12 w-12 text-blue-400 mx-auto mb-3" />
                 <h3 className="font-bold mb-2">School Research</h3>
                 <p className="text-slate-400 text-sm">
-                  Detailed school district information, ratings, and enrollment guidance
+                  Campus names and the drive time for a specific address. Confirm the assigned school before you write an offer.
                 </p>
               </div>
               <div className="text-center">
@@ -234,7 +221,7 @@ export default function NeighborhoodsPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <RealScoutListings />
       <Footer />

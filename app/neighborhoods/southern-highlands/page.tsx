@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Phone, Shield, Mountain, Star, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import { CanonicalRole } from "@/components/seo/CanonicalRole";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Southern Highlands Las Vegas Real Estate | Dr. Jan Duffy",
@@ -20,10 +21,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is the current median home price in Southern Highlands?",
+      name: "What does /neighborhoods/southern-highlands cover?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "As of January 2026, Southern Highlands' median home price is $750,000, up 7.2% year-over-year. Prices range from $500,000 for non-gated homes to over $3 million in guard-gated sections.",
+        text: "This URL is the Southern Highlands golf guide: the Robert Trent Jones Jr. course, guard-gated sections, and non-gated sections in southwest Las Vegas. Mountains Edge and Exploration Peak Park are on /neighborhoods/mountains-edge.",
       },
     },
     {
@@ -77,34 +78,58 @@ export default function SouthernHighlandsPage() {
           {/* Hero */}
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
-            title="Berkshire Hathaway HomeServices Southern Highlands"
-            subtitle="Southern Highlands is southwest Las Vegas's premier golf-course master-planned community — a championship Robert Trent Jones Jr. course, guard-gated luxury sections, and quick Strip access, with a median home price around $750,000."
+            title="Southern Highlands: Robert Trent Jones Jr. Golf and I-15"
+            subtitle="This page is southwest Las Vegas golf living — the Robert Trent Jones Jr. course, plus gated and non-gated sections. Mountains Edge and its park are a different page."
             priority
           />
 
-          {/* Market Stats */}
+          <CanonicalRole
+            path="/neighborhoods/southern-highlands"
+            answer="Golf-community guide for Southern Highlands off the south valley. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, separates the golf-club sections from Mountains Edge."
+            related={[
+              {
+                href: "/neighborhoods/mountains-edge",
+                label: "Mountains Edge and Exploration Peak",
+                note: "The 120-acre park and I-215 at /neighborhoods/mountains-edge.",
+              },
+              {
+                href: "/neighborhoods/the-ridges",
+                label: "The Ridges guard gate",
+                note: "Six Summerlin villages at /neighborhoods/the-ridges.",
+              },
+              {
+                href: "/neighborhoods/summerlin",
+                label: "Summerlin West and Heritage",
+                note: "Heritage at Stonebridge in 89138 at /neighborhoods/summerlin.",
+              },
+            ]}
+          />
+
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              Southern Highlands Market | January 2026
+              Southern Highlands facts on this page
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">$750,000</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">RTJ Jr.</div>
+                <div className="text-slate-300 text-sm">Golf course design</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">35 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">Gated</div>
+                <div className="text-slate-300 text-sm">And non-gated sections</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">156</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
+                <div className="text-3xl font-bold mb-1">I-15</div>
+                <div className="text-slate-300 text-sm">South valley freeway</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+7.2%</div>
-                <div className="text-slate-300 text-sm">YoY Appreciation</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">SW</div>
+                <div className="text-slate-300 text-sm">Las Vegas, not Summerlin</div>
               </div>
             </div>
+            <p className="mt-6 text-center text-sm text-slate-300">
+              A current Southern Highlands median is not published here. Call (702) 789-6561 for comps in the section you are touring.
+            </p>
           </section>
 
           {/* Main Content */}
@@ -132,9 +157,8 @@ export default function SouthernHighlandsPage() {
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has represented buyers
                 and sellers in Southern Highlands for over two decades. Dr. Jan Duffy understands the
                 community's various sections—from the guard-gated luxury estates surrounding the golf
-                course to the family-friendly neighborhoods in the community's newer phases. Whether
-                you're seeking a golf course lot with Strip views or a spacious family home with top-rated
-                schools, BHHS has the local expertise to guide your search.
+                course to the later sections of the community. A golf-course lot and a non-gated
+                street are different products, and this page separates them before you tour.
               </p>
 
               {/* Community Highlights */}
@@ -275,11 +299,9 @@ export default function SouthernHighlandsPage() {
               </div>
 
               <p className="mt-8">
-                The Southern Highlands market currently shows <strong>156 active listings</strong> with
-                homes averaging <strong>35 days on market</strong>. The median price of <strong>$750,000</strong>
-                reflects strong appreciation of 7.2% year-over-year, driven by demand from buyers seeking
-                luxury without the premium prices of The Ridges or MacDonald Highlands. Properties range
-                from $500,000 in non-gated sections to over $3 million for golf course estates.
+                This page does not publish a Southern Highlands median, listing count, or days-on-market
+                figure. Call <strong>(702) 789-6561</strong> for comps on a golf-course lot or in a
+                non-gated section.
               </p>
               <p>
                 Choosing <strong>Berkshire Hathaway HomeServices</strong> for Southern Highlands means
@@ -315,12 +337,10 @@ export default function SouthernHighlandsPage() {
             <div className="space-y-6">
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  What is the current median home price in Southern Highlands?
+                  What does /neighborhoods/southern-highlands cover?
                 </h3>
                 <p className="text-slate-600">
-                  As of January 2026, Southern Highlands' median home price is $750,000, up 7.2%
-                  year-over-year. Prices range from $500,000 for non-gated homes to over $3 million
-                  in guard-gated sections.
+                  This URL is the Southern Highlands golf guide: the Robert Trent Jones Jr. course, guard-gated sections, and non-gated sections in southwest Las Vegas. Mountains Edge and Exploration Peak Park are on /neighborhoods/mountains-edge.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -377,9 +397,12 @@ export default function SouthernHighlandsPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        title="Southern Highlands listings"
+        subtitle="Search southwest golf-community inventory. The course and gate guide stays on /neighborhoods/southern-highlands."
+      />
       <Footer />
     </>
   );

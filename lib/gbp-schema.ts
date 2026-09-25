@@ -96,26 +96,9 @@ export const businessInfo = {
     },
   ],
 
-  // Attributes for GBP - Fill out ALL available
+  // Only attributes confirmed on the live Google Business Profile.
   attributes: {
-    // Accessibility (important for GBP)
     accessibility: [...SITE_CONTACT.accessibility],
-    // Service options
-    serviceOptions: [
-      "Online appointments",
-      "Onsite services",
-      "Same-day appointments",
-    ],
-    // Highlights
-    highlights: ["Identifies as women-owned", "LGBTQ+ friendly", "Veteran-led"],
-    // Offerings
-    offerings: ["Free consultation", "Free estimates"],
-    // Amenities
-    amenities: ["Free Wi-Fi", "Free parking"],
-    // Planning
-    planning: ["Appointment required", "Accepts new clients"],
-    // Payments (if applicable)
-    payments: ["Credit cards", "Checks", "Wire transfer"],
   },
 
   // Social profiles for sameAs schema
@@ -127,14 +110,6 @@ export const businessInfo = {
     "https://twitter.com/drjanduffy",
   ],
 
-  // Languages spoken
-  languages: ["English", "Spanish"],
-
-  // Payment methods accepted
-  paymentAccepted: ["Credit Card", "Check", "Wire Transfer"],
-
-  // Year established
-  foundingDate: "2008",
 };
 
 /** GBP dashboard description (≤750 characters) + long-form sections for /google-business */
@@ -153,7 +128,7 @@ Search live inventory at ${siteUrl}/homes-for-sale, request a home valuation at 
 
 Every consultation is education-first: understand guard-gated access, age-restricted rules, monthly HOA context, and which Heritage collection fits your budget before you write an offer.`,
 
-  whereWeServe: `Primary focus: Heritage at Stonebridge and Summerlin West (${HERITAGE_COMMUNITY.postalCode}). Secondary: Summerlin, Las Vegas, Henderson, and Clark County for buyers comparing multiple 55+ communities.
+  whereWeServe: `Google Business Profile service area: ${SITE_CONTACT.serviceAreas.join("; ")}.
 
 Office: ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Hours: ${formatBusinessHoursShort()}.
 

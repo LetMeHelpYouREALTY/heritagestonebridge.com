@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Phone, Mountain, Users, ShoppingBag, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import { CanonicalRole } from "@/components/seo/CanonicalRole";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Centennial Hills Real Estate | Near Summerlin & Heritage Stonebridge",
@@ -20,18 +21,18 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is the current median home price in Centennial Hills?",
+      name: "What does /neighborhoods/centennial-hills cover?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "As of January 2026, Centennial Hills' median home price is $495,000, up 4.8% year-over-year. Prices range from $380,000 for smaller homes to over $900,000 for larger properties with mountain views.",
+        text: "This URL is the US-95 guide for Centennial Hills: Centennial Hills Park and Centennial Center. Skye Canyon is on /neighborhoods/skye-canyon. The City of North Las Vegas is on /neighborhoods/north-las-vegas.",
       },
     },
     {
       "@type": "Question",
-      name: "Is Centennial Hills a good family neighborhood?",
+      name: "How is Centennial Hills different from Skye Canyon?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Centennial Hills is one of Las Vegas's best family neighborhoods with highly-rated schools, safe streets, multiple parks including Centennial Hills Park, and convenient shopping at Centennial Center.",
+        text: "Centennial Hills follows US-95 and includes Centennial Hills Park and Centennial Center. Skye Canyon is organized around the 15-acre Skye Center beside Floyd Lamb Park. Confirm which master plan the address sits in.",
       },
     },
     {
@@ -39,7 +40,7 @@ const faqSchema = {
       name: "How far is Centennial Hills from the Las Vegas Strip?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Centennial Hills is approximately 20-25 minutes from the Strip via US-95. The community offers easy freeway access while maintaining a suburban, family-oriented atmosphere away from tourist areas.",
+        text: "Centennial Hills is approximately 20-25 minutes from the Strip via US-95. The freeway is the practical difference versus Skye Canyon and versus Heritage at Stonebridge in Summerlin West.",
       },
     },
     {
@@ -77,49 +78,72 @@ export default function CentennialHillsPage() {
           {/* Hero */}
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
-            title="Berkshire Hathaway HomeServices Centennial Hills"
-            subtitle="Centennial Hills is an established family community in northwest Las Vegas — highly-rated schools, the 120-acre Centennial Hills Park, and easy US-95 access, with a median home price around $495,000."
+            title="Centennial Hills: US-95, the Park, and Centennial Center"
+            subtitle="This page is the US-95 corridor in northwest Las Vegas — Centennial Hills Park and Centennial Center. Skye Canyon and its 15-acre center are a different page."
             priority
           />
 
-          {/* Market Stats */}
+          <CanonicalRole
+            path="/neighborhoods/centennial-hills"
+            answer="Northwest Las Vegas guide along US-95. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, keeps Centennial Hills separate from Skye Canyon and from the City of North Las Vegas."
+            related={[
+              {
+                href: "/neighborhoods/skye-canyon",
+                label: "Skye Canyon and Skye Center",
+                note: "The 15-acre amenity site at /neighborhoods/skye-canyon.",
+              },
+              {
+                href: "/neighborhoods/north-las-vegas",
+                label: "North Las Vegas city",
+                note: "Aliante and Tule Springs at /neighborhoods/north-las-vegas.",
+              },
+              {
+                href: "/neighborhoods/summerlin",
+                label: "Summerlin West and Heritage",
+                note: "Heritage at Stonebridge in 89138 at /neighborhoods/summerlin.",
+              },
+            ]}
+          />
+
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              Centennial Hills Market | January 2026
+              Centennial Hills facts on this page
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">$495,000</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">US-95</div>
+                <div className="text-slate-300 text-sm">Freeway spine</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">25 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">Park</div>
+                <div className="text-slate-300 text-sm">Centennial Hills Park</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">203</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
+                <div className="text-3xl font-bold mb-1">Center</div>
+                <div className="text-slate-300 text-sm">Centennial Center shops</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+4.8%</div>
-                <div className="text-slate-300 text-sm">YoY Appreciation</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">NW</div>
+                <div className="text-slate-300 text-sm">Las Vegas</div>
               </div>
             </div>
+            <p className="mt-6 text-center text-sm text-slate-300">
+              A current Centennial Hills median is not published here. Call (702) 789-6561 for comps on the street you are touring.
+            </p>
           </section>
 
           {/* Main Content */}
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Centennial Hills: Northwest Las Vegas's Established Family Community
+                Centennial Hills along US-95
               </h2>
               <p>
                 <strong>Centennial Hills</strong> represents the best of established northwest Las Vegas
                 living. While newer communities like Skye Canyon attract attention, Centennial Hills
-                offers something they can't: mature neighborhoods with proven schools, established
-                landscaping, and a genuine sense of community built over nearly two decades.
-                <strong> Berkshire Hathaway HomeServices</strong> helps families discover why
-                Centennial Hills remains one of the valley's most desirable addresses.
+                has older streets, more mature landscaping, and Centennial Center already built.
+                <strong> Berkshire Hathaway HomeServices</strong> uses this page for the US-95
+                side of northwest Las Vegas.
               </p>
               <p>
                 The community's appeal starts with location. Positioned at the base of the mountains
@@ -275,11 +299,9 @@ export default function CentennialHillsPage() {
               </div>
 
               <p className="mt-8">
-                The current market shows <strong>203 active listings</strong> with homes averaging
-                <strong> 25 days on market</strong>. The median price of <strong>$495,000</strong>
-                represents solid 4.8% year-over-year appreciation while remaining more accessible
-                than Summerlin's higher-priced neighborhoods. Properties range from $380,000 for
-                smaller homes to over $900,000 for larger properties with premium lots and views.
+                This page does not publish a Centennial Hills median, listing count, or days-on-market
+                figure. Call <strong>(702) 789-6561</strong> for comps near Centennial Center or
+                Centennial Hills Park.
               </p>
               <p>
                 Working with <strong>Berkshire Hathaway HomeServices</strong> in Centennial Hills means
@@ -316,22 +338,18 @@ export default function CentennialHillsPage() {
             <div className="space-y-6">
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  What is the current median home price in Centennial Hills?
+                  What does /neighborhoods/centennial-hills cover?
                 </h3>
                 <p className="text-slate-600">
-                  As of January 2026, Centennial Hills' median home price is $495,000, up 4.8%
-                  year-over-year. Prices range from $380,000 for smaller homes to over $900,000
-                  for larger properties with mountain views.
+                  This URL is the US-95 guide for Centennial Hills: Centennial Hills Park and Centennial Center. Skye Canyon is on /neighborhoods/skye-canyon. The City of North Las Vegas is on /neighborhoods/north-las-vegas.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Is Centennial Hills a good family neighborhood?
+                  How is Centennial Hills different from Skye Canyon?
                 </h3>
                 <p className="text-slate-600">
-                  Yes, Centennial Hills is one of Las Vegas's best family neighborhoods with
-                  highly-rated schools, safe streets, multiple parks including Centennial Hills
-                  Park, and convenient shopping at Centennial Center.
+                  Centennial Hills follows US-95 and includes Centennial Hills Park and Centennial Center. Skye Canyon is organized around the 15-acre Skye Center beside Floyd Lamb Park. Confirm which master plan the address sits in.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -341,7 +359,7 @@ export default function CentennialHillsPage() {
                 <p className="text-slate-600">
                   Centennial Hills is approximately 20-25 minutes from the Strip via US-95.
                   The community offers easy freeway access while maintaining a suburban,
-                  family-oriented atmosphere away from tourist areas.
+                  The freeway is the practical difference versus Skye Canyon and versus Heritage at Stonebridge in Summerlin West.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -378,9 +396,12 @@ export default function CentennialHillsPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        title="Centennial Hills listings"
+        subtitle="Search US-95 corridor inventory. The park and center guide stays on /neighborhoods/centennial-hills."
+      />
       <Footer />
     </>
   );

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Phone, Waves, TreePine, GraduationCap, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import { CanonicalRole } from "@/components/seo/CanonicalRole";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Inspirada Henderson Real Estate | Dr. Jan Duffy, BHHS",
@@ -20,10 +21,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is the current median home price in Inspirada?",
+      name: "What does /neighborhoods/inspirada cover?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "As of January 2026, Inspirada's median home price is $525,000, up 5.0% year-over-year. New construction ranges from $450,000 to $750,000, while resales offer additional options with established landscaping.",
+        text: "This URL is the west Henderson Inspirada page: resort pools, trails, and newer streets. The 1988 Green Valley master plan, including The District, is on /neighborhoods/green-valley.",
       },
     },
     {
@@ -36,10 +37,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "How are the schools in Inspirada?",
+      name: "Which schools serve Inspirada addresses?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Inspirada is served by highly-rated Henderson schools including newer facilities built specifically for the growing community. The area attracts families specifically for its educational options and family-friendly environment.",
+        text: "Inspirada addresses are in the Clark County School District inside Henderson. Confirm the assigned campus for the lot before you write an offer. Campus names change by village inside the master plan.",
       },
     },
     {
@@ -77,34 +78,58 @@ export default function InspiradaPage() {
           {/* Hero */}
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
-            title="Berkshire Hathaway HomeServices Inspirada"
-            subtitle="Inspirada is Henderson's award-winning resort-style master-planned community — resort pools with water features, miles of trails, and highly-rated schools, with a median home price around $525,000."
+            title="Inspirada: Resort Pools in West Henderson"
+            subtitle="This page is Inspirada only — resort pools, trails, and newer west Henderson streets. The 1988 Green Valley master plan is a different page."
             priority
           />
 
-          {/* Market Stats */}
+          <CanonicalRole
+            path="/neighborhoods/inspirada"
+            answer="West Henderson resort-plan guide. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, tours Inspirada separately from Green Valley and from Heritage at Stonebridge."
+            related={[
+              {
+                href: "/neighborhoods/green-valley",
+                label: "Green Valley 1988 master plan",
+                note: "The District and mature trees at /neighborhoods/green-valley.",
+              },
+              {
+                href: "/neighborhoods/henderson",
+                label: "Henderson village comparison",
+                note: "Henderson set next to Heritage at /neighborhoods/henderson.",
+              },
+              {
+                href: "/community",
+                label: "Heritage at Stonebridge",
+                note: "Guard-gated 55+ in 89138 at /community.",
+              },
+            ]}
+          />
+
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              Inspirada Real Estate Market | January 2026
+              Inspirada facts on this page
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">$525,000</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">Pools</div>
+                <div className="text-slate-300 text-sm">Resort-style water</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">23 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">Trails</div>
+                <div className="text-slate-300 text-sm">Inside the plan</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">98</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
+                <div className="text-3xl font-bold mb-1">West</div>
+                <div className="text-slate-300 text-sm">Henderson</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+5.0%</div>
-                <div className="text-slate-300 text-sm">YoY Appreciation</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">Later</div>
+                <div className="text-slate-300 text-sm">Than Green Valley 1988</div>
               </div>
             </div>
+            <p className="mt-6 text-center text-sm text-slate-300">
+              A current Inspirada median is not published here. Call (702) 789-6561 for comps on the street you are touring.
+            </p>
           </section>
 
           {/* Main Content */}
@@ -258,25 +283,22 @@ export default function InspiradaPage() {
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <ul className="text-slate-600 text-sm space-y-2">
-                    <li><strong>Toll Brothers:</strong> Premium homes $600K-$750K. Known for quality and upgrades.</li>
-                    <li><strong>Beazer Homes:</strong> Mid-range to premium $500K-$650K. Energy-efficient designs.</li>
-                    <li><strong>Lennar:</strong> Entry to mid-range $450K-$580K. "Everything's Included" packages.</li>
+                    <li><strong>Toll Brothers:</strong> Larger plans and upgrade packages. Ask for the current sheet.</li>
+                    <li><strong>Beazer Homes:</strong> Energy-efficient designs.</li>
+                    <li><strong>Lennar:</strong> Everything&apos;s Included packages.</li>
                   </ul>
                   <ul className="text-slate-600 text-sm space-y-2">
-                    <li><strong>Woodside Homes:</strong> Mid-range $480K-$620K. Strong value proposition.</li>
-                    <li><strong>Richmond American:</strong> Entry to mid-range $450K-$550K. Personalization options.</li>
-                    <li><strong>Century Communities:</strong> Affordable entry $420K-$500K. Modern designs.</li>
+                    <li><strong>Woodside Homes:</strong> Ask which plans are still releasing.</li>
+                    <li><strong>Richmond American:</strong> Personalization options on current releases.</li>
+                    <li><strong>Century Communities:</strong> Modern plans. Confirm what is still for sale.</li>
                   </ul>
                 </div>
               </div>
 
               <p className="mt-8">
-                The current Inspirada market shows <strong>98 active listings</strong> with homes
-                averaging <strong>23 days on market</strong>—reflecting strong demand for this
-                sought-after community. The median price of <strong>$525,000</strong> represents
-                solid 5.0% year-over-year appreciation. New construction from builders like Toll
-                Brothers, Lennar, and Beazer ranges from $450,000 to $750,000, while resales with
-                established yards and upgraded features offer compelling alternatives.
+                This page does not publish an Inspirada median, listing count, or days-on-market
+                figure. Call <strong>(702) 789-6561</strong> for the current builder sheet or a
+                resale comp on the street you are touring.
               </p>
               <p>
                 Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Inspirada purchase
@@ -312,12 +334,10 @@ export default function InspiradaPage() {
             <div className="space-y-6">
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  What is the current median home price in Inspirada?
+                  What does /neighborhoods/inspirada cover?
                 </h3>
                 <p className="text-slate-600">
-                  As of January 2026, Inspirada's median home price is $525,000, up 5.0% year-over-year.
-                  New construction ranges from $450,000 to $750,000, while resales offer additional
-                  options with established landscaping.
+                  This URL is the west Henderson Inspirada page: resort pools, trails, and newer streets. The 1988 Green Valley master plan, including The District, is on /neighborhoods/green-valley.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -332,12 +352,10 @@ export default function InspiradaPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  How are the schools in Inspirada?
+                  Which schools serve Inspirada addresses?
                 </h3>
                 <p className="text-slate-600">
-                  Inspirada is served by highly-rated Henderson schools including newer facilities
-                  built specifically for the growing community. The area attracts families specifically
-                  for its educational options and family-friendly environment.
+                  Inspirada addresses are in the Clark County School District inside Henderson. Confirm the assigned campus for the lot before you write an offer. Campus names change by village inside the master plan.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -374,9 +392,12 @@ export default function InspiradaPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        title="Inspirada listings"
+        subtitle="Search west Henderson inventory. The resort-pool guide stays on /neighborhoods/inspirada."
+      />
       <Footer />
     </>
   );
