@@ -11,7 +11,7 @@ function resolveHostname(rawHost: string): string {
 }
 
 export async function getPageDomainConfig(): Promise<DomainConfig> {
-  const headersList = headers();
+  const headersList = await headers();
   const domain = headersList.get("x-domain") || "";
   return getDomainConfig(resolveHostname(domain));
 }

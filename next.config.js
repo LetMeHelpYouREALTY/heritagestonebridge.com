@@ -32,9 +32,6 @@ const nextConfig = {
   // Compression
   compress: true,
 
-  // Performance optimizations
-  swcMinify: true,
-
   // Middleware handles trailing-slash + apex→www + legacy paths in one hop
   skipTrailingSlashRedirect: true,
 
