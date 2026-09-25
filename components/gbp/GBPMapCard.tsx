@@ -33,8 +33,7 @@ export default function GBPMapCard({
           {SITE_CONTACT.address.postalCode}
         </address>
         <p className="text-sm text-slate-600">
-          <span className="font-medium">Hours:</span> Mon–Fri 9am–6pm, Sat 10am–4pm, Sun by
-          appointment
+          <span className="font-medium">Hours:</span> Mon–Sun 8am–8pm
         </p>
       </div>
 

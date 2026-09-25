@@ -21,9 +21,7 @@ Paste-ready copy for the GBP dashboard. **Must match** `lib/site-contact.ts` and
 
 | Day | Hours |
 |-----|--------|
-| Monday–Friday | 9:00 AM – 6:00 PM |
-| Saturday | 10:00 AM – 4:00 PM |
-| Sunday | By appointment |
+| Monday–Sunday | 8:00 AM – 8:00 PM |
 
 ---
 
@@ -47,7 +45,7 @@ Downsizing, relocating to Las Vegas, or selling inside Heritage? Get MLS-backed 
 
 (702) 500-1942 • DrDuffySells@HeritageStonebridge.com • heritagestonebridge.com
 
-Mon–Fri 9–6, Sat 10–4, Sun by appointment.
+Mon–Sun 8am–8pm.
 ```
 
 *(~680 characters — within Google's 750-character limit.)*

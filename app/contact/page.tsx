@@ -331,7 +331,7 @@ export default function ContactPage() {
                 },
                 {
                   q: "How quickly can you respond to inquiries?",
-                  a: "I typically respond to calls, texts, and emails within 2 hours during business hours (9am-6pm daily). For urgent matters, calling or texting (702) 500-1942 is the fastest way to reach me.",
+                  a: "I typically respond to calls, texts, and emails within 2 hours during business hours (8am-8pm daily). For urgent matters, calling or texting (702) 500-1942 is the fastest way to reach me.",
                 },
                 {
                   q: "Do you charge for consultations?",

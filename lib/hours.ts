@@ -41,13 +41,9 @@ export function openingHoursSpecification() {
 }
 
 export function formatBusinessHoursShort(): string {
-  return "Monday–Friday 9am–6pm, Saturday 10am–4pm, Sunday by appointment";
+  return "Monday–Sunday 8:00 AM–8:00 PM";
 }
 
 export function formatBusinessHoursLines(): string[] {
-  return [
-    "Monday - Friday: 9:00 AM - 6:00 PM",
-    "Saturday: 10:00 AM - 4:00 PM",
-    "Sunday: By appointment",
-  ];
+  return ["Monday - Sunday: 8:00 AM - 8:00 PM"];
 }
