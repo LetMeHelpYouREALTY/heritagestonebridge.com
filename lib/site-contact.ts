@@ -10,8 +10,8 @@ export const SITE_CONTACT = {
   license: "S.0197614.LLC",
   brokerage: "Berkshire Hathaway HomeServices Nevada Properties",
   phone: {
-    display: "(702) 222-1964",
-    tel: "+17022221964",
+    display: "(702) 789-6561",
+    tel: "+17027896561",
   },
   email: "DrDuffySells@HeritageStonebridge.com",
   address: {

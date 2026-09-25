@@ -147,7 +147,7 @@ export const businessInfo = {
 
 /** GBP dashboard description (≤750 characters) + long-form sections for /google-business */
 export const gbpShortDescription =
-  "Your local guide to Heritage at Stonebridge — Lennar's guard-gated 55+ community in Summerlin West (89138). Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties (NV License S.0197614.LLC), helps buyers and sellers with resale and new-build homes, HOA questions, and fair comparisons to Sun City Summerlin and other Summerlin active-adult neighborhoods. Downsizing, relocating to Las Vegas, or selling inside Heritage? Get MLS-backed pricing, private tours, and straightforward advice. (702) 222-1964 • DrDuffySells@HeritageStonebridge.com • heritagestonebridge.com. Mon–Sun 8am–8pm.";
+  "Your local guide to Heritage at Stonebridge — Lennar's guard-gated 55+ community in Summerlin West (89138). Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties (NV License S.0197614.LLC), helps buyers and sellers with resale and new-build homes, HOA questions, and fair comparisons to Sun City Summerlin and other Summerlin active-adult neighborhoods. Downsizing, relocating to Las Vegas, or selling inside Heritage? Get MLS-backed pricing, private tours, and straightforward advice. (702) 789-6561 • DrDuffySells@HeritageStonebridge.com • heritagestonebridge.com. Mon–Sun 8am–8pm.";
 
 export const gbpDescription = {
   whoWeAre: `Heritage Stonebridge | Homes By Dr. Jan Duffy is the local real estate office supporting buyers and sellers at Heritage at Stonebridge — Lennar's guard-gated 55+ community in Summerlin West, Las Vegas (${HERITAGE_COMMUNITY.postalCode}).
