@@ -6,11 +6,12 @@ import Link from "next/link";
 import { Phone, Shield, Star, Mountain, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import { CanonicalRole } from "@/components/seo/CanonicalRole";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "The Ridges Summerlin Luxury Homes | Dr. Jan Duffy, BHHS",
+  title: "The Ridges Summerlin Guard Gate | Dr. Jan Duffy, BHHS",
   description:
-    "The Ridges guard-gated luxury homes in Summerlin with Dr. Jan Duffy — near Heritage at Stonebridge and Summerlin West 55+ inventory.",
+    "/neighborhoods/the-ridges covers the six Ridges villages, including Bear's Best, along Red Rock. Heritage at Stonebridge is the separate 421-home 55+ community at /neighborhoods/summerlin.",
   path: "/neighborhoods/the-ridges",
 });
 
@@ -20,10 +21,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is the current median home price in The Ridges?",
+      name: "What does /neighborhoods/the-ridges cover?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "As of January 2026, The Ridges median home price is $2.5 million. Properties range from $1.5 million for smaller homes to over $15 million for custom estates with Strip and Red Rock views.",
+        text: "This URL is the guard-gated Ridges page: six villages including Bear's Best, Falcon Ridge, Azure, Talon Ridge, Silver Ridge, and Eagle Hills. Heritage at Stonebridge, the 421-home Lennar 55+ community on Crossbridge Dr, is on /neighborhoods/summerlin.",
       },
     },
     {
@@ -77,34 +78,58 @@ export default function TheRidgesPage() {
           {/* Hero */}
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
-            title="Berkshire Hathaway HomeServices The Ridges"
-            subtitle="The Ridges is Summerlin's most exclusive guard-gated community in Las Vegas — 900 estate home sites along Red Rock Canyon with Strip views and Bear's Best golf, at a median home price around $2.5 million."
+            title="The Ridges: Six Guard-Gated Villages Along Red Rock"
+            subtitle="This page is The Ridges only — Bear's Best, Falcon Ridge, Azure, Talon Ridge, Silver Ridge, and Eagle Hills. Heritage at Stonebridge is a different Summerlin West gate."
             priority
           />
 
-          {/* Market Stats */}
+          <CanonicalRole
+            path="/neighborhoods/the-ridges"
+            answer="Guard-gated estate villages in Summerlin along Red Rock. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, keeps this tour separate from the 421-home Heritage at Stonebridge community."
+            related={[
+              {
+                href: "/neighborhoods/summerlin",
+                label: "Summerlin West villages",
+                note: "Heritage at Stonebridge in 89138 at /neighborhoods/summerlin.",
+              },
+              {
+                href: "/community",
+                label: "Heritage at Stonebridge",
+                note: "Lennar 55+ floor plans and clubhouse at /community.",
+              },
+              {
+                href: "/neighborhoods/southern-highlands",
+                label: "Southern Highlands golf",
+                note: "Southwest golf community at /neighborhoods/southern-highlands.",
+              },
+            ]}
+          />
+
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              The Ridges Luxury Market | January 2026
+              The Ridges facts on this page
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">$2.5M</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">6</div>
+                <div className="text-slate-300 text-sm">Villages</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">67 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">900</div>
+                <div className="text-slate-300 text-sm">Home sites</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">42</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
+                <div className="text-3xl font-bold mb-1">Gate</div>
+                <div className="text-slate-300 text-sm">Staffed entry</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+8.2%</div>
-                <div className="text-slate-300 text-sm">YoY Appreciation</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">Bear&apos;s Best</div>
+                <div className="text-slate-300 text-sm">Golf village</div>
               </div>
             </div>
+            <p className="mt-6 text-center text-sm text-slate-300">
+              A current Ridges median is not published here. Call (702) 789-6561 for comps in the village you are touring.
+            </p>
           </section>
 
           {/* Main Content */}
@@ -174,27 +199,27 @@ export default function TheRidgesPage() {
               <div className="not-prose grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="bg-white border border-slate-200 rounded-xl p-5">
                   <h5 className="font-bold text-slate-900 mb-2">Bear's Best</h5>
-                  <p className="text-slate-600 text-sm">Surrounds Bear's Best Golf Club. Premium golf course lots with Strip and mountain views. $2M-$8M.</p>
+                  <p className="text-slate-600 text-sm">Surrounds Bear&apos;s Best Golf Club. Golf-course lots with Strip and mountain views.</p>
                 </div>
                 <div className="bg-white border border-slate-200 rounded-xl p-5">
                   <h5 className="font-bold text-slate-900 mb-2">Falcon Ridge</h5>
-                  <p className="text-slate-600 text-sm">Elevated position with panoramic views. Custom estates on large lots. $2.5M-$10M.</p>
+                  <p className="text-slate-600 text-sm">Elevated position with panoramic views. Custom estates on large lots.</p>
                 </div>
                 <div className="bg-white border border-slate-200 rounded-xl p-5">
                   <h5 className="font-bold text-slate-900 mb-2">Azure</h5>
-                  <p className="text-slate-600 text-sm">Contemporary architecture with dramatic Strip views. Modern luxury homes. $1.8M-$5M.</p>
+                  <p className="text-slate-600 text-sm">Contemporary architecture with Strip views.</p>
                 </div>
                 <div className="bg-white border border-slate-200 rounded-xl p-5">
                   <h5 className="font-bold text-slate-900 mb-2">Talon Ridge</h5>
-                  <p className="text-slate-600 text-sm">Semi-custom homes with Red Rock backdrop. Entry to The Ridges lifestyle. $1.5M-$3M.</p>
+                  <p className="text-slate-600 text-sm">Semi-custom homes with a Red Rock backdrop.</p>
                 </div>
                 <div className="bg-white border border-slate-200 rounded-xl p-5">
                   <h5 className="font-bold text-slate-900 mb-2">Silver Ridge</h5>
-                  <p className="text-slate-600 text-sm">Exclusive custom lot community. Architectural masterpieces. $3M-$15M.</p>
+                  <p className="text-slate-600 text-sm">Custom-lot village with larger estate parcels.</p>
                 </div>
                 <div className="bg-white border border-slate-200 rounded-xl p-5">
                   <h5 className="font-bold text-slate-900 mb-2">Eagle Hills</h5>
-                  <p className="text-slate-600 text-sm">Newest village with modern designs. Desert contemporary style. $2M-$6M.</p>
+                  <p className="text-slate-600 text-sm">Later village with desert contemporary designs.</p>
                 </div>
               </div>
 
@@ -246,8 +271,7 @@ export default function TheRidgesPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Schools Serving The Ridges</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  The Ridges is served by top-rated public schools in the Palo Verde cluster, plus Las Vegas's
-                  finest private school options:
+                  Confirm the assigned campus. Names in the Palo Verde area and nearby private schools include:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -272,12 +296,9 @@ export default function TheRidgesPage() {
               </div>
 
               <p className="mt-8">
-                The current Ridges market shows <strong>42 active listings</strong> with homes averaging
-                <strong> 67 days on market</strong>—longer than the valley average, reflecting the careful
-                consideration luxury buyers give to properties at this level. The median price of
-                <strong> $2.5 million</strong> represents exceptional value compared to comparable
-                communities in California or Hawaii. Properties range from $1.5 million to over $15
-                million for the most spectacular custom estates.
+                This page does not publish a Ridges median, listing count, or days-on-market figure.
+                Call <strong>(702) 789-6561</strong> for comps in Bear&apos;s Best, Falcon Ridge, Azure,
+                Talon Ridge, Silver Ridge, or Eagle Hills.
               </p>
               <p>
                 Working with <strong>Berkshire Hathaway HomeServices</strong> in The Ridges means working
@@ -313,12 +334,10 @@ export default function TheRidgesPage() {
             <div className="space-y-6">
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  What is the current median home price in The Ridges?
+                  What does /neighborhoods/the-ridges cover?
                 </h3>
                 <p className="text-slate-600">
-                  As of January 2026, The Ridges median home price is $2.5 million. Properties range from
-                  $1.5 million for smaller homes to over $15 million for custom estates with Strip and
-                  Red Rock views.
+                  This URL is the guard-gated Ridges page: six villages including Bear&apos;s Best, Falcon Ridge, Azure, Talon Ridge, Silver Ridge, and Eagle Hills. Heritage at Stonebridge, the 421-home Lennar 55+ community on Crossbridge Dr, is on /neighborhoods/summerlin.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -364,20 +383,23 @@ export default function TheRidgesPage() {
               in Las Vegas's most prestigious community.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17027896561"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 789-6561
             </a>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        title="The Ridges listings"
+        subtitle="Search Ridges inventory. The six-village guide stays on /neighborhoods/the-ridges."
+      />
       <Footer />
     </>
   );

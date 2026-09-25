@@ -1,10 +1,13 @@
-import { SITE_CONTACT } from "@/lib/site-contact";
+import { GBP_DESCRIPTION, SITE_CONTACT } from "@/lib/site-contact";
 import { getSiteUrl } from "@/lib/site-url";
 import {
   HERITAGE_COMMUNITY,
   HERITAGE_FAQS,
 } from "@/lib/heritage-stonebridge/data";
-import { openingHoursSpecification } from "@/lib/hours";
+import {
+  formatBusinessHoursShort,
+  openingHoursSpecification,
+} from "@/lib/hours";
 import { getGbpAggregateRating } from "@/lib/gbp-ratings";
 import { organizationId } from "@/lib/entity-ids";
 import { absoluteAgentPhotoUrl } from "@/lib/agent-assets";
@@ -37,18 +40,11 @@ export const businessInfo = {
   // Geo coordinates for distance ranking
   geo: SITE_CONTACT.geo,
 
-  // Service areas — Heritage at Stonebridge / Summerlin West first
-  serviceAreas: [
-    "Summerlin, NV",
-    "Las Vegas, NV",
-    "Henderson, NV",
-    "Clark County, NV",
-  ],
+  serviceAreas: [...SITE_CONTACT.serviceAreas],
 
-  // Categories - Primary + Secondary for GBP
   categories: {
-    primary: "Real Estate Agent",
-    secondary: ["Real Estate Agency", "Real Estate Consultant"],
+    primary: SITE_CONTACT.categories.primary,
+    secondary: [SITE_CONTACT.categories.secondary],
   },
 
   // Services — hyperlocal to Heritage Stonebridge / Summerlin 55+
@@ -100,30 +96,9 @@ export const businessInfo = {
     },
   ],
 
-  // Attributes for GBP - Fill out ALL available
+  // Only attributes confirmed on the live Google Business Profile.
   attributes: {
-    // Accessibility (important for GBP)
-    accessibility: [
-      "Wheelchair accessible entrance",
-      "Wheelchair accessible parking lot",
-      "Wheelchair accessible restroom",
-    ],
-    // Service options
-    serviceOptions: [
-      "Online appointments",
-      "Onsite services",
-      "Same-day appointments",
-    ],
-    // Highlights
-    highlights: ["Identifies as women-owned", "LGBTQ+ friendly", "Veteran-led"],
-    // Offerings
-    offerings: ["Free consultation", "Free estimates"],
-    // Amenities
-    amenities: ["Free Wi-Fi", "Free parking"],
-    // Planning
-    planning: ["Appointment required", "Accepts new clients"],
-    // Payments (if applicable)
-    payments: ["Credit cards", "Checks", "Wire transfer"],
+    accessibility: [...SITE_CONTACT.accessibility],
   },
 
   // Social profiles for sameAs schema
@@ -135,19 +110,10 @@ export const businessInfo = {
     "https://twitter.com/drjanduffy",
   ],
 
-  // Languages spoken
-  languages: ["English", "Spanish"],
-
-  // Payment methods accepted
-  paymentAccepted: ["Credit Card", "Check", "Wire Transfer"],
-
-  // Year established
-  foundingDate: "2008",
 };
 
 /** GBP dashboard description (≤750 characters) + long-form sections for /google-business */
-export const gbpShortDescription =
-  "Your local guide to Heritage at Stonebridge — Lennar's guard-gated 55+ community in Summerlin West (89138). Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties (NV License S.0197614.LLC), helps buyers and sellers with resale and new-build homes, HOA questions, and fair comparisons to Sun City Summerlin and other Summerlin active-adult neighborhoods. Downsizing, relocating to Las Vegas, or selling inside Heritage? Get MLS-backed pricing, private tours, and straightforward advice. (702) 500-1942 • DrDuffySells@HeritageStonebridge.com • heritagestonebridge.com. Mon–Fri 9–6, Sat 10–4, Sun by appointment.";
+export const gbpShortDescription = GBP_DESCRIPTION;
 
 export const gbpDescription = {
   whoWeAre: `Heritage Stonebridge | Homes By Dr. Jan Duffy is the local real estate office supporting buyers and sellers at Heritage at Stonebridge — Lennar's guard-gated 55+ community in Summerlin West, Las Vegas (${HERITAGE_COMMUNITY.postalCode}).
@@ -162,9 +128,9 @@ Search live inventory at ${siteUrl}/homes-for-sale, request a home valuation at 
 
 Every consultation is education-first: understand guard-gated access, age-restricted rules, monthly HOA context, and which Heritage collection fits your budget before you write an offer.`,
 
-  whereWeServe: `Primary focus: Heritage at Stonebridge and Summerlin West (${HERITAGE_COMMUNITY.postalCode}). Secondary: Summerlin, Las Vegas, Henderson, and Clark County for buyers comparing multiple 55+ communities.
+  whereWeServe: `Google Business Profile service area: ${SITE_CONTACT.serviceAreas.join("; ")}.
 
-Office: ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Hours: Monday–Friday 9am–6pm, Saturday 10am–4pm, Sunday by appointment.
+Office: ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Hours: ${formatBusinessHoursShort()}.
 
 Call ${SITE_CONTACT.phone.display}, email ${SITE_CONTACT.email}, or visit ${siteUrl} for community guides, floor plans, HOA overview, and side-by-side comparisons with other Summerlin active-adult neighborhoods.`,
 };
@@ -179,7 +145,7 @@ export const gbpFAQs = [
   },
   {
     question: "How do I schedule a consultation with Dr. Jan Duffy?",
-    answer: `Call or text ${SITE_CONTACT.phone.display}, email ${SITE_CONTACT.email}, or book online at ${siteUrl}/contact. Office visits at ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Monday–Friday 9am–6pm, Saturday 10am–4pm, Sunday by appointment.`,
+    answer: `Call or text ${SITE_CONTACT.phone.display}, email ${SITE_CONTACT.email}, or book online at ${siteUrl}/contact. Office visits at ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. ${formatBusinessHoursShort()}.`,
   },
   {
     question: "Does Dr. Jan help sellers in Heritage at Stonebridge?",
@@ -198,6 +164,7 @@ export function generateLocalBusinessSchema() {
     name: businessInfo.name,
     image: absoluteAgentPhotoUrl(800),
     url: businessInfo.url,
+    description: GBP_DESCRIPTION,
     telephone: businessInfo.phone.tel,
     email: businessInfo.email,
     priceRange: businessInfo.priceRange,
@@ -211,6 +178,11 @@ export function generateLocalBusinessSchema() {
       longitude: businessInfo.geo.longitude,
     },
     openingHoursSpecification: openingHoursSpecification(),
+    amenityFeature: SITE_CONTACT.accessibility.map((name) => ({
+      "@type": "LocationFeatureSpecification" as const,
+      name,
+      value: true,
+    })),
     areaServed: businessInfo.serviceAreas.map((area) => {
       if (area.startsWith("Clark County")) {
         return { "@type": "AdministrativeArea", name: area };

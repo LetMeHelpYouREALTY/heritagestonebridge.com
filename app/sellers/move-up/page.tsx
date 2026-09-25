@@ -37,43 +37,27 @@ export default function MoveUpSellerPage() {
           <PageHero
             badge="Your Equity Unlocks Your Dream Home"
             title="Ready for Your Next Chapter?"
-            subtitle="Move-up sellers in Summerlin and Henderson who bought in 2015–2021 often hold $100K–$250K+ in equity — Dr. Jan Duffy coordinates your sale and next purchase so you never carry two mortgages or end up homeless."
+            subtitle="Dr. Jan Duffy coordinates the sale and the next purchase so the two closings line up. Equity is calculated from your payoff and a current comp. Call (702) 789-6561."
             priority
           >
             <a
-              href="tel:+17025001942"
+              href="tel:+17027896561"
               className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Start Your Upgrade → (702) 500-1942
+              Start Your Upgrade → (702) 789-6561
             </a>
           </PageHero>
 
           {/* Equity Section */}
           <section className="mb-16 bg-green-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Your Equity Position is Stronger Than You Think
+            <h2 className="text-3xl font-bold mb-4 text-center">
+              Equity is an address, not a valley average
             </h2>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">$100K-$250K+</div>
-                <div className="text-green-100">Typical Equity Gain</div>
-                <div className="text-sm text-green-200 mt-2">For 2015-2021 purchases</div>
-              </div>
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">4 Months</div>
-                <div className="text-green-100">Current Inventory</div>
-                <div className="text-sm text-green-200 mt-2">Your purchase is easier</div>
-              </div>
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">28 Days</div>
-                <div className="text-green-100">Avg. Days to Sell</div>
-                <div className="text-sm text-green-200 mt-2">Priced-right homes</div>
-              </div>
-            </div>
-            <p className="text-center text-green-100 text-lg">
-              If you bought between 2015-2021, you likely have significant equity to leverage.
-              <strong> We help you access it strategically.</strong>
+            <p className="text-center text-green-100 text-lg max-w-3xl mx-auto">
+              This page does not publish a typical equity gain, months of inventory, or days to sell.
+              Dr. Jan subtracts the loan payoff from a current comp on your home.
+              Call (702) 789-6561.
             </p>
           </section>
 
@@ -92,8 +76,8 @@ export default function MoveUpSellerPage() {
                 <div className="flex-grow">
                   <h3 className="font-bold text-slate-900 mb-1">Centennial Hills → Summerlin</h3>
                   <p className="text-slate-600 text-sm">
-                    Upgrade from $450K starter to $650K+ in Downtown Summerlin area. Better schools,
-                    walkable amenities, Red Rock views.
+                    Move from Centennial Hills toward Summerlin for Downtown Summerlin, trails,
+                    and Red Rock access. A current price on both sides is a call to (702) 789-6561.
                   </p>
                 </div>
                 <ArrowRight className="h-6 w-6 text-blue-600 flex-shrink-0 ml-4" />
@@ -108,8 +92,8 @@ export default function MoveUpSellerPage() {
                 <div className="flex-grow">
                   <h3 className="font-bold text-slate-900 mb-1">Green Valley → MacDonald Ranch</h3>
                   <p className="text-slate-600 text-sm">
-                    Move from established Green Valley ($520K) to luxury Henderson ($800K+).
-                    Larger lots, custom features, mountain views.
+                    Move from Green Valley toward MacDonald Ranch for larger lots and mountain views.
+                    Call (702) 789-6561 for comps on both sides.
                   </p>
                 </div>
                 <ArrowRight className="h-6 w-6 text-green-600 flex-shrink-0 ml-4" />
@@ -124,8 +108,8 @@ export default function MoveUpSellerPage() {
                 <div className="flex-grow">
                   <h3 className="font-bold text-slate-900 mb-1">Inspirada → Southern Highlands</h3>
                   <p className="text-slate-600 text-sm">
-                    Graduate from master-planned ($525K) to golf community luxury ($750K+).
-                    Country club lifestyle, guard-gated options.
+                    Move from Inspirada toward Southern Highlands for golf and guard-gated sections.
+                    Call (702) 789-6561 for comps on both sides.
                   </p>
                 </div>
                 <ArrowRight className="h-6 w-6 text-purple-600 flex-shrink-0 ml-4" />
@@ -331,7 +315,7 @@ export default function MoveUpSellerPage() {
               {[
                 {
                   q: "How much equity do I need to move up?",
-                  a: "Most move-up buyers have 20-40% equity in their current home. If you purchased between 2015-2021, Las Vegas appreciation means you likely have $100,000-$250,000+ in equity. Dr. Jan provides free equity analysis to show exactly what you have to work with.",
+                  a: "It depends on the payoff and a current comp for your address. This page does not publish a typical equity range. Call (702) 789-6561 for that worksheet.",
                 },
                 {
                   q: "What if I can't find a new home before selling?",
@@ -343,7 +327,7 @@ export default function MoveUpSellerPage() {
                 },
                 {
                   q: "How do schools factor into a move-up decision?",
-                  a: "Schools significantly impact both your quality of life and resale value. Moving to better school zones (like Summerlin's Palo Verde High School district or Henderson's Coronado) often justifies higher prices through appreciation and demand.",
+                  a: "Clark County School District assigns the zoned campus by address. Dr. Jan looks up the campus name and the drive time for the home you are leaving and the home you are buying. This page does not rank school zones.",
                 },
                 {
                   q: "What are the tax implications of selling and buying?",
@@ -369,11 +353,11 @@ export default function MoveUpSellerPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17027896561"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 789-6561
               </a>
               <Link
                 href="/home-valuation"

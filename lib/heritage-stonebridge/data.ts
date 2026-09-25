@@ -173,6 +173,6 @@ export const HERITAGE_FAQS = [
   {
     question: "Who helps buyers and sellers in Heritage at Stonebridge?",
     answer:
-      "Dr. Jan Duffy, REALTOR® (License S.0197614.LLC) with Berkshire Hathaway HomeServices Nevada Properties, specializes in Heritage at Stonebridge and Summerlin 55+ moves. Call (702) 500-1942 or schedule a consultation online.",
+      "Dr. Jan Duffy, REALTOR® (License S.0197614.LLC) with Berkshire Hathaway HomeServices Nevada Properties, specializes in Heritage at Stonebridge and Summerlin 55+ moves. Call (702) 789-6561 or schedule a consultation online.",
   },
 ] as const;

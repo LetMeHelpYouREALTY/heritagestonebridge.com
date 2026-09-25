@@ -42,7 +42,7 @@ export function middleware(request: NextRequest) {
   const normalized = stripTrailingSlash(rawPath);
 
   // Malformed tel: link crawled as a path
-  if (normalized === "/+17025001942") {
+  if (normalized === "/+17025001942" || normalized === "/+17027896561") {
     return canonicalRedirect(request, "/contact");
   }
 

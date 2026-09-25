@@ -18,19 +18,14 @@ export interface GBPPost {
 // Template posts - Rotate these weekly
 export const gbpPostTemplates: GBPPost[] = [
   {
-    id: "market-update-jan-2026",
+    id: "market-update-snapshot",
     type: "update",
-    title: "Las Vegas Real Estate Market Update - January 2026",
-    content: `The Las Vegas housing market remains strong heading into 2026! Here's what buyers and sellers need to know:
+    title: "Heritage at Stonebridge market snapshot",
+    content: `Dr. Jan Duffy prices Heritage at Stonebridge from recent sales of the same floor plan.
 
-📊 Median home price: $450,000 (+4.2% YoY)
-🏠 Active listings: 4,850 homes
-⏱️ Average days on market: 28 days
-📈 Inventory: 2.1 months (seller's market)
+This draft does not publish a median, days on market, or inventory figure. Those numbers change every week.
 
-Whether you're buying your first home in Henderson, selling in Summerlin, or looking at 55+ communities like Sun City, now is a great time to make your move.
-
-Call Dr. Jan Duffy at (702) 500-1942 for a free market analysis of your home or neighborhood.`,
+Call (702) 789-6561 for a current snapshot of the nine Lennar plans in Summerlin West (89138).`,
     cta: {
       text: "Get Free Market Analysis",
       url: "https://www.heritagestonebridge.com/home-valuation",
@@ -42,16 +37,11 @@ Call Dr. Jan Duffy at (702) 500-1942 for a free market analysis of your home or 
     id: "california-relocation",
     type: "update",
     title: "California Buyers: Your Home Equity Goes Further in Las Vegas",
-    content: `Thinking about relocating from California to Las Vegas? Here's why 37% of Las Vegas home buyers come from CA:
+    content: `Moving from California to Las Vegas? Nevada has no state income tax.
 
-✅ 0% state income tax (save thousands annually)
-✅ 40-60% lower home prices vs. comparable CA properties
-✅ Same-quality schools, better affordability
-✅ 4-hour drive to LA, easy flights everywhere
+A price comparison for the home you would sell is not a published percentage. Dr. Jan Duffy runs it from current comps.
 
-A $1.2M California home could buy you a luxury property in Summerlin or The Ridges. Dr. Jan Duffy specializes in California-to-Nevada relocations and can help you maximize your equity.
-
-Call (702) 500-1942 for a free California equity comparison.`,
+Call (702) 789-6561.`,
     cta: {
       text: "California Relocation Guide",
       url: "https://www.heritagestonebridge.com/buyers/california-relocator",
@@ -72,7 +62,7 @@ Call (702) 500-1942 for a free California equity comparison.`,
 
 Each offers different amenities, price points, and lifestyles. Dr. Jan Duffy specializes in 55+ communities and can help you find the perfect fit.
 
-Schedule a community tour: (702) 500-1942`,
+Schedule a community tour: (702) 789-6561`,
     cta: {
       text: "Explore 55+ Communities",
       url: "https://www.heritagestonebridge.com/55-plus-communities",
@@ -98,7 +88,7 @@ Popular first-time buyer neighborhoods:
 - Mountains Edge (median $475K)
 - Centennial Hills (median $495K)
 
-Call (702) 500-1942 to start your homeownership journey.`,
+Call (702) 789-6561 to start your homeownership journey.`,
     cta: {
       text: "First-Time Buyer Guide",
       url: "https://www.heritagestonebridge.com/buyers/first-time-buyers",
@@ -118,12 +108,8 @@ Call (702) 500-1942 to start your homeownership journey.`,
 4️⃣ Address minor repairs before listing
 5️⃣ Work with an agent who knows your neighborhood
 
-Current seller stats:
-📈 +4.2% appreciation YoY
-⏱️ 28 days average time to sell
-💰 98.5% list-to-sale ratio
-
-Get a free home valuation from Dr. Jan Duffy: (702) 500-1942`,
+Current seller step:
+Call (702) 789-6561 for comps on your floor plan. This draft does not publish appreciation, days on market, or a list-to-sale ratio.`,
     cta: {
       text: "Get Free Home Valuation",
       url: "https://www.heritagestonebridge.com/home-valuation",
@@ -137,18 +123,14 @@ Get a free home valuation from Dr. Jan Duffy: (702) 500-1942`,
     title: "Luxury Living in Las Vegas: The Ridges, MacDonald Highlands & More",
     content: `Las Vegas luxury real estate offers world-class living at Nevada prices:
 
-🏔️ The Ridges, Summerlin - Guard-gated, custom estates from $2M+
-⛰️ MacDonald Highlands - Henderson hillside luxury with Strip views
-🌆 Strip High-Rises - Waldorf, Veer, Panorama condos
-🌳 Southern Highlands - Golf course living from $800K+
+🏔️ The Ridges, Summerlin - six guard-gated villages along Red Rock
+⛰️ MacDonald Highlands - Henderson hillside homes with Strip views
+🌆 Strip high-rises - Waldorf, Veer, Panorama
+🌳 Southern Highlands - Robert Trent Jones Jr. golf and I-15
 
-Why luxury buyers choose Las Vegas:
-✅ No state income tax
-✅ Privacy and discretion
-✅ World-class dining, entertainment, golf
-✅ 40-60% lower than comparable CA/NY properties
+Nevada has no state income tax. A price comparison to California or New York is a call, not a published percentage.
 
-Confidential luxury home search: (702) 500-1942`,
+Confidential search: (702) 789-6561`,
     cta: {
       text: "Luxury Home Search",
       url: "https://www.heritagestonebridge.com/buyers/luxury-homes-las-vegas",
@@ -192,7 +174,7 @@ ${clientName}, thank you for sharing your experience. I take all feedback seriou
 
 ${resolution}
 
-Real estate transactions can be complex, and I'm committed to learning from every experience. If you'd like to discuss this further, please call me directly at (702) 500-1942.
+Real estate transactions can be complex, and I'm committed to learning from every experience. If you'd like to discuss this further, please call me directly at (702) 789-6561.
 
 - Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
 `,

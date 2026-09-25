@@ -29,6 +29,7 @@ import {
   generateFAQSchema,
 } from "@/lib/gbp-schema";
 import GBPMapCard from "@/components/gbp/GBPMapCard";
+import { formatBusinessHoursLines } from "@/lib/hours";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getGbpAggregateRating } from "@/lib/gbp-ratings";
 import { buildWriteReviewUrl } from "@/lib/reviews";
@@ -115,14 +116,20 @@ export default function GoogleBusinessPage() {
 
                 {/* Rating & CTA */}
                 <div className="text-center bg-white/10 rounded-xl p-8">
-                  <div className="flex justify-center mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star
-                        key={star}
-                        className="h-8 w-8 text-yellow-400 fill-yellow-400"
-                      />
-                    ))}
-                  </div>
+                  {gbpRating ? (
+                    <div className="flex justify-center mb-4">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star
+                          key={star}
+                          className={`h-8 w-8 ${
+                            star <= Math.round(Number.parseFloat(gbpRating.ratingValue))
+                              ? "text-yellow-400 fill-yellow-400"
+                              : "text-yellow-200"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  ) : null}
                   {gbpRating ? (
                     <>
                       <p className="text-3xl font-bold mb-2">
@@ -160,29 +167,11 @@ export default function GoogleBusinessPage() {
                   Business Hours
                 </h2>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                <div>
-                  <span className="font-medium">Monday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Tuesday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Wednesday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Thursday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Friday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Saturday:</span> 10am - 4pm
-                </div>
-                <div>
-                  <span className="font-medium">Sunday:</span> By Appointment
-                </div>
-              </div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700">
+                {formatBusinessHoursLines().map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
             </div>
           </section>
 
@@ -285,28 +274,22 @@ export default function GoogleBusinessPage() {
                 <div>
                   <h3 className="font-bold text-slate-900 mb-3">Primary</h3>
                   <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-blue-600" /> Heritage at
-                      Stonebridge (89138)
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-blue-600" /> Summerlin, NV
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-blue-600" /> Las Vegas, NV
-                    </li>
+                    {businessInfo.serviceAreas.map((area) => (
+                      <li key={area} className="flex items-center gap-2">
+                        <MapPin className="h-4 w-4 text-blue-600" /> {area}
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 mb-3">Secondary</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-blue-600" /> Henderson, NV
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-blue-600" /> Clark County,
-                      NV
-                    </li>
+                  <h3 className="font-bold text-slate-900 mb-3">
+                    Categories
+                  </h3>
+                  <ul className="space-y-2 text-slate-700">
+                    <li>{businessInfo.categories.primary} (primary)</li>
+                    {businessInfo.categories.secondary.map((category) => (
+                      <li key={category}>{category}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -421,7 +404,7 @@ export default function GoogleBusinessPage() {
           </section>
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">
-          Last Updated: January 2026
+          Last Updated: September 23, 2026
         </div>
       </main>
       <Footer />

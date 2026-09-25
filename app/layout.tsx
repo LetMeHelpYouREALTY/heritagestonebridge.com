@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-import { getPageDomainConfig } from "@/lib/get-domain-config";
-import { SITE_CONTACT } from "@/lib/site-contact";
+import { GBP_DESCRIPTION, SITE_CONTACT } from "@/lib/site-contact";
 import { getSiteUrl } from "@/lib/site-url";
 import {
   generateWebSiteSchema,
@@ -24,23 +23,17 @@ const CalendlyBadge = dynamic(
   },
 );
 
-export async function generateMetadata(): Promise<Metadata> {
-  const config = await getPageDomainConfig();
-  const siteUrl = getSiteUrl();
-  const defaultTitle = `${SITE_CONTACT.businessName} | Summerlin 55+`;
-  const defaultDescription = `${SITE_CONTACT.businessName} — guard-gated Lennar 55+ homes on Crossbridge Dr, Las Vegas, NV 89138. Dr. Jan Duffy, ${SITE_CONTACT.brokerage}.`;
+const siteUrl = getSiteUrl();
+const defaultTitle = `${SITE_CONTACT.businessName} | Summerlin 55+`;
+const defaultDescription = `${SITE_CONTACT.businessName} — ${SITE_CONTACT.address.streetAddress}, ${SITE_CONTACT.address.addressLocality}, ${SITE_CONTACT.address.addressRegion} ${SITE_CONTACT.address.postalCode}. Call ${SITE_CONTACT.phone.display}.`;
 
-  return {
+export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
     title: {
       default: defaultTitle,
       template: "%s",
     },
     description: defaultDescription,
-    keywords: config.keywords,
-    alternates: {
-      canonical: siteUrl,
-    },
     robots: {
       index: true,
       follow: true,
@@ -65,8 +58,8 @@ export async function generateMetadata(): Promise<Metadata> {
         : {}),
     },
     openGraph: {
-      title: config.heroHeadline,
-      description: config.description,
+      title: defaultTitle,
+      description: GBP_DESCRIPTION,
       type: "website",
       siteName: SITE_CONTACT.businessName,
       locale: "en_US",
@@ -82,8 +75,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: config.heroHeadline,
-      description: config.description,
+      title: defaultTitle,
+      description: defaultDescription,
       images: [absoluteOgImage(DEFAULT_OG_IMAGE_PATH)],
     },
     icons: {
@@ -95,8 +88,7 @@ export async function generateMetadata(): Promise<Metadata> {
       apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
       shortcut: "/favicon.ico",
     },
-  };
-}
+};
 
 export default function RootLayout({
   children,

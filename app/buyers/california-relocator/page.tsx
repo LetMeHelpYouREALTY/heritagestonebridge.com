@@ -13,7 +13,6 @@ import {
   GraduationCap,
   Heart,
   Calculator,
-  MapPin,
   CheckCircle,
   TrendingUp,
 } from "lucide-react";
@@ -30,7 +29,7 @@ const faqSchema = {
       name: "How much can I save moving from California to Nevada?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nevada has zero state income tax, saving Californians 9.3%-13.3% depending on income bracket. Combined with 40-60% lower home prices, a family earning $200K buying a $600K home could save $150K+ over 5 years compared to staying in California.",
+        text: "Nevada has no state income tax. A savings figure for your income and the home you would sell is a call to (702) 789-6561, not a published percentage.",
       },
     },
     {
@@ -38,7 +37,7 @@ const faqSchema = {
       name: "What neighborhoods do California relocators prefer in Las Vegas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "California buyers typically gravitate toward Summerlin (similar to Irvine/coastal communities), Henderson (family-friendly like San Diego suburbs), and The Ridges (comparable to Newport Coast luxury). These areas offer the quality and amenities California buyers expect.",
+        text: "California buyers often tour Summerlin (master-planned villages and Red Rock access), Henderson (Green Valley, Inspirada, Anthem), and The Ridges (six guard-gated villages). A price comparison is a call to (702) 789-6561.",
       },
     },
     {
@@ -54,7 +53,7 @@ const faqSchema = {
       name: "What does my California home equity buy in Las Vegas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A typical $1.2M California home translates to $500K-$700K in Las Vegas with similar or better features. Many California sellers can buy a larger Las Vegas home AND pocket significant equity for retirement or investment.",
+        text: "It depends on the California home and the Las Vegas floor plan. This page does not publish a conversion ratio. Call (702) 789-6561 for comps on both sides.",
       },
     },
     {
@@ -72,17 +71,16 @@ const realEstateAgentSchema = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-  telephone: "+17025001942",
+  telephone: "+17027896561",
   url: "https://www.heritagestonebridge.com/buyers/california-relocator",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "9406 W Lake Mead Blvd, Suite 100",
+    streetAddress: "Crossbridge Dr",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
-    postalCode: "89134",
+    postalCode: "89138",
   },
-  areaServed: ["Las Vegas", "Henderson", "Summerlin", "North Las Vegas"],
-  priceRange: "$350,000 - $10,000,000+",
+  areaServed: ["Las Vegas, NV 89138", "Summerlin West, Las Vegas, NV"],
 };
 
 export default function CaliforniaRelocatorPage() {
@@ -112,17 +110,17 @@ export default function CaliforniaRelocatorPage() {
 
           {/* Hero */}
           <PageHero
-            badge="37% of Las Vegas Buyers Are From California"
-            title="Relocating from California? Welcome Home to Las Vegas"
-            subtitle="California relocators moving to Las Vegas pay zero state income tax and find comparable homes priced 40–60% below California — same year-round sunshine, more space, and a far lower cost of living."
+            badge="California to Las Vegas"
+            title="Relocating from California? Welcome to Las Vegas"
+            subtitle="Nevada has no state income tax. A price comparison for the home you would sell is a call to (702) 789-6561, not a published percentage."
             priority
           >
             <a
-              href="tel:+17025001942"
+              href="tel:+17027896561"
               className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Start Your Tax-Free Life → (702) 500-1942
+              Start Your Tax-Free Life → (702) 789-6561
             </a>
           </PageHero>
 
@@ -130,79 +128,24 @@ export default function CaliforniaRelocatorPage() {
           <section className="mb-16 bg-gradient-to-br from-green-600 to-green-700 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <div className="flex items-center justify-center mb-6">
               <Calculator className="h-10 w-10 mr-3" />
-              <h2 className="text-3xl font-bold">California vs. Nevada: The Numbers</h2>
+              <h2 className="text-3xl font-bold">Nevada has no state income tax</h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">0%</div>
-                <div className="text-green-100">Nevada State Income Tax</div>
-                <div className="text-sm text-green-200 mt-2">vs. CA 9.3%-13.3%</div>
-              </div>
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">40-60%</div>
-                <div className="text-green-100">Lower Home Prices</div>
-                <div className="text-sm text-green-200 mt-2">Similar quality homes</div>
-              </div>
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">$150K+</div>
-                <div className="text-green-100">5-Year Savings</div>
-                <div className="text-sm text-green-200 mt-2">$200K income example</div>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="text-green-100 text-lg">
-                A California family earning $250,000/year saves <strong>$25,000+ annually</strong> in state income tax alone by moving to Nevada.
-              </p>
-            </div>
+            <p className="text-center text-green-100 text-lg max-w-3xl mx-auto">
+              California taxes wage income. Nevada does not. Housing, HOA, and property tax
+              depend on the address. Call (702) 789-6561 for a comparison of the home you would sell.
+            </p>
           </section>
 
           {/* What Your CA Equity Buys */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              What Your California Equity Buys in Las Vegas
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
+              Compare the home you would sell with a current Las Vegas comp
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-red-50 border border-red-200 rounded-xl p-6">
-                <div className="flex items-center mb-4">
-                  <MapPin className="h-6 w-6 text-red-600 mr-2" />
-                  <h3 className="font-bold text-lg text-red-900">In California</h3>
-                </div>
-                <ul className="space-y-3 text-red-800">
-                  <li className="flex items-start">
-                    <span className="font-bold mr-2">$1.2M:</span>
-                    <span>3BR/2BA 1,800 sq ft in decent suburb</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="font-bold mr-2">$800K:</span>
-                    <span>2BR condo or older townhome</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="font-bold mr-2">$600K:</span>
-                    <span>Fixer-upper or long commute</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                <div className="flex items-center mb-4">
-                  <MapPin className="h-6 w-6 text-green-600 mr-2" />
-                  <h3 className="font-bold text-lg text-green-900">In Las Vegas</h3>
-                </div>
-                <ul className="space-y-3 text-green-800">
-                  <li className="flex items-start">
-                    <span className="font-bold mr-2">$700K:</span>
-                    <span>4BR/3BA 3,000 sq ft in Summerlin + $500K pocket</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="font-bold mr-2">$550K:</span>
-                    <span>Beautiful 4BR in Henderson + cash left over</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="font-bold mr-2">$450K:</span>
-                    <span>Brand new construction, turnkey ready</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <p className="text-slate-600 text-center max-w-3xl mx-auto">
+              This page does not publish a California-to-Las Vegas price conversion.
+              Dr. Jan runs it from the home you would sell and the floor plan you are touring.
+              Call (702) 789-6561.
+            </p>
           </section>
 
           {/* Top Neighborhoods for CA Relocators */}
@@ -214,20 +157,19 @@ export default function CaliforniaRelocatorPage() {
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                 <div className="bg-blue-600 text-white p-4">
                   <h3 className="font-bold text-xl">Summerlin</h3>
-                  <p className="text-blue-100 text-sm">Median: $726K</p>
+                  <p className="text-blue-100 text-sm">Call for comps</p>
                 </div>
                 <div className="p-6">
                   <p className="text-slate-600 mb-4">
-                    "The Irvine of Las Vegas" - Master-planned perfection with top schools,
-                    Downtown Summerlin shopping, and Red Rock Canyon views.
+                    Master-planned villages, Downtown Summerlin, trails, and Red Rock Canyon access.
                   </p>
                   <div className="text-sm text-slate-500 mb-4">
-                    <strong>Best for:</strong> Families from Orange County, coastal CA
+                    <strong>Often toured by:</strong> Buyers leaving Orange County and coastal California
                   </div>
                   <ul className="text-sm space-y-1 text-slate-700">
                     <li className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      Top-rated schools
+                      Downtown Summerlin
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
@@ -250,15 +192,15 @@ export default function CaliforniaRelocatorPage() {
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                 <div className="bg-green-600 text-white p-4">
                   <h3 className="font-bold text-xl">Henderson / Inspirada</h3>
-                  <p className="text-green-100 text-sm">Median: $530K</p>
+                  <p className="text-green-100 text-sm">Call for comps</p>
                 </div>
                 <div className="p-6">
                   <p className="text-slate-600 mb-4">
-                    Henderson = San Diego suburbs meets tech corridor. Google's data center,
-                    top schools, and "America's Safest City" accolades.
+                    Henderson is a separate city. Inspirada has resort pools and trails.
+                    This page does not publish a safety ranking.
                   </p>
                   <div className="text-sm text-slate-500 mb-4">
-                    <strong>Best for:</strong> Tech workers, young families, San Diego relocators
+                    <strong>Often toured by:</strong> Buyers comparing San Diego suburbs with west Henderson
                   </div>
                   <ul className="text-sm space-y-1 text-slate-700">
                     <li className="flex items-center">
@@ -267,7 +209,7 @@ export default function CaliforniaRelocatorPage() {
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      Lowest crime rates
+                      Resort pools and trails
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
@@ -286,12 +228,11 @@ export default function CaliforniaRelocatorPage() {
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                 <div className="bg-purple-600 text-white p-4">
                   <h3 className="font-bold text-xl">The Ridges</h3>
-                  <p className="text-purple-100 text-sm">$1.5M - $10M+</p>
+                  <p className="text-purple-100 text-sm">Call for comps</p>
                 </div>
                 <div className="p-6">
                   <p className="text-slate-600 mb-4">
-                    Newport Coast quality, Vegas prices. Guard-gated luxury with Strip views,
-                    celebrity neighbors, and custom estates.
+                    Six guard-gated villages along Red Rock. Call (702) 789-6561 for a current comp.
                   </p>
                   <div className="text-sm text-slate-500 mb-4">
                     <strong>Best for:</strong> Beverly Hills/Newport Beach luxury buyers
@@ -375,9 +316,8 @@ export default function CaliforniaRelocatorPage() {
                   How much can I save moving from California to Nevada?
                 </h3>
                 <p className="text-slate-600">
-                  Nevada has zero state income tax, saving Californians 9.3%-13.3% depending on
-                  income bracket. Combined with 40-60% lower home prices, a family earning $200K
-                  buying a $600K home could save $150K+ over 5 years compared to staying in California.
+                  Nevada has no state income tax. Housing, HOA, and property tax depend on the
+                  address. A comparison for the home you would sell is a call to (702) 789-6561.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -385,10 +325,9 @@ export default function CaliforniaRelocatorPage() {
                   What neighborhoods do California relocators prefer?
                 </h3>
                 <p className="text-slate-600">
-                  California buyers typically gravitate toward Summerlin (similar to Irvine/coastal
-                  communities), Henderson (family-friendly like San Diego suburbs), and The Ridges
-                  (comparable to Newport Coast luxury). These areas offer the quality and amenities
-                  California buyers expect.
+                  California buyers often tour Summerlin for master-planned villages and Red Rock
+                  access, Henderson for Green Valley and Inspirada, and The Ridges for six
+                  guard-gated villages. A current price comparison is a call to (702) 789-6561.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -416,10 +355,9 @@ export default function CaliforniaRelocatorPage() {
                   What about schools compared to California?
                 </h3>
                 <p className="text-slate-600">
-                  Nevada public schools overall rank lower than California's, but individual schools
-                  in Summerlin and Henderson rate highly. Many California families choose areas with
-                  top-rated schools or consider private options. Dr. Jan provides school-specific
-                  guidance for every neighborhood.
+                  Clark County School District assigns the zoned campus by address. Dr. Jan looks
+                  up the campus name and the drive time for the homes you tour. She does not rank
+                  schools on this page.
                 </p>
               </div>
             </div>
@@ -453,11 +391,11 @@ export default function CaliforniaRelocatorPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17027896561"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call/Text (702) 500-1942
+                Call/Text (702) 789-6561
               </a>
               <Link
                 href="/contact"
@@ -471,7 +409,7 @@ export default function CaliforniaRelocatorPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <RealScoutListings />
       <Footer />

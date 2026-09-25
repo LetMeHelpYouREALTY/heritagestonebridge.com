@@ -62,7 +62,7 @@ export default function SunCitySummerlinPage() {
           <PageHero
             badge="Nevada's Largest 55+ Community"
             title="Sun City Summerlin"
-            subtitle="Sun City Summerlin is Nevada's largest 55+ active-adult community in Summerlin, Las Vegas, with 7,700+ homes priced from $320K to $850K, three golf courses, and four recreation centers."
+            subtitle="Sun City Summerlin is a 55+ community in Summerlin with about 7,700 homes, three golf courses, and four recreation centers. Call (702) 789-6561 for a current resale snapshot."
             priority
           />
 
@@ -73,12 +73,12 @@ export default function SunCitySummerlinPage() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-amber-400 mb-1">$320K-$850K</div>
-                <div className="text-slate-300 text-sm">Price Range</div>
+                <div className="text-3xl font-bold text-amber-400 mb-1">Call</div>
+                <div className="text-slate-300 text-sm">For resale prices</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-amber-400 mb-1">$155-$195</div>
-                <div className="text-slate-300 text-sm">Monthly HOA</div>
+                <div className="text-3xl font-bold text-amber-400 mb-1">HOA</div>
+                <div className="text-slate-300 text-sm">Confirm with the association</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold mb-1">7,700+</div>
@@ -174,7 +174,7 @@ export default function SunCitySummerlinPage() {
                 <h3 className="font-bold text-slate-900 mb-2">The Highlands</h3>
                 <p className="text-slate-600 text-sm mb-3">
                   Original section with mature landscaping. Walking distance to Highland Falls golf
-                  and Mountain Shadows rec center. Homes $320K-$500K.
+                  and Mountain Shadows rec center. Call for current Highlands comps.
                 </p>
                 <div className="text-xs text-slate-500">Best for: Golf lovers, budget-conscious buyers</div>
               </div>
@@ -182,23 +182,21 @@ export default function SunCitySummerlinPage() {
                 <h3 className="font-bold text-slate-900 mb-2">Sun Terrace</h3>
                 <p className="text-slate-600 text-sm mb-3">
                   Elevated homes with Strip and mountain views. Near Sun Shadows rec center.
-                  Premium lots command $450K-$700K.
+                  Near Sun Shadows rec center. Call for current Sun Terrace comps.
                 </p>
                 <div className="text-xs text-slate-500">Best for: View seekers, larger homes</div>
               </div>
               <div className="bg-white rounded-xl p-6 border border-slate-200">
                 <h3 className="font-bold text-slate-900 mb-2">Eagle Crest</h3>
                 <p className="text-slate-600 text-sm mb-3">
-                  Newer section (2000s) with updated floor plans. Adjacent to Eagle Crest golf course.
-                  Homes $400K-$650K.
+                  Newer section from the 2000s, next to Eagle Crest golf. Call for current comps.
                 </p>
                 <div className="text-xs text-slate-500">Best for: Modern amenities, golf course views</div>
               </div>
               <div className="bg-white rounded-xl p-6 border border-slate-200">
                 <h3 className="font-bold text-slate-900 mb-2">Pinnacle/Del Webb</h3>
                 <p className="text-slate-600 text-sm mb-3">
-                  Premium custom and semi-custom homes. Largest lots, highest elevations, best views.
-                  $600K-$850K+.
+                  Larger lots and higher elevations. Call for current comps.
                 </p>
                 <div className="text-xs text-slate-500">Best for: Luxury buyers, privacy</div>
               </div>
@@ -214,9 +212,9 @@ export default function SunCitySummerlinPage() {
               <div className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong className="text-slate-900">Lowest HOA fees in Las Vegas 55+ market</strong>
+                  <strong className="text-slate-900">HOA is set by the association</strong>
                   <p className="text-slate-600 text-sm">
-                    $155-$195/month includes all amenities—significantly less than newer communities
+                    Confirm the current assessment before you offer. This page does not publish a dues comparison.
                   </p>
                 </div>
               </div>
@@ -254,11 +252,8 @@ export default function SunCitySummerlinPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Sun City Summerlin offers the best value in Las Vegas 55+ living. Where else can
-                you get three golf courses, four rec centers, and 100+ clubs for under $200/month?
-                As a <strong>Berkshire Hathaway HomeServices</strong> agent, I help buyers navigate
-                the community's various neighborhoods to find the perfect fit—whether they want
-                golf course views, mountain views, or proximity to their favorite rec center."
+                "Sun City Summerlin has three golf courses, four recreation centers, and about 7,700 homes.
+                Confirm the HOA before you offer. Call (702) 789-6561 for a current snapshot."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
@@ -277,11 +272,11 @@ export default function SunCitySummerlinPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17027896561"
                 className="inline-flex items-center justify-center bg-white text-amber-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-amber-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 789-6561
               </a>
               <Link
                 href="/contact"

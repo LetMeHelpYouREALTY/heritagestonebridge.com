@@ -31,9 +31,9 @@ const buyerSchema = {
   provider: {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
+    telephone: "+17027896561",
   },
-  areaServed: "Las Vegas, Henderson, Summerlin, Clark County NV",
+  areaServed: "Las Vegas, NV 89138; Summerlin West, Las Vegas, NV",
   serviceType: "Buyer Representation",
 };
 
@@ -71,12 +71,12 @@ const buyingSteps = [
 ];
 
 const neighborhoods = [
-  { name: "Summerlin", price: "$625K", description: "Master-planned community with Red Rock views" },
-  { name: "Henderson", price: "$485K", description: "Family-friendly with low crime rates" },
-  { name: "Green Valley", price: "$520K", description: "Established with mature landscaping" },
-  { name: "The Ridges", price: "$2.5M", description: "Ultra-luxury guard-gated estates" },
-  { name: "North Las Vegas", price: "$385K", description: "Affordable new construction" },
-  { name: "Southern Highlands", price: "$750K", description: "Golf course community" },
+  { name: "Summerlin", fact: "Master-planned villages, trails, and Red Rock Canyon access" },
+  { name: "Henderson", fact: "Separate city with Green Valley, Inspirada, and Anthem" },
+  { name: "Green Valley", fact: "1988 master plan, The District, and mature landscaping" },
+  { name: "The Ridges", fact: "Six guard-gated villages along Red Rock" },
+  { name: "North Las Vegas", fact: "Aliante, Tule Springs, and newer production homes" },
+  { name: "Southern Highlands", fact: "Robert Trent Jones Jr. golf and I-15 access" },
 ];
 
 export default function BuyersPage() {
@@ -195,10 +195,9 @@ export default function BuyersPage() {
               Las Vegas Neighborhoods for Home Buyers
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
-              or affordable new construction, Dr. Jan helps you find the perfect neighborhood. Here's 
-              a quick guide to median prices and what each area offers.
+              Each Las Vegas area is a different set of gates, parks, golf, and commute times.
+              A current median is not published here. Call (702) 789-6561 for a snapshot of the
+              neighborhood you are comparing.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {neighborhoods.map((neighborhood) => (
@@ -206,11 +205,8 @@ export default function BuyersPage() {
                   key={neighborhood.name}
                   className="bg-white rounded-lg p-4 border border-slate-200"
                 >
-                  <div className="flex justify-between items-center mb-2">
-                    <h3 className="font-bold text-slate-900">{neighborhood.name}</h3>
-                    <span className="text-blue-600 font-semibold">{neighborhood.price}</span>
-                  </div>
-                  <p className="text-slate-600 text-sm">{neighborhood.description}</p>
+                  <h3 className="font-bold text-slate-900 mb-2">{neighborhood.name}</h3>
+                  <p className="text-slate-600 text-sm">{neighborhood.fact}</p>
                 </div>
               ))}
             </div>
@@ -350,31 +346,19 @@ export default function BuyersPage() {
           {/* Market Stats */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Las Vegas Buyer Market Statistics | January 2026
+              What buyers should ask before they write an offer
             </h2>
-            <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
-              Understanding the current market helps you make informed decisions about timing, 
-              pricing, and negotiation strategies. Here's a snapshot of what buyers are facing 
-              in the Las Vegas market right now.
+            <p className="text-blue-100 text-center max-w-3xl mx-auto mb-6">
+              Inventory, days on market, and medians move every week. This page does not publish
+              a valley-wide snapshot. Dr. Jan pulls the current MLS comps for the floor plan and
+              neighborhood you are touring.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">$450K</div>
-                <div className="text-blue-200 text-sm">Median Home Price</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">4,850</div>
-                <div className="text-blue-200 text-sm">Active Listings</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">28 Days</div>
-                <div className="text-blue-200 text-sm">Avg. Days on Market</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">+4.2%</div>
-                <div className="text-blue-200 text-sm">Year-Over-Year</div>
-              </div>
-            </div>
+            <p className="text-center">
+              <a href="tel:+17027896561" className="inline-flex items-center font-bold text-white underline">
+                <Phone className="h-5 w-5 mr-2" />
+                Call (702) 789-6561 for today&apos;s numbers
+              </a>
+            </p>
           </section>
 
           {/* FAQ */}
@@ -384,7 +368,7 @@ export default function BuyersPage() {
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Get answers to the most common questions from Las Vegas home buyers. If you don't 
-              see your question here, call Dr. Jan Duffy at (702) 500-1942 for a free consultation.
+              see your question here, call Dr. Jan Duffy at (702) 789-6561 for a free consultation.
             </p>
             <div className="space-y-4">
               {[
@@ -406,11 +390,11 @@ export default function BuyersPage() {
                 },
                 {
                   q: "How competitive is the Las Vegas housing market?",
-                  a: "The Las Vegas market is moderately competitive with 2.1 months of inventory—a slight seller's market. Well-priced homes in desirable areas like Summerlin and Henderson often receive multiple offers within the first week. Having a pre-approval and experienced agent gives you a significant advantage.",
+                  a: "Competition changes by neighborhood and price. A pre-approval and a current comp set matter more than a valley-wide inventory figure. Call (702) 789-6561 for the homes you are touring.",
                 },
                 {
-                  q: "What are the best neighborhoods for families in Las Vegas?",
-                  a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills are top choices for families, offering excellent schools, parks, and community amenities. Dr. Jan can match you with the right neighborhood based on your priorities—schools, commute, budget, and lifestyle.",
+                  q: "How do Summerlin, Henderson, and Centennial Hills differ?",
+                  a: "Summerlin is a master-planned set of villages with trails and Red Rock access. Henderson is a separate city that includes Green Valley and Inspirada. Centennial Hills sits along US-95 near Centennial Hills Park. Dr. Jan matches commute time, gates, and amenities to the search.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">
@@ -431,11 +415,11 @@ export default function BuyersPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17027896561"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 789-6561
               </a>
               <Link
                 href="/contact"
@@ -451,7 +435,7 @@ export default function BuyersPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <RealScoutListings />
       <Footer />

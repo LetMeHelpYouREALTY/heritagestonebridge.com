@@ -1,17 +1,10 @@
-import { headers } from "next/headers";
 import { getDomainConfig, type DomainConfig } from "./domain-config";
-import { getSiteHostname } from "./site-url";
 
-function resolveHostname(rawHost: string): string {
-  const host = rawHost.replace(/^www\./, "").toLowerCase();
-  if (!host || host.startsWith("localhost") || host.startsWith("127.0.0.1")) {
-    return getSiteHostname();
-  }
-  return host;
-}
-
-export async function getPageDomainConfig(): Promise<DomainConfig> {
-  const headersList = headers();
-  const domain = headersList.get("x-domain") || "";
-  return getDomainConfig(resolveHostname(domain));
+/**
+ * Canonical site config for heritagestonebridge.com.
+ * Do not read request headers here. headers() opts every page into dynamic
+ * rendering and Cache-Control: no-store, which fails mobile Core Web Vitals.
+ */
+export function getPageDomainConfig(): DomainConfig {
+  return getDomainConfig("heritagestonebridge.com");
 }

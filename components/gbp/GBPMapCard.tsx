@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, MapPin, Navigation, Star, PenLine } from "lucide-react";
+import { formatBusinessHoursShort } from "@/lib/hours";
 import { SITE_CONTACT } from "@/lib/site-contact";
 import { telHref } from "@/lib/phone";
 import {
@@ -33,8 +34,7 @@ export default function GBPMapCard({
           {SITE_CONTACT.address.postalCode}
         </address>
         <p className="text-sm text-slate-600">
-          <span className="font-medium">Hours:</span> Mon–Fri 9am–6pm, Sat 10am–4pm, Sun by
-          appointment
+          <span className="font-medium">Hours:</span> {formatBusinessHoursShort()}
         </p>
       </div>
 

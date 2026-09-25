@@ -11,13 +11,13 @@ function crumbs(...items: { name: string; url: string }[]) {
 export const communityPage: HeritagePageContent = {
   slug: "/community",
   metadata: {
-    title: baseTitle("Heritage at Stonebridge Community Guide"),
+    title: "Heritage at Stonebridge Summerlin | Guard-Gated 55+",
     description:
       "Lennar-built guard-gated 55+ community in Summerlin West. 421 homes, nine floor plans, resort amenities. Dr. Jan Duffy, BHHS Nevada Properties.",
   },
   breadcrumbs: crumbs({ name: "Community", url: "/community" }),
   badge: "Guard-Gated Summerlin 55+",
-  h1: "Heritage at Stonebridge Community",
+  h1: "Heritage at Stonebridge Summerlin",
   subtitle:
     "Lennar's boutique 55+ neighborhood in Summerlin West — staff guard-gated security, modern floor plans, and walkable Summerlin living.",
   includeCommunitySchema: true,
@@ -168,12 +168,12 @@ export const amenitiesPage: HeritagePageContent = {
 export const floorPlansPage: HeritagePageContent = {
   slug: "/floor-plans",
   metadata: {
-    title: baseTitle("Floor Plans & Home Collections"),
+    title: "Heritage Stonebridge Floor Plans | Lennar 55+",
     description:
       "Nine Lennar floor plans from 1,232–2,873 sq. ft. at Heritage at Stonebridge. 2–4 beds, smart-home features, optional RV garage.",
   },
   breadcrumbs: crumbs({ name: "Floor Plans", url: "/floor-plans" }),
-  h1: "Heritage at Stonebridge Floor Plans",
+  h1: "Heritage Stonebridge Floor Plans",
   subtitle: `${HERITAGE_COMMUNITY.floorPlanCount} single-story plans in ${HERITAGE_COMMUNITY.collections} Lennar collections — Cromwell, Stirling, and Evander for 55+ buyers in Summerlin West.`,
   lastUpdated: "August 2026",
   heroImage: "/images/floor-plans/cromwell-collection.webp",
@@ -242,12 +242,12 @@ export const floorPlansPage: HeritagePageContent = {
 export const hoaFeesPage: HeritagePageContent = {
   slug: "/hoa-fees",
   metadata: {
-    title: baseTitle("HOA Fees & Assessments"),
+    title: "Heritage at Stonebridge HOA Fees | Las Vegas 89138",
     description:
       "Understand HOA costs at Heritage at Stonebridge — what's covered, how fees compare to larger 55+ communities, and questions to ask before you buy.",
   },
   breadcrumbs: crumbs({ name: "HOA & Fees", url: "/hoa-fees" }),
-  h1: "HOA Fees at Heritage at Stonebridge",
+  h1: "Heritage at Stonebridge HOA",
   subtitle:
     "Heritage carries a leaner amenity footprint than golf-course mega-communities — often translating to lower carrying costs.",
   lastUpdated: "August 2026",
@@ -773,7 +773,7 @@ export const faqPage: HeritagePageContent = {
     {
       question: "Can I schedule a private tour?",
       answer:
-        "Yes. Call (702) 500-1942 or use the contact page to schedule a Calendly consultation and guard-gate tour with Dr. Jan Duffy.",
+        "Yes. Call (702) 789-6561 or use the contact page to schedule a Calendly consultation and guard-gate tour with Dr. Jan Duffy.",
     },
   ],
 };
@@ -781,12 +781,12 @@ export const faqPage: HeritagePageContent = {
 export const homesForSalePage: HeritagePageContent = {
   slug: "/homes-for-sale",
   metadata: {
-    title: baseTitle("MLS Listings — Heritage Stonebridge Homes for Sale"),
+    title: "Heritage Stonebridge Homes for Sale | Summerlin 89138",
     description:
       "Live MLS search for Heritage at Stonebridge 55+ homes in Summerlin 89138. Guard-gated Lennar resales, tours, and listing alerts with Dr. Jan Duffy, BHHS.",
   },
   breadcrumbs: crumbs({ name: "Homes for Sale", url: "/homes-for-sale" }),
-  h1: "Heritage at Stonebridge Homes for Sale",
+  h1: "Heritage Stonebridge Homes for Sale",
   subtitle: "Live MLS search for 55+ guard-gated homes in Summerlin West — updated as new listings hit market.",
   lastUpdated: "June 2026",
   sections: [

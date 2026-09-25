@@ -3,14 +3,15 @@ import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
-import { Phone, Mountain, TreePine, DollarSign, Home as HomeIcon } from "lucide-react";
+import { Phone, Mountain, DollarSign } from "lucide-react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import { CanonicalRole } from "@/components/seo/CanonicalRole";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Mountains Edge Las Vegas Real Estate | Dr. Jan Duffy",
+  title: "Mountains Edge and Exploration Peak Park | Dr. Jan Duffy",
   description:
-    "Mountains Edge southwest Las Vegas homes with Dr. Jan Duffy, BHHS Nevada Properties.",
+    "/neighborhoods/mountains-edge covers southwest Las Vegas: the 120-acre Exploration Peak Park, I-215 access, and Mountains Edge Marketplace. Green Valley Henderson is a different page at /neighborhoods/green-valley.",
   path: "/neighborhoods/mountains-edge",
 });
 
@@ -20,18 +21,18 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is the current median home price in Mountains Edge?",
+        name: "What does /neighborhoods/mountains-edge cover?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "As of January 2026, Mountains Edge's median home price is $475,000, up 4.5% year-over-year. Prices range from $380,000 for smaller homes to over $750,000 for larger properties with mountain and Strip views.",
+        text: "This URL is the southwest Las Vegas guide for Mountains Edge: Exploration Peak Park (120 acres), Mountains Edge Marketplace, and I-215 access toward the Strip and Harry Reid International Airport. It is not the Green Valley Henderson page.",
       },
     },
     {
       "@type": "Question",
-      name: "What makes Mountains Edge different from other Las Vegas communities?",
+      name: "What makes Mountains Edge different from Green Valley?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Mountains Edge offers the largest park in the Las Vegas Valley—the 120-acre Exploration Peak Park with stunning views—plus master-planned amenities at prices below Summerlin or Henderson. It's ideal for buyers seeking value without sacrificing lifestyle.",
+        text: "Mountains Edge is southwest Las Vegas, built later, with Exploration Peak Park as the main open space and I-215 as the commute spine. Green Valley is a 1988 Henderson master plan around The District. They are different cities and different drives.",
       },
     },
     {
@@ -77,49 +78,71 @@ export default function MountainsEdgePage() {
           {/* Hero */}
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
-            title="Berkshire Hathaway HomeServices Mountains Edge"
-            subtitle="Mountains Edge is a southwest Las Vegas master-planned community built for value — home to the valley's largest park, the 120-acre Exploration Peak, with a median home price around $475,000."
+            title="Mountains Edge: Exploration Peak Park and I-215"
+            subtitle="This page is southwest Las Vegas only — the 120-acre Exploration Peak Park, Mountains Edge Marketplace, and the I-215 drive to the Strip."
             priority
           />
 
-          {/* Market Stats */}
+          <CanonicalRole
+            path="/neighborhoods/mountains-edge"
+            answer="Southwest Las Vegas guide centered on Exploration Peak Park. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, uses this page when the search is Mountains Edge, not Henderson and not Summerlin West."
+            related={[
+              {
+                href: "/neighborhoods/green-valley",
+                label: "Green Valley Henderson",
+                note: "1988 Henderson master plan at /neighborhoods/green-valley.",
+              },
+              {
+                href: "/neighborhoods/summerlin",
+                label: "Summerlin West villages",
+                note: "Heritage at Stonebridge in 89138 at /neighborhoods/summerlin.",
+              },
+              {
+                href: "/neighborhoods/henderson",
+                label: "Henderson village comparison",
+                note: "Henderson alternatives at /neighborhoods/henderson.",
+              },
+            ]}
+          />
+
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              Mountains Edge Market | January 2026
+              Mountains Edge facts on this page
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">$475,000</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">120 ac</div>
+                <div className="text-slate-300 text-sm">Exploration Peak Park</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">27 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">3,500</div>
+                <div className="text-slate-300 text-sm">Community acres</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">234</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
+                <div className="text-3xl font-bold mb-1">I-215</div>
+                <div className="text-slate-300 text-sm">Commuter freeway</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+4.5%</div>
-                <div className="text-slate-300 text-sm">YoY Appreciation</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">SW</div>
+                <div className="text-slate-300 text-sm">Las Vegas, not Henderson</div>
               </div>
             </div>
+            <p className="mt-6 text-center text-sm text-slate-300">
+              A current Mountains Edge median is not published here. Call (702) 789-6561 for comps with Strip or mountain views.
+            </p>
           </section>
 
           {/* Main Content */}
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Mountains Edge: Southwest Las Vegas's Best Value for Master-Planned Living
+                Southwest Las Vegas, anchored by Exploration Peak Park
               </h2>
               <p>
-                <strong>Mountains Edge</strong> delivers what many Las Vegas buyers are seeking:
-                master-planned community amenities at prices significantly below Summerlin or
-                Henderson. This 3,500-acre community in southwest Las Vegas offers mountain views,
-                exceptional parks, and modern homes—without the premium prices of the valley's
-                more established luxury markets. <strong>Berkshire Hathaway HomeServices</strong>
-                helps value-conscious buyers discover Mountains Edge's potential.
+                <strong>/neighborhoods/mountains-edge</strong> is the southwest Las Vegas page.
+                Mountains Edge covers about 3,500 acres off I-215. Exploration Peak Park is 120 acres
+                with a summit view toward the Strip. Mountains Edge Marketplace holds the Smith&apos;s,
+                CVS, and everyday services. That geography is the point of this URL.
               </p>
               <p>
                 The community's crown jewel is Exploration Peak Park—120 acres of open space that
@@ -131,10 +154,9 @@ export default function MountainsEdgePage() {
               </p>
               <p>
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> serves Mountains
-                Edge buyers with the same commitment to excellence we bring to the valley's luxury
-                markets. Dr. Jan Duffy understands that value doesn't mean compromise—it means
-                finding the right home at the right price. For families priced out of Summerlin
-                or Henderson, Mountains Edge delivers comparable lifestyle at accessible prices.
+                Edge buyers with the same commitment we bring to Summerlin West. Dr. Jan Duffy
+                treats Mountains Edge as its own southwest product: Exploration Peak Park, I-215,
+                and a different drive than Heritage at Stonebridge or Green Valley.
               </p>
 
               {/* Community Highlights */}
@@ -155,13 +177,13 @@ export default function MountainsEdgePage() {
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <DollarSign className="h-8 w-8 text-blue-600 mr-3" />
-                    <h4 className="font-bold text-slate-900 text-lg">Exceptional Value</h4>
+                    <h4 className="font-bold text-slate-900 text-lg">I-215 commute spine</h4>
                   </div>
                   <p className="text-slate-600">
-                    Mountains Edge's median price of $475,000 is roughly $150,000 less than Summerlin
-                    and $50,000 less than Henderson for comparable homes. Buyers get modern
-                    construction, master-planned amenities, and mountain views at prices that
-                    allow for better financial flexibility. It's affordable luxury done right.
+                    I-215 puts the Strip about 10 miles and 15 minutes away off-peak, and Harry Reid
+                    International Airport about 12 miles and 18 minutes. Southern Highlands is about
+                    5 miles. A published median versus Summerlin or Henderson is not on this page —
+                    call (702) 789-6561 for comps on the street you are touring.
                   </p>
                 </div>
               </div>
@@ -273,11 +295,9 @@ export default function MountainsEdgePage() {
               </div>
 
               <p className="mt-8">
-                The current market shows <strong>234 active listings</strong> with homes averaging
-                <strong> 27 days on market</strong>. The median price of <strong>$475,000</strong>
-                represents steady 4.5% year-over-year appreciation—sustainable growth that suggests
-                continuing value. Properties range from $380,000 for entry-level homes to over
-                $750,000 for larger properties with premium views and upgraded features.
+                This page does not publish a Mountains Edge median, listing count, or days-on-market
+                figure. Call <strong>(702) 789-6561</strong> for comps, including lots with a Strip
+                or mountain view from Exploration Peak&apos;s side of the community.
               </p>
               <p>
                 Working with <strong>Berkshire Hathaway HomeServices</strong> in Mountains Edge means
@@ -294,10 +314,9 @@ export default function MountainsEdgePage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Mountains Edge is where I send buyers who want master-planned living without the
-                Summerlin price tag. The park is incredible, the homes are modern, and the value
-                is undeniable. As a Berkshire Hathaway HomeServices agent, I help clients see
-                that finding the right home isn't about spending the most—it's about spending wisely."
+                "If the tour starts at Exploration Peak, you are in Mountains Edge, southwest Las Vegas.
+                If the tour starts at The District, you are in Green Valley Henderson. I keep those
+                drives on separate pages so the comps stay honest."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
@@ -313,23 +332,18 @@ export default function MountainsEdgePage() {
             <div className="space-y-6">
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  What is the current median home price in Mountains Edge?
+                  What does /neighborhoods/mountains-edge cover?
                 </h3>
                 <p className="text-slate-600">
-                  As of January 2026, Mountains Edge's median home price is $475,000, up 4.5%
-                  year-over-year. Prices range from $380,000 for smaller homes to over $750,000
-                  for larger properties with mountain and Strip views.
+                  This URL is the southwest Las Vegas guide for Mountains Edge: Exploration Peak Park (120 acres), Mountains Edge Marketplace, and I-215 access toward the Strip and Harry Reid International Airport. It is not the Green Valley Henderson page.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  What makes Mountains Edge different from other Las Vegas communities?
+                  What makes Mountains Edge different from Green Valley?
                 </h3>
                 <p className="text-slate-600">
-                  Mountains Edge offers the largest park in the Las Vegas Valley—the 120-acre
-                  Exploration Peak Park with stunning views—plus master-planned amenities at prices
-                  below Summerlin or Henderson. It's ideal for buyers seeking value without
-                  sacrificing lifestyle.
+                  Mountains Edge is southwest Las Vegas, built later, with Exploration Peak Park as the main open space and I-215 as the commute spine. Green Valley is a 1988 Henderson master plan around The District. They are different cities and different drives.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -365,20 +379,23 @@ export default function MountainsEdgePage() {
               for expert guidance in finding exceptional value in southwest Las Vegas.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17027896561"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 789-6561
             </a>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        title="Mountains Edge listings"
+        subtitle="Search southwest Las Vegas inventory. The Exploration Peak guide stays on /neighborhoods/mountains-edge."
+      />
       <Footer />
     </>
   );

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Phone, Mountain, Users, Home as HomeIcon, GraduationCap } from "lucide-react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import { CanonicalRole } from "@/components/seo/CanonicalRole";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Skye Canyon Real Estate | Northwest Las Vegas | Dr. Jan Duffy",
@@ -20,10 +21,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is the current median home price in Skye Canyon?",
+      name: "What does /neighborhoods/skye-canyon cover?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "As of January 2026, Skye Canyon's median home price is $550,000, up 5.5% year-over-year. New construction ranges from $450,000 to $800,000, while resales offer additional options across all price points.",
+        text: "This URL is the northwest Las Vegas guide for Skye Canyon: the 15-acre Skye Center, community trails, and Floyd Lamb Park next door. Centennial Hills is on /neighborhoods/centennial-hills.",
       },
     },
     {
@@ -36,10 +37,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Is Skye Canyon good for families?",
+      name: "How is Skye Canyon different from Centennial Hills?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Skye Canyon is designed for families with new schools, extensive children's amenities, community events, and safe neighborhoods. The community hosts family-friendly events throughout the year at Skye Center.",
+        text: "Skye Canyon is organized around the 15-acre Skye Center and sits next to Floyd Lamb Park. Centennial Hills is the US-95 corridor with Centennial Hills Park and Centennial Center. They are different master plans.",
       },
     },
     {
@@ -77,34 +78,58 @@ export default function SkyeCanyonPage() {
           {/* Hero */}
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
-            title="Berkshire Hathaway HomeServices Skye Canyon"
-            subtitle="Skye Canyon is one of northwest Las Vegas's fastest-growing master-planned communities — the 15-acre Skye Center, resort-style pools, and mountain-view trails, with a median home price around $550,000."
+            title="Skye Canyon: the 15-Acre Skye Center and Floyd Lamb Park"
+            subtitle="This page is northwest Las Vegas only — Skye Center pools, trails, and the edge of Floyd Lamb Park. Centennial Hills and US-95 are a different page."
             priority
           />
 
-          {/* Market Stats */}
+          <CanonicalRole
+            path="/neighborhoods/skye-canyon"
+            answer="Northwest Las Vegas guide centered on the 15-acre Skye Center. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, keeps this tour off the Centennial Hills and North Las Vegas pages."
+            related={[
+              {
+                href: "/neighborhoods/centennial-hills",
+                label: "Centennial Hills and US-95",
+                note: "Centennial Center and the park at /neighborhoods/centennial-hills.",
+              },
+              {
+                href: "/neighborhoods/north-las-vegas",
+                label: "North Las Vegas city",
+                note: "Aliante and Tule Springs at /neighborhoods/north-las-vegas.",
+              },
+              {
+                href: "/neighborhoods/summerlin",
+                label: "Summerlin West and Heritage",
+                note: "Heritage at Stonebridge in 89138 at /neighborhoods/summerlin.",
+              },
+            ]}
+          />
+
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              Skye Canyon Real Estate Market | January 2026
+              Skye Canyon facts on this page
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">$550,000</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">15 ac</div>
+                <div className="text-slate-300 text-sm">Skye Center</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">21 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">NW</div>
+                <div className="text-slate-300 text-sm">Las Vegas</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">124</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
+                <div className="text-3xl font-bold mb-1">Park</div>
+                <div className="text-slate-300 text-sm">Floyd Lamb next door</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+5.5%</div>
-                <div className="text-slate-300 text-sm">YoY Appreciation</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">Trails</div>
+                <div className="text-slate-300 text-sm">Inside the community</div>
               </div>
             </div>
+            <p className="mt-6 text-center text-sm text-slate-300">
+              A current Skye Canyon median is not published here. Call (702) 789-6561 for comps on the street you are touring.
+            </p>
           </section>
 
           {/* Main Content */}
@@ -232,17 +257,17 @@ export default function SkyeCanyonPage() {
                 <div className="bg-slate-50 rounded-xl p-6">
                   <h5 className="font-bold text-slate-900 mb-3">Premium Builders</h5>
                   <ul className="text-slate-600 text-sm space-y-2">
-                    <li><strong>Toll Brothers:</strong> Luxury homes from $600K-$800K. Known for quality and customization.</li>
-                    <li><strong>Woodside Homes:</strong> Mid-range to premium, $500K-$700K. Strong value.</li>
-                    <li><strong>Shea Homes:</strong> Energy-efficient designs, $550K-$750K.</li>
+                    <li><strong>Toll Brothers:</strong> Larger plans and customization. Ask for the current sheet.</li>
+                    <li><strong>Woodside Homes:</strong> Confirm which collections are still releasing.</li>
+                    <li><strong>Shea Homes:</strong> Energy-efficient designs.</li>
                   </ul>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-6">
                   <h5 className="font-bold text-slate-900 mb-3">Value Builders</h5>
                   <ul className="text-slate-600 text-sm space-y-2">
-                    <li><strong>Lennar:</strong> Entry to mid-range, $450K-$600K. "Everything's Included" packages.</li>
-                    <li><strong>KB Home:</strong> Energy Star certified, $420K-$550K. Customization options.</li>
-                    <li><strong>Century Communities:</strong> Affordable entry points, $400K-$520K.</li>
+                    <li><strong>Lennar:</strong> Everything&apos;s Included packages.</li>
+                    <li><strong>KB Home:</strong> Energy Star options and buyer personalization.</li>
+                    <li><strong>Century Communities:</strong> Confirm which plans are still for sale.</li>
                   </ul>
                 </div>
               </div>
@@ -275,12 +300,9 @@ export default function SkyeCanyonPage() {
               </div>
 
               <p className="mt-8">
-                The current Skye Canyon market shows <strong>124 active listings</strong> with homes
-                averaging just <strong>21 days on market</strong>—among the fastest in the valley.
-                The median price of <strong>$550,000</strong> reflects 5.5% year-over-year appreciation,
-                driven by continued demand from families seeking modern homes with exceptional amenities.
-                New construction from builders like Toll Brothers, Lennar, and Woodside Homes ranges
-                from $450,000 to $800,000.
+                This page does not publish a Skye Canyon median, listing count, or days-on-market
+                figure. Call <strong>(702) 789-6561</strong> for the current builder sheet or a
+                resale comp near Skye Center.
               </p>
               <p>
                 Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Skye Canyon purchase
@@ -296,7 +318,7 @@ export default function SkyeCanyonPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Skye Canyon is where young families want to be right now. The amenities are incredible,
+                "Skye Canyon is the tour that starts at the 15-acre Skye Center. The amenities are on site,
                 the homes are modern and energy-efficient, and the community vibe is exactly what people
                 are looking for. As a Berkshire Hathaway HomeServices agent, I make sure my clients get
                 the best value—whether that's negotiating builder upgrades or finding a resale with
@@ -316,12 +338,10 @@ export default function SkyeCanyonPage() {
             <div className="space-y-6">
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  What is the current median home price in Skye Canyon?
+                  What does /neighborhoods/skye-canyon cover?
                 </h3>
                 <p className="text-slate-600">
-                  As of January 2026, Skye Canyon's median home price is $550,000, up 5.5% year-over-year.
-                  New construction ranges from $450,000 to $800,000, while resales offer additional
-                  options across all price points.
+                  This URL is the northwest Las Vegas guide for Skye Canyon: the 15-acre Skye Center, community trails, and Floyd Lamb Park next door. Centennial Hills is on /neighborhoods/centennial-hills.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -336,12 +356,10 @@ export default function SkyeCanyonPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Is Skye Canyon good for families?
+                  How is Skye Canyon different from Centennial Hills?
                 </h3>
                 <p className="text-slate-600">
-                  Yes, Skye Canyon is designed for families with new schools, extensive children's
-                  amenities, community events, and safe neighborhoods. The community hosts family-friendly
-                  events throughout the year at Skye Center.
+                  Skye Canyon is organized around the 15-acre Skye Center and sits next to Floyd Lamb Park. Centennial Hills is the US-95 corridor with Centennial Hills Park and Centennial Center. They are different master plans.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -367,20 +385,23 @@ export default function SkyeCanyonPage() {
               for expert guidance on new construction and resale homes.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17027896561"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 789-6561
             </a>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        title="Skye Canyon listings"
+        subtitle="Search northwest Las Vegas inventory. The Skye Center guide stays on /neighborhoods/skye-canyon."
+      />
       <Footer />
     </>
   );

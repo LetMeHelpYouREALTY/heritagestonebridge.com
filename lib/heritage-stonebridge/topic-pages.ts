@@ -182,7 +182,7 @@ export const clubhousePage: HeritagePageContent = {
     {
       question: "How large is the Heritage at Stonebridge clubhouse?",
       answer:
-        "This community reports an 8,000 sq. ft. clubhouse. Official Summerlin builder copy names the rooms but not the square footage. Verify on a tour with Dr. Jan Duffy at (702) 500-1942.",
+        "This community reports an 8,000 sq. ft. clubhouse. Official Summerlin builder copy names the rooms but not the square footage. Verify on a tour with Dr. Jan Duffy at (702) 789-6561.",
     },
     {
       question: "Does the clubhouse include a fitness center?",
@@ -313,7 +313,7 @@ export const pickleballPage: HeritagePageContent = {
     {
       question: "Is there bocce at Heritage at Stonebridge?",
       answer:
-        "This community reports three bocce courts next to pickleball. Call Dr. Jan Duffy at (702) 500-1942 to tour the recreation campus.",
+        "This community reports three bocce courts next to pickleball. Call Dr. Jan Duffy at (702) 789-6561 to tour the recreation campus.",
     },
   ],
   ctaTitle: "See the Courts Before You Offer",
@@ -693,7 +693,7 @@ export const everythingsIncludedPage: HeritagePageContent = {
     {
       question: "Does every Heritage home have the same appliances?",
       answer:
-        "No. The program is the starting point. Resales and later upgrades can differ. Dr. Jan Duffy will walk the specific home with you — (702) 500-1942.",
+        "No. The program is the starting point. Resales and later upgrades can differ. Dr. Jan Duffy will walk the specific home with you — (702) 789-6561.",
     },
   ],
 };
@@ -807,7 +807,7 @@ export const stonebridgeVillagePage: HeritagePageContent = {
     {
       question: "What zip code is Heritage at Stonebridge?",
       answer:
-        "89138. The postal city is Las Vegas, Nevada. Call Dr. Jan Duffy at (702) 500-1942 for a map pin and gate directions.",
+        "89138. The postal city is Las Vegas, Nevada. Call Dr. Jan Duffy at (702) 789-6561 for a map pin and gate directions.",
     },
     {
       question: "How far is Heritage from Downtown Summerlin?",
@@ -931,7 +931,7 @@ export const crossbridgeDrivePage: HeritagePageContent = {
     {
       question: "Is Heritage at Stonebridge guard-gated?",
       answer:
-        "Yes. Official Summerlin materials call Heritage guard-gated. Staff verify visitors. Call (702) 500-1942 so Dr. Jan Duffy can clear your tour.",
+        "Yes. Official Summerlin materials call Heritage guard-gated. Staff verify visitors. Call (702) 789-6561 so Dr. Jan Duffy can clear your tour.",
     },
     {
       question: "What is the phone number for Heritage Stonebridge homes?",

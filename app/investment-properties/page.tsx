@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Las Vegas Investment Properties | Berkshire Hathaway HomeServices",
   description:
-    "Invest in Las Vegas real estate with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Rental properties, ROI analysis, 1031 exchanges. No state income tax. Call (702) 500-1942.",
+    "Invest in Las Vegas real estate with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Rental properties, ROI analysis, 1031 exchanges. No state income tax. Call (702) 789-6561.",
   keywords: [
     "Las Vegas investment property",
     "Las Vegas rental property",
@@ -20,51 +20,6 @@ export const metadata: Metadata = {
   ],
 };
 
-const investmentAreas = [
-  {
-    area: "North Las Vegas",
-    avgPrice: "$385K",
-    avgRent: "$1,950",
-    capRate: "5.2%",
-    appreciation: "+3.2%",
-  },
-  {
-    area: "Henderson",
-    avgPrice: "$485K",
-    avgRent: "$2,300",
-    capRate: "4.5%",
-    appreciation: "+5.1%",
-  },
-  {
-    area: "Spring Valley",
-    avgPrice: "$420K",
-    avgRent: "$2,100",
-    capRate: "4.8%",
-    appreciation: "+4.0%",
-  },
-  {
-    area: "Summerlin",
-    avgPrice: "$625K",
-    avgRent: "$2,800",
-    capRate: "4.0%",
-    appreciation: "+6.8%",
-  },
-  {
-    area: "Enterprise",
-    avgPrice: "$450K",
-    avgRent: "$2,200",
-    capRate: "4.6%",
-    appreciation: "+4.5%",
-  },
-  {
-    area: "Centennial Hills",
-    avgPrice: "$495K",
-    avgRent: "$2,400",
-    capRate: "4.4%",
-    appreciation: "+4.8%",
-  },
-];
-
 export default function InvestmentPropertiesPage() {
   return (
     <>
@@ -74,7 +29,7 @@ export default function InvestmentPropertiesPage() {
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
             title="Las Vegas Investment Properties"
-            subtitle="No state income tax, strong appreciation, and excellent rental yields — discover why investors choose Las Vegas, with guidance from Dr. Jan Duffy and Berkshire Hathaway HomeServices."
+            subtitle="Nevada has no state income tax. Rent, price, and cap rate are calculated per address. Call (702) 789-6561."
             priority
           />
 
@@ -89,8 +44,8 @@ export default function InvestmentPropertiesPage() {
               </div>
               <div className="text-center">
                 <TrendingUp className="h-12 w-12 text-blue-400 mx-auto mb-3" />
-                <h3 className="font-bold mb-1">Strong Appreciation</h3>
-                <p className="text-slate-400 text-sm">+4.2% YoY in 2025</p>
+                <h3 className="font-bold mb-1">Comps, not a published yield</h3>
+                <p className="text-slate-400 text-sm">Call (702) 789-6561 for a rent and price snapshot</p>
               </div>
               <div className="text-center">
                 <Building className="h-12 w-12 text-purple-400 mx-auto mb-3" />
@@ -99,56 +54,21 @@ export default function InvestmentPropertiesPage() {
               </div>
               <div className="text-center">
                 <BarChart className="h-12 w-12 text-yellow-400 mx-auto mb-3" />
-                <h3 className="font-bold mb-1">Strong Cap Rates</h3>
-                <p className="text-slate-400 text-sm">4-6% typical returns</p>
+                <h3 className="font-bold mb-1">Cap rate is property-specific</h3>
+                <p className="text-slate-400 text-sm">NOI divided by price, calculated per address</p>
               </div>
             </div>
           </section>
 
           {/* Market Stats */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Investment Property Markets | January 2026
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
+              How an investment number gets built
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white border border-slate-200 rounded-lg">
-                <thead className="bg-slate-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">
-                      Area
-                    </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">
-                      Avg Price
-                    </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">
-                      Avg Rent
-                    </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">
-                      Cap Rate
-                    </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">
-                      Appreciation
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {investmentAreas.map((area, index) => (
-                    <tr
-                      key={area.area}
-                      className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
-                    >
-                      <td className="px-6 py-4 font-medium text-slate-900">{area.area}</td>
-                      <td className="px-6 py-4 text-slate-700">{area.avgPrice}</td>
-                      <td className="px-6 py-4 text-slate-700">{area.avgRent}/mo</td>
-                      <td className="px-6 py-4 text-green-600 font-medium">{area.capRate}</td>
-                      <td className="px-6 py-4 text-blue-600 font-medium">{area.appreciation}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="text-center text-slate-500 text-sm mt-4">
-              Data represents single-family rental properties. Actual returns vary by property.
+            <p className="text-slate-600 text-center max-w-3xl mx-auto">
+              This page does not publish average price, rent, cap rate, or appreciation by area.
+              Dr. Jan runs those from the current list price, a rent comp, taxes, insurance, and HOA
+              for the address you are underwriting. Call (702) 789-6561.
             </p>
           </section>
 
@@ -156,10 +76,8 @@ export default function InvestmentPropertiesPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Las Vegas rental yields are among the best in the country right now. But you need
-                to know which neighborhoods are appreciating and which have peaked. Not all zip
-                codes perform equally—I help investors identify the properties with the best
-                combination of cash flow and appreciation potential."
+                "I underwrite each address from the current rent comp, HOA, and taxes. A valley
+                cap rate is not a number I put on a property."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, BHHS Nevada Properties
@@ -240,30 +158,30 @@ export default function InvestmentPropertiesPage() {
                 <Calculator className="h-8 w-8 text-blue-600 mb-4" />
                 <h3 className="font-bold text-lg text-slate-900 mb-2">Cap Rate (Capitalization Rate)</h3>
                 <p className="text-slate-600 text-sm mb-4">
-                  Net Operating Income ÷ Property Value. Las Vegas cap rates range from 4-6%,
-                  competitive with major metros. Higher cap rates typically mean higher risk neighborhoods.
+                  Net operating income divided by price. The rate is calculated for one address
+                  after taxes, insurance, HOA, and a vacancy allowance. This page does not publish a valley range.
                 </p>
                 <div className="bg-slate-50 rounded p-3 text-sm">
-                  <strong>Example:</strong> $485K Henderson home renting at $2,300/mo = ~4.5% cap rate
+                  Call (702) 789-6561 for the worksheet on a specific property.
                 </div>
               </div>
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <TrendingUp className="h-8 w-8 text-green-600 mb-4" />
                 <h3 className="font-bold text-lg text-slate-900 mb-2">Cash-on-Cash Return</h3>
                 <p className="text-slate-600 text-sm mb-4">
-                  Annual cash flow ÷ Cash invested. With 25% down payment and financing, Las Vegas
-                  properties often achieve 8-12% cash-on-cash returns through leverage.
+                  Annual cash flow divided by cash invested. The result depends on the down payment,
+                  rate, and rent for that property.
                 </p>
                 <div className="bg-slate-50 rounded p-3 text-sm">
-                  <strong>Example:</strong> $121K down on $485K property with $400/mo net = 4% cash-on-cash
+                  A sample return is not published here.
                 </div>
               </div>
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <BarChart className="h-8 w-8 text-purple-600 mb-4" />
                 <h3 className="font-bold text-lg text-slate-900 mb-2">Total Return</h3>
                 <p className="text-slate-600 text-sm mb-4">
-                  Cash flow + appreciation + loan paydown + tax benefits. Las Vegas's strong appreciation
-                  (4-6% annually) combined with rental income creates total returns of 12-18%.
+                  Cash flow, loan paydown, and tax treatment are separate lines. Appreciation is
+                  not a published annual rate on this page.
                 </p>
                 <div className="bg-slate-50 rounded p-3 text-sm">
                   <strong>Note:</strong> Tax benefits include depreciation, mortgage interest, and expense deductions
@@ -273,11 +191,10 @@ export default function InvestmentPropertiesPage() {
                 <DollarSign className="h-8 w-8 text-amber-600 mb-4" />
                 <h3 className="font-bold text-lg text-slate-900 mb-2">Price-to-Rent Ratio</h3>
                 <p className="text-slate-600 text-sm mb-4">
-                  Property price ÷ Annual rent. Las Vegas ratios of 15-18 indicate healthy investment
-                  potential. Ratios above 20 suggest overpriced markets.
+                  Price divided by annual rent. Use the rent comp for the address, not a valley ratio.
                 </p>
                 <div className="bg-slate-50 rounded p-3 text-sm">
-                  <strong>Example:</strong> $385K ÷ $23,400/year = 16.5 ratio (favorable)
+                  A sample ratio is not published here.
                 </div>
               </div>
             </div>
@@ -291,42 +208,26 @@ export default function InvestmentPropertiesPage() {
             <div className="space-y-6">
               <div className="bg-white rounded-xl p-6">
                 <h3 className="font-bold text-xl text-slate-900 mb-2">North Las Vegas</h3>
-                <p className="text-slate-600 mb-4">
-                  <strong>Best for: Cash flow investors.</strong> Highest cap rates in the valley (5.2%+)
-                  with lower entry prices. Growing population as Amazon, Fanatics, and other employers
-                  expand. School quality varies by area—research specific zones.
+                <p className="text-slate-600">
+                  Includes Aliante and newer production neighborhoods with I-15 access. Employers
+                  such as Amazon have distribution sites in the north valley. Rent and price are
+                  underwritten per address. Ask for the zoned campus name rather than a school rating.
                 </p>
-                <div className="grid grid-cols-3 gap-4 text-sm">
-                  <div><span className="font-medium">Entry:</span> $350K-$450K</div>
-                  <div><span className="font-medium">Rent:</span> $1,800-$2,200</div>
-                  <div><span className="font-medium">Tenant Pool:</span> Working families, warehouse workers</div>
-                </div>
               </div>
               <div className="bg-white rounded-xl p-6">
                 <h3 className="font-bold text-xl text-slate-900 mb-2">Henderson</h3>
-                <p className="text-slate-600 mb-4">
-                  <strong>Best for: Balanced investors.</strong> Premium tenant quality, excellent schools,
-                  and steady appreciation. Lower vacancy rates and longer tenant retention offset
-                  slightly lower cap rates.
+                <p className="text-slate-600">
+                  A separate city. Green Valley, Inspirada, and Anthem are different products.
+                  Confirm HOA rules on leases before you underwrite a rental.
                 </p>
-                <div className="grid grid-cols-3 gap-4 text-sm">
-                  <div><span className="font-medium">Entry:</span> $450K-$600K</div>
-                  <div><span className="font-medium">Rent:</span> $2,100-$2,800</div>
-                  <div><span className="font-medium">Tenant Pool:</span> Professionals, families, retirees</div>
-                </div>
               </div>
               <div className="bg-white rounded-xl p-6">
                 <h3 className="font-bold text-xl text-slate-900 mb-2">Summerlin</h3>
-                <p className="text-slate-600 mb-4">
-                  <strong>Best for: Appreciation investors.</strong> Premium neighborhood with strongest
-                  appreciation (6.8% YoY). Lower cap rates but exceptional tenant quality and
-                  very low vacancy. Best-in-class schools and amenities.
+                <p className="text-slate-600">
+                  Master-planned villages with trails and Red Rock access. Heritage at Stonebridge
+                  is 55+ and guard-gated. Lease rules are in the HOA documents. Call (702) 789-6561
+                  for a rent and price snapshot.
                 </p>
-                <div className="grid grid-cols-3 gap-4 text-sm">
-                  <div><span className="font-medium">Entry:</span> $550K-$800K</div>
-                  <div><span className="font-medium">Rent:</span> $2,500-$3,500</div>
-                  <div><span className="font-medium">Tenant Pool:</span> Executives, tech workers, medical professionals</div>
-                </div>
               </div>
             </div>
           </section>
@@ -429,11 +330,11 @@ export default function InvestmentPropertiesPage() {
               Berkshire Hathaway HomeServices.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17027896561"
               className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 789-6561
             </a>
             <p className="mt-4 text-slate-400 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
@@ -442,7 +343,7 @@ export default function InvestmentPropertiesPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <RealScoutListings />
       <Footer />

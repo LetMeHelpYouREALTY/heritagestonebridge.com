@@ -928,69 +928,106 @@ export const gatedCommunitiesPage: HeritagePageContent = {
 export const communityComparisonPage: HeritagePageContent = {
   slug: "/community-comparison",
   metadata: {
-    title: baseTitle("55+ Community Comparison Las Vegas"),
+    title: baseTitle("55+ Community Comparison Index"),
     description:
-      "Side-by-side comparison of Las Vegas 55+ communities — Heritage at Stonebridge vs Sun City Summerlin, Trilogy, Solera, and Del Webb options.",
+      "/community-comparison is the index of Las Vegas 55+ options measured from Heritage at Stonebridge (421 Lennar homes, Crossbridge Dr, 89138). One-to-one pages cover Sun City and Trilogy.",
   },
   breadcrumbs: crumbs({ name: "Community Comparison", url: "/community-comparison" }),
-  h1: "Las Vegas 55+ Community Comparison",
+  badge: "Comparison index",
+  h1: "Las Vegas 55+ Comparison Index From Heritage at Stonebridge",
   subtitle:
-    "Compare guard-gating, golf HOA, build year, and inventory depth before you narrow to two neighborhoods for in-person tours.",
-  lastUpdated: "July 2026",
+    "Open /community-comparison to pick the next tour. The Sun City head-to-head is /vs-sun-city-summerlin. The Trilogy head-to-head is /vs-trilogy-summerlin.",
+  lastUpdated: "September 23, 2026",
   sections: [
     {
-      type: "comparison",
-      heading: "Heritage vs. Large-Scale 55+ Communities",
-      otherLabel: "Sun City Summerlin (Example)",
-      rows: [
+      type: "prose",
+      heading: "What /community-comparison is for",
+      paragraphs: [
+        `<strong>/community-comparison</strong> is the index. Heritage at Stonebridge is the reference row: ${HERITAGE_COMMUNITY.homeCount} Lennar homes, nine floor plans from ${HERITAGE_COMMUNITY.sqFtRange} square feet, staff guard-gated entry, and an ${HERITAGE_COMMUNITY.clubhouseSqFt.toLocaleString()}-square-foot clubhouse on Crossbridge Dr, Las Vegas, NV ${HERITAGE_COMMUNITY.postalCode}.`,
+        "Each rival community has its own URL with one head-to-head. Use this index to choose which URL to open, then book one competing community plus Heritage in the same appointment.",
+      ],
+    },
+    {
+      type: "grid",
+      heading: "Pick the head-to-head that matches the tour",
+      cards: [
         {
-          label: "Home count",
-          heritage: "421 homes — limited supply",
-          other: "7,000+ homes — deep resale pool",
+          title: "Sun City Summerlin",
+          items: [
+            "Large Del Webb resale pool with on-site golf",
+            "Head-to-head lives only on /vs-sun-city-summerlin",
+            "Open that page for golf HOA versus no mandatory golf",
+          ],
         },
         {
-          label: "Builder / era",
-          heritage: "Lennar 2021–2025 smart-home builds",
-          other: "Multiple builders across decades",
+          title: "Trilogy at Summerlin",
+          items: [
+            "Shea 55+ product elsewhere in Summerlin",
+            "Head-to-head lives only on /vs-trilogy-summerlin",
+            "Open that page for club and plan differences",
+          ],
         },
         {
-          label: "Golf HOA",
-          heritage: "No mandatory golf membership",
-          other: "Three on-site golf courses",
-        },
-        {
-          label: "Security",
-          heritage: "Staff guard-gated entry",
-          other: "Guard-gated with established gate culture",
-        },
-        {
-          label: "Pickleball focus",
-          heritage: "Six lighted pickleball courts",
-          other: "Extensive courts across villages",
+          title: "Heritage at Stonebridge",
+          items: [
+            "421 homes, Lennar 2021–2025, nine floor plans",
+            "Six lighted pickleball courts, no mandatory golf",
+            "Profile and listings stay on /community and /homes-for-sale",
+          ],
         },
       ],
     },
     {
       type: "links",
-      heading: "Detailed Comparison Pages",
+      heading: "Open one comparison, not all of them",
       links: [
         { href: "/vs-sun-city-summerlin", label: "Heritage vs Sun City Summerlin" },
         { href: "/vs-trilogy-summerlin", label: "Heritage vs Trilogy Summerlin" },
-        { href: "/55-plus-communities/heritage-stonebridge", label: "Heritage Profile" },
-        { href: "/55-plus-communities/sun-city-summerlin", label: "Sun City Profile" },
-        { href: "/55-plus-communities/trilogy-summerlin", label: "Trilogy Profile" },
-        { href: "/best-55-plus-communities-las-vegas", label: "Best 55+ Rankings" },
+        { href: "/55-plus-communities/sun-city-summerlin", label: "Sun City Summerlin profile" },
+        { href: "/55-plus-communities/trilogy-summerlin", label: "Trilogy Summerlin profile" },
+        { href: "/best-55-plus-communities-las-vegas", label: "Best 55+ communities in Las Vegas" },
+        { href: "/community", label: "Heritage at Stonebridge community" },
       ],
     },
     {
-      type: "prose",
-      heading: "Tour Two Communities Same Day",
-      paragraphs: [
-        "Spreadsheet comparisons only go so far. Dr. Jan Duffy schedules Heritage at Stonebridge plus one competing Summerlin 55+ community in a single appointment block — so you feel gate flow, clubhouse energy, and floor-plan fit back-to-back.",
+      type: "checklist",
+      heading: "How to use the index",
+      items: [
+        {
+          title: "Stay on this URL to choose",
+          description:
+            "/community-comparison lists the options. It does not repeat the Sun City table.",
+        },
+        {
+          title: "Open one head-to-head",
+          description:
+            "Sun City questions go to /vs-sun-city-summerlin. Trilogy questions go to /vs-trilogy-summerlin.",
+        },
+        {
+          title: "Tour two gates the same day",
+          description:
+            "Dr. Jan Duffy books Heritage at Stonebridge plus one rival so you feel gate flow and clubhouse scale back to back. Call (702) 789-6561.",
+        },
       ],
     },
   ],
-  faqs: HERITAGE_FAQS.slice(0, 2),
+  faqs: [
+    {
+      question: "What does /community-comparison cover?",
+      answer:
+        "It is the index of Las Vegas 55+ options measured from Heritage at Stonebridge on Crossbridge Dr in 89138. Sun City's one-to-one comparison is /vs-sun-city-summerlin. Trilogy's is /vs-trilogy-summerlin. Rankings are on /best-55-plus-communities-las-vegas.",
+    },
+    {
+      question: "Where is the Heritage versus Sun City table?",
+      answer:
+        "On /vs-sun-city-summerlin. This index names Sun City so you can open that page. It does not repeat the golf, scale, and HOA rows.",
+    },
+    {
+      question: "How do I book two communities in one day?",
+      answer:
+        "Call Dr. Jan Duffy at (702) 789-6561. She schedules Heritage at Stonebridge plus one competing Summerlin 55+ community in a single appointment.",
+    },
+  ],
 };
 
 export const luxuryLivingGuidePage: HeritagePageContent = {

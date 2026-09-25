@@ -60,7 +60,7 @@ const sunCityAnthemFaqs = [
   {
     question: "What is the price range for homes in Sun City Anthem?",
     answer:
-      "Homes in Sun City Anthem range from approximately $350,000 to $1.2 million. The Liberty section offers more affordable options, while Heritage and Eagle's Landing feature premium homes with the best views.",
+      "A current resale range is not published here. Liberty, Independence, Heritage, and Eagle's Landing are different sections. Call (702) 789-6561 for comps in the section you want.",
   },
   {
     question: "Does Sun City Anthem have golf courses?",
@@ -75,12 +75,10 @@ const pageSchemas = combineSchemas(
   generateSeniorCommunitySchema({
     name: "Sun City Anthem",
     description:
-      "Premier 55+ active adult community in Henderson, Nevada. Built by Del Webb, featuring 7,100+ homes, championship golf, 64,000 sq ft clubhouse, and stunning mountain views.",
-    priceRange: "$350,000 - $1,200,000",
+      "55+ community in Henderson built by Del Webb, with about 7,100 homes, two golf courses, and a 64,000 sq ft clubhouse.",
     numberOfHomes: 7100,
     yearBuilt: "1998-2008",
     amenities: communityAmenities,
-    hoaFees: "$180-$230/month",
     latitude: 35.9631,
     longitude: -115.0892,
     ageRestriction: "55+",
@@ -111,7 +109,7 @@ export default function SunCityAnthemPage() {
           <PageHero
             badge="Henderson's Premier 55+ Community"
             title="Sun City Anthem"
-            subtitle="Sun City Anthem is a Del Webb 55+ active-adult community in Henderson, Nevada, with 7,100+ homes priced from $350K to $1.2M, championship golf, and stunning mountain views."
+            subtitle="Sun City Anthem is a Del Webb 55+ community in Henderson with about 7,100 homes, two golf courses, and a 64,000 sq ft clubhouse. Call (702) 789-6561 for a current resale snapshot."
             priority
           />
 
@@ -122,12 +120,12 @@ export default function SunCityAnthemPage() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">$350K-$1.2M</div>
-                <div className="text-slate-300 text-sm">Price Range</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">Call</div>
+                <div className="text-slate-300 text-sm">For resale prices</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">$180-$230</div>
-                <div className="text-slate-300 text-sm">Monthly HOA</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">HOA</div>
+                <div className="text-slate-300 text-sm">Confirm with the association</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold mb-1">7,100+</div>
@@ -147,10 +145,8 @@ export default function SunCityAnthemPage() {
                 About Sun City Anthem
               </h2>
               <p>
-                <strong>Sun City Anthem</strong> brings the legendary Sun City lifestyle to Henderson,
-                Nevada's safest and most desirable city. Built by Del Webb from 1998-2008, this
-                7,100+ home community offers stunning mountain views, championship golf, and
-                resort-caliber amenities—all within Henderson's renowned safety and quality of life.
+                <strong>Sun City Anthem</strong> is a Del Webb 55+ community in Henderson, built from
+                1998-2008, with about 7,100 homes, mountain views, and two golf courses.
               </p>
               <p>
                 The community's centerpiece is the Anthem Center, a 64,000 sq ft clubhouse featuring
@@ -173,25 +169,25 @@ export default function SunCityAnthemPage() {
                 <Shield className="h-8 w-8 text-green-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Why Henderson Matters
+                    Henderson location
                   </h3>
                   <p className="text-slate-700 mb-4">
-                    Henderson consistently ranks as one of America's safest cities. For 55+ buyers,
-                    this translates to peace of mind, stable property values, and a community that
-                    attracts similar residents who value safety and quality of life.
+                    Sun City Anthem sits in Henderson, a separate city southeast of Las Vegas.
+                    The community has a guard-gated lifestyle, the Anthem Center, and golf.
+                    A current resale price is a call to (702) 789-6561.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="text-center bg-white rounded-lg p-4">
-                      <div className="text-2xl font-bold text-green-600">#2</div>
-                      <div className="text-sm text-slate-600">Safest Large City</div>
+                      <div className="text-2xl font-bold text-green-600">1998</div>
+                      <div className="text-sm text-slate-600">First homes</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-4">
-                      <div className="text-2xl font-bold text-green-600">A+</div>
-                      <div className="text-sm text-slate-600">Livability Score</div>
+                      <div className="text-2xl font-bold text-green-600">64K</div>
+                      <div className="text-sm text-slate-600">Sq ft clubhouse</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-4">
-                      <div className="text-2xl font-bold text-green-600">Low</div>
-                      <div className="text-sm text-slate-600">Property Crime</div>
+                      <div className="text-2xl font-bold text-green-600">2</div>
+                      <div className="text-sm text-slate-600">Golf courses</div>
                     </div>
                   </div>
                 </div>
@@ -253,28 +249,26 @@ export default function SunCityAnthemPage() {
               <div className="bg-white rounded-xl p-6 border border-slate-200">
                 <h3 className="font-bold text-slate-900 mb-2">Liberty</h3>
                 <p className="text-slate-600 text-sm mb-3">
-                  Original phase with established landscaping. Close to Anthem Center. Most
-                  affordable options starting around $350K.
+                  Original phase with established landscaping, close to the Anthem Center.
+                  Call for current Liberty comps.
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 border border-slate-200">
                 <h3 className="font-bold text-slate-900 mb-2">Independence</h3>
                 <p className="text-slate-600 text-sm mb-3">
-                  Mid-range pricing with mountain views. Popular floor plans and good lot sizes.
-                  $450K-$700K range.
+                  Mid-community section with mountain views. Call for current Independence comps.
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 border border-slate-200">
                 <h3 className="font-bold text-slate-900 mb-2">Heritage</h3>
                 <p className="text-slate-600 text-sm mb-3">
-                  Premium section with larger custom homes. Best views, largest lots. $700K-$1M+.
+                  Larger homes and larger lots. Call for current Heritage comps.
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 border border-slate-200">
                 <h3 className="font-bold text-slate-900 mb-2">Eagle's Landing</h3>
                 <p className="text-slate-600 text-sm mb-3">
-                  Elevated homes with panoramic Strip and mountain views. Luxury finishes
-                  throughout. $800K-$1.2M.
+                  Elevated homes with Strip and mountain views. Call for current Eagle's Landing comps.
                 </p>
               </div>
             </div>
@@ -284,11 +278,9 @@ export default function SunCityAnthemPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Sun City Anthem combines everything Henderson is known for—safety, quality, and
-                stunning scenery—with the Del Webb lifestyle. The views from the upper sections
-                are spectacular, and the Anthem Center rivals any resort clubhouse I've seen.
-                As a <strong>Berkshire Hathaway HomeServices</strong> agent, I help buyers find
-                the right balance of views, price, and proximity to amenities."
+                "Sun City Anthem is a Del Webb community in Henderson with the Anthem Center,
+                two golf courses, and sections from Liberty to Eagle's Landing. Call (702) 789-6561
+                for a current price in the section you want."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
@@ -307,11 +299,11 @@ export default function SunCityAnthemPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17027896561"
                 className="inline-flex items-center justify-center bg-white text-green-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-green-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 789-6561
               </a>
               <Link
                 href="/contact"
@@ -322,7 +314,7 @@ export default function SunCityAnthemPage() {
             </div>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <RealScoutListings />
       <Footer />

@@ -86,7 +86,7 @@ const COMMUNITY = [
   },
   {
     href: "/hoa-fees",
-    title: "HOA fees",
+    title: "Heritage at Stonebridge HOA",
     note: "Recent resales display about $410–$419/month combined. Confirm in the resale package.",
   },
   {
@@ -127,8 +127,23 @@ const LOCATION = [
 const BUYING = [
   {
     href: "/homes-for-sale",
-    title: "Homes for sale",
+    title: "Heritage Stonebridge homes for sale",
     note: "Live MLS search for Heritage at Stonebridge and Summerlin West 89138.",
+  },
+  {
+    href: "/homes-for-rent",
+    title: "Heritage Stonebridge homes for rent",
+    note: "Owner leases only. Written lease on file with the HOA for amenity access. No live rental feed.",
+  },
+  {
+    href: "/reviews",
+    title: "Heritage Stonebridge reviews",
+    note: "Points to the Google Business Profile. Does not invent star ratings.",
+  },
+  {
+    href: "/stonebridge-las-vegas",
+    title: "Stonebridge Las Vegas",
+    note: "Summerlin West village that contains Heritage at Stonebridge, zip 89138.",
   },
   {
     href: "/buying-guide",

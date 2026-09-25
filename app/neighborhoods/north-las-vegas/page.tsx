@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Phone, DollarSign, TrendingUp, Home as HomeIcon, Users } from "lucide-react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import { CanonicalRole } from "@/components/seo/CanonicalRole";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "North Las Vegas Real Estate | Dr. Jan Duffy, BHHS",
@@ -20,10 +21,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is the current median home price in North Las Vegas?",
+      name: "What does /neighborhoods/north-las-vegas cover?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "As of January 2026, North Las Vegas' median home price is $385,000—the most affordable in the Las Vegas Valley. First-time buyers can find homes starting in the $320,000s, while new construction ranges from $380,000 to $550,000.",
+        text: "This URL is the City of North Las Vegas page, including Aliante and Tule Springs. Skye Canyon and Centennial Hills are in the City of Las Vegas and have their own pages.",
       },
     },
     {
@@ -77,34 +78,58 @@ export default function NorthLasVegasPage() {
           {/* Hero */}
           <PageHero
             badge="Berkshire Hathaway HomeServices Nevada Properties"
-            title="Berkshire Hathaway HomeServices North Las Vegas"
-            subtitle="North Las Vegas is the Las Vegas Valley's most affordable city — new master-planned communities, major employers, and strong first-time-buyer and investor value, with a median home price around $385,000."
+            title="North Las Vegas: Aliante, Tule Springs, and the City Line"
+            subtitle="This page is the City of North Las Vegas — Aliante and Tule Springs. Skye Canyon and Centennial Hills sit in Las Vegas and have their own pages."
             priority
           />
 
-          {/* Market Stats */}
+          <CanonicalRole
+            path="/neighborhoods/north-las-vegas"
+            answer="City of North Las Vegas guide. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, uses this page when the address is inside North Las Vegas, not northwest Las Vegas."
+            related={[
+              {
+                href: "/neighborhoods/skye-canyon",
+                label: "Skye Canyon",
+                note: "Las Vegas master plan at /neighborhoods/skye-canyon.",
+              },
+              {
+                href: "/neighborhoods/centennial-hills",
+                label: "Centennial Hills",
+                note: "US-95 and Centennial Center at /neighborhoods/centennial-hills.",
+              },
+              {
+                href: "/neighborhoods/summerlin",
+                label: "Summerlin West and Heritage",
+                note: "Heritage at Stonebridge in 89138 at /neighborhoods/summerlin.",
+              },
+            ]}
+          />
+
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              North Las Vegas Market | January 2026
+              North Las Vegas facts on this page
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">$385,000</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">City</div>
+                <div className="text-slate-300 text-sm">North Las Vegas</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">32 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">Aliante</div>
+                <div className="text-slate-300 text-sm">Master plan</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">892</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
+                <div className="text-3xl font-bold mb-1">Tule</div>
+                <div className="text-slate-300 text-sm">Tule Springs</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+3.2%</div>
-                <div className="text-slate-300 text-sm">YoY Appreciation</div>
+                <div className="text-3xl font-bold text-green-400 mb-1">New</div>
+                <div className="text-slate-300 text-sm">Builder inventory</div>
               </div>
             </div>
+            <p className="mt-6 text-center text-sm text-slate-300">
+              A current North Las Vegas median is not published here. Call (702) 789-6561 for comps in the community you are touring.
+            </p>
           </section>
 
           {/* Main Content */}
@@ -122,12 +147,10 @@ export default function NorthLasVegasPage() {
                 discover North Las Vegas's potential.
               </p>
               <p>
-                With a median home price of <strong>$385,000</strong>—roughly $65,000 less than Las Vegas
-                and $100,000 less than Henderson—North Las Vegas offers entry to homeownership that's
-                increasingly difficult to find elsewhere in Southern Nevada. First-time buyers priced
-                out of Summerlin or Henderson find that North Las Vegas delivers modern homes with
-                contemporary features at prices they can actually afford. And with Nevada's lack of
-                state income tax, more of their income goes toward building equity.
+                North Las Vegas is its own city. Aliante and Tule Springs sit inside that city line.
+                Skye Canyon and Centennial Hills do not. Nevada has no state income tax. A published
+                median for the city is not on this page — call <strong>(702) 789-6561</strong> for
+                comps in the community you are touring.
               </p>
               <p>
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> provides the same
@@ -144,13 +167,13 @@ export default function NorthLasVegasPage() {
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <DollarSign className="h-8 w-8 text-blue-600 mr-3" />
-                    <h4 className="font-bold text-slate-900 text-lg">Most Affordable in the Valley</h4>
+                    <h4 className="font-bold text-slate-900 text-lg">City line</h4>
                   </div>
                   <p className="text-slate-600">
-                    North Las Vegas offers the lowest median home prices in the Las Vegas Valley, making
-                    homeownership attainable for first-time buyers, young families, and investors. Entry-level
-                    homes start in the $320,000s, while new construction from quality builders ranges
-                    from $380,000 to $550,000—prices that would buy a condo elsewhere.
+                    Confirm the city on the tax record. Aliante and Tule Springs are North Las Vegas.
+                    Skye Canyon and Centennial Hills are Las Vegas. Builder names on the street include
+                    Lennar, KB Home, Richmond American, and Century Communities. Ask for the current
+                    price sheet instead of a valley-wide median.
                   </p>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-xl">
@@ -259,10 +282,10 @@ export default function NorthLasVegasPage() {
                 <div className="bg-slate-50 rounded-xl p-6">
                   <h5 className="font-bold text-slate-900 mb-3">Active Builder Communities</h5>
                   <ul className="text-slate-600 text-sm space-y-2">
-                    <li><strong>Aliante:</strong> Master-planned with golf, casino, town center. Homes $400K-$550K.</li>
-                    <li><strong>Tule Springs:</strong> Newer community near I-215. KB Home, Lennar. $380K-$500K.</li>
-                    <li><strong>Valley Vista:</strong> Family-focused with parks, pools. Century Communities. $350K-$450K.</li>
-                    <li><strong>Camino Al Norte:</strong> Growing area near 215. Multiple builders. $380K-$480K.</li>
+                    <li><strong>Aliante:</strong> Master plan with golf, a casino, and a town center.</li>
+                    <li><strong>Tule Springs:</strong> Near I-215. Builders have included KB Home and Lennar.</li>
+                    <li><strong>Valley Vista:</strong> Parks and pools. Century Communities has built here.</li>
+                    <li><strong>Camino Al Norte:</strong> Near the 215, with more than one builder.</li>
                   </ul>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-6">
@@ -317,12 +340,10 @@ export default function NorthLasVegasPage() {
             <div className="space-y-6">
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  What is the current median home price in North Las Vegas?
+                  What does /neighborhoods/north-las-vegas cover?
                 </h3>
                 <p className="text-slate-600">
-                  As of January 2026, North Las Vegas' median home price is $385,000—the most affordable
-                  in the Las Vegas Valley. First-time buyers can find homes starting in the $320,000s,
-                  while new construction ranges from $380,000 to $550,000.
+                  This URL is the City of North Las Vegas page, including Aliante and Tule Springs. Skye Canyon and Centennial Hills are in the City of Las Vegas and have their own pages.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -368,20 +389,23 @@ export default function NorthLasVegasPage() {
               for guidance on finding affordable homes that fit your budget.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17027896561"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 789-6561
             </a>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
-      <RealScoutListings />
+      <RealScoutListings
+        title="North Las Vegas listings"
+        subtitle="Search City of North Las Vegas inventory. The Aliante and Tule Springs guide stays on /neighborhoods/north-las-vegas."
+      />
       <Footer />
     </>
   );
