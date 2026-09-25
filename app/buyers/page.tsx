@@ -241,13 +241,13 @@ export default function BuyersPage() {
                   California Relocators
                 </h3>
                 <p className="text-slate-600 text-sm mb-3">
-                  0% state income tax, 40-60% lower home prices. See what your CA equity buys in 
-                  Las Vegas. Dr. Jan specializes in helping California families transition to Nevada.
+                  Nevada has no state income tax. Call (702) 789-6561 for a current comp before
+                  you compare a California sale to a Las Vegas purchase.
                 </p>
                 <span className="text-blue-600 font-semibold text-sm">Learn More →</span>
               </Link>
               <Link
-                href="/buyers/first-time-buyers"
+                href="/first-time-buyers"
                 className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
               >
                 <div className="text-3xl mb-4">🔑</div>
