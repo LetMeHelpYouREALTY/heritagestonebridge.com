@@ -773,7 +773,7 @@ export const faqPage: HeritagePageContent = {
     {
       question: "Can I schedule a private tour?",
       answer:
-        "Yes. Call (702) 500-1942 or use the contact page to schedule a Calendly consultation and guard-gate tour with Dr. Jan Duffy.",
+        "Yes. Call (702) 222-1964 or use the contact page to schedule a Calendly consultation and guard-gate tour with Dr. Jan Duffy.",
     },
   ],
 };

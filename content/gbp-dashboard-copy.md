@@ -13,7 +13,7 @@ Paste-ready copy for the GBP dashboard. **Must match** `lib/site-contact.ts` and
 |--------|--------|
 | **Business name** | Heritage Stonebridge \| Homes By Dr. Jan Duffy |
 | **Address** | Crossbridge Dr, Las Vegas, NV 89138 |
-| **Phone** | (702) 500-1942 |
+| **Phone** | (702) 222-1964 |
 | **Email** | DrDuffySells@HeritageStonebridge.com |
 | **Website** | https://www.heritagestonebridge.com |
 
@@ -43,7 +43,7 @@ Your local guide to Heritage at Stonebridge — Lennar's guard-gated 55+ communi
 
 Downsizing, relocating to Las Vegas, or selling inside Heritage? Get MLS-backed pricing, private tours, and straightforward advice.
 
-(702) 500-1942 • DrDuffySells@HeritageStonebridge.com • heritagestonebridge.com
+(702) 222-1964 • DrDuffySells@HeritageStonebridge.com • heritagestonebridge.com
 
 Mon–Sun 8am–8pm.
 ```
@@ -97,7 +97,7 @@ A: Yes — staffed guard-gated entry with visitor verification, not just a keypa
 A: An 8,000 sq. ft. clubhouse, fitness center, resort-style pool and spa, heated lap pool, pickleball and bocce courts, walking trails, and social programming.
 
 **Q: How do I schedule a tour or consultation with Dr. Jan Duffy?**  
-A: Call or text (702) 500-1942, email DrDuffySells@HeritageStonebridge.com, or book online at heritagestonebridge.com/contact.
+A: Call or text (702) 222-1964, email DrDuffySells@HeritageStonebridge.com, or book online at heritagestonebridge.com/contact.
 
 **Q: Does Dr. Jan help sellers in Heritage at Stonebridge?**  
 A: Yes. Dr. Jan lists and markets homes in Heritage and other Summerlin 55+ communities with Berkshire Hathaway HomeServices Nevada Properties.
@@ -115,14 +115,14 @@ A: Pricing depends on plan, elevation, and resale vs. new inventory. Request a c
 ### Post 1 — Community focus
 
 **Title:** Guard-gated 55+ living in Summerlin West  
-**Body:** Heritage at Stonebridge offers Lennar single-family homes, an 8,000 sq. ft. clubhouse, pool, pickleball, and staffed gate access — minutes from Downtown Summerlin. Thinking about buying or selling? Call Dr. Jan Duffy at (702) 500-1942 or visit heritagestonebridge.com.  
-**CTA:** Call now → (702) 500-1942  
+**Body:** Heritage at Stonebridge offers Lennar single-family homes, an 8,000 sq. ft. clubhouse, pool, pickleball, and staffed gate access — minutes from Downtown Summerlin. Thinking about buying or selling? Call Dr. Jan Duffy at (702) 222-1964 or visit heritagestonebridge.com.  
+**CTA:** Call now → (702) 222-1964  
 **Link:** https://www.heritagestonebridge.com/55-plus-communities/heritage-stonebridge  
 
 ### Post 2 — Seller intent
 
 **Title:** Selling in Heritage at Stonebridge?  
-**Body:** Get a current market read before you list. Dr. Jan Duffy specializes in Summerlin 55+ resales and guard-gated communities. Free consultation — (702) 500-1942.  
+**Body:** Get a current market read before you list. Dr. Jan Duffy specializes in Summerlin 55+ resales and guard-gated communities. Free consultation — (702) 222-1964.  
 **CTA:** Learn more → https://www.heritagestonebridge.com/selling-guide  
 
 ### Post 3 — Buyer / downsizing
@@ -134,7 +134,7 @@ A: Pricing depends on plan, elevation, and resale vs. new inventory. Request a c
 ### Post 4 — New inventory / market
 
 **Title:** Heritage at Stonebridge homes for sale  
-**Body:** Browse current MLS listings and community amenities. Guard-gated Lennar 55+ in Summerlin West. Questions? (702) 500-1942.  
+**Body:** Browse current MLS listings and community amenities. Guard-gated Lennar 55+ in Summerlin West. Questions? (702) 222-1964.  
 **CTA:** View homes → https://www.heritagestonebridge.com/homes-for-sale  
 
 ---
