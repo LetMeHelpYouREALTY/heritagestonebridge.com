@@ -315,10 +315,6 @@ export default function FiftyFiveCommunitiesPage() {
                 Home
               </Link>
               {" / "}
-              <Link href="/services" className="hover:text-blue-600">
-                Services
-              </Link>
-              {" / "}
               <span className="text-slate-900">55+ Communities</span>
             </nav>
           </div>

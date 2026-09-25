@@ -91,7 +91,7 @@ Popular first-time buyer neighborhoods:
 Call (702) 789-6561 to start your homeownership journey.`,
     cta: {
       text: "First-Time Buyer Guide",
-      url: "https://www.heritagestonebridge.com/buyers/first-time-buyers",
+      url: "https://www.heritagestonebridge.com/first-time-buyers",
     },
     publishDate: "2025-12-30",
     keywords: ["first-time buyer", "down payment assistance", "FHA", "VA loan", "Las Vegas"],

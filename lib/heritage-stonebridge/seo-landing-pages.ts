@@ -1191,7 +1191,7 @@ export const firstTimeBuyersPage: HeritagePageContent = {
       links: [
         { href: "/buying-guide", label: "Heritage Buying Guide" },
         { href: "/downsizing", label: "Downsizing Guide" },
-        { href: "/buyers/first-time-buyers", label: "Full First-Time Buyer Guide" },
+        { href: "/buyers", label: "Home Buyers Hub" },
         { href: "/homes-for-sale", label: "Search Listings" },
         { href: "/contact", label: "Talk to Dr. Duffy" },
       ],
