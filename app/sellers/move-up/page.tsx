@@ -92,8 +92,8 @@ export default function MoveUpSellerPage() {
                 <div className="flex-grow">
                   <h3 className="font-bold text-slate-900 mb-1">Centennial Hills → Summerlin</h3>
                   <p className="text-slate-600 text-sm">
-                    Upgrade from $450K starter to $650K+ in Downtown Summerlin area. Better schools,
-                    walkable amenities, Red Rock views.
+                    Move from Centennial Hills toward Summerlin for Downtown Summerlin, trails,
+                    and Red Rock access. A current price on both sides is a call to (702) 789-6561.
                   </p>
                 </div>
                 <ArrowRight className="h-6 w-6 text-blue-600 flex-shrink-0 ml-4" />
@@ -108,8 +108,8 @@ export default function MoveUpSellerPage() {
                 <div className="flex-grow">
                   <h3 className="font-bold text-slate-900 mb-1">Green Valley → MacDonald Ranch</h3>
                   <p className="text-slate-600 text-sm">
-                    Move from established Green Valley ($520K) to luxury Henderson ($800K+).
-                    Larger lots, custom features, mountain views.
+                    Move from Green Valley toward MacDonald Ranch for larger lots and mountain views.
+                    Call (702) 789-6561 for comps on both sides.
                   </p>
                 </div>
                 <ArrowRight className="h-6 w-6 text-green-600 flex-shrink-0 ml-4" />
@@ -124,8 +124,8 @@ export default function MoveUpSellerPage() {
                 <div className="flex-grow">
                   <h3 className="font-bold text-slate-900 mb-1">Inspirada → Southern Highlands</h3>
                   <p className="text-slate-600 text-sm">
-                    Graduate from master-planned ($525K) to golf community luxury ($750K+).
-                    Country club lifestyle, guard-gated options.
+                    Move from Inspirada toward Southern Highlands for golf and guard-gated sections.
+                    Call (702) 789-6561 for comps on both sides.
                   </p>
                 </div>
                 <ArrowRight className="h-6 w-6 text-purple-600 flex-shrink-0 ml-4" />

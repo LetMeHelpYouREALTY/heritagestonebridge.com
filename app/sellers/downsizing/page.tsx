@@ -164,7 +164,7 @@ export default function DownsizingPage() {
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Professional staging that showcases family-friendly features</span>
+                    <span>Professional staging that shows the floor plan and natural light</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -236,24 +236,20 @@ export default function DownsizingPage() {
                 <thead className="bg-slate-50">
                   <tr>
                     <th className="px-4 py-3 text-left text-sm font-semibold text-slate-900">Community</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-slate-900">Price Range</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-slate-900">HOA/Mo</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-slate-900">Top Amenity</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-slate-900">What is on the ground</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { name: "Sun City Summerlin", price: "$375K-$650K", hoa: "$165-$220", amenity: "4 golf courses" },
-                    { name: "Sun City Anthem", price: "$400K-$700K", hoa: "$150-$200", amenity: "Mountain views" },
-                    { name: "Heritage at Stonebridge", price: "$450K-$600K", hoa: "$175-$225", amenity: "Resort pool" },
-                    { name: "Del Webb Lake Las Vegas", price: "$400K-$650K", hoa: "$180-$250", amenity: "Lake access" },
-                    { name: "Solera at Anthem", price: "$375K-$550K", hoa: "$140-$180", amenity: "Smaller, intimate" },
+                    { name: "Sun City Summerlin", fact: "Three golf courses and four recreation centers" },
+                    { name: "Sun City Anthem", fact: "Anthem Center and two golf courses in Henderson" },
+                    { name: "Heritage at Stonebridge", fact: "Nine Lennar plans, 1,232–2,873 sq ft, Summerlin West 89138" },
+                    { name: "Del Webb Lake Las Vegas", fact: "55+ homes beside Lake Las Vegas" },
+                    { name: "Solera at Anthem", fact: "Guard-gated 55+ next to Sun City Anthem" },
                   ].map((community, index) => (
                     <tr key={community.name} className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}>
                       <td className="px-4 py-3 font-medium text-slate-900">{community.name}</td>
-                      <td className="px-4 py-3 text-slate-700">{community.price}</td>
-                      <td className="px-4 py-3 text-slate-700">{community.hoa}</td>
-                      <td className="px-4 py-3 text-slate-700">{community.amenity}</td>
+                      <td className="px-4 py-3 text-slate-700">{community.fact}</td>
                     </tr>
                   ))}
                 </tbody>

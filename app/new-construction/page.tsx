@@ -8,7 +8,6 @@ import {
   Building2,
   Shield,
   DollarSign,
-  Clock,
   CheckCircle,
   AlertTriangle,
   Home as HomeIcon,
@@ -68,7 +67,7 @@ const faqSchema = {
       name: "What builder incentives are currently available?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "As of January 2026, builders are offering 4-6% toward closing costs, rate buydowns (some as low as 4.99%), free upgrades ($15K-$50K value), and appliance packages. Incentives change monthly. Dr. Jan tracks current offers across all builders.",
+        text: "Incentives change by builder, community, and week. This page does not publish a current percentage or dollar credit. Call (702) 789-6561 before the first model visit so Dr. Jan is registered.",
       },
     },
     {
@@ -84,7 +83,7 @@ const faqSchema = {
       name: "Should I use the builder's preferred lender?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Builder lenders often offer significant incentives ($10K-$30K) to use their services. Dr. Jan helps you compare: sometimes the incentive outweighs slightly higher rates, sometimes it doesn't. We ensure you make an informed decision.",
+        text: "Builder lenders sometimes attach a credit to their own loan. Compare that offer with another lender's rate and fees. Dr. Jan walks through the two sheets. This page does not publish a dollar amount.",
       },
     },
   ],
@@ -94,14 +93,11 @@ const builders = [
   {
     name: "Toll Brothers",
     segment: "Luxury",
-    priceRange: "$600,000 - $2,500,000+",
     communities: [
       "Summerlin (Mesa Ridge, Reverence)",
       "Henderson (Inspirada, Lake Las Vegas)",
       "The Ridges",
     ],
-    currentIncentives: "Up to $50K in design studio credits on select inventory",
-    incentiveDeadline: "February 28, 2026",
     highlights: [
       "Luxury finishes standard",
       "Highly customizable floor plans",
@@ -111,15 +107,12 @@ const builders = [
   {
     name: "Lennar",
     segment: "Production",
-    priceRange: "$380,000 - $900,000",
     communities: [
       "Summerlin (various)",
       "Henderson (Cadence, Inspirada)",
       "North Las Vegas (Valley Vista)",
       "Southwest (Skye Hills)",
     ],
-    currentIncentives: "4.99% rate buydown + $25K toward closing with Lennar Mortgage",
-    incentiveDeadline: "January 31, 2026",
     highlights: [
       "Everything's Included® packages",
       "Smart home technology standard",
@@ -129,14 +122,11 @@ const builders = [
   {
     name: "KB Home",
     segment: "Entry-Level to Mid-Range",
-    priceRange: "$350,000 - $650,000",
     communities: [
       "North Las Vegas (multiple)",
       "Southwest Las Vegas",
       "Henderson",
     ],
-    currentIncentives: "Up to 6% closing cost credit + free premium lot on select homes",
-    incentiveDeadline: "February 15, 2026",
     highlights: [
       "Built to Order™ customization",
       "Energy-efficient construction",
@@ -146,14 +136,11 @@ const builders = [
   {
     name: "Taylor Morrison",
     segment: "Mid-Range to Luxury",
-    priceRange: "$450,000 - $1,200,000",
     communities: [
       "Summerlin",
       "Henderson (Cadence, Lake Las Vegas)",
       "Mountains Edge",
     ],
-    currentIncentives: "$30K flex credit on quick move-in homes",
-    incentiveDeadline: "Rolling (inventory dependent)",
     highlights: [
       "Award-winning designs",
       "Strong energy efficiency",
@@ -163,14 +150,11 @@ const builders = [
   {
     name: "Pulte Homes",
     segment: "Mid-Range",
-    priceRange: "$400,000 - $800,000",
     communities: [
       "Henderson (Inspirada)",
       "North Las Vegas",
       "Southwest Las Vegas",
     ],
-    currentIncentives: "Up to $20K design center credit + rate buydown",
-    incentiveDeadline: "January 31, 2026",
     highlights: [
       "Life Tested® floor plans",
       "Consumer-focused designs",
@@ -180,14 +164,11 @@ const builders = [
   {
     name: "Richmond American",
     segment: "Entry-Level to Mid-Range",
-    priceRange: "$380,000 - $700,000",
     communities: [
       "North Las Vegas",
       "Henderson",
       "Southwest Las Vegas",
     ],
-    currentIncentives: "Up to $15K HomeGallery credit + 5.25% rate with preferred lender",
-    incentiveDeadline: "February 28, 2026",
     highlights: [
       "PersonalizedSM options",
       "Wide community selection",
@@ -197,13 +178,10 @@ const builders = [
   {
     name: "Shea Homes",
     segment: "55+ & Luxury",
-    priceRange: "$500,000 - $1,100,000",
     communities: [
       "Trilogy at Summerlin (55+)",
       "Trilogy at Inspirada (55+)",
     ],
-    currentIncentives: "Resort membership included + up to $40K in upgrades",
-    incentiveDeadline: "Ongoing",
     highlights: [
       "Award-winning 55+ communities",
       "Resort-style amenities",
@@ -213,14 +191,11 @@ const builders = [
   {
     name: "Century Communities",
     segment: "Entry-Level",
-    priceRange: "$320,000 - $550,000",
     communities: [
       "North Las Vegas",
       "Southwest Las Vegas",
       "Pahrump",
     ],
-    currentIncentives: "Up to 5% closing costs + appliance package",
-    incentiveDeadline: "January 31, 2026",
     highlights: [
       "Most affordable new construction",
       "First-time buyer programs",
@@ -345,7 +320,7 @@ export default function NewConstructionPage() {
               <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
                 <h2 className="text-2xl font-bold text-slate-900 flex items-center">
                   <Calendar className="h-7 w-7 text-green-600 mr-3" />
-                  January 2026 Builder Incentives
+                  Ask for this week&apos;s builder offer
                 </h2>
                 <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                   Limited Time Offers
@@ -353,24 +328,24 @@ export default function NewConstructionPage() {
               </div>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white rounded-xl p-5 border border-green-100">
-                  <div className="text-3xl font-bold text-green-600 mb-1">4.99%</div>
-                  <div className="text-slate-700 font-medium">Rate Buydowns</div>
+                  <div className="text-2xl font-bold text-green-600 mb-1">Credits</div>
+                  <div className="text-slate-700 font-medium">Change by community</div>
                   <div className="text-slate-500 text-sm mt-1">
-                    Multiple builders offering sub-5% rates with preferred lenders
+                    Confirm closing credits before the first visit
                   </div>
                 </div>
                 <div className="bg-white rounded-xl p-5 border border-green-100">
-                  <div className="text-3xl font-bold text-green-600 mb-1">$50K+</div>
-                  <div className="text-slate-700 font-medium">Upgrade Credits</div>
+                  <div className="text-2xl font-bold text-green-600 mb-1">Buydown</div>
+                  <div className="text-slate-700 font-medium">Lender disclosure</div>
                   <div className="text-slate-500 text-sm mt-1">
-                    Design center and premium options at no additional cost
+                    A rate belongs on the lender&apos;s sheet, not this page
                   </div>
                 </div>
                 <div className="bg-white rounded-xl p-5 border border-green-100">
-                  <div className="text-3xl font-bold text-green-600 mb-1">6%</div>
-                  <div className="text-slate-700 font-medium">Closing Cost Credits</div>
+                  <div className="text-2xl font-bold text-green-600 mb-1">Upgrades</div>
+                  <div className="text-slate-700 font-medium">Homesite specific</div>
                   <div className="text-slate-500 text-sm mt-1">
-                    Significant credits to offset buyer closing costs
+                    Design-center credits vary by inventory home
                   </div>
                 </div>
               </div>
@@ -397,9 +372,7 @@ export default function NewConstructionPage() {
                       <h3 className="text-xl font-bold">{builder.name}</h3>
                       <span className="text-slate-400 text-sm">{builder.segment}</span>
                     </div>
-                    <div className="text-right">
-                      <div className="text-blue-400 font-bold">{builder.priceRange}</div>
-                    </div>
+                    <div className="text-right text-sm text-slate-300">Call for pricing</div>
                   </div>
                   <div className="p-5">
                     <div className="mb-4">
@@ -418,14 +391,10 @@ export default function NewConstructionPage() {
 
                     <div className="bg-green-50 rounded-lg p-4 mb-4">
                       <div className="text-xs text-green-700 uppercase tracking-wide mb-1">
-                        Current Incentive
+                        Current offer
                       </div>
                       <div className="text-slate-900 font-medium text-sm">
-                        {builder.currentIncentives}
-                      </div>
-                      <div className="text-xs text-slate-500 mt-1 flex items-center">
-                        <Clock className="h-3 w-3 mr-1" />
-                        Deadline: {builder.incentiveDeadline}
+                        Incentives change by community. Call (702) 789-6561 before the first model visit.
                       </div>
                     </div>
 
@@ -597,9 +566,9 @@ export default function NewConstructionPage() {
                   What builder incentives are currently available?
                 </h3>
                 <p className="text-slate-600">
-                  As of January 2026, builders are offering 4-6% toward closing costs, rate buydowns
-                  (some as low as 4.99%), free upgrades ($15K-$50K value), and appliance packages.
-                  Incentives change monthly. Dr. Jan tracks current offers across all builders.
+                  As of this page, specific percentages and dollar credits are not published.
+                  Incentives change by builder and week. Dr. Jan tracks the current offer.
+                  Call (702) 789-6561 before you visit a model.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -620,9 +589,8 @@ export default function NewConstructionPage() {
                   Should I use the builder's preferred lender?
                 </h3>
                 <p className="text-slate-600">
-                  Builder lenders often offer significant incentives ($10K-$30K) to use their
-                  services. Dr. Jan helps you compare: sometimes the incentive outweighs slightly
-                  higher rates, sometimes it doesn't. We ensure you make an informed decision.
+                  Builder lenders sometimes attach a credit to their own loan. Compare that offer
+                  with another lender&apos;s rate and fees. This page does not publish a dollar amount.
                 </p>
               </div>
             </div>
@@ -687,7 +655,7 @@ export default function NewConstructionPage() {
           </section>
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">
-          Last Updated: January 2026 | Incentives subject to change
+          Last Updated: September 23, 2026 | Confirm incentives before you visit
         </div>
       </main>
       <RealScoutListings />

@@ -64,49 +64,37 @@ const popularSearches = [
 ];
 
 const priceRanges = [
-  { range: "Under $400K", description: "Starter homes, condos, townhomes", count: "1,500+" },
-  { range: "$400K - $600K", description: "Family homes, established neighborhoods", count: "2,100+" },
-  { range: "$600K - $1M", description: "Premium locations, larger homes", count: "1,200+" },
-  { range: "$1M - $2M", description: "Luxury homes, guard-gated communities", count: "450+" },
-  { range: "$2M+", description: "Ultra-luxury estates, custom builds", count: "180+" },
+  { range: "Under $400K", description: "Condos, townhomes, and smaller single-family homes" },
+  { range: "$400K - $600K", description: "Single-family homes in established neighborhoods" },
+  { range: "$600K - $1M", description: "Larger homes and gated sections" },
+  { range: "$1M - $2M", description: "Guard-gated homes and custom builds" },
+  { range: "$2M+", description: "Custom estates, including The Ridges" },
 ];
 
 const neighborhoods = [
   {
     name: "Summerlin",
-    description: "Master-planned community with Red Rock views, top schools, and 150+ parks",
-    medianPrice: "$625,000",
-    daysOnMarket: 22,
+    description: "Master-planned villages, trails, and Red Rock Canyon access",
   },
   {
     name: "Henderson",
-    description: "Nevada's second-largest city with family-friendly communities and low crime",
-    medianPrice: "$485,000",
-    daysOnMarket: 24,
+    description: "A separate city that includes Green Valley, Inspirada, and Anthem",
   },
   {
     name: "Green Valley",
-    description: "Established Henderson community with mature landscaping and golf courses",
-    medianPrice: "$520,000",
-    daysOnMarket: 26,
+    description: "1988 master plan, The District, and mature landscaping",
   },
   {
     name: "Southern Highlands",
-    description: "Guard-gated luxury community with championship golf and mountain views",
-    medianPrice: "$750,000",
-    daysOnMarket: 32,
+    description: "Robert Trent Jones Jr. golf, guard-gated sections, and I-15 access",
   },
   {
     name: "North Las Vegas",
-    description: "Affordable new construction and growing infrastructure",
-    medianPrice: "$385,000",
-    daysOnMarket: 18,
+    description: "Aliante, Tule Springs, and newer production neighborhoods",
   },
   {
     name: "Skye Canyon",
-    description: "Newer master-planned community with modern amenities and mountain access",
-    medianPrice: "$550,000",
-    daysOnMarket: 20,
+    description: "15-acre Skye Center and access toward Floyd Lamb Park",
   },
 ];
 
@@ -131,7 +119,7 @@ export default function ListingsPage() {
             <div className="flex flex-wrap justify-center gap-4 text-sm text-white/80">
               <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Live MLS Data</span>
               <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Updated Every 15 Min</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> 5,000+ Active Listings</span>
+              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> MLS search below</span>
             </div>
           </PageHero>
 
@@ -157,11 +145,8 @@ export default function ListingsPage() {
               Popular Property Searches in Las Vegas
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
-              or affordable new construction, our comprehensive search tools help you find exactly 
-              what you're looking for. Browse the most popular searches below or use the advanced 
-              filters to customize your home search experience.
+              Browse guard-gated communities, 55+ neighborhoods, and new construction by place.
+              Counts on the links below are search labels, not a published inventory total.
             </p>
             <div className="grid md:grid-cols-3 gap-4">
               {popularSearches.map((search) => (
@@ -188,10 +173,8 @@ export default function ListingsPage() {
               Las Vegas Home Price Guide
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              The Las Vegas real estate market offers exceptional value compared to California and 
-              other western states. With no state income tax and housing prices 40-60% lower than 
-              coastal cities, your dollar stretches further in Southern Nevada. Here's what you can 
-              expect at different price points in the current January 2026 market.
+              Nevada has no state income tax. These bands are search buckets, not a count of homes
+              for sale. A current Heritage at Stonebridge price is a call to (702) 789-6561.
             </p>
             <div className="space-y-4">
               {priceRanges.map((price, index) => (
@@ -206,7 +189,7 @@ export default function ListingsPage() {
                       <p className="text-sm text-slate-600">{price.description}</p>
                     </div>
                   </div>
-                  <span className="text-blue-600 font-semibold">{price.count} homes</span>
+                  <span className="text-blue-600 font-semibold">Search this band</span>
                 </div>
               ))}
             </div>
@@ -218,12 +201,8 @@ export default function ListingsPage() {
               Las Vegas Neighborhoods & Communities
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Each Las Vegas neighborhood offers a unique lifestyle, from the resort-style living 
-              of Summerlin to the family-friendly communities of Henderson. Understanding these 
-              differences is crucial to finding a home that fits your needs. As a Berkshire 
-              Hathaway HomeServices agent serving Las Vegas since 2008, Dr. Jan Duffy provides 
-              expert guidance on which neighborhoods match your priorities—whether that's schools, 
-              commute times, amenities, or investment potential.
+              Summerlin is a set of master-planned villages. Henderson is a separate city.
+              Dr. Jan matches commute time, gates, golf, and clubhouse access to the search.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {neighborhoods.map((neighborhood) => (
@@ -232,11 +211,7 @@ export default function ListingsPage() {
                   className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
                 >
                   <h3 className="font-bold text-lg text-slate-900 mb-2">{neighborhood.name}</h3>
-                  <p className="text-slate-600 text-sm mb-4">{neighborhood.description}</p>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-500">Median: <strong className="text-slate-900">{neighborhood.medianPrice}</strong></span>
-                    <span className="text-slate-500">DOM: <strong className="text-slate-900">{neighborhood.daysOnMarket} days</strong></span>
-                  </div>
+                  <p className="text-slate-600 text-sm">{neighborhood.description}</p>
                 </div>
               ))}
             </div>
@@ -304,32 +279,13 @@ export default function ListingsPage() {
           {/* Market Stats */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Las Vegas Real Estate Market Statistics
+              Current prices live in the MLS search
             </h2>
-            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              The Las Vegas housing market remains strong heading into 2026, with steady appreciation 
-              and healthy inventory levels. Understanding current market conditions helps buyers 
-              make informed decisions about timing, pricing, and negotiation strategies. Here's a 
-              snapshot of the current market as of January 2026.
+            <p className="text-slate-600 text-center max-w-3xl mx-auto">
+              This page does not publish a median, days on market, or active-listing count.
+              Use the search above for what is listed now, or call (702) 789-6561 for a
+              Heritage at Stonebridge snapshot.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">$450K</div>
-                <div className="text-sm text-slate-600">Median Home Price</div>
-              </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">28</div>
-                <div className="text-sm text-slate-600">Avg Days on Market</div>
-              </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">4,850</div>
-                <div className="text-sm text-slate-600">Active Listings</div>
-              </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">+4.2%</div>
-                <div className="text-sm text-slate-600">Year-Over-Year</div>
-              </div>
-            </div>
           </section>
 
           {/* Home Buying Process */}
@@ -423,10 +379,8 @@ export default function ListingsPage() {
                   How competitive is the Las Vegas housing market in 2026?
                 </h3>
                 <p className="text-slate-600">
-                  The Las Vegas market is moderately competitive with 2.1 months of inventory—a 
-                  slight seller's market. Well-priced homes in desirable areas like Summerlin and 
-                  Henderson often receive multiple offers within the first week. Having a 
-                  pre-approval and experienced agent gives you a significant advantage.
+                  Competition changes by neighborhood. A pre-approval and current comps matter more
+                  than a valley-wide inventory figure. Call (702) 789-6561 for the homes you are touring.
                 </p>
               </div>
               <div className="bg-slate-50 rounded-lg p-6">
@@ -497,7 +451,7 @@ export default function ListingsPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <Footer />
     </>

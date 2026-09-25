@@ -33,10 +33,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How much down payment do I need for my first home in Las Vegas?",
+      name: "How much down payment do I need?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Down payment requirements vary by loan type: FHA loans require 3.5% down, conventional loans can be as low as 3%, VA loans require 0% down for eligible veterans, and Nevada down payment assistance programs can provide up to $15,000 for qualified buyers.",
+        text: "Down payment requirements vary: FHA loans require 3.5%, conventional can be as low as 3%, VA loans require 0% for eligible veterans. Nevada assistance programs exist for qualified buyers. Ask a lender for the current amount.",
       },
     },
     {
@@ -44,7 +44,7 @@ const faqSchema = {
       name: "What is the FHA loan limit in Las Vegas for 2026?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The 2026 FHA loan limit for Las Vegas (Clark County) is $498,257 for a single-family home. This allows first-time buyers to purchase homes up to approximately $515,000 with 3.5% down.",
+        text: "HUD's 2026 one-unit FHA floor is $541,287, effective for case numbers assigned on or after January 1, 2026 (Mortgagee Letter 2025-23). Clark County uses that floor. Confirm the county row on HUD's limit lookup before you write an offer.",
       },
     },
     {
@@ -52,7 +52,7 @@ const faqSchema = {
       name: "What neighborhoods are best for first-time buyers in Las Vegas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Top neighborhoods for first-time buyers include North Las Vegas ($350K-$450K), Mountains Edge ($380K-$480K), and Centennial Hills ($398K median). These areas offer new construction options, good schools, and strong appreciation potential.",
+        text: "North Las Vegas, Mountains Edge, and Centennial Hills are different products: newer production homes, Exploration Peak Park, and US-95 access. A current price is a call to (702) 789-6561. This page does not publish a median.",
       },
     },
     {
@@ -60,7 +60,7 @@ const faqSchema = {
       name: "Are there builder incentives for first-time buyers?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes! Las Vegas builders currently offer significant incentives: closing cost credits up to 6%, rate buydowns as low as 4.99%, and upgrade packages worth $15K-$50K. These incentives can make new construction more affordable than resale homes.",
+        text: "Builder credits and rate buydowns change by community and week. This page does not publish a current percentage. Call (702) 789-6561 before the first model visit so Dr. Jan is registered.",
       },
     },
   ],
@@ -118,7 +118,7 @@ export default function FirstTimeBuyersPage() {
                   Only 3.5% down with credit scores as low as 580
                 </p>
                 <div className="text-xs text-slate-500">
-                  2026 Limit: $498,257
+                  HUD 2026 floor: $541,287
                 </div>
               </div>
               <div className="bg-white border border-slate-200 rounded-xl p-6 text-center">
@@ -151,7 +151,7 @@ export default function FirstTimeBuyersPage() {
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">Down Payment Help</h3>
                 <p className="text-sm text-slate-600 mb-3">
-                  Nevada programs offer up to $15,000 in assistance
+                  Nevada assistance programs exist for qualified buyers. Ask a lender for the current amount.
                 </p>
                 <div className="text-xs text-slate-500">
                   Income limits apply
@@ -171,23 +171,22 @@ export default function FirstTimeBuyersPage() {
                   <h3 className="font-bold text-lg text-slate-900">North Las Vegas</h3>
                   <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-semibold">Best Value</span>
                 </div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">$350K - $450K</div>
+                <div className="text-lg font-bold text-blue-600 mb-2">Call for comps</div>
                 <p className="text-slate-600 text-sm mb-4">
-                  Most affordable new construction in the valley. Growing rapidly with new schools,
-                  shopping, and infrastructure investments.
+                  Newer production neighborhoods north of the Las Vegas city line, including Aliante.
                 </p>
                 <ul className="text-sm space-y-1 text-slate-700">
                   <li className="flex items-center">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    New construction from $350K
+                    Newer construction
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    FHA-friendly pricing
+                    I-15 access
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Strong appreciation
+                    Ask about the zoned campus
                   </li>
                 </ul>
                 <Link
@@ -203,10 +202,9 @@ export default function FirstTimeBuyersPage() {
                   <h3 className="font-bold text-lg text-slate-900">Mountains Edge</h3>
                   <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">Great Parks</span>
                 </div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">$380K - $480K</div>
+                <div className="text-lg font-bold text-blue-600 mb-2">Call for comps</div>
                 <p className="text-slate-600 text-sm mb-4">
-                  Southwest Las Vegas with the valley's largest park. Great community feel,
-                  mountain views, and easy freeway access.
+                  Southwest Las Vegas beside Exploration Peak Park, with I-215 access.
                 </p>
                 <ul className="text-sm space-y-1 text-slate-700">
                   <li className="flex items-center">
@@ -219,7 +217,7 @@ export default function FirstTimeBuyersPage() {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Family-friendly
+                    I-215 access
                   </li>
                 </ul>
                 <Link
@@ -233,17 +231,16 @@ export default function FirstTimeBuyersPage() {
               <div className="bg-white rounded-xl p-6 border border-slate-200">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-bold text-lg text-slate-900">Centennial Hills</h3>
-                  <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-semibold">Top Schools</span>
+                  <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-semibold">US-95</span>
                 </div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">$398K Median</div>
+                <div className="text-lg font-bold text-blue-600 mb-2">Call for comps</div>
                 <p className="text-slate-600 text-sm mb-4">
-                  Northwest Las Vegas near Centennial Hills Hospital. Excellent schools,
-                  family parks, and Red Rock Canyon proximity.
+                  Northwest Las Vegas near Centennial Hills Park and the hospital, with Red Rock access.
                 </p>
                 <ul className="text-sm space-y-1 text-slate-700">
                   <li className="flex items-center">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Highly-rated schools
+                    Centennial Hills Park
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
@@ -271,30 +268,21 @@ export default function FirstTimeBuyersPage() {
               <h2 className="text-3xl font-bold">New Construction Incentives</h2>
             </div>
             <p className="text-center text-green-100 mb-8 max-w-2xl mx-auto">
-              Las Vegas builders are offering incredible incentives that can make new homes more
-              affordable than resale properties. These incentives are available NOW:
+              Credits and rate buydowns change by builder and week. Confirm the current offer
+              before you visit a model, and register Dr. Jan on the first visit.
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="bg-white/10 rounded-xl p-6 text-center">
-                <div className="text-4xl font-bold mb-2">6%</div>
-                <div className="text-green-100">Closing Cost Credits</div>
-                <p className="text-sm text-green-200 mt-2">
-                  Thousands toward your closing costs
-                </p>
+                <div className="text-2xl font-bold mb-2">Closing credits</div>
+                <div className="text-green-100">Ask what is offered this week</div>
               </div>
               <div className="bg-white/10 rounded-xl p-6 text-center">
-                <div className="text-4xl font-bold mb-2">4.99%</div>
-                <div className="text-green-100">Rate Buydowns</div>
-                <p className="text-sm text-green-200 mt-2">
-                  Below-market interest rates
-                </p>
+                <div className="text-2xl font-bold mb-2">Rate buydown</div>
+                <div className="text-green-100">Lender disclosure, not a website rate</div>
               </div>
               <div className="bg-white/10 rounded-xl p-6 text-center">
-                <div className="text-4xl font-bold mb-2">$50K</div>
-                <div className="text-green-100">Free Upgrades</div>
-                <p className="text-sm text-green-200 mt-2">
-                  Design center credits included
-                </p>
+                <div className="text-2xl font-bold mb-2">Design center</div>
+                <div className="text-green-100">Credits vary by homesite</div>
               </div>
             </div>
             <div className="text-center">
@@ -422,12 +410,39 @@ export default function FirstTimeBuyersPage() {
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2 flex items-center">
                   <HelpCircle className="h-5 w-5 text-blue-600 mr-2" />
+                  What is the FHA loan limit in Las Vegas for 2026?
+                </h3>
+                <p className="text-slate-600">
+                  HUD&apos;s 2026 one-unit FHA floor is $541,287, effective for case numbers assigned on or after January 1, 2026 (Mortgagee Letter 2025-23). Clark County uses that floor. Confirm the county row on HUD&apos;s limit lookup before you write an offer.
+                </p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-lg p-6">
+                <h3 className="font-bold text-slate-900 mb-2 flex items-center">
+                  <HelpCircle className="h-5 w-5 text-blue-600 mr-2" />
+                  What neighborhoods are best for first-time buyers in Las Vegas?
+                </h3>
+                <p className="text-slate-600">
+                  North Las Vegas, Mountains Edge, and Centennial Hills are different products: newer production homes, Exploration Peak Park, and US-95 access. A current price is a call to (702) 789-6561. This page does not publish a median.
+                </p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-lg p-6">
+                <h3 className="font-bold text-slate-900 mb-2 flex items-center">
+                  <HelpCircle className="h-5 w-5 text-blue-600 mr-2" />
+                  Are there builder incentives for first-time buyers?
+                </h3>
+                <p className="text-slate-600">
+                  Builder credits and rate buydowns change by community and week. This page does not publish a current percentage. Call (702) 789-6561 before the first model visit so Dr. Jan is registered.
+                </p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-lg p-6">
+                <h3 className="font-bold text-slate-900 mb-2 flex items-center">
+                  <HelpCircle className="h-5 w-5 text-blue-600 mr-2" />
                   How much down payment do I need?
                 </h3>
                 <p className="text-slate-600">
                   Down payment requirements vary: FHA loans require 3.5%, conventional can be as low as
-                  3%, VA loans require 0% for eligible veterans. Nevada assistance programs can provide
-                  up to $15,000 for qualified buyers.
+                  3%, VA loans require 0% for eligible veterans. Nevada assistance programs exist
+                  for qualified buyers. Ask a lender for the current amount.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -511,7 +526,7 @@ export default function FirstTimeBuyersPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <RealScoutListings />
       <Footer />

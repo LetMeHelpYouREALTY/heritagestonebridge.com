@@ -67,7 +67,7 @@ export default function SoleraAnthemPage() {
           <PageHero
             badge="Intimate Guard-Gated 55+ Community"
             title="Solera at Anthem"
-            subtitle="Solera at Anthem is an intimate, guard-gated 55+ active-adult community in Henderson, Nevada, with about 1,200 homes priced from $380K to $650K where all residents are 55 or older."
+            subtitle="Solera at Anthem is a guard-gated 55+ community in Henderson with about 1,200 homes. Call (702) 789-6561 for a current resale snapshot."
             priority
           />
 
@@ -78,16 +78,12 @@ export default function SoleraAnthemPage() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-teal-400 mb-1">
-                  $380K-$650K
-                </div>
-                <div className="text-slate-300 text-sm">Price Range</div>
+                <div className="text-3xl font-bold text-teal-400 mb-1">Call</div>
+                <div className="text-slate-300 text-sm">For resale prices</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-teal-400 mb-1">
-                  $170-$210
-                </div>
-                <div className="text-slate-300 text-sm">Monthly HOA</div>
+                <div className="text-3xl font-bold text-teal-400 mb-1">HOA</div>
+                <div className="text-slate-300 text-sm">Confirm with the association</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold mb-1">1,200+</div>
@@ -226,7 +222,7 @@ export default function SoleraAnthemPage() {
           {/* Henderson Location */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-              Henderson: America's Safest Large City
+              Henderson location
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-xl p-6 border border-slate-200">
@@ -234,12 +230,11 @@ export default function SoleraAnthemPage() {
                   <Shield className="h-6 w-6 text-teal-600 mr-3 flex-shrink-0" />
                   <div>
                     <h3 className="font-bold text-slate-900 mb-2">
-                      Top Safety Rankings
+                      Guard gate plus Henderson
                     </h3>
                     <p className="text-slate-600 text-sm">
-                      Henderson consistently ranks as one of the safest large
-                      cities in America. Double security: Henderson's safety plus
-                      Solera's guard gate.
+                      Solera at Anthem is guard-gated inside Henderson. This page does not
+                      publish a city safety ranking. Ask about the gate, HOA, and commute.
                     </p>
                   </div>
                 </div>
@@ -277,11 +272,11 @@ export default function SoleraAnthemPage() {
                   <DollarSign className="h-6 w-6 text-teal-600 mr-3 flex-shrink-0" />
                   <div>
                     <h3 className="font-bold text-slate-900 mb-2">
-                      Lower HOA Than Larger Communities
+                      HOA is set by the association
                     </h3>
                     <p className="text-slate-600 text-sm">
-                      $170-$210/month—less than Sun City Anthem's $180-$230
-                      because you're not subsidizing massive amenity complexes.
+                      Confirm the current Solera assessment before you offer. This page
+                      does not publish a dues comparison.
                     </p>
                   </div>
                 </div>
@@ -321,11 +316,10 @@ export default function SoleraAnthemPage() {
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
                   <strong className="text-slate-900">
-                    Guard-gated in America's safest city
+                    Guard-gated in Henderson
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    Double layer of security: Henderson's safety record plus 24/7
-                    guard gate
+                    Staffed gate at the community entrance. Confirm hours with the HOA.
                   </p>
                 </div>
               </div>
@@ -395,7 +389,7 @@ export default function SoleraAnthemPage() {
           </section>
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">
-          Last Updated: January 2026
+          Last Updated: September 23, 2026
         </div>
       </main>
       <RealScoutListings />

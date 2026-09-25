@@ -46,46 +46,40 @@ const relocationSchema = {
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
     telephone: "+17027896561",
   },
-  areaServed: "Las Vegas, Henderson, Summerlin, Clark County NV",
+  areaServed: "Las Vegas, NV 89138; Summerlin West, Las Vegas, NV",
   serviceType: "Relocation Services",
 };
 
 const popularRelocationAreas = [
   {
     name: "Summerlin",
-    best: "Families, professionals",
-    highlights: "Top-rated schools, 150+ parks, Red Rock Canyon proximity, master-planned living",
-    from: "$500K",
+    best: "Master-planned villages",
+    highlights: "Trails, parks, and Red Rock Canyon access in the west valley",
   },
   {
     name: "Henderson",
-    best: "Families, retirees",
-    highlights: "Lowest crime rates, excellent schools, community feel, diverse neighborhoods",
-    from: "$450K",
+    best: "A separate city",
+    highlights: "Green Valley, Inspirada, and Anthem, each with its own gates and parks",
   },
   {
     name: "Green Valley",
-    best: "Established families",
-    highlights: "Mature landscaping, championship golf, shopping and dining, Henderson location",
-    from: "$480K",
+    best: "1988 master plan",
+    highlights: "Mature landscaping, golf, and The District",
   },
   {
     name: "Skye Canyon",
-    best: "Young families",
-    highlights: "Newest construction, mountain trail access, modern amenities, growing area",
-    from: "$500K",
+    best: "Northwest valley",
+    highlights: "15-acre Skye Center and trail access toward Floyd Lamb Park",
   },
   {
     name: "Southern Highlands",
-    best: "Luxury buyers, golfers",
-    highlights: "Guard-gated sections, championship golf, mountain views, resort living",
-    from: "$700K",
+    best: "Golf and I-15",
+    highlights: "Robert Trent Jones Jr. course, guard-gated sections, mountain views",
   },
   {
     name: "Inspirada",
-    best: "Families, active adults",
-    highlights: "Resort-style pools, extensive trails, new homes, Henderson convenience",
-    from: "$450K",
+    best: "West Henderson",
+    highlights: "Resort pools, trails, and newer single-family homes",
   },
 ];
 
@@ -215,13 +209,8 @@ export default function RelocationPage() {
                   key={area.name}
                   className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow"
                 >
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-bold text-lg text-slate-900">{area.name}</h3>
-                    <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">
-                      From {area.from}
-                    </span>
-                  </div>
-                  <p className="text-sm text-blue-600 mb-3">Best for: {area.best}</p>
+                  <h3 className="font-bold text-lg text-slate-900 mb-2">{area.name}</h3>
+                  <p className="text-sm text-blue-600 mb-3">{area.best}</p>
                   <p className="text-slate-600 text-sm">{area.highlights}</p>
                 </div>
               ))}
@@ -239,15 +228,14 @@ export default function RelocationPage() {
               Las Vegas Schools & Education
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              For families with children, school quality is often the top priority when 
-              relocating. Las Vegas offers a range of public, charter, and private school 
-              options. Dr. Jan provides detailed school research to help you make informed decisions.
+              Campus names and commute times, not a ranking. Clark County School District
+              assigns the zoned campus by address. Dr. Jan looks up the campus for the homes you tour.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center">
                   <School className="h-5 w-5 text-blue-600 mr-2" />
-                  Top-Rated School Areas
+                  Campus names by area
                 </h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start">
@@ -272,7 +260,7 @@ export default function RelocationPage() {
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span>School ratings and test score comparisons</span>
+                    <span>Zoned campus name for a specific address</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
@@ -295,19 +283,17 @@ export default function RelocationPage() {
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-4 text-center">Moving from California?</h2>
             <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
-              California to Nevada is one of the most popular relocation routes in the country. 
-              Thousands of California families move to Las Vegas each year seeking lower costs, 
-              no state income tax, and a better quality of life. Here's what the numbers look like.
+              Nevada has no state income tax. A price comparison for the home you would sell
+              in California is a call to (702) 789-6561, not a published percentage.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="font-bold text-lg mb-3">What You'll Save</h3>
                 <ul className="space-y-2 text-blue-100">
-                  <li>• <strong>State income tax:</strong> 0% vs CA's up to 13.3%</li>
-                  <li>• <strong>Home prices:</strong> 40-60% lower than LA/SF</li>
-                  <li>• <strong>Property taxes:</strong> Typically lower rates</li>
-                  <li>• <strong>Cost of living:</strong> 30-40% less overall</li>
-                  <li>• <strong>Example:</strong> $200K earner saves $20K+ in taxes annually</li>
+                  <li>• <strong>State income tax:</strong> Nevada charges 0%</li>
+                  <li>• <strong>Home prices:</strong> Compare your sale to current Las Vegas comps</li>
+                  <li>• <strong>Property tax:</strong> Ask for the rate on the parcel you are touring</li>
+                  <li>• <strong>HOA:</strong> Confirm dues with the association before you offer</li>
                 </ul>
               </div>
               <div>
@@ -383,11 +369,11 @@ export default function RelocationPage() {
                 },
                 {
                   q: "What are the best areas for families relocating to Las Vegas?",
-                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon consistently rank highest for families due to excellent schools, low crime, and family-friendly amenities. Dr. Jan can match you with the right area based on your specific priorities—schools, commute, budget, and lifestyle.",
+                  a: "Summerlin is master-planned villages with trails and Red Rock access. Henderson includes Green Valley and Inspirada. Skye Canyon has the Skye Center and trail access toward Floyd Lamb Park. Dr. Jan matches commute time, gates, and amenities to the search.",
                 },
                 {
                   q: "How does the cost of living compare to California?",
-                  a: "Las Vegas costs about 30-40% less than LA/Orange County and 50%+ less than San Francisco. The biggest savings come from no state income tax (California charges up to 13.3%) and significantly lower housing costs. A family earning $200K in California could save $20,000+ annually just in state taxes.",
+                  a: "Nevada has no state income tax. Housing, HOA, and property tax depend on the address. A comparison for the home you would sell is a call to (702) 789-6561.",
                 },
                 {
                   q: "Do you help coordinate the sale of my current home too?",
@@ -398,8 +384,8 @@ export default function RelocationPage() {
                   a: "Las Vegas has diversified beyond gaming and hospitality. Major growth sectors include healthcare (Intermountain Health, UMC), technology (Switch, various startups), sports (Raiders, Golden Knights, Aces), logistics (Amazon), and professional services. The economy is growing faster than the national average.",
                 },
                 {
-                  q: "Is Las Vegas safe for families?",
-                  a: "Yes, particularly in the suburban communities. Henderson consistently ranks as one of America's safest cities. Summerlin, Green Valley, and Inspirada also have very low crime rates. Dr. Jan can provide detailed crime statistics for any neighborhood you're considering.",
+                  q: "How do suburban areas differ from the Strip corridor?",
+                  a: "Summerlin West, Green Valley, and Inspirada are master-planned areas with gates, parks, and trails. Crime statistics are not published on this page. Ask Dr. Jan for the campus name, commute, and HOA for a specific address.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">
@@ -440,7 +426,7 @@ export default function RelocationPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <RealScoutListings />
       <Footer />

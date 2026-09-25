@@ -3,13 +3,13 @@ import PageHero from "@/components/sections/PageHero";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
-import { TrendingUp, TrendingDown, Home, Calendar, DollarSign, BarChart, Phone } from "lucide-react";
+import { Home, DollarSign, BarChart, Phone, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Las Vegas Real Estate Market Report January 2026 | Berkshire Hathaway HomeServices",
+  title: "Las Vegas Real Estate Market Questions | Berkshire Hathaway HomeServices",
   description:
-    "Get the latest Las Vegas real estate market statistics for January 2026. Median prices, days on market, inventory levels, and expert analysis from Berkshire Hathaway HomeServices Nevada Properties.",
+    "How Dr. Jan Duffy prices Heritage at Stonebridge. Current medians are not published here. Call (702) 789-6561 for a snapshot.",
   keywords: [
     "Las Vegas real estate market",
     "Las Vegas home prices 2026",
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
 const reportSchema = {
   "@context": "https://schema.org",
   "@type": "Report",
-  name: "Las Vegas Real Estate Market Report - January 2026",
+  name: "Heritage at Stonebridge market questions",
+  datePublished: "2026-09-23",
   author: {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy",
     worksFor: "Berkshire Hathaway HomeServices Nevada Properties",
   },
-  datePublished: "2026-01-23",
   about: {
     "@type": "Place",
     name: "Las Vegas, Nevada",
@@ -50,122 +50,48 @@ export default function MarketReportPage() {
           <PageHero
             badge="Berkshire Hathaway HomeServices Market Intelligence"
             title="Las Vegas Real Estate Market Report"
-            subtitle="For January 2026, the Las Vegas real estate market shows a $450,000 median price (up 4.2% YoY) with 28 days on market across Las Vegas, Henderson, and Summerlin — expert analysis by Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties."
+            subtitle="This page does not publish a median, days on market, or inventory figure. Dr. Jan Duffy prices Heritage at Stonebridge from recent sales of the same floor plan. Call (702) 789-6561."
             priority
           />
 
           {/* Key Stats Overview */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8 text-center">
-              Las Vegas Market Snapshot | January 2026
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              Where the current numbers live
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">$450,000</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
-                <div className="flex items-center justify-center mt-1 text-green-400 text-sm">
-                  <TrendingUp className="h-4 w-4 mr-1" />
-                  +4.2% YoY
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">28</div>
-                <div className="text-slate-300 text-sm">Days on Market</div>
-                <div className="flex items-center justify-center mt-1 text-green-400 text-sm">
-                  <TrendingDown className="h-4 w-4 mr-1" />
-                  -3 days
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">4,850</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
-                <div className="flex items-center justify-center mt-1 text-yellow-400 text-sm">
-                  +12% YoY
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">2.1</div>
-                <div className="text-slate-300 text-sm">Months Inventory</div>
-                <div className="flex items-center justify-center mt-1 text-slate-400 text-sm">
-                  Seller's Market
-                </div>
-              </div>
-            </div>
+            <p className="text-slate-300 text-center max-w-3xl mx-auto mb-6">
+              Medians, days on market, and inventory are not published on this page.
+              The live MLS search is on the homes-for-sale page. A Heritage at Stonebridge
+              snapshot is a phone call.
+            </p>
+            <p className="text-center">
+              <a href="tel:+17027896561" className="inline-flex items-center font-bold underline">
+                <Phone className="h-5 w-5 mr-2" />
+                (702) 789-6561
+              </a>
+            </p>
           </section>
 
           {/* Area Breakdown */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Market Data by Area
+              Areas this office actually works
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                {
-                  area: "Las Vegas (Overall)",
-                  median: "$450,000",
-                  change: "+4.2%",
-                  dom: 28,
-                  trend: "up",
-                },
-                {
-                  area: "Henderson",
-                  median: "$485,000",
-                  change: "+5.1%",
-                  dom: 24,
-                  trend: "up",
-                },
-                {
-                  area: "Summerlin",
-                  median: "$625,000",
-                  change: "+6.8%",
-                  dom: 22,
-                  trend: "up",
-                },
-                {
-                  area: "North Las Vegas",
-                  median: "$385,000",
-                  change: "+3.2%",
-                  dom: 32,
-                  trend: "up",
-                },
-                {
-                  area: "Southern Highlands",
-                  median: "$750,000",
-                  change: "+7.2%",
-                  dom: 35,
-                  trend: "up",
-                },
-                {
-                  area: "Luxury ($1M+)",
-                  median: "$1,200,000",
-                  change: "+8.5%",
-                  dom: 45,
-                  trend: "up",
-                },
+                { area: "Heritage at Stonebridge", fact: "Guard-gated Lennar 55+ on Crossbridge Dr, Summerlin West 89138. Nine floor plans." },
+                { area: "Summerlin West", fact: "Master-planned villages with trails and Red Rock Canyon access." },
+                { area: "Henderson", fact: "Separate city. Green Valley, Inspirada, and Anthem are different products." },
+                { area: "Sun City Anthem", fact: "Del Webb 55+ with the Anthem Center and two golf courses." },
+                { area: "Southern Highlands", fact: "Robert Trent Jones Jr. golf and I-15 access." },
+                { area: "The Ridges", fact: "Six guard-gated villages along Red Rock." },
               ].map((item) => (
                 <div
                   key={item.area}
                   className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
                 >
-                  <h3 className="font-bold text-lg text-slate-900 mb-4">{item.area}</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Median Price</span>
-                      <span className="font-semibold text-slate-900">{item.median}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">YoY Change</span>
-                      <span
-                        className={`font-semibold ${item.trend === "up" ? "text-green-600" : "text-red-600"}`}
-                      >
-                        {item.change}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Days on Market</span>
-                      <span className="font-semibold text-slate-900">{item.dom} days</span>
-                    </div>
-                  </div>
+                  <h3 className="font-bold text-lg text-slate-900 mb-2">{item.area}</h3>
+                  <p className="text-slate-600 text-sm">{item.fact}</p>
                 </div>
               ))}
             </div>
@@ -178,11 +104,8 @@ export default function MarketReportPage() {
             </h2>
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-6">
-                "The Las Vegas market remains strong heading into 2026. We're seeing continued
-                demand from California relocators and remote workers, but the days of 20 offers on
-                every listing are behind us. Buyers finally have some negotiating power, while
-                sellers are still achieving solid appreciation. It's a balanced market that rewards
-                proper pricing and preparation."
+                "I price Heritage at Stonebridge from the last closed sales of the same floor plan.
+                A valley-wide median is not the number I put on a listing."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
@@ -196,10 +119,10 @@ export default function MarketReportPage() {
                   For Buyers
                 </h3>
                 <ul className="space-y-2 text-slate-600">
-                  <li>• More inventory = more choices</li>
-                  <li>• Negotiating power is returning</li>
-                  <li>• Interest rates stabilizing around 6.5%</li>
-                  <li>• New construction offering incentives</li>
+                  <li>• Price from recent comps, not a valley average</li>
+                  <li>• Get a pre-approval before you tour</li>
+                  <li>• Ask the builder for this week&apos;s incentive before the first visit</li>
+                  <li>• Nevada has no state income tax</li>
                 </ul>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -208,10 +131,10 @@ export default function MarketReportPage() {
                   For Sellers
                 </h3>
                 <ul className="space-y-2 text-slate-600">
-                  <li>• Still a seller's market (2.1 months inventory)</li>
-                  <li>• Proper pricing is crucial</li>
-                  <li>• 4.2% appreciation in past year</li>
-                  <li>• Well-priced homes sell in under 30 days</li>
+                  <li>• Price from the last closed sales of the same plan</li>
+                  <li>• Weekend open houses still matter</li>
+                  <li>• HOA dues come off the net sheet</li>
+                  <li>• A current days-on-market figure is a call</li>
                 </ul>
               </div>
             </div>
@@ -239,8 +162,8 @@ export default function MarketReportPage() {
                 </div>
                 <h3 className="font-bold text-lg mb-2">New Construction</h3>
                 <p className="text-slate-600 text-sm">
-                  Builders offering significant incentives including rate buydowns, closing cost
-                  credits, and upgrades. Great time for new home buyers.
+                  Builders change credits and rate buydowns by community and week. Confirm the
+                  offer before the first model visit.
                 </p>
               </div>
               <div className="text-center">
@@ -249,8 +172,8 @@ export default function MarketReportPage() {
                 </div>
                 <h3 className="font-bold text-lg mb-2">Luxury Strength</h3>
                 <p className="text-slate-600 text-sm">
-                  The $1M+ segment showing strongest appreciation at 8.5% YoY. The Ridges and
-                  Southern Highlands leading the luxury market.
+                  The Ridges and Southern Highlands are different products. A current luxury
+                  comp is a call, not a published appreciation rate.
                 </p>
               </div>
             </div>
@@ -265,19 +188,19 @@ export default function MarketReportPage() {
               {[
                 {
                   q: "Is now a good time to buy in Las Vegas?",
-                  a: "Yes. With more inventory, returning negotiating power, and stable interest rates, buyers have more options than they've had in years. Well-priced homes are still moving quickly, but you won't face the bidding wars of 2021-2022.",
+                  a: "It depends on the neighborhood and the home. This page does not publish inventory or a rate. Call (702) 789-6561 for the floor plan you are considering.",
                 },
                 {
                   q: "Should I wait for prices to drop?",
-                  a: "Las Vegas prices have historically been resilient. Current appreciation of 4.2% YoY, strong job growth, and continued California migration suggest prices will remain stable or continue gradual increases. Waiting typically costs more than potential savings.",
+                  a: "A forecast is not published here. Dr. Jan prices from recent Heritage at Stonebridge closings and tells you what is listed now.",
                 },
                 {
                   q: "Is this a buyer's or seller's market?",
-                  a: "With 2.1 months of inventory, Las Vegas is technically still a seller's market (6 months is balanced). However, buyers have more leverage than they've had since 2019. It's a balanced environment that rewards proper pricing.",
+                  a: "That label needs a current months-of-inventory figure, and this page does not publish one. Ask for the comps on the address you are buying or selling.",
                 },
                 {
                   q: "What's happening with interest rates?",
-                  a: "Rates have stabilized around 6.5% for conventional loans. Many buyers are using builder incentives or rate buydowns to achieve effective rates in the low 5% range. VA and FHA options remain competitive.",
+                  a: "Rates change by lender and loan type. A quoted rate belongs on a lender disclosure, not on this page. Dr. Jan can introduce a lender.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">
@@ -311,7 +234,7 @@ export default function MarketReportPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <RealScoutListings />
       <Footer />

@@ -129,25 +129,18 @@ export default function HomeValuationPage() {
 
               {/* Market Stats */}
               <div className="bg-blue-50 rounded-lg p-8">
-                <h3 className="font-bold text-slate-900 mb-4">Las Vegas Market | January 2026</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">$450K</div>
-                    <div className="text-sm text-slate-600">Median Home Price</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600">+4.2%</div>
-                    <div className="text-sm text-slate-600">YoY Appreciation</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">28 Days</div>
-                    <div className="text-sm text-slate-600">Avg. Days on Market</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">2.1 Mo</div>
-                    <div className="text-sm text-slate-600">Inventory</div>
-                  </div>
-                </div>
+                <h3 className="font-bold text-slate-900 mb-4">Current Heritage at Stonebridge snapshot</h3>
+                <p className="text-slate-700 text-sm mb-4">
+                  A current median, days on market, and list-to-sale ratio are not published on this page.
+                  Dr. Jan prices from recent Heritage at Stonebridge closings.
+                </p>
+                <a
+                  href="tel:+17027896561"
+                  className="inline-flex items-center text-blue-700 font-semibold"
+                >
+                  <Phone className="h-4 w-4 mr-2" />
+                  Call (702) 789-6561
+                </a>
               </div>
 
               {/* Expert Quote */}
@@ -268,8 +261,8 @@ export default function HomeValuationPage() {
                 <MapPin className="h-8 w-8 text-blue-600 mb-4" />
                 <h3 className="font-bold text-slate-900 mb-2">Location & Neighborhood</h3>
                 <p className="text-slate-600 text-sm">
-                  Summerlin commands 20-40% premiums over comparable homes in other areas. School
-                  zones, HOA quality, and proximity to amenities significantly impact value.
+                  Lot, elevation, and proximity to the clubhouse change what a Heritage at Stonebridge
+                  home sells for. Comparable closings in the same floor plan matter more than a valley-wide average.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-sm">
@@ -284,24 +277,24 @@ export default function HomeValuationPage() {
                 <TrendingUp className="h-8 w-8 text-blue-600 mb-4" />
                 <h3 className="font-bold text-slate-900 mb-2">Upgrades & Condition</h3>
                 <p className="text-slate-600 text-sm">
-                  Updated kitchens and bathrooms return 60-80% of investment. Flooring, paint,
-                  fixtures, and overall maintenance affect buyer perception and offers.
+                  Updated kitchens, baths, flooring, and paint change what buyers offer. The adjustment
+                  comes from recent comps, not a fixed return percentage.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <DollarSign className="h-8 w-8 text-blue-600 mb-4" />
                 <h3 className="font-bold text-slate-900 mb-2">Market Conditions</h3>
                 <p className="text-slate-600 text-sm">
-                  Interest rates, inventory levels, and seasonal demand fluctuate. January 2026
-                  shows 2.1 months inventory—still a seller's market but more balanced than 2021-2022.
+                  Rates, inventory, and season change what buyers will pay. A current read for your
+                  floor plan is a call, not a published inventory figure.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <Calculator className="h-8 w-8 text-blue-600 mb-4" />
                 <h3 className="font-bold text-slate-900 mb-2">Lot Characteristics</h3>
                 <p className="text-slate-600 text-sm">
-                  Lot size, views, privacy, and outdoor features like pools add 5-15% to value.
-                  Corner lots, cul-de-sacs, and premium positions command higher prices.
+                  Lot size, views, privacy, and a pool change the comp set. Corner lots and cul-de-sacs
+                  are priced from similar recent sales.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-sm">
@@ -318,39 +311,23 @@ export default function HomeValuationPage() {
           {/* Neighborhood Values */}
           <section className="max-w-5xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Las Vegas Neighborhood Home Values | January 2026
+              What a valuation uses instead of a valley median
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white border border-slate-200 rounded-lg">
-                <thead className="bg-slate-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Neighborhood</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Median Price</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">YoY Change</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Avg $/SqFt</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { area: "Summerlin", price: "$625,000", change: "+6.8%", sqft: "$285" },
-                    { area: "Henderson", price: "$485,000", change: "+5.1%", sqft: "$245" },
-                    { area: "Green Valley", price: "$520,000", change: "+4.5%", sqft: "$255" },
-                    { area: "Southern Highlands", price: "$750,000", change: "+5.5%", sqft: "$295" },
-                    { area: "North Las Vegas", price: "$385,000", change: "+3.2%", sqft: "$210" },
-                    { area: "Centennial Hills", price: "$495,000", change: "+4.8%", sqft: "$240" },
-                  ].map((row, index) => (
-                    <tr key={row.area} className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}>
-                      <td className="px-6 py-4 font-medium text-slate-900">{row.area}</td>
-                      <td className="px-6 py-4 text-slate-700">{row.price}</td>
-                      <td className="px-6 py-4 text-green-600 font-medium">{row.change}</td>
-                      <td className="px-6 py-4 text-slate-700">{row.sqft}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { area: "Heritage at Stonebridge", fact: "Nine Lennar floor plans, 1,232–2,873 sq ft, guard-gated 55+ in Summerlin West (89138)." },
+                { area: "Same-plan comps", fact: "Recent closed sales of the same plan, lot, and elevation — not a citywide average." },
+                { area: "HOA and clubhouse", fact: "HOA dues and clubhouse rules affect net proceeds. Confirm the current assessment with the association." },
+                { area: "Active competition", fact: "What is listed now in Heritage at Stonebridge, including days on market for those listings." },
+              ].map((row) => (
+                <div key={row.area} className="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 className="font-bold text-slate-900 mb-2">{row.area}</h3>
+                  <p className="text-slate-600 text-sm">{row.fact}</p>
+                </div>
+              ))}
             </div>
             <p className="text-center text-slate-500 text-sm mt-4">
-              Values represent single-family homes. Your specific home may vary based on features and condition.
+              A current price for your address is a call to (702) 789-6561.
             </p>
           </section>
 
@@ -474,7 +451,7 @@ export default function HomeValuationPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <RealScoutListings />
       <Footer />

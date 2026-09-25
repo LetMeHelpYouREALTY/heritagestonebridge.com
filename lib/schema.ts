@@ -56,7 +56,7 @@ export interface CommunityAmenity {
 export interface SeniorCommunityData {
   name: string;
   description: string;
-  priceRange: string;
+  priceRange?: string;
   numberOfHomes: number;
   yearBuilt?: string;
   amenities: CommunityAmenity[];
@@ -473,29 +473,31 @@ export function generateSeniorCommunitySchema(community: SeniorCommunityData) {
     }));
   }
 
-  // Add price range as offers
-  if (community.priceRange) {
-    schema.additionalProperty = [
-      {
-        "@type": "PropertyValue",
-        name: "Price Range",
-        value: community.priceRange,
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Age Restriction",
-        value: community.ageRestriction || "55+",
-      },
-    ];
+  const additionalProperty: Array<Record<string, unknown>> = [
+    {
+      "@type": "PropertyValue",
+      name: "Age Restriction",
+      value: community.ageRestriction || "55+",
+    },
+  ];
 
-    if (community.hoaFees) {
-      (schema.additionalProperty as Array<Record<string, unknown>>).push({
-        "@type": "PropertyValue",
-        name: "HOA Fees",
-        value: community.hoaFees,
-      });
-    }
+  if (community.priceRange) {
+    additionalProperty.unshift({
+      "@type": "PropertyValue",
+      name: "Price Range",
+      value: community.priceRange,
+    });
   }
+
+  if (community.hoaFees) {
+    additionalProperty.push({
+      "@type": "PropertyValue",
+      name: "HOA Fees",
+      value: community.hoaFees,
+    });
+  }
+
+  schema.additionalProperty = additionalProperty;
 
   return schema;
 }

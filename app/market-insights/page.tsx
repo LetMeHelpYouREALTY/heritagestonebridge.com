@@ -433,7 +433,7 @@ export default function MarketInsightsPage() {
                 Call (702) 789-6561
               </a>
               <Link
-                href="/market-report"
+                href="/market-update"
                 className="inline-flex items-center justify-center bg-purple-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-purple-400 transition-colors"
               >
                 View Market Report →

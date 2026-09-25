@@ -121,8 +121,6 @@ const communities = [
     slug: "sun-city-summerlin",
     location: "Summerlin, Las Vegas",
     ageRequirement: "55+ (at least one resident)",
-    hoaFees: "$155-$195/month",
-    priceRange: "$320,000 - $850,000",
     homes: "7,700+ homes",
     amenities: ["3 golf courses", "4 rec centers", "100+ clubs", "Pools"],
     highlights: [
@@ -141,15 +139,13 @@ const communities = [
     slug: "sun-city-anthem",
     location: "Henderson",
     ageRequirement: "55+ (at least one resident)",
-    hoaFees: "$180-$230/month",
-    priceRange: "$350,000 - $1,200,000",
     homes: "7,100+ homes",
     amenities: ["2 golf courses", "64K sf clubhouse", "80+ clubs", "Pools"],
     highlights: [
       "Henderson's premier 55+ community",
       "2 championship golf courses",
       "Stunning mountain views",
-      "America's safest large city location",
+      "Henderson 55+ with two golf courses",
     ],
     description:
       "Henderson's premier 55+ community with stunning mountain views and championship golf.",
@@ -160,12 +156,10 @@ const communities = [
     slug: "sun-city-aliante",
     location: "North Las Vegas",
     ageRequirement: "55+ (at least one resident)",
-    hoaFees: "$140-$175/month",
-    priceRange: "$280,000 - $550,000",
     homes: "2,800+ homes",
     amenities: ["Golf course", "Fitness center", "Pools", "Tennis"],
     highlights: [
-      "Most affordable Sun City option",
+      "North Las Vegas Sun City with an 18-hole course",
       "18-hole championship golf course",
       "Brand new Aliante Casino nearby",
       "Easy freeway access",
@@ -179,8 +173,6 @@ const communities = [
     slug: "del-webb-lake-las-vegas",
     location: "Henderson (Lake Las Vegas)",
     ageRequirement: "55+ (at least one resident)",
-    hoaFees: "$200-$280/month",
-    priceRange: "$400,000 - $900,000",
     homes: "1,800+ homes",
     amenities: ["Lake access", "Resort pools", "Fitness", "Pickleball"],
     highlights: [
@@ -198,8 +190,6 @@ const communities = [
     slug: "heritage-stonebridge",
     location: "Summerlin",
     ageRequirement: "55+ (at least one resident)",
-    hoaFees: "$175-$220/month",
-    priceRange: "$400,000 - $750,000",
     homes: "1,100+ homes",
     amenities: ["Clubhouse", "Pool & spa", "Fitness", "Social clubs"],
     highlights: [
@@ -217,8 +207,6 @@ const communities = [
     slug: "solera-anthem",
     location: "Henderson",
     ageRequirement: "55+ (all residents)",
-    hoaFees: "$170-$210/month",
-    priceRange: "$380,000 - $650,000",
     homes: "1,200+ homes",
     amenities: ["Guard-gated", "Clubhouse", "Fitness", "Tennis"],
     highlights: [
@@ -236,8 +224,6 @@ const communities = [
     slug: "trilogy-summerlin",
     location: "Summerlin",
     ageRequirement: "55+ (at least one resident)",
-    hoaFees: "$250-$350/month",
-    priceRange: "$500,000 - $1,100,000",
     homes: "800+ homes",
     amenities: ["Farm-to-table dining", "Spa", "Fitness", "Resort pool"],
     highlights: [
@@ -255,8 +241,6 @@ const communities = [
     slug: null, // No dedicated page yet
     location: "Summerlin",
     ageRequirement: "55+ (at least one resident)",
-    hoaFees: "$140-$180/month",
-    priceRange: "$280,000 - $550,000",
     homes: "2,300+ homes",
     amenities: ["Golf course", "Pools", "Fitness", "Social clubs"],
     highlights: [
@@ -368,33 +352,13 @@ export default function FiftyFiveCommunitiesPage() {
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8 text-center">
-              Las Vegas 55+ Market Overview | January 2026
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              Compare communities by amenities, not a published median
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-amber-400 mb-1">
-                  25,000+
-                </div>
-                <div className="text-slate-300 text-sm">55+ Homes Available</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">
-                  $280K-$1.2M
-                </div>
-                <div className="text-slate-300 text-sm">Price Range</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">$140-$350</div>
-                <div className="text-slate-300 text-sm">Monthly HOA Range</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">
-                  +5.8%
-                </div>
-                <div className="text-slate-300 text-sm">YoY Appreciation</div>
-              </div>
-            </div>
+            <p className="text-slate-300 text-center max-w-3xl mx-auto">
+              Resale prices and HOA dues change by community. This page lists floor-plan and
+              amenity facts. Call (702) 789-6561 for a current Heritage at Stonebridge snapshot.
+            </p>
           </section>
 
           {/* California Relocator Section */}
@@ -544,19 +508,15 @@ export default function FiftyFiveCommunitiesPage() {
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div>
                         <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
-                          Starting Price
+                          Resale prices
                         </div>
-                        <div className="font-bold text-slate-900">
-                          {community.priceRange.split(" - ")[0]}+
-                        </div>
+                        <div className="font-bold text-slate-900 text-sm">Call for a snapshot</div>
                       </div>
                       <div>
                         <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
-                          HOA Fees
+                          HOA
                         </div>
-                        <div className="font-bold text-slate-900">
-                          {community.hoaFees}
-                        </div>
+                        <div className="font-bold text-slate-900 text-sm">Confirm with the HOA</div>
                       </div>
                       <div>
                         <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">
@@ -863,7 +823,7 @@ export default function FiftyFiveCommunitiesPage() {
           </section>
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">
-          Last Updated: January 2026
+          Last Updated: September 23, 2026
         </div>
       </main>
       <RealScoutListings />

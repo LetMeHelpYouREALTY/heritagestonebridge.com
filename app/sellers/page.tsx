@@ -152,31 +152,19 @@ export default function SellersPage() {
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Las Vegas Seller Market Statistics | January 2026
+              Pricing starts with recent Heritage at Stonebridge sales
             </h2>
-            <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
-              The Las Vegas housing market remains favorable for sellers with low inventory and 
-              steady demand. Well-priced homes are selling quickly, and appreciation continues 
-              to outpace national averages. Here's what sellers need to know about current conditions.
+            <p className="text-slate-300 text-center max-w-3xl mx-auto mb-6">
+              This page does not publish a valley median, days on market, or list-to-sale ratio.
+              Dr. Jan prices from recent closings of the same floor plan, then holds weekend open
+              houses and markets the home across her Las Vegas neighborhood sites.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+4.2%</div>
-                <div className="text-slate-300 text-sm">Year-Over-Year Appreciation</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">28 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">2.1 Mo</div>
-                <div className="text-slate-300 text-sm">Inventory (Seller's Market)</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">98.5%</div>
-                <div className="text-slate-300 text-sm">List-to-Sale Price Ratio</div>
-              </div>
-            </div>
+            <p className="text-center">
+              <a href="tel:+17027896561" className="inline-flex items-center font-bold text-white underline">
+                <Phone className="h-5 w-5 mr-2" />
+                Call (702) 789-6561 for a current snapshot
+              </a>
+            </p>
           </section>
 
           {/* Benefits */}
@@ -361,9 +349,9 @@ export default function SellersPage() {
               </div>
               <div className="text-center">
                 <TrendingUp className="h-24 w-24 text-blue-200 mx-auto mb-4" />
-                <p className="text-2xl font-bold">$450,000</p>
-                <p className="text-blue-200">Median Home Price (Jan 2026)</p>
-                <p className="text-blue-300 text-sm mt-2">Up 4.2% from last year</p>
+                <p className="text-2xl font-bold">Your address</p>
+                <p className="text-blue-200">Priced from recent comps</p>
+                <p className="text-blue-300 text-sm mt-2">Call (702) 789-6561</p>
               </div>
             </div>
           </section>
@@ -442,7 +430,7 @@ export default function SellersPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 23, 2026</div>
       </main>
       <RealScoutListings />
       <Footer />
