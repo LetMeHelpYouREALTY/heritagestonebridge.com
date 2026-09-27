@@ -1,0 +1,140 @@
+/**
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #f8f5f0;
+    color: #3d4a45;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  }
+
+  :root {
+    --qwik-dark-blue: #006ce9;
+    --qwik-light-blue: #18b6f6;
+    --qwik-light-purple: #ac7ff4;
+    --qwik-dark-purple: #713fc2;
+    --qwik-dirty-black: #1d2033;
+    --qwik-dark-background: #151934;
+    --qwik-dark-text: #ffffff;
+
+    /* RealScout Widget Customization */
+    --rs-listing-divider-color: rgb(101, 141, 172);
+    --rs-primary-color: #0a2540;
+    --rs-secondary-color: #3a8dde;
+    --rs-accent-color: #16b286;
+    --rs-background-color: #f7f9fc;
+  }
+}
+
+/* RealScout Widget Styles - Complete Arsenal */
+realscout-office-listings {
+  --rs-listing-divider-color: rgb(101, 141, 172);
+  width: 100%;
+  min-height: 480px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+realscout-simple-search {
+  --rs-ss-font-primary-color: #6a6d72;
+  --rs-ss-searchbar-border-color: hsl(0, 0%, 80%);
+  --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
+  --rs-ss-widget-width: 500px !important;
+  width: 100%;
+  min-height: 400px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+realscout-advanced-search {
+  --rs-as-button-text-color: #ffffff;
+  --rs-as-background-color: #ffffff;
+  --rs-as-button-color: rgb(35, 93, 137);
+  --rs-as-widget-width: 500px !important;
+  width: 100%;
+  min-height: 600px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+realscout-home-value {
+  --rs-hvw-background-color: #ffffff;
+  --rs-hvw-title-color: #000000;
+  --rs-hvw-subtitle-color: rgba(28, 30, 38, 0.5);
+  --rs-hvw-primary-button-text-color: #ffffff;
+  --rs-hvw-primary-button-color: rgb(35, 93, 137);
+  --rs-hvw-secondary-button-text-color: rgb(35, 93, 137);
+  --rs-hvw-secondary-button-color: #ffffff;
+  --rs-hvw-widget-width: auto;
+  width: 100%;
+  min-height: 500px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Custom RealScout Widget Container */
+.realscout-widget-container {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  margin: 24px 0;
+}
+
+/* RealScout Widget Loading State */
+.realscout-widget-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.realscout-widget-loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3a8dde;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/**
+ * WHAT IS THIS FILE?
+ *
+ * Globally applied styles. No matter which components are in the page or matching route,
+ * the styles in here will be applied to the Document, without any sort of CSS scoping.
+ *
+ */
+
+/**
+ * WHAT IS THIS FILE?
+ *
+ * Globally applied styles. No matter which components are in the page or matching route,
+ * the styles in here will be applied to the Document, without any sort of CSS scoping.
+ *
+ */

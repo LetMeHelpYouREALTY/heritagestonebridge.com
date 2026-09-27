@@ -1,0 +1,65 @@
+# Robots.txt for Heritage at Stonebridge
+# Updated: 2025-01-27
+
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Allow AI crawlers
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OpenAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Block unnecessary crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Disallow admin and temporary files
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /*.pdf$
+
+# Crawl delay for polite crawling
+Crawl-delay: 1
+
+# Sitemap locations
+Sitemap: https://heritagestonebridge.com/sitemap.xml
+Sitemap: https://heritagestonebridge.com/sitemap-pages.xml
+Sitemap: https://heritagestonebridge.com/sitemap-images.xml
+
+# Host directive
+Host: https://heritagestonebridge.com

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Dynamic property listings would be generated here -->
+    <!-- This is a placeholder for future dynamic property sitemap -->
+    
+    <!-- Example property listing (when dynamic system is implemented) -->
+    <url>
+        <loc>https://heritagestonebridge.com/property/123-main-st-stonebridge</loc>
+        <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>

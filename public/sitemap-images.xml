@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        
+    <!-- Homepage Images -->
+    <url>
+        <loc>https://heritagestonebridge.com/</loc>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/dr-jan-duffy.jpg</image:loc>
+            <image:title>Dr. Jan Duffy - Las Vegas Real Estate Expert</image:title>
+            <image:caption>Dr. Jan Duffy specializes in 55+ communities and luxury homes near Red Rock Canyon</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/heritage-stonebridge-hero.webp</image:loc>
+            <image:title>Heritage at Stonebridge Community</image:title>
+            <image:caption>Premier 55+ active adult community in Summerlin, Las Vegas</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/luxury-home-exterior.webp</image:loc>
+            <image:title>Luxury Home Exterior</image:title>
+            <image:caption>Beautiful single-story home with modern design and mountain views</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- 55+ Communities Red Rock Canyon Page Images -->
+    <url>
+        <loc>https://heritagestonebridge.com/55-plus-communities-red-rock-canyon/</loc>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/red-rock-canyon-view.webp</image:loc>
+            <image:title>Red Rock Canyon Views</image:title>
+            <image:caption>Stunning views of Red Rock Canyon National Conservation Area</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/active-adult-lifestyle.webp</image:loc>
+            <image:title>Active Adult Lifestyle</image:title>
+            <image:caption>Residents enjoying pickleball and outdoor activities</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/community-clubhouse.webp</image:loc>
+            <image:title>Community Clubhouse</image:title>
+            <image:caption>8,000 square foot clubhouse with resort-style amenities</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Stonebridge Homes Page Images -->
+    <url>
+        <loc>https://heritagestonebridge.com/homes-for-sale-stonebridge-summerlin/</loc>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/stonebridge-homes-hero.webp</image:loc>
+            <image:title>Stonebridge Homes</image:title>
+            <image:caption>Luxury homes for sale in Stonebridge, Summerlin</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/cromwell-collection-stonebridge.webp</image:loc>
+            <image:title>Cromwell Collection Homes</image:title>
+            <image:caption>Elegant single-story and two-story homes with modern designs</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/stirling-collection-stonebridge.webp</image:loc>
+            <image:title>Stirling Collection Homes</image:title>
+            <image:caption>Luxurious residences featuring expansive living areas</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/evander-collection-stonebridge.webp</image:loc>
+            <image:title>Evander Collection Homes</image:title>
+            <image:caption>Grand estates offering the ultimate in luxury living</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/stonebridge-community-overview.webp</image:loc>
+            <image:title>Stonebridge Community Overview</image:title>
+            <image:caption>Summerlin West living with luxury and convenience</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/stonebridge-clubhouse.webp</image:loc>
+            <image:title>Stonebridge Clubhouse</image:title>
+            <image:caption>Exclusive clubhouse with social hub and fitness facilities</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- 55+ Communities Page Images -->
+    <url>
+        <loc>https://heritagestonebridge.com/55-plus-communities/</loc>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/heritage-stonebridge-community.webp</image:loc>
+            <image:title>Heritage at Stonebridge Community</image:title>
+            <image:caption>Premier 55+ active adult community with resort-style amenities</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/del-webb-community.webp</image:loc>
+            <image:title>Del Webb Community</image:title>
+            <image:caption>Active adult living with championship golf courses</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/sun-city-community.webp</image:loc>
+            <image:title>Sun City Community</image:title>
+            <image:caption>Established 55+ community with extensive amenities</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Real Estate Page Images -->
+    <url>
+        <loc>https://heritagestonebridge.com/real-estate/</loc>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/las-vegas-real-estate.webp</image:loc>
+            <image:title>Las Vegas Real Estate</image:title>
+            <image:caption>Luxury homes and communities in Las Vegas, Nevada</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://heritagestonebridge.com/images/summerlin-homes.webp</image:loc>
+            <image:title>Summerlin Homes</image:title>
+            <image:caption>Premier master-planned community in Las Vegas</image:caption>
+        </image:image>
+    </url>
+</urlset>
