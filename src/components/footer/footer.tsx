@@ -307,6 +307,26 @@ export const Footer = component$(() => {
             <h3 class="text-xl font-bold mb-4">Resources</h3>
             <ul class="space-y-2 text-gray-300 mb-6">
               <li>
+                <a href="/questions" class="hover:text-hsb-accent-light">
+                  Questions and Answers
+                </a>
+              </li>
+              <li>
+                <a href="/hoa-fees" class="hover:text-hsb-accent-light">
+                  HOA Fees
+                </a>
+              </li>
+              <li>
+                <a href="/floor-plans" class="hover:text-hsb-accent-light">
+                  Floor Plans
+                </a>
+              </li>
+              <li>
+                <a href="/amenities" class="hover:text-hsb-accent-light">
+                  Clubhouse and Amenities
+                </a>
+              </li>
+              <li>
                 <a href="/about" class="hover:text-hsb-accent-light">
                   About
                 </a>

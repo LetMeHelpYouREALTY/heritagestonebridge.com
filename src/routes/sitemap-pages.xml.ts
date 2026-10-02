@@ -82,6 +82,27 @@ export const onGet: RequestHandler = async (requestEvent) => {
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+
+    <url>
+        <loc>https://heritagestonebridge.com/hoa-fees</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://heritagestonebridge.com/floor-plans</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://heritagestonebridge.com/questions</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
     
     <!-- Service Area Pages -->
     <url>

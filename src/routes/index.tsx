@@ -21,6 +21,16 @@ const homeFaqs = [
     answer: `The community site lists ${community.homes} single-story Lennar homes with a staffed gate and an on-site clubhouse.`,
   },
   {
+    question: "Is Heritage at Stonebridge part of Summerlin?",
+    answer:
+      "Yes. It sits in the village of Stonebridge, in the Summerlin West part of the Summerlin master plan.",
+  },
+  {
+    question: "How close is Heritage to Red Rock Canyon and Downtown Summerlin?",
+    answer:
+      "Both are nearby. Red Rock Canyon National Conservation Area, Downtown Summerlin, and the Summerlin Library are the stops buyers ask about first.",
+  },
+  {
     question: "What is life like inside the gates?",
     answer:
       "Residents use a staffed gatehouse, not a shared code. The clubhouse area includes pools, fitness, pickleball, bocce, and walking paths within the neighborhood.",

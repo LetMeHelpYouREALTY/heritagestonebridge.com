@@ -15,6 +15,16 @@ const faqs = [
       "Heritage at Stonebridge is a 55+ community in Summerlin West, Las Vegas, 89138. Ask Dr. Jan Duffy to confirm the age rule in the current HOA documents before you write an offer.",
   },
   {
+    question: "Can children or grandchildren visit or stay overnight?",
+    answer:
+      "Guest and visitor rules come from the HOA, and this site does not publish them. Ask the clubhouse or read the current HOA rules before you plan a long stay.",
+  },
+  {
+    question: "Are pets allowed in Heritage at Stonebridge?",
+    answer:
+      "Pet rules are set in the HOA documents. Confirm the current limits there before you buy.",
+  },
+  {
     question: "Is the community guard-gated?",
     answer:
       "Yes. The community site describes a staffed gatehouse with round-the-clock access control. Visitors check in. It is not a shared gate code.",

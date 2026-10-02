@@ -55,23 +55,13 @@
       "permanent": true
     },
     {
-      "source": "/floor-plans",
-      "destination": "/heritage-at-stonebridge-homes-for-sale",
-      "permanent": true
-    },
-    {
       "source": "/floor-plans/:path*",
-      "destination": "/heritage-at-stonebridge-homes-for-sale",
+      "destination": "/floor-plans",
       "permanent": true
     },
     {
       "source": "/summerlin-55-plus",
       "destination": "/summerlin-55-plus-communities",
-      "permanent": true
-    },
-    {
-      "source": "/hoa-fees",
-      "destination": "/buy-heritage-at-stonebridge",
       "permanent": true
     },
     {
@@ -101,7 +91,7 @@
     },
     {
       "source": "/faq",
-      "destination": "/",
+      "destination": "/questions",
       "permanent": true
     },
     {

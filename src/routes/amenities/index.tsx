@@ -42,6 +42,11 @@ const faqs = [
       "No golf course appears in the amenity lists published by the HOA or the developer. Buyers who want on-site golf usually compare Sun City Summerlin or Siena.",
   },
   {
+    question: "Is the community guard-gated, and how do visitors get in?",
+    answer:
+      "Yes. The community site describes a staffed gatehouse with round-the-clock access control. Visitors check in at the gate. It is not a shared gate code.",
+  },
+  {
     question: "Can I see the clubhouse before I buy?",
     answer: `Yes, on a tour. Visitors check in at the staffed gate. Call or text Dr. Jan Duffy at ${business.telephoneDisplay} to set one up.`,
   },

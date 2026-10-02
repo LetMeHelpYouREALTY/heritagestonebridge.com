@@ -70,6 +70,27 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+
+    <url>
+        <loc>https://heritagestonebridge.com/hoa-fees</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://heritagestonebridge.com/floor-plans</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://heritagestonebridge.com/questions</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
     
     <!-- Service Area Pages -->
     <url>
