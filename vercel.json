@@ -80,18 +80,13 @@
       "permanent": true
     },
     {
-      "source": "/amenities",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/clubhouse",
-      "destination": "/",
+      "destination": "/amenities",
       "permanent": true
     },
     {
       "source": "/pickleball",
-      "destination": "/",
+      "destination": "/amenities",
       "permanent": true
     },
     {

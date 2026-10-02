@@ -75,6 +75,13 @@ export const onGet: RequestHandler = async (requestEvent) => {
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
+
+    <url>
+        <loc>https://heritagestonebridge.com/amenities</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
     
     <!-- Service Area Pages -->
     <url>
