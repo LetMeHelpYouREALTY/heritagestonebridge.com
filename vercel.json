@@ -55,7 +55,7 @@
       "permanent": true
     },
     {
-      "source": "/floor-plans/:path*",
+      "source": "/floor-plans/:path+",
       "destination": "/floor-plans",
       "permanent": true
     },
