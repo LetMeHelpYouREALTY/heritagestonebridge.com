@@ -47,5 +47,92 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/homes-for-sale",
+      "destination": "/heritage-at-stonebridge-homes-for-sale",
+      "permanent": true
+    },
+    {
+      "source": "/floor-plans",
+      "destination": "/heritage-at-stonebridge-homes-for-sale",
+      "permanent": true
+    },
+    {
+      "source": "/floor-plans/:path*",
+      "destination": "/heritage-at-stonebridge-homes-for-sale",
+      "permanent": true
+    },
+    {
+      "source": "/summerlin-55-plus",
+      "destination": "/summerlin-55-plus-communities",
+      "permanent": true
+    },
+    {
+      "source": "/hoa-fees",
+      "destination": "/buy-heritage-at-stonebridge",
+      "permanent": true
+    },
+    {
+      "source": "/community",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/amenities",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/clubhouse",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pickleball",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lifestyle",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/location",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/downsizing",
+      "destination": "/sell-heritage-at-stonebridge",
+      "permanent": true
+    },
+    {
+      "source": "/selling-guide",
+      "destination": "/home-selling-guide",
+      "permanent": true
+    },
+    {
+      "source": "/buying-guide",
+      "destination": "/buy-heritage-at-stonebridge",
+      "permanent": true
+    },
+    {
+      "source": "/market-update",
+      "destination": "/market-reports",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation",
+      "destination": "/sell-heritage-at-stonebridge",
+      "permanent": true
+    }
   ]
 }

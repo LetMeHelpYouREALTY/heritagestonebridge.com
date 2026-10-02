@@ -142,13 +142,13 @@ export const head: DocumentHead = {
     { property: "og:type", content: "website" },
     {
       property: "og:url",
-      content: "https://www.heritagestonebridge.com/new-listing-heritage-at-stonebridge",
+      content: "https://heritagestonebridge.com/new-listing-heritage-at-stonebridge",
     },
   ],
   links: [
     {
       rel: "canonical",
-      href: "https://www.heritagestonebridge.com/new-listing-heritage-at-stonebridge",
+      href: "https://heritagestonebridge.com/new-listing-heritage-at-stonebridge",
     },
   ],
 };

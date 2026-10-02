@@ -4,7 +4,7 @@ import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyW
 import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 
 export const head: DocumentHead = {
-  title: "Heritage at Stonebridge Homes for Sale | Dr. Jan Duffy | Las Vegas Real Estate Expert",
+  title: "Heritage at Stonebridge Homes for Sale | 55+ Summerlin 89138",
   meta: [
     {
       name: "description",
@@ -32,7 +32,7 @@ export const head: DocumentHead = {
     },
     {
       property: "og:title",
-      content: "Heritage at Stonebridge Homes for Sale | Dr. Jan Duffy | Las Vegas Real Estate Expert",
+      content: "Heritage at Stonebridge Homes for Sale | 55+ Summerlin 89138",
     },
     {
       property: "og:description",
@@ -52,7 +52,7 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:title",
-      content: "Heritage at Stonebridge Homes for Sale | Dr. Jan Duffy | Las Vegas Real Estate Expert",
+      content: "Heritage at Stonebridge Homes for Sale | 55+ Summerlin 89138",
     },
     {
       name: "twitter:description",

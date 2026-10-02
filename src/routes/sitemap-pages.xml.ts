@@ -56,21 +56,21 @@ export const onGet: RequestHandler = async (requestEvent) => {
     </url>
 
     <url>
-        <loc>https://www.heritagestonebridge.com/buy-heritage-at-stonebridge</loc>
+        <loc>https://heritagestonebridge.com/buy-heritage-at-stonebridge</loc>
         <lastmod>${currentDate}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://www.heritagestonebridge.com/sell-heritage-at-stonebridge</loc>
+        <loc>https://heritagestonebridge.com/sell-heritage-at-stonebridge</loc>
         <lastmod>${currentDate}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://www.heritagestonebridge.com/new-listing-heritage-at-stonebridge</loc>
+        <loc>https://heritagestonebridge.com/new-listing-heritage-at-stonebridge</loc>
         <lastmod>${currentDate}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
