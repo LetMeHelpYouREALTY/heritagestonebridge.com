@@ -1,114 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-        
-    <!-- Homepage Images -->
-    <url>
-        <loc>https://heritagestonebridge.com/</loc>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/dr-jan-duffy.jpg</image:loc>
-            <image:title>Dr. Jan Duffy - Las Vegas Real Estate Expert</image:title>
-            <image:caption>Dr. Jan Duffy specializes in 55+ communities and luxury homes near Red Rock Canyon</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/heritage-stonebridge-hero.webp</image:loc>
-            <image:title>Heritage at Stonebridge Community</image:title>
-            <image:caption>Premier 55+ active adult community in Summerlin, Las Vegas</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/luxury-home-exterior.webp</image:loc>
-            <image:title>Luxury Home Exterior</image:title>
-            <image:caption>Beautiful single-story home with modern design and mountain views</image:caption>
-        </image:image>
-    </url>
-    
-    <!-- 55+ Communities Red Rock Canyon Page Images -->
-    <url>
-        <loc>https://heritagestonebridge.com/55-plus-communities-red-rock-canyon/</loc>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/red-rock-canyon-view.webp</image:loc>
-            <image:title>Red Rock Canyon Views</image:title>
-            <image:caption>Stunning views of Red Rock Canyon National Conservation Area</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/active-adult-lifestyle.webp</image:loc>
-            <image:title>Active Adult Lifestyle</image:title>
-            <image:caption>Residents enjoying pickleball and outdoor activities</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/community-clubhouse.webp</image:loc>
-            <image:title>Community Clubhouse</image:title>
-            <image:caption>8,000 square foot clubhouse with resort-style amenities</image:caption>
-        </image:image>
-    </url>
-    
-    <!-- Stonebridge Homes Page Images -->
-    <url>
-        <loc>https://heritagestonebridge.com/homes-for-sale-stonebridge-summerlin/</loc>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/stonebridge-homes-hero.webp</image:loc>
-            <image:title>Stonebridge Homes</image:title>
-            <image:caption>Luxury homes for sale in Stonebridge, Summerlin</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/cromwell-collection-stonebridge.webp</image:loc>
-            <image:title>Cromwell Collection Homes</image:title>
-            <image:caption>Elegant single-story and two-story homes with modern designs</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/stirling-collection-stonebridge.webp</image:loc>
-            <image:title>Stirling Collection Homes</image:title>
-            <image:caption>Luxurious residences featuring expansive living areas</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/evander-collection-stonebridge.webp</image:loc>
-            <image:title>Evander Collection Homes</image:title>
-            <image:caption>Grand estates offering the ultimate in luxury living</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/stonebridge-community-overview.webp</image:loc>
-            <image:title>Stonebridge Community Overview</image:title>
-            <image:caption>Summerlin West living with luxury and convenience</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/stonebridge-clubhouse.webp</image:loc>
-            <image:title>Stonebridge Clubhouse</image:title>
-            <image:caption>Exclusive clubhouse with social hub and fitness facilities</image:caption>
-        </image:image>
-    </url>
-    
-    <!-- 55+ Communities Page Images -->
-    <url>
-        <loc>https://heritagestonebridge.com/55-plus-communities/</loc>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/heritage-stonebridge-community.webp</image:loc>
-            <image:title>Heritage at Stonebridge Community</image:title>
-            <image:caption>Premier 55+ active adult community with resort-style amenities</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/del-webb-community.webp</image:loc>
-            <image:title>Del Webb Community</image:title>
-            <image:caption>Active adult living with championship golf courses</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/sun-city-community.webp</image:loc>
-            <image:title>Sun City Community</image:title>
-            <image:caption>Established 55+ community with extensive amenities</image:caption>
-        </image:image>
-    </url>
-    
-    <!-- Real Estate Page Images -->
-    <url>
-        <loc>https://heritagestonebridge.com/real-estate/</loc>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/las-vegas-real-estate.webp</image:loc>
-            <image:title>Las Vegas Real Estate</image:title>
-            <image:caption>Luxury homes and communities in Las Vegas, Nevada</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://heritagestonebridge.com/images/summerlin-homes.webp</image:loc>
-            <image:title>Summerlin Homes</image:title>
-            <image:caption>Premier master-planned community in Las Vegas</image:caption>
-        </image:image>
-    </url>
+  <url>
+    <loc>https://heritagestonebridge.com/</loc>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/fc4911a4-7842-470b-a54d-4589039a2a00/tablet</image:loc>
+      <image:title>Dr. Jan Duffy</image:title>
+      <image:caption>Dr. Jan Duffy, real estate agent for Heritage at Stonebridge in Summerlin West.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/34bde918-5f0a-4479-c146-d7914daee500/desktop</image:loc>
+      <image:title>Clubhouse exterior at 930 Silverfir Court</image:title>
+      <image:caption>Clubhouse exterior at 930 Silverfir Court, Heritage at Stonebridge.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/820d7b24-a4ec-418e-7005-b0d8edd46700/tablet</image:loc>
+      <image:title>Resort pool and cabanas</image:title>
+      <image:caption>Resort pool and cabanas at the Heritage at Stonebridge clubhouse.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/41be8b77-eef6-4d98-9d5e-49c8e7b16c00/tablet</image:loc>
+      <image:title>Lap pool</image:title>
+      <image:caption>Lap pool at the Heritage at Stonebridge clubhouse.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/c02b9764-3e69-40fa-a339-afb33d225e00/tablet</image:loc>
+      <image:title>Fitness center</image:title>
+      <image:caption>Fitness center inside the Heritage at Stonebridge clubhouse.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/af9e8895-da79-4b45-1cb8-70f4b3ea1400/tablet</image:loc>
+      <image:title>Pickleball court</image:title>
+      <image:caption>Pickleball court at Heritage at Stonebridge.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/f79de194-d445-4c0f-4325-8df94c979a00/tablet</image:loc>
+      <image:title>Bocce court</image:title>
+      <image:caption>Bocce court at Heritage at Stonebridge.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/58a792d0-6a72-4961-4a67-80dd24ece100/tablet</image:loc>
+      <image:title>Staffed gate</image:title>
+      <image:caption>Staffed gate at Heritage at Stonebridge.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/1933a079-086a-4947-899c-493591188200/tablet</image:loc>
+      <image:title>Fire pit</image:title>
+      <image:caption>Fire pit and lawn with mountain views at Heritage at Stonebridge.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/00578e02-0441-451c-f78c-366f28196200/tablet</image:loc>
+      <image:title>Home exterior</image:title>
+      <image:caption>Heritage at Stonebridge home exterior.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://heritagestonebridge.com/amenities/</loc>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/34bde918-5f0a-4479-c146-d7914daee500/desktop</image:loc>
+      <image:title>Clubhouse exterior at 930 Silverfir Court</image:title>
+      <image:caption>Clubhouse exterior at 930 Silverfir Court, Heritage at Stonebridge.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/820d7b24-a4ec-418e-7005-b0d8edd46700/tablet</image:loc>
+      <image:title>Resort pool and cabanas</image:title>
+      <image:caption>Resort pool and cabanas at the Heritage at Stonebridge clubhouse.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/840afa30-1f81-4760-6c7e-e28909708500/tablet</image:loc>
+      <image:title>Clubhouse lounge</image:title>
+      <image:caption>Clubhouse lounge with a fireplace at Heritage at Stonebridge.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/70953d30-bd3a-4e7f-677c-2300c03b2800/tablet</image:loc>
+      <image:title>Clubhouse kitchen</image:title>
+      <image:caption>Kitchen island in the Heritage at Stonebridge clubhouse.</image:caption>
+    </image:image>
+  </url>
 </urlset>

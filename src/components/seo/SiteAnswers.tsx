@@ -29,6 +29,7 @@ const sources = [
   },
   { href: "https://www.nps.gov/redr/", label: "Red Rock Canyon National Conservation Area" },
   { href: "https://summerlin.com/", label: "Summerlin master plan" },
+  { href: "https://www.google.com/preferences/source?q=heritagestonebridge.com", label: "Add Heritage Stonebridge as a preferred source in Google" },
 ] as const;
 
 /** Canonical answers and cited sources, rendered once on every page. */

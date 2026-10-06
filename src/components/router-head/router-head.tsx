@@ -34,6 +34,7 @@ export const RouterHead = component$(() => {
       <title>{head.title}</title>
 
       <link rel="canonical" href={canonical} />
+      <link rel="icon" type="image/png" href="https://heritagestonebridge.com/favicon.png" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
       {/* RealScout Styles */}
