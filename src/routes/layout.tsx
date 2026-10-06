@@ -2,6 +2,7 @@ import { component$, Slot, useStyles$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { Footer } from "~/components/footer";
 import { LocalBusinessSchema } from "~/components/seo/LocalBusinessSchema";
+import { SiteAnswers } from "~/components/seo/SiteAnswers";
 import Header from "~/components/starter/header/header";
 
 import styles from "./styles.css?inline";
@@ -20,6 +21,7 @@ export default component$(() => {
       <Header />
       <main>
         <Slot />
+        <SiteAnswers />
       </main>
       <Footer />
     </>

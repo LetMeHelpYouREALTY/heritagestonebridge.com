@@ -29,7 +29,7 @@ export default component$(() => {
       <div class={["container", styles.wrapper]}>
         {/* Clean Brand Logo */}
         <div class={styles.logo}>
-          <a href="/" title={business.name}>
+          <a href="https://heritagestonebridge.com/" title={business.name}>
             <div class="flex items-center space-x-2">
               <div class="bg-hsb-primary rounded-lg p-2">
                 <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -49,22 +49,22 @@ export default component$(() => {
         <nav class="flex items-center space-x-8">
           <ul class="flex items-center space-x-8">
             <li>
-              <a href="/" class="font-semibold transition-colors">
+              <a href="https://heritagestonebridge.com/" class="font-semibold transition-colors">
                 Home
               </a>
             </li>
             <li>
-              <a href="/buy-heritage-at-stonebridge" class="font-semibold transition-colors">
+              <a href="https://heritagestonebridge.com/buy-heritage-at-stonebridge/" class="font-semibold transition-colors">
                 Buy
               </a>
             </li>
             <li>
-              <a href="/sell-heritage-at-stonebridge" class="font-semibold transition-colors">
+              <a href="https://heritagestonebridge.com/sell-heritage-at-stonebridge/" class="font-semibold transition-colors">
                 Sell
               </a>
             </li>
             <li>
-              <a href="/new-listing-heritage-at-stonebridge" class="font-semibold transition-colors">
+              <a href="https://heritagestonebridge.com/new-listing-heritage-at-stonebridge/" class="font-semibold transition-colors">
                 New Listing
               </a>
             </li>

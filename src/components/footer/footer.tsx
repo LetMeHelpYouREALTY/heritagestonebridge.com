@@ -47,7 +47,7 @@ export const Footer = component$(() => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Directions
+                  Directions on Google Maps
                 </a>
                 <a
                   href={business.reviewsUrl}
@@ -55,7 +55,15 @@ export const Footer = component$(() => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Google Reviews
+                  Google reviews for {business.name}
+                </a>
+                <a
+                  href="https://www.heritageatstonebridge.org/"
+                  class="hover:text-hsb-accent-light underline-offset-2 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Heritage at Stonebridge community site
                 </a>
               </p>
             </div>
@@ -67,7 +75,7 @@ export const Footer = component$(() => {
             <ul class="space-y-2 text-gray-300">
               <li>
                 <a
-                  href="/las-vegas-real-estate"
+                  href="https://heritagestonebridge.com/las-vegas-real-estate/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service-area"
                   data-topic="las-vegas-real-estate"
@@ -78,7 +86,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/summerlin-homes"
+                  href="https://heritagestonebridge.com/summerlin-homes/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service-area"
                   data-topic="summerlin-homes"
@@ -89,7 +97,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/red-rock-canyon-communities"
+                  href="https://heritagestonebridge.com/red-rock-canyon-communities/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service-area"
                   data-topic="red-rock-canyon"
@@ -100,7 +108,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/henderson-real-estate"
+                  href="https://heritagestonebridge.com/henderson-real-estate/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service-area"
                   data-topic="henderson-real-estate"
@@ -111,7 +119,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/northwest-las-vegas"
+                  href="https://heritagestonebridge.com/northwest-las-vegas/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service-area"
                   data-topic="northwest-las-vegas"
@@ -122,7 +130,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/boulder-city-homes"
+                  href="https://heritagestonebridge.com/boulder-city-homes/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service-area"
                   data-topic="boulder-city-homes"
@@ -140,7 +148,7 @@ export const Footer = component$(() => {
             <ul class="space-y-2 text-gray-300">
               <li>
                 <a
-                  href="/55-plus-communities"
+                  href="https://heritagestonebridge.com/55-plus-communities/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="property-type"
                   data-topic="55-plus-communities"
@@ -151,7 +159,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/active-adult-communities"
+                  href="https://heritagestonebridge.com/active-adult-communities/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="property-type"
                   data-topic="active-adult-communities"
@@ -162,7 +170,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/luxury-homes"
+                  href="https://heritagestonebridge.com/luxury-homes/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="property-type"
                   data-topic="luxury-homes"
@@ -173,7 +181,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/gated-communities"
+                  href="https://heritagestonebridge.com/gated-communities/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="property-type"
                   data-topic="gated-communities"
@@ -184,7 +192,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/golf-course-homes"
+                  href="https://heritagestonebridge.com/golf-course-homes/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="property-type"
                   data-topic="golf-course-homes"
@@ -195,7 +203,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/mountain-view-homes"
+                  href="https://heritagestonebridge.com/mountain-view-homes/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="property-type"
                   data-topic="mountain-view-homes"
@@ -213,7 +221,7 @@ export const Footer = component$(() => {
             <ul class="space-y-2 text-gray-300">
               <li>
                 <a
-                  href="/affordable-55-plus-communities-las-vegas"
+                  href="https://heritagestonebridge.com/affordable-55-plus-communities-las-vegas/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service"
                   data-topic="affordable-55-plus"
@@ -224,7 +232,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/new-55-plus-communities-las-vegas"
+                  href="https://heritagestonebridge.com/new-55-plus-communities-las-vegas/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service"
                   data-topic="new-55-plus"
@@ -235,7 +243,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/best-55-plus-communities-las-vegas"
+                  href="https://heritagestonebridge.com/best-55-plus-communities-las-vegas/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service"
                   data-topic="best-55-plus"
@@ -246,7 +254,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/luxury-retirement-communities-las-vegas"
+                  href="https://heritagestonebridge.com/luxury-retirement-communities-las-vegas/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service"
                   data-topic="luxury-retirement"
@@ -257,7 +265,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/55-plus-communities-las-vegas-for-sale"
+                  href="https://heritagestonebridge.com/55-plus-communities-las-vegas-for-sale/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service"
                   data-topic="55-plus-for-sale"
@@ -268,7 +276,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/55-and-over-communities-las-vegas-for-rent"
+                  href="https://heritagestonebridge.com/55-and-over-communities-las-vegas-for-rent/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service"
                   data-topic="55-plus-for-rent"
@@ -279,7 +287,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/55-plus-communities-las-vegas"
+                  href="https://heritagestonebridge.com/55-plus-communities-las-vegas/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service"
                   data-topic="55-plus-general"
@@ -290,7 +298,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="/55-and-over-communities-summerlin-las-vegas"
+                  href="https://heritagestonebridge.com/55-and-over-communities-summerlin-las-vegas/"
                   class="hover:text-hsb-accent-light"
                   data-content-type="service"
                   data-topic="55-plus-summerlin"
@@ -307,97 +315,102 @@ export const Footer = component$(() => {
             <h3 class="text-xl font-bold mb-4">Resources</h3>
             <ul class="space-y-2 text-gray-300 mb-6">
               <li>
-                <a href="/questions" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/questions/" class="hover:text-hsb-accent-light">
                   Questions and Answers
                 </a>
               </li>
               <li>
-                <a href="/hoa-fees" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/hoa-fees/" class="hover:text-hsb-accent-light">
                   HOA Fees
                 </a>
               </li>
               <li>
-                <a href="/floor-plans" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/floor-plans/" class="hover:text-hsb-accent-light">
                   Floor Plans
                 </a>
               </li>
               <li>
-                <a href="/amenities" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/amenities/" class="hover:text-hsb-accent-light">
                   Clubhouse and Amenities
                 </a>
               </li>
               <li>
-                <a href="/about" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/nearby/" class="hover:text-hsb-accent-light">
+                  Restaurants, parks, and parking nearby
+                </a>
+              </li>
+              <li>
+                <a href="https://heritagestonebridge.com/about/" class="hover:text-hsb-accent-light">
                   About
                 </a>
               </li>
               <li>
-                <a href="/buy-heritage-at-stonebridge" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/buy-heritage-at-stonebridge/" class="hover:text-hsb-accent-light">
                   Buy in Heritage at Stonebridge
                 </a>
               </li>
               <li>
-                <a href="/sell-heritage-at-stonebridge" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/sell-heritage-at-stonebridge/" class="hover:text-hsb-accent-light">
                   Sell in Heritage at Stonebridge
                 </a>
               </li>
               <li>
-                <a href="/new-listing-heritage-at-stonebridge" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/new-listing-heritage-at-stonebridge/" class="hover:text-hsb-accent-light">
                   New Listing
                 </a>
               </li>
               <li>
-                <a href="/contact" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/contact/" class="hover:text-hsb-accent-light">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="/blog" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/blog/" class="hover:text-hsb-accent-light">
                   Real Estate Blog
                 </a>
               </li>
               <li>
-                <a href="/market-analysis" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/market-analysis/" class="hover:text-hsb-accent-light">
                   Market Analysis
                 </a>
               </li>
               <li>
-                <a href="/neighborhood-insights" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/neighborhood-insights/" class="hover:text-hsb-accent-light">
                   Neighborhood Insights
                 </a>
               </li>
               <li>
-                <a href="/luxury-living-guide" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/luxury-living-guide/" class="hover:text-hsb-accent-light">
                   Luxury Living Guide
                 </a>
               </li>
               <li>
-                <a href="/community-comparison" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/community-comparison/" class="hover:text-hsb-accent-light">
                   Community Comparison
                 </a>
               </li>
               <li>
-                <a href="/market-reports" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/market-reports/" class="hover:text-hsb-accent-light">
                   Las Vegas Market Reports
                 </a>
               </li>
               <li>
-                <a href="/community-guides" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/community-guides/" class="hover:text-hsb-accent-light">
                   Community Guides
                 </a>
               </li>
               <li>
-                <a href="/home-selling-guide" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/home-selling-guide/" class="hover:text-hsb-accent-light">
                   Home Selling Guide
                 </a>
               </li>
               <li>
-                <a href="/first-time-buyers" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/first-time-buyers/" class="hover:text-hsb-accent-light">
                   First Time Buyers
                 </a>
               </li>
               <li>
-                <a href="/testimonials" class="hover:text-hsb-accent-light">
+                <a href="https://heritagestonebridge.com/testimonials/" class="hover:text-hsb-accent-light">
                   Client Testimonials
                 </a>
               </li>
@@ -445,13 +458,13 @@ export const Footer = component$(() => {
               </p>
             </div>
             <div class="flex space-x-6 text-sm">
-              <a href="/privacy-policy" class="text-gray-400 hover:text-hsb-accent-light">
+              <a href="https://heritagestonebridge.com/privacy-policy/" class="text-gray-400 hover:text-hsb-accent-light">
                 Privacy Policy
               </a>
-              <a href="/terms-of-service" class="text-gray-400 hover:text-hsb-accent-light">
+              <a href="https://heritagestonebridge.com/terms-of-service/" class="text-gray-400 hover:text-hsb-accent-light">
                 Terms of Service
               </a>
-              <a href="/sitemap" class="text-gray-400 hover:text-hsb-accent-light">
+              <a href="https://heritagestonebridge.com/sitemap/" class="text-gray-400 hover:text-hsb-accent-light">
                 Sitemap
               </a>
             </div>
