@@ -4,12 +4,15 @@
  *
  * Verified 2026-09-27 via the Business Information API for
  * "Heritage Stonebridge | Homes By Dr. Jan Duffy" (place ChIJOdHQ97m_yIARlY1CLNq9RSY).
- * Regular hours are 8:00 AM–8:00 PM all seven days. No special hours were returned.
+ * About text, categories, and service area confirmed from the profile on 2026-10-05.
+ * Public panel the same night: Real estate agent, Crossbridge Dr, (702) 789-6561,
+ * hours that close at 8:00 PM. No opening date, social profiles, or special hours are set.
+ * Regular hours are 8:00 AM–8:00 PM all seven days.
  */
 export const GBP_BUSINESS_NAME = "Heritage Stonebridge | Homes By Dr. Jan Duffy";
 
 export const GBP_DESCRIPTION =
-  "Your local guide to Heritage at Stonebridge — Lennar's guard-gated 55+ community in Summerlin West (89138). Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties (NV License S.0197614.LLC), helps buyers and sellers with resale and new-build homes, HOA questions, and fair comparisons to Sun City Summerlin and other Summerlin active-adult neighborhoods. Downsizing, relocating to Las Vegas, or selling inside Heritage? Get MLS-backed pricing, private tours, and straightforward advice.";
+  "Dr. Jan Duffy has sold Las Vegas homes for 35 years and works Heritage at Stonebridge every week, Lennar's guard-gated 55+ community in Summerlin West (89138). Buying? She knows all nine floor plans, which lots and elevations resell best, and what comparable homes closed for, so your first offer is the right one. Selling? She prices from recent Heritage at Stonebridge sales, holds weekend open houses, and markets your home across her 50+ Las Vegas neighborhood websites and social pages, where Summerlin 55+ buyers are already looking. Expect a reply within the hour and straight answers on HOA fees, resales, and the clubhouse lifestyle. Ready to move into or out of Stonebridge Summerlin? Message or call for a current market snapshot.";
 
 export const business = {
   name: GBP_BUSINESS_NAME,
@@ -20,6 +23,7 @@ export const business = {
     "Dr. Jan Duffy Real Estate",
   ],
   category: "Real estate agent",
+  additionalCategory: "Real estate consultant",
   description: GBP_DESCRIPTION,
   telephone: "+1-702-789-6561",
   telephoneDisplay: "(702) 789-6561",
@@ -98,14 +102,6 @@ export const areaServed = [
       },
     },
   },
-  {
-    "@type": "City",
-    name: "Las Vegas",
-    containedInPlace: {
-      "@type": "State",
-      name: "Nevada",
-    },
-  },
 ] as const;
 
 export const localBusinessJsonLd = {
@@ -118,8 +114,6 @@ export const localBusinessJsonLd = {
   url: business.website,
   telephone: business.telephone,
   email: business.email,
-  image: "https://heritagestonebridge.com/images/dr-jan-duffy-headshot.jpg",
-  logo: "https://heritagestonebridge.com/images/heritage-stonebridge-logo.jpg",
   address: postalAddress,
   geo: {
     "@type": "GeoCoordinates",
@@ -130,7 +124,7 @@ export const localBusinessJsonLd = {
   openingHours: schemaOpeningHours,
   openingHoursSpecification,
   areaServed,
-  priceRange: "$$",
+  image: "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/34bde918-5f0a-4479-c146-d7914daee500/desktop",
   amenityFeature: [
     {
       "@type": "LocationFeatureSpecification",

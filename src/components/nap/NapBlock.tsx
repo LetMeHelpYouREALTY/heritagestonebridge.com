@@ -7,6 +7,9 @@ export const NapBlock = component$(() => {
     <address class="not-italic rounded-lg border border-gray-200 bg-gray-50 p-6 text-gray-800">
       <p class="font-bold text-gray-900">{business.name}</p>
       <p>
+        {business.category} · {business.additionalCategory}
+      </p>
+      <p>
         <a
           href={business.mapsUrl}
           class="text-blue-700 hover:underline"

@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { AmenityGrid } from "~/components/community/AmenityGrid";
+import { CommunityGallery } from "~/components/community/CommunityGallery";
 import { CampaignHero } from "~/components/community/CampaignHero";
 import { ContactStrip } from "~/components/community/ContactStrip";
 import { business } from "~/config/business";
@@ -147,6 +148,14 @@ export default component$(() => {
           <div class="mt-8">
             <AmenityGrid />
           </div>
+          <div class="mt-12">
+            <CommunityGallery />
+          </div>
+          <p class="mt-8">
+            <a class="font-medium text-hsb-primary underline" href="/nearby/">
+              Restaurants, parks, and parking near the clubhouse
+            </a>
+          </p>
         </div>
       </section>
 

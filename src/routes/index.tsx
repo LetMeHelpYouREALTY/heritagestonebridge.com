@@ -2,11 +2,14 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { RealScoutHeroWidget } from "~/components/real-estate/RealScoutHeroWidget";
+import { CommunityGallery } from "~/components/community/CommunityGallery";
 import { business } from "~/config/business";
 import {
   DEFAULT_OG_IMAGE,
   breadcrumbJsonLd,
   community,
+  communityImage,
+  communityPhoto,
   faqJsonLd,
 } from "~/config/community";
 
@@ -51,85 +54,108 @@ export default component$(() => {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={homeFaqScript} />
       <script type="application/ld+json" dangerouslySetInnerHTML={homeBreadcrumbScript} />
-      {/* Hero Section */}
-      <section class="relative bg-hsb-cream py-16 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 py-8 relative z-10">
-          <div class="text-center mb-8">
-            <p class="text-sm font-semibold uppercase tracking-[0.15em] text-hsb-accent mb-4">
-              Summerlin West · 89138
-            </p>
-            <h1 class="text-4xl md:text-6xl font-display text-hsb-dark mb-4">
-              Heritage at Stonebridge
-            </h1>
-            <p class="text-xl md:text-2xl text-hsb-text max-w-3xl mx-auto mb-8 font-medium">
-              421 guard-gated 55+ homes in Summerlin West
-            </p>
-            <p class="text-lg text-hsb-text max-w-4xl mx-auto mb-8">
-              Lennar built the houses. A staffed gate checks visitors. The clubhouse has pools, a fitness center, pickleball, and bocce. Dr. Jan Duffy helps buyers and sellers inside this community. Call (702) 789-6561.
-            </p>
-            <div class="text-center mb-8">
-              <p class="text-base text-gray-500 max-w-3xl mx-auto">
-                <strong>Popular Searches:</strong> Heritage at Stonebridge reviews • Homes for sale in Heritage at Stonebridge • 
-                New Construction 55+ communities in Summerlin, NV • Stonebridge Summerlin • Stonebridge Las Vegas • 
-                Heritage Las Vegas NV • Heritage 55+ community • Lennar Summerlin
-              </p>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/buy-heritage-at-stonebridge"
-                class="bg-hsb-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-hsb-primary-dark transition-colors inline-block text-center text-lg"
-              >
-                Buy in Heritage
-              </a>
-              <a
-                href="/sell-heritage-at-stonebridge"
-                class="border-2 border-hsb-primary text-hsb-primary px-8 py-4 rounded-full font-semibold hover:bg-hsb-primary hover:text-white transition-colors inline-block text-center text-lg"
-              >
-                Sell in Heritage
-              </a>
-              <a
-                href="/new-listing-heritage-at-stonebridge"
-                class="bg-hsb-accent text-white px-8 py-4 rounded-full font-semibold hover:bg-hsb-accent-dark transition-colors inline-block text-center text-lg"
-              >
-                New listing
-              </a>
-            </div>
+      <section class="relative isolate min-h-[78vh] overflow-hidden bg-hsb-dark text-white">
+        <img
+          src={communityImage(communityPhoto("clubhouse-exterior").id, "desktop")}
+          alt={communityPhoto("clubhouse-exterior").alt}
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          decoding="async"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-hsb-dark/80 via-hsb-dark/55 to-hsb-dark/25" />
+        <div class="relative z-10 mx-auto flex min-h-[78vh] max-w-7xl flex-col justify-end px-4 py-16">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-hsb-accent-light">
+            {business.name}
+          </p>
+          <h1 class="mt-4 max-w-4xl font-display text-5xl leading-tight md:text-7xl">
+            Heritage at Stonebridge
+          </h1>
+          <p class="mt-5 max-w-2xl text-xl text-white md:text-2xl">
+            421 guard-gated 55+ homes in Summerlin West. Clubhouse at 930 Silverfir Court.
+          </p>
+          <p class="mt-3 text-sm uppercase tracking-[0.14em] text-hsb-sand">
+            {business.category} · Clark County, Nevada
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/buy-heritage-at-stonebridge"
+              class="rounded-full bg-white px-8 py-4 text-center text-lg font-semibold text-hsb-dark hover:bg-hsb-sand"
+            >
+              Buy in Heritage
+            </a>
+            <a
+              href="/sell-heritage-at-stonebridge"
+              class="rounded-full border border-white px-8 py-4 text-center text-lg font-semibold text-white hover:bg-white hover:text-hsb-dark"
+            >
+              Sell in Heritage
+            </a>
+            <a
+              href={business.telephoneHref}
+              class="rounded-full bg-hsb-accent px-8 py-4 text-center text-lg font-semibold text-white hover:bg-hsb-accent-dark"
+            >
+              Call {business.telephoneDisplay}
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Community Amenities Section */}
-      <section class="bg-gray-50 py-16">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Luxury Amenities & Lifestyle</h2>
-            <p class="text-lg text-gray-600 mb-8">Experience the finest in 55+ active adult living with resort-style amenities</p>
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-              <a href="/55-plus-communities/" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-                Explore 55+ Communities
+      <section class="bg-hsb-cream py-16">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.15em] text-hsb-accent">
+              About the business
+            </p>
+            <h2 class="mt-3 font-display text-4xl text-hsb-dark">{business.name}</h2>
+            <p class="mt-6 text-lg leading-relaxed text-hsb-text">{business.description}</p>
+          </div>
+          <aside class="rounded-3xl bg-white p-8 shadow-sm">
+            <p class="text-sm uppercase tracking-[0.14em] text-hsb-muted">{business.category}</p>
+            <p class="mt-1 text-sm text-hsb-muted">{business.additionalCategory}</p>
+            <p class="mt-6 font-display text-2xl text-hsb-dark">{business.addressDisplay}</p>
+            <p class="mt-2 text-hsb-text">Service area: Las Vegas, NV 89138 and Summerlin West</p>
+            <p class="mt-4 text-hsb-text">{business.hoursDisplay}</p>
+            <p class="mt-6 text-sm text-hsb-muted">
+              Wheelchair accessible parking lot. Wheelchair accessible entrance.
+            </p>
+            <div class="mt-6 flex flex-col gap-3">
+              <a
+                href={business.telephoneHref}
+                class="rounded-full bg-hsb-primary px-6 py-3 text-center font-semibold text-white hover:bg-hsb-primary-dark"
+              >
+                Call {business.telephoneDisplay}
               </a>
-              <a href="/summerlin-homes/" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
-                Summerlin Homes
+              <a
+                href={business.smsHref}
+                class="rounded-full border border-hsb-border px-6 py-3 text-center font-semibold text-hsb-primary hover:bg-hsb-sand"
+              >
+                Text {business.telephoneDisplay}
               </a>
-              <a href="/real-estate/" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
-                Real Estate Tools
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="bg-white py-16">
+        <div class="mx-auto max-w-7xl px-4">
+          <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.15em] text-hsb-accent">
+                Inside the gate
+              </p>
+              <h2 class="mt-2 font-display text-4xl text-hsb-dark">The clubhouse and grounds</h2>
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm font-semibold">
+              <a class="text-hsb-primary underline" href="/amenities/">
+                Clubhouse amenities
+              </a>
+              <a class="text-hsb-primary underline" href="/nearby/">
+                Restaurants, parks, and parking nearby
               </a>
             </div>
           </div>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold mb-2">8,000 Sq Ft Clubhouse</h3>
-              <p class="text-gray-600">State-of-the-art facility with fitness center, multi-purpose rooms, and social spaces</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold mb-2">Resort-Style Pool & Spa</h3>
-              <p class="text-gray-600">Outdoor pool, heated lap pool, and spa for relaxation and water aerobics</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold mb-2">Pickleball & Bocce Courts</h3>
-              <p class="text-gray-600">Multiple courts for friendly games and organized tournaments</p>
-            </div>
-          </div>
+          <CommunityGallery />
         </div>
       </section>
 
@@ -138,7 +164,7 @@ export default component$(() => {
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Heritage at Stonebridge?</h2>
-            <p class="text-lg text-gray-600 mb-8">Discover what makes our community the premier choice for 55+ living in Las Vegas</p>
+            <p class="text-lg text-gray-600 mb-8">421 Lennar homes, a staffed gate, and a clubhouse at 930 Silverfir Court.</p>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
@@ -284,11 +310,11 @@ export const head: DocumentHead = {
     },
     {
       property: "og:image:width",
-      content: "1200",
+      content: "1920",
     },
     {
       property: "og:image:height",
-      content: "630",
+      content: "1080",
     },
     {
       property: "og:type",
@@ -300,7 +326,7 @@ export const head: DocumentHead = {
     },
     {
       property: "og:site_name",
-      content: "Heritage at Stonebridge",
+      content: business.name,
     },
     {
       property: "og:locale",
@@ -317,7 +343,7 @@ export const head: DocumentHead = {
     },
     {
       name: "geo.position",
-      content: "36.1699;-115.1398",
+      content: `${business.geo.latitude};${business.geo.longitude}`,
     },
     {
       name: "twitter:card",

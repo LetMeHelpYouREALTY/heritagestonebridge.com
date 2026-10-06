@@ -10,8 +10,8 @@ export const Footer = component$(() => {
           <div>
             <h3 class="text-xl font-bold mb-4">{business.name}</h3>
             <p class="text-gray-300 mb-4">
-              Your local guide to Heritage at Stonebridge — Lennar's guard-gated 55+ community in
-              Summerlin West (89138).
+              {business.category}. Also listed as a {business.additionalCategory.toLowerCase()}.
+              Lennar's guard-gated 55+ community in Summerlin West (89138).
             </p>
             <div class="space-y-2">
               <p class="flex items-center">
@@ -460,12 +460,9 @@ export const Footer = component$(() => {
           {/* SEO Keywords Footer */}
           <div class="mt-6 text-xs text-gray-500 leading-relaxed">
             <p>
-              Dr. Jan Duffy is a Las Vegas real estate expert specializing in 55+ communities,
-              active adult living, luxury homes, and gated communities in Summerlin, Red Rock
-              Canyon, Henderson, and Northwest Las Vegas. Serving clients in Del Webb communities,
-              Sun City, Siena, The Ridges, and all premier Nevada retirement communities. 
-              Features AI-powered market analysis, neighborhood insights, luxury living guides, 
-              and community comparisons for enhanced real estate intelligence.
+              {business.name}. {business.addressDisplay}. {business.hoursDisplay}. Call or text{" "}
+              {business.telephoneDisplay}. Service area: Las Vegas, NV 89138 and Summerlin West.
+              Nevada license {business.license}. {business.broker}.
             </p>
           </div>
         </div>
