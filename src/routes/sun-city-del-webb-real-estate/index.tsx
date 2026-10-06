@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for Sun City Del Webb communities
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for Sun City Del Webb communities
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/sun-city-del-webb-real-estate#service",
-        "name": "Sun City Del Webb Real Estate",
-        "description": "Expert real estate services specializing in Sun City and Del Webb communities in Las Vegas, providing comprehensive guidance for established 55+ communities with golf courses and mature amenities.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Las Vegas, Nevada"
-        },
-        "serviceType": "Sun City Del Webb Community Real Estate Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$400,000-$2,000,000",
-          "description": "Sun City and Del Webb communities with established amenities"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are the differences between Sun City and Del Webb communities?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sun City communities are established, mature 55+ communities with proven amenities and strong resale markets, while Del Webb communities offer newer construction with contemporary amenities and modern designs, both featuring golf courses and active adult lifestyles."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What amenities do Sun City and Del Webb communities offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Both Sun City and Del Webb communities typically offer golf courses, clubhouses, fitness centers, pools, social activities, maintenance services, and age-restricted living environments designed for active adults."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are Sun City and Del Webb communities good investments?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, Sun City and Del Webb communities are generally good investments due to their established reputations, mature amenities, strong resale markets, and consistent demand from 55+ buyers seeking active adult lifestyles."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Sun City Del Webb",
-            "item": "https://heritagestonebridge.com/sun-city-del-webb-real-estate"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

@@ -63,37 +63,6 @@ export default component$(() => {
       {/* AI Golf Content */}
       
 
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Golf Course Homes Las Vegas | Luxury Golf Living",
-          "description": "Discover luxury golf course homes in Las Vegas with stunning fairway views and resort amenities.",
-          "url": "https://heritagestonebridge.com/golf-course-homes",
-          "mainEntity": {
-            "@type": "RealEstateAgent",
-            "name": "Dr. Jan Duffy",
-            "telephone": "702-789-6561",
-            "email": "DrDuffySells@HeritageStonebridge.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Las Vegas",
-              "addressRegion": "NV",
-              "addressCountry": "US"
-            },
-            "serviceArea": [
-              "Summerlin",
-              "Henderson", 
-              "Northwest Las Vegas",
-              "Red Rock Canyon",
-              "Boulder City"
-            ]
-          }
-        })}
-      />
-
       {/* Golf Course Homes Listings Widget */}
 
 

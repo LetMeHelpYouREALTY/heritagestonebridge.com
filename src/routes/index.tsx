@@ -7,7 +7,6 @@ import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBe
 import { business } from "~/config/business";
 import {
   DEFAULT_OG_IMAGE,
-  breadcrumbJsonLd,
   community,
   communityPhoto,
   HERO_IMAGE,
@@ -46,15 +45,10 @@ const homeFaqs = [
 ] as const;
 
 const homeFaqScript = faqJsonLd(homeFaqs);
-const homeBreadcrumbScript = breadcrumbJsonLd([
-  { name: "Home", item: "https://heritagestonebridge.com/" },
-]);
-
 export default component$(() => {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={homeFaqScript} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={homeBreadcrumbScript} />
       <section class="relative isolate min-h-[78vh] overflow-hidden bg-hsb-dark text-white">
         <img
           src={HERO_IMAGE.tablet}

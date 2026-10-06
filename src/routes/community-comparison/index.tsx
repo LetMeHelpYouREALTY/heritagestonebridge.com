@@ -63,37 +63,6 @@ export default component$(() => {
       {/* Comparison Content */}
       
 
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Las Vegas 55+ Community Comparison | Active Adult Living Guide",
-          "description": "Compare Las Vegas 55+ communities including Heritage at Stonebridge, Del Webb, Sun City, and Siena.",
-          "url": "https://heritagestonebridge.com/community-comparison",
-          "mainEntity": {
-            "@type": "RealEstateAgent",
-            "name": "Dr. Jan Duffy",
-            "telephone": "702-789-6561",
-            "email": "DrDuffySells@HeritageStonebridge.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Las Vegas",
-              "addressRegion": "NV",
-              "addressCountry": "US"
-            },
-            "serviceArea": [
-              "Summerlin",
-              "Henderson", 
-              "Northwest Las Vegas",
-              "Red Rock Canyon",
-              "Boulder City"
-            ]
-          }
-        })}
-      />
-
       {/* RealScout Sticky Widget */}
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"

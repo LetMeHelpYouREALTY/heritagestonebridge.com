@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -6,76 +6,6 @@ import { InteriorHero } from "~/components/community/InteriorHero";
 
 export default component$(() => {
   // Inject structured data as JSON-LD script
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "ResidentialComplex",
-        name: "Heritage at Stonebridge",
-        description:
-          "Premier 55+ active adult community in Summerlin West, Las Vegas, featuring luxury homes and resort-style amenities near Red Rock Canyon.",
-        url: "https://heritagestonebridge.com/55-plus-communities-red-rock-canyon",
-        image: "https://heritagestonebridge.com/images/heritage-stonebridge-hero.webp",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Crossbridge Dr",
-          addressLocality: "Las Vegas",
-          addressRegion: "NV",
-          postalCode: "89138",
-          addressCountry: "US",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: "36.1699",
-          longitude: "-115.3338",
-        },
-        amenityFeature: [
-          {
-            "@type": "LocationFeatureSpecification",
-            name: "Gated Community",
-            value: true,
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            name: "Clubhouse",
-            value: "8,000 sq ft",
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            name: "Pickleball Courts",
-            value: true,
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            name: "Swimming Pool",
-            value: true,
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            name: "Fitness Center",
-            value: true,
-          },
-        ],
-        numberOfUnits: 421,
-        occupancyType: "55+ Active Adult",
-        developer: {
-          "@type": "Organization",
-          name: "Lennar Corporation",
-        },
-        openingDate: "2025",
-        areaServed: {
-          "@type": "City",
-          name: "Las Vegas, Nevada",
-        },
-      };
-
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.textContent = JSON.stringify(structuredData);
-      document.head.appendChild(script);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

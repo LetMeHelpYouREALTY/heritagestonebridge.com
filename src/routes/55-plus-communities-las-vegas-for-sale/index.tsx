@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for 55+ communities for sale
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for 55+ communities for sale
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/55-plus-communities-las-vegas-for-sale#service",
-        "name": "55+ Communities in Las Vegas for Sale",
-        "description": "Expert real estate services specializing in 55+ communities for sale in Las Vegas, providing current listings, pricing, and availability information for active adult home buyers.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Las Vegas, Nevada"
-        },
-        "serviceType": "55+ Community Real Estate Sales Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$300,000-$2,000,000",
-          "description": "55+ communities in Las Vegas for sale with current listings and pricing"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What 55+ communities are currently for sale in Las Vegas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Currently available 55+ communities in Las Vegas include Heritage at Stonebridge (new construction), Sun City Summerlin (resale), The Ridges, Siena, and various Del Webb communities with homes for sale."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the price range for 55+ communities in Las Vegas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "55+ communities in Las Vegas range from $300,000 for resale homes to $2,000,000+ for luxury custom estates, with most new construction starting around $464,990."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I find the best 55+ community for sale?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Consider your budget, desired amenities, location preferences, lifestyle needs, and work with an experienced agent who specializes in 55+ communities to find the best match."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Communities for Sale",
-            "item": "https://heritagestonebridge.com/55-plus-communities-las-vegas-for-sale"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

@@ -63,98 +63,6 @@ export default component$(() => {
       {/* AI Selling Content */}
       
 
-      {/* Comprehensive Service Schema - September 2025 Google "Perspective" Compliant */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Home Selling Services",
-          "description": "Professional home selling services in Las Vegas, Henderson, and Summerlin. Expert guidance through every step of the selling process with proven results and market expertise.",
-          "provider": {
-            "@type": "RealEstateAgent",
-            "@id": "https://heritagestonebridge.com/#organization",
-            "name": "Dr. Jan Duffy",
-            "telephone": "702-789-6561",
-            "email": "DrDuffySells@HeritageStonebridge.com"
-          },
-          "areaServed": [
-            {
-              "@type": "City",
-              "name": "Las Vegas",
-              "containedInPlace": {
-                "@type": "State", 
-                "name": "Nevada"
-              }
-            },
-            {
-              "@type": "City",
-              "name": "Henderson",
-              "containedInPlace": {
-                "@type": "State", 
-                "name": "Nevada"
-              }
-            },
-            {
-              "@type": "City",
-              "name": "Summerlin",
-              "containedInPlace": {
-                "@type": "State", 
-                "name": "Nevada"
-              }
-            }
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Home Selling Service Packages",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Market Analysis & Pricing Strategy",
-                  "description": "Comprehensive market analysis to determine optimal listing price and pricing strategy"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Home Staging Consultation",
-                  "description": "Professional staging advice to maximize home appeal and market value"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Marketing & Advertising",
-                  "description": "Multi-channel marketing strategy including online listings, social media, and traditional advertising"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Negotiation & Closing Support",
-                  "description": "Expert negotiation skills and comprehensive closing support throughout the transaction"
-                }
-              }
-            ]
-          },
-          "serviceType": "Real Estate Sales",
-          "serviceOutput": "Successful home sale at optimal market value",
-          "potentialAction": {
-            "@type": "ContactAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "tel:+1-702-789-6561",
-              "name": "Call Dr. Jan Duffy for Home Selling Services"
-            }
-          }
-        })}
-      />
-
       {/* FAQ Schema for Home Selling Guide */}
       <script
         type="application/ld+json"
@@ -193,29 +101,6 @@ export default component$(() => {
                 "@type": "Answer",
                 "text": "Dr. Jan Duffy uses a comprehensive marketing approach including MLS listings, professional photography, virtual tours, social media marketing, and targeted advertising to reach qualified buyers."
               }
-            }
-          ]
-        })}
-      />
-
-      {/* Breadcrumb Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://heritagestonebridge.com"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Home Selling Guide",
-              "item": "https://heritagestonebridge.com/home-selling-guide"
             }
           ]
         })}

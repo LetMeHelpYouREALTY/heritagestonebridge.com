@@ -1,8 +1,9 @@
 import { component$ } from "@builder.io/qwik";
-import { LOCAL_BUSINESS_JSON_LD } from "~/config/business";
 
+/**
+ * The agent, community, person, and page nodes are one JSON-LD graph in
+ * RouterHead. Rendering a second script here would duplicate that graph.
+ */
 export const LocalBusinessSchema = component$(() => {
-  return (
-    <script type="application/ld+json" dangerouslySetInnerHTML={LOCAL_BUSINESS_JSON_LD} />
-  );
+  return null;
 });

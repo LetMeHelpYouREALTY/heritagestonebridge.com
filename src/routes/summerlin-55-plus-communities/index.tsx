@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for Summerlin 55+ communities
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for Summerlin 55+ communities
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/summerlin-55-plus-communities#service",
-        "name": "Summerlin 55+ Communities",
-        "description": "Expert real estate services specializing in 55+ communities in Summerlin Las Vegas, providing comprehensive guidance for active adult living in premier master-planned communities.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Summerlin, Las Vegas, Nevada"
-        },
-        "serviceType": "Summerlin 55+ Community Real Estate Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$400,000-$5,000,000",
-          "description": "Summerlin 55+ communities with luxury amenities and golf courses"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are the best 55+ communities in Summerlin?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The best 55+ communities in Summerlin include Heritage at Stonebridge (new construction), Sun City Summerlin (established), The Ridges (luxury), Siena (resort-style), and Red Rock Country Club (golf course community)."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why choose Summerlin for 55+ living?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Summerlin offers master-planned community amenities, championship golf courses, Red Rock Canyon access, world-class healthcare, Downtown Summerlin shopping, and maintained parks, paths, and common areas."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What amenities do Summerlin 55+ communities offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Summerlin 55+ communities typically offer golf courses, clubhouses, fitness centers, pools, social activities, maintenance services, and access to Red Rock Canyon recreation and Downtown Summerlin amenities."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Summerlin Communities",
-            "item": "https://heritagestonebridge.com/summerlin-55-plus-communities"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

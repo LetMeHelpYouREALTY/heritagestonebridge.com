@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for best 55+ communities
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for best 55+ communities
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/best-55-plus-communities-las-vegas#service",
-        "name": "Best 55+ Communities in Las Vegas",
-        "description": "Expert real estate services specializing in the best 55+ communities in Las Vegas, providing comprehensive rankings and reviews of top-rated active adult communities.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Las Vegas, Nevada"
-        },
-        "serviceType": "Best 55+ Community Real Estate Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$400,000-$2,000,000",
-          "description": "Best 55+ communities in Las Vegas with top-rated amenities and locations"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are the best 55+ communities in Las Vegas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The best 55+ communities in Las Vegas include Heritage at Stonebridge, Sun City Summerlin, The Ridges, Siena, and Del Webb communities, each offering unique amenities and lifestyle benefits."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What makes a 55+ community the best?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The best 55+ communities feature excellent amenities, prime locations, active social scenes, quality construction, reasonable HOA fees, and strong resale values."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I choose between the best 55+ communities?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Consider your budget, desired amenities, location preferences, social activities, maintenance requirements, and long-term investment potential when choosing between top 55+ communities."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Best 55+ Communities",
-            "item": "https://heritagestonebridge.com/best-55-plus-communities-las-vegas"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

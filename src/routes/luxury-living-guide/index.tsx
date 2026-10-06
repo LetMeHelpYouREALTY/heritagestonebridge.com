@@ -63,37 +63,6 @@ export default component$(() => {
       {/* Luxury Guide Content */}
       
 
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Luxury Living Guide Las Vegas | Premium 55+ Communities",
-          "description": "Discover luxury living in Las Vegas 55+ communities with premium amenities and gated communities.",
-          "url": "https://heritagestonebridge.com/luxury-living-guide",
-          "mainEntity": {
-            "@type": "RealEstateAgent",
-            "name": "Dr. Jan Duffy",
-            "telephone": "702-789-6561",
-            "email": "DrDuffySells@HeritageStonebridge.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Las Vegas",
-              "addressRegion": "NV",
-              "addressCountry": "US"
-            },
-            "serviceArea": [
-              "Summerlin",
-              "Henderson", 
-              "Northwest Las Vegas",
-              "Red Rock Canyon",
-              "Boulder City"
-            ]
-          }
-        })}
-      />
-
       {/* RealScout Sticky Widget */}
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"

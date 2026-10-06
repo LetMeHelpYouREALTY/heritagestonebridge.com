@@ -1,7 +1,6 @@
 import { component$, Slot, useStyles$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { Footer } from "~/components/footer";
-import { LocalBusinessSchema } from "~/components/seo/LocalBusinessSchema";
 import { SiteAnswers } from "~/components/seo/SiteAnswers";
 import Header from "~/components/starter/header/header";
 
@@ -17,7 +16,6 @@ export default component$(() => {
   useStyles$(styles);
   return (
     <>
-      <LocalBusinessSchema />
       <Header />
       <main>
         <Slot />

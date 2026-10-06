@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
+import { pageSchemaGraph } from "~/lib/schema/page-graph";
 
 const CANONICAL_HOST = "heritagestonebridge.com";
 
@@ -34,6 +35,7 @@ export const RouterHead = component$(() => {
       <title>{head.title}</title>
 
       <link rel="canonical" href={canonical} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={pageSchemaGraph(loc.url.href, head.title)} />
       <link rel="icon" type="image/png" href="https://heritagestonebridge.com/favicon.png" sizes="192x192" />
       <link rel="apple-touch-icon" href="https://heritagestonebridge.com/favicon.png" />
 

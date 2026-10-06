@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for affordable 55+ communities
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for affordable 55+ communities
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/affordable-55-plus-communities-las-vegas#service",
-        "name": "Affordable 55+ Communities in Las Vegas",
-        "description": "Expert real estate services specializing in affordable 55+ communities in Las Vegas, helping active adults find budget-friendly retirement living options.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Las Vegas, Nevada"
-        },
-        "serviceType": "Affordable 55+ Community Real Estate Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$300,000-$500,000",
-          "description": "Affordable 55+ communities in Las Vegas with budget-friendly pricing"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are the most affordable 55+ communities in Las Vegas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The most affordable 55+ communities in Las Vegas include Heritage at Stonebridge (starting at $464,990), Del Webb communities, and established Sun City communities with resale options under $500,000."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What amenities are included in affordable 55+ communities?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Affordable 55+ communities typically include clubhouses, pools, fitness centers, social activities, maintenance services, and security features while keeping costs reasonable."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are there financing options for affordable 55+ communities?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, there are various financing options including traditional mortgages, FHA loans, VA loans, and specialized programs for active adult communities."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Affordable 55+ Communities",
-            "item": "https://heritagestonebridge.com/affordable-55-plus-communities-las-vegas"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

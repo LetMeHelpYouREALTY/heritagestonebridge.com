@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for new 55+ communities
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for new 55+ communities
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/new-55-plus-communities-las-vegas#service",
-        "name": "New 55+ Communities in Las Vegas",
-        "description": "Expert real estate services specializing in new construction 55+ communities in Las Vegas, helping active adults find the latest developments with modern amenities.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Las Vegas, Nevada"
-        },
-        "serviceType": "New Construction 55+ Community Real Estate Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$400,000-$1,000,000",
-          "description": "New 55+ communities in Las Vegas with modern amenities and contemporary designs"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are the newest 55+ communities in Las Vegas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The newest 55+ communities in Las Vegas include Heritage at Stonebridge (Lennar), new Del Webb developments, and upcoming active adult communities in Summerlin and Henderson areas."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What are the benefits of new construction 55+ communities?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "New construction 55+ communities offer modern amenities, energy-efficient features, contemporary designs, warranty coverage, and the latest technology and finishes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I choose the right new 55+ community?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Consider location, amenities, builder reputation, floor plans, pricing, HOA fees, and future development plans when choosing a new 55+ community."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "New 55+ Communities",
-            "item": "https://heritagestonebridge.com/new-55-plus-communities-las-vegas"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

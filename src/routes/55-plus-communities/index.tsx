@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -6,75 +6,6 @@ import { InteriorHero } from "~/components/community/InteriorHero";
 
 export default component$(() => {
   // Inject 55+ Communities Schema for SEO
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      const communitiesSchema = {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        name: "55+ Communities Las Vegas | Active Adult Living",
-        description:
-          "Discover premier 55+ communities in Las Vegas, Summerlin, and Red Rock Canyon. Luxury active adult living with resort amenities, gated security, and mountain views.",
-        url: "https://heritagestonebridge.com/55-plus-communities",
-        mainEntity: {
-          "@type": "ItemList",
-          name: "Las Vegas 55+ Communities",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              item: {
-                "@type": "ResidentialComplex",
-                name: "Heritage at Stonebridge",
-                description: "Luxury 55+ community in Summerlin West",
-                url: "https://heritagestonebridge.com",
-              },
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
-              item: {
-                "@type": "ResidentialComplex",
-                name: "Del Webb Communities",
-                description: "Active adult communities throughout Las Vegas",
-              },
-            },
-            {
-              "@type": "ListItem",
-              position: 3,
-              item: {
-                "@type": "ResidentialComplex",
-                name: "Sun City Communities",
-                description: "Premier 55+ living in Henderson and Summerlin",
-              },
-            },
-          ],
-        },
-        breadcrumb: {
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: "Home",
-              item: "https://heritagestonebridge.com",
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: "55+ Communities",
-              item: "https://heritagestonebridge.com/55-plus-communities",
-            },
-          ],
-        },
-      };
-
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.textContent = JSON.stringify(communitiesSchema);
-      document.head.appendChild(script);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

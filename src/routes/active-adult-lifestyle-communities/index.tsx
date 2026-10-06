@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for active adult lifestyle communities
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for active adult lifestyle communities
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/active-adult-lifestyle-communities#service",
-        "name": "Active Adult Lifestyle Communities",
-        "description": "Expert real estate services specializing in active adult lifestyle communities in Las Vegas, providing comprehensive guidance for 55+ communities with resort amenities, social activities, and maintenance-free living.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Las Vegas, Nevada"
-        },
-        "serviceType": "Active Adult Lifestyle Community Real Estate Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$400,000-$3,000,000",
-          "description": "Active adult lifestyle communities with resort amenities"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What defines an active adult lifestyle community?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Active adult lifestyle communities are age-restricted communities (typically 55+) that offer resort-style amenities, social activities, maintenance-free living, and a focus on active, healthy lifestyles for residents."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What amenities do active adult lifestyle communities offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Active adult lifestyle communities typically offer fitness centers, pools, golf courses, clubhouses, social activities, maintenance services, security, and resort-style amenities designed for active adult living."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why choose an active adult lifestyle community?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Active adult lifestyle communities offer maintenance-free living, social opportunities, resort amenities, security, and a focus on healthy, active lifestyles perfect for adults 55+ seeking an engaging community environment."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Active Adult Lifestyle",
-            "item": "https://heritagestonebridge.com/active-adult-lifestyle-communities"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for 55+ communities for rent
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for 55+ communities for rent
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/55-and-over-communities-las-vegas-for-rent#service",
-        "name": "55+ Communities in Las Vegas for Rent",
-        "description": "Expert real estate services specializing in 55+ communities for rent in Las Vegas, providing rental listings and guidance for active adult renters.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Las Vegas, Nevada"
-        },
-        "serviceType": "55+ Community Rental Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$2,000-$6,000/month",
-          "description": "55+ communities in Las Vegas for rent with active adult amenities"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Are there 55+ communities in Las Vegas that allow rentals?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, many 55+ communities in Las Vegas allow rentals, including Sun City Summerlin, Del Webb communities, and some luxury communities, though rental policies vary by community."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the typical rent for 55+ community homes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Rent for 55+ community homes in Las Vegas typically ranges from $2,000 to $6,000 per month, depending on size, location, amenities, and community type."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do renters get access to community amenities?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, renters in 55+ communities typically have access to community amenities, though some communities may have restrictions or additional fees for renters."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Communities for Rent",
-            "item": "https://heritagestonebridge.com/55-and-over-communities-las-vegas-for-rent"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

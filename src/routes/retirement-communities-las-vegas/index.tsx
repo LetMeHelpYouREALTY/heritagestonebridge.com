@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for retirement communities
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for retirement communities
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/retirement-communities-las-vegas#service",
-        "name": "Retirement Communities Las Vegas",
-        "description": "Expert real estate services specializing in retirement communities in Las Vegas, providing comprehensive guidance for 55+ communities, active adult living, and maintenance-free retirement.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Las Vegas, Nevada"
-        },
-        "serviceType": "Retirement Community Real Estate Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$400,000-$3,000,000",
-          "description": "Retirement communities with maintenance-free living and resort amenities"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are the best retirement communities in Las Vegas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The best retirement communities in Las Vegas include Heritage at Stonebridge (new construction), Sun City Summerlin (established), Sun City Anthem (Henderson), The Ridges (luxury), Siena (resort-style), and Red Rock Country Club (golf course community)."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What amenities do retirement communities offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Retirement communities typically offer golf courses, clubhouses, fitness centers, pools, social activities, maintenance services, security, and resort-style amenities designed for active adult living."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why choose Las Vegas for retirement?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Las Vegas offers no state income tax, year-round sunshine, world-class entertainment, excellent healthcare, outdoor recreation, and a variety of retirement communities with resort amenities and active adult lifestyles."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Retirement Communities",
-            "item": "https://heritagestonebridge.com/retirement-communities-las-vegas"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

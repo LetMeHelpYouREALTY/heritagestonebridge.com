@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for luxury retirement communities
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for luxury retirement communities
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/luxury-retirement-communities-las-vegas#service",
-        "name": "Luxury Retirement Communities in Las Vegas",
-        "description": "Expert real estate services specializing in luxury retirement communities in Las Vegas, providing access to premium active adult living with concierge services and upscale amenities.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Las Vegas, Nevada"
-        },
-        "serviceType": "Luxury Retirement Community Real Estate Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$800,000-$5,000,000+",
-          "description": "Luxury retirement communities in Las Vegas with premium amenities and concierge services"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are the most luxury retirement communities in Las Vegas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The most luxury retirement communities in Las Vegas include The Ridges, Siena, Red Rock Country Club, and Heritage at Stonebridge, each offering premium amenities and concierge services."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What amenities do luxury retirement communities offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Luxury retirement communities typically offer concierge services, gourmet dining, spa facilities, private golf courses, wine cellars, theaters, and personalized services."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the price range for luxury retirement communities?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Luxury retirement communities in Las Vegas typically range from $800,000 to $5,000,000+, depending on location, amenities, and home size."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Luxury Retirement Communities",
-            "item": "https://heritagestonebridge.com/luxury-retirement-communities-las-vegas"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}

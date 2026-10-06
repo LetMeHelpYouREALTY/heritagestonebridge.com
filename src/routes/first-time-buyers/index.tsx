@@ -63,37 +63,6 @@ export default component$(() => {
       {/* AI Buyer Content */}
       
 
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "First Time Buyers Guide Las Vegas | Home Buying Tips",
-          "description": "Complete first-time home buyer guide for Las Vegas real estate with expert advice on financing and home buying process.",
-          "url": "https://heritagestonebridge.com/first-time-buyers",
-          "mainEntity": {
-            "@type": "RealEstateAgent",
-            "name": "Dr. Jan Duffy",
-            "telephone": "702-789-6561",
-            "email": "DrDuffySells@HeritageStonebridge.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Las Vegas",
-              "addressRegion": "NV",
-              "addressCountry": "US"
-            },
-            "serviceArea": [
-              "Summerlin",
-              "Henderson", 
-              "Northwest Las Vegas",
-              "Red Rock Canyon",
-              "Boulder City"
-            ]
-          }
-        })}
-      />
-
       {/* RealScout Sticky Widget */}
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"

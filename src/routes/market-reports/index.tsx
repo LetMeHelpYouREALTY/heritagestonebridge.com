@@ -63,37 +63,6 @@ export default component$(() => {
       {/* AI Market Content */}
       
 
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Las Vegas Market Reports | Real Estate Market Analysis",
-          "description": "Access comprehensive Las Vegas real estate market reports with current trends and pricing data.",
-          "url": "https://heritagestonebridge.com/market-reports",
-          "mainEntity": {
-            "@type": "RealEstateAgent",
-            "name": "Dr. Jan Duffy",
-            "telephone": "702-789-6561",
-            "email": "DrDuffySells@HeritageStonebridge.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Las Vegas",
-              "addressRegion": "NV",
-              "addressCountry": "US"
-            },
-            "serviceArea": [
-              "Summerlin",
-              "Henderson", 
-              "Northwest Las Vegas",
-              "Red Rock Canyon",
-              "Boulder City"
-            ]
-          }
-        })}
-      />
-
       {/* RealScout Sticky Widget */}
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"

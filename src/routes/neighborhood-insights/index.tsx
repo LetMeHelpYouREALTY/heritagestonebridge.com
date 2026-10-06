@@ -63,37 +63,6 @@ export default component$(() => {
       {/* AI Insights Content */}
       
 
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Las Vegas Neighborhood Insights | AI-Powered Market Analysis",
-          "description": "Get AI-powered insights into Las Vegas neighborhoods, market trends, and community analysis.",
-          "url": "https://heritagestonebridge.com/neighborhood-insights",
-          "mainEntity": {
-            "@type": "RealEstateAgent",
-            "name": "Dr. Jan Duffy",
-            "telephone": "702-789-6561",
-            "email": "DrDuffySells@HeritageStonebridge.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Las Vegas",
-              "addressRegion": "NV",
-              "addressCountry": "US"
-            },
-            "serviceArea": [
-              "Summerlin",
-              "Henderson", 
-              "Northwest Las Vegas",
-              "Red Rock Canyon",
-              "Boulder City"
-            ]
-          }
-        })}
-      />
-
       {/* RealScout Sticky Widget */}
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"

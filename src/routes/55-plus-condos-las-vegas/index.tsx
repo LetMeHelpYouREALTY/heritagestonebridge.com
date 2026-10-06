@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -64,104 +64,6 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   // Inject comprehensive schema markup for 55+ condos
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      // Service schema for 55+ condos
-      const serviceSchema = document.createElement('script');
-      serviceSchema.type = 'application/ld+json';
-      serviceSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://heritagestonebridge.com/55-plus-condos-las-vegas#service",
-        "name": "55+ Condos Las Vegas",
-        "description": "Expert real estate services specializing in 55+ condos in Las Vegas, providing comprehensive guidance for maintenance-free living with resort amenities and prime locations.",
-        "provider": {
-          "@type": "RealEstateAgent",
-          "name": "Dr. Jan Duffy",
-          "telephone": "+1-702-789-6561",
-          "email": "DrDuffySells@HeritageStonebridge.com"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Las Vegas, Nevada"
-        },
-        "serviceType": "55+ Condo Real Estate Services",
-        "offers": {
-          "@type": "Offer",
-          "priceRange": "$300,000-$2,000,000",
-          "description": "55+ condos with maintenance-free living and resort amenities"
-        }
-      });
-
-      // FAQ Schema
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are the benefits of 55+ condos in Las Vegas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "55+ condos in Las Vegas offer maintenance-free living, resort-style amenities, prime locations, security, social activities, and the convenience of lock-and-leave lifestyle perfect for active adults."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What amenities do 55+ condos typically offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "55+ condos typically offer fitness centers, pools, clubhouses, social activities, maintenance services, security, concierge services, and resort-style amenities designed for active adult living."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are 55+ condos good investments in Las Vegas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, 55+ condos in Las Vegas are generally good investments due to strong demand from active adults, maintenance-free appeal, prime locations, and the growing 55+ demographic seeking convenient lifestyles."
-            }
-          }
-        ]
-      });
-
-      // Breadcrumb Schema
-      const breadcrumbSchema = document.createElement('script');
-      breadcrumbSchema.type = 'application/ld+json';
-      breadcrumbSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://heritagestonebridge.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "55+ Communities",
-            "item": "https://heritagestonebridge.com/55-plus-communities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "55+ Condos",
-            "item": "https://heritagestonebridge.com/55-plus-condos-las-vegas"
-          }
-        ]
-      });
-
-      // Inject all schemas
-      document.head.appendChild(serviceSchema);
-      document.head.appendChild(faqSchema);
-      document.head.appendChild(breadcrumbSchema);
-    }
-  });
-
   return (
     <>
       {/* Hero Section */}
