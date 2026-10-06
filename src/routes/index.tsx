@@ -390,7 +390,6 @@ export const head: DocumentHead = {
       href: HERO_IMAGE.tablet,
       imagesrcset: HERO_IMAGE.srcset,
       imagesizes: "100vw",
-      fetchpriority: "high",
     },
   ],
 };
