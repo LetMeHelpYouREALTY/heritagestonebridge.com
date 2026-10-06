@@ -36,22 +36,21 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
 
     return (
       <div
-        class={`fixed right-4 top-1/2 -translate-y-1/2 z-50 transition-all duration-500 ${
-          isVisible.value ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+        class={`fixed bottom-6 right-4 z-30 hidden w-72 transition-all duration-500 md:block ${
+          isVisible.value ? "opacity-100 translate-y-0" : "pointer-events-none translate-y-4 opacity-0"
         }`}
       >
-        <div class="bg-white rounded-2xl shadow-2xl border-2 border-yellow-400 overflow-hidden w-80 max-h-[600px]">
-          {/* Header */}
-          <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 p-4 text-gray-900">
+        <div class="max-h-[600px] overflow-hidden rounded-2xl border border-hsb-border bg-white shadow-lg">
+          <div class="bg-hsb-dark p-4 text-white">
             <div class="flex items-center justify-between">
               <div>
-                <h3 class="text-lg font-bold">{title}</h3>
-                <p class="text-sm text-gray-800">{subtitle}</p>
+                <h3 class="font-display text-lg leading-tight">{title}</h3>
+                <p class="mt-1 text-sm text-hsb-sand">{subtitle}</p>
               </div>
               <button
                 type="button"
                 onClick$={() => (isExpanded.value = !isExpanded.value)}
-                class="text-gray-800 hover:text-gray-600 transition-colors"
+                class="bg-transparent p-0 text-white"
                 aria-label={isExpanded.value ? "Collapse listings" : "Expand listings"}
               >
                 <svg
@@ -79,10 +78,10 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
           >
             <div class="p-4">
               <div class="text-center mb-4">
-                <div class="text-sm font-semibold text-gray-700 mb-2">
-                  ${parseInt(priceMin).toLocaleString()} - ${parseInt(priceMax).toLocaleString()}
+                <div class="text-sm text-hsb-text mb-2">
+                  ${parseInt(priceMin).toLocaleString()} – ${parseInt(priceMax).toLocaleString()}
                 </div>
-                <div class="h-1 w-16 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto rounded-full"></div>
+                <div class="mx-auto h-px w-12 bg-hsb-accent"></div>
               </div>
 
               <div class="min-h-[300px] mb-4">
@@ -103,7 +102,7 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
                 href="http://drjanduffy.realscout.com/onboarding"
                 target="_blank"
                 rel="noopener"
-                class="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 py-3 px-4 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-lg inline-block text-center"
+                class="inline-block w-full rounded-full bg-hsb-primary py-3 px-4 text-center text-sm font-medium text-white hover:bg-hsb-primary-dark"
               >
                 Schedule Private Tour
               </a>
@@ -114,17 +113,9 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
           <button
             type="button"
             onClick$={() => (isVisible.value = false)}
-            class="absolute -top-2 -left-2 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors shadow-lg"
-            aria-label="Close sticky panel"
+            class="w-full border-t border-hsb-border bg-white py-2 text-xs uppercase tracking-[0.14em] text-hsb-muted hover:text-hsb-dark"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            Close
           </button>
         </div>
       </div>
