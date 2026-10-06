@@ -1,18 +1,39 @@
 import { component$ } from "@builder.io/qwik";
 import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
 
+const CANONICAL_HOST = "heritagestonebridge.com";
+
+/** One https apex URL with a trailing slash. Matches the URLs Search Console already crawled. */
+export function toCanonicalHref(href: string): string {
+  try {
+    const url = new URL(href);
+    url.protocol = "https:";
+    url.hostname = CANONICAL_HOST;
+    url.port = "";
+    url.search = "";
+    url.hash = "";
+    if (url.pathname !== "/" && !url.pathname.endsWith("/")) {
+      url.pathname = `${url.pathname}/`;
+    }
+    return url.href;
+  } catch {
+    return `https://${CANONICAL_HOST}/`;
+  }
+}
+
 /**
  * The RouterHead component is placed inside of the document `<head>` element.
  */
 export const RouterHead = component$(() => {
   const head = useDocumentHead();
   const loc = useLocation();
+  const canonical = toCanonicalHref(loc.url.href);
 
   return (
     <>
       <title>{head.title}</title>
 
-      <link rel="canonical" href={loc.url.href} />
+      <link rel="canonical" href={canonical} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -35,13 +56,21 @@ export const RouterHead = component$(() => {
 				`}
       </style>
 
-      {head.meta.map((m) => (
-        <meta key={m.key} {...m} />
-      ))}
+      {head.meta
+        .filter((m) => m.name !== "canonical")
+        .map((m) =>
+          m.property === "og:url" ? (
+            <meta key={m.key} {...m} content={canonical} />
+          ) : (
+            <meta key={m.key} {...m} />
+          ),
+        )}
 
-      {head.links.map((l) => (
-        <link key={l.key} {...l} />
-      ))}
+      {head.links
+        .filter((l) => l.rel !== "canonical")
+        .map((l) => (
+          <link key={l.key} {...l} />
+        ))}
 
       {head.styles.map((s) => {
         const { dangerouslySetInnerHTML, ...otherProps } = s.props || {};
