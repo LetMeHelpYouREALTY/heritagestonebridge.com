@@ -1,8 +1,8 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { HeroPhoto } from "~/components/community/HeroPhoto";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
+import { InteriorHero } from "~/components/community/InteriorHero";
 
 export const head: DocumentHead = {
   title: "Active Adult Lifestyle Communities | Dr. Jan Duffy | Las Vegas Real Estate Expert",
@@ -165,70 +165,54 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 overflow-hidden">
-        <HeroPhoto />
-        <div class="absolute inset-0 bg-black opacity-20"></div>
-        <div class="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            Active Adult Lifestyle Communities
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Discover vibrant 55+ communities designed for active adults with resort amenities, social activities, and maintenance-free living
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-teal-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-100 transition-colors shadow-lg inline-block text-center">
-              Explore Lifestyle Communities
-            </a>
-            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-800 transition-colors shadow-lg inline-block text-center">
-              Call Dr. Jan (702) 789-6561
-            </a>
-          </div>
-        </div>
-      </section>
+      <InteriorHero
+        title="Active Adult Lifestyle Communities"
+        lede="Discover vibrant 55+ communities designed for active adults with resort amenities, social activities, and maintenance-free living"
+      />
       <OfficeListingsBelowHero />
 
       {/* Active Adult Lifestyle Advantage */}
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Active Adult Lifestyle Communities?</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Why Choose Active Adult Lifestyle Communities?</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               As Las Vegas's leading 55+ community expert, I've helped hundreds of active adults discover the benefits of lifestyle-focused communities designed for healthy, engaging living.
             </p>
           </div>
           
           <div class="grid md:grid-cols-3 gap-8 mb-12">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Resort-Style Amenities</h3>
-              <p class="text-gray-600">Fitness centers, pools, golf courses, clubhouses, and spa facilities</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Resort-Style Amenities</h3>
+              <p class="text-hsb-muted">Fitness centers, pools, golf courses, clubhouses, and spa facilities</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Social Activities</h3>
-              <p class="text-gray-600">Clubs, events, classes, and activities designed for active adult engagement</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Social Activities</h3>
+              <p class="text-hsb-muted">Clubs, events, classes, and activities designed for active adult engagement</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Maintenance-Free Living</h3>
-              <p class="text-gray-600">No yard work, exterior maintenance, or repairs - focus on enjoying life</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Maintenance-Free Living</h3>
+              <p class="text-hsb-muted">No yard work, exterior maintenance, or repairs - focus on enjoying life</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Lifestyle Communities */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Premier Active Adult Lifestyle Communities</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Premier Active Adult Lifestyle Communities</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Explore Las Vegas's finest active adult lifestyle communities, each offering unique amenities and lifestyle options for discerning 55+ buyers.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Heritage at Stonebridge</h3>
-              <p class="text-gray-600 mb-4">Lennar's newest 55+ community with Everything's Included® features and resort amenities</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Heritage at Stonebridge</h3>
+              <p class="text-hsb-muted mb-4">Lennar's newest 55+ community with Everything's Included® features and resort amenities</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Three home collections</li>
                 <li>• 8,000 sq ft clubhouse</li>
                 <li>• Resort-style pool</li>
@@ -237,13 +221,13 @@ export default component$(() => {
                 <li>• Gated community</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">Starting from $464,990</div>
-              <a href="/heritage-at-stonebridge-homes-for-sale" class="text-teal-600 hover:text-teal-800 font-semibold">View Heritage at Stonebridge →</a>
+              <a href="/heritage-at-stonebridge-homes-for-sale" class="text-teal-600 hover:text-hsb-dark font-semibold">View Heritage at Stonebridge →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Sun City Summerlin</h3>
-              <p class="text-gray-600 mb-4">Established premier 55+ community with multiple golf courses and mature amenities</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Sun City Summerlin</h3>
+              <p class="text-hsb-muted mb-4">Established premier 55+ community with multiple golf courses and mature amenities</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Multiple golf courses</li>
                 <li>• Recreation centers</li>
                 <li>• Extensive social clubs</li>
@@ -252,13 +236,13 @@ export default component$(() => {
                 <li>• Strong resale market</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$500,000 - $1,500,000</div>
-              <a href="/sun-city-summerlin-homes" class="text-teal-600 hover:text-teal-800 font-semibold">View Sun City Summerlin →</a>
+              <a href="/sun-city-summerlin-homes" class="text-teal-600 hover:text-hsb-dark font-semibold">View Sun City Summerlin →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Sun City Anthem</h3>
-              <p class="text-gray-600 mb-4">Henderson's premier 55+ community with golf courses and vibrant social scene</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Sun City Anthem</h3>
+              <p class="text-hsb-muted mb-4">Henderson's premier 55+ community with golf courses and vibrant social scene</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Multiple golf courses</li>
                 <li>• Recreation centers</li>
                 <li>• Active social scene</li>
@@ -267,13 +251,13 @@ export default component$(() => {
                 <li>• Strong resale market</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$500,000 - $1,500,000</div>
-              <a href="/sun-city-anthem" class="text-teal-600 hover:text-teal-800 font-semibold">View Sun City Anthem →</a>
+              <a href="/sun-city-anthem" class="text-teal-600 hover:text-hsb-dark font-semibold">View Sun City Anthem →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">The Ridges</h3>
-              <p class="text-gray-600 mb-4">Ultra-luxury community with custom estates and exclusive golf course access</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">The Ridges</h3>
+              <p class="text-hsb-muted mb-4">Ultra-luxury community with custom estates and exclusive golf course access</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Custom luxury homes</li>
                 <li>• Exclusive golf course</li>
                 <li>• Private amenities</li>
@@ -282,13 +266,13 @@ export default component$(() => {
                 <li>• Highest-end finishes</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$1,000,000 - $5,000,000+</div>
-              <a href="/the-ridges-summerlin" class="text-teal-600 hover:text-teal-800 font-semibold">View The Ridges →</a>
+              <a href="/the-ridges-summerlin" class="text-teal-600 hover:text-hsb-dark font-semibold">View The Ridges →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Siena</h3>
-              <p class="text-gray-600 mb-4">Tuscan-inspired luxury community with resort amenities and sophisticated design</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Siena</h3>
+              <p class="text-hsb-muted mb-4">Tuscan-inspired luxury community with resort amenities and sophisticated design</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Tuscan-inspired architecture</li>
                 <li>• Resort-style amenities</li>
                 <li>• Wine cellar & tasting room</li>
@@ -297,13 +281,13 @@ export default component$(() => {
                 <li>• Private social clubs</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$600,000 - $2,000,000+</div>
-              <a href="/siena-summerlin-homes" class="text-teal-600 hover:text-teal-800 font-semibold">View Siena →</a>
+              <a href="/siena-summerlin-homes" class="text-teal-600 hover:text-hsb-dark font-semibold">View Siena →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Red Rock Country Club</h3>
-              <p class="text-gray-600 mb-4">Exclusive golf course community with luxury homes and private membership</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Red Rock Country Club</h3>
+              <p class="text-hsb-muted mb-4">Exclusive golf course community with luxury homes and private membership</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Private golf course</li>
                 <li>• Country club membership</li>
                 <li>• Luxury amenities</li>
@@ -312,7 +296,7 @@ export default component$(() => {
                 <li>• Concierge services</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$800,000 - $3,000,000+</div>
-              <a href="/red-rock-country-club" class="text-teal-600 hover:text-teal-800 font-semibold">View Country Club →</a>
+              <a href="/red-rock-country-club" class="text-teal-600 hover:text-hsb-dark font-semibold">View Country Club →</a>
             </div>
           </div>
         </div>
@@ -322,16 +306,16 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">The Active Adult Lifestyle Advantage</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">The Active Adult Lifestyle Advantage</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Experience the perfect blend of luxury amenities, social engagement, and maintenance-free living in Las Vegas's premier active adult lifestyle communities.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Health & Wellness</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Health & Wellness</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-teal-600 rounded-full mr-3"></span>
                   State-of-the-art fitness centers and wellness programs
@@ -351,9 +335,9 @@ export default component$(() => {
               </ul>
             </div>
             
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Social Engagement</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Social Engagement</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
                   Clubs and interest groups
@@ -379,17 +363,17 @@ export default component$(() => {
       {/* RealScout Widgets */}
 
       {/* Call to Action */}
-      <section class="bg-gradient-to-br from-teal-600 to-teal-800 py-16">
+      <section class="bg-hsb-dark py-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
           <h2 class="text-3xl font-bold text-white mb-4">Ready to Find Your Perfect Active Adult Lifestyle Community?</h2>
           <p class="text-lg text-teal-100 mb-8 max-w-2xl mx-auto">
             As Las Vegas's premier 55+ community specialist, I'll help you discover the ideal active adult lifestyle community that matches your interests, budget, and preferences.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-teal-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-100 transition-colors shadow-lg inline-block text-center">
+            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-hsb-dark px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-100 transition-colors shadow-lg inline-block text-center">
               Start Your Search
             </a>
-            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-800 transition-colors shadow-lg inline-block text-center">
+            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-hsb-dark transition-colors shadow-lg inline-block text-center">
               Call Dr. Jan (702) 789-6561
             </a>
           </div>

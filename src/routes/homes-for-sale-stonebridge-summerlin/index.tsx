@@ -2,8 +2,8 @@ import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { schemaOpeningHours } from "~/config/business";
-import { HeroPhoto } from "~/components/community/HeroPhoto";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
+import { InteriorHero } from "~/components/community/InteriorHero";
 
 export const head: DocumentHead = {
   title: "Homes for Sale in Stonebridge, Summerlin, Las Vegas NV | Dr. Jan Duffy",
@@ -190,44 +190,20 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 overflow-hidden">
-        <HeroPhoto />
-        <div class="absolute inset-0 bg-black opacity-40"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            Homes for Sale in Stonebridge, Summerlin, Las Vegas NV
-          </h1>
-          <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto">
-            Discover luxury living in Stonebridge, Summerlin's premier gated community. Three distinct home collections from Lennar with prices starting from $464,990. Currently 15 homes available for sale with resort-style amenities, mountain views, and active adult lifestyle.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="http://drjanduffy.realscout.com/onboarding"
-              target="_blank"
-              rel="noopener"
-              class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl inline-block text-center"
-            >
-              View Available Homes
-            </a>
-            <a
-              href="tel:702-789-6561"
-              class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-all transform hover:scale-105 inline-block text-center"
-            >
-              Call Dr. Jan Duffy
-            </a>
-          </div>
-        </div>
-      </section>
+      <InteriorHero
+        title="Homes for Sale in Stonebridge, Summerlin, Las Vegas NV"
+        lede="Discover luxury living in Stonebridge, Summerlin's premier gated community. Three distinct home collections from Lennar with prices starting from $464,990. Currently 15 homes available for sale with resort-style amenities, mountain views, and active adult lifestyle."
+      />
       <OfficeListingsBelowHero />
 
       {/* Community Overview */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-hsb-dark mb-4">
               Why Choose Stonebridge, Summerlin?
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p class="text-xl text-hsb-muted max-w-3xl mx-auto">
               Stonebridge offers the perfect blend of luxury living, resort amenities, and prime
               Summerlin location for discerning homebuyers.
             </p>
@@ -237,11 +213,8 @@ export default component$(() => {
             {/* Gated Security */}
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <div class="text-center">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl">🔒</span>
-                </div>
                 <h3 class="text-xl font-semibold mb-3">Gated Security</h3>
-                <p class="text-gray-600">
+                <p class="text-hsb-muted">
                   24/7 gated access with professional security ensuring privacy and peace of mind
                   for all residents.
                 </p>
@@ -251,11 +224,8 @@ export default component$(() => {
             {/* Resort Amenities */}
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <div class="text-center">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl">🏊</span>
-                </div>
                 <h3 class="text-xl font-semibold mb-3">Resort Amenities</h3>
-                <p class="text-gray-600">
+                <p class="text-hsb-muted">
                   8,000 sq ft clubhouse, resort-style pool & heated lap pool, fitness center, pickleball & bocce courts, walking trails, and RV parking for active living.
                 </p>
               </div>
@@ -264,11 +234,8 @@ export default component$(() => {
             {/* Prime Location */}
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <div class="text-center">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl">📍</span>
-                </div>
                 <h3 class="text-xl font-semibold mb-3">Prime Location</h3>
-                <p class="text-gray-600">
+                <p class="text-hsb-muted">
                   Minutes from Red Rock Canyon, Downtown Summerlin, and world-class shopping and
                   dining.
                 </p>
@@ -282,10 +249,10 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-hsb-dark mb-4">
               Featured Stonebridge Homes
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p class="text-xl text-hsb-muted max-w-3xl mx-auto">
               Explore our curated selection of luxury homes currently available in the Stonebridge
               community.
             </p>
@@ -294,15 +261,15 @@ export default component$(() => {
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Property 1 */}
             <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
-              <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+              <div class="h-48 bg-hsb-primary flex items-center justify-center">
                 <div class="text-center text-white">
                   <h3 class="text-2xl font-bold mb-2">Cromwell Collection</h3>
-                  <p class="text-blue-100">1,232 - 1,456 sq ft</p>
+                  <p class="text-hsb-sand">1,232 - 1,456 sq ft</p>
                 </div>
               </div>
               <div class="p-6">
                 <h4 class="text-xl font-semibold mb-3">Luxury Single-Story Living</h4>
-                <ul class="space-y-2 text-gray-600 mb-4">
+                <ul class="space-y-2 text-hsb-muted mb-4">
                   <li>• 2-3 Bedrooms, 2-2.5 Bathrooms</li>
                   <li>• Open concept living spaces</li>
                   <li>• Gourmet kitchens with islands</li>
@@ -322,7 +289,7 @@ export default component$(() => {
 
             {/* Property 2 */}
             <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
-              <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+              <div class="h-48 bg-hsb-primary flex items-center justify-center">
                 <div class="text-center text-white">
                   <h3 class="text-2xl font-bold mb-2">Stirling Collection</h3>
                   <p class="text-green-100">1,456 - 2,100 sq ft</p>
@@ -330,7 +297,7 @@ export default component$(() => {
               </div>
               <div class="p-6">
                 <h4 class="text-xl font-semibold mb-3">Spacious floor plans</h4>
-                <ul class="space-y-2 text-gray-600 mb-4">
+                <ul class="space-y-2 text-hsb-muted mb-4">
                   <li>• 3-4 Bedrooms, 2.5-3 Bathrooms</li>
                   <li>• Great rooms with fireplaces</li>
                   <li>• Master suites with walk-in closets</li>
@@ -350,7 +317,7 @@ export default component$(() => {
 
             {/* Property 3 */}
             <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
-              <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+              <div class="h-48 bg-hsb-primary flex items-center justify-center">
                 <div class="text-center text-white">
                   <h3 class="text-2xl font-bold mb-2">Evander Collection</h3>
                   <p class="text-purple-100">2,100 - 2,873 sq ft</p>
@@ -358,7 +325,7 @@ export default component$(() => {
               </div>
               <div class="p-6">
                 <h4 class="text-xl font-semibold mb-3">Estate-Style Living</h4>
-                <ul class="space-y-2 text-gray-600 mb-4">
+                <ul class="space-y-2 text-hsb-muted mb-4">
                   <li>• 4-5 Bedrooms, 3-4 Bathrooms</li>
                   <li>• Formal dining rooms</li>
                   <li>• Home offices/studies</li>
@@ -380,18 +347,18 @@ export default component$(() => {
       </section>
 
       {/* Location & Amenities */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 class="text-3xl md:text-4xl font-bold text-hsb-dark mb-6">
                 Prime Summerlin Location
               </h2>
-              <p class="text-lg text-gray-600 mb-6">
+              <p class="text-lg text-hsb-text mb-6">
                 Stonebridge is perfectly positioned in Summerlin West, offering unparalleled access
                 to Las Vegas's finest attractions and amenities.
               </p>
-              <ul class="space-y-3 text-gray-600">
+              <ul class="space-y-3 text-hsb-muted">
                 <li class="flex items-center">
                   <span class="text-green-500 mr-3">✓</span>
                   12 miles to Red Rock Canyon National Conservation Area
@@ -415,7 +382,7 @@ export default component$(() => {
               </ul>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-6">Community Amenities</h3>
+              <h3 class="font-display text-2xl text-hsb-dark mb-6">Community Amenities</h3>
               <div class="grid grid-cols-2 gap-4">
                 <div class="text-center p-4 bg-blue-50 rounded-lg">
                   <span class="text-2xl mb-2 block">🏊</span>
@@ -451,10 +418,10 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-hsb-dark mb-4">
               Stonebridge Market Insights
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p class="text-xl text-hsb-muted max-w-3xl mx-auto">
               Stay informed about the latest market trends and property values in Stonebridge,
               Summerlin.
             </p>
@@ -463,28 +430,28 @@ export default component$(() => {
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="text-center p-6 bg-blue-50 rounded-lg">
               <div class="text-4xl font-bold text-blue-600 mb-2">$750K+</div>
-              <p class="text-gray-600">Average Home Price</p>
+              <p class="text-hsb-muted">Average Home Price</p>
             </div>
             <div class="text-center p-6 bg-green-50 rounded-lg">
               <div class="text-4xl font-bold text-green-600 mb-2">5.2%</div>
-              <p class="text-gray-600">Year-over-Year Appreciation</p>
+              <p class="text-hsb-muted">Year-over-Year Appreciation</p>
             </div>
             <div class="text-center p-6 bg-purple-50 rounded-lg">
               <div class="text-4xl font-bold text-purple-600 mb-2">28</div>
-              <p class="text-gray-600">Days on Market Average</p>
+              <p class="text-hsb-muted">Days on Market Average</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-hsb-dark mb-4">
               Frequently Asked Questions
             </h2>
-            <p class="text-xl text-gray-600">
+            <p class="text-xl text-hsb-muted">
               Everything you need to know about buying a home in Stonebridge, Summerlin.
             </p>
           </div>
@@ -494,7 +461,7 @@ export default component$(() => {
               <h3 class="text-xl font-semibold mb-3">
                 What types of homes are available in Stonebridge?
               </h3>
-              <p class="text-gray-600">
+              <p class="text-hsb-muted">
                 Stonebridge offers three distinct home collections: Cromwell (1,232-1,456 sq ft),
                 Stirling (1,456-2,100 sq ft), and Evander (2,100-2,873 sq ft). All homes feature
                 single-story living with luxury finishes and resort-style amenities.
@@ -503,7 +470,7 @@ export default component$(() => {
 
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="text-xl font-semibold mb-3">Is Stonebridge a gated community?</h3>
-              <p class="text-gray-600">
+              <p class="text-hsb-muted">
                 Yes, Stonebridge is a fully gated community with 24/7 security and controlled
                 access. This ensures privacy and peace of mind for all residents.
               </p>
@@ -513,7 +480,7 @@ export default component$(() => {
               <h3 class="text-xl font-semibold mb-3">
                 What amenities are included in Stonebridge?
               </h3>
-              <p class="text-gray-600">
+              <p class="text-hsb-muted">
                 Residents enjoy access to a clubhouse, swimming pools, fitness center, pickleball
                 courts, walking trails, parks, and gardens. The community is designed for active
                 adult living with resort-style amenities.
@@ -524,7 +491,7 @@ export default component$(() => {
               <h3 class="text-xl font-semibold mb-3">
                 How close is Stonebridge to Red Rock Canyon?
               </h3>
-              <p class="text-gray-600">
+              <p class="text-hsb-muted">
                 Stonebridge is located just 12 miles from Red Rock Canyon National Conservation
                 Area, making it easy to enjoy hiking, rock climbing, and scenic drives in this
                 natural wonder.
@@ -533,7 +500,7 @@ export default component$(() => {
 
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="text-xl font-semibold mb-3">What is the HOA fee for Stonebridge homes?</h3>
-              <p class="text-gray-600">
+              <p class="text-hsb-muted">
                 The HOA fee for Stonebridge homes is approximately $410 per month, which includes
                 maintenance of common areas, security, and access to all community amenities.
               </p>
@@ -543,12 +510,12 @@ export default component$(() => {
       </section>
 
       {/* CTA Section */}
-      <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+      <section class="py-16 bg-hsb-dark text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-6">
             Ready to Find Your Dream Home in Stonebridge?
           </h2>
-          <p class="text-xl text-blue-100 mb-8">
+          <p class="text-xl text-hsb-sand mb-8">
             Let Dr. Jan Duffy help you discover the perfect home in Stonebridge, Summerlin. With
             years of experience and local expertise, she'll guide you through every step of the home
             buying process.
@@ -558,7 +525,7 @@ export default component$(() => {
               href="http://drjanduffy.realscout.com/onboarding"
               target="_blank"
               rel="noopener"
-              class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl inline-block text-center"
+              class="bg-hsb-primary text-white px-8 py-4 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl inline-block text-center"
             >
               Schedule Private Tour
             </a>
@@ -570,7 +537,7 @@ export default component$(() => {
             </a>
           </div>
           <div class="mt-8 text-center">
-            <p class="text-blue-200 text-sm">
+            <p class="text-hsb-sand text-sm">
               <strong>Address:</strong> Crossbridge Dr, Las Vegas, NV 89138
               <br />
               <strong>Neighborhood:</strong> Summerlin West, Stonebridge Community

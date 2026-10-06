@@ -1,8 +1,8 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { HeroPhoto } from "~/components/community/HeroPhoto";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
+import { InteriorHero } from "~/components/community/InteriorHero";
 
 export const head: DocumentHead = {
   title: "Affordable 55+ Communities in Las Vegas | Budget-Friendly Active Adult Living - Dr. Jan Duffy",
@@ -165,70 +165,54 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white py-20 overflow-hidden">
-        <HeroPhoto />
-        <div class="absolute inset-0 bg-black opacity-20"></div>
-        <div class="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            Affordable 55+ Communities in Las Vegas
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Discover budget-friendly active adult living options in Las Vegas with quality amenities and vibrant social scenes
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-green-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-100 transition-colors shadow-lg inline-block text-center">
-              Find Affordable Communities
-            </a>
-            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-800 transition-colors shadow-lg inline-block text-center">
-              Call (702) 789-6561
-            </a>
-          </div>
-        </div>
-      </section>
+      <InteriorHero
+        title="Affordable 55+ Communities in Las Vegas"
+        lede="Discover budget-friendly active adult living options in Las Vegas with quality amenities and vibrant social scenes"
+      />
       <OfficeListingsBelowHero />
 
       {/* Affordable Options Overview */}
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Budget-Friendly 55+ Living Options</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Budget-Friendly 55+ Living Options</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Las Vegas offers several affordable 55+ communities that provide quality amenities and active adult lifestyle without breaking the budget.
             </p>
           </div>
           
           <div class="grid md:grid-cols-3 gap-8 mb-12">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Price Range</h3>
-              <p class="text-gray-600">$300,000 - $500,000 for quality 55+ communities with essential amenities</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Price Range</h3>
+              <p class="text-hsb-muted">$300,000 - $500,000 for quality 55+ communities with essential amenities</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Value Features</h3>
-              <p class="text-gray-600">Clubhouses, pools, fitness centers, and social activities included</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Value Features</h3>
+              <p class="text-hsb-muted">Clubhouses, pools, fitness centers, and social activities included</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Financing Options</h3>
-              <p class="text-gray-600">Traditional mortgages, FHA, VA loans, and specialized programs available</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Financing Options</h3>
+              <p class="text-hsb-muted">Traditional mortgages, FHA, VA loans, and specialized programs available</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Affordable Communities */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Affordable 55+ Communities</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Featured Affordable 55+ Communities</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Explore Las Vegas's most affordable active adult communities offering quality amenities at budget-friendly prices.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Heritage at Stonebridge</h3>
-              <p class="text-gray-600 mb-4">Starting at $464,990 - New construction with Lennar Everything's Included® features</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Heritage at Stonebridge</h3>
+              <p class="text-hsb-muted mb-4">Starting at $464,990 - New construction with Lennar Everything's Included® features</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• 8,000 sq ft clubhouse</li>
                 <li>• Resort-style pool & spa</li>
                 <li>• Pickleball & bocce courts</li>
@@ -238,9 +222,9 @@ export default component$(() => {
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Del Webb Communities</h3>
-              <p class="text-gray-600 mb-4">Various price points - Established communities with proven amenities</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Del Webb Communities</h3>
+              <p class="text-hsb-muted mb-4">Various price points - Established communities with proven amenities</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Golf course communities</li>
                 <li>• Fitness centers</li>
                 <li>• Social clubs</li>
@@ -250,9 +234,9 @@ export default component$(() => {
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Sun City Resale</h3>
-              <p class="text-gray-600 mb-4">$350,000+ — resale homes with mature amenities</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Sun City Resale</h3>
+              <p class="text-hsb-muted mb-4">$350,000+ — resale homes with mature amenities</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Mature landscaping</li>
                 <li>• Established amenities</li>
                 <li>• Active social scene</li>
@@ -268,16 +252,16 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Tips for Finding Affordable 55+ Communities</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Tips for Finding Affordable 55+ Communities</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Expert advice for finding quality 55+ communities that fit your budget without compromising on lifestyle.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Budget Planning</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Budget Planning</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
                   Consider total monthly costs including HOA fees
@@ -297,9 +281,9 @@ export default component$(() => {
               </ul>
             </div>
             
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Financing Strategies</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Financing Strategies</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
                   Explore FHA loans for lower down payments
@@ -325,7 +309,7 @@ export default component$(() => {
       {/* RealScout Widgets */}
 
       {/* Call to Action */}
-      <section class="bg-gradient-to-br from-green-600 to-green-800 py-16">
+      <section class="bg-hsb-dark py-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
           <h2 class="text-3xl font-bold text-white mb-4">Ready to Find Your Affordable 55+ Community?</h2>
           <p class="text-lg text-green-100 mb-8 max-w-2xl mx-auto">

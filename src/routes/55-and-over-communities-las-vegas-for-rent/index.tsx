@@ -1,8 +1,8 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { HeroPhoto } from "~/components/community/HeroPhoto";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
+import { InteriorHero } from "~/components/community/InteriorHero";
 
 export const head: DocumentHead = {
   title: "55+ Communities in Las Vegas for Rent | Active Adult Rental Homes - Dr. Jan Duffy",
@@ -165,70 +165,54 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 overflow-hidden">
-        <HeroPhoto />
-        <div class="absolute inset-0 bg-black opacity-20"></div>
-        <div class="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            55+ Communities in Las Vegas for Rent
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Discover active adult rental homes with access to community amenities, social activities, and maintenance-free living
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-teal-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-100 transition-colors shadow-lg inline-block text-center">
-              Find Rental Homes
-            </a>
-            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-800 transition-colors shadow-lg inline-block text-center">
-              Call (702) 789-6561
-            </a>
-          </div>
-        </div>
-      </section>
+      <InteriorHero
+        title="55+ Communities in Las Vegas for Rent"
+        lede="Discover active adult rental homes with access to community amenities, social activities, and maintenance-free living"
+      />
       <OfficeListingsBelowHero />
 
       {/* Rental Market Overview */}
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">55+ Community Rental Market</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">55+ Community Rental Market</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Las Vegas offers rental opportunities in various 55+ communities, allowing you to experience active adult living before committing to purchase.
             </p>
           </div>
           
           <div class="grid md:grid-cols-3 gap-8 mb-12">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Rental Availability</h3>
-              <p class="text-gray-600">Limited but available rental homes in established 55+ communities with owner-occupied properties</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Rental Availability</h3>
+              <p class="text-hsb-muted">Limited but available rental homes in established 55+ communities with owner-occupied properties</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Amenity Access</h3>
-              <p class="text-gray-600">Renters typically have access to community amenities, pools, fitness centers, and social activities</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Amenity Access</h3>
+              <p class="text-hsb-muted">Renters typically have access to community amenities, pools, fitness centers, and social activities</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Flexible Terms</h3>
-              <p class="text-gray-600">Various lease terms available, from short-term rentals to annual leases with renewal options</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Flexible Terms</h3>
+              <p class="text-hsb-muted">Various lease terms available, from short-term rentals to annual leases with renewal options</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Communities with Rental Options */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Communities with Rental Options</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Communities with Rental Options</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Explore 55+ communities in Las Vegas that offer rental opportunities for active adults.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Sun City Summerlin</h3>
-              <p class="text-gray-600 mb-4">Occasional rental homes available from owners</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Sun City Summerlin</h3>
+              <p class="text-hsb-muted mb-4">Occasional rental homes available from owners</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Multiple golf courses</li>
                 <li>• Recreation centers</li>
                 <li>• Active social scene</li>
@@ -237,13 +221,13 @@ export default component$(() => {
                 <li>• Owner rentals available</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$2,500 - $4,500/month</div>
-              <a href="/sun-city-summerlin-rentals" class="text-teal-600 hover:text-teal-800 font-semibold">View Rental Options →</a>
+              <a href="/sun-city-summerlin-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View Rental Options →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Del Webb Communities</h3>
-              <p class="text-gray-600 mb-4">Various Del Webb communities with rental homes from individual owners</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Del Webb Communities</h3>
+              <p class="text-hsb-muted mb-4">Various Del Webb communities with rental homes from individual owners</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Quality construction</li>
                 <li>• Active lifestyle focus</li>
                 <li>• Social activities</li>
@@ -252,13 +236,13 @@ export default component$(() => {
                 <li>• Owner rental policies</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$2,000 - $5,000/month</div>
-              <a href="/del-webb-rentals" class="text-teal-600 hover:text-teal-800 font-semibold">View Del Webb Rentals →</a>
+              <a href="/del-webb-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View Del Webb Rentals →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Siena</h3>
-              <p class="text-gray-600 mb-4">Luxury community with occasional rental homes from owners</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Siena</h3>
+              <p class="text-hsb-muted mb-4">Luxury community with occasional rental homes from owners</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Tuscan-inspired architecture</li>
                 <li>• Resort-style amenities</li>
                 <li>• Wine cellar & tasting room</li>
@@ -267,13 +251,13 @@ export default component$(() => {
                 <li>• Private social clubs</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$3,500 - $6,000/month</div>
-              <a href="/siena-rentals" class="text-teal-600 hover:text-teal-800 font-semibold">View Siena Rentals →</a>
+              <a href="/siena-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View Siena Rentals →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Red Rock Country Club</h3>
-              <p class="text-gray-600 mb-4">Exclusive golf course community with limited rental opportunities</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Red Rock Country Club</h3>
+              <p class="text-hsb-muted mb-4">Exclusive golf course community with limited rental opportunities</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Private golf course</li>
                 <li>• Country club membership</li>
                 <li>• Luxury amenities</li>
@@ -282,13 +266,13 @@ export default component$(() => {
                 <li>• Limited rental availability</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$4,000 - $8,000/month</div>
-              <a href="/red-rock-country-club-rentals" class="text-teal-600 hover:text-teal-800 font-semibold">View Country Club Rentals →</a>
+              <a href="/red-rock-country-club-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View Country Club Rentals →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">MacDonald Ranch</h3>
-              <p class="text-gray-600 mb-4">Henderson luxury community with occasional rental homes</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">MacDonald Ranch</h3>
+              <p class="text-hsb-muted mb-4">Henderson luxury community with occasional rental homes</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Custom luxury homes</li>
                 <li>• Golf course access</li>
                 <li>• Private amenities</li>
@@ -297,13 +281,13 @@ export default component$(() => {
                 <li>• High-end finishes</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$3,000 - $7,000/month</div>
-              <a href="/macdonald-ranch-rentals" class="text-teal-600 hover:text-teal-800 font-semibold">View MacDonald Ranch Rentals →</a>
+              <a href="/macdonald-ranch-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View MacDonald Ranch Rentals →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Seven Hills</h3>
-              <p class="text-gray-600 mb-4">Gated luxury community with limited rental opportunities</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Seven Hills</h3>
+              <p class="text-hsb-muted mb-4">Gated luxury community with limited rental opportunities</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Gated community</li>
                 <li>• Custom estates</li>
                 <li>• Mountain views</li>
@@ -312,7 +296,7 @@ export default component$(() => {
                 <li>• Luxury finishes</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$3,500 - $8,000/month</div>
-              <a href="/seven-hills-rentals" class="text-teal-600 hover:text-teal-800 font-semibold">View Seven Hills Rentals →</a>
+              <a href="/seven-hills-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View Seven Hills Rentals →</a>
             </div>
           </div>
         </div>
@@ -322,16 +306,16 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Important Rental Considerations</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Important Rental Considerations</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Understanding rental policies, costs, and requirements helps ensure a successful rental experience in 55+ communities.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Rental Policies</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Rental Policies</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-teal-600 rounded-full mr-3"></span>
                   Age restrictions (55+ requirement)
@@ -351,9 +335,9 @@ export default component$(() => {
               </ul>
             </div>
             
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Cost Considerations</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Cost Considerations</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
                   Monthly rent and security deposits
@@ -379,17 +363,17 @@ export default component$(() => {
       {/* RealScout Widgets */}
 
       {/* Call to Action */}
-      <section class="bg-gradient-to-br from-teal-600 to-teal-800 py-16">
+      <section class="bg-hsb-dark py-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
           <h2 class="text-3xl font-bold text-white mb-4">Ready to Find Your Perfect Rental?</h2>
           <p class="text-lg text-teal-100 mb-8 max-w-2xl mx-auto">
             Let Dr. Jan Duffy help you find the ideal 55+ community rental in Las Vegas with access to amenities and active adult lifestyle.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-teal-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-100 transition-colors shadow-lg inline-block text-center">
+            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-hsb-dark px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-100 transition-colors shadow-lg inline-block text-center">
               Start Your Search
             </a>
-            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-800 transition-colors shadow-lg inline-block text-center">
+            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-hsb-dark transition-colors shadow-lg inline-block text-center">
               Call (702) 789-6561
             </a>
           </div>

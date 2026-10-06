@@ -1,15 +1,15 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { HeroPhoto } from "~/components/community/HeroPhoto";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
+import { InteriorHero } from "~/components/community/InteriorHero";
 
 export const head: DocumentHead = {
   title: "About Dr. Jan Duffy - Las Vegas Real Estate Expert | Heritage at Stonebridge",
   meta: [
     {
       name: "description",
-      content: "Meet Dr. Jan Duffy, licensed Nevada real estate professional with doctorate degree and 500+ successful transactions. Expert in Las Vegas luxury market, 55+ communities, and Heritage at Stonebridge.",
+      content: "Meet Dr. Jan Duffy, licensed Nevada real estate professional with doctorate degree and Nevada license S.0197614.LLC. Expert in Las Vegas luxury market, 55+ communities, and Heritage at Stonebridge.",
     },
     {
       property: "og:title",
@@ -17,7 +17,7 @@ export const head: DocumentHead = {
     },
     {
       property: "og:description",
-      content: "Meet Dr. Jan Duffy, licensed Nevada real estate professional with doctorate degree and 500+ successful transactions. Expert in Las Vegas luxury market and 55+ communities.",
+      content: "Meet Dr. Jan Duffy, licensed Nevada real estate professional with doctorate degree and Nevada license S.0197614.LLC. Expert in Las Vegas luxury market and 55+ communities.",
     },
     {
       property: "og:type",
@@ -41,7 +41,7 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:description",
-      content: "Meet Dr. Jan Duffy, licensed Nevada real estate professional with doctorate degree and 500+ successful transactions.",
+      content: "Meet Dr. Jan Duffy, licensed Nevada real estate professional with doctorate degree and Nevada license S.0197614.LLC.",
     },
     {
       name: "robots",
@@ -76,7 +76,7 @@ export default component$(() => {
         "givenName": "Jan",
         "familyName": "Duffy",
         "jobTitle": "Real Estate Agent",
-        "description": "Licensed Nevada real estate professional with doctorate degree and 500+ successful transactions. Expert in Las Vegas luxury market, investment properties, Heritage at Stonebridge, and first-time homebuyer programs.",
+        "description": "Licensed Nevada real estate professional with doctorate degree and Nevada license S.0197614.LLC. Expert in Las Vegas luxury market, investment properties, Heritage at Stonebridge, and first-time homebuyer programs.",
         "image": {
           "@type": "ImageObject",
           "url": "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/fc4911a4-7842-470b-a54d-4589039a2a00/tablet",
@@ -172,13 +172,8 @@ export default component$(() => {
         "award": [
           {
             "@type": "Award",
-            "name": "500+ Successful Transactions",
-            "description": "Over 500 successful real estate transactions completed"
-          },
-          {
-            "@type": "Award",
             "name": "Heritage at Stonebridge Specialist",
-            "description": "Recognized expert in Heritage at Stonebridge community"
+            "description": "Works Heritage at Stonebridge in Summerlin West"
           }
         ],
         "memberOf": [
@@ -220,7 +215,7 @@ export default component$(() => {
             "name": "What is Dr. Jan Duffy's background in real estate?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Dr. Jan Duffy is a licensed Nevada real estate professional with a doctorate degree and over 500 successful transactions. She specializes in Las Vegas luxury market, 55+ communities, and is an expert in Heritage at Stonebridge community."
+              "text": "Dr. Jan Duffy is a licensed Nevada real estate professional with a doctorate degree and Nevada license S.0197614.LLC. She specializes in Las Vegas luxury market, 55+ communities, and is an expert in Heritage at Stonebridge community."
             }
           },
           {
@@ -236,7 +231,7 @@ export default component$(() => {
             "name": "What makes Dr. Jan Duffy qualified to help with Heritage at Stonebridge?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Dr. Jan Duffy is a recognized Heritage at Stonebridge specialist with deep knowledge of the community, its amenities, home collections, and market trends. Her doctorate degree and 500+ successful transactions demonstrate her expertise and analytical approach to real estate."
+              "text": "Dr. Jan Duffy is a recognized Heritage at Stonebridge specialist with deep knowledge of the community, its amenities, home collections, and market trends. Her doctorate degree and Nevada license S.0197614.LLC demonstrate her expertise and analytical approach to real estate."
             }
           },
           {
@@ -283,22 +278,10 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 overflow-hidden">
-        <HeroPhoto />
-        <div class="absolute inset-0 bg-black opacity-40"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            About Dr. Jan Duffy
-          </h1>
-          <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto">
-            Licensed Nevada Real Estate Professional with Doctorate Degree and 500+ Successful Transactions
-          </p>
-          <p class="text-lg text-blue-200 max-w-4xl mx-auto mb-8">
-            Expert in Las Vegas luxury market, Heritage at Stonebridge specialist, and 55+ community expert. 
-            Your trusted guide to finding the perfect home in Summerlin, Henderson, and Red Rock Canyon areas.
-          </p>
-        </div>
-      </section>
+      <InteriorHero
+        title="About Dr. Jan Duffy"
+        lede="Nevada real estate license S.0197614.LLC. Berkshire Hathaway HomeServices Nevada Properties. She works Heritage at Stonebridge in Summerlin West."
+      />
       <OfficeListingsBelowHero />
 
       {/* Professional Background */}
@@ -306,13 +289,13 @@ export default component$(() => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 class="text-3xl md:text-4xl font-bold text-hsb-dark mb-6">
                 Professional Excellence & Expertise
               </h2>
-              <p class="text-lg text-gray-600 mb-6">
+              <p class="text-lg text-hsb-text mb-6">
                 Dr. Jan Duffy brings a unique combination of advanced education, extensive experience, 
                 and specialized knowledge to every real estate transaction. With a doctorate degree 
-                and over 500 successful transactions, she provides unparalleled expertise in the 
+                and Nevada license S.0197614.LLC, she provides unparalleled expertise in the 
                 Las Vegas luxury market.
               </p>
               <div class="space-y-4">
@@ -321,8 +304,8 @@ export default component$(() => {
                     <span class="text-blue-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Doctorate Degree</h3>
-                    <p class="text-gray-600">Advanced analytical skills and research-based approach to real estate</p>
+                    <h3 class="text-xl font-semibold text-hsb-dark mb-2">Doctorate Degree</h3>
+                    <p class="text-hsb-muted">Advanced analytical skills and research-based approach to real estate</p>
                   </div>
                 </div>
                 <div class="flex items-start">
@@ -330,8 +313,8 @@ export default component$(() => {
                     <span class="text-blue-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">500+ Successful Transactions</h3>
-                    <p class="text-gray-600">Proven track record of successful real estate transactions</p>
+                    <h3 class="font-display text-xl text-hsb-dark mb-2">Nevada license S.0197614.LLC</h3>
+                    <p class="text-hsb-muted">Berkshire Hathaway HomeServices Nevada Properties</p>
                   </div>
                 </div>
                 <div class="flex items-start">
@@ -339,8 +322,8 @@ export default component$(() => {
                     <span class="text-blue-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Heritage at Stonebridge Specialist</h3>
-                    <p class="text-gray-600">Recognized expert in Heritage at Stonebridge community</p>
+                    <h3 class="text-xl font-semibold text-hsb-dark mb-2">Heritage at Stonebridge Specialist</h3>
+                    <p class="text-hsb-muted">Recognized expert in Heritage at Stonebridge community</p>
                   </div>
                 </div>
                 <div class="flex items-start">
@@ -348,19 +331,19 @@ export default component$(() => {
                     <span class="text-blue-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">55+ Community Expert</h3>
-                    <p class="text-gray-600">Specialized knowledge of active adult communities and lifestyle</p>
+                    <h3 class="text-xl font-semibold text-hsb-dark mb-2">55+ Community Expert</h3>
+                    <p class="text-hsb-muted">Specialized knowledge of active adult communities and lifestyle</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg">
+            <div class="bg-hsb-sand p-8 rounded-lg">
               <div class="text-center">
                 <div class="w-48 h-48 bg-blue-200 rounded-full mx-auto mb-6 flex items-center justify-center">
                   <span class="text-6xl text-blue-600">👩‍💼</span>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Dr. Jan Duffy</h3>
-                <p class="text-lg text-gray-600 mb-4">Licensed Nevada Real Estate Professional</p>
+                <h3 class="font-display text-2xl text-hsb-dark mb-4">Dr. Jan Duffy</h3>
+                <p class="text-lg text-hsb-text mb-4">Licensed Nevada Real Estate Professional</p>
                 <div class="space-y-2 text-sm text-gray-500">
                   <p><strong>License:</strong> S.0197614.LLC</p>
                   <p><strong>Phone:</strong> (702) 789-6561</p>
@@ -374,13 +357,13 @@ export default component$(() => {
       </section>
 
       {/* Specializations */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-hsb-dark mb-4">
               Areas of Expertise
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p class="text-xl text-hsb-muted max-w-3xl mx-auto">
               Dr. Jan Duffy specializes in multiple areas of Las Vegas real estate, 
               providing comprehensive expertise for every type of buyer and seller.
             </p>
@@ -390,11 +373,8 @@ export default component$(() => {
             {/* Heritage at Stonebridge */}
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <div class="text-center">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl">🏘️</span>
-                </div>
                 <h3 class="text-xl font-semibold mb-3">Heritage at Stonebridge</h3>
-                <p class="text-gray-600">
+                <p class="text-hsb-muted">
                   Recognized specialist in Heritage at Stonebridge community with deep knowledge 
                   of home collections, amenities, and market trends.
                 </p>
@@ -404,11 +384,8 @@ export default component$(() => {
             {/* 55+ Communities */}
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <div class="text-center">
-                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl">👥</span>
-                </div>
                 <h3 class="text-xl font-semibold mb-3">55+ Communities</h3>
-                <p class="text-gray-600">
+                <p class="text-hsb-muted">
                   Expert in active adult living communities throughout Las Vegas, 
                   Summerlin, and Henderson areas.
                 </p>
@@ -418,11 +395,8 @@ export default component$(() => {
             {/* Luxury Properties */}
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <div class="text-center">
-                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl">💎</span>
-                </div>
                 <h3 class="text-xl font-semibold mb-3">Luxury Properties</h3>
-                <p class="text-gray-600">
+                <p class="text-hsb-muted">
                   Specialized knowledge of luxury homes, gated communities, 
                   and high-end properties in Las Vegas market.
                 </p>
@@ -432,11 +406,8 @@ export default component$(() => {
             {/* Red Rock Canyon */}
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <div class="text-center">
-                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl">🏔️</span>
-                </div>
                 <h3 class="text-xl font-semibold mb-3">Red Rock Canyon</h3>
-                <p class="text-gray-600">
+                <p class="text-hsb-muted">
                   Expert in properties near Red Rock Canyon with stunning mountain views 
                   and natural beauty.
                 </p>
@@ -446,11 +417,8 @@ export default component$(() => {
             {/* Investment Properties */}
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <div class="text-center">
-                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl">📈</span>
-                </div>
                 <h3 class="text-xl font-semibold mb-3">Investment Properties</h3>
-                <p class="text-gray-600">
+                <p class="text-hsb-muted">
                   Advanced market analysis and investment consulting for 
                   buyers seeking profitable real estate opportunities.
                 </p>
@@ -460,11 +428,8 @@ export default component$(() => {
             {/* First-Time Buyers */}
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <div class="text-center">
-                <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl">🏠</span>
-                </div>
                 <h3 class="text-xl font-semibold mb-3">First-Time Buyers</h3>
-                <p class="text-gray-600">
+                <p class="text-hsb-muted">
                   Patient guidance and education for first-time homebuyers 
                   navigating the Las Vegas real estate market.
                 </p>
@@ -478,10 +443,10 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-hsb-dark mb-4">
               Service Areas
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p class="text-xl text-hsb-muted max-w-3xl mx-auto">
               Dr. Jan Duffy serves clients throughout the Las Vegas metropolitan area 
               with specialized expertise in premier communities and neighborhoods.
             </p>
@@ -489,32 +454,32 @@ export default component$(() => {
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="text-center p-6 bg-blue-50 rounded-lg">
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Las Vegas</h3>
-              <p class="text-gray-600">Complete Las Vegas metropolitan area coverage</p>
+              <h3 class="text-xl font-semibold text-hsb-dark mb-2">Las Vegas</h3>
+              <p class="text-hsb-muted">Complete Las Vegas metropolitan area coverage</p>
             </div>
             <div class="text-center p-6 bg-green-50 rounded-lg">
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Summerlin</h3>
-              <p class="text-gray-600">Premier master-planned community specialist</p>
+              <h3 class="text-xl font-semibold text-hsb-dark mb-2">Summerlin</h3>
+              <p class="text-hsb-muted">Premier master-planned community specialist</p>
             </div>
             <div class="text-center p-6 bg-purple-50 rounded-lg">
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Henderson</h3>
-              <p class="text-gray-600">Established neighborhoods and new construction</p>
+              <h3 class="text-xl font-semibold text-hsb-dark mb-2">Henderson</h3>
+              <p class="text-hsb-muted">Established neighborhoods and new construction</p>
             </div>
             <div class="text-center p-6 bg-orange-50 rounded-lg">
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Red Rock Canyon</h3>
-              <p class="text-gray-600">Properties with stunning mountain views</p>
+              <h3 class="text-xl font-semibold text-hsb-dark mb-2">Red Rock Canyon</h3>
+              <p class="text-hsb-muted">Properties with stunning mountain views</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+      <section class="py-16 bg-hsb-dark text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-6">
             Ready to Work with Dr. Jan Duffy?
           </h2>
-          <p class="text-xl text-blue-100 mb-8">
+          <p class="text-xl text-hsb-sand mb-8">
             Experience the difference that advanced education, extensive experience, 
             and specialized expertise can make in your real estate journey. 
             Dr. Jan Duffy is ready to help you achieve your real estate goals.
@@ -522,7 +487,7 @@ export default component$(() => {
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:702-789-6561"
-              class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl inline-block text-center"
+              class="inline-block rounded-full bg-hsb-primary px-8 py-4 text-center font-semibold text-white hover:bg-hsb-primary-dark"
             >
               Call (702) 789-6561
             </a>
@@ -534,7 +499,7 @@ export default component$(() => {
             </a>
           </div>
           <div class="mt-8 text-center">
-            <p class="text-blue-200 text-sm">
+            <p class="text-hsb-sand text-sm">
               <strong>Nevada Real Estate License:</strong> S.0197614.LLC
               <br />
               <strong>Office:</strong> Crossbridge Dr, Las Vegas, NV 89138

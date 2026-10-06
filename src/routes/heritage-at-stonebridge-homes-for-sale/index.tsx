@@ -1,8 +1,8 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { HeroPhoto } from "~/components/community/HeroPhoto";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
+import { InteriorHero } from "~/components/community/InteriorHero";
 
 export const head: DocumentHead = {
   title: "Heritage at Stonebridge Homes for Sale | 55+ Summerlin 89138",
@@ -110,7 +110,7 @@ export default component$(() => {
             "value": "Secure gated entrance with RV parking"
           }
         ],
-        "numberOfUnits": "500+",
+        "numberOfUnits": "421",
         "priceRange": "$464,990-$1,200,000",
         "developer": {
           "@type": "Organization",
@@ -236,70 +236,54 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-red-900 via-red-800 to-red-700 text-white py-20 overflow-hidden">
-        <HeroPhoto />
-        <div class="absolute inset-0 bg-black opacity-20"></div>
-        <div class="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            Heritage at Stonebridge Homes for Sale
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Discover Lennar's premier 55+ community in Summerlin West with Everything's Included® features and stunning Red Rock Canyon views
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-red-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-100 transition-colors shadow-lg inline-block text-center">
-              View Available Homes
-            </a>
-            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red-800 transition-colors shadow-lg inline-block text-center">
-              Call Dr. Jan (702) 789-6561
-            </a>
-          </div>
-        </div>
-      </section>
+      <InteriorHero
+        title="Heritage at Stonebridge Homes for Sale"
+        lede="Discover Lennar's premier 55+ community in Summerlin West with Everything's Included® features and stunning Red Rock Canyon views"
+      />
       <OfficeListingsBelowHero />
 
       {/* Current Market Insight */}
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Current Heritage at Stonebridge Market Update</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Current Heritage at Stonebridge Market Update</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               As Las Vegas's premier 55+ community specialist, I'm seeing unprecedented demand for Heritage at Stonebridge homes. Here's what you need to know about today's market.
             </p>
           </div>
           
           <div class="grid md:grid-cols-3 gap-8 mb-12">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Current Pricing</h3>
-              <p class="text-gray-600">Starting from $464,990 for Cromwell collection homes with Everything's Included® features</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Current Pricing</h3>
+              <p class="text-hsb-muted">Starting from $464,990 for Cromwell collection homes with Everything's Included® features</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Market Demand</h3>
-              <p class="text-gray-600">High demand with limited inventory - homes selling quickly in this premier location</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Market Demand</h3>
+              <p class="text-hsb-muted">High demand with limited inventory - homes selling quickly in this premier location</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Investment Potential</h3>
-              <p class="text-gray-600">Strong appreciation potential in Summerlin West with Red Rock Canyon proximity</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Investment Potential</h3>
+              <p class="text-hsb-muted">Strong appreciation potential in Summerlin West with Red Rock Canyon proximity</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Home Collections */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Heritage at Stonebridge Home Collections</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Heritage at Stonebridge Home Collections</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Choose from three distinct home collections, each designed with active adult living in mind and featuring Lennar's Everything's Included® package.
             </p>
           </div>
           
           <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Cromwell Collection</h3>
-              <p class="text-gray-600 mb-4">Starting at $464,990 - Perfect for active adults seeking modern comfort</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Cromwell Collection</h3>
+              <p class="text-hsb-muted mb-4">Starting at $464,990 - Perfect for active adults seeking modern comfort</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• 1,500-2,000 sq ft single-story homes</li>
                 <li>• Open concept living areas</li>
                 <li>• Master suite with walk-in closet</li>
@@ -311,9 +295,9 @@ export default component$(() => {
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Stirling Collection</h3>
-              <p class="text-gray-600 mb-4">Mid-range pricing - Enhanced features and larger layouts</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Stirling Collection</h3>
+              <p class="text-hsb-muted mb-4">Mid-range pricing - Enhanced features and larger layouts</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• 1,800-2,400 sq ft single-story homes</li>
                 <li>• Expanded living spaces</li>
                 <li>• Upgraded finishes</li>
@@ -325,9 +309,9 @@ export default component$(() => {
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Evander Collection</h3>
-              <p class="text-gray-600 mb-4">Premium pricing - Luxury features and maximum space</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Evander Collection</h3>
+              <p class="text-hsb-muted mb-4">Premium pricing - Luxury features and maximum space</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• 2,200-2,800 sq ft single-story homes</li>
                 <li>• Spacious great rooms</li>
                 <li>• Luxury master suite</li>
@@ -345,16 +329,16 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Lennar's Everything's Included® Package</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Lennar's Everything's Included® Package</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Heritage at Stonebridge homes come with Lennar's Everything's Included® package, providing premium features at no additional cost.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Kitchen & Living Features</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Kitchen & Living Features</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
                   Granite countertops throughout
@@ -374,9 +358,9 @@ export default component$(() => {
               </ul>
             </div>
             
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Smart Home Technology</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Smart Home Technology</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
                   Smart thermostat included
@@ -400,46 +384,34 @@ export default component$(() => {
       </section>
 
       {/* Community Amenities */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Heritage at Stonebridge Amenities</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Heritage at Stonebridge Amenities</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Experience resort-style living with world-class amenities designed for active adults in the heart of Summerlin West.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl">🏢</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">8,000 Sq Ft Clubhouse</h3>
-              <p class="text-gray-600">State-of-the-art clubhouse with fitness center, social spaces, and meeting rooms</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">8,000 Sq Ft Clubhouse</h3>
+              <p class="text-hsb-muted">State-of-the-art clubhouse with fitness center, social spaces, and meeting rooms</p>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl">🏊</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Resort-Style Pool</h3>
-              <p class="text-gray-600">Main pool and heated lap pool for year-round swimming and relaxation</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Resort-Style Pool</h3>
+              <p class="text-hsb-muted">Main pool and heated lap pool for year-round swimming and relaxation</p>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl">🎾</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Sports Courts</h3>
-              <p class="text-gray-600">Pickleball and bocce courts for active recreation and social activities</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Sports Courts</h3>
+              <p class="text-hsb-muted">Pickleball and bocce courts for active recreation and social activities</p>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl">🏔️</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Red Rock Canyon Views</h3>
-              <p class="text-gray-600">Stunning mountain views of Red Rock Canyon National Conservation Area</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Red Rock Canyon Views</h3>
+              <p class="text-hsb-muted">Stunning mountain views of Red Rock Canyon National Conservation Area</p>
             </div>
           </div>
         </div>
@@ -449,16 +421,16 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Heritage at Stonebridge?</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Why Choose Heritage at Stonebridge?</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               As Las Vegas's leading 55+ community expert, I've helped hundreds of active adults find their perfect home. Here's why Heritage at Stonebridge stands out.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Prime Summerlin Location</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Prime Summerlin Location</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
                   Minutes from Red Rock Canyon National Conservation Area
@@ -478,9 +450,9 @@ export default component$(() => {
               </ul>
             </div>
             
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Active Adult Lifestyle</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Active Adult Lifestyle</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
                   Age-restricted community for 55+ residents
@@ -506,7 +478,7 @@ export default component$(() => {
       {/* RealScout Widgets */}
 
       {/* Call to Action */}
-      <section class="bg-gradient-to-br from-red-600 to-red-800 py-16">
+      <section class="bg-hsb-dark py-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
           <h2 class="text-3xl font-bold text-white mb-4">Ready to Find Your Heritage at Stonebridge Home?</h2>
           <p class="text-lg text-red-100 mb-8 max-w-2xl mx-auto">

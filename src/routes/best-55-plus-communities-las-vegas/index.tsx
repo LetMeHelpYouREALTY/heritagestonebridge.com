@@ -1,8 +1,8 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { HeroPhoto } from "~/components/community/HeroPhoto";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
+import { InteriorHero } from "~/components/community/InteriorHero";
 
 export const head: DocumentHead = {
   title: "Best 55+ Communities in Las Vegas | Top-Rated Active Adult Living - Dr. Jan Duffy",
@@ -165,61 +165,45 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 text-white py-20 overflow-hidden">
-        <HeroPhoto />
-        <div class="absolute inset-0 bg-black opacity-20"></div>
-        <div class="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            Best 55+ Communities in Las Vegas
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Discover the top-rated active adult communities with premier amenities, prime locations, and exceptional lifestyle options
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-purple-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-100 transition-colors shadow-lg inline-block text-center">
-              Explore Top Communities
-            </a>
-            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-800 transition-colors shadow-lg inline-block text-center">
-              Call (702) 789-6561
-            </a>
-          </div>
-        </div>
-      </section>
+      <InteriorHero
+        title="Best 55+ Communities in Las Vegas"
+        lede="Discover the top-rated active adult communities with premier amenities, prime locations, and exceptional lifestyle options"
+      />
       <OfficeListingsBelowHero />
 
       {/* Ranking Criteria */}
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">How We Rank the Best 55+ Communities</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">How We Rank the Best 55+ Communities</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Our comprehensive evaluation considers amenities, location, value, lifestyle, and resident satisfaction to identify Las Vegas's premier active adult communities.
             </p>
           </div>
           
           <div class="grid md:grid-cols-3 gap-8 mb-12">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Amenities & Facilities</h3>
-              <p class="text-gray-600">Quality and variety of recreational facilities, clubhouses, fitness centers, and social spaces</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Amenities & Facilities</h3>
+              <p class="text-hsb-muted">Quality and variety of recreational facilities, clubhouses, fitness centers, and social spaces</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Location & Access</h3>
-              <p class="text-gray-600">Proximity to shopping, dining, healthcare, entertainment, and transportation</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Location & Access</h3>
+              <p class="text-hsb-muted">Proximity to shopping, dining, healthcare, entertainment, and transportation</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Value & Investment</h3>
-              <p class="text-gray-600">Price-to-value ratio, HOA fees, resale potential, and overall cost of living</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Value & Investment</h3>
+              <p class="text-hsb-muted">Price-to-value ratio, HOA fees, resale potential, and overall cost of living</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Top-Rated Communities */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Top-Rated 55+ Communities in Las Vegas</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Top-Rated 55+ Communities in Las Vegas</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Based on comprehensive analysis of amenities, location, value, and resident satisfaction.
             </p>
           </div>
@@ -228,15 +212,15 @@ export default component$(() => {
             {/* #1 Heritage at Stonebridge */}
             <div class="bg-white p-8 rounded-lg shadow-lg">
               <div class="flex items-center mb-6">
-                <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-4 py-2 rounded-full font-bold text-lg mr-4">
+                <div class="bg-hsb-primary text-white px-4 py-2 rounded-full font-bold text-lg mr-4">
                   #1
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900">Heritage at Stonebridge</h3>
+                <h3 class="font-display text-2xl text-hsb-dark">Heritage at Stonebridge</h3>
               </div>
               <div class="grid md:grid-cols-2 gap-8">
                 <div>
-                  <p class="text-gray-600 mb-4">Lennar's premier 55+ community in Summerlin with Everything's Included® features and stunning Red Rock Canyon views.</p>
-                  <ul class="space-y-2 text-gray-600 mb-4">
+                  <p class="text-hsb-muted mb-4">Lennar's premier 55+ community in Summerlin with Everything's Included® features and stunning Red Rock Canyon views.</p>
+                  <ul class="space-y-2 text-hsb-muted mb-4">
                     <li>• Three home collections (Cromwell, Stirling, Evander)</li>
                     <li>• 8,000 sq ft clubhouse with fitness center</li>
                     <li>• Resort-style pool & heated lap pool</li>
@@ -246,9 +230,9 @@ export default component$(() => {
                   </ul>
                   <div class="text-lg font-bold text-purple-600 mb-4">Starting from $464,990</div>
                 </div>
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
-                  <h4 class="text-lg font-bold text-gray-900 mb-3">Why It's #1</h4>
-                  <ul class="space-y-2 text-gray-700">
+                <div class="bg-hsb-sand p-6 rounded-lg">
+                  <h4 class="text-lg font-bold text-hsb-dark mb-3">Why It's #1</h4>
+                  <ul class="space-y-2 text-hsb-text">
                     <li>✓ New construction with modern amenities</li>
                     <li>✓ Prime Summerlin location</li>
                     <li>✓ Red Rock Canyon views</li>
@@ -264,15 +248,15 @@ export default component$(() => {
             {/* #2 Sun City Summerlin */}
             <div class="bg-white p-8 rounded-lg shadow-lg">
               <div class="flex items-center mb-6">
-                <div class="bg-gradient-to-r from-gray-400 to-gray-500 text-white px-4 py-2 rounded-full font-bold text-lg mr-4">
+                <div class="bg-hsb-dark text-white px-4 py-2 rounded-full font-bold text-lg mr-4">
                   #2
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900">Sun City Summerlin</h3>
+                <h3 class="font-display text-2xl text-hsb-dark">Sun City Summerlin</h3>
               </div>
               <div class="grid md:grid-cols-2 gap-8">
                 <div>
-                  <p class="text-gray-600 mb-4">Established premier 55+ community with mature amenities, golf courses, and vibrant social scene.</p>
-                  <ul class="space-y-2 text-gray-600 mb-4">
+                  <p class="text-hsb-muted mb-4">Established premier 55+ community with mature amenities, golf courses, and vibrant social scene.</p>
+                  <ul class="space-y-2 text-hsb-muted mb-4">
                     <li>• Multiple golf courses</li>
                     <li>• Recreation centers and pools</li>
                     <li>• Extensive social clubs</li>
@@ -282,9 +266,9 @@ export default component$(() => {
                   </ul>
                   <div class="text-lg font-bold text-purple-600 mb-4">$500,000 - $1,500,000</div>
                 </div>
-                <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-lg">
-                  <h4 class="text-lg font-bold text-gray-900 mb-3">Why It's #2</h4>
-                  <ul class="space-y-2 text-gray-700">
+                <div class="bg-hsb-sand p-6 rounded-lg">
+                  <h4 class="text-lg font-bold text-hsb-dark mb-3">Why It's #2</h4>
+                  <ul class="space-y-2 text-hsb-text">
                     <li>✓ Established reputation</li>
                     <li>✓ Multiple golf courses</li>
                     <li>✓ Extensive amenities</li>
@@ -300,15 +284,15 @@ export default component$(() => {
             {/* #3 The Ridges */}
             <div class="bg-white p-8 rounded-lg shadow-lg">
               <div class="flex items-center mb-6">
-                <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-white px-4 py-2 rounded-full font-bold text-lg mr-4">
+                <div class="bg-hsb-primary text-white px-4 py-2 rounded-full font-bold text-lg mr-4">
                   #3
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900">The Ridges</h3>
+                <h3 class="font-display text-2xl text-hsb-dark">The Ridges</h3>
               </div>
               <div class="grid md:grid-cols-2 gap-8">
                 <div>
-                  <p class="text-gray-600 mb-4">Ultra-luxury 55+ community with custom estates, exclusive golf course access, and mountain views.</p>
-                  <ul class="space-y-2 text-gray-600 mb-4">
+                  <p class="text-hsb-muted mb-4">Ultra-luxury 55+ community with custom estates, exclusive golf course access, and mountain views.</p>
+                  <ul class="space-y-2 text-hsb-muted mb-4">
                     <li>• Custom luxury homes</li>
                     <li>• Exclusive golf course</li>
                     <li>• Mountain views</li>
@@ -318,9 +302,9 @@ export default component$(() => {
                   </ul>
                   <div class="text-lg font-bold text-purple-600 mb-4">$1,000,000 - $5,000,000+</div>
                 </div>
-                <div class="bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-lg">
-                  <h4 class="text-lg font-bold text-gray-900 mb-3">Why It's #3</h4>
-                  <ul class="space-y-2 text-gray-700">
+                <div class="bg-hsb-sand p-6 rounded-lg">
+                  <h4 class="text-lg font-bold text-hsb-dark mb-3">Why It's #3</h4>
+                  <ul class="space-y-2 text-hsb-text">
                     <li>✓ Ultra-luxury positioning</li>
                     <li>✓ Exclusive golf access</li>
                     <li>✓ Custom home options</li>
@@ -340,8 +324,8 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Community Comparison Guide</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Community Comparison Guide</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Compare the top 55+ communities based on key factors to find the perfect match for your lifestyle and budget.
             </p>
           </div>
@@ -350,41 +334,41 @@ export default component$(() => {
             <table class="w-full bg-white rounded-lg shadow-lg">
               <thead class="bg-purple-100">
                 <tr>
-                  <th class="px-6 py-4 text-left font-bold text-gray-900">Community</th>
-                  <th class="px-6 py-4 text-left font-bold text-gray-900">Price Range</th>
-                  <th class="px-6 py-4 text-left font-bold text-gray-900">Amenities</th>
-                  <th class="px-6 py-4 text-left font-bold text-gray-900">Location</th>
-                  <th class="px-6 py-4 text-left font-bold text-gray-900">Best For</th>
+                  <th class="px-6 py-4 text-left font-bold text-hsb-dark">Community</th>
+                  <th class="px-6 py-4 text-left font-bold text-hsb-dark">Price Range</th>
+                  <th class="px-6 py-4 text-left font-bold text-hsb-dark">Amenities</th>
+                  <th class="px-6 py-4 text-left font-bold text-hsb-dark">Location</th>
+                  <th class="px-6 py-4 text-left font-bold text-hsb-dark">Best For</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200">
                 <tr>
-                  <td class="px-6 py-4 font-semibold text-gray-900">Heritage at Stonebridge</td>
-                  <td class="px-6 py-4 text-gray-600">$464,990+</td>
-                  <td class="px-6 py-4 text-gray-600">Resort-style pool, clubhouse, courts</td>
-                  <td class="px-6 py-4 text-gray-600">Summerlin West</td>
-                  <td class="px-6 py-4 text-gray-600">New construction buyers</td>
+                  <td class="px-6 py-4 font-semibold text-hsb-dark">Heritage at Stonebridge</td>
+                  <td class="px-6 py-4 text-hsb-muted">$464,990+</td>
+                  <td class="px-6 py-4 text-hsb-muted">Resort-style pool, clubhouse, courts</td>
+                  <td class="px-6 py-4 text-hsb-muted">Summerlin West</td>
+                  <td class="px-6 py-4 text-hsb-muted">New construction buyers</td>
                 </tr>
                 <tr>
-                  <td class="px-6 py-4 font-semibold text-gray-900">Sun City Summerlin</td>
-                  <td class="px-6 py-4 text-gray-600">$500,000+</td>
-                  <td class="px-6 py-4 text-gray-600">Golf courses, recreation centers</td>
-                  <td class="px-6 py-4 text-gray-600">Summerlin</td>
-                  <td class="px-6 py-4 text-gray-600">Golf enthusiasts</td>
+                  <td class="px-6 py-4 font-semibold text-hsb-dark">Sun City Summerlin</td>
+                  <td class="px-6 py-4 text-hsb-muted">$500,000+</td>
+                  <td class="px-6 py-4 text-hsb-muted">Golf courses, recreation centers</td>
+                  <td class="px-6 py-4 text-hsb-muted">Summerlin</td>
+                  <td class="px-6 py-4 text-hsb-muted">Golf enthusiasts</td>
                 </tr>
                 <tr>
-                  <td class="px-6 py-4 font-semibold text-gray-900">The Ridges</td>
-                  <td class="px-6 py-4 text-gray-600">$1,000,000+</td>
-                  <td class="px-6 py-4 text-gray-600">Exclusive golf, luxury amenities</td>
-                  <td class="px-6 py-4 text-gray-600">Summerlin</td>
-                  <td class="px-6 py-4 text-gray-600">Luxury buyers</td>
+                  <td class="px-6 py-4 font-semibold text-hsb-dark">The Ridges</td>
+                  <td class="px-6 py-4 text-hsb-muted">$1,000,000+</td>
+                  <td class="px-6 py-4 text-hsb-muted">Exclusive golf, luxury amenities</td>
+                  <td class="px-6 py-4 text-hsb-muted">Summerlin</td>
+                  <td class="px-6 py-4 text-hsb-muted">Luxury buyers</td>
                 </tr>
                 <tr>
-                  <td class="px-6 py-4 font-semibold text-gray-900">Siena</td>
-                  <td class="px-6 py-4 text-gray-600">$600,000+</td>
-                  <td class="px-6 py-4 text-gray-600">Tuscan-inspired, resort amenities</td>
-                  <td class="px-6 py-4 text-gray-600">Summerlin</td>
-                  <td class="px-6 py-4 text-gray-600">Style-conscious buyers</td>
+                  <td class="px-6 py-4 font-semibold text-hsb-dark">Siena</td>
+                  <td class="px-6 py-4 text-hsb-muted">$600,000+</td>
+                  <td class="px-6 py-4 text-hsb-muted">Tuscan-inspired, resort amenities</td>
+                  <td class="px-6 py-4 text-hsb-muted">Summerlin</td>
+                  <td class="px-6 py-4 text-hsb-muted">Style-conscious buyers</td>
                 </tr>
               </tbody>
             </table>
@@ -395,7 +379,7 @@ export default component$(() => {
       {/* RealScout Widgets */}
 
       {/* Call to Action */}
-      <section class="bg-gradient-to-br from-purple-600 to-purple-800 py-16">
+      <section class="bg-hsb-dark py-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
           <h2 class="text-3xl font-bold text-white mb-4">Ready to Find Your Perfect 55+ Community?</h2>
           <p class="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">

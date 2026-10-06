@@ -177,25 +177,25 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Heritage at Stonebridge?</h2>
-            <p class="text-lg text-gray-600 mb-8">421 Lennar homes, a staffed gate, and a clubhouse at 930 Silverfir Court.</p>
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Why Choose Heritage at Stonebridge?</h2>
+            <p class="text-lg text-hsb-text mb-8">421 Lennar homes, a staffed gate, and a clubhouse at 930 Silverfir Court.</p>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Three Home Collections</h3>
-              <p class="text-gray-600">Cromwell (1,232-1,422 sq ft), Stirling (1,747-2,236 sq ft), and Evander (2,515-2,873 sq ft)</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Three Home Collections</h3>
+              <p class="text-hsb-muted">Cromwell (1,232-1,422 sq ft), Stirling (1,747-2,236 sq ft), and Evander (2,515-2,873 sq ft)</p>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Lennar Everything's Included</h3>
-              <p class="text-gray-600">Popular features and upgrades included at no extra cost</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Lennar Everything's Included</h3>
+              <p class="text-hsb-muted">Popular features and upgrades included at no extra cost</p>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Red Rock Canyon Views</h3>
-              <p class="text-gray-600">Stunning mountain backdrop with easy access to outdoor recreation</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Red Rock Canyon Views</h3>
+              <p class="text-hsb-muted">Stunning mountain backdrop with easy access to outdoor recreation</p>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Today's prices</h3>
-              <p class="text-gray-600">List prices change with the MLS. Call (702) 789-6561 for the homes on the market now.</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Today's prices</h3>
+              <p class="text-hsb-muted">List prices change with the MLS. Call (702) 789-6561 for the homes on the market now.</p>
             </div>
           </div>
         </div>

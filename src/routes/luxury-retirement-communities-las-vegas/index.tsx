@@ -1,8 +1,8 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { HeroPhoto } from "~/components/community/HeroPhoto";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
+import { InteriorHero } from "~/components/community/InteriorHero";
 
 export const head: DocumentHead = {
   title: "Luxury Retirement Communities in Las Vegas | Premium Active Adult Living - Dr. Jan Duffy",
@@ -165,70 +165,54 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-gold-900 via-gold-800 to-gold-700 text-white py-20 overflow-hidden">
-        <HeroPhoto />
-        <div class="absolute inset-0 bg-black opacity-20"></div>
-        <div class="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            Luxury Retirement Communities in Las Vegas
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Experience the pinnacle of active adult living with premium amenities, concierge services, and unparalleled luxury
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-gold-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gold-100 transition-colors shadow-lg inline-block text-center">
-              Explore Luxury Communities
-            </a>
-            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gold-800 transition-colors shadow-lg inline-block text-center">
-              Call (702) 789-6561
-            </a>
-          </div>
-        </div>
-      </section>
+      <InteriorHero
+        title="Luxury Retirement Communities in Las Vegas"
+        lede="Experience the pinnacle of active adult living with premium amenities, concierge services, and unparalleled luxury"
+      />
       <OfficeListingsBelowHero />
 
       {/* Luxury Features */}
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">What Defines Luxury Retirement Living?</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">What Defines Luxury Retirement Living?</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Luxury retirement communities offer the highest level of amenities, services, and lifestyle options for discerning active adults.
             </p>
           </div>
           
           <div class="grid md:grid-cols-3 gap-8 mb-12">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Concierge Services</h3>
-              <p class="text-gray-600">Personalized assistance with reservations, travel planning, event coordination, and daily conveniences</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Concierge Services</h3>
+              <p class="text-hsb-muted">Personalized assistance with reservations, travel planning, event coordination, and daily conveniences</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Premium Amenities</h3>
-              <p class="text-gray-600">Private golf courses, spa facilities, gourmet dining, wine cellars, theaters, and exclusive social spaces</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Premium Amenities</h3>
+              <p class="text-hsb-muted">Private golf courses, spa facilities, gourmet dining, wine cellars, theaters, and exclusive social spaces</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Custom Homes</h3>
-              <p class="text-gray-600">Architectural excellence, high-end finishes, smart home technology, and personalized design options</p>
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Custom Homes</h3>
+              <p class="text-hsb-muted">Architectural excellence, high-end finishes, smart home technology, and personalized design options</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Luxury Communities */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Premier Luxury Retirement Communities</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Premier Luxury Retirement Communities</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Discover Las Vegas's most exclusive active adult communities offering unparalleled luxury and service.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">The Ridges</h3>
-              <p class="text-gray-600 mb-4">Ultra-luxury community with custom estates, exclusive golf course access, and mountain views.</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">The Ridges</h3>
+              <p class="text-hsb-muted mb-4">Ultra-luxury community with custom estates, exclusive golf course access, and mountain views.</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Custom luxury homes</li>
                 <li>• Exclusive golf course</li>
                 <li>• Private concierge services</li>
@@ -241,9 +225,9 @@ export default component$(() => {
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Siena</h3>
-              <p class="text-gray-600 mb-4">Tuscan-inspired luxury community with resort amenities and sophisticated design.</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Siena</h3>
+              <p class="text-hsb-muted mb-4">Tuscan-inspired luxury community with resort amenities and sophisticated design.</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Tuscan-inspired architecture</li>
                 <li>• Resort-style amenities</li>
                 <li>• Wine cellar & tasting room</li>
@@ -256,9 +240,9 @@ export default component$(() => {
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Red Rock Country Club</h3>
-              <p class="text-gray-600 mb-4">Exclusive golf course community with luxury homes and private country club membership.</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Red Rock Country Club</h3>
+              <p class="text-hsb-muted mb-4">Exclusive golf course community with luxury homes and private country club membership.</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Private golf course</li>
                 <li>• Country club membership</li>
                 <li>• Luxury amenities</li>
@@ -271,9 +255,9 @@ export default component$(() => {
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Heritage at Stonebridge</h3>
-              <p class="text-gray-600 mb-4">Luxury new construction with Everything's Included® features and modern amenities.</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Heritage at Stonebridge</h3>
+              <p class="text-hsb-muted mb-4">Luxury new construction with Everything's Included® features and modern amenities.</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• New construction luxury</li>
                 <li>• Everything's Included®</li>
                 <li>• Smart home technology</li>
@@ -286,9 +270,9 @@ export default component$(() => {
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">MacDonald Ranch</h3>
-              <p class="text-gray-600 mb-4">Henderson's premier luxury community with custom homes and golf course access.</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">MacDonald Ranch</h3>
+              <p class="text-hsb-muted mb-4">Henderson's premier luxury community with custom homes and golf course access.</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Custom luxury homes</li>
                 <li>• Golf course access</li>
                 <li>• Private amenities</li>
@@ -301,9 +285,9 @@ export default component$(() => {
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Seven Hills</h3>
-              <p class="text-gray-600 mb-4">Gated luxury community with custom estates and stunning mountain views.</p>
-              <ul class="space-y-2 text-gray-600 mb-4">
+              <h3 class="font-display text-xl text-hsb-dark mb-3">Seven Hills</h3>
+              <p class="text-hsb-muted mb-4">Gated luxury community with custom estates and stunning mountain views.</p>
+              <ul class="space-y-2 text-hsb-muted mb-4">
                 <li>• Gated community</li>
                 <li>• Custom estates</li>
                 <li>• Mountain views</li>
@@ -322,16 +306,16 @@ export default component$(() => {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Luxury Lifestyle Services</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Luxury Lifestyle Services</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Experience the highest level of service and convenience with personalized amenities designed for discerning residents.
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-gradient-to-br from-gold-50 to-gold-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Concierge Services</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Concierge Services</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-gold-600 rounded-full mr-3"></span>
                   Restaurant reservations and event planning
@@ -351,9 +335,9 @@ export default component$(() => {
               </ul>
             </div>
             
-            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Premium Amenities</h3>
-              <ul class="space-y-3 text-gray-700 mb-6">
+            <div class="bg-hsb-sand p-8 rounded-lg">
+              <h3 class="font-display text-2xl text-hsb-dark mb-4">Premium Amenities</h3>
+              <ul class="space-y-3 text-hsb-text mb-6">
                 <li class="flex items-center">
                   <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
                   Private golf courses and tennis courts
@@ -379,7 +363,7 @@ export default component$(() => {
       {/* RealScout Widgets */}
 
       {/* Call to Action */}
-      <section class="bg-gradient-to-br from-gold-600 to-gold-800 py-16">
+      <section class="bg-hsb-dark py-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
           <h2 class="text-3xl font-bold text-white mb-4">Ready to Experience Luxury Retirement Living?</h2>
           <p class="text-lg text-gold-100 mb-8 max-w-2xl mx-auto">

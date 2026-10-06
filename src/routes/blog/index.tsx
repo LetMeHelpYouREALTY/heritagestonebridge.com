@@ -1,8 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { HeroPhoto } from "~/components/community/HeroPhoto";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
+import { InteriorHero } from "~/components/community/InteriorHero";
 
 export const head: DocumentHead = {
   title: "Las Vegas Real Estate Blog & Market Insights | Dr. Jan Duffy",
@@ -66,51 +66,35 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 text-white py-20 overflow-hidden">
-        <HeroPhoto />
-        <div class="absolute inset-0 bg-black opacity-20"></div>
-        <div class="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            Las Vegas Real Estate Blog
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Expert insights, market analysis, and community guides to help you make informed real estate decisions
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-purple-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-100 transition-colors shadow-lg inline-block text-center">
-              Schedule Consultation
-            </a>
-            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-800 transition-colors shadow-lg inline-block text-center">
-              Call (702) 789-6561
-            </a>
-          </div>
-        </div>
-      </section>
+      <InteriorHero
+        title="Las Vegas Real Estate Blog"
+        lede="Expert insights, market analysis, and community guides to help you make informed real estate decisions"
+      />
       <OfficeListingsBelowHero />
 
       {/* Featured Articles */}
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Articles</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">Featured Articles</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Stay informed with the latest Las Vegas real estate trends, market insights, and community spotlights
             </p>
           </div>
           
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+              <div class="h-48 bg-hsb-primary flex items-center justify-center">
                 <span class="text-white text-4xl">🏘️</span>
               </div>
               <div class="p-6">
                 <div class="text-sm text-blue-600 font-semibold mb-2">MARKET ANALYSIS</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <h3 class="font-display text-xl text-hsb-dark mb-3">
                   <a href="/blog/las-vegas-55-plus-communities-market-trends-2025" class="hover:text-blue-600">
                     Las Vegas 55+ Communities Market Trends 2025
                   </a>
                 </h3>
-                <p class="text-gray-600 mb-4">
+                <p class="text-hsb-muted mb-4">
                   Discover the latest trends in active adult communities, from Heritage at Stonebridge to Sun City Summerlin, and what buyers are looking for in 2025.
                 </p>
                 <div class="flex items-center justify-between">
@@ -123,17 +107,17 @@ export default component$(() => {
             </article>
 
             <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+              <div class="h-48 bg-hsb-primary flex items-center justify-center">
                 <span class="text-white text-4xl">🏔️</span>
               </div>
               <div class="p-6">
                 <div class="text-sm text-green-600 font-semibold mb-2">COMMUNITY SPOTLIGHT</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <h3 class="font-display text-xl text-hsb-dark mb-3">
                   <a href="/blog/red-rock-canyon-luxury-living-guide" class="hover:text-green-600">
                     Red Rock Canyon Luxury Living Guide
                   </a>
                 </h3>
-                <p class="text-gray-600 mb-4">
+                <p class="text-hsb-muted mb-4">
                   Explore the premier communities near Red Rock Canyon, featuring mountain views, outdoor recreation, and luxury amenities for active adults.
                 </p>
                 <div class="flex items-center justify-between">
@@ -146,17 +130,17 @@ export default component$(() => {
             </article>
 
             <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+              <div class="h-48 bg-hsb-primary flex items-center justify-center">
                 <span class="text-white text-4xl">💰</span>
               </div>
               <div class="p-6">
                 <div class="text-sm text-purple-600 font-semibold mb-2">INVESTMENT GUIDE</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <h3 class="font-display text-xl text-hsb-dark mb-3">
                   <a href="/blog/summerlin-luxury-real-estate-investment-guide" class="hover:text-purple-600">
                     Summerlin Luxury Real Estate Investment Guide
                   </a>
                 </h3>
-                <p class="text-gray-600 mb-4">
+                <p class="text-hsb-muted mb-4">
                   Learn why Summerlin continues to be one of Las Vegas's most desirable areas for luxury home investments and 55+ community living.
                 </p>
                 <div class="flex items-center justify-between">
@@ -169,17 +153,17 @@ export default component$(() => {
             </article>
 
             <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div class="h-48 bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+              <div class="h-48 bg-hsb-primary flex items-center justify-center">
                 <span class="text-white text-4xl">🏊</span>
               </div>
               <div class="p-6">
                 <div class="text-sm text-red-600 font-semibold mb-2">LIFESTYLE</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <h3 class="font-display text-xl text-hsb-dark mb-3">
                   <a href="/blog/active-adult-community-amenities-guide" class="hover:text-red-600">
                     Active Adult Community Amenities Guide
                   </a>
                 </h3>
-                <p class="text-gray-600 mb-4">
+                <p class="text-hsb-muted mb-4">
                   Discover the resort-style amenities that make 55+ communities like Heritage at Stonebridge so appealing to active adults.
                 </p>
                 <div class="flex items-center justify-between">
@@ -192,17 +176,17 @@ export default component$(() => {
             </article>
 
             <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div class="h-48 bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center">
+              <div class="h-48 bg-hsb-primary flex items-center justify-center">
                 <span class="text-white text-4xl">🏡</span>
               </div>
               <div class="p-6">
                 <div class="text-sm text-yellow-600 font-semibold mb-2">BUYER'S GUIDE</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <h3 class="font-display text-xl text-hsb-dark mb-3">
                   <a href="/blog/first-time-55-plus-home-buyer-guide" class="hover:text-yellow-600">
                     First-Time 55+ Home Buyer Guide
                   </a>
                 </h3>
-                <p class="text-gray-600 mb-4">
+                <p class="text-hsb-muted mb-4">
                   Everything you need to know about buying your first home in a 55+ community, from financing to amenities to lifestyle considerations.
                 </p>
                 <div class="flex items-center justify-between">
@@ -215,22 +199,22 @@ export default component$(() => {
             </article>
 
             <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div class="h-48 bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center">
+              <div class="h-48 bg-hsb-primary flex items-center justify-center">
                 <span class="text-white text-4xl">📊</span>
               </div>
               <div class="p-6">
                 <div class="text-sm text-teal-600 font-semibold mb-2">MARKET DATA</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <h3 class="font-display text-xl text-hsb-dark mb-3">
                   <a href="/blog/henderson-real-estate-market-analysis" class="hover:text-teal-600">
                     Henderson Real Estate Market Analysis
                   </a>
                 </h3>
-                <p class="text-gray-600 mb-4">
+                <p class="text-hsb-muted mb-4">
                   In-depth analysis of Henderson's real estate market, including price trends, inventory levels, and 55+ communities such as Sun City Anthem.
                 </p>
                 <div class="flex items-center justify-between">
                   <span class="text-sm text-gray-500">Dr. Jan Duffy</span>
-                  <a href="/blog/henderson-real-estate-market-analysis" class="text-teal-600 hover:text-teal-800 font-semibold">
+                  <a href="/blog/henderson-real-estate-market-analysis" class="text-teal-600 hover:text-hsb-dark font-semibold">
                     Read More →
                   </a>
                 </div>
@@ -241,11 +225,11 @@ export default component$(() => {
       </section>
 
       {/* AI-Powered Content Generator */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-hsb-cream">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">AI-Powered Real Estate Insights</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">AI-Powered Real Estate Insights</h2>
+            <p class="text-lg text-hsb-text max-w-3xl mx-auto">
               Get personalized real estate insights powered by advanced AI technology
             </p>
           </div>
@@ -253,33 +237,33 @@ export default component$(() => {
           <div class="bg-white rounded-lg shadow-lg p-8">
             <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Get Personalized Recommendations</h3>
-                <p class="text-gray-600 mb-6">
+                <h3 class="font-display text-2xl text-hsb-dark mb-4">Get Personalized Recommendations</h3>
+                <p class="text-hsb-muted mb-6">
                   Our AI analyzes your preferences and provides tailored recommendations for Las Vegas communities, properties, and lifestyle options.
                 </p>
                 <div class="space-y-4">
                   <div class="flex items-center">
                     <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                    <span class="text-gray-700">Community matching based on lifestyle preferences</span>
+                    <span class="text-hsb-text">Community matching based on lifestyle preferences</span>
                   </div>
                   <div class="flex items-center">
                     <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                    <span class="text-gray-700">Market analysis and investment insights</span>
+                    <span class="text-hsb-text">Market analysis and investment insights</span>
                   </div>
                   <div class="flex items-center">
                     <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                    <span class="text-gray-700">Amenity recommendations for active adults</span>
+                    <span class="text-hsb-text">Amenity recommendations for active adults</span>
                   </div>
                   <div class="flex items-center">
                     <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                    <span class="text-gray-700">Price range optimization</span>
+                    <span class="text-hsb-text">Price range optimization</span>
                   </div>
                 </div>
               </div>
               
-              <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
-                <h4 class="text-lg font-bold text-gray-900 mb-4">Try Our AI Assistant</h4>
-                <p class="text-gray-700 mb-4">
+              <div class="bg-hsb-sand p-6 rounded-lg">
+                <h4 class="text-lg font-bold text-hsb-dark mb-4">Try Our AI Assistant</h4>
+                <p class="text-hsb-text mb-4">
                   Ask our AI assistant about Las Vegas real estate, 55+ communities, or specific neighborhoods.
                 </p>
                 <div class="space-y-3">
@@ -300,7 +284,7 @@ export default component$(() => {
       </section>
 
       {/* Newsletter Signup */}
-      <section class="py-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
+      <section class="py-16 bg-hsb-dark text-white">
         <div class="max-w-7xl mx-auto px-4 text-center">
           <h2 class="text-3xl font-bold mb-4">Stay Updated with Las Vegas Real Estate</h2>
           <p class="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">
@@ -311,7 +295,7 @@ export default component$(() => {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-300"
+                class="flex-1 px-4 py-3 rounded-lg text-hsb-dark focus:outline-none focus:ring-2 focus:ring-purple-300"
               />
               <button class="bg-white text-purple-800 px-6 py-3 rounded-lg font-semibold hover:bg-purple-100 transition-colors">
                 Subscribe

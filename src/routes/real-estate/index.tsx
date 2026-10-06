@@ -4,23 +4,17 @@ import { RealScoutAdvancedSearch } from "~/components/real-estate/RealScoutAdvan
 import { RealScoutSimpleSearch } from "~/components/real-estate/RealScoutSimpleSearch";
 import { RealScoutHomeValue } from "~/components/real-estate/RealScoutHomeValue";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { HeroPhoto } from "~/components/community/HeroPhoto";
+import { InteriorHero } from "~/components/community/InteriorHero";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
-        <HeroPhoto />
-        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6">Real Estate Tools & Widgets</h1>
-          <p class="text-xl text-blue-100 max-w-3xl mx-auto">
-            Explore our comprehensive suite of RealScout widgets and property search tools designed
-            for Heritage at Stonebridge and surrounding Las Vegas areas.
-          </p>
-        </div>
-      </section>
+      <InteriorHero
+        title="Real estate tools"
+        lede="Search the MLS and request a home value for Heritage at Stonebridge. Prices come from the listing feed."
+      />
       <OfficeListingsBelowHero />
 
       {/* Dynamic RealScout Content Blocks */}
@@ -31,67 +25,25 @@ export default component$(() => {
         <div class="max-w-7xl mx-auto px-4 py-12">
           <div class="grid md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white rounded-lg shadow-lg p-6">
-              <h3 class="text-xl font-bold text-gray-900 mb-4">Quick Property Search</h3>
+              <h3 class="font-display text-xl text-hsb-dark mb-4">Quick Property Search</h3>
               <RealScoutSimpleSearch agentEncodedId="QWdlbnQtMjI1MDUw" />
             </div>
             <div class="bg-white rounded-lg shadow-lg p-6">
-              <h3 class="text-xl font-bold text-gray-900 mb-4">Advanced Search</h3>
+              <h3 class="font-display text-xl text-hsb-dark mb-4">Advanced Search</h3>
               <RealScoutAdvancedSearch agentEncodedId="QWdlbnQtMjI1MDUw" />
             </div>
           </div>
           <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Get Your Home's Value</h3>
+            <h3 class="font-display text-xl text-hsb-dark mb-4">Get Your Home's Value</h3>
             <RealScoutHomeValue agentEncodedId="QWdlbnQtMjI1MDUw" />
           </div>
         </div>
 
         {/* Widget Information */}
-        <div class="mt-16 bg-blue-50 rounded-lg p-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">About Our Real Estate Tools</h3>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">RealScout Integration</h4>
-              <p class="text-gray-700 mb-4">
-                Our widgets are powered by RealScout's advanced MLS integration, providing real-time
-                property data, accurate valuations, and seamless lead capture.
-              </p>
-              <ul class="space-y-2 text-gray-700">
-                <li class="flex items-center">
-                  <span class="text-green-500 mr-2">✓</span>
-                  Real-time MLS data synchronization
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-500 mr-2">✓</span>
-                  Advanced search and filtering capabilities
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-500 mr-2">✓</span>
-                  Automated lead capture and CRM integration
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Performance Optimized</h4>
-              <p class="text-gray-700 mb-4">
-                Built with Qwik's resumable architecture for lightning-fast loading and optimal user
-                experience across all devices.
-              </p>
-              <ul class="space-y-2 text-gray-700">
-                <li class="flex items-center">
-                  <span class="text-green-500 mr-2">✓</span>
-                  Lazy-loaded widgets for faster page loads
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-500 mr-2">✓</span>
-                  Mobile-responsive design
-                </li>
-                <li class="flex items-center">
-                  <span class="text-green-500 mr-2">✓</span>
-                  SEO-optimized for better search rankings
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div class="mx-auto mt-4 max-w-3xl px-4 pb-16">
+          <p class="text-hsb-text">
+            Listings and values come from the MLS feed. Call (702) 789-6561 to tour a home in Heritage at Stonebridge.
+          </p>
         </div>
       </main>
 

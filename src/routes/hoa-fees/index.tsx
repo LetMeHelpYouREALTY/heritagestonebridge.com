@@ -25,7 +25,7 @@ export default component$(() => {
       >
         <a
           href={business.telephoneHref}
-          class="rounded-full bg-hsb-accent px-6 py-3 text-center font-medium text-white hover:bg-hsb-accent-dark"
+          class="rounded-full bg-hsb-primary px-6 py-3 text-center font-medium text-white hover:bg-hsb-primary-dark"
         >
           Call {business.telephoneDisplay}
         </a>
