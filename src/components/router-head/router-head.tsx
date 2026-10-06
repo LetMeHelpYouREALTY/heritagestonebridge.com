@@ -34,8 +34,8 @@ export const RouterHead = component$(() => {
       <title>{head.title}</title>
 
       <link rel="canonical" href={canonical} />
-      <link rel="icon" type="image/png" href="https://heritagestonebridge.com/favicon.png" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" type="image/png" href="https://heritagestonebridge.com/favicon.png" sizes="192x192" />
+      <link rel="apple-touch-icon" href="https://heritagestonebridge.com/favicon.png" />
 
       {/* RealScout Styles */}
       <style>
