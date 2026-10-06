@@ -1,4 +1,5 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { AgentPortrait } from "~/components/community/AgentPortrait";
 import { NapBar } from "~/components/nap/NapBar";
 import { business } from "~/config/business";
 import styles from "./header.module.css";
@@ -31,11 +32,7 @@ export default component$(() => {
         <div class={styles.logo}>
           <a href="https://heritagestonebridge.com/" title={business.name}>
             <div class="flex items-center space-x-2">
-              <div class="bg-hsb-primary rounded-lg p-2">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-              </div>
+              <AgentPortrait size="sm" />
               <div class="text-left max-w-[11rem] sm:max-w-xs lg:max-w-sm">
                 <div class="text-sm sm:text-base font-bold text-gray-900 leading-tight">
                   {business.name}

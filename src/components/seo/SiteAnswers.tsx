@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { AgentPortrait } from "~/components/community/AgentPortrait";
 import { business } from "~/config/business";
 import { COMMUNITY_SOURCE } from "~/config/community";
 
@@ -36,7 +37,10 @@ export const SiteAnswers = component$(() => {
     <nav aria-label="Heritage at Stonebridge answers" class="border-t border-hsb-border bg-hsb-cream">
       <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-2">
         <div>
-          <h2 class="font-display text-2xl text-hsb-dark">Answers about this community</h2>
+          <div class="flex items-center gap-4">
+            <AgentPortrait size="md" />
+            <h2 class="font-display text-2xl text-hsb-dark">Answers about this community</h2>
+          </div>
           <ul class="mt-4 space-y-2">
             {answers.map((item) => (
               <li key={item.href}>

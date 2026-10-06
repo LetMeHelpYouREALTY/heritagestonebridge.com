@@ -124,7 +124,7 @@ export const localBusinessJsonLd = {
   openingHours: schemaOpeningHours,
   openingHoursSpecification,
   areaServed,
-  image: "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/34bde918-5f0a-4479-c146-d7914daee500/desktop",
+  image: "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/fc4911a4-7842-470b-a54d-4589039a2a00/tablet",
   amenityFeature: [
     {
       "@type": "LocationFeatureSpecification",

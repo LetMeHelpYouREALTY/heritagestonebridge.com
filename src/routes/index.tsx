@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { RealScoutHeroWidget } from "~/components/real-estate/RealScoutHeroWidget";
+import { AgentPortrait } from "~/components/community/AgentPortrait";
 import { CommunityGallery } from "~/components/community/CommunityGallery";
 import { business } from "~/config/business";
 import {
@@ -66,7 +67,8 @@ export default component$(() => {
         />
         <div class="absolute inset-0 bg-gradient-to-r from-hsb-dark/80 via-hsb-dark/55 to-hsb-dark/25" />
         <div class="relative z-10 mx-auto flex min-h-[78vh] max-w-7xl flex-col justify-end px-4 py-16">
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-hsb-accent-light">
+          <AgentPortrait size="lg" />
+          <p class="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-hsb-accent-light">
             {business.name}
           </p>
           <h1 class="mt-4 max-w-4xl font-display text-5xl leading-tight md:text-7xl">
@@ -111,7 +113,8 @@ export default component$(() => {
             <p class="mt-6 text-lg leading-relaxed text-hsb-text">{business.description}</p>
           </div>
           <aside class="rounded-3xl bg-white p-8 shadow-sm">
-            <p class="text-sm uppercase tracking-[0.14em] text-hsb-muted">{business.category}</p>
+            <AgentPortrait size="lg" />
+            <p class="mt-6 text-sm uppercase tracking-[0.14em] text-hsb-muted">{business.category}</p>
             <p class="mt-1 text-sm text-hsb-muted">{business.additionalCategory}</p>
             <p class="mt-6 font-display text-2xl text-hsb-dark">{business.addressDisplay}</p>
             <p class="mt-2 text-hsb-text">Service area: Las Vegas, NV 89138 and Summerlin West</p>

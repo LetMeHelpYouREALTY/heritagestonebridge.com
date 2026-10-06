@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { AgentPortrait } from "~/components/community/AgentPortrait";
 import { business } from "~/config/business";
 
 export const Footer = component$(() => {
@@ -8,7 +9,8 @@ export const Footer = component$(() => {
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div>
-            <h3 class="text-xl font-bold mb-4">{business.name}</h3>
+            <AgentPortrait size="md" />
+            <h3 class="mt-4 text-xl font-bold mb-4">{business.name}</h3>
             <p class="text-gray-300 mb-4">
               {business.category}. Also listed as a {business.additionalCategory.toLowerCase()}.
               Lennar's guard-gated 55+ community in Summerlin West (89138).

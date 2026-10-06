@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { AgentPortrait } from "~/components/community/AgentPortrait";
 import { business } from "~/config/business";
 
 /** GBP-matching call, directions, reviews, hours, and map for campaign pages. */
@@ -6,10 +7,15 @@ export const ContactStrip = component$(() => {
   return (
     <section class="bg-white py-16">
       <div class="mx-auto max-w-5xl px-4">
-        <p class="text-sm font-semibold uppercase tracking-[0.15em] text-hsb-accent">
-          {business.name}
-        </p>
-        <h2 class="mt-3 font-display text-3xl text-hsb-dark">Talk with Dr. Jan Duffy</h2>
+        <div class="flex items-center gap-4">
+          <AgentPortrait size="lg" />
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.15em] text-hsb-accent">
+              {business.name}
+            </p>
+            <h2 class="mt-3 font-display text-3xl text-hsb-dark">Talk with Dr. Jan Duffy</h2>
+          </div>
+        </div>
         <p class="mt-4 text-lg text-hsb-text">
           {business.addressDisplay}. {business.hoursDisplay}.
         </p>
