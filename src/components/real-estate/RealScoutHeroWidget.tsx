@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 
 interface RealScoutHeroWidgetProps {
   agentEncodedId: string;
@@ -22,6 +22,8 @@ export const RealScoutHeroWidget = component$<RealScoutHeroWidgetProps>(
     title = "Featured New Construction Homes",
     subtitle = "See What's Available Now",
   }) => {
+    const showListings = useSignal(false);
+
     return (
       <section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="max-w-7xl mx-auto px-4">
@@ -40,15 +42,32 @@ export const RealScoutHeroWidget = component$<RealScoutHeroWidgetProps>(
               </p>
             </div>
             <div class="p-6">
-              <realscout-office-listings
-                agent-encoded-id={agentEncodedId}
-                sort-order={sortOrder}
-                listing-status={listingStatus}
-                property-types={propertyTypes}
-                price-min={priceMin}
-                price-max={priceMax}
-                class="w-full min-h-[400px]"
-              />
+              {showListings.value ? (
+                <realscout-office-listings
+                  agent-encoded-id={agentEncodedId}
+                  sort-order={sortOrder}
+                  listing-status={listingStatus}
+                  property-types={propertyTypes}
+                  price-min={priceMin}
+                  price-max={priceMax}
+                  class="w-full min-h-[400px]"
+                />
+              ) : (
+                <div class="flex min-h-[400px] flex-col items-center justify-center gap-4 text-center">
+                  <p class="max-w-md text-gray-600">
+                    Open the current for-sale list for Heritage at Stonebridge.
+                  </p>
+                  <button
+                    type="button"
+                    class="rounded-full bg-hsb-primary px-6 py-3 font-semibold text-white hover:bg-hsb-primary-dark"
+                    onClick$={() => {
+                      showListings.value = true;
+                    }}
+                  >
+                    Show current listings
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
