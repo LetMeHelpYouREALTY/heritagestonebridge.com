@@ -4,6 +4,9 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 
+const FONT_STYLESHEET =
+  "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap";
+
 export default component$(() => {
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,
@@ -16,24 +19,28 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
           rel="stylesheet"
+          href={FONT_STYLESHEET}
+          media="print"
+          {...{ onload: "this.media='all'" }}
         />
+        <noscript>
+          <link rel="stylesheet" href={FONT_STYLESHEET} />
+        </noscript>
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
-        {/* RealScout Widget Integration */}
-        <script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
-          integrity="sha384-REALSCOUT_INTEGRITY_HASH"
-          crossOrigin="anonymous"
-        ></script>
       </head>
       <body lang="en">
         <RouterOutlet />
+        <script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          crossOrigin="anonymous"
+        />
         <ServiceWorkerRegister />
       </body>
     </QwikCityProvider>

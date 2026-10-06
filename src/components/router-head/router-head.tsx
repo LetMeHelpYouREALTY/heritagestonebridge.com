@@ -34,15 +34,7 @@ export const RouterHead = component$(() => {
       <title>{head.title}</title>
 
       <link rel="canonical" href={canonical} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-      {/* RealScout Script - Load globally for all pages */}
-      <script
-        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-        type="module"
-        crossOrigin="anonymous"
-      />
 
       {/* RealScout Styles */}
       <style>
