@@ -50,6 +50,51 @@
   ],
   "redirects": [
     {
+      "source": "/community-comparison",
+      "destination": "https://heritagestonebridge.com/community-comparison/",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods/summerlin",
+      "destination": "https://heritagestonebridge.com/summerlin-homes/",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods/summerlin/",
+      "destination": "https://heritagestonebridge.com/summerlin-homes/",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods/henderson",
+      "destination": "https://heritagestonebridge.com/henderson-real-estate/",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods/henderson/",
+      "destination": "https://heritagestonebridge.com/henderson-real-estate/",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods/green-valley",
+      "destination": "https://heritagestonebridge.com/henderson-real-estate/",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods/green-valley/",
+      "destination": "https://heritagestonebridge.com/henderson-real-estate/",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods/mountains-edge",
+      "destination": "https://heritagestonebridge.com/las-vegas-real-estate/",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods/mountains-edge/",
+      "destination": "https://heritagestonebridge.com/las-vegas-real-estate/",
+      "permanent": true
+    },
+    {
       "source": "/homes-for-sale",
       "destination": "/heritage-at-stonebridge-homes-for-sale",
       "permanent": true
