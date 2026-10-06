@@ -159,6 +159,15 @@ export const DEFAULT_OG_IMAGE = communityImage(
   "desktop",
 );
 
+const HERO_ID = "34bde918-5f0a-4479-c146-d7914daee500";
+
+/** Hero sources. Mobile Lighthouse uses ~721 CSS pixels; tablet covers that. */
+export const HERO_IMAGE = {
+  tablet: communityImage(HERO_ID, "tablet"),
+  desktop: communityImage(HERO_ID, "desktop"),
+  srcset: `${communityImage(HERO_ID, "tablet")} 1024w, ${communityImage(HERO_ID, "desktop")} 1920w`,
+} as const;
+
 export const communityAmenities = [
   {
     title: "Heated pools",

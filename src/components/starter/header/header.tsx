@@ -83,7 +83,7 @@ export default component$(() => {
               href="http://drjanduffy.realscout.com/onboarding"
               target="_blank"
               rel="noopener"
-              class="bg-hsb-accent text-white px-6 py-2 rounded-full font-semibold hover:bg-hsb-accent-dark transition-colors"
+              class="bg-hsb-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-hsb-primary-dark transition-colors"
             >
               Schedule Tour
             </a>

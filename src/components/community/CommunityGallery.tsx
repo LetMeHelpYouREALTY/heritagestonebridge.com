@@ -9,10 +9,10 @@ export const CommunityGallery = component$(() => {
     <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
       <figure class="col-span-2 overflow-hidden rounded-2xl md:row-span-2">
         <img
-          src={communityImage(lead.id, "desktop")}
+          src={communityImage(lead.id)}
           alt={lead.alt}
-          width={1920}
-          height={1080}
+          width={1024}
+          height={768}
           loading="lazy"
           decoding="async"
           class="h-full min-h-64 w-full object-cover"

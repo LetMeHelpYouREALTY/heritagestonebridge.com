@@ -9,8 +9,8 @@ import {
   DEFAULT_OG_IMAGE,
   breadcrumbJsonLd,
   community,
-  communityImage,
   communityPhoto,
+  HERO_IMAGE,
   faqJsonLd,
 } from "~/config/community";
 
@@ -57,12 +57,13 @@ export default component$(() => {
       <script type="application/ld+json" dangerouslySetInnerHTML={homeBreadcrumbScript} />
       <section class="relative isolate min-h-[78vh] overflow-hidden bg-hsb-dark text-white">
         <img
-          src={communityImage(communityPhoto("clubhouse-exterior").id, "desktop")}
+          src={HERO_IMAGE.tablet}
+          srcset={HERO_IMAGE.srcset}
+          sizes="100vw"
           alt={communityPhoto("clubhouse-exterior").alt}
-          width={1920}
-          height={1080}
+          width={1024}
+          height={576}
           fetchPriority="high"
-          decoding="async"
           class="absolute inset-0 h-full w-full object-cover"
         />
         <div class="absolute inset-0 bg-gradient-to-r from-hsb-dark/80 via-hsb-dark/55 to-hsb-dark/25" />
@@ -95,7 +96,7 @@ export default component$(() => {
             </a>
             <a
               href={business.telephoneHref}
-              class="rounded-full bg-hsb-accent px-8 py-4 text-center text-lg font-semibold text-white hover:bg-hsb-accent-dark"
+              class="rounded-full bg-hsb-primary px-8 py-4 text-center text-lg font-semibold text-white hover:bg-hsb-primary-dark"
             >
               Call {business.telephoneDisplay}
             </a>
@@ -219,7 +220,7 @@ export default component$(() => {
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/buy-heritage-at-stonebridge"
-              class="bg-hsb-accent text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-hsb-accent-dark transition-colors inline-block text-center"
+              class="bg-hsb-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-hsb-primary-dark transition-colors inline-block text-center"
             >
               Buy a home
             </a>
@@ -382,6 +383,14 @@ export const head: DocumentHead = {
     {
       rel: "canonical",
       href: "https://heritagestonebridge.com",
+    },
+    {
+      rel: "preload",
+      as: "image",
+      href: HERO_IMAGE.tablet,
+      imagesrcset: HERO_IMAGE.srcset,
+      imagesizes: "100vw",
+      fetchpriority: "high",
     },
   ],
 };

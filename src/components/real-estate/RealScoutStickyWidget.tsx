@@ -86,15 +86,17 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
               </div>
 
               <div class="min-h-[300px] mb-4">
-                <realscout-office-listings
-                  agent-encoded-id={agentEncodedId}
-                  sort-order={sortOrder}
-                  listing-status={listingStatus}
-                  property-types={propertyTypes}
-                  price-min={priceMin}
-                  price-max={priceMax}
-                  class="w-full"
-                />
+                {isExpanded.value ? (
+                  <realscout-office-listings
+                    agent-encoded-id={agentEncodedId}
+                    sort-order={sortOrder}
+                    listing-status={listingStatus}
+                    property-types={propertyTypes}
+                    price-min={priceMin}
+                    price-max={priceMax}
+                    class="w-full"
+                  />
+                ) : null}
               </div>
 
               <a
