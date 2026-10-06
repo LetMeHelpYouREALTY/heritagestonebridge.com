@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { NapBlock } from "~/components/nap/NapBlock";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 export const head: DocumentHead = {
   title: "Sitemap - Heritage at Stonebridge",
@@ -18,8 +19,12 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   return (
-    <div class="max-w-4xl mx-auto px-4 py-16">
+    <>
+    <div class="max-w-4xl mx-auto px-4 pt-16">
       <h1 class="text-4xl font-bold text-gray-900 mb-8">Sitemap</h1>
+    </div>
+    <OfficeListingsBelowHero />
+    <div class="max-w-4xl mx-auto px-4 pb-16">
       <NapBlock />
       
       <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 mt-8">
@@ -105,5 +110,6 @@ export default component$(() => {
         </div>
       </div>
     </div>
+    </>
   );
 });

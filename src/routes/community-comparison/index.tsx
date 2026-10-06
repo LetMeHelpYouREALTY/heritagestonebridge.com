@@ -2,6 +2,8 @@ import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { generateAIContent } from "~/lib/ai-content-generator";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
+import { HeroPhoto } from "~/components/community/HeroPhoto";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 export const head: DocumentHead = {
   title: "Las Vegas 55+ Community Comparison | Active Adult Living Guide - Dr. Jan Duffy",
@@ -141,7 +143,8 @@ Format as JSON with sections: heritage_stonebridge, del_webb_communities, sun_ci
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-green-900 via-teal-800 to-blue-700 text-white py-20">
+      <section class="relative bg-gradient-to-br from-green-900 via-teal-800 to-blue-700 text-white py-20 overflow-hidden">
+        <HeroPhoto />
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="relative max-w-7xl mx-auto px-4 text-center">
           <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -166,6 +169,7 @@ Format as JSON with sections: heritage_stonebridge, del_webb_communities, sun_ci
           </div>
         </div>
       </section>
+      <OfficeListingsBelowHero />
 
       {/* Comparison Content */}
       <section class="py-16 bg-gray-50">

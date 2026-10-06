@@ -1,7 +1,8 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
+import { HeroPhoto } from "~/components/community/HeroPhoto";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 export default component$(() => {
   // Inject 55+ Communities Schema for SEO
@@ -77,7 +78,8 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 overflow-hidden">
+        <HeroPhoto />
         <div class="absolute inset-0 bg-black/20"></div>
         <div class="relative max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
@@ -107,6 +109,7 @@ export default component$(() => {
           </div>
         </div>
       </section>
+      <OfficeListingsBelowHero />
 
       {/* Featured Communities */}
       <section class="py-16 bg-white">
@@ -462,22 +465,8 @@ export default component$(() => {
       </section>
 
       {/* 55+ Communities Listings Widget */}
-      <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Current 55+ Community Listings</h2>
-            <p class="text-lg text-gray-600">Explore available properties in Las Vegas's premier active adult communities</p>
-          </div>
-          <RealScoutOfficeListingsWidget
-            agentEncodedId="QWdlbnQtMjI1MDUw"
-            sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-            listingStatus="For Sale"
-            propertyTypes="SFR"
-            priceMin={400000}
-            priceMax={800000}
-          />
-        </div>
-      </section>
+
+
 
       {/* RealScout Sticky Widget */}
       <RealScoutStickyWidget

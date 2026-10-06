@@ -3,9 +3,9 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { AmenityGrid } from "~/components/community/AmenityGrid";
 import { CampaignHero } from "~/components/community/CampaignHero";
 import { ContactStrip } from "~/components/community/ContactStrip";
-import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 import { business } from "~/config/business";
-import { REALSCOUT_AGENT_ID, community, faqJsonLd } from "~/config/community";
+import { community, faqJsonLd } from "~/config/community";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 const faqs = [
   {
@@ -47,6 +47,7 @@ export default component$(() => {
           Text for the listing sheet
         </a>
       </CampaignHero>
+      <OfficeListingsBelowHero />
 
       <section class="bg-hsb-cream py-16">
         <div class="mx-auto max-w-5xl px-4">
@@ -85,11 +86,6 @@ export default component$(() => {
             <h2 class="font-display text-3xl text-hsb-dark">Other Heritage at Stonebridge homes</h2>
             <p class="mt-3 text-hsb-text">Live MLS inventory. Not a substitute for this listing's sheet.</p>
             <div class="mt-6">
-              <RealScoutOfficeListingsWidget
-                agentEncodedId={REALSCOUT_AGENT_ID}
-                priceMin={400000}
-                priceMax={1600000}
-              />
             </div>
           </div>
         </div>

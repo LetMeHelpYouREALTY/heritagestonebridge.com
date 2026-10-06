@@ -3,15 +3,17 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutAdvancedSearch } from "~/components/real-estate/RealScoutAdvancedSearch";
 import { RealScoutSimpleSearch } from "~/components/real-estate/RealScoutSimpleSearch";
 import { RealScoutHomeValue } from "~/components/real-estate/RealScoutHomeValue";
-import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
+import { HeroPhoto } from "~/components/community/HeroPhoto";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 text-center">
+      <section class="relative overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
+        <HeroPhoto />
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <h1 class="text-4xl md:text-5xl font-bold mb-6">Real Estate Tools & Widgets</h1>
           <p class="text-xl text-blue-100 max-w-3xl mx-auto">
             Explore our comprehensive suite of RealScout widgets and property search tools designed
@@ -19,6 +21,7 @@ export default component$(() => {
           </p>
         </div>
       </section>
+      <OfficeListingsBelowHero />
 
       {/* Dynamic RealScout Content Blocks */}
       <main>
@@ -27,42 +30,18 @@ export default component$(() => {
         {/* RealScout Widgets Grid */}
         <div class="max-w-7xl mx-auto px-4 py-12">
           <div class="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Simple Search Widget */}
             <div class="bg-white rounded-lg shadow-lg p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-4">Quick Property Search</h3>
-              <RealScoutSimpleSearch 
-                agentEncodedId="QWdlbnQtMjI1MDUw"
-              />
+              <RealScoutSimpleSearch agentEncodedId="QWdlbnQtMjI1MDUw" />
             </div>
-
-            {/* Advanced Search Widget */}
             <div class="bg-white rounded-lg shadow-lg p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-4">Advanced Search</h3>
-              <RealScoutAdvancedSearch
-                agentEncodedId="QWdlbnQtMjI1MDUw"
-              />
+              <RealScoutAdvancedSearch agentEncodedId="QWdlbnQtMjI1MDUw" />
             </div>
           </div>
-
-          {/* Home Value Widget */}
           <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
             <h3 class="text-xl font-bold text-gray-900 mb-4">Get Your Home's Value</h3>
-            <RealScoutHomeValue
-              agentEncodedId="QWdlbnQtMjI1MDUw"
-            />
-          </div>
-
-          {/* Office Listings Widget */}
-          <div class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Current Listings</h3>
-            <RealScoutOfficeListingsWidget
-              agentEncodedId="QWdlbnQtMjI1MDUw"
-              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-              listingStatus="For Sale"
-              propertyTypes="SFR,MF"
-              priceMin={500000}
-              priceMax={1000000}
-            />
+            <RealScoutHomeValue agentEncodedId="QWdlbnQtMjI1MDUw" />
           </div>
         </div>
 

@@ -1,7 +1,8 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
+import { HeroPhoto } from "~/components/community/HeroPhoto";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 export const head: DocumentHead = {
   title: "55+ Communities in Las Vegas for Rent | Active Adult Rental Homes - Dr. Jan Duffy",
@@ -164,7 +165,8 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20">
+      <section class="relative bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 overflow-hidden">
+        <HeroPhoto />
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="relative max-w-7xl mx-auto px-4 text-center">
           <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -183,6 +185,7 @@ export default component$(() => {
           </div>
         </div>
       </section>
+      <OfficeListingsBelowHero />
 
       {/* Rental Market Overview */}
       <section class="py-16 bg-white">
@@ -374,16 +377,6 @@ export default component$(() => {
       </section>
 
       {/* RealScout Widgets */}
-      <div class="max-w-7xl mx-auto px-4 py-8">
-        <RealScoutOfficeListingsWidget
-          agentEncodedId="QWdlbnQtMjI1MDUw"
-          sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-          listingStatus="For Rent"
-          propertyTypes="SFR"
-          priceMin={2000}
-          priceMax={8000}
-        />
-      </div>
 
       {/* Call to Action */}
       <section class="bg-gradient-to-br from-teal-600 to-teal-800 py-16">

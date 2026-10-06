@@ -1,5 +1,6 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 export default component$(() => {
   const sitemapStatus = useSignal<string>("Checking...");
@@ -34,6 +35,7 @@ export default component$(() => {
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-lg shadow-lg p-8">
           <h1 class="text-3xl font-bold text-gray-900 mb-8">Sitemap Validation & Testing</h1>
+      <OfficeListingsBelowHero />
 
           <div class="space-y-6">
             {/* Sitemap Links */}

@@ -1,7 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
+import { HeroPhoto } from "~/components/community/HeroPhoto";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 export const head: DocumentHead = {
   title: "Summerlin Homes for Sale | Dr. Jan Duffy - Luxury Community Specialist",
@@ -66,7 +67,8 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white py-20">
+      <section class="relative bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white py-20 overflow-hidden">
+        <HeroPhoto />
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="relative max-w-7xl mx-auto px-4 text-center">
           <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -85,6 +87,7 @@ export default component$(() => {
           </div>
         </div>
       </section>
+      <OfficeListingsBelowHero />
 
       {/* Summerlin Overview */}
       <section class="py-16 bg-white">
@@ -334,22 +337,8 @@ export default component$(() => {
       </section>
 
       {/* Current Summerlin Listings */}
-      <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Current Summerlin Listings</h2>
-            <p class="text-lg text-gray-600">Explore available homes in Summerlin's premier communities</p>
-          </div>
-          <RealScoutOfficeListingsWidget
-            agentEncodedId="QWdlbnQtMjI1MDUw"
-            sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-            listingStatus="For Sale"
-            propertyTypes="SFR,MF"
-            priceMin={400000}
-            priceMax={3000000}
-          />
-        </div>
-      </section>
+
+
 
       {/* Why Choose Dr. Jan Duffy for Summerlin */}
       <section class="py-16 bg-white">

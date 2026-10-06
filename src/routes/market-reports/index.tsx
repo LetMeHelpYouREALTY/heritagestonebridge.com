@@ -2,6 +2,8 @@ import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { generateAIContent } from "~/lib/ai-content-generator";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
+import { HeroPhoto } from "~/components/community/HeroPhoto";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 export const head: DocumentHead = {
   title: "Las Vegas Market Reports | Real Estate Market Analysis - Dr. Jan Duffy",
@@ -158,7 +160,8 @@ Format as JSON with sections: market_overview, price_trends, inventory_data, mar
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-700 text-white py-20">
+      <section class="relative bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-700 text-white py-20 overflow-hidden">
+        <HeroPhoto />
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="relative max-w-7xl mx-auto px-4 text-center">
           <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -183,6 +186,7 @@ Format as JSON with sections: market_overview, price_trends, inventory_data, mar
           </div>
         </div>
       </section>
+      <OfficeListingsBelowHero />
 
       {/* AI Market Content */}
       <section class="py-16 bg-gray-50">

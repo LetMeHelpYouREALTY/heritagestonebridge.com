@@ -6,6 +6,7 @@ import { QuestionList } from "~/components/community/QuestionList";
 import { business } from "~/config/business";
 import { faqJsonLd } from "~/config/community";
 import { homeQuestions } from "~/config/questions";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 /**
  * Sources (checked 2026-10-02): nine plans in three collections and RV garages at select
@@ -42,6 +43,7 @@ export default component$(() => {
           See homes for sale
         </a>
       </CampaignHero>
+      <OfficeListingsBelowHero />
 
       <section class="bg-hsb-cream py-16">
         <div class="mx-auto max-w-5xl px-4">

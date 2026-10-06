@@ -2,6 +2,8 @@ import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { business, openingHoursSpecification } from "~/config/business";
+import { HeroPhoto } from "~/components/community/HeroPhoto";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 export const head: DocumentHead = {
   title: "Contact Dr. Jan Duffy - Las Vegas Real Estate Expert | Heritage at Stonebridge",
@@ -28,7 +30,7 @@ export const head: DocumentHead = {
     },
     {
       property: "og:image",
-      content: "https://heritagestonebridge.com/images/dr-jan-duffy-professional.jpg",
+      content: "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/fc4911a4-7842-470b-a54d-4589039a2a00/tablet",
     },
     {
       name: "twitter:card",
@@ -74,7 +76,7 @@ export default component$(() => {
         "description": "Your local guide to Heritage at Stonebridge — Lennar's guard-gated 55+ community in Summerlin West (89138). Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties (NV License S.0197614.LLC), helps buyers and sellers with resale and new-build homes, HOA questions, and fair comparisons to Sun City Summerlin and other Summerlin active-adult neighborhoods.",
         "image": {
           "@type": "ImageObject",
-          "url": "https://heritagestonebridge.com/images/dr-jan-duffy-professional.jpg",
+          "url": "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/fc4911a4-7842-470b-a54d-4589039a2a00/tablet",
           "width": 400,
           "height": 400
         },
@@ -275,7 +277,8 @@ export default component$(() => {
   return (
     <>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20">
+      <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 overflow-hidden">
+        <HeroPhoto />
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -290,6 +293,7 @@ export default component$(() => {
           </p>
         </div>
       </section>
+      <OfficeListingsBelowHero />
 
       {/* Contact Information */}
       <section class="py-16 bg-white">

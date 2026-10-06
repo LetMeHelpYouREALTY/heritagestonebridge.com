@@ -4,6 +4,7 @@ import { CampaignHero } from "~/components/community/CampaignHero";
 import { ContactStrip } from "~/components/community/ContactStrip";
 import { business } from "~/config/business";
 import { community, faqJsonLd } from "~/config/community";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 const faqs = [
   {
@@ -50,6 +51,7 @@ export default component$(() => {
           Listing campaign page
         </a>
       </CampaignHero>
+      <OfficeListingsBelowHero />
 
       <section class="bg-hsb-cream py-16">
         <div class="mx-auto max-w-5xl px-4">

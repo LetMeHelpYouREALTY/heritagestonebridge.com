@@ -1,9 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { RealScoutHeroWidget } from "~/components/real-estate/RealScoutHeroWidget";
 import { AgentPortrait } from "~/components/community/AgentPortrait";
 import { CommunityGallery } from "~/components/community/CommunityGallery";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { business } from "~/config/business";
 import {
   DEFAULT_OG_IMAGE,
@@ -112,6 +112,7 @@ export default component$(() => {
           </div>
         </div>
       </section>
+      <OfficeListingsBelowHero />
 
       <section class="bg-hsb-cream py-16">
         <div class="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
@@ -243,17 +244,7 @@ export default component$(() => {
         </div>
       </section>
 
-      {/* RealScout Hero Widget */}
-              <RealScoutHeroWidget
-                agentEncodedId="QWdlbnQtMjI1MDUw"
-                title="Exclusive Heritage at Stonebridge Listings"
-                subtitle="Schedule Your Private Tour Today"
-                priceMin="600000"
-                priceMax="900000"
-              />
-
-              {/* RealScout Sticky Widget */}
-              <RealScoutStickyWidget
+      <RealScoutStickyWidget
                 agentEncodedId="QWdlbnQtMjI1MDUw"
                 title="Featured Listings"
                 subtitle="Call (702) 789-6561"

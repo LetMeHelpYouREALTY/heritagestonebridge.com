@@ -6,6 +6,7 @@ import { QuestionList } from "~/components/community/QuestionList";
 import { business } from "~/config/business";
 import { faqJsonLd } from "~/config/community";
 import { questionGroups } from "~/config/questions";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 const allQuestions = questionGroups.flatMap((group) => [...group.items]);
 const faqScript = faqJsonLd(allQuestions);
@@ -32,6 +33,7 @@ export default component$(() => {
           Text Dr. Jan
         </a>
       </CampaignHero>
+      <OfficeListingsBelowHero />
 
       <nav class="bg-hsb-cream py-8" aria-label="Question topics">
         <ul class="mx-auto flex max-w-5xl flex-wrap gap-3 px-4">

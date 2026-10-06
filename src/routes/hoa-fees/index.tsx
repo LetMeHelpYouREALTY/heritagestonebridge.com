@@ -6,6 +6,7 @@ import { QuestionList } from "~/components/community/QuestionList";
 import { business } from "~/config/business";
 import { COMMUNITY_SOURCE, community, faqJsonLd } from "~/config/community";
 import { hoaQuestions } from "~/config/questions";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 /**
  * No dues figure is published here on purpose (2026-10-02): no public source gives the
@@ -35,6 +36,7 @@ export default component$(() => {
           Text for current dues
         </a>
       </CampaignHero>
+      <OfficeListingsBelowHero />
 
       <section class="bg-hsb-cream py-16">
         <div class="mx-auto max-w-5xl px-4">

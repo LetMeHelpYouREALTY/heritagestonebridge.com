@@ -3,10 +3,10 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { AmenityGrid } from "~/components/community/AmenityGrid";
 import { CampaignHero } from "~/components/community/CampaignHero";
 import { ContactStrip } from "~/components/community/ContactStrip";
-import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 import { RealScoutSimpleSearch } from "~/components/real-estate/RealScoutSimpleSearch";
 import { business } from "~/config/business";
 import { COMMUNITY_SOURCE, COMMUNITY_VERIFIED, REALSCOUT_AGENT_ID, community, faqJsonLd } from "~/config/community";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 const faqs = [
   {
@@ -63,6 +63,7 @@ export default component$(() => {
           Text Dr. Jan
         </a>
       </CampaignHero>
+      <OfficeListingsBelowHero />
 
       <section class="bg-hsb-cream py-16">
         <div class="mx-auto grid max-w-5xl gap-6 px-4 sm:grid-cols-3">
@@ -111,13 +112,6 @@ export default component$(() => {
           </ol>
           <div class="mt-10">
             <RealScoutSimpleSearch agentEncodedId={REALSCOUT_AGENT_ID} />
-          </div>
-          <div class="mt-10">
-            <RealScoutOfficeListingsWidget
-              agentEncodedId={REALSCOUT_AGENT_ID}
-              priceMin={400000}
-              priceMax={1600000}
-            />
           </div>
         </div>
       </section>

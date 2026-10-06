@@ -4,6 +4,7 @@ import { ContactStrip } from "~/components/community/ContactStrip";
 import { CampaignHero } from "~/components/community/CampaignHero";
 import { business } from "~/config/business";
 import { community, faqJsonLd } from "~/config/community";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 /**
  * Nearby places around the clubhouse. Google Maps supplies the pins.
@@ -77,6 +78,7 @@ export default component$(() => {
           Clubhouse amenities
         </a>
       </CampaignHero>
+      <OfficeListingsBelowHero />
 
       <section class="bg-white py-16">
         <div class="mx-auto max-w-5xl px-4">

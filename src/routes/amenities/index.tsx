@@ -6,6 +6,7 @@ import { CampaignHero } from "~/components/community/CampaignHero";
 import { ContactStrip } from "~/components/community/ContactStrip";
 import { business } from "~/config/business";
 import { COMMUNITY_SOURCE, COMMUNITY_VERIFIED, community, faqJsonLd } from "~/config/community";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 /**
  * Sources (checked 2026-10-02):
@@ -77,6 +78,7 @@ export default component$(() => {
           See homes for sale
         </a>
       </CampaignHero>
+      <OfficeListingsBelowHero />
 
       <section class="bg-hsb-cream py-16">
         <div class="mx-auto grid max-w-5xl gap-6 px-4 sm:grid-cols-3">
