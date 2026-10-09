@@ -3,6 +3,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { AgentPortrait } from "~/components/community/AgentPortrait";
 import { CommunityGallery } from "~/components/community/CommunityGallery";
+import { FeaturedListingCard } from "~/components/community/FeaturedListingCard";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { business } from "~/config/business";
 import {
@@ -106,6 +107,7 @@ export default component$(() => {
           </div>
         </div>
       </section>
+      <FeaturedListingCard />
       <OfficeListingsBelowHero />
 
       <section class="bg-hsb-cream py-16">
