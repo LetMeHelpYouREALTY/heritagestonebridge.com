@@ -179,3 +179,25 @@ Berkshire Hathaway HomeServices Nevada Properties
 1. Add `NEXT_PUBLIC_GBP_PLACE_ID` in Vercel Production.  
 2. When 5+ verified reviews exist, set `NEXT_PUBLIC_GBP_AGGREGATE_RATING_VALUE` and `NEXT_PUBLIC_GBP_AGGREGATE_RATING_COUNT`.  
 3. Remove `NEXT_PUBLIC_GBP_REVIEWS_DISABLED` if set during verification.
+
+---
+
+## Automation (2026 advisor loop)
+
+**Advisor decisions:** `lib/gbp/advisor-decisions.ts`  
+**Weekly posts (generated):** `content/gbp/generated/latest.md`  
+**Regenerate locally:** `npm run gbp:weekly`  
+**GitHub loop:** `.github/workflows/gbp-weekly.yml` — Sundays, commits new post pack if changed.
+
+### Advisor picks (June 2026)
+
+| Decision | Value |
+|----------|--------|
+| Posts per week | 3 (Tue / Thu / Sat) |
+| Batch day | Sunday |
+| Description max | 750 characters |
+| Q&A automation | Manual dashboard only (API sunset Nov 2025) |
+| Local Posts API | Use when `GBP_*` OAuth env is configured |
+| Site Q&A layer | FAQ on `/faq` + FAQPage JSON-LD |
+
+Paste posts from `content/gbp/generated/latest.md` into the GBP dashboard each week.

@@ -1,188 +1,43 @@
-# heyberkshire.com - Project Memory & Rules (February 2026)
+# heritagestonebridge.com - Project Memory & Rules (October 2026)
+
+Replaces the old heyberkshire.com / Next.js rules. Describes origin/main (last verified 2026-10-09 from package.json and src/).
 
 ## Project Context
 
-Real estate website for Dr. Jan Duffy (NEVER "Janet").
+Real estate website for Dr. Jan Duffy (NEVER "Janet"), focused on Heritage at Stonebridge, a guard-gated 55+ community in Summerlin West (89138).
 - Agent: Dr. Jan Duffy, License S.0197614.LLC
 - Brokerage: Berkshire Hathaway HomeServices Nevada Properties
-- Markets: Las Vegas, Henderson, Summerlin
-- Phone: (702) 500-1942
+- Phone: (702) 789-6561. Import it from src/config/business.ts. Never hardcode a number.
+- Never use 702-500-1942 (FUB line), 702-500-1955 or 702-222-1964 on this site.
 
-## Tech Stack
+## Tech Stack (verified from origin/main package.json)
 
-- **Frontend:** Next.js 14 (App Router), React, TypeScript, Tailwind CSS, shadcn/ui
-- **Deployment:** Vercel (primary), Cloudflare Pages (optional)
-- **Edge:** Cloudflare Workers
-- **AI:** Anthropic Claude 3.5 Sonnet
-- **CRM:** Follow Up Boss (native integrations)
-- **IDX/MLS:** RealScout (native FUB integration)
-- **Scheduling:** Calendly
+- Qwik City on Vite, TypeScript, Tailwind CSS
+- Biome for lint and format (npm run lint.fix, npm run format)
+- Deploy: Vercel (npm run deploy, deploy.prod)
+- Routes: src/routes/<page>/index.tsx
+- Business facts and contact details: src/config/business.ts
 
-## Platform Integrations (Already Connected)
+## Platform Integrations (already connected, do not rebuild)
 
-### ✅ Follow Up Boss
-- Full REST API with webhooks
-- **Native RealScout integration** (don't duplicate!)
-- Built-in automation, action plans, drip campaigns
-- Lead deduplication built-in
-
-### ✅ RealScout
-- **Native Follow Up Boss sync** (2-way, automatic)
-- AI-powered property matching (Dec 2025 release)
-- Natural language search built-in
-- Activity tracking built-in
-- Don't build custom sync - use native integration!
-
-### ✅ Calendly
-- Widget works out of box
-- Email notifications built-in
-- Calendar sync built-in
-
-## 2026 Best Practices Implemented
-
-### Performance
-- Lighthouse scores: 95+ (Performance, Accessibility, SEO)
-- Core Web Vitals: LCP <2.5s, CLS <0.1, FID <100ms
-- Images: AVIF/WebP with 1-year cache
-- Edge caching: 80-90% hit rate
-
-### Infrastructure
-- GitHub Actions: Automated Lighthouse CI, preview deployments
-- Cloudflare Workers: Custom caching, security headers, image optimization
-- Bundle analysis: Track size regressions
-- TypeScript: Strict mode
-
-### API Optimization
-- Claude AI: Prompt caching (90% cost savings)
-- Rate limiting: Prevent 429 errors
-- Response caching: Avoid duplicate calls
-- Cost tracking: Monitor spending
-
-### Accessibility
-- WCAG 2.1 compliant
-- `prefers-reduced-motion` support
-- Keyboard navigation
-- ARIA attributes
+- Follow Up Boss: lead hub, webhooks, action plans
+- RealScout: native FUB sync and property matching. Do not build custom sync.
+- Calendly: the only scheduling path. No lead or contact forms. Embed the Calendly widget.
 
 ## Critical Rules
 
-### 1. Don't Duplicate Platform Features
+1. Check whether a platform already has a feature before building it.
+2. Fair Housing: describe the home and amenities, not who lives there. For the 55+ community, state the age rule factually ("age-qualified 55+; occupancy is subject to the association's governing documents and applicable law"). Avoid "safe", "family-friendly", "good schools" and stereotypes.
+3. No unsourced statistics. Every market number needs a source and a date.
+4. Use TypeScript strict mode. Define types for API responses. No `any`.
+5. Performance and accessibility: optimized images, `prefers-reduced-motion`, keyboard navigation, ARIA attributes.
+6. Pull request checks live in .github/workflows and .devinreview.json. They flag old phone numbers.
 
-**BEFORE building any integration:**
-- Check if platform already has the feature
-- Check for native integrations between platforms
-- Research recent updates (2025-2026)
+## Common Pitfalls
 
-**Examples of what NOT to build:**
-- ❌ RealScout → FUB sync (native integration exists)
-- ❌ Property recommendations (RealScout AI does this)
-- ❌ Activity tracking (RealScout has this)
-- ❌ FUB automation wrappers (FUB has action plans)
-- ❌ Custom scheduling (Calendly works fine)
+1. Over-abstracting APIs that work fine
+2. Optimizing before measuring
+3. Duplicating what RealScout and FUB already do
+4. Hardcoding the phone number instead of importing it
 
-**What TO build (genuine enhancements):**
-- ✅ Rate limiting (APIs don't provide this)
-- ✅ Response caching (reduce duplicate calls)
-- ✅ Cost optimization (prompt caching)
-- ✅ Custom edge logic (Cloudflare Workers)
-
-### 2. Performance First
-
-- Always use Next.js `<Image>` component
-- Enable AVIF/WebP formats
-- Implement `useReducedMotion` for animations
-- Add ARIA attributes and keyboard nav
-- Set appropriate cache headers
-
-### 3. Claude AI Cost Optimization
-
-```typescript
-// ✅ DO: Use consistent system prompts (cached)
-systemPrompt: realEstateAgentTemplate.system, // Same every time = cached!
-
-// ❌ DON'T: Dynamic prompts (no cache = 10x cost)
-systemPrompt: `You are ${agent}...`, // Changes = no cache
-```
-
-### 4. Type Safety
-
-- Use TypeScript strict mode
-- Define interfaces for all API responses
-- No `any` types (use `unknown` if needed)
-
-## Common Pitfalls to Avoid
-
-1. **Over-abstracting** - Don't wrap APIs that work fine
-2. **Premature optimization** - Measure before optimizing
-3. **Duplicating platforms** - Check docs first!
-4. **Breaking working integrations** - RealScout ↔ FUB already works
-5. **Building features vs optimizing** - Focus on speed, cost, quality
-
-## File Organization
-
-```
-app/                    # Next.js App Router
-├── api/               # API routes
-│   ├── claude/        # Claude AI endpoints
-│   └── webhooks/      # Webhook handlers
-components/            # React components
-├── ui/               # shadcn/ui components
-├── forms/            # Form components
-├── sections/         # Page sections
-└── layouts/          # Layout components
-lib/                   # Utility libraries
-├── claude/           # Claude AI client & templates
-└── fub/              # Follow Up Boss client (rate limiting only)
-hooks/                 # Custom React hooks
-workers/               # Cloudflare Workers
-.github/workflows/     # CI/CD automation
-.cursor/rules/         # Cursor rules (this file)
-```
-
-## Development Commands
-
-```bash
-npm run dev              # Start dev server
-npm run build            # Production build
-npm run analyze          # Bundle analysis
-npm run lighthouse       # Performance audit
-npm run cloudflare:deploy  # Deploy workers
-```
-
-## Environment Variables
-
-```env
-# Required for AI (optional)
-ANTHROPIC_API_KEY=sk-ant-...
-
-# Required for Cloudflare (optional)
-CLOUDFLARE_API_TOKEN=...
-CLOUDFLARE_ACCOUNT_ID=...
-
-# Optional - FUB
-FUB_API_KEY=...
-FUB_SYSTEM_KEY=...
-```
-
-## Key Learnings (February 2026)
-
-1. **RealScout + FUB are already integrated** - Don't build custom sync
-2. **Claude prompt caching** - Biggest cost optimization (90% savings)
-3. **Cloudflare Workers** - Best for custom edge logic
-4. **GitHub Actions** - Automate quality checks
-5. **Check platform docs FIRST** - Avoid building duplicates
-
-## What Makes This Site Unique
-
-Focus on these instead of duplicating platforms:
-- YOUR local Las Vegas/Henderson expertise
-- YOUR content (blog posts, guides)
-- YOUR brand (Dr. Jan Duffy's reputation)
-- YOUR client relationships
-
-Platforms (RealScout, FUB) handle the commodity features.
-You provide the unique value.
-
----
-
-Last Updated: February 13, 2026
+Last Updated: October 9, 2026

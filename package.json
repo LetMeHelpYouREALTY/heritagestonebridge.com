@@ -20,6 +20,8 @@
     "test:coverage": "vitest run --coverage",
     "test:ci": "vitest run --reporter=verbose",
     "test:watch": "vitest watch",
+    "gbp:weekly": "npx --yes tsx scripts/gbp-weekly.ts",
+    "gbp:audit": "npx --yes tsx -e \"import { runNapAudit } from './lib/gbp/nap-audit.ts'; const r=runNapAudit(); console.log(JSON.stringify(r,null,2)); process.exit(r.passed?0:1)\"",
     "analyze": "ANALYZE=true npm run build",
     "lighthouse": "lhci autorun",
     "lighthouse:manual": "lighthouse https://www.heritagestonebridge.com --view --preset=desktop",
