@@ -97,7 +97,6 @@ export default component$(() => {
             width={1085}
             height={723}
             fetchPriority="high"
-            decoding="async"
             sizes="100vw"
             class="aspect-[3/2] max-h-[70vh] w-full object-cover"
           />
