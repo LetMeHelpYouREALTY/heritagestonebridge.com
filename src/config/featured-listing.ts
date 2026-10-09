@@ -21,6 +21,7 @@ export const featuredListing = {
   lotSqft: "5,227",
   yearBuilt: 2025,
   mlsNumber: "2825123",
+  listDate: "2026-10-06",
   checkedOn: "October 8, 2026",
   sourceName: "Greater Las Vegas Association of Realtors (GLVAR)",
   listingBrokerage: "Berkshire Hathaway HomeServices Nevada Properties",

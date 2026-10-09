@@ -7,33 +7,59 @@ import { featuredListing, featuredListingFaqs } from "~/config/featured-listing"
 
 const listing = featuredListing;
 const faqScript = faqJsonLd(featuredListingFaqs);
+const placeAddress = {
+  "@type": "PostalAddress",
+  streetAddress: listing.street,
+  addressLocality: listing.city,
+  addressRegion: listing.region,
+  postalCode: listing.postalCode,
+  addressCountry: "US",
+};
+
 const listingScript = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "RealEstateListing",
-  name: `${listing.street}, ${listing.city}`,
-  url: `https://heritagestonebridge.com${listing.path}`,
-  description: listing.summary,
-  image: listing.photos.map((photo) => photo.src),
-  numberOfBedrooms: listing.beds,
-  numberOfBathroomsTotal: listing.baths,
-  floorSize: {
-    "@type": "QuantitativeValue",
-    value: 1234,
-    unitCode: "FTK",
-  },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: listing.street,
-    addressLocality: listing.city,
-    addressRegion: listing.region,
-    postalCode: listing.postalCode,
-    addressCountry: "US",
-  },
-  offers: {
-    "@type": "Offer",
-    price: listing.price,
-    priceCurrency: "USD",
-  },
+  "@graph": [
+    {
+      "@type": "RealEstateListing",
+      name: `${listing.street}, ${listing.city}`,
+      url: `https://heritagestonebridge.com${listing.path}`,
+      datePosted: listing.listDate,
+      description: listing.summary,
+      image: listing.photos.map((photo) => photo.src),
+      numberOfBedrooms: listing.beds,
+      numberOfBathroomsTotal: listing.baths,
+      floorSize: {
+        "@type": "QuantitativeValue",
+        value: 1234,
+        unitCode: "FTK",
+      },
+      address: placeAddress,
+      offers: {
+        "@type": "Offer",
+        price: listing.price,
+        priceCurrency: "USD",
+      },
+    },
+    ...listing.openHouses.map((openHouse) => ({
+      "@type": "Event",
+      name: `Open house at ${listing.street}`,
+      startDate: openHouse.start,
+      endDate: openHouse.end,
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      eventStatus: "https://schema.org/EventScheduled",
+      location: {
+        "@type": "Place",
+        name: listing.street,
+        address: placeAddress,
+      },
+      organizer: {
+        "@type": "RealEstateAgent",
+        name: "Dr. Jan Duffy",
+        telephone: business.telephone,
+        url: "https://heritagestonebridge.com",
+      },
+    })),
+  ],
 });
 
 const facts = [
@@ -64,8 +90,20 @@ export default component$(() => {
       <script type="application/ld+json" dangerouslySetInnerHTML={faqScript} />
       <script type="application/ld+json" dangerouslySetInnerHTML={listingScript} />
       <article class="bg-white">
+        {hero ? (
+          <img
+            src={hero.src}
+            alt={hero.alt}
+            width={1085}
+            height={723}
+            fetchPriority="high"
+            decoding="async"
+            sizes="100vw"
+            class="aspect-[3/2] max-h-[70vh] w-full object-cover"
+          />
+        ) : null}
         <header class="bg-hsb-dark text-white">
-          <div class="mx-auto max-w-6xl px-4 py-16">
+          <div class="mx-auto max-w-6xl px-4 py-12">
             <p class="text-sm font-semibold uppercase tracking-[0.15em] text-hsb-accent-light">
               {listing.status} · {listing.plan}
             </p>
@@ -73,6 +111,13 @@ export default component$(() => {
               {listing.street}, {listing.city}, {listing.region} {listing.postalCode}
             </h1>
             <p class="mt-4 font-display text-4xl">{listing.priceDisplay}</p>
+            <ul class="mt-4 text-lg text-hsb-sand">
+              {listing.openHouses.map((openHouse) => (
+                <li key={openHouse.start}>
+                  Open house <time dateTime={openHouse.start}>{openHouse.label}</time>, {openHouse.time}
+                </li>
+              ))}
+            </ul>
             <p class="mt-4 max-w-2xl text-lg text-hsb-sand">{listing.summary}</p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -99,16 +144,6 @@ export default component$(() => {
           </div>
         </header>
 
-        {hero ? (
-          <img
-            src={hero.src}
-            alt={hero.alt}
-            width={1085}
-            height={723}
-            fetchPriority="high"
-            class="aspect-[3/2] w-full object-cover"
-          />
-        ) : null}
         {rest.length > 0 ? (
           <ul class="grid grid-cols-2 gap-3 bg-hsb-cream p-3 md:grid-cols-4">
             {rest.map((photo) => (
@@ -119,6 +154,8 @@ export default component$(() => {
                   width={1085}
                   height={723}
                   loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 768px) 25vw, 50vw"
                   class="aspect-[3/2] w-full object-cover"
                 />
               </li>

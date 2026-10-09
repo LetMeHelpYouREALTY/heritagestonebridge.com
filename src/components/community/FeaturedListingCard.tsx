@@ -19,6 +19,10 @@ export const FeaturedListingCard = component$(() => {
                   alt={photo.alt}
                   width={1085}
                   height={723}
+                  loading="lazy"
+                  fetchPriority="low"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   class="h-full w-full object-cover"
                 />
               ) : null}
