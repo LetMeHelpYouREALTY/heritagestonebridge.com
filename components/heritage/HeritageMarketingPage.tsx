@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Phone, CheckCircle } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
@@ -18,6 +19,7 @@ import type { HeritagePageContent, HeritageSection } from "@/lib/heritage-stoneb
 
 type HeritageMarketingPageProps = {
   content: HeritagePageContent;
+  aboveSections?: ReactNode;
 };
 
 function renderSection(section: HeritageSection, index: number) {
@@ -147,7 +149,10 @@ function renderSection(section: HeritageSection, index: number) {
   }
 }
 
-export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
+export function HeritageMarketingPage({
+  content,
+  aboveSections,
+}: HeritageMarketingPageProps) {
   const schemas: Record<string, unknown>[] = [
     generateBreadcrumbSchema(content.breadcrumbs),
     generateWebPageSchema({
@@ -216,6 +221,10 @@ export function HeritageMarketingPage({ content }: HeritageMarketingPageProps) {
             subtitle={content.subtitle}
             priority
           />
+
+          {aboveSections ? (
+            <div className="mx-auto mb-16 max-w-6xl">{aboveSections}</div>
+          ) : null}
 
           {content.sections.map(renderSection)}
 

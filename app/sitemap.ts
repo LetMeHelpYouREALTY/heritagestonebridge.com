@@ -4,6 +4,7 @@ import { getSiteUrl } from "@/lib/site-url";
 import { HERITAGE_SITE_ROUTES } from "@/lib/heritage-stonebridge/routes";
 import { HERITAGE_INDEXABLE_ROUTES } from "@/lib/heritage-stonebridge/indexable-routes";
 import { HERITAGE_SEO_LANDING_PAGES } from "@/lib/heritage-stonebridge/seo-landing-pages";
+import { FEATURED_LISTING } from "@/lib/heritage-stonebridge/featured-listing";
 
 const COMMUNITY_COMPARISON_ROUTES = [
   "/55-plus-communities/sun-city-summerlin",
@@ -53,6 +54,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const heritageEntries = toSitemapEntries(Array.from(routeMap.values()), baseUrl);
 
+  const featuredListingEntries = [
+    {
+      url: `${baseUrl}${FEATURED_LISTING.path}`,
+      lastModified: new Date("2026-10-08T00:00:00.000Z"),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+  ];
+
   const comparisonEntries = COMMUNITY_COMPARISON_ROUTES.map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: SITE_BUILD_DATE,
@@ -60,5 +70,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  return [...heritageEntries, ...comparisonEntries];
+  return [...heritageEntries, ...featuredListingEntries, ...comparisonEntries];
 }

@@ -6,6 +6,7 @@ import HeroBackground from "@/components/sections/HeroBackground";
 import FAQSection from "@/components/sections/FAQSection";
 import RealScoutSimpleSearch from "@/components/realscout/RealScoutSimpleSearch";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { FeaturedListingCard } from "@/components/heritage/FeaturedListing";
 import SchemaScript from "@/components/SchemaScript";
 import {
   combineSchemas,
@@ -176,6 +177,12 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-16">
+          <div className="container mx-auto max-w-6xl px-4">
+            <FeaturedListingCard />
           </div>
         </section>
 
