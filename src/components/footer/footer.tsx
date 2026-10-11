@@ -473,7 +473,7 @@ export const Footer = component$(() => {
           </div>
 
           {/* SEO Keywords Footer */}
-          <div class="mt-6 text-xs text-gray-500 leading-relaxed">
+          <div class="mt-6 text-xs text-gray-300 leading-relaxed">
             <p>
               {business.name}. {business.addressDisplay}. {business.hoursDisplay}. Call or text{" "}
               {business.telephoneDisplay}. Service area: Las Vegas, NV 89138 and Summerlin West.

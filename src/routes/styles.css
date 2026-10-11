@@ -58,7 +58,7 @@ h3 {
 /* TAGS ----------------------------------------- */
 a {
   text-decoration: none;
-  color: var(--qwik-light-blue);
+  color: inherit;
 }
 
 code {

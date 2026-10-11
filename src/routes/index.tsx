@@ -73,7 +73,7 @@ export default component$(() => {
         </a>
         <div class="absolute inset-0 z-10 mx-auto flex max-w-7xl flex-col justify-end px-4 py-16">
           <AgentPortrait size="lg" />
-          <p class="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-hsb-accent-light">
+          <p class="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-hsb-sand">
             {business.name}
           </p>
           <h1 class="mt-4 max-w-4xl font-display text-5xl leading-tight md:text-7xl">

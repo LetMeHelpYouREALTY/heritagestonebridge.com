@@ -32,7 +32,9 @@ export const FeaturedListingCard = component$(() => {
                 Open this weekend · {listing.status}
               </p>
               <h2 id="featured-home" class="font-display text-4xl text-hsb-dark">
-                <a href={listing.path}>{listing.street}</a>
+                <a href={listing.path} class="text-hsb-dark">
+                  {listing.street}
+                </a>
               </h2>
               <p class="text-hsb-text">
                 {listing.city}, {listing.region} {listing.postalCode} · {listing.plan}
