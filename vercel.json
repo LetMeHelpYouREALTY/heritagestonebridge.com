@@ -163,6 +163,146 @@
       "source": "/home-valuation",
       "destination": "/sell-heritage-at-stonebridge",
       "permanent": true
+    },
+    {
+      "source": "/guard-gated-living",
+      "destination": "/gated-communities",
+      "permanent": true
+    },
+    {
+      "source": "/guard-gated-living-schema",
+      "destination": "/gated-communities",
+      "permanent": true
+    },
+    {
+      "source": "/hoa-fees-schema",
+      "destination": "/hoa-fees",
+      "permanent": true
+    },
+    {
+      "source": "/amenities-schema",
+      "destination": "/amenities",
+      "permanent": true
+    },
+    {
+      "source": "/community-schema",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/selling-guide-schema",
+      "destination": "/home-selling-guide",
+      "permanent": true
+    },
+    {
+      "source": "/lifestyle-schema",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/location-schema",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/summerlin-55-plus-schema",
+      "destination": "/summerlin-55-plus-communities",
+      "permanent": true
+    },
+    {
+      "source": "/floor-plans-schema",
+      "destination": "/floor-plans",
+      "permanent": true
+    },
+    {
+      "source": "/faq-schema",
+      "destination": "/questions",
+      "permanent": true
+    },
+    {
+      "source": "/homes-for-sale-schema",
+      "destination": "/heritage-at-stonebridge-homes-for-sale",
+      "permanent": true
+    },
+    {
+      "source": "/about-schema",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/buying-guide-schema",
+      "destination": "/buy-heritage-at-stonebridge",
+      "permanent": true
+    },
+    {
+      "source": "/downsizing-schema",
+      "destination": "/sell-heritage-at-stonebridge",
+      "permanent": true
+    },
+    {
+      "source": "/market-update-schema",
+      "destination": "/market-reports",
+      "permanent": true
+    },
+    {
+      "source": "/first-time-buyers-schema",
+      "destination": "/first-time-buyers",
+      "permanent": true
+    },
+    {
+      "source": "/vs-sun-city-summerlin-schema",
+      "destination": "/sun-city-del-webb-real-estate",
+      "permanent": true
+    },
+    {
+      "source": "/vs-trilogy-summerlin-schema",
+      "destination": "/community-comparison",
+      "permanent": true
+    },
+    {
+      "source": "/downtown-summerlin-schema",
+      "destination": "/summerlin-homes",
+      "permanent": true
+    },
+    {
+      "source": "/showing",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/aliante-homes",
+      "destination": "/northwest-las-vegas",
+      "permanent": true
+    },
+    {
+      "source": "/skye-canyon-homes",
+      "destination": "/northwest-las-vegas",
+      "permanent": true
+    },
+    {
+      "source": "/centennial-hills-homes",
+      "destination": "/northwest-las-vegas",
+      "permanent": true
+    },
+    {
+      "source": "/tule-springs-homes",
+      "destination": "/northwest-las-vegas",
+      "permanent": true
+    },
+    {
+      "source": "/north-las-vegas-homes",
+      "destination": "/northwest-las-vegas",
+      "permanent": true
+    },
+    {
+      "source": "/desert-shores-homes",
+      "destination": "/las-vegas-real-estate",
+      "permanent": true
+    },
+    {
+      "source": "/siena-summerlin-homes",
+      "destination": "/community-comparison",
+      "permanent": true
     }
   ]
 }
