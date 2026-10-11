@@ -161,11 +161,17 @@ export const DEFAULT_OG_IMAGE = communityImage(
 
 const HERO_ID = "34bde918-5f0a-4479-c146-d7914daee500";
 
-/** Hero sources. Mobile Lighthouse uses ~721 CSS pixels; tablet covers that. */
+/**
+ * Mobile Lighthouse uses a 412px-wide phone at 1.75 DPR, so the slot is ~721px.
+ * w=800 has no commas, so it stays one srcset candidate. Named variants cover wider screens.
+ */
+const HERO_MOBILE = `${COMMUNITY_IMAGE_HOST}/${HERO_ID}/w=800`;
+
 export const HERO_IMAGE = {
+  mobile: HERO_MOBILE,
   tablet: communityImage(HERO_ID, "tablet"),
   desktop: communityImage(HERO_ID, "desktop"),
-  srcset: `${communityImage(HERO_ID, "tablet")} 1024w, ${communityImage(HERO_ID, "desktop")} 1920w`,
+  srcset: `${HERO_MOBILE} 800w, ${communityImage(HERO_ID, "tablet")} 1024w, ${communityImage(HERO_ID, "desktop")} 1920w`,
 } as const;
 
 export const communityAmenities = [

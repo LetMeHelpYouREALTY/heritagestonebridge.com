@@ -11,7 +11,7 @@ export const HeroPhoto = component$(() => {
   return (
     <>
       <img
-        src={HERO_IMAGE.tablet}
+        src={HERO_IMAGE.mobile}
         srcset={HERO_IMAGE.srcset}
         sizes="100vw"
         width={1024}

@@ -50,16 +50,16 @@ export default component$(() => {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={homeFaqScript} />
-      <section class="relative isolate min-h-[78vh] overflow-hidden bg-hsb-dark text-white">
+      <section class="relative isolate overflow-hidden bg-hsb-dark text-white">
         <img
-          src={HERO_IMAGE.tablet}
+          src={HERO_IMAGE.mobile}
           srcset={HERO_IMAGE.srcset}
           sizes="100vw"
           alt={communityPhoto("clubhouse-exterior").alt}
-          width={1024}
-          height={576}
+          width={800}
+          height={450}
           fetchPriority="high"
-          class="absolute inset-0 h-full w-full object-cover"
+          class="h-[78vh] w-full object-cover"
         />
         <div class="absolute inset-0 bg-gradient-to-r from-hsb-dark/80 via-hsb-dark/55 to-hsb-dark/25" />
         <a
@@ -71,7 +71,7 @@ export default component$(() => {
           </svg>
           Call {business.telephoneDisplay}
         </a>
-        <div class="relative z-10 mx-auto flex min-h-[78vh] max-w-7xl flex-col justify-end px-4 py-16">
+        <div class="absolute inset-0 z-10 mx-auto flex max-w-7xl flex-col justify-end px-4 py-16">
           <AgentPortrait size="lg" />
           <p class="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-hsb-accent-light">
             {business.name}

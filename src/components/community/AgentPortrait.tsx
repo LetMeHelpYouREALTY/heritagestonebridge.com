@@ -1,8 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 
 /** Dr. Jan Duffy. Cloudflare Images, with a git copy at public/images/dr-jan-duffy.png. */
+/** 192px wide. The tablet variant is a 190KB PNG shown at 40–96px. */
 export const DR_JAN_PORTRAIT =
-  "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/fc4911a4-7842-470b-a54d-4589039a2a00/tablet";
+  "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/fc4911a4-7842-470b-a54d-4589039a2a00/w=192";
 
 const sizeClass = {
   sm: "h-10 w-10",
@@ -22,6 +23,7 @@ export const AgentPortrait = component$<{ size?: PortraitSize }>(({ size = "md" 
       width={px}
       height={px}
       decoding="async"
+      fetchPriority="low"
       loading={size === "sm" ? "eager" : "lazy"}
       class={`${sizeClass[size]} shrink-0 rounded-full object-cover`}
     />
