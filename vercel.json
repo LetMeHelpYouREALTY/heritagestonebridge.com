@@ -110,8 +110,13 @@
       "permanent": true
     },
     {
-      "source": "/community",
-      "destination": "/",
+      "source": "/vs-sun-city-summerlin",
+      "destination": "/community-comparison",
+      "permanent": true
+    },
+    {
+      "source": "/vs-trilogy-summerlin",
+      "destination": "/community-comparison",
       "permanent": true
     },
     {
@@ -126,12 +131,7 @@
     },
     {
       "source": "/lifestyle",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/location",
-      "destination": "/",
+      "destination": "/amenities",
       "permanent": true
     },
     {

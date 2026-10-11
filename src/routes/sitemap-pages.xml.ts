@@ -1,8 +1,8 @@
-import { type RequestHandler } from "@builder.io/qwik-city";
+import type { RequestHandler } from "@builder.io/qwik-city";
 
 export const onGet: RequestHandler = async (requestEvent) => {
   const currentDate = new Date().toISOString();
-  
+
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -85,6 +85,20 @@ export const onGet: RequestHandler = async (requestEvent) => {
 
     <url>
         <loc>https://heritagestonebridge.com/hoa-fees</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://heritagestonebridge.com/community/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://heritagestonebridge.com/location/</loc>
         <lastmod>${currentDate}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>

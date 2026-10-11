@@ -1,12 +1,12 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { AmenityGrid } from "~/components/community/AmenityGrid";
-import { CommunityGallery } from "~/components/community/CommunityGallery";
 import { CampaignHero } from "~/components/community/CampaignHero";
+import { CommunityGallery } from "~/components/community/CommunityGallery";
 import { ContactStrip } from "~/components/community/ContactStrip";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { business } from "~/config/business";
 import { COMMUNITY_SOURCE, COMMUNITY_VERIFIED, community, faqJsonLd } from "~/config/community";
-import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 /**
  * Sources (checked 2026-10-02):
@@ -170,7 +170,10 @@ export default component$(() => {
               the gate.
             </li>
             <li>Ask the clubhouse about guest rules for the pools and courts.</li>
-            <li>Walk from the home you like to the clubhouse. Distance matters more than it looks on a map.</li>
+            <li>
+              Walk from the home you like to the clubhouse. Distance matters more than it looks on a
+              map.
+            </li>
             <li>
               Read the HOA documents with me before you write an offer.{" "}
               <a class="underline" href="/buy-heritage-at-stonebridge">
@@ -200,14 +203,17 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Heritage at Stonebridge Clubhouse & Amenities | Dr. Jan Duffy",
+  title: "Heritage at Stonebridge Amenities | 8,000 sq ft Clubhouse, Pools, Pickleball",
   meta: [
     {
       name: "description",
       content:
         "Heritage at Stonebridge amenities: 8,000 sq ft clubhouse, heated pools, lap pool, fitness, pickleball and bocce behind a staffed gate. Call (702) 789-6561.",
     },
-    { property: "og:title", content: "Heritage at Stonebridge clubhouse and amenities" },
+    {
+      property: "og:title",
+      content: "Heritage at Stonebridge amenities: 8,000 sq ft clubhouse, pools, pickleball",
+    },
     {
       property: "og:description",
       content:

@@ -5,9 +5,14 @@ import { business } from "~/config/business";
 
 const links = [
   { href: "https://heritagestonebridge.com/", label: "Home" },
+  {
+    href: "https://heritagestonebridge.com/heritage-at-stonebridge-homes-for-sale/",
+    label: "Homes",
+  },
+  { href: "https://heritagestonebridge.com/community/", label: "Stonebridge" },
+  { href: "https://heritagestonebridge.com/location/", label: "Location" },
   { href: "https://heritagestonebridge.com/buy-heritage-at-stonebridge/", label: "Buy" },
   { href: "https://heritagestonebridge.com/sell-heritage-at-stonebridge/", label: "Sell" },
-  { href: "https://heritagestonebridge.com/new-listing-heritage-at-stonebridge/", label: "New listing" },
 ] as const;
 
 export default component$(() => {
@@ -50,7 +55,7 @@ export default component$(() => {
           </span>
         </a>
 
-        <nav class="ml-auto hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav class="ml-auto hidden items-center gap-6 lg:flex" aria-label="Primary">
           <ul class="flex items-center gap-7">
             {links.map((item) => (
               <li key={item.href}>
@@ -75,7 +80,7 @@ export default component$(() => {
 
         <button
           type="button"
-          class="ml-auto inline-flex h-11 items-center rounded-full border border-hsb-border bg-white px-4 py-0 text-sm uppercase tracking-[0.14em] text-hsb-dark md:hidden"
+          class="ml-auto inline-flex h-11 items-center rounded-full border border-hsb-border bg-white px-4 py-0 text-sm uppercase tracking-[0.14em] text-hsb-dark lg:hidden"
           aria-expanded={menuOpen.value}
           aria-controls="site-menu"
           onClick$={() => {
@@ -88,7 +93,10 @@ export default component$(() => {
 
       <nav
         id="site-menu"
-        class={["border-t border-hsb-border bg-hsb-cream md:hidden", menuOpen.value ? "block" : "hidden"]}
+        class={[
+          "border-t border-hsb-border bg-hsb-cream lg:hidden",
+          menuOpen.value ? "block" : "hidden",
+        ]}
         aria-label="Mobile"
       >
         <ul class="mx-auto flex max-w-7xl flex-col px-4 py-3">
