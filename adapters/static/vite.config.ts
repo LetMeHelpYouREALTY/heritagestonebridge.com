@@ -14,6 +14,9 @@ export default extendConfig(baseConfig, () => {
     plugins: [
       staticAdapter({
         origin: 'https://heritagestonebridge.com',
+        // public/sitemap.xml is the index. The default generator overwrites it
+        // with every route, including /sitemap-test/.
+        sitemapOutFile: null,
       }),
     ],
   };
