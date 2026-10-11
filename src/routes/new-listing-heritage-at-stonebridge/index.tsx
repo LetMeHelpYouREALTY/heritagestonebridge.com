@@ -43,6 +43,9 @@ const listingScript = JSON.stringify({
     ...listing.openHouses.map((openHouse) => ({
       "@type": "Event",
       name: `Open house at ${listing.street}`,
+      description:
+        "Walk through this one-story Lennar Claremont plan: 2 bedrooms, 2 baths, and 1,234 square feet. Admission is free.",
+      image: listing.photos.map((photo) => photo.src),
       startDate: openHouse.start,
       endDate: openHouse.end,
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
@@ -51,6 +54,18 @@ const listingScript = JSON.stringify({
         "@type": "Place",
         name: listing.street,
         address: placeAddress,
+      },
+      offers: {
+        "@type": "Offer",
+        url: `https://heritagestonebridge.com${listing.path}`,
+        price: 0,
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+      performer: {
+        "@type": "Person",
+        name: "Dr. Jan Duffy",
+        url: "https://heritagestonebridge.com",
       },
       organizer: {
         "@type": "RealEstateAgent",
