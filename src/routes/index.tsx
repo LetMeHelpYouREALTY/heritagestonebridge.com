@@ -1,17 +1,17 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { AgentPortrait } from "~/components/community/AgentPortrait";
 import { CommunityGallery } from "~/components/community/CommunityGallery";
 import { FeaturedListingCard } from "~/components/community/FeaturedListingCard";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { business } from "~/config/business";
 import {
-  DEFAULT_OG_IMAGE,
   community,
   communityPhoto,
-  HERO_IMAGE,
+  DEFAULT_OG_IMAGE,
   faqJsonLd,
+  HERO_IMAGE,
 } from "~/config/community";
 
 const homeFaqs = [
@@ -32,7 +32,7 @@ const homeFaqs = [
   {
     question: "How close is Heritage to Red Rock Canyon and Downtown Summerlin?",
     answer:
-      "Both are nearby. Red Rock Canyon National Conservation Area, Downtown Summerlin, and the Summerlin Library are the stops buyers ask about first.",
+      "Red Rock Canyon National Conservation Area is listed at 4.2 miles. Downtown Summerlin and the Summerlin Library are the other stops buyers ask about. Those figures are miles, not drive times.",
   },
   {
     question: "What is life like inside the gates?",
@@ -87,10 +87,10 @@ export default component$(() => {
           </p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="/buy-heritage-at-stonebridge"
+              href="/heritage-at-stonebridge-homes-for-sale/"
               class="rounded-full bg-white px-8 py-4 text-center text-lg font-semibold text-hsb-dark hover:bg-hsb-sand"
             >
-              Buy in Heritage
+              Homes for sale
             </a>
             <a
               href="/sell-heritage-at-stonebridge"
@@ -121,7 +121,9 @@ export default component$(() => {
           </div>
           <aside class="rounded-3xl bg-white p-8 shadow-sm">
             <AgentPortrait size="lg" />
-            <p class="mt-6 text-sm uppercase tracking-[0.14em] text-hsb-muted">{business.category}</p>
+            <p class="mt-6 text-sm uppercase tracking-[0.14em] text-hsb-muted">
+              {business.category}
+            </p>
             <p class="mt-1 text-sm text-hsb-muted">{business.additionalCategory}</p>
             <p class="mt-6 font-display text-2xl text-hsb-dark">{business.addressDisplay}</p>
             <p class="mt-2 text-hsb-text">Service area: Las Vegas, NV 89138 and Summerlin West</p>
@@ -160,8 +162,11 @@ export default component$(() => {
               <a class="text-hsb-primary underline" href="/amenities/">
                 Clubhouse amenities
               </a>
-              <a class="text-hsb-primary underline" href="/nearby/">
-                Restaurants, parks, and parking nearby
+              <a class="text-hsb-primary underline" href="/community/">
+                Stonebridge village
+              </a>
+              <a class="text-hsb-primary underline" href="/location/">
+                Location and miles
               </a>
             </div>
           </div>
@@ -169,17 +174,65 @@ export default component$(() => {
         </div>
       </section>
 
+      <section class="bg-hsb-cream py-16">
+        <div class="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-3">
+          <article>
+            <h2 class="font-display text-3xl text-hsb-dark">Stonebridge village</h2>
+            <p class="mt-3 text-hsb-text">
+              Stonebridge is the Summerlin village. Heritage at Stonebridge is the 55+ Lennar
+              community inside it.
+            </p>
+            <a
+              class="mt-4 inline-block font-semibold text-hsb-primary underline"
+              href="/community/"
+            >
+              Stonebridge and Heritage
+            </a>
+          </article>
+          <article>
+            <h2 class="font-display text-3xl text-hsb-dark">Location</h2>
+            <p class="mt-3 text-hsb-text">
+              Clubhouse at 930 Silverfir Court. Red Rock Canyon National Conservation Area is listed
+              at 4.2 miles.
+            </p>
+            <a class="mt-4 inline-block font-semibold text-hsb-primary underline" href="/location/">
+              Schools, restaurants, and miles
+            </a>
+          </article>
+          <article>
+            <h2 class="font-display text-3xl text-hsb-dark">Lennar floor plans</h2>
+            <p class="mt-3 text-hsb-text">
+              Nine single-story plans in the Cromwell, Stirling, and Evander collections, 1,232 to
+              2,873 square feet.
+            </p>
+            <a
+              class="mt-4 inline-block font-semibold text-hsb-primary underline"
+              href="/floor-plans/"
+            >
+              Lennar plans at Stonebridge
+            </a>
+          </article>
+        </div>
+      </section>
+
       {/* Why Choose Heritage Section */}
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="font-display text-3xl text-hsb-dark mb-4">Why Choose Heritage at Stonebridge?</h2>
-            <p class="text-lg text-hsb-text mb-8">421 Lennar homes, a staffed gate, and a clubhouse at 930 Silverfir Court.</p>
+            <h2 class="font-display text-3xl text-hsb-dark mb-4">
+              Why Choose Heritage at Stonebridge?
+            </h2>
+            <p class="text-lg text-hsb-text mb-8">
+              421 Lennar homes, a staffed gate, and a clubhouse at 930 Silverfir Court.
+            </p>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Three Home Collections</h3>
-              <p class="text-hsb-muted">Cromwell (1,232-1,422 sq ft), Stirling (1,747-2,236 sq ft), and Evander (2,515-2,873 sq ft)</p>
+              <p class="text-hsb-muted">
+                Cromwell (1,232-1,422 sq ft), Stirling (1,747-2,236 sq ft), and Evander (2,515-2,873
+                sq ft)
+              </p>
             </div>
             <div class="text-center">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Lennar Everything's Included</h3>
@@ -187,11 +240,16 @@ export default component$(() => {
             </div>
             <div class="text-center">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Red Rock Canyon Views</h3>
-              <p class="text-hsb-muted">Stunning mountain backdrop with easy access to outdoor recreation</p>
+              <p class="text-hsb-muted">
+                Stunning mountain backdrop with easy access to outdoor recreation
+              </p>
             </div>
             <div class="text-center">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Today's prices</h3>
-              <p class="text-hsb-muted">List prices change with the MLS. Call (702) 789-6561 for the homes on the market now.</p>
+              <p class="text-hsb-muted">
+                List prices change with the MLS. Call (702) 789-6561 for the homes on the market
+                now.
+              </p>
             </div>
           </div>
         </div>
@@ -241,23 +299,23 @@ export default component$(() => {
       </section>
 
       <RealScoutStickyWidget
-                agentEncodedId="QWdlbnQtMjI1MDUw"
-                title="Featured Listings"
-                subtitle="Call (702) 789-6561"
-                priceMin="600000"
-                priceMax="900000"
-              />
+        agentEncodedId="QWdlbnQtMjI1MDUw"
+        title="Featured Listings"
+        subtitle="Call (702) 789-6561"
+        priceMin="600000"
+        priceMax="900000"
+      />
     </>
   );
 });
 
 export const head: DocumentHead = {
-  title: "Heritage at Stonebridge | 55+ Summerlin, NV",
+  title: "Heritage at Stonebridge | 55+ Homes in Summerlin, Las Vegas",
   meta: [
     {
       name: "description",
       content:
-        "421 guard-gated Lennar homes in Summerlin West (89138). Clubhouse pools, fitness, and pickleball. Dr. Jan Duffy, NV license S.0197614.LLC. Call (702) 789-6561.",
+        "Explore 421 single-story Lennar homes at Heritage at Stonebridge in Summerlin West (89138). Compare floor plans, amenities and listings. Dr. Jan Duffy: (702) 789-6561.",
     },
     // Enhanced Meta Tags for AI & Search Engine Understanding
     {
@@ -297,12 +355,12 @@ export const head: DocumentHead = {
     // Open Graph for social sharing
     {
       property: "og:title",
-      content: "Heritage at Stonebridge | 55+ Summerlin, NV",
+      content: "Heritage at Stonebridge | 55+ Homes in Summerlin, Las Vegas",
     },
     {
       property: "og:description",
       content:
-        "421 guard-gated Lennar homes in Summerlin West (89138). Clubhouse pools, fitness, and pickleball. Dr. Jan Duffy. Call (702) 789-6561.",
+        "Explore 421 single-story Lennar homes at Heritage at Stonebridge in Summerlin West (89138). Compare floor plans, amenities and listings. Dr. Jan Duffy: (702) 789-6561.",
     },
     {
       property: "og:image",
@@ -322,7 +380,7 @@ export const head: DocumentHead = {
     },
     {
       property: "og:url",
-      content: "https://heritagestonebridge.com",
+      content: "https://heritagestonebridge.com/",
     },
     {
       property: "og:site_name",
@@ -359,12 +417,12 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:title",
-      content: "Heritage at Stonebridge | 55+ Summerlin, NV",
+      content: "Heritage at Stonebridge | 55+ Homes in Summerlin, Las Vegas",
     },
     {
       name: "twitter:description",
       content:
-        "421 guard-gated Lennar homes in Summerlin West (89138). Clubhouse pools, fitness, and pickleball. Dr. Jan Duffy. Call (702) 789-6561.",
+        "Explore 421 single-story Lennar homes at Heritage at Stonebridge in Summerlin West (89138). Compare floor plans, amenities and listings. Dr. Jan Duffy: (702) 789-6561.",
     },
     {
       name: "author",
@@ -378,7 +436,7 @@ export const head: DocumentHead = {
   links: [
     {
       rel: "canonical",
-      href: "https://heritagestonebridge.com",
+      href: "https://heritagestonebridge.com/",
     },
     {
       rel: "preload",

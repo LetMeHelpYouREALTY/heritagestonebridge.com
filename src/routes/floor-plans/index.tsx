@@ -2,11 +2,11 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { CampaignHero } from "~/components/community/CampaignHero";
 import { ContactStrip } from "~/components/community/ContactStrip";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { QuestionList } from "~/components/community/QuestionList";
 import { business } from "~/config/business";
 import { faqJsonLd } from "~/config/community";
 import { homeQuestions } from "~/config/questions";
-import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 /**
  * Sources (checked 2026-10-02): nine plans in three collections and RV garages at select
@@ -58,10 +58,19 @@ export default component$(() => {
               </div>
             ))}
           </div>
+          <p class="mt-6 max-w-3xl text-hsb-text">
+            These are Lennar plans at Heritage at Stonebridge, the community people also search as
+            Lennar Stonebridge. Lennar's website is the builder. This page is the resale guide.
+            Current MLS homes are on the{" "}
+            <a class="underline" href="/heritage-at-stonebridge-homes-for-sale/">
+              homes for sale
+            </a>{" "}
+            page.
+          </p>
           <p class="mt-6 max-w-3xl text-sm text-hsb-muted">
-            Sizes are published collection ranges. Bedroom, bath, and garage counts vary by plan
-            and by the options the first owner chose. Confirm them on the listing and the plan
-            sheet for the specific home.
+            Sizes are published collection ranges. Bedroom, bath, and garage counts vary by plan and
+            by the options the first owner chose. Confirm them on the listing and the plan sheet for
+            the specific home.
           </p>
         </div>
       </section>
@@ -72,8 +81,8 @@ export default component$(() => {
           <ul class="mt-8 space-y-4 text-hsb-text">
             <li>Start with square footage. Cromwell is the smallest, Evander the largest.</li>
             <li>
-              Ask about the garage. The developer's fact sheet notes RV garages at select
-              homesites, so it depends on the lot.
+              Ask about the garage. The developer's fact sheet notes RV garages at select homesites,
+              so it depends on the lot.
             </li>
             <li>Walk more than one plan. Layout matters more than the number on paper.</li>
             <li>
@@ -98,14 +107,17 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Heritage at Stonebridge Floor Plans | 9 Lennar Plans | Dr. Jan Duffy",
+  title: "Lennar Stonebridge Floor Plans | Cromwell, Stirling, Evander",
   meta: [
     {
       name: "description",
       content:
         "Heritage at Stonebridge floor plans: nine single-story Lennar plans in the Cromwell, Stirling and Evander collections, 1,232 to 2,873 sq ft. Call (702) 789-6561.",
     },
-    { property: "og:title", content: "Heritage at Stonebridge floor plans" },
+    {
+      property: "og:title",
+      content: "Lennar Stonebridge floor plans: Cromwell, Stirling, Evander",
+    },
     {
       property: "og:description",
       content: "Nine single-story Lennar plans in three collections. Call (702) 789-6561.",
