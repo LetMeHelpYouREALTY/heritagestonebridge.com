@@ -342,7 +342,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="https://heritagestonebridge.com/heritage-at-stonebridge-homes-for-sale/"
+                  href="/heritage-at-stonebridge-homes-for-sale/"
                   class="hover:text-hsb-accent-light"
                 >
                   Homes for sale
@@ -350,7 +350,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="https://heritagestonebridge.com/community/"
+                  href="/community/"
                   class="hover:text-hsb-accent-light"
                 >
                   Stonebridge village
@@ -358,7 +358,7 @@ export const Footer = component$(() => {
               </li>
               <li>
                 <a
-                  href="https://heritagestonebridge.com/location/"
+                  href="/location/"
                   class="hover:text-hsb-accent-light"
                 >
                   Location and miles

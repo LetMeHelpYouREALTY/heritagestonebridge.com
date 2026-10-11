@@ -4,15 +4,12 @@ import { NapBar } from "~/components/nap/NapBar";
 import { business } from "~/config/business";
 
 const links = [
-  { href: "https://heritagestonebridge.com/", label: "Home" },
-  {
-    href: "https://heritagestonebridge.com/heritage-at-stonebridge-homes-for-sale/",
-    label: "Homes",
-  },
-  { href: "https://heritagestonebridge.com/community/", label: "Stonebridge" },
-  { href: "https://heritagestonebridge.com/location/", label: "Location" },
-  { href: "https://heritagestonebridge.com/buy-heritage-at-stonebridge/", label: "Buy" },
-  { href: "https://heritagestonebridge.com/sell-heritage-at-stonebridge/", label: "Sell" },
+  { href: "/", label: "Home" },
+  { href: "/heritage-at-stonebridge-homes-for-sale/", label: "Homes" },
+  { href: "/community/", label: "Stonebridge" },
+  { href: "/location/", label: "Location" },
+  { href: "/buy-heritage-at-stonebridge/", label: "Buy" },
+  { href: "/sell-heritage-at-stonebridge/", label: "Sell" },
 ] as const;
 
 export default component$(() => {
@@ -38,7 +35,7 @@ export default component$(() => {
       <NapBar />
       <div class="mx-auto flex max-w-7xl items-center gap-6 px-4 py-3 lg:gap-10 lg:py-4">
         <a
-          href="https://heritagestonebridge.com/"
+          href="/"
           title={business.name}
           class="flex min-w-0 shrink items-center gap-3"
         >
