@@ -1,15 +1,15 @@
 import { component$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { ContactStrip } from "~/components/community/ContactStrip";
 import { CampaignHero } from "~/components/community/CampaignHero";
+import { ContactStrip } from "~/components/community/ContactStrip";
+import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { business } from "~/config/business";
 import { community, faqJsonLd } from "~/config/community";
-import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 
 /**
  * Nearby places around the clubhouse. Google Maps supplies the pins.
- * Do not hardcode business names, ratings, or hours — those change.
- * Schools are omitted on purpose (fair-housing proxy).
+ * Named schools and mile lists live on /location. School names only: no ratings.
+ * Do not hardcode hours. Those change.
  */
 const NEAR = `${community.clubhouseDisplay}`;
 
@@ -84,8 +84,8 @@ export default component$(() => {
         <div class="mx-auto max-w-5xl px-4">
           <h2 class="font-display text-3xl text-hsb-dark">Places near 930 Silverfir Court</h2>
           <p class="mt-3 max-w-3xl text-hsb-text">
-            The clubhouse is at {community.clubhouseDisplay}. Choose a place type to reload the
-            map. Open the same search in Google Maps if you want directions.
+            The clubhouse is at {community.clubhouseDisplay}. Choose a place type to reload the map.
+            Open the same search in Google Maps if you want directions.
           </p>
 
           <div class="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Nearby place types">
@@ -133,6 +133,39 @@ export default component$(() => {
           >
             Open {selected.label.toLowerCase()} in Google Maps
           </a>
+        </div>
+      </section>
+
+      <section class="bg-hsb-sand py-16">
+        <div class="mx-auto max-w-5xl px-4">
+          <h2 class="font-display text-3xl text-hsb-dark">Named places and miles</h2>
+          <p class="mt-3 max-w-3xl text-hsb-text">
+            Red Rock Canyon National Conservation Area is listed at 4.2 miles. Nearby schools are
+            listed by name on the location page: Vassiliadis, Billy & Rosemary; Rogich Sig; and Palo
+            Verde. No school rating is published.
+          </p>
+          <ul class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <li>
+              <a class="font-medium text-hsb-primary underline" href="/location/#schools">
+                Nearby schools
+              </a>
+            </li>
+            <li>
+              <a class="font-medium text-hsb-primary underline" href="/location/#restaurants">
+                Restaurants and stops
+              </a>
+            </li>
+            <li>
+              <a class="font-medium text-hsb-primary underline" href="/location/#services">
+                Neighborhood services
+              </a>
+            </li>
+            <li>
+              <a class="font-medium text-hsb-primary underline" href="/location/#outdoor">
+                Outdoor places
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 
