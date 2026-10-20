@@ -62,16 +62,16 @@ export const featuredListing = {
   ],
   openHouses: [
     {
-      label: "Saturday, October 10, 2026",
+      label: "Saturday, October 24, 2026",
       time: "12:00–2:00 p.m.",
-      start: "2026-10-10T12:00:00-07:00",
-      end: "2026-10-10T14:00:00-07:00",
+      start: "2026-10-24T12:00:00-07:00",
+      end: "2026-10-24T14:00:00-07:00",
     },
     {
-      label: "Sunday, October 11, 2026",
+      label: "Sunday, October 25, 2026",
       time: "10:00 a.m.–12:00 p.m.",
-      start: "2026-10-11T10:00:00-07:00",
-      end: "2026-10-11T12:00:00-07:00",
+      start: "2026-10-25T10:00:00-07:00",
+      end: "2026-10-25T12:00:00-07:00",
     },
   ],
 } as const;
@@ -80,7 +80,7 @@ export const featuredListingFaqs = [
   {
     question: "When is the open house at 894 Heritage Bend Drive?",
     answer:
-      "Open houses are Saturday, October 10, 2026, from 12:00–2:00 p.m. and Sunday, October 11, 2026, from 10:00 a.m.–12:00 p.m. Call or text (702) 789-6561 for a private showing.",
+      "Open houses are Saturday, October 24, 2026, from 12:00–2:00 p.m. and Sunday, October 25, 2026, from 10:00 a.m.–12:00 p.m. Call or text (702) 789-6561 for a private showing.",
   },
   {
     question: "What are the association fees for 894 Heritage Bend Drive?",

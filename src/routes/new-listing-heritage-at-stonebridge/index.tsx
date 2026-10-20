@@ -299,7 +299,7 @@ export const head: DocumentHead = {
     {
       name: "description",
       content:
-        "Lennar Claremont at 894 Heritage Bend Drive, Heritage at Stonebridge, 89138. 2 bed, 2 bath, 1,234 sq ft, listed at $539,888. Open house Oct 10–11. MLS 2825123. Call (702) 789-6561.",
+        "Lennar Claremont at 894 Heritage Bend Drive, Heritage at Stonebridge, 89138. 2 bed, 2 bath, 1,234 sq ft, listed at $539,888. Open house Oct 24–25. MLS 2825123. Call (702) 789-6561.",
     },
     {
       property: "og:title",
