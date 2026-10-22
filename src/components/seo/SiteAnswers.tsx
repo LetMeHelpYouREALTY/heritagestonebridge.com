@@ -27,6 +27,10 @@ const sources = [
     href: business.reviewsUrl,
     label: "Google reviews for Heritage Stonebridge | Homes By Dr. Jan Duffy",
   },
+  {
+    href: business.writeReviewUrl,
+    label: "Write a Google review for Heritage Stonebridge | Homes By Dr. Jan Duffy",
+  },
   { href: "https://www.nps.gov/redr/", label: "Red Rock Canyon National Conservation Area" },
   { href: "https://summerlin.com/", label: "Summerlin master plan" },
   { href: "https://www.google.com/preferences/source?q=heritagestonebridge.com", label: "Add Heritage Stonebridge as a preferred source in Google" },

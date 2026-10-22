@@ -48,6 +48,14 @@ export const ContactStrip = component$(() => {
           >
             View Google Reviews
           </a>
+          <a
+            href={business.writeReviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full border border-hsb-border px-6 py-3 text-center font-medium text-hsb-primary hover:bg-hsb-sand"
+          >
+            Write a Google review
+          </a>
         </div>
         <div class="mt-8 overflow-hidden rounded-2xl border border-hsb-border">
           <iframe

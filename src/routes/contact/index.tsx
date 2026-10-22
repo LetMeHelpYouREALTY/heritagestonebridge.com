@@ -159,6 +159,14 @@ export default component$(() => {
             >
               View Google Reviews
             </a>
+            <a
+              href={business.writeReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-yellow-500 text-hsb-dark px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 text-center"
+            >
+              Write a Google review
+            </a>
           </div>
 
           <div class="mt-10 rounded-lg overflow-hidden shadow-lg">

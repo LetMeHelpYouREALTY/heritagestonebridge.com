@@ -60,6 +60,14 @@ export const Footer = component$(() => {
                   Google reviews for {business.name}
                 </a>
                 <a
+                  href={business.writeReviewUrl}
+                  class="hover:text-hsb-accent-light underline-offset-2 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Write a Google review
+                </a>
+                <a
                   href="https://www.heritageatstonebridge.org/"
                   class="hover:text-hsb-accent-light underline-offset-2 hover:underline"
                   target="_blank"

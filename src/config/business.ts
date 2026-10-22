@@ -59,6 +59,12 @@ export const business = {
   mapsEmbedUrl:
     "https://maps.google.com/maps?q=place_id:ChIJOdHQ97m_yIARlY1CLNq9RSY&output=embed",
   reviewsUrl: "https://search.google.com/local/reviews?placeid=ChIJOdHQ97m_yIARlY1CLNq9RSY",
+  /**
+   * Official write-a-review link from the Business Profile "Get more reviews"
+   * card, checked 2026-10-22. It opens writereview for place
+   * ChIJOdHQ97m_yIARlY1CLNq9RSY. Google Help: support.google.com/business/answer/16816815.
+   */
+  writeReviewUrl: "https://g.page/r/CZWNQizavUUmEBI/review",
 } as const;
 
 /** Schema.org openingHours string. Matches the seven GBP regular-hour periods. */
