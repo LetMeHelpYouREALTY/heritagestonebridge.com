@@ -72,11 +72,15 @@ export const communityPage: HeritagePageContent = {
       type: "links",
       heading: "Explore Heritage Stonebridge",
       links: [
-        { href: "/homes-for-sale", label: "Homes for Sale" },
+        { href: "/homes-for-sale", label: "Heritage Stonebridge Homes for Sale" },
+        { href: "/homes-for-rent", label: "Homes for Rent" },
+        { href: "/clubhouse", label: "Clubhouse" },
+        { href: "/reviews", label: "Reviews" },
         { href: "/amenities", label: "Amenities" },
         { href: "/floor-plans", label: "Floor Plans" },
-        { href: "/hoa-fees", label: "HOA & Fees" },
-        { href: "/location", label: "Location & Map" },
+        { href: "/hoa", label: "HOA" },
+        { href: "/hoa-fees", label: "HOA Fees" },
+        { href: "/location", label: "Heritage in Summerlin" },
         { href: "/guard-gated-living", label: "Guard-Gated Living" },
       ],
     },
@@ -144,14 +148,14 @@ export const amenitiesPage: HeritagePageContent = {
 export const floorPlansPage: HeritagePageContent = {
   slug: "/floor-plans",
   metadata: {
-    title: baseTitle("Floor Plans & Home Collections"),
+    title: baseTitle("Heritage Stonebridge Floor Plan"),
     description:
-      "Nine Lennar floor plans from 1,232–2,873 sq. ft. at Heritage at Stonebridge. 2–4 beds, smart-home features, optional RV garage.",
+      "Heritage Stonebridge floor plans: nine Lennar plans from 1,232–2,873 sq. ft. Single-story homes, 2–4 beds, optional RV garage. Summerlin 89138.",
   },
   breadcrumbs: crumbs({ name: "Floor Plans", url: "/floor-plans" }),
-  h1: "Heritage at Stonebridge Floor Plans",
-  subtitle: `${HERITAGE_COMMUNITY.floorPlanCount} plans in ${HERITAGE_COMMUNITY.collections} Lennar collections — single-story and two-story options for 55+ buyers.`,
-  lastUpdated: "June 2026",
+  h1: "Heritage Stonebridge Floor Plan",
+  subtitle: `${HERITAGE_COMMUNITY.floorPlanCount} single-story plans in ${HERITAGE_COMMUNITY.collections} Lennar collections for buyers in Summerlin West.`,
+  lastUpdated: "October 2026",
   sections: [
     {
       type: "stats",
@@ -178,22 +182,32 @@ export const floorPlansPage: HeritagePageContent = {
 export const hoaFeesPage: HeritagePageContent = {
   slug: "/hoa-fees",
   metadata: {
-    title: baseTitle("HOA Fees & Assessments"),
+    title: baseTitle("Heritage Stonebridge HOA Fees"),
     description:
-      "Understand HOA costs at Heritage at Stonebridge — what's covered, how fees compare to larger 55+ communities, and questions to ask before you buy.",
+      "Heritage Stonebridge HOA fees cover the gate, clubhouse, and common areas. Confirm the current assessment in the resale package. Dr. Jan Duffy, BHHS.",
   },
-  breadcrumbs: crumbs({ name: "HOA & Fees", url: "/hoa-fees" }),
-  h1: "HOA Fees at Heritage at Stonebridge",
+  breadcrumbs: crumbs({ name: "HOA Fees", url: "/hoa-fees" }),
+  h1: "Heritage Stonebridge HOA Fees",
   subtitle:
-    "Heritage carries a leaner amenity footprint than golf-course mega-communities — often translating to lower carrying costs.",
-  lastUpdated: "June 2026",
+    "Heritage does not include a private golf course. Confirm today's dues in the resale package rather than a third-party estimate.",
+  lastUpdated: "October 2026",
   sections: [
     {
       type: "prose",
       heading: "What HOA Typically Covers",
       paragraphs: [
-        `At Heritage at Stonebridge, HOA dues generally fund guard-gate staffing, clubhouse and pool operations, landscape maintenance for common areas, and reserve contributions. ${HERITAGE_COMMUNITY.hoaRange}`,
-        "Because Heritage does not subsidize a private 18-hole golf course inside the gates, monthly assessments are often lower than Sun City Summerlin or Trilogy — while still delivering pickleball, fitness, and aquatics.",
+        "Heritage Stonebridge HOA fees are two bills: the Heritage at Stonebridge assessment and the Summerlin West master assessment. Together they fund staffed gate operations, the clubhouse, pool and fitness areas, common-area landscape, and reserves.",
+        "Published dollar amounts online do not match each other. Use the resale package for the current dues, the reserve balance, and any special assessment. This page does not quote a monthly figure.",
+        "Heritage does not include a private 18-hole golf course. Compare the actual assessments, not a slogan, when you look at Sun City Summerlin or Trilogy.",
+      ],
+    },
+    {
+      type: "links",
+      heading: "Association pages",
+      links: [
+        { href: "/hoa", label: "Heritage at Stonebridge HOA" },
+        { href: "/clubhouse", label: "Clubhouse" },
+        { href: "/homes-for-sale", label: "Heritage Stonebridge homes for sale" },
       ],
     },
     {
@@ -224,14 +238,15 @@ export const hoaFeesPage: HeritagePageContent = {
 export const locationPage: HeritagePageContent = {
   slug: "/location",
   metadata: {
-    title: baseTitle("Location & Summerlin Map"),
+    title: baseTitle("Heritage at Stonebridge in Summerlin"),
     description:
-      "Heritage at Stonebridge in Summerlin West (89138) — near Downtown Summerlin, Red Rock Canyon, TPC Las Vegas, and medical services.",
+      "Heritage at Stonebridge in Summerlin West, Las Vegas 89138. Near Downtown Summerlin and Red Rock Canyon. Dr. Jan Duffy, BHHS Nevada Properties.",
   },
   breadcrumbs: crumbs({ name: "Location", url: "/location" }),
-  h1: "Heritage at Stonebridge Location",
-  subtitle: "Northwest Las Vegas in Summerlin West — zip code 89138 with mountain views and city convenience.",
-  lastUpdated: "June 2026",
+  h1: "Heritage at Stonebridge in Summerlin",
+  subtitle:
+    "Yes. The community is in Summerlin West, Las Vegas, Nevada 89138.",
+  lastUpdated: "October 2026",
   sections: [
     {
       type: "grid",
@@ -708,22 +723,42 @@ export const faqPage: HeritagePageContent = {
 export const homesForSalePage: HeritagePageContent = {
   slug: "/homes-for-sale",
   metadata: {
-    title: baseTitle("MLS Listings — Heritage Stonebridge Homes for Sale"),
+    title: baseTitle("Heritage Stonebridge Homes for Sale"),
     description:
-      "Live MLS search for Heritage at Stonebridge 55+ homes in Summerlin 89138. Guard-gated Lennar resales, tours, and listing alerts with Dr. Jan Duffy, BHHS.",
+      "Heritage Stonebridge homes for sale in Summerlin 89138. Live MLS search for the guard-gated Lennar community with Dr. Jan Duffy, BHHS Nevada Properties.",
   },
   breadcrumbs: crumbs({ name: "Homes for Sale", url: "/homes-for-sale" }),
-  h1: "Heritage at Stonebridge Homes for Sale",
-  subtitle: "Live MLS search for 55+ guard-gated homes in Summerlin West — updated as new listings hit market.",
-  lastUpdated: "June 2026",
+  h1: "Heritage Stonebridge Homes for Sale",
+  subtitle:
+    "Live MLS search for Heritage at Stonebridge, the guard-gated Lennar community in Summerlin West.",
+  lastUpdated: "October 2026",
   sections: [
     {
       type: "prose",
-      heading: "Search Heritage Listings",
+      heading: "Search Heritage listings",
       paragraphs: [
-        `Inventory includes resale homes and any remaining new-build opportunities in ${HERITAGE_COMMUNITY.name}. ${HERITAGE_COMMUNITY.priceRange}`,
-        "Use the property search below to filter by beds, baths, and price — then call Dr. Jan Duffy for private tours and offer strategy inside the guard gate.",
+        `Heritage at Stonebridge homes for sale are the resale and any remaining new homes inside this community. ${HERITAGE_COMMUNITY.priceRange}`,
+        "Use the property search below to filter by beds, baths, and price. The staffed gate requires an appointment for a tour.",
       ],
+    },
+    {
+      type: "links",
+      heading: "People also search for",
+      links: [
+        { href: "/homes-for-sale-near", label: "Homes for sale nearby" },
+        { href: "/homes-for-sale-zillow", label: "Zillow versus the MLS" },
+        { href: "/for-sale-by-owner", label: "For sale by owner" },
+        { href: "/homes-with-pool", label: "Homes with a pool" },
+        { href: "/homes-for-rent", label: "Homes for rent" },
+        { href: "/stonebridge-summerlin-homes", label: "Stonebridge Summerlin homes for sale" },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "Where are Heritage at Stonebridge homes for sale listed?",
+      answer:
+        "On the MLS. Portal sites such as Zillow can lag. Start with the search on this page, then confirm status before you write an offer.",
     },
   ],
 };

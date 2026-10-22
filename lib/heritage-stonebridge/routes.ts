@@ -265,6 +265,78 @@ export const HERITAGE_SITE_ROUTES: HeritageNavItem[] = [
     priority: 0.85,
     changeFrequency: "monthly",
   },
+  {
+    href: "/reviews",
+    label: "Heritage Stonebridge Reviews",
+    priority: 0.8,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/homes-for-rent",
+    label: "Heritage Homes for Rent",
+    priority: 0.86,
+    changeFrequency: "daily",
+  },
+  {
+    href: "/hoa",
+    label: "Heritage at Stonebridge HOA",
+    priority: 0.84,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/homes-for-sale-near",
+    label: "Homes for Sale Nearby",
+    priority: 0.84,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/homes-for-sale-zillow",
+    label: "Zillow and the MLS",
+    priority: 0.8,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/for-sale-by-owner",
+    label: "For Sale by Owner",
+    priority: 0.8,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/homes-with-pool",
+    label: "Heritage Homes with a Pool",
+    priority: 0.82,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/clubhouse",
+    label: "Clubhouse",
+    priority: 0.86,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/stonebridge-summerlin-homes",
+    label: "Stonebridge Summerlin Homes",
+    priority: 0.86,
+    changeFrequency: "daily",
+  },
+  {
+    href: "/stonebridge-summerlin-homes-with-pool",
+    label: "Stonebridge Homes with a Pool",
+    priority: 0.82,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/paseos-summerlin-homes",
+    label: "Paseos Summerlin Homes",
+    priority: 0.8,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/stonebridge-hospitality",
+    label: "Stonebridge Hospitality",
+    priority: 0.7,
+    changeFrequency: "yearly",
+  },
 ];
 
 export const HERITAGE_PRIMARY_NAV = HERITAGE_SITE_ROUTES.filter((r) =>
@@ -283,6 +355,9 @@ export const HERITAGE_COMMUNITY_NAV = HERITAGE_SITE_ROUTES.filter((r) =>
     "/community",
     "/floor-plans",
     "/hoa-fees",
+    "/hoa",
+    "/clubhouse",
+    "/homes-for-rent",
     "/location",
     "/guard-gated-living",
     "/downtown-summerlin",

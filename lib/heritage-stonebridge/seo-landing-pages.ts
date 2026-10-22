@@ -1,5 +1,6 @@
 import type { HeritagePageContent } from "./types";
 import { HERITAGE_COMMUNITY, HERITAGE_FAQS } from "./data";
+import { PASF_PAGES } from "./pasf-pages";
 
 const baseTitle = (page: string) =>
   `${page} | Heritage at Stonebridge Summerlin | Dr. Jan Duffy`;
@@ -1196,4 +1197,5 @@ export const HERITAGE_SEO_LANDING_PAGES: HeritagePageContent[] = [
   luxuryLivingGuidePage,
   neighborhoodInsightsPage,
   firstTimeBuyersPage,
+  ...PASF_PAGES,
 ];
