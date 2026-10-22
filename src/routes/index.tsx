@@ -383,7 +383,7 @@ export const head: DocumentHead = {
     {
       rel: "preload",
       as: "image",
-      href: HERO_IMAGE.tablet,
+      href: HERO_IMAGE.mobile,
       imagesrcset: HERO_IMAGE.srcset,
       imagesizes: "100vw",
     },

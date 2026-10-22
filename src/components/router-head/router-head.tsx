@@ -64,7 +64,11 @@ export const RouterHead = component$(() => {
       {head.links
         .filter((l) => l.rel !== "canonical")
         .map((l) => (
-          <link key={l.key} {...l} />
+          <link
+            key={l.key}
+            {...l}
+            {...(l.rel === "preload" && l.as === "image" ? { fetchPriority: "high" as const } : {})}
+          />
         ))}
 
       {head.styles.map((s) => {
