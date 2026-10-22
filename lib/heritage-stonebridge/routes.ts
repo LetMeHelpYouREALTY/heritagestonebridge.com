@@ -337,6 +337,36 @@ export const HERITAGE_SITE_ROUTES: HeritageNavItem[] = [
     priority: 0.7,
     changeFrequency: "yearly",
   },
+  {
+    href: "/stonebridge-las-vegas",
+    label: "Stonebridge Las Vegas",
+    priority: 0.84,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/stonebridge-summerlin-price",
+    label: "Stonebridge Summerlin Price",
+    priority: 0.82,
+    changeFrequency: "weekly",
+  },
+  {
+    href: "/stonebridge-summerlin-floor-plans",
+    label: "Stonebridge Summerlin Floor Plans",
+    priority: 0.82,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/stonebridge-park",
+    label: "Stonebridge Park",
+    priority: 0.75,
+    changeFrequency: "monthly",
+  },
+  {
+    href: "/stonebridge-learning-academy",
+    label: "Stonebridge Learning Academy",
+    priority: 0.6,
+    changeFrequency: "yearly",
+  },
 ];
 
 export const HERITAGE_PRIMARY_NAV = HERITAGE_SITE_ROUTES.filter((r) =>

@@ -68,6 +68,7 @@ export const LEGACY_PATH_REDIRECTS: Record<string, string> = {
   "/heritage-stonebridge-for-rent": "/homes-for-rent",
   "/heritage-stonebridge-homes-for-rent": "/homes-for-rent",
   "/heritage-at-stonebridge-homes-for-rent": "/homes-for-rent",
+  "/stonebridge-summerlin-for-sale": "/stonebridge-summerlin-homes",
   ...Object.fromEntries(SCHEMA_PAGES.map((page) => [`/${page}-schema`, `/${page}`])),
 };
 

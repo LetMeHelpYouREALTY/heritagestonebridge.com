@@ -510,7 +510,7 @@ export const stonebridgeSummerlinHomesPage: HeritagePageContent = {
   }),
   h1: "Stonebridge Summerlin Homes for Sale",
   subtitle:
-    "Stonebridge is the Summerlin West village. Heritage at Stonebridge is the Lennar 55+ community inside it.",
+    "Stonebridge Summerlin for sale means the whole village. Heritage at Stonebridge is the Lennar 55+ community inside it.",
   lastUpdated: "October 2026",
   sections: [
     {
@@ -528,13 +528,14 @@ export const stonebridgeSummerlinHomesPage: HeritagePageContent = {
       heading: "Related searches",
       links: [
         { href: "/homes-for-sale", label: "Heritage at Stonebridge homes for sale" },
+        { href: "/stonebridge-las-vegas", label: "Stonebridge Las Vegas" },
+        { href: "/stonebridge-summerlin-price", label: "Stonebridge Summerlin price" },
+        { href: "/stonebridge-summerlin-floor-plans", label: "Stonebridge Summerlin floor plans" },
+        { href: "/stonebridge-park", label: "Stonebridge Park" },
         {
           href: "/stonebridge-summerlin-homes-with-pool",
           label: "Stonebridge Summerlin homes for sale with a pool",
         },
-        { href: "/paseos-summerlin-homes", label: "Paseos Summerlin homes for sale" },
-        { href: "/summerlin-homes", label: "Summerlin homes" },
-        { href: "/homes-for-sale-near", label: "Homes for sale nearby" },
       ],
     },
   ],
@@ -543,6 +544,11 @@ export const stonebridgeSummerlinHomesPage: HeritagePageContent = {
       question: "Are all Stonebridge Summerlin homes for sale in Heritage?",
       answer:
         "No. Heritage at Stonebridge is one community in the village. Read the subdivision and the HOA on each listing.",
+    },
+    {
+      question: "Is Stonebridge Summerlin for sale a different list?",
+      answer:
+        "No. Stonebridge Summerlin for sale and Stonebridge Summerlin homes for sale are the same village search. Separate Heritage listings from the other Stonebridge neighborhoods on the MLS.",
     },
   ],
 };
@@ -680,6 +686,226 @@ export const stonebridgeHospitalityPage: HeritagePageContent = {
   ],
 };
 
+export const stonebridgeLasVegasPage: HeritagePageContent = {
+  slug: "/stonebridge-las-vegas",
+  metadata: {
+    title: baseTitle("Stonebridge Las Vegas"),
+    description:
+      "Stonebridge Las Vegas is a Summerlin West village in zip 89138. Heritage at Stonebridge is the 55+ community inside it. Dr. Jan Duffy, BHHS Nevada Properties.",
+  },
+  breadcrumbs: crumbs({ name: "Stonebridge Las Vegas", url: "/stonebridge-las-vegas" }),
+  h1: "Stonebridge Las Vegas",
+  subtitle:
+    "In this search, Stonebridge is a village in Summerlin West, Las Vegas, Nevada 89138.",
+  lastUpdated: "October 2026",
+  sections: [
+    {
+      type: "prose",
+      heading: "Which Stonebridge this is",
+      paragraphs: [
+        "Stonebridge Las Vegas, for buyers looking at Summerlin, is the village along the west side of Summerlin. Heritage at Stonebridge sits inside that village. It is the Lennar age-qualified community with the staffed gate and its own clubhouse.",
+        "The same word shows up on other places. Stonebridge Hospitality is a hotel company. Stone Bridge Learning Academy is a preschool at 1951 S Rainbow Blvd, Las Vegas, NV 89146. Stonebridge Park is the village park. None of those is the Heritage sales office.",
+        `${communityFacts} ${ageRule} ${agentLine}`,
+      ],
+    },
+    {
+      type: "links",
+      heading: "Stonebridge pages",
+      links: [
+        { href: "/stonebridge-summerlin-homes", label: "Stonebridge Summerlin homes for sale" },
+        { href: "/stonebridge-summerlin-price", label: "Stonebridge Summerlin price" },
+        { href: "/stonebridge-summerlin-floor-plans", label: "Stonebridge Summerlin floor plans" },
+        { href: "/stonebridge-park", label: "Stonebridge Park" },
+        { href: "/homes-for-sale", label: "Heritage homes for sale" },
+        { href: "/stonebridge-learning-academy", label: "Stonebridge Learning Academy" },
+        { href: "/stonebridge-hospitality", label: "Stonebridge Hospitality" },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "Where is Stonebridge in Las Vegas?",
+      answer:
+        "The Summerlin village is in Summerlin West, zip 89138. Confirm the subdivision on each listing. Other Las Vegas businesses use Stonebridge or Stone Bridge in their names and are not this village.",
+    },
+  ],
+};
+
+export const stonebridgePricePage: HeritagePageContent = {
+  slug: "/stonebridge-summerlin-price",
+  metadata: {
+    title: baseTitle("Stonebridge Summerlin Price"),
+    description:
+      "Stonebridge Summerlin price depends on the neighborhood and the plan. Heritage at Stonebridge listings are a separate set from the rest of the village. Confirm on the MLS.",
+  },
+  breadcrumbs: crumbs({ name: "Stonebridge Summerlin Price", url: "/stonebridge-summerlin-price" }),
+  h1: "Stonebridge Summerlin Price",
+  subtitle:
+    "There is no single Stonebridge price. Heritage and the other village neighborhoods do not sell as one product.",
+  lastUpdated: "October 2026",
+  sections: [
+    {
+      type: "prose",
+      heading: "How to read a Stonebridge price",
+      paragraphs: [
+        `${HERITAGE_COMMUNITY.priceRange} That range is Heritage at Stonebridge only. It is not a price for every home in the village.`,
+        "A Stonebridge Summerlin price from a portal often blends guard-gated Heritage resales with other builders and other associations. Compare plan, lot, and subdivision before you treat two listings as comps.",
+        "This page does not publish a village median or an average. Ask for a current MLS snapshot for the street you are considering.",
+        agentLine,
+      ],
+    },
+    {
+      type: "links",
+      heading: "Related searches",
+      links: [
+        { href: "/homes-for-sale", label: "Heritage Stonebridge homes for sale" },
+        { href: "/market-analysis", label: "Heritage market analysis" },
+        { href: "/stonebridge-summerlin-homes", label: "Stonebridge Summerlin homes for sale" },
+        { href: "/hoa-fees", label: "Heritage Stonebridge HOA fees" },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "What is the Stonebridge Summerlin price?",
+      answer:
+        "It depends on which neighborhood and which plan. Heritage listings commonly need their own comps. Use the live MLS rather than a blended village average.",
+    },
+  ],
+};
+
+export const stonebridgeFloorPlansPage: HeritagePageContent = {
+  slug: "/stonebridge-summerlin-floor-plans",
+  metadata: {
+    title: baseTitle("Stonebridge Summerlin Floor Plans"),
+    description:
+      "Stonebridge Summerlin floor plans differ by builder. Heritage at Stonebridge has nine Lennar plans from 1,232 to 2,873 sq. ft. Confirm the plan on the listing.",
+  },
+  breadcrumbs: crumbs({
+    name: "Stonebridge Floor Plans",
+    url: "/stonebridge-summerlin-floor-plans",
+  }),
+  h1: "Stonebridge Summerlin Floor Plans",
+  subtitle:
+    "The village was built by more than one builder. Heritage's plans are the nine Lennar plans inside the gate.",
+  lastUpdated: "October 2026",
+  sections: [
+    {
+      type: "prose",
+      heading: "Heritage plans versus the rest of the village",
+      paragraphs: [
+        `Heritage at Stonebridge has ${HERITAGE_COMMUNITY.floorPlanCount} floor plans in ${HERITAGE_COMMUNITY.collections} collections, from ${HERITAGE_COMMUNITY.sqFtRange} sq. ft., with ${HERITAGE_COMMUNITY.bedroomRange} bedrooms. The plans this site documents are single-story. Select plans include an RV garage.`,
+        "Other Stonebridge neighborhoods have their own plans, including two-story homes. A floor plan name from one builder does not describe a Heritage house. Read the builder and the plan on the MLS sheet.",
+        agentLine,
+      ],
+    },
+    {
+      type: "links",
+      heading: "Plan pages",
+      links: [
+        { href: "/floor-plans", label: "Heritage Stonebridge floor plans" },
+        { href: "/stonebridge-summerlin-homes", label: "Stonebridge Summerlin homes for sale" },
+        { href: "/homes-for-sale", label: "Heritage homes for sale" },
+        { href: "/stonebridge-summerlin-price", label: "Stonebridge Summerlin price" },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "How many Stonebridge Summerlin floor plans are there?",
+      answer:
+        "Heritage at Stonebridge has nine Lennar plans. The rest of the village has additional plans from other builders. Count the plan on the listing you are touring, not a village-wide brochure from the opening year.",
+    },
+  ],
+};
+
+export const stonebridgeParkPage: HeritagePageContent = {
+  slug: "/stonebridge-park",
+  metadata: {
+    title: baseTitle("Stonebridge Park"),
+    description:
+      "Stonebridge Park is the village park in Stonebridge, Summerlin West, Las Vegas 89138. It is not the Heritage clubhouse. Courts, playground, picnic areas, and trails.",
+  },
+  breadcrumbs: crumbs({ name: "Stonebridge Park", url: "/stonebridge-park" }),
+  h1: "Stonebridge Park",
+  subtitle:
+    "This is the Summerlin village park in Stonebridge, on Crossbridge Drive in Las Vegas 89138.",
+  lastUpdated: "October 2026",
+  sections: [
+    {
+      type: "prose",
+      heading: "What the park includes",
+      paragraphs: [
+        "Stonebridge Park opened in 2021 as the shared park for the Stonebridge village. Published descriptions include lighted soccer fields, a basketball court, pickleball courts, a playground, picnic areas, and a connection to the Summerlin trail system. Posted rules include a 10:30 p.m. closing. Check the sign at the park for the current hours.",
+        "The park is not the Heritage at Stonebridge clubhouse. Heritage owners also have a separate clubhouse, pool, spa, and lap pool inside the gate. Park courts are not the same as the Heritage pickleball courts.",
+        `${ageRule} ${agentLine}`,
+      ],
+    },
+    {
+      type: "links",
+      heading: "Related pages",
+      links: [
+        { href: "/clubhouse", label: "Heritage at Stonebridge clubhouse" },
+        { href: "/amenities", label: "Heritage amenities" },
+        { href: "/stonebridge-las-vegas", label: "Stonebridge Las Vegas" },
+        { href: "/location", label: "Heritage at Stonebridge in Summerlin" },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "Is Stonebridge Park inside Heritage at Stonebridge?",
+      answer:
+        "No. Stonebridge Park is the village park on Crossbridge Drive. The Heritage clubhouse and its pool are inside the guard-gated community.",
+    },
+  ],
+};
+
+export const stonebridgeLearningAcademyPage: HeritagePageContent = {
+  slug: "/stonebridge-learning-academy",
+  metadata: {
+    title: baseTitle("Stonebridge Learning Academy"),
+    description:
+      "Stone Bridge Learning Academy is a preschool at 1951 S Rainbow Blvd, Las Vegas, NV 89146. It is not Heritage at Stonebridge in Summerlin 89138.",
+  },
+  breadcrumbs: crumbs({
+    name: "Stonebridge Learning Academy",
+    url: "/stonebridge-learning-academy",
+  }),
+  h1: "Stonebridge Learning Academy",
+  subtitle:
+    "The school uses the name Stone Bridge Learning Academy. It is in zip 89146, not in the Summerlin village.",
+  lastUpdated: "October 2026",
+  sections: [
+    {
+      type: "prose",
+      heading: "This search is a school, not the village",
+      paragraphs: [
+        "Stone Bridge Learning Academy is an early learning program at 1951 S Rainbow Blvd, Las Vegas, NV 89146. Its site, stonebridgelasvegas.com, lists programs for ages six weeks through twelve and the phone 702-935-1792. That number is the school's, not this real estate office.",
+        "The school is not inside Heritage at Stonebridge and it is not Stonebridge Park. Homes in the Summerlin village are in zip 89138.",
+        `${communityFacts} ${agentLine}`,
+      ],
+    },
+    {
+      type: "links",
+      heading: "If you meant the village",
+      links: [
+        { href: "/stonebridge-las-vegas", label: "Stonebridge Las Vegas" },
+        { href: "/stonebridge-park", label: "Stonebridge Park" },
+        { href: "/homes-for-sale", label: "Heritage homes for sale" },
+        { href: "/contact", label: "Contact Dr. Jan Duffy" },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "Is Stonebridge Learning Academy in Heritage at Stonebridge?",
+      answer:
+        "No. Stone Bridge Learning Academy is at 1951 S Rainbow Blvd, Las Vegas, NV 89146. Heritage at Stonebridge is a 55+ community in Summerlin West, zip 89138.",
+    },
+  ],
+};
+
 export const PASF_PAGES: HeritagePageContent[] = [
   reviewsPage,
   homesForRentPage,
@@ -693,4 +919,9 @@ export const PASF_PAGES: HeritagePageContent[] = [
   stonebridgePoolPage,
   paseosPage,
   stonebridgeHospitalityPage,
+  stonebridgeLasVegasPage,
+  stonebridgePricePage,
+  stonebridgeFloorPlansPage,
+  stonebridgeParkPage,
+  stonebridgeLearningAcademyPage,
 ];
