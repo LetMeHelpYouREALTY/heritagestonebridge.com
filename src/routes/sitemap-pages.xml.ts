@@ -35,6 +35,13 @@ export const onGet: RequestHandler = async (requestEvent) => {
     </url>
     
     <url>
+        <loc>https://heritagestonebridge.com/community/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://heritagestonebridge.com/contact/</loc>
         <lastmod>${currentDate}</lastmod>
         <changefreq>monthly</changefreq>
