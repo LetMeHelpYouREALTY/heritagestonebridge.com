@@ -44,6 +44,11 @@ export default component$(() => {
           </p>
           <ul class="mt-8 space-y-3">
             <li>
+              <a class="text-hsb-primary underline" href="/what-is-heritage-at-stonebridge/">
+                What is Heritage at Stonebridge?
+              </a>
+            </li>
+            <li>
               <a class="text-hsb-primary underline" href="/amenities/">
                 Clubhouse and amenities
               </a>
