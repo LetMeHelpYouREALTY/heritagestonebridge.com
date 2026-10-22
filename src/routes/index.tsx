@@ -80,7 +80,9 @@ export default component$(() => {
             Heritage at Stonebridge
           </h1>
           <p class="mt-5 max-w-2xl text-xl text-white md:text-2xl">
-            421 guard-gated 55+ homes in Summerlin West. Clubhouse at 930 Silverfir Court.
+            Heritage at Stonebridge is in the village of Stonebridge, Summerlin West, Las Vegas, NV
+            89138. It has 421 guard-gated, age-qualified 55+ homes. The clubhouse is at 930 Silverfir
+            Court.
           </p>
           <p class="mt-3 text-sm uppercase tracking-[0.14em] text-hsb-sand">
             {business.category} · Clark County, Nevada
@@ -252,12 +254,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Heritage at Stonebridge | 55+ Summerlin, NV",
+  title: "Heritage at Stonebridge | Village of Stonebridge, Summerlin West",
   meta: [
     {
       name: "description",
       content:
-        "421 guard-gated Lennar homes in Summerlin West (89138). Clubhouse pools, fitness, and pickleball. Dr. Jan Duffy, NV license S.0197614.LLC. Call (702) 789-6561.",
+        "Heritage at Stonebridge is in the village of Stonebridge, Summerlin West, Las Vegas, NV 89138. 421 guard-gated, age-qualified 55+ Lennar homes. Clubhouse at 930 Silverfir Court. Call (702) 789-6561.",
     },
     // Enhanced Meta Tags for AI & Search Engine Understanding
     {
@@ -292,17 +294,17 @@ export const head: DocumentHead = {
     },
     {
       name: "community-type",
-      content: "active-adult-gated-community",
+      content: "age-qualified-55-plus",
     },
     // Open Graph for social sharing
     {
       property: "og:title",
-      content: "Heritage at Stonebridge | 55+ Summerlin, NV",
+      content: "Heritage at Stonebridge | Village of Stonebridge, Summerlin West",
     },
     {
       property: "og:description",
       content:
-        "421 guard-gated Lennar homes in Summerlin West (89138). Clubhouse pools, fitness, and pickleball. Dr. Jan Duffy. Call (702) 789-6561.",
+        "Heritage at Stonebridge is in the village of Stonebridge, Summerlin West, Las Vegas, NV 89138. 421 guard-gated, age-qualified 55+ Lennar homes. Call (702) 789-6561.",
     },
     {
       property: "og:image",
@@ -359,12 +361,12 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:title",
-      content: "Heritage at Stonebridge | 55+ Summerlin, NV",
+      content: "Heritage at Stonebridge | Village of Stonebridge, Summerlin West",
     },
     {
       name: "twitter:description",
       content:
-        "421 guard-gated Lennar homes in Summerlin West (89138). Clubhouse pools, fitness, and pickleball. Dr. Jan Duffy. Call (702) 789-6561.",
+        "Heritage at Stonebridge is in the village of Stonebridge, Summerlin West, Las Vegas, NV 89138. 421 guard-gated, age-qualified 55+ Lennar homes. Call (702) 789-6561.",
     },
     {
       name: "author",
