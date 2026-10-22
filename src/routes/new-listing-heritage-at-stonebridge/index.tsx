@@ -61,6 +61,7 @@ const listingScript = JSON.stringify({
         price: 0,
         priceCurrency: "USD",
         availability: "https://schema.org/InStock",
+        validFrom: `${listing.listDate}T00:00:00-07:00`,
       },
       performer: {
         "@type": "Person",
