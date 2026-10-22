@@ -53,11 +53,5 @@ Disallow: /temp/
 Disallow: /cache/
 Disallow: /*.pdf$
 
-# Crawl delay for polite crawling
-Crawl-delay: 1
-
 # Sitemap index. The child files are listed inside sitemap.xml.
 Sitemap: https://heritagestonebridge.com/sitemap.xml
-
-# Host directive
-Host: https://heritagestonebridge.com

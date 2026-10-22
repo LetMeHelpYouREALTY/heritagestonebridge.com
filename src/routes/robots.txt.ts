@@ -56,17 +56,8 @@ Disallow: /temp/
 Disallow: /cache/
 Disallow: /*.pdf$
 
-# Crawl delay for polite crawling
-Crawl-delay: 1
-
-# Sitemap locations - Optimized for Google Search Console
-Sitemap: https://heritagestonebridge.com/sitemap.xml
-Sitemap: https://heritagestonebridge.com/sitemap-pages.xml
-Sitemap: https://heritagestonebridge.com/sitemap-properties.xml
-Sitemap: https://heritagestonebridge.com/sitemap-images.xml
-
-# Host directive
-Host: https://heritagestonebridge.com`;
+# Sitemap index. The child files are listed inside sitemap.xml.
+Sitemap: https://heritagestonebridge.com/sitemap.xml`;
 
   requestEvent.headers.set("Content-Type", "text/plain");
   requestEvent.headers.set("Cache-Control", "public, max-age=86400");
