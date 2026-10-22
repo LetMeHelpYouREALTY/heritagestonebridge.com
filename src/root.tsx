@@ -48,7 +48,7 @@ export default component$(() => {
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}`}
             />
             <script
-              dangerouslySetInnerHTML={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}');`}
+              dangerouslySetInnerHTML={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}');document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';var s=/realscout\\.com/i.test(h)?'AW-10990620522/oggzCNmKmKUdEOqe3vgo':/^tel:/i.test(h)?'AW-10990620522/PHRcCNyKmKUdEOqe3vgo':null;if(s)gtag('event','conversion',{send_to:s,transport_type:'beacon'});},true);`}
             />
           </>
         )}
