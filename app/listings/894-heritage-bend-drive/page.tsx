@@ -20,7 +20,7 @@ import { SITE_CONTACT } from "@/lib/site-contact";
 const listing = FEATURED_LISTING;
 const pagePath = listing.path;
 const pageTitle = `${listing.address.street} | ${listing.priceDisplay} | Heritage at Stonebridge`;
-const pageDescription = `Lennar Claremont at ${listing.address.street}, Heritage at Stonebridge, ${listing.address.zip}. ${listing.beds} bed, ${listing.baths} bath, ${listing.sqft.toLocaleString("en-US")} sq ft, listed at ${listing.priceDisplay}. Open house Oct 10–11. MLS ${listing.mlsNumber}.`;
+const pageDescription = `Lennar Claremont at ${listing.address.street}, Heritage at Stonebridge, ${listing.address.zip}. ${listing.beds} bed, ${listing.baths} bath, ${listing.sqft.toLocaleString("en-US")} sq ft, listed at ${listing.priceDisplay}. Open house Oct 24–25. MLS ${listing.mlsNumber}.`;
 
 export const metadata: Metadata = buildPageMetadata({
   title: pageTitle,
@@ -93,6 +93,7 @@ export default function HeritageBendListingPage() {
         priceCurrency: "USD",
         availability: "https://schema.org/InStock",
         url: listingUrl,
+        validFrom: `${listing.listDate}T00:00:00-07:00`,
       },
     })),
   );
