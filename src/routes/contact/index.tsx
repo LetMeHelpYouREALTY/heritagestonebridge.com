@@ -4,6 +4,7 @@ import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyW
 import { business } from "~/config/business";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { InteriorHero } from "~/components/community/InteriorHero";
+import { ReviewQr } from "~/components/community/ReviewQr";
 
 export const head: DocumentHead = {
   title: "Contact Dr. Jan Duffy - Las Vegas Real Estate Expert | Heritage at Stonebridge",
@@ -168,6 +169,7 @@ export default component$(() => {
               Write a Google review
             </a>
           </div>
+          <ReviewQr />
 
           <div class="mt-10 rounded-lg overflow-hidden shadow-lg">
             <iframe

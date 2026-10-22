@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { AgentPortrait } from "~/components/community/AgentPortrait";
+import { ReviewQr } from "~/components/community/ReviewQr";
 import { business } from "~/config/business";
 
 /** GBP-matching call, directions, reviews, hours, and map for campaign pages. */
@@ -57,6 +58,7 @@ export const ContactStrip = component$(() => {
             Write a Google review
           </a>
         </div>
+        <ReviewQr />
         <div class="mt-8 overflow-hidden rounded-2xl border border-hsb-border">
           <iframe
             title="Map of Heritage Stonebridge at Crossbridge Dr, Las Vegas, NV 89138"
