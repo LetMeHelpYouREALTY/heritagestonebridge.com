@@ -949,7 +949,7 @@ export default component$(() => {
               Schedule Your Private Tour Today
             </a>
             <a
-              href="tel:+17022221964"
+              href="tel:+17027896561"
               class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-800 transition-colors shadow-lg inline-block text-center"
             >
               Call (702) 789-6561

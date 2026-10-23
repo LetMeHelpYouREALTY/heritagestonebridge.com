@@ -424,8 +424,6 @@ export default component$(() => {
               <strong>Address:</strong> Crossbridge Dr, Las Vegas, NV 89138
               <br />
               <strong>Neighborhood:</strong> Summerlin West, Stonebridge Community
-              <br />
-              <strong>License:</strong> Nevada Real Estate License #S.0197614
             </p>
           </div>
         </div>

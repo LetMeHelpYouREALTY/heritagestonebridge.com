@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "Who is the listing agent?",
-    answer: `Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, Nevada license ${business.license}. Office: ${business.addressDisplay}. Phone ${business.telephoneDisplay}.`,
+    answer: `Dr. Jan Duffy, REALTOR®, in real estate since 1983. Office: ${business.addressDisplay}. Phone ${business.telephoneDisplay}.`,
   },
 ] as const;
 

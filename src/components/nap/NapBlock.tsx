@@ -32,9 +32,6 @@ export const NapBlock = component$(() => {
         </a>
       </p>
       <p>Hours: {business.hoursDisplay}</p>
-      <p>
-        Nevada Real Estate License #{business.license} · {business.broker}
-      </p>
     </address>
   );
 });

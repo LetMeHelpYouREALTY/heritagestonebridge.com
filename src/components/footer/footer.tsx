@@ -461,10 +461,10 @@ export const Footer = component$(() => {
           <div class="flex flex-col md:flex-row justify-between items-center">
             <div class="text-gray-400 text-sm mb-4 md:mb-0">
               <p>
-                &copy; 2026 {business.name}, Nevada Real Estate License #{business.license}
+                &copy; 2026 {business.name} · Serving Las Vegas, NV 89138 and Summerlin West
               </p>
               <p>
-                {business.broker} · Serving Las Vegas, NV 89138 and Summerlin West
+                {business.broker} since September 2008 · License {business.license}
               </p>
             </div>
             <div class="flex space-x-6 text-sm">
@@ -485,7 +485,6 @@ export const Footer = component$(() => {
             <p>
               {business.name}. {business.addressDisplay}. {business.hoursDisplay}. Call or text{" "}
               {business.telephoneDisplay}. Service area: Las Vegas, NV 89138 and Summerlin West.
-              Nevada license {business.license}. {business.broker}.
             </p>
           </div>
         </div>

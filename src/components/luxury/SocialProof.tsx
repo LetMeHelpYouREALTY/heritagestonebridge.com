@@ -81,18 +81,14 @@ export const SocialProof = component$(() => {
       </div>
 
       {/* Trust Indicators */}
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
         <div class="bg-white rounded-lg p-4 shadow-md">
           <div class="text-2xl font-bold text-blue-600 mb-1">200+</div>
           <div class="text-sm text-gray-600">Residents</div>
         </div>
         <div class="bg-white rounded-lg p-4 shadow-md">
-          <div class="text-2xl font-bold text-blue-600 mb-1">4.9★</div>
-          <div class="text-sm text-gray-600">Average Rating</div>
-        </div>
-        <div class="bg-white rounded-lg p-4 shadow-md">
-          <div class="text-2xl font-bold text-blue-600 mb-1">15+</div>
-          <div class="text-sm text-gray-600">Years Experience</div>
+          <div class="text-2xl font-bold text-blue-600 mb-1">Since 1983</div>
+          <div class="text-sm text-gray-600">In Real Estate</div>
         </div>
         <div class="bg-white rounded-lg p-4 shadow-md">
           <div class="text-2xl font-bold text-blue-600 mb-1">24/7</div>

@@ -9,7 +9,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Meet Dr. Jan Duffy, licensed Nevada real estate professional with doctorate degree and Nevada license S.0197614.LLC. Expert in Las Vegas luxury market, 55+ communities, and Heritage at Stonebridge.",
+      content: "Meet Dr. Jan Duffy, licensed Nevada REALTOR® with a Ph.D. in Research, in real estate since 1983. Expert in Las Vegas luxury market, 55+ communities, and Heritage at Stonebridge.",
     },
     {
       property: "og:title",
@@ -17,7 +17,7 @@ export const head: DocumentHead = {
     },
     {
       property: "og:description",
-      content: "Meet Dr. Jan Duffy, licensed Nevada real estate professional with doctorate degree and Nevada license S.0197614.LLC. Expert in Las Vegas luxury market and 55+ communities.",
+      content: "Meet Dr. Jan Duffy, licensed Nevada REALTOR® with a Ph.D. in Research, in real estate since 1983. Expert in Las Vegas luxury market and 55+ communities.",
     },
     {
       property: "og:type",
@@ -41,7 +41,7 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:description",
-      content: "Meet Dr. Jan Duffy, licensed Nevada real estate professional with doctorate degree and Nevada license S.0197614.LLC.",
+      content: "Meet Dr. Jan Duffy, licensed Nevada REALTOR® with a Ph.D. in Research, in real estate since 1983.",
     },
     {
       name: "robots",
@@ -66,7 +66,7 @@ export default component$(() => {
       {/* Hero Section */}
       <InteriorHero
         title="About Dr. Jan Duffy"
-        lede="Nevada real estate license S.0197614.LLC. Berkshire Hathaway HomeServices Nevada Properties. She works Heritage at Stonebridge in Summerlin West."
+        lede="Licensed Nevada REALTOR®, in real estate since 1983. She works Heritage at Stonebridge in Summerlin West."
       />
       <OfficeListingsBelowHero />
 
@@ -80,8 +80,8 @@ export default component$(() => {
               </h2>
               <p class="text-lg text-hsb-text mb-6">
                 Dr. Jan Duffy brings a unique combination of advanced education, extensive experience, 
-                and specialized knowledge to every real estate transaction. With a doctorate degree 
-                and Nevada license S.0197614.LLC, she provides unparalleled expertise in the 
+                and specialized knowledge to every real estate transaction. With a Ph.D. in Research 
+                and a career in real estate since 1983, she provides unparalleled expertise in the 
                 Las Vegas luxury market.
               </p>
               <div class="space-y-4">
@@ -90,7 +90,7 @@ export default component$(() => {
                     <span class="text-blue-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h3 class="text-xl font-semibold text-hsb-dark mb-2">Doctorate Degree</h3>
+                    <h3 class="text-xl font-semibold text-hsb-dark mb-2">Ph.D. in Research</h3>
                     <p class="text-hsb-muted">Advanced analytical skills and research-based approach to real estate</p>
                   </div>
                 </div>
@@ -99,8 +99,8 @@ export default component$(() => {
                     <span class="text-blue-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h3 class="font-display text-xl text-hsb-dark mb-2">Nevada license S.0197614.LLC</h3>
-                    <p class="text-hsb-muted">Berkshire Hathaway HomeServices Nevada Properties</p>
+                    <h3 class="font-display text-xl text-hsb-dark mb-2">In Real Estate Since 1983</h3>
+                    <p class="text-hsb-muted">Licensed Nevada REALTOR® serving Las Vegas buyers and sellers</p>
                   </div>
                 </div>
                 <div class="flex items-start">
@@ -129,9 +129,8 @@ export default component$(() => {
                   <span class="text-6xl text-blue-600">👩‍💼</span>
                 </div>
                 <h3 class="font-display text-2xl text-hsb-dark mb-4">Dr. Jan Duffy</h3>
-                <p class="text-lg text-hsb-text mb-4">Licensed Nevada Real Estate Professional</p>
+                <p class="text-lg text-hsb-text mb-4">Top 1% Las Vegas REALTOR®</p>
                 <div class="space-y-2 text-sm text-gray-500">
-                  <p><strong>License:</strong> S.0197614.LLC</p>
                   <p><strong>Phone:</strong> (702) 789-6561</p>
                   <p><strong>Email:</strong> DrDuffySells@HeritageStonebridge.com</p>
                   <p><strong>Location:</strong> Las Vegas, Nevada</p>
@@ -286,8 +285,6 @@ export default component$(() => {
           </div>
           <div class="mt-8 text-center">
             <p class="text-hsb-sand text-sm">
-              <strong>Nevada Real Estate License:</strong> S.0197614.LLC
-              <br />
               <strong>Office:</strong> Crossbridge Dr, Las Vegas, NV 89138
               <br />
               <strong>Specialties:</strong> Heritage at Stonebridge, 55+ Communities, Luxury Properties

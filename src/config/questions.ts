@@ -119,8 +119,8 @@ export const processQuestions: ReadonlyArray<QA> = [
       "Four steps. Search the live MLS. Tour the homes you pick. Read the HOA documents. Then write an offer based on sold homes inside Heritage at Stonebridge, not a valley average.",
   },
   {
-    question: "Who is Dr. Jan Duffy and what license does she hold?",
-    answer: `Dr. Jan Duffy is a REALTOR with Berkshire Hathaway HomeServices Nevada Properties, Nevada license ${business.license}. Office hours: ${business.hoursDisplay}.`,
+    question: "Who is Dr. Jan Duffy?",
+    answer: `Dr. Jan Duffy is a licensed Nevada REALTOR®, in real estate since 1983. Office hours: ${business.hoursDisplay}.`,
   },
 ];
 
