@@ -1,8 +1,9 @@
 import { component$ } from "@builder.io/qwik";
+import { CalendlyStrip } from "~/components/calendly/CalendlyStrip";
 import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 import { REALSCOUT_AGENT_ID } from "~/config/community";
 
-/** MLS office listings. Rendered once, immediately after the page hero. */
+/** MLS office listings, rendered once right after the page hero, with the booking strip below. */
 export const OfficeListingsBelowHero = component$(() => {
   return (
     <section class="bg-white py-12" aria-label="Homes for sale">
@@ -18,6 +19,7 @@ export const OfficeListingsBelowHero = component$(() => {
             priceMax={1600000}
           />
         </div>
+        <CalendlyStrip />
       </div>
     </section>
   );
