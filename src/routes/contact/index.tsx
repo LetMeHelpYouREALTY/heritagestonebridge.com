@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { CalendlyInline } from "~/components/calendly/CalendlyInline";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { business } from "~/config/business";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
@@ -183,6 +184,20 @@ export default component$(() => {
           <p class="mt-3 text-center text-sm text-gray-500">
             Wheelchair accessible parking lot and wheelchair accessible entrance.
           </p>
+        </div>
+      </section>
+
+      {/* Schedule */}
+      <section id="schedule" class="py-16 bg-white" aria-labelledby="schedule-heading">
+        <div class="mx-auto max-w-4xl px-4">
+          <h2 id="schedule-heading" class="mb-4 text-center text-3xl font-bold text-hsb-dark md:text-4xl">
+            Schedule a 15-minute call
+          </h2>
+          <p class="mx-auto mb-8 max-w-2xl text-center text-hsb-text">
+            Pick a time for current Heritage at Stonebridge sales, HOA fees, and resale timing. Or
+            call (702) 789-6561.
+          </p>
+          <CalendlyInline title="Schedule a 15-minute call with Dr. Jan Duffy" />
         </div>
       </section>
 

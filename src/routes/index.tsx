@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { CalendlyStrip } from "~/components/calendly/CalendlyStrip";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { AgentPortrait } from "~/components/community/AgentPortrait";
 import { CommunityGallery } from "~/components/community/CommunityGallery";
@@ -239,6 +240,7 @@ export default component$(() => {
               Call (702) 789-6561
             </a>
           </div>
+          <CalendlyStrip dark />
         </div>
       </section>
 
