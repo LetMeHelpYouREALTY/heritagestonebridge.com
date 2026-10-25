@@ -33,9 +33,9 @@ export default component$(() => {
           <h2 class="font-display text-3xl text-hsb-dark">Where Heritage at Stonebridge is</h2>
           <p class="mt-4">
             The community is in Summerlin West, zip code 89138. The HOA clubhouse is at{" "}
-            {community.clubhouseDisplay}. That building is the association clubhouse, not Dr. Jan
-            Duffy's office. Clubhouse phone {community.clubhousePhoneDisplay}. Hours posted on the
-            community site: {community.clubhouseHours}.
+            {community.clubhouseDisplay}. Dr. Jan Duffy's office is {business.addressDisplay}.
+            Clubhouse phone {community.clubhousePhoneDisplay}. Hours posted on the community site:{" "}
+            {community.clubhouseHours}.
           </p>
           <p class="mt-4">
             Homes are single-story Lennar plans behind a staffed gate. Visitors check in at the

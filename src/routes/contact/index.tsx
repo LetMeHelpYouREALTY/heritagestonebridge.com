@@ -115,8 +115,9 @@ export default component$(() => {
               <h3 class="text-xl font-semibold text-hsb-dark mb-2">Office</h3>
               <p class="text-hsb-muted mb-4">Visit our location</p>
               <p class="text-purple-600 font-semibold text-sm">
-                Crossbridge Dr<br />
-                Las Vegas, NV 89138
+                {business.streetAddress}
+                <br />
+                {business.addressLocality}, {business.addressRegion} {business.postalCode}
               </p>
             </div>
 
@@ -174,7 +175,7 @@ export default component$(() => {
 
           <div class="mt-10 rounded-lg overflow-hidden shadow-lg">
             <iframe
-              title="Map of Heritage Stonebridge office at Crossbridge Dr, Las Vegas, NV 89138"
+              title={`Map of Heritage Stonebridge office at ${business.addressDisplay}`}
               src={business.mapsEmbedUrl}
               class="w-full h-[360px] border-0"
               loading="lazy"
@@ -314,7 +315,7 @@ export default component$(() => {
           </div>
           <div class="mt-8 text-center">
             <p class="text-hsb-sand text-sm">
-              <strong>Office:</strong> Crossbridge Dr, Las Vegas, NV 89138
+              <strong>Office:</strong> {business.addressDisplay}
               <br />
               <strong>Hours:</strong> {business.hoursDisplay}
             </p>

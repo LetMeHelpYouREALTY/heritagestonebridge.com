@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { schemaOpeningHours } from "~/config/business";
+import { business, schemaOpeningHours } from "~/config/business";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { InteriorHero } from "~/components/community/InteriorHero";
 
@@ -421,7 +421,7 @@ export default component$(() => {
           </div>
           <div class="mt-8 text-center">
             <p class="text-hsb-sand text-sm">
-              <strong>Address:</strong> Crossbridge Dr, Las Vegas, NV 89138
+              <strong>Address:</strong> {business.addressDisplay}
               <br />
               <strong>Neighborhood:</strong> Summerlin West, Stonebridge Community
             </p>

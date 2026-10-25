@@ -5,9 +5,13 @@
  * Verified 2026-09-27 via the Business Information API for
  * "Heritage Stonebridge | Homes By Dr. Jan Duffy" (place ChIJOdHQ97m_yIARlY1CLNq9RSY).
  * About text, categories, and service area confirmed from the profile on 2026-10-05.
- * Public panel the same night: Real estate agent, Crossbridge Dr, (702) 789-6561,
+ * Public panel the same night: Real estate agent, (702) 789-6561,
  * hours that close at 8:00 PM. No opening date, social profiles, or special hours are set.
  * Regular hours are 8:00 AM–8:00 PM all seven days.
+ *
+ * Office address set 2026-10-24: 930 Silverfir Court, Suite B, Las Vegas, NV 89138.
+ * The street, city, and ZIP match the Heritage at Stonebridge clubhouse.
+ * The map pin is the civic building at that street (OpenStreetMap way 1365599841).
  */
 export const GBP_BUSINESS_NAME = "Heritage Stonebridge | Homes By Dr. Jan Duffy";
 
@@ -35,15 +39,15 @@ export const business = {
   placeId: "ChIJOdHQ97m_yIARlY1CLNq9RSY",
   license: "S.0197614.LLC",
   broker: "Berkshire Hathaway HomeServices Nevada Properties",
-  streetAddress: "Crossbridge Dr",
+  streetAddress: "930 Silverfir Court, Suite B",
   addressLocality: "Las Vegas",
   addressRegion: "NV",
   postalCode: "89138",
   addressCountry: "US",
-  addressDisplay: "Crossbridge Dr, Las Vegas, NV 89138",
+  addressDisplay: "930 Silverfir Court, Suite B, Las Vegas, NV 89138",
   geo: {
-    latitude: "36.1716",
-    longitude: "-115.3384",
+    latitude: "36.1582366",
+    longitude: "-115.3783524",
   },
   hoursDisplay: "Open daily, 8:00 AM–8:00 PM",
   hoursLines: [
@@ -55,9 +59,10 @@ export const business = {
     "Saturday: 8:00 AM–8:00 PM",
     "Sunday: 8:00 AM–8:00 PM",
   ],
-  mapsUrl: "https://maps.google.com/maps?cid=2757819091577376149",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=930+Silverfir+Court,+Suite+B,+Las+Vegas,+NV+89138",
   mapsEmbedUrl:
-    "https://maps.google.com/maps?q=place_id:ChIJOdHQ97m_yIARlY1CLNq9RSY&output=embed",
+    "https://maps.google.com/maps?q=930%20Silverfir%20Court%2C%20Suite%20B%2C%20Las%20Vegas%2C%20NV%2089138&output=embed",
   reviewsUrl: "https://search.google.com/local/reviews?placeid=ChIJOdHQ97m_yIARlY1CLNq9RSY",
   /**
    * Official write-a-review link from the Business Profile "Get more reviews"

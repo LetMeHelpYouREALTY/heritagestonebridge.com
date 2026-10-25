@@ -61,7 +61,7 @@ export const ContactStrip = component$(() => {
         <ReviewQr />
         <div class="mt-8 overflow-hidden rounded-2xl border border-hsb-border">
           <iframe
-            title="Map of Heritage Stonebridge at Crossbridge Dr, Las Vegas, NV 89138"
+            title={`Map of Heritage Stonebridge office at ${business.addressDisplay}`}
             src={business.mapsEmbedUrl}
             class="h-72 w-full border-0"
             loading="lazy"

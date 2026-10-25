@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: "Where is the clubhouse?",
-    answer: `The HOA clubhouse is at ${community.clubhouseDisplay}. Clubhouse phone ${community.clubhousePhoneDisplay}. Hours posted on the community site: ${community.clubhouseHours}. That address is the association building, not Dr. Jan Duffy's office.`,
+    answer: `The HOA clubhouse is at ${community.clubhouseDisplay}. Clubhouse phone ${community.clubhousePhoneDisplay}. Hours posted on the community site: ${community.clubhouseHours}. Dr. Jan Duffy's office is ${business.addressDisplay}.`,
   },
   {
     question: "How do I start a tour with Dr. Jan Duffy?",

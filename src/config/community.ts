@@ -1,7 +1,7 @@
 /**
  * Facts published on https://www.heritageatstonebridge.org/ as of 2026-09-27.
- * The clubhouse address is the HOA building. Dr. Jan Duffy's Google Business
- * Profile address stays in ~/config/business.ts and must not be swapped.
+ * The clubhouse address is the HOA building. Dr. Jan Duffy's office is Suite B
+ * at this street. That office address stays in ~/config/business.ts.
  *
  * Listing address and price are UNKNOWN until the seller's MLS sheet is live.
  */

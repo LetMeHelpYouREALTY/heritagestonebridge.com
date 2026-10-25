@@ -112,7 +112,7 @@ export default component$(() => {
           </ul>
           <p class="mt-6 text-sm text-hsb-muted">
             Clubhouse {community.clubhouseDisplay}. Association phone {community.clubhousePhoneDisplay}.
-            Posted clubhouse hours: {community.clubhouseHours}. Dr. Jan Duffy's office remains{" "}
+            Posted clubhouse hours: {community.clubhouseHours}. Dr. Jan Duffy's office is{" "}
             {business.addressDisplay}, {business.telephoneDisplay}.
           </p>
         </div>

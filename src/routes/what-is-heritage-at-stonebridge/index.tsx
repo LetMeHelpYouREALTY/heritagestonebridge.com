@@ -13,7 +13,7 @@ const pageLede =
 const sections = [
   {
     heading: "Where is Heritage at Stonebridge?",
-    body: "It is in Summerlin West, zip code 89138. The HOA clubhouse is at 930 Silverfir Court. That address is the association building, not Dr. Jan Duffy's office.",
+    body: `It is in Summerlin West, zip code 89138. The HOA clubhouse is at 930 Silverfir Court. Dr. Jan Duffy's office is ${business.addressDisplay}.`,
     href: "/community/",
     label: "Community page",
   },
