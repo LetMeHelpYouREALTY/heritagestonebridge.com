@@ -104,7 +104,7 @@ export const amenityQuestions: ReadonlyArray<QA> = [
   },
   {
     question: "Where is the clubhouse and what are its hours?",
-    answer: `The HOA clubhouse is at ${community.clubhouseDisplay}. Clubhouse phone ${community.clubhousePhoneDisplay}. Hours posted on the community site: ${community.clubhouseHours}.`,
+    answer: `Clubhouse phone ${community.clubhousePhoneDisplay}. Hours posted on the community site: ${community.clubhouseHours}. The clubhouse address is on the amenities page.`,
   },
 ];
 

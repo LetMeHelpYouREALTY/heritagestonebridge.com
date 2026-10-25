@@ -73,7 +73,7 @@ export const communityPhotos = [
     key: "clubhouse-exterior",
     id: "34bde918-5f0a-4479-c146-d7914daee500",
     file: "clubhouse-exterior.jpg",
-    alt: "Clubhouse exterior at 930 Silverfir Court, Suite A, Heritage at Stonebridge",
+    alt: "Clubhouse exterior at Heritage at Stonebridge",
   },
   {
     key: "clubhouse-lounge",

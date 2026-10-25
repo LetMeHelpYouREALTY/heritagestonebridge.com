@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: "Where is the clubhouse?",
-    answer: `The HOA clubhouse is at ${community.clubhouseDisplay}. Clubhouse phone ${community.clubhousePhoneDisplay}. Hours posted on the community site: ${community.clubhouseHours}.`,
+    answer: `The clubhouse address, phone, and hours are on the amenities page. Clubhouse phone ${community.clubhousePhoneDisplay}. Hours posted on the community site: ${community.clubhouseHours}.`,
   },
   {
     question: "How do I start a tour with Dr. Jan Duffy?",
