@@ -8,7 +8,7 @@ import { community } from "~/config/community";
 
 const pageTitle = "Heritage at Stonebridge in Summerlin West, 89138";
 const pageLede =
-  "Heritage at Stonebridge is a guard-gated, age-qualified 55+ Lennar community in Summerlin West, Las Vegas, NV 89138. It has 421 homes. The clubhouse is at 930 Silverfir Court. Occupancy is subject to the association's governing documents and applicable law.";
+  "Heritage at Stonebridge is a guard-gated, age-qualified 55+ Lennar community in Summerlin West, Las Vegas, NV 89138. It has 421 homes.";
 
 export default component$(() => {
   return (
