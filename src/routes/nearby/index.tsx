@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     question: "Where is the map centered?",
-    answer: `The search is centered on the HOA clubhouse at ${community.clubhouseDisplay}. Dr. Jan Duffy's office address is ${business.addressDisplay}.`,
+    answer: `The search is centered on the HOA clubhouse at ${community.clubhouseDisplay}.`,
   },
 ] as const;
 

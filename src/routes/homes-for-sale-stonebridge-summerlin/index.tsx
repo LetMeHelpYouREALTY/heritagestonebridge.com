@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
-import { business, schemaOpeningHours } from "~/config/business";
+import { schemaOpeningHours } from "~/config/business";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { InteriorHero } from "~/components/community/InteriorHero";
 
@@ -421,8 +421,6 @@ export default component$(() => {
           </div>
           <div class="mt-8 text-center">
             <p class="text-hsb-sand text-sm">
-              <strong>Address:</strong> {business.addressDisplay}
-              <br />
               <strong>Neighborhood:</strong> Summerlin West, Stonebridge Community
             </p>
           </div>

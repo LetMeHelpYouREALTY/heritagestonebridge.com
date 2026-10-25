@@ -284,7 +284,7 @@ export default component$(() => {
             Copyright Greater Las Vegas Association of Realtors. All rights reserved. Information is
             deemed reliable but not guaranteed and should be independently verified. Listing offered
             by {listing.listingBrokerage}. MLS {listing.mlsNumber}. Checked {listing.checkedOn}.{" "}
-            {business.name}. {business.addressDisplay}. {business.telephoneDisplay}.
+            {business.name}. {business.telephoneDisplay}.
           </p>
         </div>
       </article>

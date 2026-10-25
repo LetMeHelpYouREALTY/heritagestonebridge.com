@@ -126,8 +126,7 @@ export default component$(() => {
             <AgentPortrait size="lg" />
             <p class="mt-6 text-sm uppercase tracking-[0.14em] text-hsb-muted">{business.category}</p>
             <p class="mt-1 text-sm text-hsb-muted">{business.additionalCategory}</p>
-            <p class="mt-6 font-display text-2xl text-hsb-dark">{business.addressDisplay}</p>
-            <p class="mt-2 text-hsb-text">Service area: Las Vegas, NV 89138 and Summerlin West</p>
+            <p class="mt-6 text-hsb-text">Service area: Las Vegas, NV 89138 and Summerlin West</p>
             <p class="mt-4 text-hsb-text">{business.hoursDisplay}</p>
             <p class="mt-6 text-sm text-hsb-muted">
               Wheelchair accessible parking lot. Wheelchair accessible entrance.

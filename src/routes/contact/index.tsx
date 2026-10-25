@@ -12,7 +12,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: `Contact ${business.name} for Heritage at Stonebridge real estate. Call ${business.telephoneDisplay} or text ${business.telephoneDisplay}. Located at ${business.addressDisplay}.`,
+      content: `Contact ${business.name} for Heritage at Stonebridge real estate. See the office listings or pick a time on the calendar. Call ${business.telephoneDisplay}.`,
     },
     {
       property: "og:title",
@@ -69,9 +69,21 @@ export default component$(() => {
       {/* Hero Section */}
       <InteriorHero
         title="Contact Dr. Jan Duffy"
-        lede="Your Las Vegas Real Estate Expert"
+        lede="See the current office listings, or pick a time on the calendar."
       />
       <OfficeListingsBelowHero />
+
+      <section id="schedule" class="bg-white py-16" aria-labelledby="schedule-heading">
+        <div class="mx-auto max-w-4xl px-4">
+          <h2 id="schedule-heading" class="mb-4 text-center text-3xl font-bold text-hsb-dark md:text-4xl">
+            Schedule a 15-minute call
+          </h2>
+          <p class="mx-auto mb-8 max-w-2xl text-center text-hsb-text">
+            Pick a time for current Heritage at Stonebridge sales, HOA fees, and resale timing.
+          </p>
+          <CalendlyInline title="Schedule a 15-minute call with Dr. Jan Duffy" />
+        </div>
+      </section>
 
       {/* Contact Information */}
       <section class="py-16 bg-white">
@@ -81,11 +93,12 @@ export default component$(() => {
               Get In Touch
             </h2>
             <p class="text-xl text-hsb-muted max-w-3xl mx-auto">
-              Multiple ways to connect with Dr. Jan Duffy for your real estate needs
+              The listings and the calendar above are the direct way to reach Dr. Jan Duffy. Call or
+              email if you already know what you need.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
             {/* Phone */}
             <div class="text-center p-6 bg-blue-50 rounded-lg">
               <h3 class="text-xl font-semibold text-hsb-dark mb-2">Call</h3>
@@ -108,17 +121,6 @@ export default component$(() => {
               >
                 {business.email}
               </a>
-            </div>
-
-            {/* Office */}
-            <div class="text-center p-6 bg-purple-50 rounded-lg">
-              <h3 class="text-xl font-semibold text-hsb-dark mb-2">Office</h3>
-              <p class="text-hsb-muted mb-4">Visit our location</p>
-              <p class="text-purple-600 font-semibold text-sm">
-                {business.streetAddress}
-                <br />
-                {business.addressLocality}, {business.addressRegion} {business.postalCode}
-              </p>
             </div>
 
             {/* Hours */}
@@ -147,14 +149,6 @@ export default component$(() => {
               Text {business.telephoneDisplay}
             </a>
             <a
-              href={business.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 text-center"
-            >
-              Directions
-            </a>
-            <a
               href={business.reviewsUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -172,33 +166,6 @@ export default component$(() => {
             </a>
           </div>
           <ReviewQr />
-
-          <div class="mt-10 rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              title={`Map of Heritage Stonebridge office at ${business.addressDisplay}`}
-              src={business.mapsEmbedUrl}
-              class="w-full h-[360px] border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-          <p class="mt-3 text-center text-sm text-gray-500">
-            Wheelchair accessible parking lot and wheelchair accessible entrance.
-          </p>
-        </div>
-      </section>
-
-      {/* Schedule */}
-      <section id="schedule" class="py-16 bg-white" aria-labelledby="schedule-heading">
-        <div class="mx-auto max-w-4xl px-4">
-          <h2 id="schedule-heading" class="mb-4 text-center text-3xl font-bold text-hsb-dark md:text-4xl">
-            Schedule a 15-minute call
-          </h2>
-          <p class="mx-auto mb-8 max-w-2xl text-center text-hsb-text">
-            Pick a time for current Heritage at Stonebridge sales, HOA fees, and resale timing. Or
-            call (702) 789-6561.
-          </p>
-          <CalendlyInline title="Schedule a 15-minute call with Dr. Jan Duffy" />
         </div>
       </section>
 
@@ -315,8 +282,6 @@ export default component$(() => {
           </div>
           <div class="mt-8 text-center">
             <p class="text-hsb-sand text-sm">
-              <strong>Office:</strong> {business.addressDisplay}
-              <br />
               <strong>Hours:</strong> {business.hoursDisplay}
             </p>
           </div>

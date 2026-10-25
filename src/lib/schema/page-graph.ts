@@ -169,7 +169,7 @@ function communityNode() {
     name: "Heritage at Stonebridge",
     url: "https://www.heritageatstonebridge.org/",
     description:
-      "Lennar's guard-gated 55+ community in Summerlin West. The clubhouse is the HOA building. Dr. Jan Duffy's office is Suite B at 930 Silverfir Court.",
+      "Lennar's guard-gated 55+ community in Summerlin West. The clubhouse is the HOA building.",
     telephone: "+1-725-204-7908",
     image: CLUBHOUSE,
     address: {

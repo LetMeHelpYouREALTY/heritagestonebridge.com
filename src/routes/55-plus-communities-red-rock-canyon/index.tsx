@@ -3,7 +3,6 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { InteriorHero } from "~/components/community/InteriorHero";
-import { business } from "~/config/business";
 
 export default component$(() => {
   // Inject structured data as JSON-LD script
@@ -210,9 +209,6 @@ export default component$(() => {
                 ></iframe>
               </div>
               <div class="mt-4 text-center text-hsb-muted">
-                <p>
-                  <strong>Address:</strong> {business.addressDisplay}
-                </p>
                 <p>
                   <strong>Neighborhood:</strong> Summerlin West, Stonebridge Village
                 </p>
@@ -974,8 +970,6 @@ export default component$(() => {
 
           <div class="mt-12 text-center">
             <p class="text-hsb-sand text-sm">
-              <strong>Address:</strong> {business.addressDisplay}
-              <br />
               <strong>Neighborhood:</strong> Summerlin West, Stonebridge Village
               <br />
               <strong>Developer:</strong> Lennar Corporation

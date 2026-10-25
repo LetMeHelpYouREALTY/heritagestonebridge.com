@@ -3,7 +3,7 @@ import { AgentPortrait } from "~/components/community/AgentPortrait";
 import { ReviewQr } from "~/components/community/ReviewQr";
 import { business } from "~/config/business";
 
-/** GBP-matching call, directions, reviews, hours, and map for campaign pages. */
+/** Call, text, and reviews for campaign pages. The office address stays in the footer. */
 export const ContactStrip = component$(() => {
   return (
     <section class="bg-white py-16">
@@ -18,7 +18,7 @@ export const ContactStrip = component$(() => {
           </div>
         </div>
         <p class="mt-4 text-lg text-hsb-text">
-          {business.addressDisplay}. {business.hoursDisplay}.
+          {business.hoursDisplay}. Use the office listings above, or pick a time on the calendar.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a
@@ -32,14 +32,6 @@ export const ContactStrip = component$(() => {
             class="rounded-full border border-hsb-border px-6 py-3 text-center font-medium text-hsb-primary hover:bg-hsb-sand"
           >
             Text {business.telephoneDisplay}
-          </a>
-          <a
-            href={business.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rounded-full border border-hsb-border px-6 py-3 text-center font-medium text-hsb-primary hover:bg-hsb-sand"
-          >
-            Directions
           </a>
           <a
             href={business.reviewsUrl}
@@ -59,15 +51,6 @@ export const ContactStrip = component$(() => {
           </a>
         </div>
         <ReviewQr />
-        <div class="mt-8 overflow-hidden rounded-2xl border border-hsb-border">
-          <iframe
-            title={`Map of Heritage Stonebridge office at ${business.addressDisplay}`}
-            src={business.mapsEmbedUrl}
-            class="h-72 w-full border-0"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
         <p class="mt-4 text-sm text-hsb-muted">
           Wheelchair accessible parking lot and wheelchair accessible entrance. Listing data on
           this site comes from the MLS through RealScout and can change without notice.

@@ -3,7 +3,6 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { InteriorHero } from "~/components/community/InteriorHero";
-import { business } from "~/config/business";
 
 export const head: DocumentHead = {
   title: "About Dr. Jan Duffy - Las Vegas Real Estate Expert | Heritage at Stonebridge",
@@ -286,8 +285,6 @@ export default component$(() => {
           </div>
           <div class="mt-8 text-center">
             <p class="text-hsb-sand text-sm">
-              <strong>Office:</strong> {business.addressDisplay}
-              <br />
               <strong>Specialties:</strong> Heritage at Stonebridge, 55+ Communities, Luxury Properties
             </p>
           </div>

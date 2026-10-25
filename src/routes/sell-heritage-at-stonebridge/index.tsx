@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "Who is the listing agent?",
-    answer: `Dr. Jan Duffy, REALTOR®, in real estate since 1983. Office: ${business.addressDisplay}. Phone ${business.telephoneDisplay}.`,
+    answer: `Dr. Jan Duffy, REALTOR®, in real estate since 1983. Pick a time on the calendar, or call ${business.telephoneDisplay}.`,
   },
 ] as const;
 
@@ -112,8 +112,8 @@ export default component$(() => {
           </ul>
           <p class="mt-6 text-sm text-hsb-muted">
             Clubhouse {community.clubhouseDisplay}. Association phone {community.clubhousePhoneDisplay}.
-            Posted clubhouse hours: {community.clubhouseHours}. Dr. Jan Duffy's office is{" "}
-            {business.addressDisplay}, {business.telephoneDisplay}.
+            Posted clubhouse hours: {community.clubhouseHours}. To reach Dr. Jan Duffy, use the
+            office listings or the calendar on this page, or call {business.telephoneDisplay}.
           </p>
         </div>
       </section>

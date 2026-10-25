@@ -8,7 +8,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: `That page was not found. Contact ${business.name} at ${business.telephoneDisplay}. ${business.addressDisplay}.`,
+      content: `That page was not found. Contact ${business.name} at ${business.telephoneDisplay}.`,
     },
     {
       name: "robots",
