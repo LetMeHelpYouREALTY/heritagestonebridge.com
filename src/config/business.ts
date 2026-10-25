@@ -15,13 +15,32 @@
  */
 export const GBP_BUSINESS_NAME = "Heritage Stonebridge | Homes By Dr. Jan Duffy";
 
+/** Place ID for the Business Profile checked 2026-09-27. */
+export const GBP_PLACE_ID = "ChIJOdHQ97m_yIARlY1CLNq9RSY";
+
+/**
+ * Opens this Business Profile pin. A street search can land on the HOA suite
+ * in the same building. The place id keeps Suite B.
+ */
+export const GBP_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(GBP_BUSINESS_NAME)}&query_place_id=${GBP_PLACE_ID}`;
+
+/** Profile short link. The /review path is the write-a-review card, not the profile. */
+export const GBP_PROFILE_URL = "https://g.page/r/CZWNQizavUUmEBI";
+
+export const businessProfiles = [
+  GBP_MAPS_URL,
+  GBP_PROFILE_URL,
+  "https://www.facebook.com/DrJanDuffyRealEstate",
+  "https://www.linkedin.com/in/drjanduffy",
+  "https://www.instagram.com/drjanduffylasvegas",
+] as const;
+
 export const GBP_DESCRIPTION =
   "Dr. Jan Duffy has sold Las Vegas homes since 1983 and works Heritage at Stonebridge every week, Lennar's guard-gated 55+ community in Summerlin West (89138). Buying? She knows all nine floor plans, which lots and elevations resell best, and what comparable homes closed for, so your first offer is the right one. Selling? She prices from recent Heritage at Stonebridge sales, holds weekend open houses, and markets your home across her 50+ Las Vegas neighborhood websites and social pages, where Summerlin 55+ buyers are already looking. Expect a reply within the hour and straight answers on HOA fees, resales, and the clubhouse lifestyle. Ready to move into or out of Stonebridge Summerlin? Message or call for a current market snapshot.";
 
 export const business = {
   name: GBP_BUSINESS_NAME,
   alternateName: [
-    "Heritage at Stonebridge",
     "Heritage Stonebridge",
     "Homes By Dr. Jan Duffy",
     "Dr. Jan Duffy Real Estate",
@@ -36,7 +55,8 @@ export const business = {
   email: "DrDuffySells@HeritageStonebridge.com",
   website: "https://heritagestonebridge.com/",
   canonicalUrl: "https://heritagestonebridge.com",
-  placeId: "ChIJOdHQ97m_yIARlY1CLNq9RSY",
+  placeId: GBP_PLACE_ID,
+  sameAs: businessProfiles,
   license: "S.0197614.LLC",
   broker: "Berkshire Hathaway HomeServices Nevada Properties",
   streetAddress: "930 Silverfir Court, Suite B",
@@ -59,8 +79,7 @@ export const business = {
     "Saturday: 8:00 AM–8:00 PM",
     "Sunday: 8:00 AM–8:00 PM",
   ],
-  mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=930+Silverfir+Court,+Suite+B,+Las+Vegas,+NV+89138",
+  mapsUrl: GBP_MAPS_URL,
   mapsEmbedUrl:
     "https://maps.google.com/maps?q=930%20Silverfir%20Court%2C%20Suite%20B%2C%20Las%20Vegas%2C%20NV%2089138&output=embed",
   reviewsUrl: "https://search.google.com/local/reviews?placeid=ChIJOdHQ97m_yIARlY1CLNq9RSY",
@@ -132,6 +151,7 @@ export const localBusinessJsonLd = {
     longitude: business.geo.longitude,
   },
   hasMap: business.mapsUrl,
+  sameAs: [...business.sameAs],
   openingHours: schemaOpeningHours,
   openingHoursSpecification,
   areaServed,

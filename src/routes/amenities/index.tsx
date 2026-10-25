@@ -213,7 +213,7 @@ export const head: DocumentHead = {
         "8,000 sq ft clubhouse, pools, fitness, pickleball and bocce in Summerlin West 89138. Tour with Dr. Jan Duffy. Call (702) 789-6561.",
     },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://heritagestonebridge.com/amenities" },
+    { property: "og:url", content: "https://heritagestonebridge.com/amenities/" },
   ],
-  links: [{ rel: "canonical", href: "https://heritagestonebridge.com/amenities" }],
+  links: [{ rel: "canonical", href: "https://heritagestonebridge.com/amenities/" }],
 };
