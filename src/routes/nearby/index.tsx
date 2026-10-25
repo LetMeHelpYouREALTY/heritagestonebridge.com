@@ -38,7 +38,7 @@ const faqs = [
   {
     question: "What does the nearby amenity map show?",
     answer:
-      "It shows Google Maps results for restaurants, parks, parking, grocery stores, coffee, and pharmacies near the Heritage at Stonebridge clubhouse at 930 Silverfir Ct, Las Vegas, NV 89138. The pins come from Google and can change.",
+      `It shows Google Maps results for restaurants, parks, parking, grocery stores, coffee, and pharmacies near the Heritage at Stonebridge clubhouse at ${community.clubhouseDisplay}. The pins come from Google and can change.`,
   },
   {
     question: "Are these amenities inside the community?",
@@ -82,7 +82,7 @@ export default component$(() => {
 
       <section class="bg-white py-16">
         <div class="mx-auto max-w-5xl px-4">
-          <h2 class="font-display text-3xl text-hsb-dark">Places near 930 Silverfir Court</h2>
+          <h2 class="font-display text-3xl text-hsb-dark">Places near 930 Silverfir Court, Suite A</h2>
           <p class="mt-3 max-w-3xl text-hsb-text">
             The clubhouse is at {community.clubhouseDisplay}. Choose a place type to reload the
             map. Open the same search in Google Maps if you want directions.
@@ -114,7 +114,7 @@ export default component$(() => {
 
           <div class="mt-6 overflow-hidden rounded-2xl border border-hsb-border">
             <iframe
-              title={`${selected.label} near Heritage at Stonebridge, 930 Silverfir Ct, Las Vegas`}
+              title={`${selected.label} near Heritage at Stonebridge, 930 Silverfir Court, Suite A, Las Vegas`}
               src={mapEmbedSrc(selected.query)}
               class="h-[28rem] w-full border-0"
               loading="lazy"
@@ -176,7 +176,7 @@ export const head: DocumentHead = {
     {
       name: "description",
       content:
-        "Restaurants, parks, parking, grocery, coffee, and pharmacies near the Heritage at Stonebridge clubhouse at 930 Silverfir Ct, Las Vegas, NV 89138. Call (702) 789-6561.",
+        "Restaurants, parks, parking, grocery, coffee, and pharmacies near the Heritage at Stonebridge HOA clubhouse at 930 Silverfir Court, Suite A, Las Vegas, NV 89138. Call (702) 789-6561.",
     },
     {
       property: "og:title",
@@ -185,7 +185,7 @@ export const head: DocumentHead = {
     {
       property: "og:description",
       content:
-        "Google Maps places near 930 Silverfir Ct in Summerlin West 89138. Clubhouse pools and courts are listed separately. Call (702) 789-6561.",
+        "Google Maps places near 930 Silverfir Court, Suite A in Summerlin West 89138. Clubhouse pools and courts are listed separately. Call (702) 789-6561.",
     },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://heritagestonebridge.com/nearby/" },

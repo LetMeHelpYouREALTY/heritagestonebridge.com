@@ -1,7 +1,7 @@
 /**
  * Facts published on https://www.heritageatstonebridge.org/ as of 2026-09-27.
- * The clubhouse address is the HOA building. Dr. Jan Duffy's office is Suite B
- * at this street. That office address stays in ~/config/business.ts.
+ * The HOA clubhouse is Suite A. Dr. Jan Duffy's office is Suite B.
+ * The office address stays in ~/config/business.ts.
  *
  * Listing address and price are UNKNOWN until the seller's MLS sheet is live.
  */
@@ -14,8 +14,8 @@ export const community = {
   homes: 421,
   amenityCountLabel: "15+",
   sunnyDaysLabel: "300+",
-  clubhouseStreet: "930 Silverfir Ct",
-  clubhouseDisplay: "930 Silverfir Ct, Las Vegas, NV 89138",
+  clubhouseStreet: "930 Silverfir Court, Suite A",
+  clubhouseDisplay: "930 Silverfir Court, Suite A, Las Vegas, NV 89138",
   clubhousePhoneDisplay: "(725) 204-7908",
   clubhousePhoneHref: "tel:+17252047908",
   clubhouseHours: "Monday–Sunday, 7:00 AM–7:00 PM",
@@ -73,7 +73,7 @@ export const communityPhotos = [
     key: "clubhouse-exterior",
     id: "34bde918-5f0a-4479-c146-d7914daee500",
     file: "clubhouse-exterior.jpg",
-    alt: "Clubhouse exterior at 930 Silverfir Court, Heritage at Stonebridge",
+    alt: "Clubhouse exterior at 930 Silverfir Court, Suite A, Heritage at Stonebridge",
   },
   {
     key: "clubhouse-lounge",

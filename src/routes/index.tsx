@@ -82,8 +82,8 @@ export default component$(() => {
           </h1>
           <p class="mt-5 max-w-2xl text-xl text-white md:text-2xl">
             Heritage at Stonebridge is in the village of Stonebridge, Summerlin West, Las Vegas, NV
-            89138. It has 421 guard-gated, age-qualified 55+ homes. The clubhouse is at 930 Silverfir
-            Court.
+            89138. It has 421 guard-gated, age-qualified 55+ homes. The HOA clubhouse is Suite A at
+            930 Silverfir Court.
           </p>
           <p class="mt-3 text-sm uppercase tracking-[0.14em] text-hsb-sand">
             {business.category} · Clark County, Nevada
@@ -176,7 +176,7 @@ export default component$(() => {
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
             <h2 class="font-display text-3xl text-hsb-dark mb-4">Why Choose Heritage at Stonebridge?</h2>
-            <p class="text-lg text-hsb-text mb-8">421 Lennar homes, a staffed gate, and a clubhouse at 930 Silverfir Court.</p>
+            <p class="text-lg text-hsb-text mb-8">421 Lennar homes, a staffed gate, and an HOA clubhouse at 930 Silverfir Court, Suite A.</p>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
@@ -223,7 +223,7 @@ export default component$(() => {
         <div class="max-w-7xl mx-auto px-4 text-center">
           <h2 class="text-3xl font-display text-white mb-4">Tour Heritage at Stonebridge</h2>
           <p class="text-lg text-hsb-sand mb-8 max-w-2xl mx-auto">
-            421 homes. Staffed gate. Clubhouse at 930 Silverfir Court. Call (702) 789-6561.
+            421 homes. Staffed gate. HOA clubhouse at 930 Silverfir Court, Suite A. Call (702) 789-6561.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -260,7 +260,7 @@ export const head: DocumentHead = {
     {
       name: "description",
       content:
-        "Heritage at Stonebridge is in the village of Stonebridge, Summerlin West, Las Vegas, NV 89138. 421 guard-gated, age-qualified 55+ Lennar homes. Clubhouse at 930 Silverfir Court. Call (702) 789-6561.",
+        "Heritage at Stonebridge is in the village of Stonebridge, Summerlin West, Las Vegas, NV 89138. 421 guard-gated, age-qualified 55+ Lennar homes. HOA clubhouse at 930 Silverfir Court, Suite A. Call (702) 789-6561.",
     },
     // Enhanced Meta Tags for AI & Search Engine Understanding
     {
