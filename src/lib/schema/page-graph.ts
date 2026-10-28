@@ -15,7 +15,8 @@ import { community } from "~/config/community";
  * places stay the same entities (@id) so the graph does not drift.
  *
  * Google, October 2026: LocalBusiness rich results need name and address.
- * RealEstateAgent is the specific type. Do not emit aggregateRating.
+ * RealEstateAgent is the Business Profile at Suite B. The ApartmentComplex
+ * node is the HOA clubhouse at Suite A. Do not emit aggregateRating.
  * FAQ rich results were removed in May 2026, so this template does not add
  * FAQPage. Visible Q&A pages keep their own matching FAQ script.
  */
@@ -89,6 +90,7 @@ function agentNode() {
       longitude: business.geo.longitude,
     },
     hasMap: business.mapsUrl,
+    sameAs: [...business.sameAs],
     openingHours: schemaOpeningHours,
     openingHoursSpecification,
     areaServed,

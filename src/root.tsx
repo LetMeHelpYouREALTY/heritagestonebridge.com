@@ -63,6 +63,9 @@ export default component$(() => {
         />
         <link rel="manifest" href="/manifest.json" />
         <script dangerouslySetInnerHTML={deferredTagScript(GOOGLE_TAG_ID)} />
+        <RouterHead />
+      </head>
+      <body lang="en">
         <noscript>
           <img
             height="1"
@@ -72,9 +75,6 @@ export default component$(() => {
             src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
           />
         </noscript>
-        <RouterHead />
-      </head>
-      <body lang="en">
         <RouterOutlet />
         <script dangerouslySetInnerHTML={REALSCOUT_LOADER} />
         <ServiceWorkerRegister />
