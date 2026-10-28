@@ -70,7 +70,7 @@ export default component$(() => {
         <div class="mx-auto max-w-3xl px-4">
           <h2 class="font-display text-3xl text-hsb-dark">Clubhouse and HOA</h2>
           <p class="mt-4">
-            The clubhouse is at {community.clubhouseDisplay}. Amenities there include heated pools,
+            The clubhouse has heated pools,
             a lap pool, a spa, a fitness center, pickleball, and bocce. Visitors check in at the
             staffed gate. The monthly assessment is in the resale package for the home you are
             buying.

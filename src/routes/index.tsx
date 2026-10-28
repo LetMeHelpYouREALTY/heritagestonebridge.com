@@ -82,8 +82,7 @@ export default component$(() => {
           </h1>
           <p class="mt-5 max-w-2xl text-xl text-white md:text-2xl">
             Heritage at Stonebridge is in the village of Stonebridge, Summerlin West, Las Vegas, NV
-            89138. It has 421 guard-gated, age-qualified 55+ homes. The clubhouse is at 930 Silverfir
-            Court.
+            89138. It has 421 guard-gated, age-qualified 55+ homes.
           </p>
           <p class="mt-3 text-sm uppercase tracking-[0.14em] text-hsb-sand">
             {business.category} · Clark County, Nevada
@@ -126,8 +125,7 @@ export default component$(() => {
             <AgentPortrait size="lg" />
             <p class="mt-6 text-sm uppercase tracking-[0.14em] text-hsb-muted">{business.category}</p>
             <p class="mt-1 text-sm text-hsb-muted">{business.additionalCategory}</p>
-            <p class="mt-6 font-display text-2xl text-hsb-dark">{business.addressDisplay}</p>
-            <p class="mt-2 text-hsb-text">Service area: Las Vegas, NV 89138 and Summerlin West</p>
+            <p class="mt-6 text-hsb-text">Service area: Las Vegas, NV 89138 and Summerlin West</p>
             <p class="mt-4 text-hsb-text">{business.hoursDisplay}</p>
             <p class="mt-6 text-sm text-hsb-muted">
               Wheelchair accessible parking lot. Wheelchair accessible entrance.
@@ -177,7 +175,7 @@ export default component$(() => {
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
             <h2 class="font-display text-3xl text-hsb-dark mb-4">Why Choose Heritage at Stonebridge?</h2>
-            <p class="text-lg text-hsb-text mb-8">421 Lennar homes, a staffed gate, and a clubhouse at 930 Silverfir Court.</p>
+            <p class="text-lg text-hsb-text mb-8">421 Lennar homes and a staffed gate.</p>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
@@ -224,7 +222,7 @@ export default component$(() => {
         <div class="max-w-7xl mx-auto px-4 text-center">
           <h2 class="text-3xl font-display text-white mb-4">Tour Heritage at Stonebridge</h2>
           <p class="text-lg text-hsb-sand mb-8 max-w-2xl mx-auto">
-            421 homes. Staffed gate. Clubhouse at 930 Silverfir Court. Call (702) 789-6561.
+            421 homes. Staffed gate. Pick a time to tour, or call (702) 789-6561.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -261,7 +259,7 @@ export const head: DocumentHead = {
     {
       name: "description",
       content:
-        "Heritage at Stonebridge is in the village of Stonebridge, Summerlin West, Las Vegas, NV 89138. 421 guard-gated, age-qualified 55+ Lennar homes. Clubhouse at 930 Silverfir Court. Call (702) 789-6561.",
+        "Heritage at Stonebridge is in the village of Stonebridge, Summerlin West, Las Vegas, NV 89138. 421 guard-gated, age-qualified 55+ Lennar homes. Call (702) 789-6561.",
     },
     // Enhanced Meta Tags for AI & Search Engine Understanding
     {

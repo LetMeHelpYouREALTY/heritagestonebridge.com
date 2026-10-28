@@ -10,16 +10,6 @@ export const NapBlock = component$(() => {
         {business.category} · {business.additionalCategory}
       </p>
       <p>
-        <a
-          href={business.mapsUrl}
-          class="text-blue-700 hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {business.addressDisplay}
-        </a>
-      </p>
-      <p>
         Phone:{" "}
         <a href={business.telephoneHref} class="text-blue-700 hover:underline font-semibold">
           {business.telephoneDisplay}

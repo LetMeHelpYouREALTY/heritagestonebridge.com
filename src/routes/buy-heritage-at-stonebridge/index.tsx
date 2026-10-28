@@ -31,11 +31,11 @@ const faqs = [
   },
   {
     question: "Where is the clubhouse?",
-    answer: `The HOA clubhouse is at ${community.clubhouseDisplay}. Clubhouse phone ${community.clubhousePhoneDisplay}. Hours posted on the community site: ${community.clubhouseHours}. That address is the association building, not Dr. Jan Duffy's office.`,
+    answer: `The clubhouse address, phone, and hours are on the amenities page. Clubhouse phone ${community.clubhousePhoneDisplay}. Hours posted on the community site: ${community.clubhouseHours}.`,
   },
   {
     question: "How do I start a tour with Dr. Jan Duffy?",
-    answer: `Call or text ${business.telephoneDisplay}. Office hours are ${business.hoursDisplay}. Office address: ${business.addressDisplay}.`,
+    answer: `Use the office listings on this page, or pick a time on the calendar. You can also call or text ${business.telephoneDisplay}. Office hours are ${business.hoursDisplay}.`,
   },
 ] as const;
 

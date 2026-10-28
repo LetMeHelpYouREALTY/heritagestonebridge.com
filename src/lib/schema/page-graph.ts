@@ -169,7 +169,7 @@ function communityNode() {
     name: "Heritage at Stonebridge",
     url: "https://www.heritageatstonebridge.org/",
     description:
-      "Lennar's guard-gated 55+ community in Summerlin West. The clubhouse is the HOA building, not the real estate office.",
+      "Lennar's guard-gated 55+ community in Summerlin West. The clubhouse is the HOA building.",
     telephone: "+1-725-204-7908",
     image: CLUBHOUSE,
     address: {

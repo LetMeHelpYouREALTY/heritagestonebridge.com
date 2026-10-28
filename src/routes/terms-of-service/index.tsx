@@ -9,7 +9,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: `Terms of service for ${business.name}. Contact ${business.telephoneDisplay}. ${business.addressDisplay}.`,
+      content: `Terms of service for ${business.name}. Contact ${business.telephoneDisplay}.`,
     },
   ],
 };
@@ -37,7 +37,7 @@ export default component$(() => {
           <a href={business.telephoneHref} class="text-blue-700 hover:underline">
             {business.telephoneDisplay}
           </a>
-          , {business.addressDisplay}.
+          .
         </p>
       </div>
     </article>

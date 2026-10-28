@@ -4,16 +4,15 @@ import { CampaignHero } from "~/components/community/CampaignHero";
 import { ContactStrip } from "~/components/community/ContactStrip";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { business } from "~/config/business";
-import { community } from "~/config/community";
 
 const pageTitle = "What is Heritage at Stonebridge?";
 const pageLede =
-  "Heritage at Stonebridge is a guard-gated, age-qualified 55+ Lennar community of 421 homes in Summerlin West, Las Vegas, NV 89138. The clubhouse is at 930 Silverfir Court. Occupancy is subject to the association's governing documents and applicable law.";
+  "Heritage at Stonebridge is a guard-gated, age-qualified 55+ Lennar community of 421 homes in Summerlin West, Las Vegas, NV 89138. Occupancy is subject to the association's governing documents and applicable law.";
 
 const sections = [
   {
     heading: "Where is Heritage at Stonebridge?",
-    body: "It is in Summerlin West, zip code 89138. The HOA clubhouse is at 930 Silverfir Court. That address is the association building, not Dr. Jan Duffy's office.",
+    body: "It is in Summerlin West, zip code 89138. The clubhouse address is on the community page.",
     href: "/community/",
     label: "Community page",
   },
@@ -31,7 +30,7 @@ const sections = [
   },
   {
     heading: "What is in the clubhouse?",
-    body: `The clubhouse is at ${community.clubhouseDisplay}. Amenities there include heated pools, a lap pool, a spa, a fitness center, pickleball, and bocce. Hours posted on the community site: ${community.clubhouseHours}.`,
+    body: "Amenities include heated pools, a lap pool, a spa, a fitness center, pickleball, and bocce. The clubhouse address and posted hours are on the amenities page.",
     href: "/amenities/",
     label: "Clubhouse and amenities",
   },

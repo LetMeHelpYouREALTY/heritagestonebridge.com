@@ -210,9 +210,6 @@ export default component$(() => {
               </div>
               <div class="mt-4 text-center text-hsb-muted">
                 <p>
-                  <strong>Address:</strong> Crossbridge Dr, Las Vegas, NV 89138
-                </p>
-                <p>
                   <strong>Neighborhood:</strong> Summerlin West, Stonebridge Village
                 </p>
               </div>
@@ -973,8 +970,6 @@ export default component$(() => {
 
           <div class="mt-12 text-center">
             <p class="text-hsb-sand text-sm">
-              <strong>Address:</strong> Crossbridge Dr, Las Vegas, NV 89138
-              <br />
               <strong>Neighborhood:</strong> Summerlin West, Stonebridge Village
               <br />
               <strong>Developer:</strong> Lennar Corporation

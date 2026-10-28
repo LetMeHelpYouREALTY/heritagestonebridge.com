@@ -134,8 +134,7 @@ export default component$(() => {
             </div>
           </dl>
           <p class="mt-6 max-w-3xl text-sm text-hsb-muted">
-            That address is the association building, not Dr. Jan Duffy's office. Hours can change,
-            so confirm with the clubhouse before you go.
+            Hours can change, so confirm with the clubhouse before you go.
           </p>
         </div>
       </section>

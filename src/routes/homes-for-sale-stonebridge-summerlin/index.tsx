@@ -421,8 +421,6 @@ export default component$(() => {
           </div>
           <div class="mt-8 text-center">
             <p class="text-hsb-sand text-sm">
-              <strong>Address:</strong> Crossbridge Dr, Las Vegas, NV 89138
-              <br />
               <strong>Neighborhood:</strong> Summerlin West, Stonebridge Community
             </p>
           </div>

@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     question: "Where are the HOA documents?",
-    answer: `Owners use Connect for community updates, meeting minutes, financials, and governing documents. The clubhouse is at ${community.clubhouseDisplay}, phone ${community.clubhousePhoneDisplay}.`,
+    answer: `Owners use Connect for community updates, meeting minutes, financials, and governing documents. Clubhouse phone ${community.clubhousePhoneDisplay}. The clubhouse address is on the amenities page.`,
   },
   {
     question: "Who is the listing agent?",
-    answer: `Dr. Jan Duffy, REALTOR®, in real estate since 1983. Office: ${business.addressDisplay}. Phone ${business.telephoneDisplay}.`,
+    answer: `Dr. Jan Duffy, REALTOR®, in real estate since 1983. Pick a time on the calendar, or call ${business.telephoneDisplay}.`,
   },
 ] as const;
 
@@ -111,9 +111,10 @@ export default component$(() => {
             </li>
           </ul>
           <p class="mt-6 text-sm text-hsb-muted">
-            Clubhouse {community.clubhouseDisplay}. Association phone {community.clubhousePhoneDisplay}.
-            Posted clubhouse hours: {community.clubhouseHours}. Dr. Jan Duffy's office remains{" "}
-            {business.addressDisplay}, {business.telephoneDisplay}.
+            Association phone {community.clubhousePhoneDisplay}. The clubhouse address is on the
+            amenities page.
+            Posted clubhouse hours: {community.clubhouseHours}. To reach Dr. Jan Duffy, use the
+            office listings or the calendar on this page, or call {business.telephoneDisplay}.
           </p>
         </div>
       </section>
