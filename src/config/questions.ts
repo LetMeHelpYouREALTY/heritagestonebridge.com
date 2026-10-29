@@ -120,7 +120,7 @@ export const processQuestions: ReadonlyArray<QA> = [
   },
   {
     question: "Who is Dr. Jan Duffy?",
-    answer: `Dr. Jan Duffy is a licensed Nevada REALTOR®, in real estate since 1983. Office hours: ${business.hoursDisplay}.`,
+    answer: `Dr. Jan Duffy is a licensed Nevada REALTOR®, licensed since 2008 · 35 years in Las Vegas. Office hours: ${business.hoursDisplay}.`,
   },
 ];
 

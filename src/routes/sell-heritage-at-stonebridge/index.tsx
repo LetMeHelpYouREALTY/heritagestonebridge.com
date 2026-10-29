@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "Who is the listing agent?",
-    answer: `Dr. Jan Duffy, REALTOR®, in real estate since 1983. Pick a time on the calendar, or call ${business.telephoneDisplay}.`,
+    answer: `Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las Vegas. Pick a time on the calendar, or call ${business.telephoneDisplay}.`,
   },
 ] as const;
 
