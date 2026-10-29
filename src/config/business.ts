@@ -36,7 +36,7 @@ export const businessProfiles = [
 ] as const;
 
 export const GBP_DESCRIPTION =
-  "Dr. Jan Duffy has sold Las Vegas homes since 1983 and works Heritage at Stonebridge every week, Lennar's guard-gated 55+ community in Summerlin West (89138). Buying? She knows all nine floor plans, which lots and elevations resell best, and what comparable homes closed for, so your first offer is the right one. Selling? She prices from recent Heritage at Stonebridge sales, holds weekend open houses, and markets your home across her 50+ Las Vegas neighborhood websites and social pages, where Summerlin 55+ buyers are already looking. Expect a reply within the hour and straight answers on HOA fees, resales, and the clubhouse lifestyle. Ready to move into or out of Stonebridge Summerlin? Message or call for a current market snapshot.";
+  "Dr. Jan Duffy has been licensed since 2008 with 35 years in Las Vegas and works Heritage at Stonebridge every week, Lennar's guard-gated 55+ community in Summerlin West (89138). Buying? She knows all nine floor plans, which lots and elevations resell best, and what comparable homes closed for, so your first offer is the right one. Selling? She prices from recent Heritage at Stonebridge sales, holds weekend open houses, and markets your home across her 50+ Las Vegas neighborhood websites and social pages, where Summerlin 55+ buyers are already looking. Expect a reply within the hour and straight answers on HOA fees, resales, and the clubhouse lifestyle. Ready to move into or out of Stonebridge Summerlin? Message or call for a current market snapshot.";
 
 export const business = {
   name: GBP_BUSINESS_NAME,
