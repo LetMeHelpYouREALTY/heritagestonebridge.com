@@ -4,7 +4,6 @@ import { CampaignHero } from "~/components/community/CampaignHero";
 import { ContactStrip } from "~/components/community/ContactStrip";
 import { OfficeListingsBelowHero } from "~/components/community/OfficeListingsBelowHero";
 import { business } from "~/config/business";
-import { community } from "~/config/community";
 
 const pageTitle = "Heritage at Stonebridge homes for sale";
 const pageLede =
@@ -48,7 +47,7 @@ export default component$(() => {
         <div class="mx-auto max-w-3xl px-4">
           <h2 class="font-display text-3xl text-hsb-dark">The community around the home</h2>
           <p class="mt-4">
-            The clubhouse is at {community.clubhouseDisplay}. Amenities there include heated pools,
+            The clubhouse has heated pools,
             a lap pool, a spa, a fitness center, pickleball, and bocce. Visitors check in at the
             staffed gate. The monthly assessment is in the resale package for the address you are
             buying.

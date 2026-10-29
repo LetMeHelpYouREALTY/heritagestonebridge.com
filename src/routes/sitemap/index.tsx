@@ -29,7 +29,9 @@ export default component$(() => {
       
       <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 mt-8">
         <h2 class="text-xl font-semibold text-blue-900 mb-2">XML Sitemaps</h2>
-        <p class="text-blue-800 mb-4">For search engines and SEO tools:</p>
+        <p class="text-blue-800 mb-4">
+          Submit https://heritagestonebridge.com/sitemap.xml in Google Search Console.
+        </p>
         <ul class="space-y-2">
           <li>
             <a href="/sitemap.xml" class="text-blue-600 hover:text-blue-800 underline">
@@ -44,11 +46,6 @@ export default component$(() => {
           <li>
             <a href="/sitemap-images.xml" class="text-blue-600 hover:text-blue-800 underline">
               Images Sitemap (/sitemap-images.xml)
-            </a>
-          </li>
-          <li>
-            <a href="/sitemap-properties.xml" class="text-blue-600 hover:text-blue-800 underline">
-              Properties Sitemap (/sitemap-properties.xml)
             </a>
           </li>
         </ul>

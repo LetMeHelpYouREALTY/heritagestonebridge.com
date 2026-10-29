@@ -12,7 +12,7 @@ function page(path: string): string {
 
 const answers = [
   { href: page("/amenities"), label: "Clubhouse, pools, and courts at Heritage at Stonebridge" },
-  { href: page("/nearby"), label: "Restaurants, parks, and parking near 930 Silverfir Court" },
+  { href: page("/nearby"), label: "Restaurants, parks, and parking near the clubhouse" },
   { href: page("/hoa-fees"), label: "HOA fees at Heritage at Stonebridge" },
   { href: page("/floor-plans"), label: "Heritage at Stonebridge floor plans" },
   { href: page("/questions"), label: "Questions about buying and selling in Heritage at Stonebridge" },

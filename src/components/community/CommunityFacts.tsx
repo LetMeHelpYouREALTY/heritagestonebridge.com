@@ -8,9 +8,9 @@ export const CommunityFacts = component$(() => {
       <div class="mx-auto max-w-3xl px-4">
         <h2 class="font-display text-3xl text-hsb-dark">Inside Heritage at Stonebridge</h2>
         <p class="mt-4 text-lg leading-relaxed text-hsb-text">
-          {community.homes} guard-gated 55+ Lennar homes in Summerlin West. The clubhouse is at{" "}
-          {community.clubhouseDisplay}. Pools, fitness, pickleball, and bocce are on the grounds.
-          Prices and availability come from the MLS listings above.
+          {community.homes} guard-gated 55+ Lennar homes in Summerlin West. The clubhouse has
+          pools, fitness, pickleball, and bocce. Prices and availability come from the MLS
+          listings above.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a

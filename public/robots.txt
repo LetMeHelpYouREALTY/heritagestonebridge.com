@@ -1,57 +1,6 @@
-# Robots.txt for Heritage at Stonebridge
-# Updated: 2026-10-11
-
+# https://heritagestonebridge.com/
 User-agent: *
 Allow: /
+Disallow: /sitemap-test/
 
-# Allow all major search engines
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-# Allow AI crawlers
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: OpenAI-SearchBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: YouBot
-Allow: /
-
-User-agent: Meta-ExternalAgent
-Allow: /
-
-# Block unnecessary crawlers
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-# Disallow admin and temporary files
-Disallow: /admin/
-Disallow: /wp-admin/
-Disallow: /temp/
-Disallow: /cache/
-Disallow: /*.pdf$
-
-# Sitemap index. The child files are listed inside sitemap.xml.
 Sitemap: https://heritagestonebridge.com/sitemap.xml

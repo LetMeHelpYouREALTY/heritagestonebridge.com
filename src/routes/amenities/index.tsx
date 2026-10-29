@@ -134,8 +134,7 @@ export default component$(() => {
             </div>
           </dl>
           <p class="mt-6 max-w-3xl text-sm text-hsb-muted">
-            That address is the association building, not Dr. Jan Duffy's office. Hours can change,
-            so confirm with the clubhouse before you go.
+            Hours can change, so confirm with the clubhouse before you go.
           </p>
         </div>
       </section>
@@ -214,7 +213,7 @@ export const head: DocumentHead = {
         "8,000 sq ft clubhouse, pools, fitness, pickleball and bocce in Summerlin West 89138. Tour with Dr. Jan Duffy. Call (702) 789-6561.",
     },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://heritagestonebridge.com/amenities" },
+    { property: "og:url", content: "https://heritagestonebridge.com/amenities/" },
   ],
-  links: [{ rel: "canonical", href: "https://heritagestonebridge.com/amenities" }],
+  links: [{ rel: "canonical", href: "https://heritagestonebridge.com/amenities/" }],
 };

@@ -15,7 +15,7 @@ export const Footer = component$(() => {
               {business.category}. Also listed as a {business.additionalCategory.toLowerCase()}.
               Lennar's guard-gated 55+ community in Summerlin West (89138).
             </p>
-            <div class="space-y-2">
+            <address class="not-italic space-y-2">
               <p class="flex items-center">
                 <span class="mr-2">📞</span>
                 <a href={business.telephoneHref} class="hover:text-hsb-accent-light">
@@ -34,9 +34,14 @@ export const Footer = component$(() => {
                   {business.email}
                 </a>
               </p>
-              <p class="flex items-center">
+              <p class="flex items-start">
                 <span class="mr-2">📍</span>
-                {business.addressDisplay}
+                <span>
+                  {business.streetAddress}
+                  <span class="block">
+                    {business.addressLocality}, {business.addressRegion} {business.postalCode}
+                  </span>
+                </span>
               </p>
               <p class="flex items-start">
                 <span class="mr-2">🕒</span>
@@ -49,7 +54,7 @@ export const Footer = component$(() => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Directions on Google Maps
+                  Google Business Profile
                 </a>
                 <a
                   href={business.reviewsUrl}
@@ -76,7 +81,7 @@ export const Footer = component$(() => {
                   Heritage at Stonebridge community site
                 </a>
               </p>
-            </div>
+            </address>
           </div>
 
           {/* Service Areas */}
@@ -478,14 +483,6 @@ export const Footer = component$(() => {
                 Sitemap
               </a>
             </div>
-          </div>
-
-          {/* SEO Keywords Footer */}
-          <div class="mt-6 text-xs text-gray-300 leading-relaxed">
-            <p>
-              {business.name}. {business.addressDisplay}. {business.hoursDisplay}. Call or text{" "}
-              {business.telephoneDisplay}. Service area: Las Vegas, NV 89138 and Summerlin West.
-            </p>
           </div>
         </div>
       </div>

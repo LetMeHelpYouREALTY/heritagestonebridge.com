@@ -9,7 +9,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: `Privacy policy for ${business.name}. Contact ${business.telephoneDisplay}. ${business.addressDisplay}.`,
+      content: `Privacy policy for ${business.name}. Contact ${business.telephoneDisplay}.`,
     },
   ],
 };
@@ -37,8 +37,8 @@ export default component$(() => {
           Questions about this policy: call{" "}
           <a href={business.telephoneHref} class="text-blue-700 hover:underline">
             {business.telephoneDisplay}
-          </a>{" "}
-          or visit {business.addressDisplay}.
+          </a>
+          .
         </p>
       </div>
     </article>

@@ -8,7 +8,7 @@ import { community } from "~/config/community";
 
 const pageTitle = "Heritage at Stonebridge in Summerlin West, 89138";
 const pageLede =
-  "Heritage at Stonebridge is a guard-gated, age-qualified 55+ Lennar community in Summerlin West, Las Vegas, NV 89138. It has 421 homes. The clubhouse is at 930 Silverfir Court. Occupancy is subject to the association's governing documents and applicable law.";
+  "Heritage at Stonebridge is a guard-gated, age-qualified 55+ Lennar community in Summerlin West, Las Vegas, NV 89138. It has 421 homes. The HOA clubhouse is at 930 Silverfir Court, Suite A. Occupancy is subject to the association's governing documents and applicable law.";
 
 export default component$(() => {
   return (
@@ -33,9 +33,8 @@ export default component$(() => {
           <h2 class="font-display text-3xl text-hsb-dark">Where Heritage at Stonebridge is</h2>
           <p class="mt-4">
             The community is in Summerlin West, zip code 89138. The HOA clubhouse is at{" "}
-            {community.clubhouseDisplay}. That building is the association clubhouse, not Dr. Jan
-            Duffy's office. Clubhouse phone {community.clubhousePhoneDisplay}. Hours posted on the
-            community site: {community.clubhouseHours}.
+            {community.clubhouseDisplay}. Clubhouse phone {community.clubhousePhoneDisplay}. Hours
+            posted on the community site: {community.clubhouseHours}.
           </p>
           <p class="mt-4">
             Homes are single-story Lennar plans behind a staffed gate. Visitors check in at the

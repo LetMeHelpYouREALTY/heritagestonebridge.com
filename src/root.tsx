@@ -63,17 +63,7 @@ export default component$(() => {
         />
         <link rel="manifest" href="/manifest.json" />
         <script dangerouslySetInnerHTML={deferredTagScript(GOOGLE_TAG_ID)} />
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            alt=""
-            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
-          />
-        </noscript>
         <RouterHead />
-      
         {/* Follow Up Boss pixel (Widget Tracker) */}
         <script dangerouslySetInnerHTML={`
 (function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function()
@@ -84,8 +74,17 @@ e.parentNode.insertBefore(t,e);})
 window.widgetTracker("create", "WT-XQHVYQWW");
 window.widgetTracker("send", "pageview");
         `} />
-</head>
+      </head>
       <body lang="en">
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
         <RouterOutlet />
         <script dangerouslySetInnerHTML={REALSCOUT_LOADER} />
         <ServiceWorkerRegister />
