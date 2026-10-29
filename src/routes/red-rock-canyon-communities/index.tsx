@@ -329,7 +329,7 @@ export default component$(() => {
             
             <div class="text-center">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Luxury Home Specialist</h3>
-              <p class="text-hsb-muted">Experience with high-end properties and exclusive community requirements.</p>
+              <p class="text-hsb-muted">Experience with high-end properties and community requirements.</p>
             </div>
           </div>
         </div>

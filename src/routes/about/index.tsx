@@ -248,7 +248,7 @@ export default component$(() => {
             </div>
             <div class="text-center p-6 bg-purple-50 rounded-lg">
               <h3 class="text-xl font-semibold text-hsb-dark mb-2">Henderson</h3>
-              <p class="text-hsb-muted">Established neighborhoods and new construction</p>
+              <p class="text-hsb-muted">Older neighborhoods and new construction</p>
             </div>
             <div class="text-center p-6 bg-orange-50 rounded-lg">
               <h3 class="text-xl font-semibold text-hsb-dark mb-2">Red Rock Canyon</h3>

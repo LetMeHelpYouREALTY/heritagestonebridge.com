@@ -217,7 +217,7 @@ export default component$(() => {
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Sunrise Hills</h3>
-              <p class="text-hsb-muted mb-4">Established neighborhood with mature trees and mountain views.</p>
+              <p class="text-hsb-muted mb-4">Older neighborhood with mature trees and mountain views.</p>
               <a href="/sunrise-hills-homes" class="text-teal-600 hover:text-hsb-dark font-semibold">View Sunrise Hills Homes →</a>
             </div>
             
