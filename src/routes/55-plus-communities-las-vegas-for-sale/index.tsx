@@ -90,7 +90,7 @@ export default component$(() => {
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Resale Market</h3>
-              <p class="text-hsb-muted">Established communities like Sun City Summerlin with mature amenities and proven track records</p>
+              <p class="text-hsb-muted">Communities like Sun City Summerlin with mature amenities and proven track records</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Luxury Options</h3>

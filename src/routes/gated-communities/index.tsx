@@ -10,7 +10,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Explore premier gated communities in Las Vegas offering security, privacy, and luxury amenities. Expert guidance for exclusive neighborhoods in Summerlin, Henderson, and Red Rock Canyon.",
+      content: "Explore premier gated communities in Las Vegas offering security, privacy, and luxury amenities. Expert guidance for luxury neighborhoods in Summerlin, Henderson, and Red Rock Canyon.",
     },
     {
       name: "robots",
