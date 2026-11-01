@@ -123,7 +123,6 @@ export default component$(() => {
                 <li>• Strong resale market</li>
               </ul>
               <div class="text-lg font-bold text-blue-600 mb-4">$500,000 - $1,500,000</div>
-              <a href="/sun-city-anthem" class="text-blue-600 hover:text-blue-800 font-semibold">View Sun City Anthem →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -138,7 +137,7 @@ export default component$(() => {
                 <li>• High-end finishes</li>
               </ul>
               <div class="text-lg font-bold text-blue-600 mb-4">$700,000 - $2,500,000+</div>
-              <a href="/macdonald-ranch-henderson" class="text-blue-600 hover:text-blue-800 font-semibold">View MacDonald Ranch →</a>
+              <a href="/henderson-real-estate/" class="text-blue-600 hover:text-blue-800 font-semibold">View MacDonald Ranch →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -153,7 +152,7 @@ export default component$(() => {
                 <li>• Luxury finishes</li>
               </ul>
               <div class="text-lg font-bold text-blue-600 mb-4">$800,000 - $3,000,000+</div>
-              <a href="/seven-hills-henderson" class="text-blue-600 hover:text-blue-800 font-semibold">View Seven Hills →</a>
+              <a href="/henderson-real-estate/" class="text-blue-600 hover:text-blue-800 font-semibold">View Seven Hills →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -168,7 +167,7 @@ export default component$(() => {
                 <li>• Strong resale market</li>
               </ul>
               <div class="text-lg font-bold text-blue-600 mb-4">$400,000 - $1,200,000</div>
-              <a href="/green-valley-henderson" class="text-blue-600 hover:text-blue-800 font-semibold">View Green Valley →</a>
+              <a href="/henderson-real-estate/" class="text-blue-600 hover:text-blue-800 font-semibold">View Green Valley →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -183,7 +182,7 @@ export default component$(() => {
                 <li>• Energy-efficient homes</li>
               </ul>
               <div class="text-lg font-bold text-blue-600 mb-4">$500,000 - $1,500,000</div>
-              <a href="/inspirada-henderson" class="text-blue-600 hover:text-blue-800 font-semibold">View Inspirada →</a>
+              <a href="/henderson-real-estate/" class="text-blue-600 hover:text-blue-800 font-semibold">View Inspirada →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -198,7 +197,7 @@ export default component$(() => {
                 <li>• Resale homes</li>
               </ul>
               <div class="text-lg font-bold text-blue-600 mb-4">$600,000 - $2,000,000</div>
-              <a href="/anthem-henderson" class="text-blue-600 hover:text-blue-800 font-semibold">View Anthem →</a>
+              <a href="/henderson-real-estate/" class="text-blue-600 hover:text-blue-800 font-semibold">View Anthem →</a>
             </div>
           </div>
         </div>

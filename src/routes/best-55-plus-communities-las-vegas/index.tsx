@@ -144,7 +144,7 @@ export default component$(() => {
                   </ul>
                 </div>
               </div>
-              <a href="/homes-for-sale-stonebridge-summerlin" class="text-purple-600 hover:text-purple-800 font-semibold">View Heritage at Stonebridge Homes →</a>
+              <a href="/homes-for-sale-stonebridge-summerlin/" class="text-purple-600 hover:text-purple-800 font-semibold">View Heritage at Stonebridge Homes →</a>
             </div>
 
             {/* #2 Sun City Summerlin */}
@@ -180,7 +180,7 @@ export default component$(() => {
                   </ul>
                 </div>
               </div>
-              <a href="/sun-city-summerlin-homes" class="text-purple-600 hover:text-purple-800 font-semibold">View Sun City Summerlin Homes →</a>
+              <a href="/sun-city-del-webb-real-estate/" class="text-purple-600 hover:text-purple-800 font-semibold">View Sun City Summerlin Homes →</a>
             </div>
 
             {/* #3 The Ridges */}
@@ -216,7 +216,7 @@ export default component$(() => {
                   </ul>
                 </div>
               </div>
-              <a href="/the-ridges-summerlin" class="text-purple-600 hover:text-purple-800 font-semibold">View The Ridges Homes →</a>
+              <a href="/summerlin-homes/" class="text-purple-600 hover:text-purple-800 font-semibold">View The Ridges Homes →</a>
             </div>
           </div>
         </div>

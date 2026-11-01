@@ -72,7 +72,7 @@ export default component$(() => {
           Call {business.telephoneDisplay}
         </a>
         <a
-          href="/heritage-at-stonebridge-homes-for-sale"
+          href="/heritage-at-stonebridge-homes-for-sale/"
           class="rounded-full border border-white px-6 py-3 text-center font-medium text-white hover:bg-white hover:text-hsb-dark"
         >
           See homes for sale
@@ -172,7 +172,7 @@ export default component$(() => {
             <li>Walk from the home you like to the clubhouse. Distance matters more than it looks on a map.</li>
             <li>
               Read the HOA documents with me before you write an offer.{" "}
-              <a class="underline" href="/buy-heritage-at-stonebridge">
+              <a class="underline" href="/buy-heritage-at-stonebridge/">
                 Here is how a purchase works.
               </a>
             </li>

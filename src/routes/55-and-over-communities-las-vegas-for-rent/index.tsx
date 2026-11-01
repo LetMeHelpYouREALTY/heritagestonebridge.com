@@ -123,7 +123,6 @@ export default component$(() => {
                 <li>• Owner rentals available</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$2,500 - $4,500/month</div>
-              <a href="/sun-city-summerlin-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View Rental Options →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -138,7 +137,6 @@ export default component$(() => {
                 <li>• Owner rental policies</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$2,000 - $5,000/month</div>
-              <a href="/del-webb-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View Del Webb Rentals →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -153,7 +151,6 @@ export default component$(() => {
                 <li>• Private social clubs</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$3,500 - $6,000/month</div>
-              <a href="/siena-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View Siena Rentals →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -168,7 +165,6 @@ export default component$(() => {
                 <li>• Limited rental availability</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$4,000 - $8,000/month</div>
-              <a href="/red-rock-country-club-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View Country Club Rentals →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -183,7 +179,6 @@ export default component$(() => {
                 <li>• High-end finishes</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$3,000 - $7,000/month</div>
-              <a href="/macdonald-ranch-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View MacDonald Ranch Rentals →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -198,7 +193,6 @@ export default component$(() => {
                 <li>• Luxury finishes</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$3,500 - $8,000/month</div>
-              <a href="/seven-hills-rentals" class="text-teal-600 hover:text-hsb-dark font-semibold">View Seven Hills Rentals →</a>
             </div>
           </div>
         </div>

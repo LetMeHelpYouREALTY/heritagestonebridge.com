@@ -200,37 +200,32 @@ export default component$(() => {
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Green Valley</h3>
               <p class="text-hsb-muted mb-4">Mature trees, parks, and trails in Green Valley.</p>
-              <a href="/green-valley-henderson" class="text-blue-600 hover:text-blue-800 font-semibold">View Green Valley Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Anthem</h3>
               <p class="text-hsb-muted mb-4">Master-planned community with golf courses, parks, and resort amenities.</p>
-              <a href="/anthem-henderson" class="text-blue-600 hover:text-blue-800 font-semibold">View Anthem Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">MacDonald Ranch</h3>
               <p class="text-hsb-muted mb-4">Luxury community with custom homes and golf course access.</p>
-              <a href="/macdonald-ranch-henderson" class="text-blue-600 hover:text-blue-800 font-semibold">View MacDonald Ranch Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Seven Hills</h3>
               <p class="text-hsb-muted mb-4">Gated community with luxury homes and mountain views.</p>
-              <a href="/seven-hills-henderson" class="text-blue-600 hover:text-blue-800 font-semibold">View Seven Hills Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Inspirada</h3>
               <p class="text-hsb-muted mb-4">Modern master-planned community with contemporary homes and amenities.</p>
-              <a href="/inspirada-henderson" class="text-blue-600 hover:text-blue-800 font-semibold">View Inspirada Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Sun City Anthem</h3>
               <p class="text-hsb-muted mb-4">Premier 55+ community with golf courses and resort-style amenities.</p>
-              <a href="/sun-city-anthem" class="text-blue-600 hover:text-blue-800 font-semibold">View Sun City Anthem Homes →</a>
+              <a href="/henderson-active-adult-communities/" class="text-blue-600 hover:text-blue-800 font-semibold">View Sun City Anthem Homes →</a>
             </div>
           </div>
         </div>

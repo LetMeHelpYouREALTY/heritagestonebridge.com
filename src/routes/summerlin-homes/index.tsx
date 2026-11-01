@@ -200,37 +200,34 @@ export default component$(() => {
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Heritage at Stonebridge</h3>
               <p class="text-hsb-muted mb-4">Luxury 55+ active adult community with resort-style amenities and stunning mountain views.</p>
-              <a href="/homes-for-sale-stonebridge-summerlin" class="text-green-600 hover:text-green-800 font-semibold">View Stonebridge Homes →</a>
+              <a href="/homes-for-sale-stonebridge-summerlin/" class="text-green-600 hover:text-green-800 font-semibold">View Stonebridge Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Sun City Summerlin</h3>
               <p class="text-hsb-muted mb-4">Premier 55+ community with golf courses, recreation centers, and vibrant social scene.</p>
-              <a href="/sun-city-summerlin-homes" class="text-green-600 hover:text-green-800 font-semibold">View Sun City Homes →</a>
+              <a href="/sun-city-del-webb-real-estate/" class="text-green-600 hover:text-green-800 font-semibold">View Sun City Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">The Ridges</h3>
               <p class="text-hsb-muted mb-4">Ultra-luxury community with custom estates and exclusive golf course access.</p>
-              <a href="/the-ridges-summerlin" class="text-green-600 hover:text-green-800 font-semibold">View Ridges Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Siena</h3>
               <p class="text-hsb-muted mb-4">Gated community featuring Tuscan-inspired architecture and resort amenities.</p>
-              <a href="/siena-summerlin-homes" class="text-green-600 hover:text-green-800 font-semibold">View Siena Homes →</a>
+              <a href="/community-comparison/" class="text-green-600 hover:text-green-800 font-semibold">View Siena Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Red Rock Country Club</h3>
               <p class="text-hsb-muted mb-4">Golf course community with luxury homes and exclusive country club membership.</p>
-              <a href="/red-rock-country-club" class="text-green-600 hover:text-green-800 font-semibold">View Country Club Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">The Arbors</h3>
               <p class="text-hsb-muted mb-4">Parks, trails, and a wide range of home sizes.</p>
-              <a href="/the-arbors-summerlin" class="text-green-600 hover:text-green-800 font-semibold">View Arbors Homes →</a>
             </div>
           </div>
         </div>
@@ -271,7 +268,7 @@ export default component$(() => {
                   Stunning Red Rock Canyon views
                 </li>
               </ul>
-              <a href="/homes-for-sale-stonebridge-summerlin" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-block">
+              <a href="/homes-for-sale-stonebridge-summerlin/" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-block">
                 View Stonebridge Homes
               </a>
             </div>
@@ -300,7 +297,7 @@ export default component$(() => {
                   Healthcare facilities on-site
                 </li>
               </ul>
-              <a href="/sun-city-summerlin-homes" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block">
+              <a href="/sun-city-del-webb-real-estate/" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block">
                 View Sun City Homes
               </a>
             </div>

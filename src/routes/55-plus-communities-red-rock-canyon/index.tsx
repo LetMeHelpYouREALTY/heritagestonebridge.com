@@ -265,7 +265,7 @@ export default component$(() => {
                 </div>
               </div>
               <a
-                href="/floor-plans/cromwell"
+                href="/floor-plans/"
                 class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center inline-block"
               >
                 View Cromwell Floor Plans
@@ -309,7 +309,7 @@ export default component$(() => {
                 </div>
               </div>
               <a
-                href="/floor-plans/stirling"
+                href="/floor-plans/"
                 class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center inline-block"
               >
                 View Stirling Floor Plans
@@ -348,7 +348,7 @@ export default component$(() => {
                 </div>
               </div>
               <a
-                href="/floor-plans/evander"
+                href="/floor-plans/"
                 class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center inline-block"
               >
                 View Evander Floor Plans

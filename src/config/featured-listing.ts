@@ -10,7 +10,7 @@ const photoAlt =
   "894 Heritage Bend Drive in Heritage at Stonebridge, Summerlin West, Las Vegas 89138";
 
 export const featuredListing = {
-  path: "/new-listing-heritage-at-stonebridge",
+  path: "/new-listing-heritage-at-stonebridge/",
   status: "For Sale",
   priceDisplay: "$539,888",
   price: 539888,

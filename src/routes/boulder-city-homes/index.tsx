@@ -200,37 +200,31 @@ export default component$(() => {
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Historic Downtown</h3>
               <p class="text-hsb-muted mb-4">Charming historic district with unique shops, restaurants, and original Hoover Dam worker homes.</p>
-              <a href="/boulder-city-downtown" class="text-teal-600 hover:text-hsb-dark font-semibold">View Downtown Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Eldorado Valley</h3>
               <p class="text-hsb-muted mb-4">Newer development with modern homes and mountain views.</p>
-              <a href="/eldorado-valley-homes" class="text-teal-600 hover:text-hsb-dark font-semibold">View Eldorado Valley Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Lake Mead Estates</h3>
               <p class="text-hsb-muted mb-4">Luxury homes with lake views and private boat access.</p>
-              <a href="/lake-mead-estates" class="text-teal-600 hover:text-hsb-dark font-semibold">View Lake Mead Estates →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Sunrise Hills</h3>
               <p class="text-hsb-muted mb-4">Older neighborhood with mature trees and mountain views.</p>
-              <a href="/sunrise-hills-homes" class="text-teal-600 hover:text-hsb-dark font-semibold">View Sunrise Hills Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Boulder Creek Golf Course</h3>
               <p class="text-hsb-muted mb-4">Golf course community with luxury homes and resort amenities.</p>
-              <a href="/boulder-creek-golf" class="text-teal-600 hover:text-hsb-dark font-semibold">View Golf Course Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Desert Hills</h3>
               <p class="text-hsb-muted mb-4">Custom homes with desert landscaping and mountain views.</p>
-              <a href="/desert-hills-homes" class="text-teal-600 hover:text-hsb-dark font-semibold">View Desert Hills Homes →</a>
             </div>
           </div>
         </div>

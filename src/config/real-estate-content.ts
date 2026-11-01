@@ -32,7 +32,7 @@ export const realEstateContentConfig: RealScoutContentConfig = {
         features: ["Luxury Homes", "Gated Community", "Premium Location"],
         badges: ["New Listings", "Price Reduced"],
         ctaText: "Schedule a Tour",
-        ctaLink: "/contact",
+        ctaLink: "/contact/",
       },
     },
     {
@@ -74,7 +74,7 @@ export const realEstateContentConfig: RealScoutContentConfig = {
         features: ["Instant Valuation", "Market Analysis", "Comparable Sales"],
         badges: ["Free Report", "No Obligation"],
         ctaText: "Get Detailed Report",
-        ctaLink: "/home-valuation",
+        ctaLink: "/sell-heritage-at-stonebridge/",
       },
     },
     {
@@ -103,7 +103,7 @@ export const realEstateContentConfig: RealScoutContentConfig = {
         features: ["Premium Properties", "Gated Community", "Luxury Amenities"],
         badges: ["Featured", "Price Reduced", "New Listing"],
         ctaText: "View All Properties",
-        ctaLink: "/properties",
+        ctaLink: "/heritage-at-stonebridge-homes-for-sale/",
       },
     },
     {

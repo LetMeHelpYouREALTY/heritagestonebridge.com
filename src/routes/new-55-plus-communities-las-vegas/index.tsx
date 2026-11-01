@@ -122,7 +122,7 @@ export default component$(() => {
                 <li>• Smart home technology included</li>
               </ul>
               <div class="text-lg font-bold text-blue-600 mb-4">Starting from $464,990</div>
-              <a href="/homes-for-sale-stonebridge-summerlin" class="text-blue-600 hover:text-blue-800 font-semibold">View Stonebridge Homes →</a>
+              <a href="/homes-for-sale-stonebridge-summerlin/" class="text-blue-600 hover:text-blue-800 font-semibold">View Stonebridge Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -135,7 +135,6 @@ export default component$(() => {
                 <li>• Latest technology integration</li>
               </ul>
               <div class="text-lg font-bold text-blue-600 mb-4">Various Price Points</div>
-              <a href="/del-webb-new-communities" class="text-blue-600 hover:text-blue-800 font-semibold">View Del Webb New →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -148,7 +147,6 @@ export default component$(() => {
                 <li>• Preferred lot selection</li>
               </ul>
               <div class="text-lg font-bold text-blue-600 mb-4">Coming Soon</div>
-              <a href="/upcoming-55-plus-communities" class="text-blue-600 hover:text-blue-800 font-semibold">Get Early Access →</a>
             </div>
           </div>
         </div>

@@ -90,18 +90,15 @@ export default component$(() => {
               <div class="p-6">
                 <div class="text-sm text-blue-600 font-semibold mb-2">MARKET ANALYSIS</div>
                 <h3 class="font-display text-xl text-hsb-dark mb-3">
-                  <a href="/blog/las-vegas-55-plus-communities-market-trends-2025" class="hover:text-blue-600">
+                  
                     Las Vegas 55+ Communities Market Trends 2025
-                  </a>
+                  
                 </h3>
                 <p class="text-hsb-muted mb-4">
                   Discover the latest trends in active adult communities, from Heritage at Stonebridge to Sun City Summerlin, and what buyers are looking for in 2025.
                 </p>
                 <div class="flex items-center justify-between">
                   <span class="text-sm text-gray-500">Dr. Jan Duffy</span>
-                  <a href="/blog/las-vegas-55-plus-communities-market-trends-2025" class="text-blue-600 hover:text-blue-800 font-semibold">
-                    Read More →
-                  </a>
                 </div>
               </div>
             </article>
@@ -113,18 +110,15 @@ export default component$(() => {
               <div class="p-6">
                 <div class="text-sm text-green-600 font-semibold mb-2">COMMUNITY SPOTLIGHT</div>
                 <h3 class="font-display text-xl text-hsb-dark mb-3">
-                  <a href="/blog/red-rock-canyon-luxury-living-guide" class="hover:text-green-600">
+                  
                     Red Rock Canyon Luxury Living Guide
-                  </a>
+                  
                 </h3>
                 <p class="text-hsb-muted mb-4">
                   Explore the premier communities near Red Rock Canyon, featuring mountain views, outdoor recreation, and luxury amenities for active adults.
                 </p>
                 <div class="flex items-center justify-between">
                   <span class="text-sm text-gray-500">Dr. Jan Duffy</span>
-                  <a href="/blog/red-rock-canyon-luxury-living-guide" class="text-green-600 hover:text-green-800 font-semibold">
-                    Read More →
-                  </a>
                 </div>
               </div>
             </article>
@@ -136,18 +130,15 @@ export default component$(() => {
               <div class="p-6">
                 <div class="text-sm text-purple-600 font-semibold mb-2">INVESTMENT GUIDE</div>
                 <h3 class="font-display text-xl text-hsb-dark mb-3">
-                  <a href="/blog/summerlin-luxury-real-estate-investment-guide" class="hover:text-purple-600">
+                  
                     Summerlin Luxury Real Estate Investment Guide
-                  </a>
+                  
                 </h3>
                 <p class="text-hsb-muted mb-4">
                   Learn why Summerlin continues to be one of Las Vegas's most desirable areas for luxury home investments and 55+ community living.
                 </p>
                 <div class="flex items-center justify-between">
                   <span class="text-sm text-gray-500">Dr. Jan Duffy</span>
-                  <a href="/blog/summerlin-luxury-real-estate-investment-guide" class="text-purple-600 hover:text-purple-800 font-semibold">
-                    Read More →
-                  </a>
                 </div>
               </div>
             </article>
@@ -159,18 +150,15 @@ export default component$(() => {
               <div class="p-6">
                 <div class="text-sm text-red-600 font-semibold mb-2">LIFESTYLE</div>
                 <h3 class="font-display text-xl text-hsb-dark mb-3">
-                  <a href="/blog/active-adult-community-amenities-guide" class="hover:text-red-600">
+                  
                     Active Adult Community Amenities Guide
-                  </a>
+                  
                 </h3>
                 <p class="text-hsb-muted mb-4">
                   Discover the resort-style amenities that make 55+ communities like Heritage at Stonebridge so appealing to active adults.
                 </p>
                 <div class="flex items-center justify-between">
                   <span class="text-sm text-gray-500">Dr. Jan Duffy</span>
-                  <a href="/blog/active-adult-community-amenities-guide" class="text-red-600 hover:text-red-800 font-semibold">
-                    Read More →
-                  </a>
                 </div>
               </div>
             </article>
@@ -182,18 +170,15 @@ export default component$(() => {
               <div class="p-6">
                 <div class="text-sm text-yellow-600 font-semibold mb-2">BUYER'S GUIDE</div>
                 <h3 class="font-display text-xl text-hsb-dark mb-3">
-                  <a href="/blog/first-time-55-plus-home-buyer-guide" class="hover:text-yellow-600">
+                  
                     First-Time 55+ Home Buyer Guide
-                  </a>
+                  
                 </h3>
                 <p class="text-hsb-muted mb-4">
                   Everything you need to know about buying your first home in a 55+ community, from financing to amenities to lifestyle considerations.
                 </p>
                 <div class="flex items-center justify-between">
                   <span class="text-sm text-gray-500">Dr. Jan Duffy</span>
-                  <a href="/blog/first-time-55-plus-home-buyer-guide" class="text-yellow-600 hover:text-yellow-800 font-semibold">
-                    Read More →
-                  </a>
                 </div>
               </div>
             </article>
@@ -205,18 +190,15 @@ export default component$(() => {
               <div class="p-6">
                 <div class="text-sm text-teal-600 font-semibold mb-2">MARKET DATA</div>
                 <h3 class="font-display text-xl text-hsb-dark mb-3">
-                  <a href="/blog/henderson-real-estate-market-analysis" class="hover:text-teal-600">
+                  
                     Henderson Real Estate Market Analysis
-                  </a>
+                  
                 </h3>
                 <p class="text-hsb-muted mb-4">
                   In-depth analysis of Henderson's real estate market, including price trends, inventory levels, and 55+ communities such as Sun City Anthem.
                 </p>
                 <div class="flex items-center justify-between">
                   <span class="text-sm text-gray-500">Dr. Jan Duffy</span>
-                  <a href="/blog/henderson-real-estate-market-analysis" class="text-teal-600 hover:text-hsb-dark font-semibold">
-                    Read More →
-                  </a>
                 </div>
               </div>
             </article>

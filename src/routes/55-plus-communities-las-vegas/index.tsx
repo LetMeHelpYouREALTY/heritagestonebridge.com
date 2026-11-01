@@ -123,7 +123,7 @@ export default component$(() => {
                 <li>• New construction</li>
               </ul>
               <div class="text-lg font-bold text-emerald-600 mb-4">Starting from $464,990</div>
-              <a href="/homes-for-sale-stonebridge-summerlin" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Stonebridge Homes →</a>
+              <a href="/homes-for-sale-stonebridge-summerlin/" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Stonebridge Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -138,7 +138,7 @@ export default component$(() => {
                 <li>• Strong resale market</li>
               </ul>
               <div class="text-lg font-bold text-emerald-600 mb-4">$500,000 - $1,500,000</div>
-              <a href="/sun-city-summerlin-homes" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Sun City Homes →</a>
+              <a href="/sun-city-del-webb-real-estate/" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Sun City Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -153,7 +153,7 @@ export default component$(() => {
                 <li>• Highest-end finishes</li>
               </ul>
               <div class="text-lg font-bold text-emerald-600 mb-4">$1,000,000 - $5,000,000+</div>
-              <a href="/the-ridges-summerlin" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Ridges Homes →</a>
+              <a href="/summerlin-homes/" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Ridges Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -168,7 +168,7 @@ export default component$(() => {
                 <li>• Private social clubs</li>
               </ul>
               <div class="text-lg font-bold text-emerald-600 mb-4">$600,000 - $2,000,000+</div>
-              <a href="/siena-summerlin-homes" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Siena Homes →</a>
+              <a href="/community-comparison/" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Siena Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -183,7 +183,7 @@ export default component$(() => {
                 <li>• Various price points</li>
               </ul>
               <div class="text-lg font-bold text-emerald-600 mb-4">$400,000 - $1,500,000</div>
-              <a href="/del-webb-las-vegas" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Del Webb Homes →</a>
+              <a href="/sun-city-del-webb-real-estate/" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Del Webb Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -198,7 +198,7 @@ export default component$(() => {
                 <li>• Concierge services</li>
               </ul>
               <div class="text-lg font-bold text-emerald-600 mb-4">$800,000 - $3,000,000+</div>
-              <a href="/red-rock-country-club" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Country Club Homes →</a>
+              <a href="/summerlin-homes/" class="text-emerald-600 hover:text-emerald-800 font-semibold">View Country Club Homes →</a>
             </div>
           </div>
         </div>

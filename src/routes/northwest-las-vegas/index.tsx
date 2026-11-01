@@ -200,37 +200,32 @@ export default component$(() => {
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Skye Canyon</h3>
               <p class="text-hsb-muted mb-4">Master-planned community with outdoor recreation, parks, and modern amenities.</p>
-              <a href="/skye-canyon-homes" class="text-purple-600 hover:text-purple-800 font-semibold">View Skye Canyon Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Centennial Hills</h3>
               <p class="text-hsb-muted mb-4">Parks, shopping, and resale homes in Centennial Hills.</p>
-              <a href="/centennial-hills-homes" class="text-purple-600 hover:text-purple-800 font-semibold">View Centennial Hills Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Aliante</h3>
               <p class="text-hsb-muted mb-4">Master-planned community with a golf course, parks, and a clubhouse.</p>
-              <a href="/aliante-homes" class="text-purple-600 hover:text-purple-800 font-semibold">View Aliante Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Tule Springs</h3>
               <p class="text-hsb-muted mb-4">New development with modern homes and community amenities.</p>
-              <a href="/tule-springs-homes" class="text-purple-600 hover:text-purple-800 font-semibold">View Tule Springs Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Desert Shores</h3>
               <p class="text-hsb-muted mb-4">Waterfront community with lakes, parks, and recreational facilities.</p>
-              <a href="/desert-shores-homes" class="text-purple-600 hover:text-purple-800 font-semibold">View Desert Shores Homes →</a>
+              <a href="/las-vegas-real-estate/" class="text-purple-600 hover:text-purple-800 font-semibold">View Desert Shores Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">North Las Vegas</h3>
               <p class="text-hsb-muted mb-4">Growing area with new construction and affordable housing options.</p>
-              <a href="/north-las-vegas-homes" class="text-purple-600 hover:text-purple-800 font-semibold">View North Las Vegas Homes →</a>
             </div>
           </div>
         </div>

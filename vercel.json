@@ -120,6 +120,11 @@
       "permanent": true
     },
     {
+      "source": "/summerlin-55-plus-communities/",
+      "destination": "/55-and-over-communities-summerlin-las-vegas/",
+      "permanent": true
+    },
+    {
       "source": "/floor-plans/:path+",
       "destination": "/floor-plans/",
       "permanent": true

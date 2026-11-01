@@ -88,37 +88,37 @@ export default component$(() => {
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Summerlin</h3>
               <p class="text-hsb-muted mb-4">Premier master-planned community with luxury homes, golf courses, and resort-style amenities.</p>
-              <a href="/summerlin-homes" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Summerlin Homes →</a>
+              <a href="/summerlin-homes/" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Summerlin Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Henderson</h3>
               <p class="text-hsb-muted mb-4">Parks and a wide range of housing options in Henderson.</p>
-              <a href="/henderson-real-estate" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Henderson Homes →</a>
+              <a href="/henderson-real-estate/" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Henderson Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Northwest Las Vegas</h3>
               <p class="text-hsb-muted mb-4">Growing area with new construction, modern amenities, and convenient access to the Strip.</p>
-              <a href="/northwest-las-vegas" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Northwest Homes →</a>
+              <a href="/northwest-las-vegas/" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Northwest Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Red Rock Canyon</h3>
               <p class="text-hsb-muted mb-4">Stunning mountain views and luxury communities near Red Rock Canyon National Conservation Area.</p>
-              <a href="/red-rock-canyon-communities" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Red Rock Homes →</a>
+              <a href="/red-rock-canyon-communities/" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Red Rock Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Boulder City</h3>
               <p class="text-hsb-muted mb-4">Historic community near Lake Mead with small-town charm and outdoor recreation.</p>
-              <a href="/boulder-city-homes" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Boulder City Homes →</a>
+              <a href="/boulder-city-homes/" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Boulder City Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Las Vegas Strip Area</h3>
               <p class="text-hsb-muted mb-4">High-rise condos and luxury properties in the heart of Las Vegas entertainment district.</p>
-              <a href="/las-vegas-condos" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Strip Condos →</a>
+              <a href="/55-plus-condos-las-vegas/" class="text-blue-600 hover:text-blue-800 font-semibold">Explore Strip Condos →</a>
             </div>
           </div>
         </div>

@@ -76,7 +76,6 @@ export const INDEXABLE_PATHS = [
   "/retirement-communities-las-vegas/",
   "/sell-heritage-at-stonebridge/",
   "/sitemap/",
-  "/summerlin-55-plus-communities/",
   "/summerlin-homes/",
   "/sun-city-del-webb-real-estate/",
   "/terms-of-service/",

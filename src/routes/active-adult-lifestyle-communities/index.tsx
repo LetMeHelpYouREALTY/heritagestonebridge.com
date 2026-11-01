@@ -123,7 +123,7 @@ export default component$(() => {
                 <li>• Gated community</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">Starting from $464,990</div>
-              <a href="/heritage-at-stonebridge-homes-for-sale" class="text-teal-600 hover:text-hsb-dark font-semibold">View Heritage at Stonebridge →</a>
+              <a href="/heritage-at-stonebridge-homes-for-sale/" class="text-teal-600 hover:text-hsb-dark font-semibold">View Heritage at Stonebridge →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -138,7 +138,7 @@ export default component$(() => {
                 <li>• Strong resale market</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$500,000 - $1,500,000</div>
-              <a href="/sun-city-summerlin-homes" class="text-teal-600 hover:text-hsb-dark font-semibold">View Sun City Summerlin →</a>
+              <a href="/sun-city-del-webb-real-estate/" class="text-teal-600 hover:text-hsb-dark font-semibold">View Sun City Summerlin →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -153,7 +153,7 @@ export default component$(() => {
                 <li>• Strong resale market</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$500,000 - $1,500,000</div>
-              <a href="/sun-city-anthem" class="text-teal-600 hover:text-hsb-dark font-semibold">View Sun City Anthem →</a>
+              <a href="/henderson-active-adult-communities/" class="text-teal-600 hover:text-hsb-dark font-semibold">View Sun City Anthem →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -168,7 +168,7 @@ export default component$(() => {
                 <li>• Highest-end finishes</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$1,000,000 - $5,000,000+</div>
-              <a href="/the-ridges-summerlin" class="text-teal-600 hover:text-hsb-dark font-semibold">View The Ridges →</a>
+              <a href="/summerlin-homes/" class="text-teal-600 hover:text-hsb-dark font-semibold">View The Ridges →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -183,7 +183,7 @@ export default component$(() => {
                 <li>• Private social clubs</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$600,000 - $2,000,000+</div>
-              <a href="/siena-summerlin-homes" class="text-teal-600 hover:text-hsb-dark font-semibold">View Siena →</a>
+              <a href="/community-comparison/" class="text-teal-600 hover:text-hsb-dark font-semibold">View Siena →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -198,7 +198,7 @@ export default component$(() => {
                 <li>• Concierge services</li>
               </ul>
               <div class="text-lg font-bold text-teal-600 mb-4">$800,000 - $3,000,000+</div>
-              <a href="/red-rock-country-club" class="text-teal-600 hover:text-hsb-dark font-semibold">View Country Club →</a>
+              <a href="/summerlin-homes/" class="text-teal-600 hover:text-hsb-dark font-semibold">View Country Club →</a>
             </div>
           </div>
         </div>

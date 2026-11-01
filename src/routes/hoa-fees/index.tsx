@@ -85,8 +85,8 @@ export default component$(() => {
           <h2 class="font-display text-3xl text-hsb-dark">HOA fee questions</h2>
           <QuestionList items={hoaQuestions} />
           <p class="mt-8 text-hsb-text">
-            Next: <a class="underline" href="/amenities">what the clubhouse includes</a> and{" "}
-            <a class="underline" href="/buy-heritage-at-stonebridge">how a purchase works</a>.
+            Next: <a class="underline" href="/amenities/">what the clubhouse includes</a> and{" "}
+            <a class="underline" href="/buy-heritage-at-stonebridge/">how a purchase works</a>.
           </p>
         </div>
       </section>

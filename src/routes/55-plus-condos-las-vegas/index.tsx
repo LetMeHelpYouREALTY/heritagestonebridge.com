@@ -123,7 +123,6 @@ export default component$(() => {
                 <li>• Prime Strip location</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">$500,000 - $2,000,000+</div>
-              <a href="/the-martin-citycenter" class="text-indigo-600 hover:text-indigo-800 font-semibold">View The Martin →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -138,7 +137,6 @@ export default component$(() => {
                 <li>• Prime Summerlin location</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">$400,000 - $1,500,000</div>
-              <a href="/turnberry-place" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Turnberry Place →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -153,7 +151,6 @@ export default component$(() => {
                 <li>• Prime Strip location</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">$600,000 - $2,500,000+</div>
-              <a href="/signature-mgm-grand" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Signature →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -168,7 +165,6 @@ export default component$(() => {
                 <li>• Prime Strip location</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">$800,000 - $5,000,000+</div>
-              <a href="/mandarin-oriental-residences" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Mandarin Oriental →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -183,7 +179,6 @@ export default component$(() => {
                 <li>• Prime Strip location</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">$700,000 - $3,000,000+</div>
-              <a href="/wynn-residences" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Wynn Residences →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -198,7 +193,6 @@ export default component$(() => {
                 <li>• Prime Strip location</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">$600,000 - $2,500,000+</div>
-              <a href="/bellagio-residences" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Bellagio Residences →</a>
             </div>
           </div>
         </div>

@@ -120,7 +120,7 @@ export default component$(() => {
                 <li>• Pickleball & bocce courts</li>
                 <li>• Gated community</li>
               </ul>
-              <a href="/homes-for-sale-stonebridge-summerlin" class="text-green-600 hover:text-green-800 font-semibold">View Stonebridge Homes →</a>
+              <a href="/homes-for-sale-stonebridge-summerlin/" class="text-green-600 hover:text-green-800 font-semibold">View Stonebridge Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -132,7 +132,7 @@ export default component$(() => {
                 <li>• Social clubs</li>
                 <li>• Maintenance-free living</li>
               </ul>
-              <a href="/del-webb-las-vegas" class="text-green-600 hover:text-green-800 font-semibold">View Del Webb Homes →</a>
+              <a href="/sun-city-del-webb-real-estate/" class="text-green-600 hover:text-green-800 font-semibold">View Del Webb Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -144,7 +144,7 @@ export default component$(() => {
                 <li>• Active social scene</li>
                 <li>• Proven track record</li>
               </ul>
-              <a href="/sun-city-resale-homes" class="text-green-600 hover:text-green-800 font-semibold">View Sun City Resale →</a>
+              <a href="/sun-city-del-webb-real-estate/" class="text-green-600 hover:text-green-800 font-semibold">View Sun City Resale →</a>
             </div>
           </div>
         </div>

@@ -123,7 +123,7 @@ export default component$(() => {
                 <li>• Highest-end finishes</li>
               </ul>
               <div class="text-lg font-bold text-gold-600 mb-4">$1,000,000 - $5,000,000+</div>
-              <a href="/the-ridges-summerlin" class="text-gold-600 hover:text-gold-800 font-semibold">View The Ridges Homes →</a>
+              <a href="/summerlin-homes/" class="text-gold-600 hover:text-gold-800 font-semibold">View The Ridges Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -138,7 +138,7 @@ export default component$(() => {
                 <li>• Private social clubs</li>
               </ul>
               <div class="text-lg font-bold text-gold-600 mb-4">$600,000 - $2,000,000+</div>
-              <a href="/siena-summerlin-homes" class="text-gold-600 hover:text-gold-800 font-semibold">View Siena Homes →</a>
+              <a href="/community-comparison/" class="text-gold-600 hover:text-gold-800 font-semibold">View Siena Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -153,7 +153,7 @@ export default component$(() => {
                 <li>• Concierge services</li>
               </ul>
               <div class="text-lg font-bold text-gold-600 mb-4">$800,000 - $3,000,000+</div>
-              <a href="/red-rock-country-club" class="text-gold-600 hover:text-gold-800 font-semibold">View Country Club Homes →</a>
+              <a href="/summerlin-homes/" class="text-gold-600 hover:text-gold-800 font-semibold">View Country Club Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -168,7 +168,7 @@ export default component$(() => {
                 <li>• Gated community</li>
               </ul>
               <div class="text-lg font-bold text-gold-600 mb-4">$464,990 - $1,200,000+</div>
-              <a href="/homes-for-sale-stonebridge-summerlin" class="text-gold-600 hover:text-gold-800 font-semibold">View Stonebridge Homes →</a>
+              <a href="/homes-for-sale-stonebridge-summerlin/" class="text-gold-600 hover:text-gold-800 font-semibold">View Stonebridge Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -183,7 +183,7 @@ export default component$(() => {
                 <li>• High-end finishes</li>
               </ul>
               <div class="text-lg font-bold text-gold-600 mb-4">$700,000 - $2,500,000+</div>
-              <a href="/macdonald-ranch-henderson" class="text-gold-600 hover:text-gold-800 font-semibold">View MacDonald Ranch Homes →</a>
+              <a href="/henderson-real-estate/" class="text-gold-600 hover:text-gold-800 font-semibold">View MacDonald Ranch Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -198,7 +198,7 @@ export default component$(() => {
                 <li>• Luxury finishes</li>
               </ul>
               <div class="text-lg font-bold text-gold-600 mb-4">$800,000 - $3,000,000+</div>
-              <a href="/seven-hills-henderson" class="text-gold-600 hover:text-gold-800 font-semibold">View Seven Hills Homes →</a>
+              <a href="/henderson-real-estate/" class="text-gold-600 hover:text-gold-800 font-semibold">View Seven Hills Homes →</a>
             </div>
           </div>
         </div>

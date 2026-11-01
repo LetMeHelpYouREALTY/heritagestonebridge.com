@@ -123,7 +123,7 @@ export default component$(() => {
                 <li>• Smart home technology</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">New Construction Available</div>
-              <a href="/homes-for-sale-stonebridge-summerlin" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Available Homes →</a>
+              <a href="/homes-for-sale-stonebridge-summerlin/" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Available Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -138,7 +138,7 @@ export default component$(() => {
                 <li>• Strong resale market</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">Resale Homes Available</div>
-              <a href="/sun-city-summerlin-homes" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Resale Homes →</a>
+              <a href="/sun-city-del-webb-real-estate/" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Resale Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -153,7 +153,7 @@ export default component$(() => {
                 <li>• Highest-end finishes</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">Luxury Estates Available</div>
-              <a href="/the-ridges-summerlin" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Luxury Homes →</a>
+              <a href="/summerlin-homes/" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Luxury Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -168,7 +168,7 @@ export default component$(() => {
                 <li>• Private social clubs</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">Resort-Style Homes Available</div>
-              <a href="/siena-summerlin-homes" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Siena Homes →</a>
+              <a href="/community-comparison/" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Siena Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -183,7 +183,7 @@ export default component$(() => {
                 <li>• Various price points</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">Multiple Communities Available</div>
-              <a href="/del-webb-las-vegas" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Del Webb Homes →</a>
+              <a href="/sun-city-del-webb-real-estate/" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Del Webb Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -198,7 +198,7 @@ export default component$(() => {
                 <li>• Concierge services</li>
               </ul>
               <div class="text-lg font-bold text-indigo-600 mb-4">Golf Course Homes Available</div>
-              <a href="/red-rock-country-club" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Country Club Homes →</a>
+              <a href="/summerlin-homes/" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Country Club Homes →</a>
             </div>
           </div>
         </div>

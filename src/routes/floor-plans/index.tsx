@@ -37,7 +37,7 @@ export default component$(() => {
           Call {business.telephoneDisplay}
         </a>
         <a
-          href="/heritage-at-stonebridge-homes-for-sale"
+          href="/heritage-at-stonebridge-homes-for-sale/"
           class="rounded-full border border-white px-6 py-3 text-center font-medium text-white hover:bg-white hover:text-hsb-dark"
         >
           See homes for sale
@@ -78,7 +78,7 @@ export default component$(() => {
             <li>Walk more than one plan. Layout matters more than the number on paper.</li>
             <li>
               Check the walk to the clubhouse.{" "}
-              <a class="underline" href="/amenities">
+              <a class="underline" href="/amenities/">
                 See what the clubhouse includes.
               </a>
             </li>

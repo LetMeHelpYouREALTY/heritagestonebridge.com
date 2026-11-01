@@ -45,7 +45,7 @@ export default component$(() => {
           Call {business.telephoneDisplay}
         </a>
         <a
-          href="/new-listing-heritage-at-stonebridge"
+          href="/new-listing-heritage-at-stonebridge/"
           class="rounded-full border border-white px-6 py-3 text-center font-medium text-white hover:bg-white hover:text-hsb-dark"
         >
           Listing campaign page

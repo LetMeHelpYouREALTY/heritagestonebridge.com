@@ -146,9 +146,9 @@ export type QuestionGroup = {
 export const questionGroups: ReadonlyArray<QuestionGroup> = [
   { id: "basics", title: "Location and community basics", items: basicsQuestions },
   { id: "age-rules", title: "Age rules and residency", items: ageQuestions },
-  { id: "hoa", title: "Cost and HOA", items: hoaQuestions, more: { href: "/hoa-fees", label: "HOA fees guide" } },
-  { id: "homes", title: "Homes, floor plans, and builder", items: homeQuestions, more: { href: "/floor-plans", label: "Floor plans guide" } },
-  { id: "amenities", title: "Amenities and clubhouse", items: amenityQuestions, more: { href: "/amenities", label: "Clubhouse and amenities" } },
-  { id: "buying", title: "Buying process and agent", items: processQuestions, more: { href: "/buy-heritage-at-stonebridge", label: "Buyer guide" } },
-  { id: "comparison", title: "Comparing Summerlin 55+ communities", items: comparisonQuestions, more: { href: "/community-comparison", label: "Community comparison" } },
+  { id: "hoa", title: "Cost and HOA", items: hoaQuestions, more: { href: "/hoa-fees/", label: "HOA fees guide" } },
+  { id: "homes", title: "Homes, floor plans, and builder", items: homeQuestions, more: { href: "/floor-plans/", label: "Floor plans guide" } },
+  { id: "amenities", title: "Amenities and clubhouse", items: amenityQuestions, more: { href: "/amenities/", label: "Clubhouse and amenities" } },
+  { id: "buying", title: "Buying process and agent", items: processQuestions, more: { href: "/buy-heritage-at-stonebridge/", label: "Buyer guide" } },
+  { id: "comparison", title: "Comparing Summerlin 55+ communities", items: comparisonQuestions, more: { href: "/community-comparison/", label: "Community comparison" } },
 ];

@@ -89,13 +89,13 @@ export default component$(() => {
           </p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="/buy-heritage-at-stonebridge"
+              href="/buy-heritage-at-stonebridge/"
               class="rounded-full bg-white px-8 py-4 text-center text-lg font-semibold text-hsb-dark hover:bg-hsb-sand"
             >
               Buy in Heritage
             </a>
             <a
-              href="/sell-heritage-at-stonebridge"
+              href="/sell-heritage-at-stonebridge/"
               class="rounded-full border border-white px-8 py-4 text-center text-lg font-semibold text-white hover:bg-white hover:text-hsb-dark"
             >
               Sell in Heritage
@@ -226,7 +226,7 @@ export default component$(() => {
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/buy-heritage-at-stonebridge"
+              href="/buy-heritage-at-stonebridge/"
               class="bg-hsb-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-hsb-primary-dark transition-colors inline-block text-center"
             >
               Buy a home

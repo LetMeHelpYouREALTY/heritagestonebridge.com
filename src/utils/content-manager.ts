@@ -227,6 +227,6 @@ export const createHomeValueBlock = (
     features: ["Instant Valuation", "Market Analysis"],
     badges: ["Free Report", "No Obligation"],
     ctaText: "Get Detailed Report",
-    ctaLink: "/home-valuation",
+    ctaLink: "/sell-heritage-at-stonebridge/",
   },
 });

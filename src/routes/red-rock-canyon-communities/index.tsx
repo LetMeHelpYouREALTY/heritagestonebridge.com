@@ -200,37 +200,37 @@ export default component$(() => {
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Heritage at Stonebridge</h3>
               <p class="text-hsb-muted mb-4">Luxury 55+ community with stunning Red Rock Canyon views and resort-style amenities.</p>
-              <a href="/homes-for-sale-stonebridge-summerlin" class="text-red-600 hover:text-red-800 font-semibold">View Stonebridge Homes →</a>
+              <a href="/homes-for-sale-stonebridge-summerlin/" class="text-red-600 hover:text-red-800 font-semibold">View Stonebridge Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">The Ridges</h3>
               <p class="text-hsb-muted mb-4">Ultra-luxury community with custom estates and exclusive golf course access.</p>
-              <a href="/the-ridges-summerlin" class="text-red-600 hover:text-red-800 font-semibold">View Ridges Homes →</a>
+              <a href="/summerlin-homes/" class="text-red-600 hover:text-red-800 font-semibold">View Ridges Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Red Rock Country Club</h3>
               <p class="text-hsb-muted mb-4">Golf course community with luxury homes and exclusive country club membership.</p>
-              <a href="/red-rock-country-club" class="text-red-600 hover:text-red-800 font-semibold">View Country Club Homes →</a>
+              <a href="/summerlin-homes/" class="text-red-600 hover:text-red-800 font-semibold">View Country Club Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Mountain's Edge</h3>
               <p class="text-hsb-muted mb-4">Master-planned community with mountain views, parks, and resort amenities.</p>
-              <a href="/mountains-edge-homes" class="text-red-600 hover:text-red-800 font-semibold">View Mountain's Edge Homes →</a>
+              <a href="/las-vegas-real-estate/" class="text-red-600 hover:text-red-800 font-semibold">View Mountain's Edge Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Inspirada</h3>
               <p class="text-hsb-muted mb-4">Modern community with contemporary homes and outdoor recreation facilities.</p>
-              <a href="/inspirada-homes" class="text-red-600 hover:text-red-800 font-semibold">View Inspirada Homes →</a>
+              <a href="/henderson-real-estate/" class="text-red-600 hover:text-red-800 font-semibold">View Inspirada Homes →</a>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <h3 class="font-display text-xl text-hsb-dark mb-3">Rhodes Ranch</h3>
               <p class="text-hsb-muted mb-4">Golf course community with luxury homes and resort-style amenities.</p>
-              <a href="/rhodes-ranch-homes" class="text-red-600 hover:text-red-800 font-semibold">View Rhodes Ranch Homes →</a>
+              <a href="/las-vegas-real-estate/" class="text-red-600 hover:text-red-800 font-semibold">View Rhodes Ranch Homes →</a>
             </div>
           </div>
         </div>
