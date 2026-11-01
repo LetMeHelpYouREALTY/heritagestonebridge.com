@@ -78,6 +78,8 @@ export default component$(() => {
         <RouterOutlet />
         <script dangerouslySetInnerHTML={REALSCOUT_LOADER} />
         <ServiceWorkerRegister />
+        <script defer src="/_vercel/insights/script.js"></script>
+        <script defer src="/_vercel/speed-insights/script.js"></script>
       </body>
     </QwikCityProvider>
   );
