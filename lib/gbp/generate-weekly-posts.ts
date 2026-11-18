@@ -76,7 +76,9 @@ export function formatWeeklyPackMarkdown(pack: WeeklyGbpPack): string {
     "",
   ];
 
-  for (const [i, post] of pack.posts.entries()) {
+  // Index loop: tsconfig targets es5, which can't iterate .entries() without downlevelIteration.
+  for (let i = 0; i < pack.posts.length; i++) {
+    const post = pack.posts[i];
     lines.push(`## Post ${i + 1} — ${post.publishDay} — ${post.theme}`);
     lines.push("");
     lines.push(`**Title:** ${post.title}`);
