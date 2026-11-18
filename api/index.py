@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+
 from .faqGenerator import main as faq_generator
 from .faqGenerator import rate_limit_exceeded
 
@@ -26,8 +27,10 @@ def generate_faq_route():
                 
                 return jsonify({'faq': faq})
             
-            except Exception as e:
-                return jsonify({'error': str(e)}), 500
+            except Exception:
+                # Log details server-side only; error text can leak keys, paths or upstream messages.
+                app.logger.exception('FAQ generation failed')
+                return jsonify({'error': 'Something went wrong. Please try again later.'}), 500
         else:
             return jsonify({'error': 'URL not provided'}), 400
     else:

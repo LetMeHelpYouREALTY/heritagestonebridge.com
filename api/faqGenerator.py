@@ -1,14 +1,15 @@
 import json
 import os
 import re
-import redis
 import ssl
-import requests
-from openai import OpenAI
-from github import Github
-from urllib.parse import urlparse
-from dotenv import load_dotenv
 from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import urlparse
+
+import redis
+import requests
+from dotenv import load_dotenv
+from github import Github
+from openai import OpenAI
 
 load_dotenv()  # load environment variables
 
@@ -125,7 +126,7 @@ def get_markdown_content(file_url, headers):
             else:
                 return -1
         
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException:
         return -1
 
 # function to chat with the openai api
