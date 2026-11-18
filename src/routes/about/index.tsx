@@ -9,7 +9,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Meet Dr. Jan Duffy, licensed Nevada REALTOR® with a Ph.D. in Research, licensed since 2008 · 35 years in Las Vegas. Expert in Las Vegas luxury market, 55+ communities, and Heritage at Stonebridge.",
+      content: "Meet Dr. Jan Duffy, licensed Nevada REALTOR® since 2008. Expert in Las Vegas luxury market, 55+ communities, and Heritage at Stonebridge.",
     },
     {
       property: "og:title",
@@ -17,7 +17,7 @@ export const head: DocumentHead = {
     },
     {
       property: "og:description",
-      content: "Meet Dr. Jan Duffy, licensed Nevada REALTOR® with a Ph.D. in Research, licensed since 2008 · 35 years in Las Vegas. Expert in Las Vegas luxury market and 55+ communities.",
+      content: "Meet Dr. Jan Duffy, licensed Nevada REALTOR® since 2008. Expert in Las Vegas luxury market and 55+ communities.",
     },
     {
       property: "og:type",
@@ -41,7 +41,7 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:description",
-      content: "Meet Dr. Jan Duffy, licensed Nevada REALTOR® with a Ph.D. in Research, licensed since 2008 · 35 years in Las Vegas.",
+      content: "Meet Dr. Jan Duffy, licensed Nevada REALTOR® since 2008.",
     },
     {
       name: "robots",
@@ -66,7 +66,7 @@ export default component$(() => {
       {/* Hero Section */}
       <InteriorHero
         title="About Dr. Jan Duffy"
-        lede="Licensed Nevada REALTOR®, licensed since 2008 · 35 years in Las Vegas. She works Heritage at Stonebridge in Summerlin West."
+        lede="Licensed Nevada REALTOR®, licensed since 2008. She works Heritage at Stonebridge in Summerlin West."
       />
       <OfficeListingsBelowHero />
 
@@ -80,8 +80,8 @@ export default component$(() => {
               </h2>
               <p class="text-lg text-hsb-text mb-6">
                 Dr. Jan Duffy brings a unique combination of advanced education, extensive experience, 
-                and specialized knowledge to every real estate transaction. With a Ph.D. in Research 
-                and a career licensed since 2008 · 35 years in Las Vegas, she provides unparalleled expertise in the 
+                and specialized knowledge to every real estate transaction. With a research-based approach
+                and a Nevada license since 2008, she provides unparalleled expertise in the 
                 Las Vegas luxury market.
               </p>
               <div class="space-y-4">
@@ -90,7 +90,7 @@ export default component$(() => {
                     <span class="text-blue-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h3 class="text-xl font-semibold text-hsb-dark mb-2">Ph.D. in Research</h3>
+                    <h3 class="text-xl font-semibold text-hsb-dark mb-2">Research-Based Approach</h3>
                     <p class="text-hsb-muted">Advanced analytical skills and research-based approach to real estate</p>
                   </div>
                 </div>
